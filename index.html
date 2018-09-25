@@ -144,84 +144,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-1对象入门1-6多行对象的互换使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/13/1对象入门1-6多行对象的互换使用/">1对象入门1.6多行对象的互换使用</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/13/1对象入门1-6多行对象的互换使用/" class="archive-article-date">
-  	<time datetime="2018-04-13T09:23:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>通常，继承最终会以创建一系列类收场，所有类都建立在统一的接口基础上。我们用一幅颠倒的树形图来阐<br>明这一点（注释⑤）：<br>⑤：这儿采用了“统一记号法”，本书将主要采用这种方法。</p>
-<p><img src="C:\Users\罗中运\AppData\Local\Temp\1523669399539.png" alt="1523669399539">对这样的一系列类，我们要进行的一项重要处理就是将衍生类的对象当作基础类的一个对象对待。这一点是<br>非常重要的，因为它意味着我们只需编写单一的代码，令其忽略类型的特定细节，只与基础类打交道。这样<br>一来，那些代码就可与类型信息分开。所以更易编写，也更易理解。此外，若通过继承增添了一种新类型，<br>如“三角形”，那么我们为“几何形状”新类型编写的代码会象在旧类型里一样良好地工作。所以说程序具<br>备了“扩展能力”，具有“扩展性”。<br>以上面的例子为基础，假设我们用 Java 写了这样一个函数：<br>void doStuff(Shape s) {<br>s.erase();<br>// …<br>s.draw();<br>32<br>}<br>这个函数可与任何“几何形状”（Shape）通信，所以完全独立于它要描绘（draw）和删除（erase）的任何<br>特定类型的对象。如果我们在其他一些程序里使用 doStuff()函数：<br>Circle c = new Circle();<br>Triangle t = new Triangle();<br>Line l = new Line();<br>doStuff(c);<br>doStuff(t);<br>doStuff(l);<br>那么对doStuff()的调用会自动良好地工作，无论对象的具体类型是什么。<br>这实际是一个非常有用的编程技巧。请考虑下面这行代码：<br>doStuff(c);<br>此时，一个 Circle（圆）句柄传递给一个本来期待 Shape（形状）句柄的函数。由于圆是一种几何形状，所<br>以doStuff()能正确地进行处理。也就是说，凡是 doStuff()能发给一个 Shape的消息，Circle也能接收。<br>所以这样做是安全的，不会造成错误。<br>我们将这种把衍生类型当作它的基本类型处理的过程叫作“Upcasting”（上溯造型）。其中，“cast”（造<br>型）是指根据一个现成的模型创建；而“Up”（向上）表明继承的方向是从“上面”来的——即基础类位于<br>顶部，而衍生类在下方展开。所以，根据基础类进行造型就是一个从上面继承的过程，即“Upcasting”。<br>在面向对象的程序里，通常都要用到上溯造型技术。这是避免去调查准确类型的一个好办法。请看看<br>doStuff()里的代码：<br>s.erase();<br>// …<br>s.draw();<br>注意它并未这样表达：“如果你是一个Circle，就这样做；如果你是一个Square，就那样做；等等”。若那<br>样编写代码，就需检查一个Shape 所有可能的类型，如圆、矩形等等。这显然是非常麻烦的，而且每次添加<br>了一种新的 Shape类型后，都要相应地进行修改。在这儿，我们只需说：“你是一种几何形状，我知道你能<br>将自己删掉，即erase()；请自己采取那个行动，并自己去控制所有的细节吧。”</p>
-<p>1.6.1 动态绑定<br>在doStuff()的代码里，最让人吃惊的是尽管我们没作出任何特殊指示，采取的操作也是完全正确和恰当<br>的。我们知道，为Circle 调用draw()时执行的代码与为一个 Square或 Line 调用draw()时执行的代码是不<br>同的。但在将draw()消息发给一个匿名 Shape时，根据 Shape句柄当时连接的实际类型，会相应地采取正确<br>的操作。这当然令人惊讶，因为当 Java 编译器为doStuff()编译代码时，它并不知道自己要操作的准确类型<br>是什么。尽管我们确实可以保证最终会为Shape 调用erase()，为Shape 调用draw()，但并不能保证为特定<br>的Circle，Square或者Line 调用什么。然而最后采取的操作同样是正确的，这是怎么做到的呢？<br>将一条消息发给对象时，如果并不知道对方的具体类型是什么，但采取的行动同样是正确的，这种情况就叫<br>作“多形性”（Polymorphism）。对面向对象的程序设计语言来说，它们用以实现多形性的方法叫作“动态<br>绑定”。编译器和运行期系统会负责对所有细节的控制；我们只需知道会发生什么事情，而且更重要的是，<br>如何利用它帮助自己设计程序。<br>有些语言要求我们用一个特殊的关键字来允许动态绑定。在C++中，这个关键字是 virtual。在Java 中，我<br>们则完全不必记住添加一个关键字，因为函数的动态绑定是自动进行的。所以在将一条消息发给对象时，我<br>们完全可以肯定对象会采取正确的行动，即使其中涉及上溯造型之类的处理。<br>1.6.2 抽象的基础类和接口<br>设计程序时，我们经常都希望基础类只为自己的衍生类提供一个接口。也就是说，我们不想其他任何人实际<br>创建基础类的一个对象，只对上溯造型成它，以便使用它们的接口。为达到这个目的，需要把那个类变成<br>33<br>“抽象”的——使用abstract 关键字。若有人试图创建抽象类的一个对象，编译器就会阻止他们。这种工具<br>可有效强制实行一种特殊的设计。<br>亦可用abstract 关键字描述一个尚未实现的方法——作为一个“根”使用，指出：“这是适用于从这个类继<br>承的所有类型的一个接口函数，但目前尚没有对它进行任何形式的实现。”抽象方法也许只能在一个抽象类<br>里创建。继承了一个类后，那个方法就必须实现，否则继承的类也会变成“抽象”类。通过创建一个抽象方<br>法，我们可以将一个方法置入接口中，不必再为那个方法提供可能毫无意义的主体代码。<br>interface（接口）关键字将抽象类的概念更延伸了一步，它完全禁止了所有的函数定义。“接口”是一种相<br>当有效和常用的工具。另外如果自己愿意，亦可将多个接口都合并到一起（不能从多个普通class 或<br>abstract class 中继承）。</p>
-<p>1.7 对象的创建和存在时间</p>
-<p>​    从技术角度来说，oop（面向对象程序设计）只是涉及抽象的数据类型、继承以及多形性，但另一些问题也可能显得非常重要。本节就将这些问题进行探讨。</p>
-<p>​    最重要的问题之一就是对象的创建及破坏方式。对象需要的数据位于哪儿，如何控制对象的“存在时间”呢？</p>
-<p>针对这个问题，解决的方案是各异其趣的。C++认为程序的执行效率是最重要的一个问题，所以它允许程序员做出选择。为获得最快的运行速度，存储以及存在事件可在编写程序的时候决定，只需要将对象放置在对战（有时候也叫做自动或定域变量）或者静态存储区域即可。这样便为存储空间的分配和释放提供了一个优先级。某些情况下，这种优先级的控制是非常有价值的。然而，我们同时也牺牲了灵活性，因为在编写程序时，必须知道对象的准确的数量、存在时间、以及类型。如果解决的问题是一个较常规的问题，如计算机的辅助设计、仓储管理或者空中交通控制，之一方法就显得太局限了。</p>
-<p>​    第二个方法是在一个内存池中动态创建对象，该内存池亦叫做“堆’’或者”内存堆“。若采用这种方式。除非进入运行期，否则根本不知道到底需要多少对象，也不知道他们存在时间有多长，以及准确的类型是什么。这些参数都在程序正式运行时才决定的。若需要一个新对象，只需要在需要他的时候在内存堆里分配存储空间的时间比堆栈里的时间长得多（在堆栈里创建存储空间一般只需要一个简单的指令，将堆栈指针向下多向上移动即可）。由于动态创建方法使对象本身就倾向于复杂，所以查找存储空间以及释放它所需要的额外开销不会为对象的创建造成明显的影响。除此之外，更大的灵活性对于常规编程问题的解决是至关重要的。</p>
-<p>​    C++允许我们决定是在写程序是创建对象，还是在运行期间创建，这种控制方法更加灵活。大家或许认为既然如此灵活，那么无论如何都应在内存堆里创建对象，而不是在堆栈中创建。但还需要考虑另外一个问题，亦即对象的“存在时间”或者“生存时间”（Lifetime）。若在堆栈或者在静态存储空间里创建一个对象，编译器会判断对象的持续时间有多长，到时会自动“破坏”或者“清除”它。程序员可用两种方法来破坏一个对象：用程序化的方式决定何时破坏对象，或者利用由运行环境提供的一种“垃圾收集器”特性，自动能够寻找那些不再使用的对象，并将其清除。当然，垃圾收集器显得方便得多，但要求所有的应用程序都必须容忍垃圾回收器的存在，并能默许垃圾收集带来的额外开销。但这并符合C++语言的设计宗旨，所以未能包括到C++里。单Java确实停工了一个垃圾收集器。本节剩下的部分将讨论操纵对象是要考虑的另一些因素。</p>
-<p>1.71集合与继承器</p>
-<p>​    针对一个特定问题的解决，如果事先不知道需要多少对象，或者他们的持续时间有多长，那么也不知道如何保存那些对象。既然如此，怎样才能知道那些对象要求多少空间呢？事实上根本无法提前知道，除非进入运行期。</p>
-<p>​    在面向对象的设计中，大多数问题的解决方法似乎都有些轻率——只是简单的创建另一种类型的对象。用于解决特定的问题的新型对象容纳了指向其他对象的句柄。当然，也可以用数组做同样的事情，那是大多数语言都具有的一种功能。但不能只看到这一点。这种兑现通常叫做“集合”（亦叫作一个“容器”，但AWT<br>在不同的场合应用了这个术语，所以本书将一直沿用“集合”的称呼。在需要的时候，集合会自动扩充自<br>己，以便适应我们在其中置入的任何东西。所以我们事先不必知道要在一个集合里容下多少东西。只需创建<br>一个集合，以后的工作让它自己负责好了。）</p>
-<p>幸运的是，设计优良的OOP语言都配套提供了一系列集合。在C++中，它们是以“标准模板库”（STL)的形式提供的。Object Pascal 用自己的“可视组件库”（VCL）提供集合。Smalltalk 提供了一套非常完整的集<br>合。而Java也用自己的标准库提供了集合。在某些库中，一个常规集合便可以满足人民的大多数要求；而在另一些库中（特别是C++的库），则面向不同的需求提供不同的类型集合。例如，可以用一个矢量统一对所有元素的访问方式；一个链接列表则用于保证所有元素的插入统一。所以我们能根据自己的需要选择适当的类型。其中包括集、队列、散列表、树、堆栈等等。</p>
-<p>​    所有集合都提供了相应的读写功能。将某些东西置入集合时，才用的方式是十分明显的。有一个叫作“堆”（push“、”添加“（add）或者其他类似名字的函数做这种事情。但将数据从集合取出来的时候，方式却不总是那么明显。如果是一个数组形式的实体，比如一个矢量（Vecto），那么也许能用索引运算符或者函数。但我在许多情况下，这样做往往会无功而返。此外，但选定函数的功能是非常有限的。如果想对集合中的一系列元素进行操纵或比较，而不是仅仅面向一个，这时又该怎么办呢？</p>
-<p>​    办法就是使用一个“继承器”（iterator）,它属于一种对象，负责选择集合内的元素，并把它们提供给继承器的用户。作为一个类，它提供了一级抽象，利用这一级抽象，可将集合细节与用于访问那些集合的代码隔离开。通过继承器的作用，集合被抽象成一个简单的序列。继承器允许我们遍历那个序列，同时无需关心基础结构是什么——换而言之，不管它是一个矢量、一个链接列表、一个堆栈，还是其他什么东西。这样一来，我们就可以灵活的改变基础数据，而不会对程序里的代码造成干扰。Java最开始（在1.0和1.1版中）提供的是一个标准继承器，名为enumeration（枚举），为他所有的集合提供服务。Java1.2新增一个更复杂的集合库，其中包含一个名为interator的继承器，可以比老式的enumeration做更多的事情。</p>
-<p>​    从设计角度出发，我们需要的是一个全功能的序列。通过对它的操纵，应该能解决自己的问题。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/13/1对象入门1-6多行对象的互换使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-快速排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -885,9 +807,71 @@
 
 
   
+    <article id="post-javaBean封装数据库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/07/javaBean封装数据库/">javaBean封装数据库</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/07/javaBean封装数据库/" class="archive-article-date">
+  	<time datetime="2018-01-06T17:59:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/07/javaBean封装数据库/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -982,10 +966,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
@@ -1003,6 +983,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
             
             <div class="clearfix"></div>
