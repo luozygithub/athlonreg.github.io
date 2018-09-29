@@ -144,6 +144,154 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-n皇后问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/07/n皇后问题/">n皇后问题</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/07/n皇后问题/" class="archive-article-date">
+  	<time datetime="2018-01-06T17:32:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="n皇后问题"><a href="#n皇后问题" class="headerlink" title="n皇后问题"></a>n皇后问题</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;conio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXNUMBER 20</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//判断当前得到的解向量是否满足问题的解</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">place_queen</span><span class="params">(<span class="keyword">int</span> x[],<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;k;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>((x[i]==x[k]) || (<span class="built_in">abs</span>(x[i]-x[k])==<span class="built_in">abs</span>(i-k)))</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//将结果简单信息打印到屏幕</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output_queens</span><span class="params">(<span class="keyword">int</span> x[],<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%3d"</span>,x[i]);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">""</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//将结果详细信息写入文件</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output_queens</span><span class="params">(FILE *fp,<span class="keyword">int</span> number,<span class="keyword">int</span> x[],<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">fprintf</span>(fp,<span class="string">"solution %d:"</span>,number);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(j==x[i])</span><br><span class="line">                <span class="built_in">fprintf</span>(fp,<span class="string">"1  "</span>);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">fprintf</span>(fp,<span class="string">"0  "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">fprintf</span>(fp,<span class="string">""</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">fprintf</span>(fp,<span class="string">""</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/************************************************************************</span></span><br><span class="line"><span class="comment"> *  n后问题求解</span></span><br><span class="line"><span class="comment"> *  input  : n, the number of queens</span></span><br><span class="line"><span class="comment"> *  output : the vector of solution, X</span></span><br><span class="line"><span class="comment"> ************************************************************************/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">n_queens</span><span class="params">(FILE *fp,<span class="keyword">int</span> n,<span class="keyword">int</span> x[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nCount=<span class="number">0</span>;    <span class="comment">//解个数</span></span><br><span class="line">    <span class="keyword">int</span> k=<span class="number">1</span>;        <span class="comment">//先处理第1个皇后</span></span><br><span class="line">    x[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(k&gt;<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        x[k]=x[k]+<span class="number">1</span>;<span class="comment">//在当前列加1的位置开始搜索</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(x[k]&lt;=n &amp;&amp; !place_queen(x,k))    <span class="comment">//当前列位置是否满足条件</span></span><br><span class="line">            x[k]=x[k]+<span class="number">1</span>;    <span class="comment">//不满足,继续搜索下一列位置</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(x[k]&lt;=n)    <span class="comment">//若存在满足条件的列</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(k==n)<span class="comment">//是最后一个皇后，则得到一个最终解</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//break;    //此处若break,则只能得到一个解</span></span><br><span class="line">                nCount++;</span><br><span class="line">                output_queens(x,n);    <span class="comment">//输出</span></span><br><span class="line">                output_queens(fp,nCount,x,n);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>    <span class="comment">//否则，处理下一个皇后,即第 k+1 个皇后</span></span><br><span class="line">            &#123;</span><br><span class="line">                k++;</span><br><span class="line">                x[k]=<span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>        <span class="comment">//若不存在满足条件的列,则回溯</span></span><br><span class="line">        &#123;</span><br><span class="line">            x[k]=<span class="number">0</span>;    <span class="comment">//第k个皇后复位为0</span></span><br><span class="line">            k--;    <span class="comment">//回溯到前一个皇后</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> nCount;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n=<span class="number">8</span>,x[MAXNUMBER]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">    FILE *fp=fopen(<span class="string">"8皇后问题的解.txt"</span>,<span class="string">"w"</span>);</span><br><span class="line">    <span class="keyword">if</span>(fp==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"can not wirte file!"</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"the queens are placed on the coloums :"</span>);</span><br><span class="line">    <span class="comment">//求解并写入文件</span></span><br><span class="line">    <span class="keyword">int</span> nCount=n_queens(fp,n,x);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"there are %d solutions!"</span>,nCount);</span><br><span class="line">    fclose(fp);</span><br><span class="line">    getch();    </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/07/n皇后问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-最大k乘积问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/07/最大k乘积问题/">最大k乘积问题</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/07/最大k乘积问题/" class="archive-article-date">
+  	<time datetime="2018-01-06T17:28:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="最大k乘积"><a href="#最大k乘积" class="headerlink" title="最大k乘积"></a>最大k乘积</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include&lt;math.h&gt;</span><br><span class="line">#define MAX_NUM 20</span><br><span class="line"></span><br><span class="line">int comb[MAX_NUM];</span><br><span class="line">int maxsum=1; </span><br><span class="line">int sum;</span><br><span class="line">int num=123456;</span><br><span class="line">int tempnum=num;</span><br><span class="line">void combination(int m, int n)</span><br><span class="line">&#123;</span><br><span class="line">    int i, j;</span><br><span class="line">    for (i = m; i &gt;= n; i--)&#123;</span><br><span class="line">        comb[n] = i;</span><br><span class="line">        //printf(&quot;第%d层递归\t&quot;,comb[0]-n); </span><br><span class="line">        if (n &gt; 1)&#123;</span><br><span class="line">            /* 进入下一次分割 */</span><br><span class="line">            combination(i - 1, n - 1);</span><br><span class="line">        &#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			sum=1;</span><br><span class="line">			tempnum=num;</span><br><span class="line">            /* 完成了k次分割，输出 */</span><br><span class="line">            for (j = comb[0]; j &gt;=1; j--)&#123;</span><br><span class="line">              	printf(&quot;%d &quot;, tempnum/(int)pow(10,comb[j]));</span><br><span class="line">       </span><br><span class="line">                sum*= tempnum/(int)pow(10,comb[j]);</span><br><span class="line">                tempnum=tempnum%(int)pow(10,comb[j]);</span><br><span class="line">              </span><br><span class="line">               // printf(&quot;%d &quot;, sum);</span><br><span class="line">            &#125;</span><br><span class="line">            sum*= tempnum;</span><br><span class="line">            printf(&quot;%d &quot;, tempnum);</span><br><span class="line">            //printf(&quot;%d &quot;, sum);</span><br><span class="line">            if(sum&gt;maxsum)</span><br><span class="line">            	maxsum=sum;</span><br><span class="line">           	putchar(&apos;\n&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    comb[0] = 2;</span><br><span class="line">    combination(5, 2);   </span><br><span class="line">	printf(&quot;%d&quot;,maxsum);    </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/07/最大k乘积问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-字典序问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -382,19 +530,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jsp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
