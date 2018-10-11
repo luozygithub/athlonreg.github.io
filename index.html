@@ -144,6 +144,135 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CSS3选择器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/11/CSS3选择器/">CSS3选择器</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/11/CSS3选择器/" class="archive-article-date">
+  	<time datetime="2018-10-11T12:02:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CSS3选择器"><a href="#CSS3选择器" class="headerlink" title="CSS3选择器"></a>CSS3选择器</h2><h3 id="一、属性选择器"><a href="#一、属性选择器" class="headerlink" title="一、属性选择器"></a>一、属性选择器</h3><p>1、E[attr]: 只使用属性名，但没有确定人和属性值；</p>
+<p>2、E[attr=”value”]:指定属性名，并且制定了该元素的属性值；</p>
+<p>3、E[attr~=”value”]:指定属性名，并且具有属性值，此属性值是一个词列表，并且以空格隔开，其中词列表中包含了一个value词，并且等号前面的”~”不能不写</p>
+<p>4、E[attr^=”value”]:指定了属性名，并且有属性值，属性值是以value开头的；</p>
+<p>5、E[attr$=”value”]：指定了属性名，并且有属性值，而且属性中包含了value；</p>
+<p>6、E[attr*=”value”]：指定了属性名，并且有属性值，而且属性值中包含value；</p>
+<p>7、E[attr|=”value”]: 指定了属性名，并且属性值是以“value”或者以“value-”开头的值（比如说zh-cn）；</p>
+<h3 id="二-、伪类选择器"><a href="#二-、伪类选择器" class="headerlink" title="二 、伪类选择器"></a>二 、伪类选择器</h3><h4 id="1、结构性伪类选择器"><a href="#1、结构性伪类选择器" class="headerlink" title="1、结构性伪类选择器"></a>1、结构性伪类选择器</h4><p>X:fist-child匹配父元素的中第一个X子元素。IE就可以支持</p>
+<p>X：last-child匹配父元素的中最后一个X子元素</p>
+<p>X:nth-child（n）用于匹配索引值为n的子元素。索引值从1开始</p>
+<p>X:only-child这个伪类一般用的比较少，比如上述代码匹配的是div下的有且仅有的一个p，也就是说，如果div有多个p，将不匹配。</p>
+<p>X:nth-of-type(n)：匹配同类型中的第n个统计兄弟元素X；</p>
+<p>X:first-of-type：匹配同级元素中的第一个X元素；</p>
+<p>X:last-of-type</p>
+<p>X:nth-last-child（n）从最后一个开始索引</p>
+<p>X:nth-last-of-type（n）匹配同类型中的倒数第n个同级兄弟元素</p>
+<p>X:root匹配文档的根元素，即HTML</p>
+<p>X:empty匹配没有任何子元素的元素X</p>
+<h4 id="2、目标伪类选择器"><a href="#2、目标伪类选择器" class="headerlink" title="2、目标伪类选择器"></a>2、目标伪类选择器</h4><p>E:target 选择匹配E的所有元素，erqie匹配元素被相关URL指向,例如点击了a元素div的div:target样式开始加载</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">	<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">		a:nth-child(n)&#123;</span></span><br><span class="line"><span class="undefined">			width: 600px;</span></span><br><span class="line"><span class="undefined">			height: 60px;</span></span><br><span class="line"><span class="undefined">			display: block;</span></span><br><span class="line"><span class="undefined">/*		   background: blue;*/</span></span><br><span class="line"><span class="undefined">			text-decoration: none;</span></span><br><span class="line"><span class="undefined">			color: white;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">		div&#123;</span></span><br><span class="line"><span class="undefined">			overflow: hidden;</span></span><br><span class="line"><span class="undefined">			width: 600px;</span></span><br><span class="line"><span class="undefined">			height: 0;</span></span><br><span class="line"><span class="undefined">			background: gold;</span></span><br><span class="line"><span class="undefined">			transition: 1s;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">		div:target&#123;</span></span><br><span class="line"><span class="undefined">			height: 100px;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">		body :not(div)&#123;</span></span><br><span class="line"><span class="undefined">			background: skyblue;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#div1"</span>&gt;</span>a1<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span>div1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#div2"</span>&gt;</span>a2<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div2"</span>&gt;</span>div2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#div3"</span>&gt;</span>a3<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div3"</span>&gt;</span>div3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="3、UI元素状态伪类选择器"><a href="#3、UI元素状态伪类选择器" class="headerlink" title="3、UI元素状态伪类选择器"></a>3、UI元素状态伪类选择器</h4><p>E:enabled 匹配所有用户页面（form表单）中处于可用状态的IE元素</p>
+<p>E:disabled 匹配所有用户界面（form表单）中处于不可用状态的E元素</p>
+<p>E:checked 匹配所有用户界面（form表单）中处于选中状态的元素E</p>
+<p>E::selection 匹配E元素中被用户选中或处于高亮状态的部分</p>
+<h4 id="4、语言伪类选择器"><a href="#4、语言伪类选择器" class="headerlink" title="4、语言伪类选择器"></a>4、语言伪类选择器</h4><p>:lang<br>eg：E:lang(language)表示选择匹配E的所有元素，且匹配元素指定了lang属性，而且其值为language。</p>
+<h4 id="5、否定伪类选择器"><a href="#5、否定伪类选择器" class="headerlink" title="5、否定伪类选择器"></a>5、否定伪类选择器</h4><p>E:not(s) （IE6-8浏览器不支持:not()选择器。）</p>
+<blockquote>
+<p>匹配所有不匹配简单选择符s的元素E</p>
+<p>：not()之前要加空格</p>
+<p>如：body：  not（header）</p>
+</blockquote>
+<h5 id="Ps-要注意优先级问题，和nth-child-一起使用的时候-nth-child-起作用"><a href="#Ps-要注意优先级问题，和nth-child-一起使用的时候-nth-child-起作用" class="headerlink" title="Ps:要注意优先级问题，和nth-child()一起使用的时候 nth-child() 起作用"></a>Ps:要注意优先级问题，和nth-child()一起使用的时候 nth-child() 起作用</h5><h4 id="6、动态伪类选择器"><a href="#6、动态伪类选择器" class="headerlink" title="6、动态伪类选择器"></a>6、动态伪类选择器</h4><p>E：link</p>
+<p>链接伪类选择器</p>
+<p>选择匹配的E元素，而且匹配的元素被定义了超链接并且未被访问过。常用语链接锚点上</p>
+<p>E: visited</p>
+<p>链接伪类选择器</p>
+<p>选择匹配的E元素，而且匹配元素被定义了超链接并已经被访问过。常用于链接锚点上</p>
+<p>E:active</p>
+<p>用户行为选择器</p>
+<p>选择匹配的E元素，而且用户鼠标停留在元素E上。IE6及以下浏览器仅支持a:hover</p>
+<p>E:focus 用户行为选择器<br>选择匹配的E元素，而且匹配元素获取焦点</p>
+<h4 id="7、层级选择器"><a href="#7、层级选择器" class="headerlink" title="7、层级选择器"></a>7、层级选择器</h4><p>E &gt; F</p>
+<p>子选择器</p>
+<p>选择匹配的F元素，而且匹配的F元素是所匹配的E元素的子元素</p>
+<p>E+F</p>
+<p>相邻兄弟选择器</p>
+<p>选择匹配的F元素，而且匹配的F元素仅位于匹配的E元素后面</p>
+<p>E~F</p>
+<p>通用选择器</p>
+<p>选择匹配的F元素，而且位于匹配的E元素后面的所有匹配的F元素</p>
+<h3 id="1）伪元素"><a href="#1）伪元素" class="headerlink" title="1）伪元素"></a>1）伪元素</h3><p>CSS中的伪元素大家以前看过</p>
+<p>:first-line,:first-letter,:before,:after;那么在CSS3中，他对伪元素进行了一定的调整，在以前的基础上增加了一个“：”也就是现在变成了“::first-letter,::first-line,::before,::after”另外他还增加了一个“::selection”,两个“：：”和一个“：”css3中主要用来区分伪类和伪元素</p>
+<p>::selection用来改变浏览网页选中文的默认效果。::selection在IE家族中，只有IE9+版本支持，在Firefox中需要加上其前缀“-moz”</p>
+<p>div::selection{ background: red; color: green;}</p>
+<p>div::-moz-selection{ background: red; color: green;}</p>
+<p>::placeholder</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">H5</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/11/CSS3选择器/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-浏览器内核" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1011,86 +1140,6 @@
 
 
   
-    <article id="post-动态规划总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/17/动态规划总结/">动态规划总结</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/17/动态规划总结/" class="archive-article-date">
-  	<time datetime="2018-01-16T17:03:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="动态规划总结"><a href="#动态规划总结" class="headerlink" title="动态规划总结"></a>动态规划总结</h2><p>你需要按照对应规律写出这个矩阵</p>
-<p>而其普遍的规律为先初始化第一行或第一行和第一列，然后后面的数据经过判断选其中优的那个.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>矩阵连乘问题</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> m 6</span></span><br><span class="line"><span class="keyword">int</span> a[m+<span class="number">1</span>]=&#123;<span class="number">30</span>,<span class="number">35</span>,<span class="number">15</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">20</span>,<span class="number">25</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> nember[m+<span class="number">1</span>][m+<span class="number">1</span>]=&#123;<span class="number">0</span>&#125;;<span class="comment">//初始化要填的矩阵，全赋值为0；</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> r=<span class="number">2</span>;r&lt;=m;r++)&#123;<span class="comment">//矩阵个数2个起步</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=m-r+<span class="number">1</span>;i++)&#123;<span class="comment">//所有矩阵相乘要用的计算次数扫一遍</span></span><br><span class="line">      <span class="keyword">int</span> j=i+r<span class="number">-1</span>;<span class="comment">//比如刚开始i=1时j=2,i=3时，j=4;ij矩形长度始终为r。</span></span><br><span class="line">      number[i][j]=number[i][i]+number[i+<span class="number">1</span>][j]+a[i<span class="number">-1</span>]*a[i]*a[j];</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> k=i+<span class="number">1</span>;k&lt;j;k++)&#123;</span><br><span class="line">        	<span class="keyword">int</span> tempvalue=number[i][k]+number[k+<span class="number">1</span>][j]+a[i<span class="number">-1</span>]*a[k]*a[j];</span><br><span class="line">      		<span class="keyword">if</span>(tempvalue&lt;number[i][j])&#123;</span><br><span class="line">        		number[i][j]=tempvalue;<span class="comment">//找到ij矩阵最少需要的计算次数.</span></span><br><span class="line">          &#125;</span><br><span class="line">	  &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	MatrixChainMultiply();</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,number[<span class="number">1</span>][m]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2.</span>编辑距离问题</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> M 4</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 5</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EditingDistance</span><span class="params">(<span class="keyword">char</span> A[],<span class="keyword">char</span> B[],<span class="keyword">int</span> m,<span class="keyword">int</span> n,<span class="keyword">int</span> **D)</span></span>&#123;</span><br><span class="line"><span class="comment">//编辑距离问题，类似于最长公共子序列 </span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=m;i++)</span><br><span class="line">		D[i][<span class="number">0</span>]=i;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=n;j++)</span><br><span class="line">		D[<span class="number">0</span>][j]=j;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=n;j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(A[i]==B[j])&#123;</span><br><span class="line">				D[i][j]=D[i<span class="number">-1</span>][j<span class="number">-1</span>];<span class="comment">//两个字符一样距离不变</span></span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="keyword">int</span> temp=(D[i<span class="number">-1</span>][j<span class="number">-1</span>]+<span class="number">1</span>)&gt;(D[i<span class="number">-1</span>][j]+<span class="number">1</span>)?(D[i<span class="number">-1</span>][j]+<span class="number">1</span>):(D[i<span class="number">-1</span>][j<span class="number">-1</span>]+<span class="number">1</span>);</span><br><span class="line">				D[i][j]=temp&gt;(D[i][j<span class="number">-1</span>]+<span class="number">1</span>)?(D[i][j<span class="number">-1</span>]+<span class="number">1</span>):temp;</span><br><span class="line">				<span class="comment">//原来基础上增删改选一样.</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> *A=<span class="string">"Abce"</span>,*B=<span class="string">"ABcde"</span>;     </span><br><span class="line">	<span class="keyword">int</span> **D;</span><br><span class="line">	D=<span class="keyword">new</span> <span class="keyword">int</span>*[M+<span class="number">1</span>];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;M+<span class="number">1</span>;i++)&#123;</span><br><span class="line">		D[i]=<span class="keyword">new</span> <span class="keyword">int</span>[N+<span class="number">1</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	EditingDistance(A,B,M,N,D);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;M+<span class="number">1</span>;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=N;j++)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%3d"</span>,D[i][j]);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3.</span>最长公共子序列</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;Stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MaxLCS</span><span class="params">(<span class="keyword">char</span> *x,<span class="keyword">char</span> *y,<span class="keyword">int</span> lenx,<span class="keyword">int</span> leny,<span class="keyword">int</span> **c)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;lenx+<span class="number">1</span>;i++)</span><br><span class="line">		c[i][<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;leny+<span class="number">1</span>;j++)</span><br><span class="line">		c[<span class="number">0</span>][j]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;lenx+<span class="number">1</span>;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;leny+<span class="number">1</span>;j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(x[i<span class="number">-1</span>]==y[j<span class="number">-1</span>])</span><br><span class="line">				c[i][j]=c[i<span class="number">-1</span>][j<span class="number">-1</span>]+<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				c[i][j]=c[i<span class="number">-1</span>][j]&gt;c[i][j<span class="number">-1</span>]?c[i<span class="number">-1</span>][j]:c[i][j<span class="number">-1</span>];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> c[lenx][leny];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> *x=<span class="string">"ABCBDAB"</span>,*y=<span class="string">"BDCABA"</span>;</span><br><span class="line">	<span class="keyword">int</span> lenx=<span class="built_in">strlen</span>(x),leny=<span class="built_in">strlen</span>(y);</span><br><span class="line">	<span class="keyword">int</span> **c;</span><br><span class="line">	c=<span class="keyword">new</span> <span class="keyword">int</span>*[lenx+<span class="number">1</span>];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;lenx+<span class="number">1</span>;i++)</span><br><span class="line">		c[i]=<span class="keyword">new</span> <span class="keyword">int</span>[leny+<span class="number">1</span>];</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"最长公共子序列长度为：%d."</span>,MaxLCS(x,y,lenx,leny,c)); </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4.01</span>背包问题</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Knapsack</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> c,<span class="keyword">int</span> v[],<span class="keyword">int</span> w[],<span class="keyword">int</span> **m)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;c+<span class="number">1</span>;i++)</span><br><span class="line">		m[<span class="number">0</span>][i]=<span class="number">0</span>;<span class="comment">//初始化第一行</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n+<span class="number">1</span>;i++)&#123;<span class="comment">//种类</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;c+<span class="number">1</span>;j++)&#123;<span class="comment">//容量</span></span><br><span class="line">			<span class="keyword">if</span>(j&gt;=w[i])&#123;<span class="comment">//如果此物品能放进去.</span></span><br><span class="line">				m[i][j]=m[i<span class="number">-1</span>][j]&gt;(m[i<span class="number">-1</span>][j-w[i]]+v[i])?m[i<span class="number">-1</span>][j]:(m[i<span class="number">-1</span>][j-w[i]]+v[i]);</span><br><span class="line">				<span class="comment">//在原来种类i-1上，随着容量扩大，逐一判断此物品加进去和原来相比哪个更好.</span></span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				m[i][j]=m[i<span class="number">-1</span>][j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n+<span class="number">1</span>;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;c+<span class="number">1</span>;j++)&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%4d"</span>,m[i][j]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">int</span> c;</span><br><span class="line">	<span class="keyword">int</span> **m;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"请输入物品的种类："</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"请输入背包的容量："</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;c);</span><br><span class="line">	<span class="keyword">int</span> w[n+<span class="number">1</span>],v[n+<span class="number">1</span>];</span><br><span class="line">	<span class="keyword">int</span> x[n+<span class="number">1</span>];</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"请输入%d个物品的价值："</span>,n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n+<span class="number">1</span>;i++)</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;w[i]);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"请输入%d个物品的体积："</span>,n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n+<span class="number">1</span>;i++)</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;v[i]);</span><br><span class="line">	m=<span class="keyword">new</span> <span class="keyword">int</span>*[n+<span class="number">1</span>];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n+<span class="number">1</span>;i++)</span><br><span class="line">		m[i]=<span class="keyword">new</span> <span class="keyword">int</span>[c+<span class="number">1</span>];</span><br><span class="line">	Knapsack(n,c,v,w,m);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5.</span>租用游艇问题</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">RentYacht</span><span class="params">(<span class="keyword">int</span> **m,<span class="keyword">int</span> **money,<span class="keyword">int</span> M)</span></span>&#123;</span><br><span class="line"><span class="comment">//租用游艇，类似于矩阵连乘 </span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;M+<span class="number">1</span>;i++)&#123;</span><br><span class="line">		money[i][<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">		money[<span class="number">0</span>][i]=<span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;M+<span class="number">1</span>;i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=i;j++)</span><br><span class="line">			money[i][j]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> r=<span class="number">2</span>;r&lt;=M;r++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=M-r+<span class="number">1</span>;i++)&#123;</span><br><span class="line">			<span class="keyword">int</span> j=i+r<span class="number">-1</span>;</span><br><span class="line">			money[i][j]=m[i][j];</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> k=i;k&lt;j;k++)&#123;</span><br><span class="line">				<span class="keyword">int</span> tempvalue=money[i][k]+money[k][j];</span><br><span class="line">				<span class="keyword">if</span>(tempvalue&lt;money[i][j])&#123;</span><br><span class="line">					money[i][j]=tempvalue;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"各站点的租金为：\n"</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;M+<span class="number">1</span>;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;M+<span class="number">1</span>;j++)&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%3d\t"</span>,money[i][j]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"起始站点到终站点的游艇租金最便宜为：%d\n"</span>,money[<span class="number">1</span>][M]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/17/动态规划总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1200,11 +1249,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
               <li class="article-tag-list-item">
