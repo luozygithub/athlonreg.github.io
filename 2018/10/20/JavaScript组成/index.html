@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.luozy.top">
-  <title>Archives: 2018/10 | luozy&#39;s Blog</title>
+  <title>JavaScript组成 | luozy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="���������������������̰���������ܼ�������̰����">
-<meta property="og:type" content="website">
-<meta property="og:title" content="luozy&#39;s Blog">
-<meta property="og:url" content="http://www.luozy.top/archives/2018/10/page/2/index.html">
+  <meta name="description" content="JavaScript组成部分——ECMAScript、DOM、BOM 虽然 JavaScript 和 ECMAScript 通常被人们用来表达相同的含义，但 JavaScript 的含义却比ECMA-262标准中规定的要多得多。 一个完整的JavaScript应该由下列三个不同的部分组成  核心（ECMAScript） ​    ECMAScript是一种由ECMA国际（前身为欧洲计算机制造商协会">
+<meta name="keywords" content="H5 js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript组成">
+<meta property="og:url" content="http://www.luozy.top/2018/10/20/JavaScript组成/index.html">
 <meta property="og:site_name" content="luozy&#39;s Blog">
-<meta property="og:description" content="���������������������̰���������ܼ�������̰����">
+<meta property="og:description" content="JavaScript组成部分——ECMAScript、DOM、BOM 虽然 JavaScript 和 ECMAScript 通常被人们用来表达相同的含义，但 JavaScript 的含义却比ECMA-262标准中规定的要多得多。 一个完整的JavaScript应该由下列三个不同的部分组成  核心（ECMAScript） ​    ECMAScript是一种由ECMA国际（前身为欧洲计算机制造商协会">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/920443/201605/920443-20160525093958709-1057258632.png">
+<meta property="og:updated_time" content="2018-10-20T10:15:32.540Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luozy&#39;s Blog">
-<meta name="twitter:description" content="���������������������̰���������ܼ�������̰����">
+<meta name="twitter:title" content="JavaScript组成">
+<meta name="twitter:description" content="JavaScript组成部分——ECMAScript、DOM、BOM 虽然 JavaScript 和 ECMAScript 通常被人们用来表达相同的含义，但 JavaScript 的含义却比ECMA-262标准中规定的要多得多。 一个完整的JavaScript应该由下列三个不同的部分组成  核心（ECMAScript） ​    ECMAScript是一种由ECMA国际（前身为欧洲计算机制造商协会">
+<meta name="twitter:image" content="https://images2015.cnblogs.com/blog/920443/201605/920443-20160525093958709-1057258632.png">
   
     <link rel="alternative" href="/atom.xml" title="luozy&#39;s Blog" type="application/atom+xml">
   
@@ -142,215 +146,187 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-JavaScript组成" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript组成
+    </h1>
+  
+
+        
+        <a href="/2018/10/20/JavaScript组成/" class="archive-article-date">
+  	<time datetime="2018-10-20T09:22:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-20</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JavaScript组成部分——ECMAScript、DOM、BOM"><a href="#JavaScript组成部分——ECMAScript、DOM、BOM" class="headerlink" title="JavaScript组成部分——ECMAScript、DOM、BOM"></a>JavaScript组成部分——ECMAScript、DOM、BOM</h2><blockquote>
+<p>虽然 JavaScript 和 ECMAScript 通常被人们用来表达相同的含义，但 JavaScript 的含义却比ECMA-262标准中规定的要多得多。 一个完整的JavaScript应该由下列三个不同的部分组成</p>
+</blockquote>
+<h3 id="核心（ECMAScript）"><a href="#核心（ECMAScript）" class="headerlink" title="核心（ECMAScript）"></a>核心（ECMAScript）</h3><blockquote>
+<p>​    ECMAScript是一种由ECMA国际（前身为欧洲计算机制造商协会，英文名为European Computer Manufacters Association）通过ECMA-262标准化的脚本程序设计语言。ECMAScript定义的只是这门语言的基础，而在此基础上可以构建更完善的脚本语言。我们常见的Web浏览器只是ECMAScript实现可能的宿主环境之一。组成部分有：语法、类型、语句、关键字、保留字、操作符、对象等。</p>
+<p>​    目前ECMAScript有6个版本，分别是<strong>ECMAScript1</strong>、<strong>ECMAScript2</strong>、<strong>ECMAScript3</strong>、<strong>ECMAScript4</strong>（由于制定时分歧过大，并未正式布）、<strong>ECMAScript5、ECMAScript2015</strong>。截止发布日期，JavaScript的官方名称是ECMAScript 2015，下一版本将于今年（2016年）发布，命名为ECMAScript 2016。从2015年开始，新版本将按照ECMAScript+年份的形式发布。</p>
+</blockquote>
+<p>文档对象模型（DOM）——对应Document对象；</p>
+<blockquote>
+<p>​    一个与系统平台和编程语言无关的接口，程序和脚本可以通过这个接口动态访问和修改文档的内容、结构和样式。</p>
+<p>​    DOM把一份文档理解为一颗家谱树（节点数），分别为parent（父节点）、child（子节点）、sibling（兄弟节点），如下图：</p>
+<p>​    <img src="https://images2015.cnblogs.com/blog/920443/201605/920443-20160525093958709-1057258632.png" alt="img"></p>
+<p>文档由节点组成的集合，节点有以下几种类型</p>
+<p>​    元素节点（标签）、文本节点（包含在元素节点中）、属性节点（对元素做出更具体的描述）——几乎所有元素都有一个title属性</p>
+</blockquote>
+<p>DOM把整个网页映射成为一个多层节点</p>
+<h3 id="浏览器对象模型（BOM）——对应window对象"><a href="#浏览器对象模型（BOM）——对应window对象" class="headerlink" title="浏览器对象模型（BOM）——对应window对象"></a>浏览器对象模型（BOM）——对应window对象</h3><p>他提供了很多对象，用于访问浏览器的功能；这些功能与人和网页内容无关；</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://p1lzepiq0.bkt.clouddn.com/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%B6%E6%AC%BE%E7%A0%81.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/13/H5新属性/" class="archive-article-date">
-  	<time datetime="2018-10-13T01:15:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/13/H5新属性/">H5新属性</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">H5</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">H5 js</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.luozy.top/2018/10/20/JavaScript组成/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/11/块居中/" class="archive-article-date">
-  	<time datetime="2018-10-11T13:04:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-11</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/10/19/js数组/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js数组</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/11/块居中/">块居中</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">H5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/11/CSS3选择器/" class="archive-article-date">
-  	<time datetime="2018-10-11T12:02:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/11/CSS3选择器/">CSS3选择器</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">H5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/11/浏览器内核/" class="archive-article-date">
-  	<time datetime="2018-10-11T11:53:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/11/浏览器内核/">浏览器内核</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">H5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/11/圣杯布局/" class="archive-article-date">
-  	<time datetime="2018-10-11T11:49:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/11/圣杯布局/">圣杯布局</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">H5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2018/10/">&laquo; Prev</a><a class="page-number" href="/archives/2018/10/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -374,8 +350,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

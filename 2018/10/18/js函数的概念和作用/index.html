@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://www.luozy.top/2018/10/18/js函数的概念和作用/index.html">
 <meta property="og:site_name" content="luozy&#39;s Blog">
 <meta property="og:description" content="JS函数及作用 函数的概念，及作用 函数的声明 如何执行函数（调用） 函数的参数（实参，形参）,返回值 arguments 作用域 DOM的简单操作 递归   在js的世界里存在函数，函数是把强大的功能集中在一起； 调用函数，执行函数中具体的代码，最终把函数的功能实现了； 书写步骤： ​    1、在标签或文件里书写函数 ​    2、在一处调用  1、概念：函数就是把完成特定功能的一段代码[抽象">
-<meta property="og:updated_time" content="2018-10-18T07:28:02.469Z">
+<meta property="og:updated_time" content="2018-10-19T02:36:01.674Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js函数的概念和作用">
 <meta name="twitter:description" content="JS函数及作用 函数的概念，及作用 函数的声明 如何执行函数（调用） 函数的参数（实参，形参）,返回值 arguments 作用域 DOM的简单操作 递归   在js的世界里存在函数，函数是把强大的功能集中在一起； 调用函数，执行函数中具体的代码，最终把函数的功能实现了； 书写步骤： ​    1、在标签或文件里书写函数 ​    2、在一处调用  1、概念：函数就是把完成特定功能的一段代码[抽象">
@@ -214,6 +214,27 @@
 <p>也就是形参数量，多个形参通过逗号隔开；</p>
 <p>2、编写函数；</p>
 <p>3、确认返回值；（只会执行一个）</p>
+<h2 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h2><blockquote>
+<p>每一个函数内部都有一个arguments</p>
+</blockquote>
+<p>功能： 当我们调用函数的时候，给函数传入实参，会全部存储在arguments里面。</p>
+<p>使用arguments</p>
+<p>​    arguments.length 传入了几个实参</p>
+<p>​    arguments[下标]    通过索引访问</p>
+<p>ps：为了让函数可读性更高，尽量不要用arguments</p>
+<h3 id="函数递归"><a href="#函数递归" class="headerlink" title="函数递归"></a>函数递归</h3><p>特点：</p>
+<p>​    1、函数自己调用自己；</p>
+<p>​    2、递归函数一般都有参数；</p>
+<p>​    3、递归函数一般都有return；</p>
+<p>功能：</p>
+<p>​    循环能做的，递归都能做，循环做不到的递归也能做；</p>
+<p>作用：</p>
+<p>​    精简代码</p>
+<h4 id="递归的规律"><a href="#递归的规律" class="headerlink" title="递归的规律"></a>递归的规律</h4><p>​    1、找出临界值（），临界值无需计算直接可以得出</p>
+<p>​    2、找出第n次和第n-1次的关系</p>
+<p>​    3、假设函数运行，写出第n次和第n-1次的关系</p>
+<p>1、递归会导致内存溢出，尾递归除外- -</p>
+<p>2、为了能回溯，递归函数的参数和地址需要分配在 call stack 上，大部分语言的 call stack 大小都是有限的，递归太深就会爆掉</p>
 
       
 
@@ -322,6 +343,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/10/19/js作用域/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          js作用域
+        
+      </div>
+    </a>
   
   
     <a href="/2018/10/18/如何在JavaScript中获取CSS值/" id="article-nav-older" class="article-nav-link-wrap">
@@ -455,19 +485,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">H5 js 函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">H5 js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">H5 js 循环</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">H5 js 函数</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -488,10 +522,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">H5 js</a>
               </li>
             
             <div class="clearfix"></div>
