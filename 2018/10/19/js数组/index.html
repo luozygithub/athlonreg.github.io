@@ -18,7 +18,7 @@
 <meta property="og:image" content="c:/Users/罗中运/AppData/Local/Temp/chrome_drag6452_26913/Image.png">
 <meta property="og:image" content="c:/Users/罗中运/AppData/Local/Temp/chrome_drag6452_6292/Image.png">
 <meta property="og:image" content="https://img-blog.csdn.net/20161022234725144">
-<meta property="og:updated_time" content="2018-10-22T02:24:45.217Z">
+<meta property="og:updated_time" content="2018-10-22T02:50:00.177Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js数组">
 <meta name="twitter:description" content="1//underfined、null、boolean、string、number为基本数值类型。逗号一并定义初始化多个变量。基本包装类型String、Boolean、Number通过valueOf()可以获取基本数值类型，可以实现自动装箱和拆箱操作。 ​      数组：存储批量数据的一个数据结构 数据类型： ​    基本数据类型： ​        数字 ​        字符串 ​">
@@ -241,6 +241,32 @@
 <p>​    格式：数组2 = concat（数组1，元素1，元素2，…）；</p>
 <p>var arr2 = arr1.concat();//生成了一个新数组赋值给arr2，而不是将引用（地址）赋值给arr2；</p>
 <p><img src="https://img-blog.csdn.net/20161022234725144" alt="这里写图片描述">；</p>
+<h3 id="slice方法"><a href="#slice方法" class="headerlink" title="slice方法"></a>slice方法</h3><p>格式： 数组.slice（start，end）；</p>
+<p>参数：start 开始提取的位置</p>
+<p>​    end 结束提取的位置</p>
+<p>​    提取的元素范围[start,end)；</p>
+<h5 id="提取元素但不会修改原数组"><a href="#提取元素但不会修改原数组" class="headerlink" title="提取元素但不会修改原数组"></a>提取元素但不会修改原数组</h5><p>返回值：提取到的元素，组成的元素；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr1 = [&quot;num1&quot;,&quot;num2&quot;,&quot;num3&quot;];</span><br><span class="line">var arr2 = arr1.slice(1,2);//num2</span><br></pre></td></tr></table></figure>
+<h3 id="splice方法"><a href="#splice方法" class="headerlink" title="splice方法"></a>splice方法</h3><p>功能增删改数组</p>
+<blockquote>
+<p>格式：数组.splice(start,length,元素1，元素2，…)；</p>
+<p>功能1：删除选中的元素：数组.splice(start,length）；</p>
+<p>功能2：插入元素数组.splice(start,0，元素1，元素2，….）；</p>
+<p>功能3：混合使用 数组.splice(start,1，元素);//替换了start位置的元素；</p>
+<p>返回值是删除元素的数组；</p>
+<p>第一个参数：开始截取的下标</p>
+<p>第二个参数：截取元素的长度</p>
+<p>第三个和之后的参数，插入的元素</p>
+</blockquote>
+<h3 id="join方法"><a href="#join方法" class="headerlink" title="join方法"></a>join方法</h3><blockquote>
+<p>格式“数组.jion（字符串）；</p>
+<p>参数：拼接的拼接符</p>
+<p>返回值：拼接完成的字符串；</p>
+</blockquote>
+<h4 id="reverse方法"><a href="#reverse方法" class="headerlink" title="reverse方法"></a>reverse方法</h4><blockquote>
+<p>数组逆至</p>
+</blockquote>
+<p>ps :<strong>concat slice jion不修改原数组；</strong></p>
 
       
 
@@ -491,11 +517,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">H5 js</a>
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+                <a href="javascript:void(0)" class="js-tag color1">H5 js</a>
               </li>
              
               <li class="article-tag-list-item">
