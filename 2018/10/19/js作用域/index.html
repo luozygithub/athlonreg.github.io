@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://www.luozy.top">
   <title>js作用域 | luozy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="程序必须读到内存中，才能被CPU运行。 声明变量 分配内存空间的过程。 函数调用，函数运行的时候，需要内存空间来运行； 【注】 ​    在某一函数内声明的变量或形参（形参在函数内和变量基本一致），它的生命周期是这个函数调用开始到这个函数调用结束，销毁； 作用域：​    局部作用域：每一个函数都死一个局部作用域。 ​            在局部作用域里面声明的变量和形参，叫局部变量； ​">
+  <meta name="description" content="[TOC] 程序必须读到内存中，才能被CPU运行。 声明变量 分配内存空间的过程。 函数调用，函数运行的时候，需要内存空间来运行； 【注】 ​    在某一函数内声明的变量或形参（形参在函数内和变量基本一致），它的生命周期是这个函数调用开始到这个函数调用结束，销毁； 作用域：​    局部作用域：每一个函数都死一个局部作用域。 ​            在局部作用域里面声明的变量和形参，叫局部变量">
 <meta name="keywords" content="H5 js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js作用域">
 <meta property="og:url" content="http://www.luozy.top/2018/10/19/js作用域/index.html">
 <meta property="og:site_name" content="luozy&#39;s Blog">
-<meta property="og:description" content="程序必须读到内存中，才能被CPU运行。 声明变量 分配内存空间的过程。 函数调用，函数运行的时候，需要内存空间来运行； 【注】 ​    在某一函数内声明的变量或形参（形参在函数内和变量基本一致），它的生命周期是这个函数调用开始到这个函数调用结束，销毁； 作用域：​    局部作用域：每一个函数都死一个局部作用域。 ​            在局部作用域里面声明的变量和形参，叫局部变量； ​">
-<meta property="og:updated_time" content="2018-10-19T02:04:35.353Z">
+<meta property="og:description" content="[TOC] 程序必须读到内存中，才能被CPU运行。 声明变量 分配内存空间的过程。 函数调用，函数运行的时候，需要内存空间来运行； 【注】 ​    在某一函数内声明的变量或形参（形参在函数内和变量基本一致），它的生命周期是这个函数调用开始到这个函数调用结束，销毁； 作用域：​    局部作用域：每一个函数都死一个局部作用域。 ​            在局部作用域里面声明的变量和形参，叫局部变量">
+<meta property="og:updated_time" content="2018-10-23T06:13:09.057Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js作用域">
-<meta name="twitter:description" content="程序必须读到内存中，才能被CPU运行。 声明变量 分配内存空间的过程。 函数调用，函数运行的时候，需要内存空间来运行； 【注】 ​    在某一函数内声明的变量或形参（形参在函数内和变量基本一致），它的生命周期是这个函数调用开始到这个函数调用结束，销毁； 作用域：​    局部作用域：每一个函数都死一个局部作用域。 ​            在局部作用域里面声明的变量和形参，叫局部变量； ​">
+<meta name="twitter:description" content="[TOC] 程序必须读到内存中，才能被CPU运行。 声明变量 分配内存空间的过程。 函数调用，函数运行的时候，需要内存空间来运行； 【注】 ​    在某一函数内声明的变量或形参（形参在函数内和变量基本一致），它的生命周期是这个函数调用开始到这个函数调用结束，销毁； 作用域：​    局部作用域：每一个函数都死一个局部作用域。 ​            在局部作用域里面声明的变量和形参，叫局部变量">
   
     <link rel="alternative" href="/atom.xml" title="luozy&#39;s Blog" type="application/atom+xml">
   
@@ -164,7 +164,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>程序必须读到内存中，才能被CPU运行。</p>
+        <p>[TOC]</p>
+<p>程序必须读到内存中，才能被CPU运行。</p>
 <p>声明变量 分配内存空间的过程。</p>
 <p>函数调用，函数运行的时候，需要内存空间来运行；</p>
 <p>【注】</p>
@@ -189,6 +190,7 @@
 <p>​        var b = ‘bb’;</p>
 <p>​        return b;</p>
 <p>​    }</p>
+<p>【注】：如果不写var直接声明变量，那么这个变量将会被声明为全局变量。</p>
 
       
 
@@ -439,6 +441,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">H5 js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
@@ -447,15 +453,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">H5 js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">H5 js 函数</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">js H5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">H5 js 循环</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -472,10 +482,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">js H5</a>
               </li>
             
             <div class="clearfix"></div>

@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://www.luozy.top">
   <title>js排序 | luozy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="系统自带系统有自带的sort排序方法，但是他是对字符串进行判断排序 所以要对数字排序要给他写一个判断方法： 1234567891011 function sequence(a,b)&amp;#123;     if(a &amp;gt; b)&amp;#123;         return 1;     &amp;#125;else if(a &amp;lt; b)&amp;#123;         return -1;     &amp;#125">
+  <meta name="description" content="[TOC] 系统自带系统有自带的sort排序方法，但是他是对字符串进行判断排序 所以要对数字排序要给他写一个判断方法： 1234567891011 function sequence(a,b)&amp;#123;     if(a &amp;gt; b)&amp;#123;         return 1;     &amp;#125;else if(a &amp;lt; b)&amp;#123;         return -1;">
 <meta name="keywords" content="H5 js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js排序">
 <meta property="og:url" content="http://www.luozy.top/2018/10/22/js排序/index.html">
 <meta property="og:site_name" content="luozy&#39;s Blog">
-<meta property="og:description" content="系统自带系统有自带的sort排序方法，但是他是对字符串进行判断排序 所以要对数字排序要给他写一个判断方法： 1234567891011 function sequence(a,b)&amp;#123;     if(a &amp;gt; b)&amp;#123;         return 1;     &amp;#125;else if(a &amp;lt; b)&amp;#123;         return -1;     &amp;#125">
-<meta property="og:updated_time" content="2018-10-22T08:26:42.074Z">
+<meta property="og:description" content="[TOC] 系统自带系统有自带的sort排序方法，但是他是对字符串进行判断排序 所以要对数字排序要给他写一个判断方法： 1234567891011 function sequence(a,b)&amp;#123;     if(a &amp;gt; b)&amp;#123;         return 1;     &amp;#125;else if(a &amp;lt; b)&amp;#123;         return -1;">
+<meta property="og:updated_time" content="2018-10-23T03:05:14.294Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js排序">
-<meta name="twitter:description" content="系统自带系统有自带的sort排序方法，但是他是对字符串进行判断排序 所以要对数字排序要给他写一个判断方法： 1234567891011 function sequence(a,b)&amp;#123;     if(a &amp;gt; b)&amp;#123;         return 1;     &amp;#125;else if(a &amp;lt; b)&amp;#123;         return -1;     &amp;#125">
+<meta name="twitter:description" content="[TOC] 系统自带系统有自带的sort排序方法，但是他是对字符串进行判断排序 所以要对数字排序要给他写一个判断方法： 1234567891011 function sequence(a,b)&amp;#123;     if(a &amp;gt; b)&amp;#123;         return 1;     &amp;#125;else if(a &amp;lt; b)&amp;#123;         return -1;">
   
     <link rel="alternative" href="/atom.xml" title="luozy&#39;s Blog" type="application/atom+xml">
   
@@ -164,7 +164,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="系统自带"><a href="#系统自带" class="headerlink" title="系统自带"></a>系统自带</h2><p>系统有自带的sort排序方法，但是他是对字符串进行判断排序</p>
+        <p>[TOC]</p>
+<h2 id="系统自带"><a href="#系统自带" class="headerlink" title="系统自带"></a>系统自带</h2><p>系统有自带的sort排序方法，但是他是对字符串进行判断排序</p>
 <p>所以要对数字排序要给他写一个判断方法：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">sequence</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(a &gt; b)&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">     &#125;<span class="keyword">else</span> <span class="keyword">if</span>(a &lt; b)&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">     &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">5</span> ,<span class="number">56</span>, <span class="number">65</span>, <span class="number">84</span>, <span class="number">98</span>];</span><br><span class="line">alert(arr.sort(sequence));</span><br></pre></td></tr></table></figure>
 <h2 id="用户编写"><a href="#用户编写" class="headerlink" title="用户编写"></a>用户编写</h2><h3 id="1、冒泡排序"><a href="#1、冒泡排序" class="headerlink" title="1、冒泡排序"></a>1、冒泡排序</h3><p>​                数组：9, 8, 7, 6, 5, 4<br>​                第一轮：五次<br>​                    9, 8, 7, 6, 5, 4<br>​                    8, 9, 7, 6, 5, 4<br>​                    8, 7, 9, 6, 5, 4<br>​                    8, 7, 6, 9, 5, 4<br>​                    8, 7, 6, 5, 9, 4<br>​                    8, 7, 6, 5, 4, 9</p>
@@ -298,6 +299,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/10/23/ECMA5新增标签/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ECMA5新增标签
+        
+      </div>
+    </a>
+  
   
     <a href="/2018/10/20/JavaScript组成/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">JavaScript组成</div>
@@ -430,6 +440,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">H5 js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
@@ -438,15 +452,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">H5 js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">H5 js 函数</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">js H5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">H5 js 循环</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -463,10 +481,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">js H5</a>
               </li>
             
             <div class="clearfix"></div>

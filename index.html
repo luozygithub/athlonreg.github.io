@@ -144,6 +144,391 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-字符串String" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/23/字符串String/">字符串String</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/23/字符串String/" class="archive-article-date">
+  	<time datetime="2018-10-23T07:15:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>所有使用单引号或者双引号括起来的内容，都叫字符串。</p>
+<p>​    【注】单引号和双引号没有区别，单引号如果嵌套，要交替使用。</p>
+<p>声明字符串</p>
+<p>1、new</p>
+<p>var str = new String(1000);</p>
+<p>alert(typeof str);//object</p>
+<p>2、省略new 声明字符串</p>
+<p>var str2 = String(1000);</p>
+<p>alert(typeof str);//String</p>
+<p>var str = “1000”;</p>
+<p>alert(typeof str);//string</p>
+<blockquote>
+<p>上述三种不同声明方法使用起来没有区别</p>
+</blockquote>
+<h4 id="字符串数据类型"><a href="#字符串数据类型" class="headerlink" title="字符串数据类型"></a>字符串数据类型</h4><p>​    即是基本数据类型，又是复合数据类型。</p>
+<p>变量存的是字符串的地址</p>
+<p>字符串只读一旦被声明就没法修改，只能抹去重新赋值</p>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>str.length</p>
+<p>返回当前字符串中字符个数，汉字相当于一个字符；</p>
+<p>访问字符串某一个字符</p>
+<p>可以通过 str[下标]</p>
+<p>【注】只读不可修改</p>
+<p>+拼接字符串</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h5 id="big-用大号字体显示字符串"><a href="#big-用大号字体显示字符串" class="headerlink" title="big()                 用大号字体显示字符串"></a>big()                 用大号字体显示字符串</h5><h5 id="blink-显示闪动字符串-IE下无效"><a href="#blink-显示闪动字符串-IE下无效" class="headerlink" title="blink()              显示闪动字符串(IE下无效)"></a>blink()              显示闪动字符串(IE下无效)</h5><h5 id="bold-使用粗体显示字符串"><a href="#bold-使用粗体显示字符串" class="headerlink" title="bold()               使用粗体显示字符串"></a>bold()               使用粗体显示字符串</h5><h5 id="fixed-以打字机文本显示字符串"><a href="#fixed-以打字机文本显示字符串" class="headerlink" title="fixed()              以打字机文本显示字符串"></a>fixed()              以打字机文本显示字符串</h5><h5 id="strike-使用删除线来显示字符串"><a href="#strike-使用删除线来显示字符串" class="headerlink" title="strike()             使用删除线来显示字符串"></a>strike()             使用删除线来显示字符串</h5><h5 id="fontcolor-使用指定颜色来显示字符串"><a href="#fontcolor-使用指定颜色来显示字符串" class="headerlink" title="fontcolor()       使用指定颜色来显示字符串"></a>fontcolor()       使用指定颜色来显示字符串</h5><h5 id="fontsize-使用指定尺寸来显示字符串"><a href="#fontsize-使用指定尺寸来显示字符串" class="headerlink" title="fontsize()         使用指定尺寸来显示字符串"></a>fontsize()         使用指定尺寸来显示字符串</h5><h5 id="link-将字符串显示为链接"><a href="#link-将字符串显示为链接" class="headerlink" title="link()                将字符串显示为链接"></a>link()                将字符串显示为链接</h5><h5 id="sub-把字符串显示为下标"><a href="#sub-把字符串显示为下标" class="headerlink" title="sub()                把字符串显示为下标"></a>sub()                把字符串显示为下标</h5><h5 id="sup-把字符串显示为上标"><a href="#sup-把字符串显示为上标" class="headerlink" title="sup()                把字符串显示为上标"></a>sup()                把字符串显示为上标</h5><p>document.write()中使用,用特殊的样式输出该字符串。</p>
+<h3 id="字符串的方法-字符串的获取方法"><a href="#字符串的方法-字符串的获取方法" class="headerlink" title="字符串的方法-字符串的获取方法"></a>字符串的方法-字符串的获取方法</h3><p>charAt(3)         <strong>//获取下标为3的字符</strong></p>
+<p>charCodeAt(3)     <strong>//获取下标为3的字符的编码</strong></p>
+<p>【注】上述两个方法使用字符串对象调用</p>
+<p>fromCharCode(94)  <strong>//编码转换成字符</strong></p>
+<p> 该方法是 String 的静态方法，所以用String调用，        </p>
+<p>如：var str = String.fromCharCode(97,98,99);</p>
+<h3 id="字符串的查找方法"><a href="#字符串的查找方法" class="headerlink" title="字符串的查找方法"></a>字符串的查找方法</h3><p>​    <1>indexOf(“abc”, start);   查找字符串第一次出现的位置，可以传两个参数</1></p>
+<p>​    <2>lastIndexOf(“abc”);      查找字符串最后一次出现的位置  如果没有找到  返回-1</2></p>
+<p>​    <3>search()  正则匹配(返回出现的位置)</3></p>
+<h4 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf"></a>indexOf</h4><p>格式： supStr.indexOf(subStr, start);</p>
+<p>参数： subStr 子串 start 开始查找的位置</p>
+<p>功能： 在supStr中找出subStr第一次出现的位置，从start得到位置开始找</p>
+<p>返回值： -1没找到</p>
+<p>​        &gt;=0 找到了并返回位置</p>
+<h4 id="lastIndexOf"><a href="#lastIndexOf" class="headerlink" title="lastIndexOf()"></a>lastIndexOf()</h4><p>与indexOf类似不过是从后往前找</p>
+<h4 id="search"><a href="#search" class="headerlink" title="search()"></a>search()</h4><p>格式： supStr.search(subStr/正则表达式);//只有一个参数</p>
+<p>功能： 在supStr中找出subStr第一次出现的位置</p>
+<p>ps：正则表达式是个功能更加强大的字符串</p>
+<p>返回值： -1没找到</p>
+<p>​        &gt;=0 找到了并返回位置</p>
+<h3 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h3><h4 id="replace-替换"><a href="#replace-替换" class="headerlink" title="replace()替换"></a>replace()替换</h4><p>格式： supStr.replace(oldStr/ 正则表达式，newStr);</p>
+<p>功能:    用newstr替换oldStr；</p>
+<p>返回值： 新生成的字符串//不会改变原来的字符串；</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"how are you”;</span></span><br><span class="line"><span class="string">	 alert(str);//"</span>how are you”;</span><br><span class="line">     alert(str.replace(“are”, “old are”)); <span class="comment">//"how old are you”;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//这里的替换只能执行一次，不能够进行全局匹配，如果需要全局匹配，则应使用正则表达式： str.replace(/are/gi,"old are") g表示进行全局匹配，i表示匹配的时候忽略大小写</span></span><br></pre></td></tr></table></figure>
+<h4 id="substring"><a href="#substring" class="headerlink" title="substring()"></a>substring()</h4><p>和数组slice工能类似</p>
+<p>格式： 字符串.substring（start，end）；</p>
+<p>功能： 提取指定范围内的字符串，生成一个新的字符串[start, end)</p>
+<h4 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h4><p>格式： 字符串.splite(分隔符， 数字) ；</p>
+<p>参数： 第二个：控制返回的数组中元素的个数，一般情况下不传；</p>
+<p>功能： 用分隔符将字符串分割成小的字符串，放在数组中；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;Hello world , hi&quot;</span><br><span class="line">var strArr = str.split(&quot; &quot;);//Hello,world,,,hi</span><br><span class="line"></span><br><span class="line">//特殊用法使用空字符串分割</span><br><span class="line">结果：将字符串每个字符分割放在数组里；</span><br></pre></td></tr></table></figure>
+<h4 id="toLowerCase"><a href="#toLowerCase" class="headerlink" title="toLowerCase()"></a>toLowerCase()</h4><p>转小写</p>
+<h4 id="toUpperCase"><a href="#toUpperCase" class="headerlink" title="toUpperCase()"></a>toUpperCase()</h4><p>转大写</p>
+<table>
+<thead>
+<tr>
+<th>不改变原来字符串，而是生成新的字符串</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>replace</td>
+<td></td>
+</tr>
+<tr>
+<td>concat</td>
+<td></td>
+</tr>
+<tr>
+<td>split</td>
+<td></td>
+</tr>
+<tr>
+<td>substr</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">st-&gt;op-&gt;condasd</span><br></pre></td></tr></table></figure>
+<p>substr与substring区别</p>
+<p>substr返回的字符串包括结束处字符，而substring不包括</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/23/字符串String/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-let和var的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/23/let和var的区别/">let和var的区别</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/23/let和var的区别/" class="archive-article-date">
+  	<time datetime="2018-10-23T03:32:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="let与var"><a href="#let与var" class="headerlink" title="let与var"></a>let与var</h1><p>let是ES6新增的变量类型，是用来替代var的设计，与var不同的是：</p>
+<p>1、let使用块级作用域<br>2、let不支持在同作用域中声明标识符相同的变量<br>3、let用TDZ禁止了声明前访问<br>我们一条一条说明：</p>
+<p>1、JavaScript的作用域（scope）只有全局和局部，对于var声明的变量，只有函数才能为它创建新的作用域，而let支持块级作用域，花括号就能为它创建新的作用域；<br>2、相同作用域，var可以反复声明相同标识符的变量，而let是不允许的;<br>3、let声明的变量禁止在声明前访问，这也是为什么很多人认为let是不支持变量提升的原因，但真的是这样吗？我们来讨论这个问题：</p>
+<p>我们先说明一下什么是变量提升（hoisting）</p>
+<h3 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h3><p><a href="https://blog.csdn.net/demo_18/article/details/78493489" target="_blank" rel="noopener">https://blog.csdn.net/demo_18/article/details/78493489</a></p>
+<p>先上一个简单的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">"hey I am now hoisting"</span>;</span><br></pre></td></tr></table></figure>
+<p>看起来，我们在a被声明前调用a，没有报错，反而是返回一个undefined值，原因是：a其实已经在调用前被声明了，只是没有被初始化。JavaScript会把作用域里的所有变量和函数提到函数的顶部声明，相当于：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line">a = <span class="string">"hey I am now hoisting"</span>;</span><br></pre></td></tr></table></figure>
+<p>JavaScript会使用undefined缺省值创建变量a，注意，事实上浏览器并没有把声明语句放到作用域的顶部，在编译阶段，控制流进入域，该域所有的变量和函数的声明先进入内存，文中代码的相对位置不会变动的。</p>
+<p>由此可以知道，变量提升指的是变量声明的提升，不会提升变量的初始化和赋值。</p>
+<p>对于let来说，情况有点不同:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//Uncaught ReferenceError: a is not defined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = <span class="string">"hey I am now hoisting"</span>;</span><br><span class="line"></span><br><span class="line">这里抛出了一个错误，浏览器认为a并没有声明，这是否意味着<span class="keyword">let</span>并没有使a变量提升呢？我们再看一个例子</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = <span class="string">"hey I am outside"</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);<span class="comment">//Uncaught ReferenceError: a is not defined</span></span><br><span class="line">    <span class="keyword">let</span> a = <span class="string">"hey I am inside"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意看，这里同样抛出了一个错误，认为a没有声明，但是，如果a没有变量提升，执行到console.log时应该是输出全局作用域中的a，而不是出现错误。</p>
+<p>我们可以推知，这里确实出现了变量提升，而我们不能够访问的原因事实上是因为let的死区（temporal dead zone）设计：当前作用域顶部到该变量声明位置中间的部分，都是该let变量的死区，在死区中，禁止访问该变量。由此，我们给出结论，let声明的变量存在变量提升， 但是由于死区我们无法在声明前访问这个变量。</p>
+<h5 id="最后要指出的是，函数也是存在提升（hoisting）的，并且，函数的提升不同于变量的提升，函数相当于把自己的声明、赋值整个的放到了当前作用域的顶部。"><a href="#最后要指出的是，函数也是存在提升（hoisting）的，并且，函数的提升不同于变量的提升，函数相当于把自己的声明、赋值整个的放到了当前作用域的顶部。" class="headerlink" title="最后要指出的是，函数也是存在提升（hoisting）的，并且，函数的提升不同于变量的提升，函数相当于把自己的声明、赋值整个的放到了当前作用域的顶部。"></a>最后要指出的是，函数也是存在提升（hoisting）的，并且，函数的提升不同于变量的提升，函数相当于把自己的声明、赋值整个的放到了当前作用域的顶部。</h5>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/23/let和var的区别/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ECMA5新增标签" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/23/ECMA5新增标签/">ECMA5新增标签</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/23/ECMA5新增标签/" class="archive-article-date">
+  	<time datetime="2018-10-23T02:41:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h3 id="学习目标："><a href="#学习目标：" class="headerlink" title="学习目标："></a>学习目标：</h3><ol>
+<li>ECMA5新增知识点</li>
+<li>严格模式</li>
+<li>新增数组方法</li>
+<li>新增字符串方法</li>
+<li>认识字符串，字符串概念</li>
+<li>字符串的属性和函数</li>
+<li>字符串练习</li>
+<li>实现登录注册严格模式</li>
+</ol>
+<p>  除了正常运行模式，ECMAscript 5 添加了第二种运行模式：”严格模式”（strict mode）。顾名思义，这种模式使得Javascript在更严格的条件下运行。</p>
+<h3 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h3><p>1、在严格模式下，声明变量必须使用var；</p>
+<p>2、在严格模式下， 函数参数不能重名；</p>
+<p>3、</p>
+<p>this无法指向全局对象；</p>
+<script>
+   “use strict”;
+
+
+    console.log(“已经进入严格模式”);
+
+    function a(){
+
+        this.b = 10; //报错，因为this是undefined
+
+    }
+
+    a();
+</script>
+
+
+
+
+
+<p>4、在严格模式下，arguments存储的是函数传参时候的参数，在修改参数值后，arguments里面的值不会改变；    4.1arguments对象不允许被动态改变：</p>
+<p>5、在严格模式下，新增保留字：implements, interface, let, package, private, protected, public, static, yield。</p>
+<h2 id="ECMA新增的数组方法"><a href="#ECMA新增的数组方法" class="headerlink" title="ECMA新增的数组方法"></a>ECMA新增的数组方法</h2><h3 id="indexOf-data-start"><a href="#indexOf-data-start" class="headerlink" title="indexOf(data,start);"></a>indexOf(data,start);</h3><p>格式：数组.indexOf(data, start);</p>
+<p>参数： data     要查找的元素；</p>
+<p>​         start      从哪个位置开始查找</p>
+<p>功能：查找某一个元素在数组中第一次出现的位置。</p>
+<p>返回值：-1没找到； &gt;=找到了</p>
+<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h3><p>功能：数组遍历</p>
+<p>var arr = [‘num1’,’num2’];</p>
+<p>arr.forEach(function(item, index, array){</p>
+<p>​    }</p>
+<p>)</p>
+<p>item    当前遍历到的元素num1;num2；</p>
+<p>index    当前遍历到的元素的下标0；1</p>
+<p>array    遍历的数组本身num1,num2</p>
+<h3 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h3><p>会遍历当前数组，然后调用参数中的方法，返回当前方法的返回值;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]; </span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> newArr = arr.map(<span class="function"><span class="keyword">function</span>(<span class="params">item, index, arr</span>)</span>&#123; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> item + <span class="number">1</span>; </span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(newArr);</span><br><span class="line"></span><br><span class="line"><span class="comment">//map不会改变原有数组，而是将函数执行一次之后的返回值组成一个数组，返回回来。</span></span><br></pre></td></tr></table></figure>
+<h3 id="filter-过滤"><a href="#filter-过滤" class="headerlink" title="filter() 过滤"></a>filter() 过滤</h3><p>var res = [88,69,92,77,90,96,98,99].filter(function(item, index, array){ </p>
+<p>​    return item&gt;80; //找出所有大于80的元素 </p>
+<p>}); </p>
+<p>结果：[88,92,90,96,98,99];//影响原数组</p>
+<h3 id="reduce-归并"><a href="#reduce-归并" class="headerlink" title="reduce()归并"></a>reduce()归并</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> res = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>].reduce(<span class="function"><span class="keyword">function</span>(<span class="params">pre, next, index, array</span>)</span>&#123; </span><br><span class="line">    <span class="comment">//参数中的x和y，代表了之前的处理结果和下一个元素 return x+y; //return的结果会赋值给下一个函数的x参数 </span></span><br><span class="line">&#125;); 结果 ： <span class="number">10</span></span><br></pre></td></tr></table></figure>
+<h3 id="some-某些"><a href="#some-某些" class="headerlink" title="some()某些"></a>some()某些</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>([<span class="string">"yt"</span>,<span class="string">"hr"</span>,<span class="string">"wc"</span>,<span class="string">"jk"</span>].some(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123; </span><br><span class="line"><span class="comment">//判断数组中是否存在yt？ 如果找到了匹配的元素就不在运行了</span></span><br><span class="line">    <span class="keyword">return</span> item==<span class="string">"yt”; </span></span><br><span class="line"><span class="string">&#125;))&#123; </span></span><br><span class="line"><span class="string">    alert("</span>好的！<span class="string">"); </span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="every"><a href="#every" class="headerlink" title="every()"></a>every()</h3><p>跟some一样，但要求每一项都符合，才返回true 有一项不合格就返回false</p>
+<h3 id="String的trim方法"><a href="#String的trim方法" class="headerlink" title="String的trim方法"></a>String的trim方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">" abc "</span>.trim(); </span><br><span class="line">首尾去空格 </span><br><span class="line"><span class="string">"abc"</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">H5 js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/23/ECMA5新增标签/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-js排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -164,7 +549,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="系统自带"><a href="#系统自带" class="headerlink" title="系统自带"></a>系统自带</h2><p>系统有自带的sort排序方法，但是他是对字符串进行判断排序</p>
+        <p>[TOC]</p>
+<h2 id="系统自带"><a href="#系统自带" class="headerlink" title="系统自带"></a>系统自带</h2><p>系统有自带的sort排序方法，但是他是对字符串进行判断排序</p>
 <p>所以要对数字排序要给他写一个判断方法：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">sequence</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(a &gt; b)&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">     &#125;<span class="keyword">else</span> <span class="keyword">if</span>(a &lt; b)&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">     &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">5</span> ,<span class="number">56</span>, <span class="number">65</span>, <span class="number">84</span>, <span class="number">98</span>];</span><br><span class="line">alert(arr.sort(sequence));</span><br></pre></td></tr></table></figure>
 <h2 id="用户编写"><a href="#用户编写" class="headerlink" title="用户编写"></a>用户编写</h2><h3 id="1、冒泡排序"><a href="#1、冒泡排序" class="headerlink" title="1、冒泡排序"></a>1、冒泡排序</h3><p>​                数组：9, 8, 7, 6, 5, 4<br>​                第一轮：五次<br>​                    9, 8, 7, 6, 5, 4<br>​                    8, 9, 7, 6, 5, 4<br>​                    8, 7, 9, 6, 5, 4<br>​                    8, 7, 6, 9, 5, 4<br>​                    8, 7, 6, 5, 9, 4<br>​                    8, 7, 6, 5, 4, 9</p>
@@ -262,7 +648,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="JavaScript组成部分——ECMAScript、DOM、BOM"><a href="#JavaScript组成部分——ECMAScript、DOM、BOM" class="headerlink" title="JavaScript组成部分——ECMAScript、DOM、BOM"></a>JavaScript组成部分——ECMAScript、DOM、BOM</h2><blockquote>
+        <p>[TOC]</p>
+<h2 id="JavaScript组成部分——ECMAScript、DOM、BOM"><a href="#JavaScript组成部分——ECMAScript、DOM、BOM" class="headerlink" title="JavaScript组成部分——ECMAScript、DOM、BOM"></a>JavaScript组成部分——ECMAScript、DOM、BOM</h2><blockquote>
 <p>虽然 JavaScript 和 ECMAScript 通常被人们用来表达相同的含义，但 JavaScript 的含义却比ECMA-262标准中规定的要多得多。 一个完整的JavaScript应该由下列三个不同的部分组成</p>
 </blockquote>
 <h3 id="核心（ECMAScript）"><a href="#核心（ECMAScript）" class="headerlink" title="核心（ECMAScript）"></a>核心（ECMAScript）</h3><blockquote>
@@ -352,8 +739,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//underfined、null、boolean、string、number为基本数值类型。逗号一并定义初始化多个变量。基本包装类型String、Boolean、Number通过valueOf()可以获取基本数值类型，可以实现自动装箱和拆箱操作。</span><br></pre></td></tr></table></figure>
-<p>​    </p>
+        <p>[TOC]</p>
+<p>//underfined、null、boolean、string、number为基本数值类型。逗号一并定义初始化多个变量。基本包装类型String、Boolean、Number通过valueOf()可以获取基本数值类型，可以实现自动装箱和拆箱操作。</p>
 <blockquote>
 <p>数组：存储批量数据的一个数据结构</p>
 <p>数据类型：</p>
@@ -525,7 +912,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>程序必须读到内存中，才能被CPU运行。</p>
+        <p>[TOC]</p>
+<p>程序必须读到内存中，才能被CPU运行。</p>
 <p>声明变量 分配内存空间的过程。</p>
 <p>函数调用，函数运行的时候，需要内存空间来运行；</p>
 <p>【注】</p>
@@ -550,6 +938,7 @@
 <p>​        var b = ‘bb’;</p>
 <p>​        return b;</p>
 <p>​    }</p>
+<p>【注】：如果不写var直接声明变量，那么这个变量将会被声明为全局变量。</p>
 
       
 
@@ -623,7 +1012,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="JS函数及作用"><a href="#JS函数及作用" class="headerlink" title="JS函数及作用"></a>JS函数及作用</h1><ol>
+        <p>[TOC]</p>
+<h1 id="JS函数及作用"><a href="#JS函数及作用" class="headerlink" title="JS函数及作用"></a>JS函数及作用</h1><ol>
 <li>函数的概念，及作用</li>
 <li>函数的声明</li>
 <li>如何执行函数（调用）</li>
@@ -935,425 +1325,9 @@
 
 
   
-    <article id="post-js流程控制语句" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/17/js流程控制语句/">js流程控制语句</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/17/js流程控制语句/" class="archive-article-date">
-  	<time datetime="2018-10-17T06:29:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="流程控制语句"><a href="#流程控制语句" class="headerlink" title="流程控制语句"></a>流程控制语句</h1><h4 id="1、顺序结构"><a href="#1、顺序结构" class="headerlink" title="1、顺序结构"></a>1、顺序结构</h4><p>​    默认</p>
-<h4 id="2、选择结构-分支语句-条件语句（双分支语句if、多分支语句switch）"><a href="#2、选择结构-分支语句-条件语句（双分支语句if、多分支语句switch）" class="headerlink" title="2、选择结构/分支语句/条件语句（双分支语句if、多分支语句switch）"></a>2、选择结构/分支语句/条件语句（双分支语句if、多分支语句switch）</h4><blockquote>
-<p>if(条件判断语句){</p>
-<p>​    代码；</p>
-<p>}else{</p>
-<p>​    代码；</p>
-<p>}</p>
-<p>switch(){</p>
-<p>​    case ‘情形1’ ：代码；</p>
-<p>​    case ‘情形2’ ：代码；</p>
-<p>}</p>
-</blockquote>
-<h4 id="3、循环机构"><a href="#3、循环机构" class="headerlink" title="3、循环机构"></a>3、循环机构</h4><blockquote>
-<p>循环：重复去做一件事情</p>
-</blockquote>
-<h5 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h5><blockquote>
-<p>格式：</p>
-<p>for(表达式1；表达式2；表达式3){</p>
-<p>​    循环的代码；</p>
-<p>}</p>
-<p>执行过程：</p>
-<p>​    1、先会去执行表达式1，再去判断表达式2，如果表达式为 true，执行循环代码。如果表达式为false，结束循环。</p>
-<p>​    2、再去执行表达式3，判断表达式2是否成立，重复1,2。</p>
-<p>ps:好处：必要表达式不容易丢；</p>
-</blockquote>
-<h5 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h5><blockquote>
-<p>循环格式：</p>
-<p>​    while（循环条件）{</p>
-<p>​        如果条件成立，运行此处代码；</p>
-<p>​    }</p>
-<p>循环编写过程：</p>
-<p>1、确定循环次数</p>
-<p>2、每次执行的动作</p>
-<p>ps: 注意不要造成死循环</p>
-</blockquote>
-<h5 id="do-while循环"><a href="#do-while循环" class="headerlink" title="do while循环"></a>do while循环</h5><blockquote>
-<p>与while基本相同</p>
-<p>唯一区别：do while 第一次会先执行再去判断。</p>
-</blockquote>
-<p>【注】：</p>
-<p>do{</p>
-<p>}while();</p>
-<p>while后面的；不可省略</p>
-<p>ps: do while 几乎不用 ， while循环用的比较少， for循环经常使用</p>
-<h4 id="循环嵌套"><a href="#循环嵌套" class="headerlink" title="循环嵌套"></a>循环嵌套</h4><p>for( ;  ;  ;){    </p>
-<p>​    for( ; ; ;){</p>
-<p>​    }</p>
-<p>}</p>
-<p>while(){</p>
-<p>​    for( ; ; ;){</p>
-<p>​    }</p>
-<p>}</p>
-<h5 id="【注】：变量循环要由0开始"><a href="#【注】：变量循环要由0开始" class="headerlink" title="【注】：变量循环要由0开始"></a>【注】：变量循环要由0开始</h5><h4 id="break与cotinue"><a href="#break与cotinue" class="headerlink" title="break与cotinue"></a>break与cotinue</h4><blockquote>
-<p>break</p>
-<p>​    功能：结束当前循环。</p>
-<p>continue</p>
-<p>​    功能：跳过这次循环，直接进入下次循环。</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">js H5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/17/js流程控制语句/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/17/js基础/">js基础</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/17/js基础/" class="archive-article-date">
-  	<time datetime="2018-10-17T00:49:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="js组成"><a href="#js组成" class="headerlink" title="js组成"></a>js组成</h2><blockquote>
-<p>JavaScript</p>
-<p>1、ECMAScript标准 4.0 5.0 6.0</p>
-<p>2、BoM   浏览器对象</p>
-<p>3、DOM 对象</p>
-</blockquote>
-<h3 id="JS语法规范"><a href="#JS语法规范" class="headerlink" title="JS语法规范"></a>JS语法规范</h3><blockquote>
-<p>srcipt标签两个作用</p>
-</blockquote>
-<p>1、方法一 js代码写在script标签里面</p>
-<p>2、方法二 外部引入js文件方式</p>
-<p>ps: 不可混合使用</p>
-<p>执行顺序自上而下</p>
-<p>type表明要执行的内容格式</p>
-<p>如不可：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span> = <span class="string">"demo.js"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	alert(<span class="string">"hello world"</span>);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h4><p>1、代码缩进；</p>
-<p>2、每一条语句结尾都加一个分号；</p>
-<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p>单行注释 // ctrl ＋ /</p>
-<p>多行注释 /<em>  </em>/  ctrl ＋ shift ＋ /</p>
-<h2 id="js输出方式"><a href="#js输出方式" class="headerlink" title="js输出方式"></a>js输出方式</h2><blockquote>
-<p>1） alert(); //弹出警告框，在警告框上显示内容</p>
-<p>2）document write(); // 直接显示在页面上</p>
-<p>3）console log(); //控制台输出，一般用来调试代码用的</p>
-</blockquote>
-<p>ps：</p>
-<p>document.write(“hello world”);<br>document.write(“</p><h1>hello <em>world</em><h1>“);<br>console.log(“hello”);<p></p>
-<p>要想输出标签要用 &amp;lt； 和&amp;gt；</p>
-<h2 id="document-write-“-lt-srcipt-gt-”"><a href="#document-write-“-lt-srcipt-gt-”" class="headerlink" title="document.write(“&lt;srcipt &gt;”);"></a>document.write(“&lt;srcipt &gt;”);</h2><h2 id="常量和变量"><a href="#常量和变量" class="headerlink" title="常量和变量"></a>常量和变量</h2><h5 id="常量（字面量）"><a href="#常量（字面量）" class="headerlink" title="常量（字面量）"></a>常量（字面量）</h5><blockquote>
-<p>数据类型: </p>
-<p>​    基本数据类型：</p>
-<p>​    number 数字 0, 10 ,3.14</p>
-<p>​    string  字符串 所带单引号和双引号的都叫字符串</p>
-<p>​    boolean 布尔值 true false</p>
-<p>​    特殊数据类型：</p>
-<p>​    null 空</p>
-<p>​    undefined 未声明</p>
-<p>​    NaN not a number 不是一个数字</p>
-<p>关键字（有特殊功能的单词）：typeof ；//输出当前数据的输出类型。</p>
-</blockquote>
-<h5 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h5><blockquote>
-<p>值可以修改的叫做变量</p>
-<p>​    1、声明变量，适合内存申请一部分空间，存储数据</p>
-<p>​    2、变量的数据，是根据存储的数据决定的</p>
-<p>​    初始化：声明变量后接着赋值叫做初始化</p>
-<p>​    【注】如果声明变量的时候，没有赋值，默认是undefined。</p>
-<p>​    /*</p>
-<p>​        避免后续赋值的时候多出抹除undefined操作，先将值赋值为null。</p>
-<p>​    */</p>
-<p>​    </p>
-</blockquote>
-<h2 id="命名规则："><a href="#命名规则：" class="headerlink" title="命名规则："></a>命名规则：</h2><blockquote>
-<p>【注】所有用户自定义的名字都叫标识符，变量名也叫标识符</p>
-<p>*只能有数字、字母、下划线、$组成</p>
-<p>​    *变量名不能有数字开头</p>
-<p>​    *不能用关键字（如typeof）和保留字（系统已经征用的）</p>
-<p>​    *js区分大小写 a和A不是一个</p>
-<p>​    *见名思意</p>
-<p>​    *尽量别用拼音和缩写，使用英文全拼（驼峰式命名className/烤串式命名class_name）</p>
-</blockquote>
-<p>​    </p>
-<p>var num = 10；</p>
-<p>alert（num）；</p>
-<h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3><p>32 位操作系统</p>
-<p>64位操作系统</p>
-<p>位：地址总线 可最大寻址数</p>
-<h4 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h4><p>十进制转2进制：</p>
-<pre><code>要从右到左用二进制的每个数去乘以2的相应次方,小数点后则是从左往右
-</code></pre><p>num.toString(2);</p>
-<p>num.toString(8);</p>
-<p>num.toString(10);</p>
-<p>num.toString(16);</p>
-<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><p>算术运算符 + - * /</p>
-<p>关系运算符 &lt; &gt; &gt;= &lt;= == === !=</p>
-<p>逻辑运算符 &amp;&amp; || ！</p>
-<p>赋值运算符 -= += /= %=</p>
-<p>自增 、自减 ++ –</p>
-<h3 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h3><blockquote>
-<p>概念： 任何运算符和操作数（变量/常量）组成的式子都叫做表达式；</p>
-<p>1、表达式的值</p>
-<p>2、表达式的功能</p>
-</blockquote>
-<h2 id="算术表达式"><a href="#算术表达式" class="headerlink" title="算术表达式"></a>算术表达式</h2><p>算术运算符和操作符组成的式子</p>
-<p>1、如果两个数都是数字，进行数学运算</p>
-<p>2、不同类型数据进行运算，会进行自动类型数据转换</p>
-<h4 id="自动数据类型转换"><a href="#自动数据类型转换" class="headerlink" title="自动数据类型转换"></a>自动数据类型转换</h4><p>1、假设进行的运算是加法运算，并且一种有一个操作数是字符串，那么运算会变成字符串拼接</p>
-<p>如： ‘10’+123=”10123”;</p>
-<p>2、任何数据类型做除加法以外的运算，都会将别的类型转换为数字再进行运算。</p>
-<p>ps: </p>
-<p>1）当把一个带字母的字符串转化为数字时会转成NaN，而且NaN和任何数据进行运算都会变成NaN；</p>
-<p>2）如果操作数是纯数字的字符串进行运算会转换为数字再进行运算；</p>
-<p>3）true转换为数字是1，false是0；</p>
-<p>4）undefined转换为数字是NaN，null是0；</p>
-<p>3、</p>
-<p>var num = 10 / 0 = Infinity</p>
-<p>var num = -10 /0 = -Infinity</p>
-<p>ps 计算机不会进行小数运算</p>
-<h4 id="强制数据类型转换"><a href="#强制数据类型转换" class="headerlink" title="强制数据类型转换"></a>强制数据类型转换</h4><p>人为地进行数据转换</p>
-<h5 id="Number（）将别的数据类型转换为数字"><a href="#Number（）将别的数据类型转换为数字" class="headerlink" title="Number（）将别的数据类型转换为数字"></a>Number（）将别的数据类型转换为数字</h5><p>1）纯数字的字符会转换成数字</p>
-<p>2）如果带有非数字的字符会转成NaN</p>
-<p>3）true=&gt;1, false=&gt;0</p>
-<p>4)null=&gt;0,undefined=&gt;Nan</p>
-<h5 id="Boolean（）将别的数据类型转换为布尔值"><a href="#Boolean（）将别的数据类型转换为布尔值" class="headerlink" title="Boolean（）将别的数据类型转换为布尔值"></a>Boolean（）将别的数据类型转换为布尔值</h5><p>1)数字：非0即真</p>
-<p>2）有内容字符串=&gt;true,空字符串(“”)=&gt;true,非空即真</p>
-<p>3）null=&gt;false,undefined=&gt;false,NaN=&gt;false;</p>
-<h5 id="parseInt-取整：parseInt-20aa-20-parseInt-a20aa-NaN"><a href="#parseInt-取整：parseInt-20aa-20-parseInt-a20aa-NaN" class="headerlink" title="parseInt()      取整：parseInt(20aa)=20;parseInt(a20aa)=NaN;"></a>parseInt()      取整：parseInt(20aa)=20;parseInt(a20aa)=NaN;</h5><h5 id="parseFloat-取浮点数"><a href="#parseFloat-取浮点数" class="headerlink" title="parseFloat()   取浮点数"></a>parseFloat()   取浮点数</h5><h2 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h2><blockquote>
-<p>1、= 功能： 就是用来赋值，将等号右边的值赋给左边的变量</p>
-<p>2、复合赋值运算符： += , -= , /= , *= , %=</p>
-<p>3、一元运算符：++ –</p>
-<p>​    a++： 先取a的值作为a++的值，在对a进行加一</p>
-<p>​    ++a: 先对a进行加一，再取++a的值</p>
-</blockquote>
-<h2 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h2><p>&lt;  &gt; = &gt;= &lt;= == === !=</p>
-<p>关系运算符运算规则</p>
-<p>1、两个都是数字，对数字进行比较；</p>
-<p>2、其中一个是数字，另一个转化为数字进行比较</p>
-<p>3、当两个操作数是字符串的时候</p>
-<p>​    1）实际上是比较字符的ASCII码</p>
-<p>​    2）逐个进行比较： 如”asd”&lt;”bsdf”=true因为a的ASCII码大于b的。</p>
-<p>ps: true 转换成1进行比较，false转换成0进行比较</p>
-<p>NaN和任何数据（包括自己）==都为false ！=都为true</p>
-<p>4、全等（恒等）=== （1）值必须相等（2）数据类型也必须相等</p>
-<h5 id="特殊值"><a href="#特殊值" class="headerlink" title="特殊值"></a>特殊值</h5><p>undefined == 0 false</p>
-<p>null == 0 false</p>
-<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>与/且     &amp;&amp;</p>
-<p>​    格式： 表达式1 &amp;&amp; 表达式2</p>
-<p>​    特点： 两个表达式都为真他才为真</p>
-<p>或        ||</p>
-<p>​    格式： 表达式1 ||　表达式２</p>
-<p>​    特点：　只有两个表达式都为加表达式才为假</p>
-<p>非　    ！</p>
-<p>​    格式：　！表达式</p>
-<p>​    特点：　！true = false</p>
-</h1></h1>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">H5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/17/js基础/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="w-The-Spectre（Alan-Walker）" class="article article-type-w  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/13/The-Spectre（Alan-Walker）/">The Spectre（Alan Walker）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/13/The-Spectre（Alan-Walker）/" class="archive-article-date">
-  	<time datetime="2018-10-13T03:27:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <video controls autoplay loop preload=""><br><br>​    <source id="mp4" src="http://pgip9g5iy.bkt.clouddn.com/Alan%20Walker%20-%20The%20Spectre.mp4" type="video/mp4"><br><br></video>
-
-
-
-
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">H5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/13/The-Spectre（Alan-Walker）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1452,6 +1426,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">H5 js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
@@ -1460,15 +1438,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">H5 js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">H5 js 函数</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">js H5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">H5 js 循环</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1485,10 +1467,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">js H5</a>
               </li>
             
             <div class="clearfix"></div>
