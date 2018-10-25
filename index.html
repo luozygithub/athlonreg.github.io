@@ -144,6 +144,204 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-面向对象和面向过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/25/面向对象和面向过程/">面向对象和面向过程</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/25/面向对象和面向过程/" class="archive-article-date">
+  	<time datetime="2018-10-25T01:39:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="面向对象与面向过程的本质的区别"><a href="#面向对象与面向过程的本质的区别" class="headerlink" title="面向对象与面向过程的本质的区别"></a>面向对象与面向过程的本质的区别</h1><h3 id="一、面向对象与面向过程的区别"><a href="#一、面向对象与面向过程的区别" class="headerlink" title="一、面向对象与面向过程的区别"></a>一、面向对象与面向过程的区别</h3><p>面向过程就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了；面向对象是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。</p>
+<p>可以拿生活中的实例来理解面向过程与面向对象，例如五子棋，面向过程的设计思路就是首先分析问题的步骤：1、开始游戏，2、黑子先走，3、绘制画面，4、判断输赢，5、轮到白子，6、绘制画面，7、判断输赢，8、返回步骤2，9、输出最后结果。把上面每个步骤用不同的方法来实现。</p>
+<p>如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。</p>
+<p>可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。</p>
+<p>上述的内容是从网上查到的，觉得这个例子非常的生动形象，我就写了下来，现在就应该理解了他俩的区别了吧，其实就是两句话，面向对象就是高度实物抽象化、面向过程就是自顶向下的编程！</p>
+<h3 id="二、面向对象的特点"><a href="#二、面向对象的特点" class="headerlink" title="二、面向对象的特点"></a>二、面向对象的特点</h3><p>​    在了解其特点之前，咱们先谈谈对象，对象就是现实世界存在的任何事务都可以称之为对象，有着自己独特的个性</p>
+<p>​    属性用来描述具体某个对象的特征。比如小志身高180M，体重70KG，这里身高、体重都是属性。<br>面向对象的思想就是把一切都看成对象，而对象一般都由属性+方法组成！</p>
+<p>​    属性属于对象静态的一面，用来形容对象的一些特性，方法属于对象动态的一面，咱们举一个例子，小明会跑，会说话，跑、说话这些行为就是对象的方法！所以为动态的一面， 我们把属性和方法称为这个对象的成员！</p>
+<p>​    <strong>类</strong>：具有同种属性的对象称为类，是个抽象的概念。比如“人”就是一类，期中有一些人名，比如小明、小红、小玲等等这些都是对象，类就相当于一个模具，他定义了它所包含的全体对象的公共特征和功能，对象就是类的一个实例化，小明就是人的一个实例化！我们在做程序的时候，经常要将一个变量实例化，就是这个原理！我们一般在做程序的时候一般都不用类名的，比如我们在叫小明的时候，不会喊“人，你干嘛呢！”而是说的是“小明，你在干嘛呢！”</p>
+<p>​    面向对象有三大特性，分别是封装性、继承性和多态性，这里小编不给予太多的解释，因为在后边的博客会专门总结的！</p>
+<h3 id="三、面向过程与面向对象的优缺点"><a href="#三、面向过程与面向对象的优缺点" class="headerlink" title="三、面向过程与面向对象的优缺点"></a>三、面向过程与面向对象的优缺点</h3><p>​    很多资料上全都是一群很难理解的理论知识，整的小编头都大了，后来发现了一个比较好的文章，写的真是太棒了，通俗易懂，想要不明白都难!</p>
+<p>​    用面向过程的方法写出来的程序是一份蛋炒饭，而用面向对象写出来的程序是一份盖浇饭。所谓盖浇饭，北京叫盖饭，东北叫烩饭，广东叫碟头饭，就是在一碗白米饭上面浇上一份盖菜，你喜欢什么菜，你就浇上什么菜。我觉得这个比喻还是比较贴切的。</p>
+<p>​    蛋炒饭制作的细节，我不太清楚，因为我没当过厨师，也不会做饭，但最后的一道工序肯定是把米饭和鸡蛋混在一起炒匀。盖浇饭呢，则是把米饭和盖菜分别做好，你如果要一份红烧肉盖饭呢，就给你浇一份红烧肉；如果要一份青椒土豆盖浇饭，就给浇一份青椒土豆丝。</p>
+<p>​    蛋炒饭的好处就是入味均匀，吃起来香。如果恰巧你不爱吃鸡蛋，只爱吃青菜的话，那么唯一的办法就是全部倒掉，重新做一份青菜炒饭了。盖浇饭就没这么多麻烦，你只需要把上面的盖菜拨掉，更换一份盖菜就可以了。盖浇饭的缺点是入味不均，可能没有蛋炒饭那么香。</p>
+<p>​    到底是蛋炒饭好还是盖浇饭好呢？其实这类问题都很难回答，非要比个上下高低的话，就必须设定一个场景，否则只能说是各有所长。如果大家都不是美食家，没那么多讲究，那么从饭馆角度来讲的话，做盖浇饭显然比蛋炒饭更有优势，他可以组合出来任意多的组合，而且不会浪费。</p>
+<p>​    盖浇饭的好处就是”菜”“饭”分离，从而提高了制作盖浇饭的灵活性。饭不满意就换饭，菜不满意换菜。用软件工程的专业术语就是”可维护性“比较好，”饭” 和”菜”的耦合度比较低。蛋炒饭将”蛋”“饭”搅和在一起，想换”蛋”“饭”中任何一种都很困难，耦合度很高，以至于”可维护性”比较差。软件工程追求的目标之一就是可维护性，可维护性主要表现在3个方面：可理解性、可测试性和可修改性。面向对象的好处之一就是显著的改善了软件系统的可维护性。 
+　　 </p>
+<h4 id="面向过程"><a href="#面向过程" class="headerlink" title="面向过程"></a>面向过程</h4><blockquote>
+<p>优点：性能比面向对象高，因为类调用时需要实例化，开销比较大，比较消耗资源;比如单片机、嵌入式开发、 Linux/Unix等一般采用面向过程开发，性能是最重要的因素。<br>缺点：没有面向对象易维护、易复用、易扩展</p>
+</blockquote>
+<h4 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h4><blockquote>
+<p>优点：易维护、易复用、易扩展，由于面向对象有封装、继承、多态性的特性，可以设计出低耦合的系统，使系统 更加灵活、更加易于维护 </p>
+<p>缺点：性能比面向过程低</p>
+</blockquote>
+<hr>
+<p>作者：十四期_李光<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/jerry11112/article/details/79027834" target="_blank" rel="noopener">https://blog.csdn.net/jerry11112/article/details/79027834</a> </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">对象</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/25/面向对象和面向过程/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Math对象和日期对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/25/Math对象和日期对象/">Math对象和日期对象</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/25/Math对象和日期对象/" class="archive-article-date">
+  	<time datetime="2018-10-25T01:07:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、Math对象"><a href="#1、Math对象" class="headerlink" title="1、Math对象"></a>1、Math对象</h2><h4 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random()"></a>Math.random()</h4><p>[0,1)返回随机数</p>
+<h4 id="Math-max-num1-num2-Math-min-num1-num2"><a href="#Math-max-num1-num2-Math-min-num1-num2" class="headerlink" title="Math.max(num1,num2),Math.min(num1,num2);"></a>Math.max(num1,num2),Math.min(num1,num2);</h4><p>取较大，较小值</p>
+<h4 id="Math-round"><a href="#Math-round" class="headerlink" title="Math.round()"></a>Math.round()</h4><p>四舍五入，变成整数</p>
+<h4 id="Math-floor-Math-ceil"><a href="#Math-floor-Math-ceil" class="headerlink" title="Math.floor(), Math.ceil()"></a>Math.floor(), Math.ceil()</h4><p>向下，上取整</p>
+<h4 id="Math-sqrt"><a href="#Math-sqrt" class="headerlink" title="Math.sqrt()"></a>Math.sqrt()</h4><p>开平方</p>
+<h4 id="Math-abs"><a href="#Math-abs" class="headerlink" title="Math.abs()"></a>Math.abs()</h4><p>取绝对值</p>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p><img src="C:\Users\罗中运\Pictures\Saved Pictures\对象.png" alt="对象"></p>
+<h4 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h4><p>1、抽象：抽指把核心的东西抽出来，把与我们要解决的问题有关的东西拿出来摆在面前 </p>
+<p>2、封装：让使用对象的人不考虑内部实现，只考虑功能使用  把内部的代码保护起来，只留出一些个api接口供用户使用</p>
+<p>3、继承：就是为了代码的复用，从父类上继承出一些方法和属性，子类也有自己的一些属性 </p>
+<p>4、多态：实际上是不同对象作用与同一操作产生不同的效果。多态的思想实际上是把“想做什么”和“谁去做“分开</p>
+<h5 id="面向对象和面向过程的区别"><a href="#面向对象和面向过程的区别" class="headerlink" title="面向对象和面向过程的区别"></a>面向对象和面向过程的区别</h5><p>面向过程就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了；面向对象是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。</p>
+<p>可以拿生活中的实例来理解面向过程与面向对象，例如五子棋，面向过程的设计思路就是首先分析问题的步骤：1、开始游戏，2、黑子先走，3、绘制画面，4、判断输赢，5、轮到白子，6、绘制画面，7、判断输赢，8、返回步骤2，9、输出最后结果。把上面每个步骤用不同的方法来实现。</p>
+<h6 id="如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。"><a href="#如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。" class="headerlink" title="如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。"></a>如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。</h6><h6 id="可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。"><a href="#可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。" class="headerlink" title="可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。"></a>可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。</h6><p>###### </p>
+<h4 id="对象的组成"><a href="#对象的组成" class="headerlink" title="对象的组成"></a>对象的组成</h4><p>1、方法   函数：过程、动态的</p>
+<p>2、属性   变量：状态、静态的</p>
+<h4 id="this当前的方法属于谁就是谁"><a href="#this当前的方法属于谁就是谁" class="headerlink" title="this当前的方法属于谁就是谁"></a>this<strong>当前的方法属于谁就是谁</strong></h4><p>例如点击事件里的this，其实就是触发事件的那个dom对象的onclick方法里的this，当然是人家自己咯</p>
+<p> 再比如说一个函数里的this，这个函数都属于window的一个方法，当然里面的this也是window咯</p>
+<p>  还有哦，不要在系统对象上面添加属性和方法，这样不太好</p>
+<p> 那么在谁身上加呢？在object这个对象身上，别的date呀array呀，这些对象都是有一些个好玩的功能的，</p>
+<p>  object也就自己最强大的一个功能就是，没有功能~~~~ 这样咱们就可以随意给他加属性和方法而不用去想会不会覆盖了</p>
+<h4 id="创建对象的方法"><a href="#创建对象的方法" class="headerlink" title="创建对象的方法"></a>创建对象的方法</h4><p>1、最基础的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1、通过new创建对象</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="comment">//添加对象的 属性和方法，使用方法和普通变量，方法一样</span></span><br><span class="line">obj.name = <span class="string">'shizhikai'</span></span><br><span class="line">obj.age = <span class="string">'3岁'</span></span><br><span class="line">obj.showAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	  <span class="built_in">console</span>.log(<span class="keyword">this</span>.age)  <span class="comment">//这个this是谁？知道吗？  obj</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//2、省略new</span></span><br><span class="line"><span class="keyword">var</span> box=<span class="built_in">Object</span>();   <span class="comment">//省略了 new 关键字</span></span><br><span class="line"><span class="comment">//3、使用字面量方式创建 Object</span></span><br><span class="line"><span class="keyword">var</span> box=&#123; </span><br><span class="line">    <span class="comment">//字面量方式 </span></span><br><span class="line">    name:’田雨飞<span class="string">', //创建属性字段 </span></span><br><span class="line"><span class="string">    age:18 </span></span><br><span class="line"><span class="string">&#125;;</span></span><br></pre></td></tr></table></figure>
+<p>但是这样太麻烦，我要写100个人，那得写100次。有别的方法吗？有</p>
+<p>2、工厂方式 通过构造函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//原料</span></span><br><span class="line">    <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    <span class="comment">//加工</span></span><br><span class="line">    obj.name = name;</span><br><span class="line">    obj.age=age;</span><br><span class="line">    obj.showAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         alert(<span class="keyword">this</span>.age)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//出厂</span></span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1=createPerson(<span class="string">"shizhikai"</span>,<span class="string">'3岁'</span>)</span><br><span class="line"><span class="keyword">var</span> obj2=createPerson(<span class="string">"ni"</span>,<span class="string">'18岁'</span>);</span><br><span class="line"></span><br><span class="line">alert(obj1.showName)<span class="comment">//function()&#123;alert(this.name)&#125;</span></span><br><span class="line">alert(obj2.showName)<span class="comment">//function()&#123;alert(this.name)&#125;</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/25/Math对象和日期对象/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-字符串String" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -188,7 +386,7 @@
 <p>可以通过 str[下标]</p>
 <p>【注】只读不可修改</p>
 <p>+拼接字符串</p>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h5 id="big-用大号字体显示字符串"><a href="#big-用大号字体显示字符串" class="headerlink" title="big()                 用大号字体显示字符串"></a>big()                 用大号字体显示字符串</h5><h5 id="blink-显示闪动字符串-IE下无效"><a href="#blink-显示闪动字符串-IE下无效" class="headerlink" title="blink()              显示闪动字符串(IE下无效)"></a>blink()              显示闪动字符串(IE下无效)</h5><h5 id="bold-使用粗体显示字符串"><a href="#bold-使用粗体显示字符串" class="headerlink" title="bold()               使用粗体显示字符串"></a>bold()               使用粗体显示字符串</h5><h5 id="fixed-以打字机文本显示字符串"><a href="#fixed-以打字机文本显示字符串" class="headerlink" title="fixed()              以打字机文本显示字符串"></a>fixed()              以打字机文本显示字符串</h5><h5 id="strike-使用删除线来显示字符串"><a href="#strike-使用删除线来显示字符串" class="headerlink" title="strike()             使用删除线来显示字符串"></a>strike()             使用删除线来显示字符串</h5><h5 id="fontcolor-使用指定颜色来显示字符串"><a href="#fontcolor-使用指定颜色来显示字符串" class="headerlink" title="fontcolor()       使用指定颜色来显示字符串"></a>fontcolor()       使用指定颜色来显示字符串</h5><h5 id="fontsize-使用指定尺寸来显示字符串"><a href="#fontsize-使用指定尺寸来显示字符串" class="headerlink" title="fontsize()         使用指定尺寸来显示字符串"></a>fontsize()         使用指定尺寸来显示字符串</h5><h5 id="link-将字符串显示为链接"><a href="#link-将字符串显示为链接" class="headerlink" title="link()                将字符串显示为链接"></a>link()                将字符串显示为链接</h5><h5 id="sub-把字符串显示为下标"><a href="#sub-把字符串显示为下标" class="headerlink" title="sub()                把字符串显示为下标"></a>sub()                把字符串显示为下标</h5><h5 id="sup-把字符串显示为上标"><a href="#sup-把字符串显示为上标" class="headerlink" title="sup()                把字符串显示为上标"></a>sup()                把字符串显示为上标</h5><p>document.write()中使用,用特殊的样式输出该字符串。</p>
+<h2 id="方法（注意方法调用要加小括号-）"><a href="#方法（注意方法调用要加小括号-）" class="headerlink" title="方法（注意方法调用要加小括号()）"></a>方法（注意方法调用要加小括号()）</h2><h5 id="big-用大号字体显示字符串"><a href="#big-用大号字体显示字符串" class="headerlink" title="big()                 用大号字体显示字符串"></a>big()                 用大号字体显示字符串</h5><h5 id="blink-显示闪动字符串-IE下无效"><a href="#blink-显示闪动字符串-IE下无效" class="headerlink" title="blink()              显示闪动字符串(IE下无效)"></a>blink()              显示闪动字符串(IE下无效)</h5><h5 id="bold-使用粗体显示字符串"><a href="#bold-使用粗体显示字符串" class="headerlink" title="bold()               使用粗体显示字符串"></a>bold()               使用粗体显示字符串</h5><h5 id="fixed-以打字机文本显示字符串"><a href="#fixed-以打字机文本显示字符串" class="headerlink" title="fixed()              以打字机文本显示字符串"></a>fixed()              以打字机文本显示字符串</h5><h5 id="strike-使用删除线来显示字符串"><a href="#strike-使用删除线来显示字符串" class="headerlink" title="strike()             使用删除线来显示字符串"></a>strike()             使用删除线来显示字符串</h5><h5 id="fontcolor-使用指定颜色来显示字符串"><a href="#fontcolor-使用指定颜色来显示字符串" class="headerlink" title="fontcolor()       使用指定颜色来显示字符串"></a>fontcolor()       使用指定颜色来显示字符串</h5><h5 id="fontsize-使用指定尺寸来显示字符串"><a href="#fontsize-使用指定尺寸来显示字符串" class="headerlink" title="fontsize()         使用指定尺寸来显示字符串"></a>fontsize()         使用指定尺寸来显示字符串</h5><h5 id="link-将字符串显示为链接"><a href="#link-将字符串显示为链接" class="headerlink" title="link()                将字符串显示为链接"></a>link()                将字符串显示为链接</h5><h5 id="sub-把字符串显示为下标"><a href="#sub-把字符串显示为下标" class="headerlink" title="sub()                把字符串显示为下标"></a>sub()                把字符串显示为下标</h5><h5 id="sup-把字符串显示为上标"><a href="#sup-把字符串显示为上标" class="headerlink" title="sup()                把字符串显示为上标"></a>sup()                把字符串显示为上标</h5><p>document.write()中使用,用特殊的样式输出该字符串。</p>
 <h3 id="字符串的方法-字符串的获取方法"><a href="#字符串的方法-字符串的获取方法" class="headerlink" title="字符串的方法-字符串的获取方法"></a>字符串的方法-字符串的获取方法</h3><p>charAt(3)         <strong>//获取下标为3的字符</strong></p>
 <p>charCodeAt(3)     <strong>//获取下标为3的字符的编码</strong></p>
 <p>【注】上述两个方法使用字符串对象调用</p>
@@ -225,14 +423,14 @@
 <table>
 <thead>
 <tr>
-<th>不改变原来字符串，而是生成新的字符串</th>
-<th>value</th>
+<th>不改变原来字符串，而是生成新的字符串会改变原字符串</th>
+<th>会改变原字符串</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>replace</td>
-<td></td>
+<td>无</td>
 </tr>
 <tr>
 <td>concat</td>
@@ -244,6 +442,35 @@
 </tr>
 <tr>
 <td>substr</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>修改原数组</th>
+<th>不修改原数组</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pop push</td>
+<td>concat</td>
+</tr>
+<tr>
+<td>push  shift</td>
+<td></td>
+</tr>
+<tr>
+<td>reverse</td>
+<td></td>
+</tr>
+<tr>
+<td>splice</td>
 <td></td>
 </tr>
 <tr>
@@ -818,7 +1045,7 @@
 <p>​    提取的元素范围[start,end)；</p>
 <h5 id="提取元素但不会修改原数组"><a href="#提取元素但不会修改原数组" class="headerlink" title="提取元素但不会修改原数组"></a>提取元素但不会修改原数组</h5><p>返回值：提取到的元素，组成的元素；</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr1 = [&quot;num1&quot;,&quot;num2&quot;,&quot;num3&quot;];</span><br><span class="line">var arr2 = arr1.slice(1,2);//num2</span><br></pre></td></tr></table></figure>
-<h3 id="splice方法"><a href="#splice方法" class="headerlink" title="splice方法"></a>splice方法</h3><p>功能增删改数组</p>
+<h3 id="splice方法"><a href="#splice方法" class="headerlink" title="splice方法"></a>splice方法</h3><p>功能：增删改数组</p>
 <blockquote>
 <p>格式：数组.splice(start,length,元素1，元素2，…)；</p>
 <p>功能1：删除选中的元素：数组.splice(start,length）；</p>
@@ -836,7 +1063,7 @@
 <p>返回值：拼接完成的字符串；</p>
 </blockquote>
 <h4 id="reverse方法"><a href="#reverse方法" class="headerlink" title="reverse方法"></a>reverse方法</h4><blockquote>
-<p>数组逆至</p>
+<p>数组逆置 </p>
 </blockquote>
 <p>ps :<strong>concat slice jion不修改原数组；</strong></p>
 
@@ -1137,194 +1364,6 @@
 
 
   
-    <article id="post-如何在JavaScript中获取CSS值" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/18/如何在JavaScript中获取CSS值/">如何在JavaScript中获取CSS值</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/18/如何在JavaScript中获取CSS值/" class="archive-article-date">
-  	<time datetime="2018-10-18T03:57:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>有时候单独的使用CSS是不够的。您可能需要使用JavaScript控制CSS值。但是你如何在JavaScript中获得CSS值？</p>
-<p>有两种可能的方式，取决于您是尝试获取内联样式还是计算样式</p>
-</blockquote>
-<h2 id="获取内联样式"><a href="#获取内联样式" class="headerlink" title="获取内联样式"></a>获取内联样式</h2><blockquote>
-<p>内联样式是存在于 HTML <code>style</code> 属性(attribute)中的样式。</p>
-</blockquote>
-<h5 id="html-代码："><a href="#html-代码：" class="headerlink" title="html 代码："></a>html 代码：</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element"</span> <span class="attr">style</span>=<span class="string">"font-size: 2em; color: red;"</span>&gt;</span></span><br><span class="line">    Red hot chili pepper!</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h5 id="JavaScript代码"><a href="#JavaScript代码" class="headerlink" title="JavaScript代码"></a>JavaScript代码</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="built_in">document</span>.querySelector(<span class="string">'.element'</span>)</span><br><span class="line"><span class="keyword">const</span> fontSize = element.style.fontSize</span><br><span class="line"><span class="built_in">console</span>.log(fontSize) <span class="comment">// 2em</span></span><br><span class="line"><span class="keyword">const</span> color = element.style.color</span><br><span class="line"><span class="built_in">console</span>.log(color) <span class="comment">// red</span></span><br></pre></td></tr></table></figure>
-<h2 id="获取计算样式"><a href="#获取计算样式" class="headerlink" title="获取计算样式"></a>获取计算样式</h2><p>如果您的样式是在CSS文件中编写的，则需要获取计算出的样式。为此，您可以使用 <code>getComputedStyle</code> 。</p>
-<p>它有两个值：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JavaScript 代码:<span class="keyword">const</span> style = getComputedStyle(Element, );</span><br></pre></td></tr></table></figure>
-<p>这里的<code>Element</code>是指您使用 <code>querySelector</code> 选择的元素。</p>
-<p>这里的 <code>pseudoElement</code> 指的是你想要获取的伪类元素的字符串（如果有的话）。如果您没有选择伪元素，则可以省略这个值。</p>
-<p>让我们通过一个例子来帮助理解。假设您有以下HTML和CSS：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HTML 代码:<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element"</span>&gt;</span> This is my element <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">CSS 代码:.element &#123; background-color: red &#125;</span><br></pre></td></tr></table></figure>
-<p>首先，您需要使用 <code>querySelector</code> 选择元素。然后，使用 <code>getComputedStyle</code> 获取元素的样式。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JavaScript 代码:<span class="keyword">const</span> element = <span class="built_in">document</span>.querySelector(<span class="string">'.element'</span>)<span class="keyword">const</span> style = getComputedStyle(element)</span><br></pre></td></tr></table></figure>
-<p>如果你用 <code>console.log(style)</code> 打印，您应该看到一个包含每个CSS属性及其各自值的对象。</p>
-<p><img src="http://newimg88.b0.upaiyun.com/newimg88/2018/07/all-properties.png" alt="img"></p>
-<p>图注：<code>getComputedStyle</code> 返回一个包含每个CSS属性及其各自值的对象</p>
-<p>您还可以在Chrome和Firefox的开发工具中看到此对象。</p>
-<p>对于Firefox开发工具，请查看 “Inspector”，“Computed”。</p>
-<p><img src="http://newimg88.b0.upaiyun.com/newimg88/2018/07/firefox.png" alt="img"></p>
-<p>图注：Firefox dev工具计算样式选项卡</p>
-<p>对于Chrome开发工具，请查看“Elements” 面板。 如果开发工具窗口很大，您可以在右侧面板上看到计算出的样式。 如果开发工具窗口很小，您可以在“Computed”选项卡下查看。</p>
-<p><img src="http://newimg88.b0.upaiyun.com/newimg88/2018/07/chrome.png" alt="img"></p>
-<p>图注：Chrome dev工具计算样式选项卡</p>
-<p>要获取CSS属性的值，请以驼峰形式编写属性。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JavaScript 代码:<span class="keyword">const</span> style = getComputedStyle(element)<span class="keyword">const</span> backgroundColor = style.backgroundColorconsole.log(backgroundColor) <span class="comment">// rgb(0, 0, 0)</span></span><br></pre></td></tr></table></figure>
-<p>注意：<code>getComputedStyle</code> 是只读的。您无法使用 <code>getComputedStyle</code> 设置CSS值。</p>
-<p>注意2：<code>getComputedStyle</code> 获取计算出的CSS值。你将从 <code>getComputedStyle</code> 获得 px 单位值，而不是像 <code>em</code> 和 <code>rem</code> 这样的相对单位。</p>
-<h2 id="从伪类元素中获取样式"><a href="#从伪类元素中获取样式" class="headerlink" title="从伪类元素中获取样式"></a>从伪类元素中获取样式</h2><p>要从伪类元素获取样式，您需要将伪类元素的字符串作为第二个参数传递给 <code>getComputedStyle</code> 。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HTML 代码:<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element"</span>&gt;</span> This is my element <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">CSS 代码:element &#123; background-color: red &#125;.element::before &#123; content: "Before pseudo element"; &#125;</span><br><span class="line">JavaScript 代码:const element = document.querySelector('.element')pseudoElementStyle = getComputedStyle(element, '::before')console.log(pseudoElementStyle.content) // Before pseudo element</span><br></pre></td></tr></table></figure>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>您可以通过两种方法在JavaScript中获取CSS值：</p>
-<ol>
-<li><code>style</code> 属性(property)</li>
-<li><code>getComputedStyle</code> 。</li>
-</ol>
-<p><code>style</code> 属性仅检索内联CSS值，而 <code>getComputedStyle</code> 样式检索计算的CSS值。</p>
-<p>原文链接：<a href="https://zellwk.com/blog/css-values-in-js/" target="_blank" rel="noopener">https://zellwk.com/blog/css-values-in-js/</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">H5 js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/18/如何在JavaScript中获取CSS值/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js循环嵌套练习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/18/js循环嵌套练习/">js循环练习</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/18/js循环嵌套练习/" class="archive-article-date">
-  	<time datetime="2018-10-18T02:40:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 水仙花</span></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;h3&gt;找出所有的水仙花数，三位数，各位立方和等于该数本身。153 = 1 ^ 3 + 5 ^ 3 + 3 ^ 3&lt;/h3&gt;"</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">100</span>; i &lt; <span class="number">1000</span>; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>((<span class="built_in">Math</span>.pow((i % <span class="number">10</span>),<span class="number">3</span>) +  <span class="built_in">Math</span>.pow( (<span class="built_in">parseInt</span>(i / <span class="number">10</span>) % <span class="number">10</span>),<span class="number">3</span>) + <span class="built_in">Math</span>.pow((<span class="built_in">parseInt</span>(i / <span class="number">100</span>) % <span class="number">10</span>),<span class="number">3</span>)) == i)&#123;</span><br><span class="line">        <span class="built_in">document</span>.write( <span class="string">"&lt;br/&gt;"</span> + <span class="string">"&amp;nbsp;"</span> + i + <span class="string">" : "</span>);</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="built_in">Math</span>.pow((i % <span class="number">10</span>),<span class="number">3</span>) + <span class="string">"*"</span> + <span class="built_in">Math</span>.pow( (<span class="built_in">parseInt</span>(i / <span class="number">10</span>) % <span class="number">10</span>),<span class="number">3</span>) + <span class="string">"*"</span> + <span class="built_in">Math</span>.pow((<span class="built_in">parseInt</span>(i / <span class="number">100</span>) % <span class="number">10</span>),<span class="number">3</span>)+ <span class="string">"="</span>+ i );</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//最大公约数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;h3&gt;最大公约数&lt;/h3&gt;"</span>);</span><br><span class="line"><span class="keyword">var</span> num1 = <span class="number">6</span>;</span><br><span class="line"><span class="keyword">var</span> num2 = <span class="number">9</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = (num1 &gt; num2 ? num1 : num2); i &gt; <span class="number">1</span>; i--)&#123;</span><br><span class="line">    <span class="keyword">if</span>(num1 % i== <span class="number">0</span> &amp;&amp; num2 % i == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">"最大公约数为"</span> + i);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//最小公倍数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;h3&gt;最小公倍数&lt;/h3&gt;"</span>);</span><br><span class="line"><span class="keyword">var</span> num3 = <span class="number">6</span>;</span><br><span class="line"><span class="keyword">var</span> num4 = <span class="number">9</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = (num3 &gt; num4 ? num4 : num3); i &lt; num1 * num2; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(i % num3 == <span class="number">0</span> &amp;&amp; i % num4 == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">"最大公约数为"</span> + i);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//输入两个数n，a，如果n==3，a==2； 输出 2 + 22 + 222 的值。（不用输出式子）如果n==4，a==3；输出 3 + 33 + 333 + 3333的值。</span></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;h3&gt;2 + 22 + 222 =&lt;/h3&gt;"</span>);</span><br><span class="line"><span class="keyword">var</span> count = <span class="number">9</span>;</span><br><span class="line"><span class="keyword">var</span> number = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> flag = number;</span><br><span class="line"><span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= count; i++)&#123;</span><br><span class="line">    <span class="built_in">document</span>.write(flag + <span class="string">" + "</span>);</span><br><span class="line">    sum += flag;</span><br><span class="line">    flag += <span class="built_in">Math</span>.pow(<span class="number">10</span> , i) * number;   </span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">" = "</span> + sum);</span><br><span class="line"><span class="comment">//回文数</span></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;h3&gt;回文数&lt;/h3&gt;"</span>);</span><br><span class="line"><span class="keyword">var</span> num5 = <span class="number">123321</span>;</span><br><span class="line"><span class="keyword">var</span> places = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> flag5 = num5;</span><br><span class="line"><span class="keyword">while</span>(flag5 / <span class="number">10</span> &gt; <span class="number">1</span>)&#123;</span><br><span class="line">    places++;</span><br><span class="line">    flag5 /= <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.write(places + <span class="string">"位数"</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; places; i+=<span class="number">2</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">parseInt</span>(num5 / <span class="built_in">Math</span>.pow(<span class="number">10</span> , places-i)) == (num5 % <span class="number">10</span>))&#123;</span><br><span class="line">        num5 %= <span class="built_in">Math</span>.pow(<span class="number">10</span> , places-i);</span><br><span class="line">        num5 /= <span class="number">10</span>;</span><br><span class="line">        num5 = <span class="built_in">parseInt</span>(num5);</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">"不是回文数"</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">H5 js 循环</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/18/js循环嵌套练习/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1422,11 +1461,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">H5 js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">H5</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">H5 js</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1442,15 +1485,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">js H5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">H5 js 循环</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color1">js H5</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1467,6 +1506,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">对象</a>
               </li>
             
             <div class="clearfix"></div>

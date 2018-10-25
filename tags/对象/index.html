@@ -6,19 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.luozy.top">
-  <title>回溯法总结 | luozy&#39;s Blog</title>
+  <title>Tag: 对象 | luozy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="回溯法总结 符合条件走到底，碰到不满足条件的就“回溯”，尝试别的路径。 有的在回溯之前，要把走的路改回来。  123456789101112131415161718192021222324252627282930313233343536373839404142434445461.n后问题#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;math.h&amp;gt;#define max">
-<meta name="keywords" content="算法">
-<meta property="og:type" content="article">
-<meta property="og:title" content="回溯法总结">
-<meta property="og:url" content="http://www.luozy.top/2018/01/17/回溯法总结/index.html">
+  <meta name="description" content="���������������������̰���������ܼ�������̰����">
+<meta property="og:type" content="website">
+<meta property="og:title" content="luozy&#39;s Blog">
+<meta property="og:url" content="http://www.luozy.top/tags/对象/index.html">
 <meta property="og:site_name" content="luozy&#39;s Blog">
-<meta property="og:description" content="回溯法总结 符合条件走到底，碰到不满足条件的就“回溯”，尝试别的路径。 有的在回溯之前，要把走的路改回来。  123456789101112131415161718192021222324252627282930313233343536373839404142434445461.n后问题#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;math.h&amp;gt;#define max">
-<meta property="og:updated_time" content="2018-01-25T03:38:11.251Z">
+<meta property="og:description" content="���������������������̰���������ܼ�������̰����">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="回溯法总结">
-<meta name="twitter:description" content="回溯法总结 符合条件走到底，碰到不满足条件的就“回溯”，尝试别的路径。 有的在回溯之前，要把走的路改回来。  123456789101112131415161718192021222324252627282930313233343536373839404142434445461.n后问题#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;math.h&amp;gt;#define max">
+<meta name="twitter:title" content="luozy&#39;s Blog">
+<meta name="twitter:description" content="���������������������̰���������ܼ�������̰����">
   
     <link rel="alternative" href="/atom.xml" title="luozy&#39;s Blog" type="application/atom+xml">
   
@@ -144,187 +142,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-回溯法总结" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      回溯法总结
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/10/25/面向对象和面向过程/" class="archive-article-date">
+  	<time datetime="2018-10-25T01:39:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-25</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/10/25/面向对象和面向过程/">面向对象和面向过程</a>
     </h1>
   
 
-        
-        <a href="/2018/01/17/回溯法总结/" class="archive-article-date">
-  	<time datetime="2018-01-16T17:56:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="回溯法总结"><a href="#回溯法总结" class="headerlink" title="回溯法总结"></a>回溯法总结</h2><blockquote>
-<p>符合条件走到底，碰到不满足条件的就“回溯”，尝试别的路径。</p>
-<p>有的在回溯之前，要把走的路改回来。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">1.n后问题</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;math.h&gt;</span><br><span class="line">#define max 8</span><br><span class="line"></span><br><span class="line">int Queen[max];</span><br><span class="line">int sum=0;</span><br><span class="line">void Show()&#123;</span><br><span class="line"></span><br><span class="line">&#125; </span><br><span class="line">int Place(int n)&#123;</span><br><span class="line">	int i;</span><br><span class="line">	for(i=0;i&lt;n;i++)&#123;</span><br><span class="line">		if(Queen[n]==Queen[i]||(abs(i-n)==abs(Queen[i]-Queen[n])))</span><br><span class="line">			return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	return 1;</span><br><span class="line">&#125;</span><br><span class="line">void NQueen(int n)&#123;</span><br><span class="line">	int i;</span><br><span class="line"></span><br><span class="line">	for(i=0; i&lt;max;i++)&#123;</span><br><span class="line">		Queen[n]=i;</span><br><span class="line">		if(Place(n))</span><br><span class="line">		&#123;</span><br><span class="line">			if(n==max-1)&#123;</span><br><span class="line">					printf(&quot;(&quot;);</span><br><span class="line">					for(int i=0;i&lt;max;i++)&#123;</span><br><span class="line">						printf(&quot;%d&quot;,Queen[i]+1);</span><br><span class="line">					&#125;</span><br><span class="line">					printf(&quot;)\n&quot;);</span><br><span class="line">					sum++;//回溯开始，</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				NQueen(n+1);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">	NQueen(0);</span><br><span class="line">	printf(&quot;%d&quot;,sum);</span><br><span class="line">	return 0; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">2、0-1背包问题：</span><br><span class="line">①程序一：</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#define n 3</span><br><span class="line">int c=30;</span><br><span class="line">int weight[n]=&#123;16,15,15&#125;,value[n]=&#123;45,25,25&#125;;</span><br><span class="line">int tempvalue,tempweight,maxvalue;</span><br><span class="line">void traceback(int t)&#123;</span><br><span class="line">	if(t==n)&#123;</span><br><span class="line">		if(tempvalue&gt;maxvalue)</span><br><span class="line">			maxvalue=tempvalue;</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	if(tempweight+weight[t]&lt;=c)&#123;</span><br><span class="line">		tempweight+=weight[t];</span><br><span class="line">		tempvalue+=value[t];</span><br><span class="line">		traceback(t+1);</span><br><span class="line">		tempvalue-=value[t];</span><br><span class="line">		tempweight-=weight[t];//还其原貌，回溯开始</span><br><span class="line">	&#125;</span><br><span class="line">	traceback(t+1);</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">	traceback(0);</span><br><span class="line">	printf(&quot;%d\n&quot;,maxvalue);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">m图着色</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;    </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> n 5</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> m 4 <span class="comment">//颜色数</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[n+<span class="number">1</span>][n+<span class="number">1</span>]=&#123;</span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;,  </span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>&#125;,  </span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>&#125;,  </span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>&#125;,  </span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>&#125;,  </span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>&#125;</span><br><span class="line">&#125;;   </span><br><span class="line"><span class="keyword">int</span> count=<span class="number">0</span>;<span class="comment">//方案数</span></span><br><span class="line"><span class="keyword">int</span> color[n+<span class="number">1</span>]=&#123;<span class="number">0</span>&#125;;<span class="comment">//涂颜色数组</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">ok</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=x; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[x][i]==<span class="number">1</span> &amp;&amp; color[x]==color[i])&#123;<span class="comment">//不能为1，不重复</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> t)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(t&gt;n)&#123;<span class="comment">//有n个顶点的图的着色树是有n+1层</span></span><br><span class="line">        count++;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)&#123;<span class="comment">//涂个色 1~m</span></span><br><span class="line">            color[t]=i;</span><br><span class="line">            <span class="keyword">if</span>(ok(t))&#123;</span><br><span class="line">                dfs(t+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">    </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;  </span><br><span class="line">    dfs(<span class="number">1</span>);<span class="comment">//从1开始</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,count);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="http://p1lzepiq0.bkt.clouddn.com/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%B6%E6%AC%BE%E7%A0%81.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">对象</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.luozy.top/2018/01/17/回溯法总结/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/01/17/快速排序/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          快速排序
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/01/17/贪心算法总结/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">贪心算法总结</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -347,9 +218,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

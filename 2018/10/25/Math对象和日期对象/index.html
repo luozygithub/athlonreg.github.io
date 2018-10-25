@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.luozy.top">
-  <title>回溯法总结 | luozy&#39;s Blog</title>
+  <title>Math对象和日期对象 | luozy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="回溯法总结 符合条件走到底，碰到不满足条件的就“回溯”，尝试别的路径。 有的在回溯之前，要把走的路改回来。  123456789101112131415161718192021222324252627282930313233343536373839404142434445461.n后问题#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;math.h&amp;gt;#define max">
-<meta name="keywords" content="算法">
+  <meta name="description" content="1、Math对象Math.random()[0,1)返回随机数 Math.max(num1,num2),Math.min(num1,num2);取较大，较小值 Math.round()四舍五入，变成整数 Math.floor(), Math.ceil()向下，上取整 Math.sqrt()开平方 Math.abs()取绝对值 对象 面向对象1、抽象：抽指把核心的东西抽出来，把与我们要解决的问题有关">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="回溯法总结">
-<meta property="og:url" content="http://www.luozy.top/2018/01/17/回溯法总结/index.html">
+<meta property="og:title" content="Math对象和日期对象">
+<meta property="og:url" content="http://www.luozy.top/2018/10/25/Math对象和日期对象/index.html">
 <meta property="og:site_name" content="luozy&#39;s Blog">
-<meta property="og:description" content="回溯法总结 符合条件走到底，碰到不满足条件的就“回溯”，尝试别的路径。 有的在回溯之前，要把走的路改回来。  123456789101112131415161718192021222324252627282930313233343536373839404142434445461.n后问题#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;math.h&amp;gt;#define max">
-<meta property="og:updated_time" content="2018-01-25T03:38:11.251Z">
+<meta property="og:description" content="1、Math对象Math.random()[0,1)返回随机数 Math.max(num1,num2),Math.min(num1,num2);取较大，较小值 Math.round()四舍五入，变成整数 Math.floor(), Math.ceil()向下，上取整 Math.sqrt()开平方 Math.abs()取绝对值 对象 面向对象1、抽象：抽指把核心的东西抽出来，把与我们要解决的问题有关">
+<meta property="og:image" content="c:/Users/罗中运/Pictures/Saved%20Pictures/对象.png">
+<meta property="og:updated_time" content="2018-10-25T02:13:52.682Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="回溯法总结">
-<meta name="twitter:description" content="回溯法总结 符合条件走到底，碰到不满足条件的就“回溯”，尝试别的路径。 有的在回溯之前，要把走的路改回来。  123456789101112131415161718192021222324252627282930313233343536373839404142434445461.n后问题#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;math.h&amp;gt;#define max">
+<meta name="twitter:title" content="Math对象和日期对象">
+<meta name="twitter:description" content="1、Math对象Math.random()[0,1)返回随机数 Math.max(num1,num2),Math.min(num1,num2);取较大，较小值 Math.round()四舍五入，变成整数 Math.floor(), Math.ceil()向下，上取整 Math.sqrt()开平方 Math.abs()取绝对值 对象 面向对象1、抽象：抽指把核心的东西抽出来，把与我们要解决的问题有关">
+<meta name="twitter:image" content="c:/Users/罗中运/Pictures/Saved%20Pictures/对象.png">
   
     <link rel="alternative" href="/atom.xml" title="luozy&#39;s Blog" type="application/atom+xml">
   
@@ -144,33 +146,52 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-回溯法总结" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Math对象和日期对象" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      回溯法总结
+      Math对象和日期对象
     </h1>
   
 
         
-        <a href="/2018/01/17/回溯法总结/" class="archive-article-date">
-  	<time datetime="2018-01-16T17:56:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
+        <a href="/2018/10/25/Math对象和日期对象/" class="archive-article-date">
+  	<time datetime="2018-10-25T01:07:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="回溯法总结"><a href="#回溯法总结" class="headerlink" title="回溯法总结"></a>回溯法总结</h2><blockquote>
-<p>符合条件走到底，碰到不满足条件的就“回溯”，尝试别的路径。</p>
-<p>有的在回溯之前，要把走的路改回来。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">1.n后问题</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;math.h&gt;</span><br><span class="line">#define max 8</span><br><span class="line"></span><br><span class="line">int Queen[max];</span><br><span class="line">int sum=0;</span><br><span class="line">void Show()&#123;</span><br><span class="line"></span><br><span class="line">&#125; </span><br><span class="line">int Place(int n)&#123;</span><br><span class="line">	int i;</span><br><span class="line">	for(i=0;i&lt;n;i++)&#123;</span><br><span class="line">		if(Queen[n]==Queen[i]||(abs(i-n)==abs(Queen[i]-Queen[n])))</span><br><span class="line">			return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	return 1;</span><br><span class="line">&#125;</span><br><span class="line">void NQueen(int n)&#123;</span><br><span class="line">	int i;</span><br><span class="line"></span><br><span class="line">	for(i=0; i&lt;max;i++)&#123;</span><br><span class="line">		Queen[n]=i;</span><br><span class="line">		if(Place(n))</span><br><span class="line">		&#123;</span><br><span class="line">			if(n==max-1)&#123;</span><br><span class="line">					printf(&quot;(&quot;);</span><br><span class="line">					for(int i=0;i&lt;max;i++)&#123;</span><br><span class="line">						printf(&quot;%d&quot;,Queen[i]+1);</span><br><span class="line">					&#125;</span><br><span class="line">					printf(&quot;)\n&quot;);</span><br><span class="line">					sum++;//回溯开始，</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				NQueen(n+1);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">	NQueen(0);</span><br><span class="line">	printf(&quot;%d&quot;,sum);</span><br><span class="line">	return 0; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">2、0-1背包问题：</span><br><span class="line">①程序一：</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#define n 3</span><br><span class="line">int c=30;</span><br><span class="line">int weight[n]=&#123;16,15,15&#125;,value[n]=&#123;45,25,25&#125;;</span><br><span class="line">int tempvalue,tempweight,maxvalue;</span><br><span class="line">void traceback(int t)&#123;</span><br><span class="line">	if(t==n)&#123;</span><br><span class="line">		if(tempvalue&gt;maxvalue)</span><br><span class="line">			maxvalue=tempvalue;</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	if(tempweight+weight[t]&lt;=c)&#123;</span><br><span class="line">		tempweight+=weight[t];</span><br><span class="line">		tempvalue+=value[t];</span><br><span class="line">		traceback(t+1);</span><br><span class="line">		tempvalue-=value[t];</span><br><span class="line">		tempweight-=weight[t];//还其原貌，回溯开始</span><br><span class="line">	&#125;</span><br><span class="line">	traceback(t+1);</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">	traceback(0);</span><br><span class="line">	printf(&quot;%d\n&quot;,maxvalue);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">m图着色</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;    </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> n 5</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> m 4 <span class="comment">//颜色数</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[n+<span class="number">1</span>][n+<span class="number">1</span>]=&#123;</span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;,  </span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>&#125;,  </span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>&#125;,  </span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>&#125;,  </span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>&#125;,  </span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>&#125;</span><br><span class="line">&#125;;   </span><br><span class="line"><span class="keyword">int</span> count=<span class="number">0</span>;<span class="comment">//方案数</span></span><br><span class="line"><span class="keyword">int</span> color[n+<span class="number">1</span>]=&#123;<span class="number">0</span>&#125;;<span class="comment">//涂颜色数组</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">ok</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=x; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[x][i]==<span class="number">1</span> &amp;&amp; color[x]==color[i])&#123;<span class="comment">//不能为1，不重复</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> t)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(t&gt;n)&#123;<span class="comment">//有n个顶点的图的着色树是有n+1层</span></span><br><span class="line">        count++;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)&#123;<span class="comment">//涂个色 1~m</span></span><br><span class="line">            color[t]=i;</span><br><span class="line">            <span class="keyword">if</span>(ok(t))&#123;</span><br><span class="line">                dfs(t+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">    </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;  </span><br><span class="line">    dfs(<span class="number">1</span>);<span class="comment">//从1开始</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,count);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="1、Math对象"><a href="#1、Math对象" class="headerlink" title="1、Math对象"></a>1、Math对象</h2><h4 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random()"></a>Math.random()</h4><p>[0,1)返回随机数</p>
+<h4 id="Math-max-num1-num2-Math-min-num1-num2"><a href="#Math-max-num1-num2-Math-min-num1-num2" class="headerlink" title="Math.max(num1,num2),Math.min(num1,num2);"></a>Math.max(num1,num2),Math.min(num1,num2);</h4><p>取较大，较小值</p>
+<h4 id="Math-round"><a href="#Math-round" class="headerlink" title="Math.round()"></a>Math.round()</h4><p>四舍五入，变成整数</p>
+<h4 id="Math-floor-Math-ceil"><a href="#Math-floor-Math-ceil" class="headerlink" title="Math.floor(), Math.ceil()"></a>Math.floor(), Math.ceil()</h4><p>向下，上取整</p>
+<h4 id="Math-sqrt"><a href="#Math-sqrt" class="headerlink" title="Math.sqrt()"></a>Math.sqrt()</h4><p>开平方</p>
+<h4 id="Math-abs"><a href="#Math-abs" class="headerlink" title="Math.abs()"></a>Math.abs()</h4><p>取绝对值</p>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p><img src="C:\Users\罗中运\Pictures\Saved Pictures\对象.png" alt="对象"></p>
+<h4 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h4><p>1、抽象：抽指把核心的东西抽出来，把与我们要解决的问题有关的东西拿出来摆在面前 </p>
+<p>2、封装：让使用对象的人不考虑内部实现，只考虑功能使用  把内部的代码保护起来，只留出一些个api接口供用户使用</p>
+<p>3、继承：就是为了代码的复用，从父类上继承出一些方法和属性，子类也有自己的一些属性 </p>
+<p>4、多态：实际上是不同对象作用与同一操作产生不同的效果。多态的思想实际上是把“想做什么”和“谁去做“分开</p>
+<h5 id="面向对象和面向过程的区别"><a href="#面向对象和面向过程的区别" class="headerlink" title="面向对象和面向过程的区别"></a>面向对象和面向过程的区别</h5><p>面向过程就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了；面向对象是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。</p>
+<p>可以拿生活中的实例来理解面向过程与面向对象，例如五子棋，面向过程的设计思路就是首先分析问题的步骤：1、开始游戏，2、黑子先走，3、绘制画面，4、判断输赢，5、轮到白子，6、绘制画面，7、判断输赢，8、返回步骤2，9、输出最后结果。把上面每个步骤用不同的方法来实现。</p>
+<h6 id="如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。"><a href="#如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。" class="headerlink" title="如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。"></a>如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。</h6><h6 id="可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。"><a href="#可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。" class="headerlink" title="可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。"></a>可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。</h6><p>###### </p>
+<h4 id="对象的组成"><a href="#对象的组成" class="headerlink" title="对象的组成"></a>对象的组成</h4><p>1、方法   函数：过程、动态的</p>
+<p>2、属性   变量：状态、静态的</p>
+<h4 id="this当前的方法属于谁就是谁"><a href="#this当前的方法属于谁就是谁" class="headerlink" title="this当前的方法属于谁就是谁"></a>this<strong>当前的方法属于谁就是谁</strong></h4><p>例如点击事件里的this，其实就是触发事件的那个dom对象的onclick方法里的this，当然是人家自己咯</p>
+<p> 再比如说一个函数里的this，这个函数都属于window的一个方法，当然里面的this也是window咯</p>
+<p>  还有哦，不要在系统对象上面添加属性和方法，这样不太好</p>
+<p> 那么在谁身上加呢？在object这个对象身上，别的date呀array呀，这些对象都是有一些个好玩的功能的，</p>
+<p>  object也就自己最强大的一个功能就是，没有功能~~~~ 这样咱们就可以随意给他加属性和方法而不用去想会不会覆盖了</p>
+<h4 id="创建对象的方法"><a href="#创建对象的方法" class="headerlink" title="创建对象的方法"></a>创建对象的方法</h4><p>1、最基础的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1、通过new创建对象</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="comment">//添加对象的 属性和方法，使用方法和普通变量，方法一样</span></span><br><span class="line">obj.name = <span class="string">'shizhikai'</span></span><br><span class="line">obj.age = <span class="string">'3岁'</span></span><br><span class="line">obj.showAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	  <span class="built_in">console</span>.log(<span class="keyword">this</span>.age)  <span class="comment">//这个this是谁？知道吗？  obj</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//2、省略new</span></span><br><span class="line"><span class="keyword">var</span> box=<span class="built_in">Object</span>();   <span class="comment">//省略了 new 关键字</span></span><br><span class="line"><span class="comment">//3、使用字面量方式创建 Object</span></span><br><span class="line"><span class="keyword">var</span> box=&#123; </span><br><span class="line">    <span class="comment">//字面量方式 </span></span><br><span class="line">    name:’田雨飞<span class="string">', //创建属性字段 </span></span><br><span class="line"><span class="string">    age:18 </span></span><br><span class="line"><span class="string">&#125;;</span></span><br></pre></td></tr></table></figure>
+<p>但是这样太麻烦，我要写100个人，那得写100次。有别的方法吗？有</p>
+<p>2、工厂方式 通过构造函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//原料</span></span><br><span class="line">    <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    <span class="comment">//加工</span></span><br><span class="line">    obj.name = name;</span><br><span class="line">    obj.age=age;</span><br><span class="line">    obj.showAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         alert(<span class="keyword">this</span>.age)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//出厂</span></span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1=createPerson(<span class="string">"shizhikai"</span>,<span class="string">'3岁'</span>)</span><br><span class="line"><span class="keyword">var</span> obj2=createPerson(<span class="string">"ni"</span>,<span class="string">'18岁'</span>);</span><br><span class="line"></span><br><span class="line">alert(obj1.showName)<span class="comment">//function()&#123;alert(this.name)&#125;</span></span><br><span class="line">alert(obj2.showName)<span class="comment">//function()&#123;alert(this.name)&#125;</span></span><br></pre></td></tr></table></figure>
 
       
 
@@ -210,7 +231,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
@@ -266,7 +287,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.luozy.top/2018/01/17/回溯法总结/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.luozy.top/2018/10/25/Math对象和日期对象/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -280,18 +301,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/17/快速排序/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/10/25/面向对象和面向过程/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          快速排序
+          面向对象和面向过程
         
       </div>
     </a>
   
   
-    <a href="/2018/01/17/贪心算法总结/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">贪心算法总结</div>
+    <a href="/2018/10/23/字符串String/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">字符串String</div>
       <i class="icon-circle-right"></i>
     </a>
   
