@@ -144,6 +144,215 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-DOM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/26/DOM/">DOM</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/26/DOM/" class="archive-article-date">
+  	<time datetime="2018-10-26T06:28:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="文档对象模型DOM（document-Object-Model）"><a href="#文档对象模型DOM（document-Object-Model）" class="headerlink" title="文档对象模型DOM（document Object Model）"></a>文档对象模型DOM（document Object Model）</h1><blockquote>
+<p>DOM 中的三个字母，D（文档）可以理解为整个 Web 加载的网页文档；O（对象）可 以理解为类似 window 对象之类的东西，可以调用属性和方法，这里我们说的是 document 对象；M（模型）可以理解为网页文档的树型结构。</p>
+</blockquote>
+<p>所谓DOM就是以家族的形式描述HTML       节点有 父子 兄弟 </p>
+<p>注：在JavaScript里真的这么叫！！！只不过加上了节点两个字称作父子节点，兄弟节点。<img src="C:\Users\罗中运\AppData\Local\Temp\chrome_drag17544_7625\Image.png" alt="Image"></p>
+<h4 id="加载-HTML-页面时，Web-浏览器生成一个树型结构，用来表示页面内部结构。DOM-将-这种树型结构称为节点组成的节点树。"><a href="#加载-HTML-页面时，Web-浏览器生成一个树型结构，用来表示页面内部结构。DOM-将-这种树型结构称为节点组成的节点树。" class="headerlink" title="加载 HTML 页面时，Web 浏览器生成一个树型结构，用来表示页面内部结构。DOM 将 这种树型结构称为节点组成的节点树。"></a>加载 HTML 页面时，Web 浏览器生成一个树型结构，用来表示页面内部结构。DOM 将 这种树型结构称为节点组成的节点树。</h4><h2 id="DOM中所有节点的种类"><a href="#DOM中所有节点的种类" class="headerlink" title="DOM中所有节点的种类"></a>DOM中所有节点的种类</h2><p>元素节点  <div></div></p>
+<p>属性节点 id =‘div1’</p>
+<p>文本节点 div文本</p>
+<p><img src="C:\Users\罗中运\AppData\Local\Temp\chrome_drag17544_26641\Image.png" alt="Image">  W3C 提供了比较方便简单的定位节点的方法和属性，以便我们快速的对节点进行操作。 分别为：getElementById()、getElementsByTagName()、getElementsByName()、getElementsClassName()、getAttribute()、 setAttribute()和 removeAttribute()。<img src="C:\Users\罗中运\AppData\Local\Temp\chrome_drag17544_20962\Image.png" alt="Image"></p>
+<h3 id="获取元素节点"><a href="#获取元素节点" class="headerlink" title="获取元素节点"></a>获取元素节点</h3><blockquote>
+<p>  W3C 提供了比较方便简单的定位节点的方法和属性，以便我们快速的对节点进行操作。 分别为：getElementById()、getElementsByTagName()、getElementsByName()、getElementsClassName()、getAttribute()、 setAttribute()和 removeAttribute()。</p>
+</blockquote>
+<p>ps:代码由上而下执行，script在头部的时候，先执行script的内容，在执行body里面的。</p>
+<p>所以要用到 window.onload</p>
+<h4 id="window-onload-function"><a href="#window-onload-function" class="headerlink" title="window.onload = function(){"></a>window.onload = function(){</h4><h4 id=""><a href="#" class="headerlink" title="}"></a>}</h4><p>方法在页面加载完毕后才会执行。</p>
+<p>这样就可以先加载完body，再执行script里面的内容。</p>
+<h4 id="1、getElementById（）通过id获取节点"><a href="#1、getElementById（）通过id获取节点" class="headerlink" title="1、getElementById（）通过id获取节点"></a>1、getElementById（）通过id获取节点</h4><h4 id="2、getElementsByTagName-获取相同元素的节点列表"><a href="#2、getElementsByTagName-获取相同元素的节点列表" class="headerlink" title="2、getElementsByTagName()    获取相同元素的节点列表"></a>2、getElementsByTagName()    获取相同元素的节点列表</h4><h4 id="3、getElementsByName-获取相同元素名称的节点列表"><a href="#3、getElementsByName-获取相同元素名称的节点列表" class="headerlink" title="3、getElementsByName()获取相同元素名称的节点列表"></a>3、getElementsByName()获取相同元素名称的节点列表</h4><h4 id="4、getAttribute-获取特定元素节点属性的值"><a href="#4、getAttribute-获取特定元素节点属性的值" class="headerlink" title="4、getAttribute()获取特定元素节点属性的值"></a>4、getAttribute()获取特定元素节点属性的值</h4><h4 id="5、setAttribute-设置特点元素特点属性的值"><a href="#5、setAttribute-设置特点元素特点属性的值" class="headerlink" title="5、setAttribute()设置特点元素特点属性的值"></a>5、setAttribute()设置特点元素特点属性的值</h4><h4 id="6、removeAttribute-移除特定元素节点属性"><a href="#6、removeAttribute-移除特定元素节点属性" class="headerlink" title="6、removeAttribute()移除特定元素节点属性"></a>6、removeAttribute()移除特定元素节点属性</h4>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/26/DOM/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-BOM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/26/BOM/">BOM</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/26/BOM/" class="archive-article-date">
+  	<time datetime="2018-10-26T01:26:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="BOM-Browser-object-model-浏览器对象模型"><a href="#BOM-Browser-object-model-浏览器对象模型" class="headerlink" title="BOM(Browser object model)浏览器对象模型"></a>BOM(Browser object model)浏览器对象模型</h1><blockquote>
+<p> 一个浏览器窗口就是一个bom（浏览器对象）</p>
+</blockquote>
+<p><img src="C:\Users\罗中运\AppData\Roaming\Typora\typora-user-images\1540517515858.png" alt="1540517515858"></p>
+<h5 id="window下的方法，通常情况下window开头的方法函数都可以省略window使用"><a href="#window下的方法，通常情况下window开头的方法函数都可以省略window使用" class="headerlink" title="window下的方法，通常情况下window开头的方法函数都可以省略window使用"></a>window下的方法，通常情况下window开头的方法函数都可以省略window使用</h5><h4 id="confirm（）方法"><a href="#confirm（）方法" class="headerlink" title="confirm（）方法"></a>confirm（）方法</h4><blockquote>
+<p>confirm() 方法用于显示一个带有指定消息和 OK 及取消按钮的对话框。</p>
+</blockquote>
+<p>返回值：点击确定，返回true</p>
+<p>​        点击取消，返回false</p>
+<h4 id="prompt"><a href="#prompt" class="headerlink" title="prompt()"></a>prompt()</h4><blockquote>
+<p>prompt()方法用于显示可提示用户进行输入的对话框。</p>
+<p>这个方法返回用户输入的字符串。</p>
+</blockquote>
+<p>参数： 第一个参数 提示面板上显示的内容</p>
+<p>​          第二个参数 输入框上显示的内容（可以不填）</p>
+<p>返回值：输入框的内容    </p>
+<h4 id="open"><a href="#open" class="headerlink" title="open()"></a>open()</h4><blockquote>
+<p>open() 方法用于打开一个新的浏览器窗口或查找一个已命名的窗口。</p>
+</blockquote>
+<p>第一个参数： 加载的url</p>
+<p>第二个参数：指定target属性窗口的名称，（）</p>
+<p>第三个参数：一串特殊意义的字符串，配置我们打开窗口的大小坐标</p>
+<h5 id="url完整组成"><a href="#url完整组成" class="headerlink" title="url完整组成"></a>url完整组成</h5><h5 id="协议：-主机名：端口号-路径-？查询字符串-锚点"><a href="#协议：-主机名：端口号-路径-？查询字符串-锚点" class="headerlink" title="协议：//主机名：端口号/路径/？查询字符串#锚点"></a>协议：//主机名：端口号/路径/？查询字符串#锚点</h5><h5 id="protocol-hostname-port-pathname-search-hash"><a href="#protocol-hostname-port-pathname-search-hash" class="headerlink" title="protocol://hostname:port/pathname/?search#hash"></a>protocol://hostname:port/pathname/?search#hash</h5><h4 id="opener打开当前窗口的父窗口的对象（只有火狐浏览器兼容）"><a href="#opener打开当前窗口的父窗口的对象（只有火狐浏览器兼容）" class="headerlink" title="opener打开当前窗口的父窗口的对象（只有火狐浏览器兼容）"></a>opener打开当前窗口的父窗口的对象（只有火狐浏览器兼容）</h4><p>opener.document.write(“father”);//父窗口输出</p>
+<h4 id="setTimeout-延时器"><a href="#setTimeout-延时器" class="headerlink" title="setTimeout()延时器"></a>setTimeout()延时器</h4><p>格式：</p>
+<p>var timer = setTimerout(函数，毫秒数);</p>
+<p>功能： 延迟对应毫秒数，去执行函数，有且仅执行一次；</p>
+<p>取消延时器</p>
+<p>clearTImeout(timer);</p>
+<h4 id="history-历史对象"><a href="#history-历史对象" class="headerlink" title="history 历史对象"></a>history 历史对象</h4><p>window.history</p>
+<p>属性</p>
+<p>history.length    历史纪录长度</p>
+<p>方法：</p>
+<p>​    history.back();//后退</p>
+<p>​    history.forward();//前进</p>
+<p>​    history.go();//到指定历史界面</p>
+<p>​        参数：正整数，负整数，0 前进/后退n条记录；0重新加载</p>
+<h4 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h4><blockquote>
+<p>地址栏部分</p>
+<p>url：统一资源定位符</p>
+<p>组成一个完整的url，必须按格式进行填写。</p>
+</blockquote>
+<h5 id="第一部分：location-protocol-协议"><a href="#第一部分：location-protocol-协议" class="headerlink" title="第一部分：location.protocol 协议"></a>第一部分：location.protocol 协议</h5><p>http://</p>
+<p>https://</p>
+<p>传输方式</p>
+<h5 id="第二部分：主机名-location-hostname"><a href="#第二部分：主机名-location-hostname" class="headerlink" title="第二部分：主机名 location.hostname"></a>第二部分：主机名 location.hostname</h5><p>www.baidu.com 域名IP的昵称</p>
+<p>61.135.169.125 IP 全网唯一</p>
+<h5 id="location-port-端口号"><a href="#location-port-端口号" class="headerlink" title="location.port 端口号"></a>location.port 端口号</h5><p>系统会给当前使用网络的app，分配一个号码，这个号码就是端口号</p>
+<p>当前电脑内唯一识别正在使用网络的软件；</p>
+<p>ip：port 在全球范围内定位当前使用网络的软件</p>
+<h5 id="pathname路径"><a href="#pathname路径" class="headerlink" title="pathname路径"></a>pathname路径</h5><p>location.pathname</p>
+<h5 id="search向服务器提交数据部分（查询字符串）"><a href="#search向服务器提交数据部分（查询字符串）" class="headerlink" title="search向服务器提交数据部分（查询字符串）"></a>search向服务器提交数据部分（查询字符串）</h5><p>location.search </p>
+<p>查询字符串</p>
+<p>？name1 =value&amp; name2 = value</p>
+<h5 id="hash锚点"><a href="#hash锚点" class="headerlink" title="hash锚点"></a>hash锚点</h5><p>location.hash</p>
+<h3 id="location方法"><a href="#location方法" class="headerlink" title="location方法"></a>location方法</h3><p>location.assign（） 跳转到某一个url</p>
+<p>location.replace（） 在当前窗口替换url</p>
+<p>assign和replace区别assign有历史记录，replace没有</p>
+<p>location.reload（） 刷新网页 参数location.reload（true）：不经过缓存直接刷新页面</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/26/BOM/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-面向对象和面向过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -278,17 +487,89 @@
 <p>可以拿生活中的实例来理解面向过程与面向对象，例如五子棋，面向过程的设计思路就是首先分析问题的步骤：1、开始游戏，2、黑子先走，3、绘制画面，4、判断输赢，5、轮到白子，6、绘制画面，7、判断输赢，8、返回步骤2，9、输出最后结果。把上面每个步骤用不同的方法来实现。</p>
 <h6 id="如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。"><a href="#如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。" class="headerlink" title="如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。"></a>如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。</h6><h6 id="可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。"><a href="#可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。" class="headerlink" title="可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。"></a>可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。</h6><p>###### </p>
 <h4 id="对象的组成"><a href="#对象的组成" class="headerlink" title="对象的组成"></a>对象的组成</h4><p>1、方法   函数：过程、动态的</p>
-<p>2、属性   变量：状态、静态的</p>
+<p>2、属性   变量：状态、静态的，</p>
 <h4 id="this当前的方法属于谁就是谁"><a href="#this当前的方法属于谁就是谁" class="headerlink" title="this当前的方法属于谁就是谁"></a>this<strong>当前的方法属于谁就是谁</strong></h4><p>例如点击事件里的this，其实就是触发事件的那个dom对象的onclick方法里的this，当然是人家自己咯</p>
 <p> 再比如说一个函数里的this，这个函数都属于window的一个方法，当然里面的this也是window咯</p>
 <p>  还有哦，不要在系统对象上面添加属性和方法，这样不太好</p>
 <p> 那么在谁身上加呢？在object这个对象身上，别的date呀array呀，这些对象都是有一些个好玩的功能的，</p>
 <p>  object也就自己最强大的一个功能就是，没有功能~~~~ 这样咱们就可以随意给他加属性和方法而不用去想会不会覆盖了</p>
 <h4 id="创建对象的方法"><a href="#创建对象的方法" class="headerlink" title="创建对象的方法"></a>创建对象的方法</h4><p>1、最基础的</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1、通过new创建对象</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="comment">//添加对象的 属性和方法，使用方法和普通变量，方法一样</span></span><br><span class="line">obj.name = <span class="string">'shizhikai'</span></span><br><span class="line">obj.age = <span class="string">'3岁'</span></span><br><span class="line">obj.showAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	  <span class="built_in">console</span>.log(<span class="keyword">this</span>.age)  <span class="comment">//这个this是谁？知道吗？  obj</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//2、省略new</span></span><br><span class="line"><span class="keyword">var</span> box=<span class="built_in">Object</span>();   <span class="comment">//省略了 new 关键字</span></span><br><span class="line"><span class="comment">//3、使用字面量方式创建 Object</span></span><br><span class="line"><span class="keyword">var</span> box=&#123; </span><br><span class="line">    <span class="comment">//字面量方式 </span></span><br><span class="line">    name:’田雨飞<span class="string">', //创建属性字段 </span></span><br><span class="line"><span class="string">    age:18 </span></span><br><span class="line"><span class="string">&#125;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1、通过new声明对象</span></span><br><span class="line"><span class="comment">// var obj = new Object();</span></span><br><span class="line"><span class="comment">//2、省略new声明对象</span></span><br><span class="line"><span class="comment">// var obj = Object();</span></span><br><span class="line"><span class="comment">//3、直接通过对象常量赋值</span></span><br><span class="line"><span class="comment">/*var obj = &#123;&#125;;</span></span><br><span class="line"><span class="comment">添加对象的属性  和普通的变量是一样的</span></span><br><span class="line"><span class="comment">obj.name = '小明';</span></span><br><span class="line"><span class="comment">obj.age = 18;</span></span><br><span class="line"><span class="comment">//添加对象的方法/函数</span></span><br><span class="line"><span class="comment">obj.run = function()&#123;</span></span><br><span class="line"><span class="comment">	alert("会跑")</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">alert(obj.name);</span></span><br><span class="line"><span class="comment">obj.run();*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*var obj = &#123;</span></span><br><span class="line"><span class="comment">	name: "小明",</span></span><br><span class="line"><span class="comment">	age: 18,</span></span><br><span class="line"><span class="comment">	run: function()&#123;</span></span><br><span class="line"><span class="comment">	alert("会跑");</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">alert(obj.name);</span></span><br><span class="line"><span class="comment">obj.run();*/</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加对象的属性  和普通的变量是一样的</span></span><br><span class="line">obj.name = <span class="string">'小明'</span>;</span><br><span class="line">obj[<span class="string">'age'</span>] = <span class="number">18</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加对象的方法/函数</span></span><br><span class="line">obj.run = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">"会跑"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(obj[<span class="string">'name'</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除对象的属性和方法的关键字 delete</span></span><br><span class="line"><span class="comment">// delete删除对象属性，delete删除不了变量及原型链中的变量</span></span><br><span class="line"><span class="keyword">delete</span> obj.name;</span><br><span class="line">alert(obj.name);</span><br><span class="line"></span><br><span class="line">obj.run();</span><br></pre></td></tr></table></figure>
 <p>但是这样太麻烦，我要写100个人，那得写100次。有别的方法吗？有</p>
 <p>2、工厂方式 通过构造函数</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//原料</span></span><br><span class="line">    <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    <span class="comment">//加工</span></span><br><span class="line">    obj.name = name;</span><br><span class="line">    obj.age=age;</span><br><span class="line">    obj.showAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         alert(<span class="keyword">this</span>.age)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//出厂</span></span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1=createPerson(<span class="string">"shizhikai"</span>,<span class="string">'3岁'</span>)</span><br><span class="line"><span class="keyword">var</span> obj2=createPerson(<span class="string">"ni"</span>,<span class="string">'18岁'</span>);</span><br><span class="line"></span><br><span class="line">alert(obj1.showName)<span class="comment">//function()&#123;alert(this.name)&#125;</span></span><br><span class="line">alert(obj2.showName)<span class="comment">//function()&#123;alert(this.name)&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="日起对象Date"><a href="#日起对象Date" class="headerlink" title="日起对象Date"></a>日起对象Date</h2><p>Date对象代表日期</p>
+<p> Date</p>
+<p>类型使用自 UTC（Coordinated Universal Time，国际协调时间）1970 年 1 月 1 日午夜（零时）开始经过的毫秒数来保存日期。Date 类型保存的日期能够精确到 1970 年 1 月 1 日之前或之后的 285616 年。</p>
+<p>创建一个日期对象，使用 new 运算符和 Date 构造方法(构造函数)即可。</p>
+<p>​    <strong>var d = new Date();</strong></p>
+<p>在调用 Date 构造方法而不传递参数的情况下，新建的对象自动获取当前的时间和日期。</p>
+<p>创建日期对象并指定时间</p>
+<p>​    <strong>var d = new Date(“2015/08/22”);</strong></p>
+<p>​    <strong>var d = new Date(2016,04,13,14,34);</strong></p>
+<p>【注】time可以是“2015/08/22”， “2015-08-22”  ，或1970年当前日期的毫秒数56521211021</p>
+<h4 id="5、日期对象Date（格式化方法，了解即可）"><a href="#5、日期对象Date（格式化方法，了解即可）" class="headerlink" title="5、日期对象Date（格式化方法，了解即可）"></a>5、日期对象Date（格式化方法，了解即可）</h4><table>
+<thead>
+<tr>
+<th>alert(box.toDateString());</th>
+<th>//以特定的格式显示星期几、月、日和年</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alert(box.toTimeString());</td>
+<td>//以特定的格式显示时、分、秒和时区</td>
+</tr>
+<tr>
+<td>alert(box.toLocaleDateString());</td>
+<td>//以特定地区格式显示星期几、月、日和年</td>
+</tr>
+<tr>
+<td>alert(box.toLocaleTimeString());</td>
+<td>//以特定地区格式显示时、分、秒和时区</td>
+</tr>
+<tr>
+<td>alert(box.toUTCString());</td>
+<td>//以特定的格式显示完整的 UTC 日期。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="6、日期对象Date方法"><a href="#6、日期对象Date方法" class="headerlink" title="6、日期对象Date方法"></a>6、日期对象Date方法</h4><p>x(“2015-08-24”);</p>
+<p>//转换格式默认支持2015-08-24或2015/08/24</p>
+<p>//返回距离1970年1月1日0时的毫秒数</p>
+<p>d.getTime()/d.setTime()</p>
+<p>getTime获取某个日期自1970年以来的毫秒数</p>
+<p>setTime修改日期的毫秒数，对应的日期时间也会修改</p>
+<p>var myDate = new Date();</p>
+<p>myDate.getTime();</p>
+<h4 id="7、日期对象方法"><a href="#7、日期对象方法" class="headerlink" title="7、日期对象方法"></a>7、日期对象方法</h4><h5 id="重点记忆（set-get既能获取又能够赋值-get只能获取）"><a href="#重点记忆（set-get既能获取又能够赋值-get只能获取）" class="headerlink" title="重点记忆（set/get既能获取又能够赋值    get只能获取）"></a>重点记忆（set/get既能获取又能够赋值    get只能获取）</h5><blockquote>
+<p>调用格式： 日期对象.方法()</p>
+</blockquote>
+<p>set/getDate() 从Date对象中返回一个月中的某一天(1~31)</p>
+<p>getDay() 从Date对象返回一周中的某一天(0~6 )    获取日期星期几（0~6）0是周日</p>
+<p>set/getMonth() 从Date对象中返回月份(0~11)对应（1~12）</p>
+<p>set/getFullYear() 从Date对象以四位数返回年份</p>
+<p>set/getHours() 返回Date对象的小时(0~23)</p>
+<p>set/getMinutes() 返回Date对象的分钟(0~59)</p>
+<p>set/getSeconds() 返回Date对象的秒数(0~59)</p>
+<p>set/getMilliseconds()   返回Date对象的毫秒</p>
+<p>set/getTime() 返回1970年1月1日至今的毫秒数</p>
+<p>getTimezoneOffset()     返回本地时间与格林威治标准时间(GMT)的分钟差</p>
+<h3 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h3><h4 id="setInterval-函数，毫秒数"><a href="#setInterval-函数，毫秒数" class="headerlink" title="setInterval(函数，毫秒数)"></a>setInterval(函数，毫秒数)</h4><p>此处函数不加小括号，此处含义是把函数传过去让他执行</p>
+<p>格式： var timer = setInterval(show, 1000);</p>
+<p>返回值：当前定时器的编码</p>
+<h4 id="clearInterval（timer）；-关闭定时器"><a href="#clearInterval（timer）；-关闭定时器" class="headerlink" title="clearInterval（timer）；//关闭定时器"></a>clearInterval（timer）；//关闭定时器</h4><p>函数写法：</p>
+<p>1、</p>
+<p>function show(){</p>
+<p>}</p>
+<p>2、</p>
+<p>var show = function(){</p>
+<p>}</p>
+<p>show();</p>
+<p>所以上面写法可以替换为</p>
+<p>格式： setInterval( function(){</p>
+<p>}, 1000);</p>
+<p>此处函数叫做匿名函数；</p>
 
       
 
@@ -1119,251 +1400,6 @@
 
 
   
-    <article id="post-js作用域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/19/js作用域/">js作用域</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/19/js作用域/" class="archive-article-date">
-  	<time datetime="2018-10-19T01:17:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<p>程序必须读到内存中，才能被CPU运行。</p>
-<p>声明变量 分配内存空间的过程。</p>
-<p>函数调用，函数运行的时候，需要内存空间来运行；</p>
-<p>【注】</p>
-<p>​    在某一函数内声明的变量或形参（形参在函数内和变量基本一致），它的生命周期是这个函数调用开始到这个函数调用结束，销毁；</p>
-<h4 id="作用域："><a href="#作用域：" class="headerlink" title="作用域："></a>作用域：</h4><p>​    局部作用域：每一个函数都死一个局部作用域。</p>
-<p>​            在局部作用域里面声明的变量和形参，叫局部变量；</p>
-<p>​    全局作用域：在全局作用域里面声明的变量和形参，叫做全局变量；</p>
-<h5 id="js中只有全局作用域和函数作用域"><a href="#js中只有全局作用域和函数作用域" class="headerlink" title="js中只有全局作用域和函数作用域"></a>js中只有全局作用域和函数作用域</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>( <span class="keyword">var</span> i =<span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>可以执行，结果为10</p>
-</blockquote>
-<p>为什么呢，因为在JavaScript中不同于Java他没有块作用域；</p>
-<p>当然在JavaScript中我们也可以实现块作用域的功能。如以下代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">)()</span><br><span class="line"><span class="built_in">console</span>.log(i);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这种写法叫做立即调用函数表达式</p>
-</blockquote>
-<h4 id="访问数据："><a href="#访问数据：" class="headerlink" title="访问数据："></a>访问数据：</h4><p>​    1、就近原则</p>
-<p>​    2、访问数据，如果当前作用域没有该数据，则从大一级的作用域寻找；</p>
-<p>##### </p>
-<h4 id="全局函数："><a href="#全局函数：" class="headerlink" title="全局函数："></a>全局函数：</h4><p>​    var a =function(x){</p>
-<p>​        var b = ‘bb’;</p>
-<p>​        return b;</p>
-<p>​    }</p>
-<p>【注】：如果不写var直接声明变量，那么这个变量将会被声明为全局变量。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">H5 js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/19/js作用域/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js函数的概念和作用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/18/js函数的概念和作用/">js函数的概念和作用</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/18/js函数的概念和作用/" class="archive-article-date">
-  	<time datetime="2018-10-18T06:11:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="JS函数及作用"><a href="#JS函数及作用" class="headerlink" title="JS函数及作用"></a>JS函数及作用</h1><ol>
-<li>函数的概念，及作用</li>
-<li>函数的声明</li>
-<li>如何执行函数（调用）</li>
-<li>函数的参数（实参，形参）,返回值</li>
-<li>arguments</li>
-<li>作用域</li>
-<li>DOM的简单操作</li>
-<li>递归</li>
-</ol>
-<blockquote>
-<p>在js的世界里存在函数，函数是把强大的功能集中在一起；</p>
-<p>调用函数，执行函数中具体的代码，最终把函数的功能实现了；</p>
-<p>书写步骤：</p>
-<p>​    1、在标签或文件里书写函数</p>
-<p>​    2、在一处调用</p>
-</blockquote>
-<h3 id="1、概念："><a href="#1、概念：" class="headerlink" title="1、概念："></a>1、概念：</h3><p>函数就是把完成特定功能的一段代码[抽象出来]，使之成为程序中的一个<strong>[独立实体]</strong>，起个名字<strong>（函数名）</strong>。可以在同一个程序或其他程序中多次重复使用<strong>（通过函数名调用）</strong>。</p>
-<h4 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h4><ul>
-<li>使程序变得简短而清晰</li>
-<li>有利于程序维护</li>
-<li>可以提高程序开发效率</li>
-<li>提高了代码的重用性（复用性</li>
-</ul>
-<h3 id="2、声明函数"><a href="#2、声明函数" class="headerlink" title="2、声明函数"></a>2、声明函数</h3><p>function     函数名(){</p>
-<p>​    具体要执行的代码；</p>
-<p>}</p>
-<h4 id="调用："><a href="#调用：" class="headerlink" title="调用："></a>调用：</h4><p>函数名();</p>
-<h3 id="3、函数的分类"><a href="#3、函数的分类" class="headerlink" title="3、函数的分类"></a>3、函数的分类</h3><p>分三大类：</p>
-<p>​    1、内置函数（系统函数）</p>
-<p>​    2、用户自定义函数</p>
-<p>​    3、事件驱动函数</p>
-<h3 id="4、函数参数"><a href="#4、函数参数" class="headerlink" title="4、函数参数"></a>4、函数参数</h3><blockquote>
-<p>不确定的值要当做参数去假设；</p>
-<p>分为： 形参、实参</p>
-<p>形参（形式上的参数）</p>
-<p>传参：用实际的参数去代替原来形式上的参数。</p>
-</blockquote>
-<p>如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>)</span>&#123;</span><br><span class="line">    alert(x + y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//传参</span></span><br><span class="line">add(<span class="number">10</span>， <span class="number">20</span>)；</span><br></pre></td></tr></table></figure>
-<h3 id="返回值（return）"><a href="#返回值（return）" class="headerlink" title="返回值（return）"></a>返回值（return）</h3><blockquote>
-<p>可有可无</p>
-<p>作用：</p>
-<p>1、作为函数的值，return后面表达式的值就是函数的返回值；</p>
-<p>2、在执行return后，函数后面的代码不会再执行；</p>
-</blockquote>
-<h4 id="编写一个函数"><a href="#编写一个函数" class="headerlink" title="编写一个函数"></a>编写一个函数</h4><p>1、确定未知量</p>
-<p>也就是形参数量，多个形参通过逗号隔开；</p>
-<p>2、编写函数；</p>
-<p>3、确认返回值；（只会执行一个）</p>
-<h2 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h2><blockquote>
-<p>每一个函数内部都有一个arguments</p>
-</blockquote>
-<p>功能： 当我们调用函数的时候，给函数传入实参，会全部存储在arguments里面。</p>
-<p>使用arguments</p>
-<p>​    arguments.length 传入了几个实参</p>
-<p>​    arguments[下标]    通过索引访问</p>
-<p>ps：为了让函数可读性更高，尽量不要用arguments</p>
-<h3 id="函数递归"><a href="#函数递归" class="headerlink" title="函数递归"></a>函数递归</h3><p>特点：</p>
-<p>​    1、函数自己调用自己；</p>
-<p>​    2、递归函数一般都有参数；</p>
-<p>​    3、递归函数一般都有return；</p>
-<p>功能：</p>
-<p>​    循环能做的，递归都能做，循环做不到的递归也能做；</p>
-<p>作用：</p>
-<p>​    精简代码</p>
-<h4 id="递归的规律"><a href="#递归的规律" class="headerlink" title="递归的规律"></a>递归的规律</h4><p>​    1、找出临界值（），临界值无需计算直接可以得出</p>
-<p>​    2、找出第n次和第n-1次的关系</p>
-<p>​    3、假设函数运行，写出第n次和第n-1次的关系</p>
-<p>1、递归会导致内存溢出，尾递归除外- -</p>
-<p>2、为了能回溯，递归函数的参数和地址需要分配在 call stack 上，大部分语言的 call stack 大小都是有限的，递归太深就会爆掉</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">H5 js 函数</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/18/js函数的概念和作用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1461,15 +1497,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">H5 js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">H5</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">H5 js</a>
               </li>
              
               <li class="article-tag-list-item">

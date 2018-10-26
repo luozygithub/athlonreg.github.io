@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="luozy&#39;s Blog">
 <meta property="og:description" content="1、Math对象Math.random()[0,1)返回随机数 Math.max(num1,num2),Math.min(num1,num2);取较大，较小值 Math.round()四舍五入，变成整数 Math.floor(), Math.ceil()向下，上取整 Math.sqrt()开平方 Math.abs()取绝对值 对象 面向对象1、抽象：抽指把核心的东西抽出来，把与我们要解决的问题有关">
 <meta property="og:image" content="c:/Users/罗中运/Pictures/Saved%20Pictures/对象.png">
-<meta property="og:updated_time" content="2018-10-25T02:13:52.682Z">
+<meta property="og:updated_time" content="2018-10-25T09:18:19.221Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Math对象和日期对象">
 <meta name="twitter:description" content="1、Math对象Math.random()[0,1)返回随机数 Math.max(num1,num2),Math.min(num1,num2);取较大，较小值 Math.round()四舍五入，变成整数 Math.floor(), Math.ceil()向下，上取整 Math.sqrt()开平方 Math.abs()取绝对值 对象 面向对象1、抽象：抽指把核心的东西抽出来，把与我们要解决的问题有关">
@@ -181,17 +181,89 @@
 <p>可以拿生活中的实例来理解面向过程与面向对象，例如五子棋，面向过程的设计思路就是首先分析问题的步骤：1、开始游戏，2、黑子先走，3、绘制画面，4、判断输赢，5、轮到白子，6、绘制画面，7、判断输赢，8、返回步骤2，9、输出最后结果。把上面每个步骤用不同的方法来实现。</p>
 <h6 id="如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。"><a href="#如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。" class="headerlink" title="如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。"></a>如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。</h6><h6 id="可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。"><a href="#可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。" class="headerlink" title="可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。"></a>可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。</h6><p>###### </p>
 <h4 id="对象的组成"><a href="#对象的组成" class="headerlink" title="对象的组成"></a>对象的组成</h4><p>1、方法   函数：过程、动态的</p>
-<p>2、属性   变量：状态、静态的</p>
+<p>2、属性   变量：状态、静态的，</p>
 <h4 id="this当前的方法属于谁就是谁"><a href="#this当前的方法属于谁就是谁" class="headerlink" title="this当前的方法属于谁就是谁"></a>this<strong>当前的方法属于谁就是谁</strong></h4><p>例如点击事件里的this，其实就是触发事件的那个dom对象的onclick方法里的this，当然是人家自己咯</p>
 <p> 再比如说一个函数里的this，这个函数都属于window的一个方法，当然里面的this也是window咯</p>
 <p>  还有哦，不要在系统对象上面添加属性和方法，这样不太好</p>
 <p> 那么在谁身上加呢？在object这个对象身上，别的date呀array呀，这些对象都是有一些个好玩的功能的，</p>
 <p>  object也就自己最强大的一个功能就是，没有功能~~~~ 这样咱们就可以随意给他加属性和方法而不用去想会不会覆盖了</p>
 <h4 id="创建对象的方法"><a href="#创建对象的方法" class="headerlink" title="创建对象的方法"></a>创建对象的方法</h4><p>1、最基础的</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1、通过new创建对象</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="comment">//添加对象的 属性和方法，使用方法和普通变量，方法一样</span></span><br><span class="line">obj.name = <span class="string">'shizhikai'</span></span><br><span class="line">obj.age = <span class="string">'3岁'</span></span><br><span class="line">obj.showAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	  <span class="built_in">console</span>.log(<span class="keyword">this</span>.age)  <span class="comment">//这个this是谁？知道吗？  obj</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//2、省略new</span></span><br><span class="line"><span class="keyword">var</span> box=<span class="built_in">Object</span>();   <span class="comment">//省略了 new 关键字</span></span><br><span class="line"><span class="comment">//3、使用字面量方式创建 Object</span></span><br><span class="line"><span class="keyword">var</span> box=&#123; </span><br><span class="line">    <span class="comment">//字面量方式 </span></span><br><span class="line">    name:’田雨飞<span class="string">', //创建属性字段 </span></span><br><span class="line"><span class="string">    age:18 </span></span><br><span class="line"><span class="string">&#125;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1、通过new声明对象</span></span><br><span class="line"><span class="comment">// var obj = new Object();</span></span><br><span class="line"><span class="comment">//2、省略new声明对象</span></span><br><span class="line"><span class="comment">// var obj = Object();</span></span><br><span class="line"><span class="comment">//3、直接通过对象常量赋值</span></span><br><span class="line"><span class="comment">/*var obj = &#123;&#125;;</span></span><br><span class="line"><span class="comment">添加对象的属性  和普通的变量是一样的</span></span><br><span class="line"><span class="comment">obj.name = '小明';</span></span><br><span class="line"><span class="comment">obj.age = 18;</span></span><br><span class="line"><span class="comment">//添加对象的方法/函数</span></span><br><span class="line"><span class="comment">obj.run = function()&#123;</span></span><br><span class="line"><span class="comment">	alert("会跑")</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">alert(obj.name);</span></span><br><span class="line"><span class="comment">obj.run();*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*var obj = &#123;</span></span><br><span class="line"><span class="comment">	name: "小明",</span></span><br><span class="line"><span class="comment">	age: 18,</span></span><br><span class="line"><span class="comment">	run: function()&#123;</span></span><br><span class="line"><span class="comment">	alert("会跑");</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">alert(obj.name);</span></span><br><span class="line"><span class="comment">obj.run();*/</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加对象的属性  和普通的变量是一样的</span></span><br><span class="line">obj.name = <span class="string">'小明'</span>;</span><br><span class="line">obj[<span class="string">'age'</span>] = <span class="number">18</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加对象的方法/函数</span></span><br><span class="line">obj.run = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">"会跑"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(obj[<span class="string">'name'</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除对象的属性和方法的关键字 delete</span></span><br><span class="line"><span class="comment">// delete删除对象属性，delete删除不了变量及原型链中的变量</span></span><br><span class="line"><span class="keyword">delete</span> obj.name;</span><br><span class="line">alert(obj.name);</span><br><span class="line"></span><br><span class="line">obj.run();</span><br></pre></td></tr></table></figure>
 <p>但是这样太麻烦，我要写100个人，那得写100次。有别的方法吗？有</p>
 <p>2、工厂方式 通过构造函数</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//原料</span></span><br><span class="line">    <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    <span class="comment">//加工</span></span><br><span class="line">    obj.name = name;</span><br><span class="line">    obj.age=age;</span><br><span class="line">    obj.showAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         alert(<span class="keyword">this</span>.age)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//出厂</span></span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1=createPerson(<span class="string">"shizhikai"</span>,<span class="string">'3岁'</span>)</span><br><span class="line"><span class="keyword">var</span> obj2=createPerson(<span class="string">"ni"</span>,<span class="string">'18岁'</span>);</span><br><span class="line"></span><br><span class="line">alert(obj1.showName)<span class="comment">//function()&#123;alert(this.name)&#125;</span></span><br><span class="line">alert(obj2.showName)<span class="comment">//function()&#123;alert(this.name)&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="日起对象Date"><a href="#日起对象Date" class="headerlink" title="日起对象Date"></a>日起对象Date</h2><p>Date对象代表日期</p>
+<p> Date</p>
+<p>类型使用自 UTC（Coordinated Universal Time，国际协调时间）1970 年 1 月 1 日午夜（零时）开始经过的毫秒数来保存日期。Date 类型保存的日期能够精确到 1970 年 1 月 1 日之前或之后的 285616 年。</p>
+<p>创建一个日期对象，使用 new 运算符和 Date 构造方法(构造函数)即可。</p>
+<p>​    <strong>var d = new Date();</strong></p>
+<p>在调用 Date 构造方法而不传递参数的情况下，新建的对象自动获取当前的时间和日期。</p>
+<p>创建日期对象并指定时间</p>
+<p>​    <strong>var d = new Date(“2015/08/22”);</strong></p>
+<p>​    <strong>var d = new Date(2016,04,13,14,34);</strong></p>
+<p>【注】time可以是“2015/08/22”， “2015-08-22”  ，或1970年当前日期的毫秒数56521211021</p>
+<h4 id="5、日期对象Date（格式化方法，了解即可）"><a href="#5、日期对象Date（格式化方法，了解即可）" class="headerlink" title="5、日期对象Date（格式化方法，了解即可）"></a>5、日期对象Date（格式化方法，了解即可）</h4><table>
+<thead>
+<tr>
+<th>alert(box.toDateString());</th>
+<th>//以特定的格式显示星期几、月、日和年</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alert(box.toTimeString());</td>
+<td>//以特定的格式显示时、分、秒和时区</td>
+</tr>
+<tr>
+<td>alert(box.toLocaleDateString());</td>
+<td>//以特定地区格式显示星期几、月、日和年</td>
+</tr>
+<tr>
+<td>alert(box.toLocaleTimeString());</td>
+<td>//以特定地区格式显示时、分、秒和时区</td>
+</tr>
+<tr>
+<td>alert(box.toUTCString());</td>
+<td>//以特定的格式显示完整的 UTC 日期。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="6、日期对象Date方法"><a href="#6、日期对象Date方法" class="headerlink" title="6、日期对象Date方法"></a>6、日期对象Date方法</h4><p>x(“2015-08-24”);</p>
+<p>//转换格式默认支持2015-08-24或2015/08/24</p>
+<p>//返回距离1970年1月1日0时的毫秒数</p>
+<p>d.getTime()/d.setTime()</p>
+<p>getTime获取某个日期自1970年以来的毫秒数</p>
+<p>setTime修改日期的毫秒数，对应的日期时间也会修改</p>
+<p>var myDate = new Date();</p>
+<p>myDate.getTime();</p>
+<h4 id="7、日期对象方法"><a href="#7、日期对象方法" class="headerlink" title="7、日期对象方法"></a>7、日期对象方法</h4><h5 id="重点记忆（set-get既能获取又能够赋值-get只能获取）"><a href="#重点记忆（set-get既能获取又能够赋值-get只能获取）" class="headerlink" title="重点记忆（set/get既能获取又能够赋值    get只能获取）"></a>重点记忆（set/get既能获取又能够赋值    get只能获取）</h5><blockquote>
+<p>调用格式： 日期对象.方法()</p>
+</blockquote>
+<p>set/getDate() 从Date对象中返回一个月中的某一天(1~31)</p>
+<p>getDay() 从Date对象返回一周中的某一天(0~6 )    获取日期星期几（0~6）0是周日</p>
+<p>set/getMonth() 从Date对象中返回月份(0~11)对应（1~12）</p>
+<p>set/getFullYear() 从Date对象以四位数返回年份</p>
+<p>set/getHours() 返回Date对象的小时(0~23)</p>
+<p>set/getMinutes() 返回Date对象的分钟(0~59)</p>
+<p>set/getSeconds() 返回Date对象的秒数(0~59)</p>
+<p>set/getMilliseconds()   返回Date对象的毫秒</p>
+<p>set/getTime() 返回1970年1月1日至今的毫秒数</p>
+<p>getTimezoneOffset()     返回本地时间与格林威治标准时间(GMT)的分钟差</p>
+<h3 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h3><h4 id="setInterval-函数，毫秒数"><a href="#setInterval-函数，毫秒数" class="headerlink" title="setInterval(函数，毫秒数)"></a>setInterval(函数，毫秒数)</h4><p>此处函数不加小括号，此处含义是把函数传过去让他执行</p>
+<p>格式： var timer = setInterval(show, 1000);</p>
+<p>返回值：当前定时器的编码</p>
+<h4 id="clearInterval（timer）；-关闭定时器"><a href="#clearInterval（timer）；-关闭定时器" class="headerlink" title="clearInterval（timer）；//关闭定时器"></a>clearInterval（timer）；//关闭定时器</h4><p>函数写法：</p>
+<p>1、</p>
+<p>function show(){</p>
+<p>}</p>
+<p>2、</p>
+<p>var show = function(){</p>
+<p>}</p>
+<p>show();</p>
+<p>所以上面写法可以替换为</p>
+<p>格式： setInterval( function(){</p>
+<p>}, 1000);</p>
+<p>此处函数叫做匿名函数；</p>
 
       
 
@@ -438,15 +510,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">H5 js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">H5</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">H5 js</a>
               </li>
              
               <li class="article-tag-list-item">

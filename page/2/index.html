@@ -144,6 +144,251 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-js作用域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/19/js作用域/">js作用域</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/19/js作用域/" class="archive-article-date">
+  	<time datetime="2018-10-19T01:17:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<p>程序必须读到内存中，才能被CPU运行。</p>
+<p>声明变量 分配内存空间的过程。</p>
+<p>函数调用，函数运行的时候，需要内存空间来运行；</p>
+<p>【注】</p>
+<p>​    在某一函数内声明的变量或形参（形参在函数内和变量基本一致），它的生命周期是这个函数调用开始到这个函数调用结束，销毁；</p>
+<h4 id="作用域："><a href="#作用域：" class="headerlink" title="作用域："></a>作用域：</h4><p>​    局部作用域：每一个函数都死一个局部作用域。</p>
+<p>​            在局部作用域里面声明的变量和形参，叫局部变量；</p>
+<p>​    全局作用域：在全局作用域里面声明的变量和形参，叫做全局变量；</p>
+<h5 id="js中只有全局作用域和函数作用域"><a href="#js中只有全局作用域和函数作用域" class="headerlink" title="js中只有全局作用域和函数作用域"></a>js中只有全局作用域和函数作用域</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>( <span class="keyword">var</span> i =<span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>可以执行，结果为10</p>
+</blockquote>
+<p>为什么呢，因为在JavaScript中不同于Java他没有块作用域；</p>
+<p>当然在JavaScript中我们也可以实现块作用域的功能。如以下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">)()</span><br><span class="line"><span class="built_in">console</span>.log(i);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这种写法叫做立即调用函数表达式</p>
+</blockquote>
+<h4 id="访问数据："><a href="#访问数据：" class="headerlink" title="访问数据："></a>访问数据：</h4><p>​    1、就近原则</p>
+<p>​    2、访问数据，如果当前作用域没有该数据，则从大一级的作用域寻找；</p>
+<p>##### </p>
+<h4 id="全局函数："><a href="#全局函数：" class="headerlink" title="全局函数："></a>全局函数：</h4><p>​    var a =function(x){</p>
+<p>​        var b = ‘bb’;</p>
+<p>​        return b;</p>
+<p>​    }</p>
+<p>【注】：如果不写var直接声明变量，那么这个变量将会被声明为全局变量。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">H5 js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/19/js作用域/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-js函数的概念和作用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/18/js函数的概念和作用/">js函数的概念和作用</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/18/js函数的概念和作用/" class="archive-article-date">
+  	<time datetime="2018-10-18T06:11:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="JS函数及作用"><a href="#JS函数及作用" class="headerlink" title="JS函数及作用"></a>JS函数及作用</h1><ol>
+<li>函数的概念，及作用</li>
+<li>函数的声明</li>
+<li>如何执行函数（调用）</li>
+<li>函数的参数（实参，形参）,返回值</li>
+<li>arguments</li>
+<li>作用域</li>
+<li>DOM的简单操作</li>
+<li>递归</li>
+</ol>
+<blockquote>
+<p>在js的世界里存在函数，函数是把强大的功能集中在一起；</p>
+<p>调用函数，执行函数中具体的代码，最终把函数的功能实现了；</p>
+<p>书写步骤：</p>
+<p>​    1、在标签或文件里书写函数</p>
+<p>​    2、在一处调用</p>
+</blockquote>
+<h3 id="1、概念："><a href="#1、概念：" class="headerlink" title="1、概念："></a>1、概念：</h3><p>函数就是把完成特定功能的一段代码[抽象出来]，使之成为程序中的一个<strong>[独立实体]</strong>，起个名字<strong>（函数名）</strong>。可以在同一个程序或其他程序中多次重复使用<strong>（通过函数名调用）</strong>。</p>
+<h4 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h4><ul>
+<li>使程序变得简短而清晰</li>
+<li>有利于程序维护</li>
+<li>可以提高程序开发效率</li>
+<li>提高了代码的重用性（复用性</li>
+</ul>
+<h3 id="2、声明函数"><a href="#2、声明函数" class="headerlink" title="2、声明函数"></a>2、声明函数</h3><p>function     函数名(){</p>
+<p>​    具体要执行的代码；</p>
+<p>}</p>
+<h4 id="调用："><a href="#调用：" class="headerlink" title="调用："></a>调用：</h4><p>函数名();</p>
+<h3 id="3、函数的分类"><a href="#3、函数的分类" class="headerlink" title="3、函数的分类"></a>3、函数的分类</h3><p>分三大类：</p>
+<p>​    1、内置函数（系统函数）</p>
+<p>​    2、用户自定义函数</p>
+<p>​    3、事件驱动函数</p>
+<h3 id="4、函数参数"><a href="#4、函数参数" class="headerlink" title="4、函数参数"></a>4、函数参数</h3><blockquote>
+<p>不确定的值要当做参数去假设；</p>
+<p>分为： 形参、实参</p>
+<p>形参（形式上的参数）</p>
+<p>传参：用实际的参数去代替原来形式上的参数。</p>
+</blockquote>
+<p>如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>)</span>&#123;</span><br><span class="line">    alert(x + y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//传参</span></span><br><span class="line">add(<span class="number">10</span>， <span class="number">20</span>)；</span><br></pre></td></tr></table></figure>
+<h3 id="返回值（return）"><a href="#返回值（return）" class="headerlink" title="返回值（return）"></a>返回值（return）</h3><blockquote>
+<p>可有可无</p>
+<p>作用：</p>
+<p>1、作为函数的值，return后面表达式的值就是函数的返回值；</p>
+<p>2、在执行return后，函数后面的代码不会再执行；</p>
+</blockquote>
+<h4 id="编写一个函数"><a href="#编写一个函数" class="headerlink" title="编写一个函数"></a>编写一个函数</h4><p>1、确定未知量</p>
+<p>也就是形参数量，多个形参通过逗号隔开；</p>
+<p>2、编写函数；</p>
+<p>3、确认返回值；（只会执行一个）</p>
+<h2 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h2><blockquote>
+<p>每一个函数内部都有一个arguments</p>
+</blockquote>
+<p>功能： 当我们调用函数的时候，给函数传入实参，会全部存储在arguments里面。</p>
+<p>使用arguments</p>
+<p>​    arguments.length 传入了几个实参</p>
+<p>​    arguments[下标]    通过索引访问</p>
+<p>ps：为了让函数可读性更高，尽量不要用arguments</p>
+<h3 id="函数递归"><a href="#函数递归" class="headerlink" title="函数递归"></a>函数递归</h3><p>特点：</p>
+<p>​    1、函数自己调用自己；</p>
+<p>​    2、递归函数一般都有参数；</p>
+<p>​    3、递归函数一般都有return；</p>
+<p>功能：</p>
+<p>​    循环能做的，递归都能做，循环做不到的递归也能做；</p>
+<p>作用：</p>
+<p>​    精简代码</p>
+<h4 id="递归的规律"><a href="#递归的规律" class="headerlink" title="递归的规律"></a>递归的规律</h4><p>​    1、找出临界值（），临界值无需计算直接可以得出</p>
+<p>​    2、找出第n次和第n-1次的关系</p>
+<p>​    3、假设函数运行，写出第n次和第n-1次的关系</p>
+<p>1、递归会导致内存溢出，尾递归除外- -</p>
+<p>2、为了能回溯，递归函数的参数和地址需要分配在 call stack 上，大部分语言的 call stack 大小都是有限的，递归太深就会爆掉</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">H5 js 函数</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/18/js函数的概念和作用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-如何在JavaScript中获取CSS值" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1066,216 +1311,6 @@
 
 
   
-    <article id="post-CSS3选择器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/11/CSS3选择器/">CSS3选择器</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/11/CSS3选择器/" class="archive-article-date">
-  	<time datetime="2018-10-11T12:02:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h2 id="CSS3选择器"><a href="#CSS3选择器" class="headerlink" title="CSS3选择器"></a>CSS3选择器</h2><h3 id="一、属性选择器"><a href="#一、属性选择器" class="headerlink" title="一、属性选择器"></a>一、属性选择器</h3><p>1、E[attr]: 只使用属性名，但没有确定人和属性值；</p>
-<p>2、E[attr=”value”]:指定属性名，并且制定了该元素的属性值；</p>
-<p>3、E[attr~=”value”]:指定属性名，并且具有属性值，此属性值是一个词列表，并且以空格隔开，其中词列表中包含了一个value词，并且等号前面的”~”不能不写</p>
-<p>4、E[attr^=”value”]:指定了属性名，并且有属性值，属性值是以value开头的；</p>
-<p>5、E[attr$=”value”]：指定了属性名，并且有属性值，而且属性中包含了value；</p>
-<p>6、E[attr*=”value”]：指定了属性名，并且有属性值，而且属性值中包含value；</p>
-<p>7、E[attr|=”value”]: 指定了属性名，并且属性值是以“value”或者以“value-”开头的值（比如说zh-cn）；</p>
-<h3 id="二-、伪类选择器"><a href="#二-、伪类选择器" class="headerlink" title="二 、伪类选择器"></a>二 、伪类选择器</h3><h4 id="1、结构性伪类选择器"><a href="#1、结构性伪类选择器" class="headerlink" title="1、结构性伪类选择器"></a>1、结构性伪类选择器</h4><p>X:fist-child匹配父元素的中第一个X子元素。IE就可以支持</p>
-<p>X：last-child匹配父元素的中最后一个X子元素</p>
-<p>X:nth-child（n）用于匹配索引值为n的子元素。索引值从1开始</p>
-<p>X:only-child这个伪类一般用的比较少，比如上述代码匹配的是div下的有且仅有的一个p，也就是说，如果div有多个p，将不匹配。</p>
-<p>X:nth-of-type(n)：匹配同类型中的第n个统计兄弟元素X；</p>
-<p>X:first-of-type：匹配同级元素中的第一个X元素；</p>
-<p>X:last-of-type</p>
-<p>X:nth-last-child（n）从最后一个开始索引</p>
-<p>X:nth-last-of-type（n）匹配同类型中的倒数第n个同级兄弟元素</p>
-<p>X:root匹配文档的根元素，即HTML</p>
-<p>X:empty匹配没有任何子元素的元素X</p>
-<h4 id="2、目标伪类选择器"><a href="#2、目标伪类选择器" class="headerlink" title="2、目标伪类选择器"></a>2、目标伪类选择器</h4><p>E:target 选择匹配E的所有元素，erqie匹配元素被相关URL指向,例如点击了a元素div的div:target样式开始加载</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">	<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">		a:nth-child(n)&#123;</span></span><br><span class="line"><span class="undefined">			width: 600px;</span></span><br><span class="line"><span class="undefined">			height: 60px;</span></span><br><span class="line"><span class="undefined">			display: block;</span></span><br><span class="line"><span class="undefined">/*		   background: blue;*/</span></span><br><span class="line"><span class="undefined">			text-decoration: none;</span></span><br><span class="line"><span class="undefined">			color: white;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">		div&#123;</span></span><br><span class="line"><span class="undefined">			overflow: hidden;</span></span><br><span class="line"><span class="undefined">			width: 600px;</span></span><br><span class="line"><span class="undefined">			height: 0;</span></span><br><span class="line"><span class="undefined">			background: gold;</span></span><br><span class="line"><span class="undefined">			transition: 1s;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">		div:target&#123;</span></span><br><span class="line"><span class="undefined">			height: 100px;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">		body :not(div)&#123;</span></span><br><span class="line"><span class="undefined">			background: skyblue;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#div1"</span>&gt;</span>a1<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span>div1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#div2"</span>&gt;</span>a2<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div2"</span>&gt;</span>div2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#div3"</span>&gt;</span>a3<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div3"</span>&gt;</span>div3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="3、UI元素状态伪类选择器"><a href="#3、UI元素状态伪类选择器" class="headerlink" title="3、UI元素状态伪类选择器"></a>3、UI元素状态伪类选择器</h4><p>E:enabled 匹配所有用户页面（form表单）中处于可用状态的IE元素</p>
-<p>E:disabled 匹配所有用户界面（form表单）中处于不可用状态的E元素</p>
-<p>E:checked 匹配所有用户界面（form表单）中处于选中状态的元素E</p>
-<p>E::selection 匹配E元素中被用户选中或处于高亮状态的部分</p>
-<h4 id="4、语言伪类选择器"><a href="#4、语言伪类选择器" class="headerlink" title="4、语言伪类选择器"></a>4、语言伪类选择器</h4><p>:lang<br>eg：E:lang(language)表示选择匹配E的所有元素，且匹配元素指定了lang属性，而且其值为language。</p>
-<h4 id="5、否定伪类选择器"><a href="#5、否定伪类选择器" class="headerlink" title="5、否定伪类选择器"></a>5、否定伪类选择器</h4><p>E:not(s) （IE6-8浏览器不支持:not()选择器。）</p>
-<blockquote>
-<p>匹配所有不匹配简单选择符s的元素E</p>
-<p>：not()之前要加空格</p>
-<p>如：body：  not（header）</p>
-</blockquote>
-<h5 id="Ps-要注意优先级问题，和nth-child-一起使用的时候-nth-child-起作用"><a href="#Ps-要注意优先级问题，和nth-child-一起使用的时候-nth-child-起作用" class="headerlink" title="Ps:要注意优先级问题，和nth-child()一起使用的时候 nth-child() 起作用"></a>Ps:要注意优先级问题，和nth-child()一起使用的时候 nth-child() 起作用</h5><h4 id="6、动态伪类选择器"><a href="#6、动态伪类选择器" class="headerlink" title="6、动态伪类选择器"></a>6、动态伪类选择器</h4><p>E：link</p>
-<p>链接伪类选择器</p>
-<p>选择匹配的E元素，而且匹配的元素被定义了超链接并且未被访问过。常用语链接锚点上</p>
-<p>E: visited</p>
-<p>链接伪类选择器</p>
-<p>选择匹配的E元素，而且匹配元素被定义了超链接并已经被访问过。常用于链接锚点上</p>
-<p>E:active</p>
-<p>用户行为选择器</p>
-<p>选择匹配的E元素，而且用户鼠标停留在元素E上。IE6及以下浏览器仅支持a:hover</p>
-<p>E:focus 用户行为选择器<br>选择匹配的E元素，而且匹配元素获取焦点</p>
-<h4 id="7、层级选择器"><a href="#7、层级选择器" class="headerlink" title="7、层级选择器"></a>7、层级选择器</h4><p>E &gt; F</p>
-<p>子选择器</p>
-<p>选择匹配的F元素，而且匹配的F元素是所匹配的E元素的子元素</p>
-<p>E+F</p>
-<p>相邻兄弟选择器</p>
-<p>选择匹配的F元素，而且匹配的F元素仅位于匹配的E元素后面</p>
-<p>E~F</p>
-<p>通用选择器</p>
-<p>选择匹配的F元素，而且位于匹配的E元素后面的所有匹配的F元素</p>
-<h3 id="1）伪元素"><a href="#1）伪元素" class="headerlink" title="1）伪元素"></a>1）伪元素</h3><p>CSS中的伪元素大家以前看过</p>
-<p>:first-line,:first-letter,:before,:after;那么在CSS3中，他对伪元素进行了一定的调整，在以前的基础上增加了一个“：”也就是现在变成了“::first-letter,::first-line,::before,::after”另外他还增加了一个“::selection”,两个“：：”和一个“：”css3中主要用来区分伪类和伪元素</p>
-<p>::selection用来改变浏览网页选中文的默认效果。::selection在IE家族中，只有IE9+版本支持，在Firefox中需要加上其前缀“-moz”</p>
-<p>div::selection{ background: red; color: green;}</p>
-<p>div::-moz-selection{ background: red; color: green;}</p>
-<p>::placeholder</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">H5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/11/CSS3选择器/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-浏览器内核" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/11/浏览器内核/">浏览器内核</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/11/浏览器内核/" class="archive-article-date">
-  	<time datetime="2018-10-11T11:53:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="五大浏览器内核"><a href="#五大浏览器内核" class="headerlink" title="五大浏览器内核"></a>五大浏览器内核</h2><blockquote>
-<p><strong>Trident(MSHML)</strong>（三叉戟；三叉线；三齿鱼叉）</p>
-<p><strong>Gecko（壁虎）</strong></p>
-<p><strong>Presto（迅速的）</strong></p>
-<p><strong>Webkit（Safari）内核，Chrome内核原型，他是苹果公司自己的内核，也是苹果的Safari浏览器使用的内核</strong></p>
-<p><strong>Blink（由Google和Opera Software开发的浏览器排版引擎）</strong></p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">H5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/11/浏览器内核/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1373,15 +1408,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">H5 js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">H5</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">H5 js</a>
               </li>
              
               <li class="article-tag-list-item">

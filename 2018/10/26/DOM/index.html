@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.luozy.top">
-  <title>Tag: 学习 | luozy&#39;s Blog</title>
+  <title>DOM | luozy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="���������������������̰���������ܼ�������̰����">
-<meta property="og:type" content="website">
-<meta property="og:title" content="luozy&#39;s Blog">
-<meta property="og:url" content="http://www.luozy.top/tags/学习/index.html">
+  <meta name="description" content="文档对象模型DOM（document Object Model） DOM 中的三个字母，D（文档）可以理解为整个 Web 加载的网页文档；O（对象）可 以理解为类似 window 对象之类的东西，可以调用属性和方法，这里我们说的是 document 对象；M（模型）可以理解为网页文档的树型结构。  所谓DOM就是以家族的形式描述HTML       节点有 父子 兄弟  注：在JavaScript">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DOM">
+<meta property="og:url" content="http://www.luozy.top/2018/10/26/DOM/index.html">
 <meta property="og:site_name" content="luozy&#39;s Blog">
-<meta property="og:description" content="���������������������̰���������ܼ�������̰����">
+<meta property="og:description" content="文档对象模型DOM（document Object Model） DOM 中的三个字母，D（文档）可以理解为整个 Web 加载的网页文档；O（对象）可 以理解为类似 window 对象之类的东西，可以调用属性和方法，这里我们说的是 document 对象；M（模型）可以理解为网页文档的树型结构。  所谓DOM就是以家族的形式描述HTML       节点有 父子 兄弟  注：在JavaScript">
+<meta property="og:image" content="c:/Users/罗中运/AppData/Local/Temp/chrome_drag17544_7625/Image.png">
+<meta property="og:image" content="c:/Users/罗中运/AppData/Local/Temp/chrome_drag17544_26641/Image.png">
+<meta property="og:image" content="c:/Users/罗中运/AppData/Local/Temp/chrome_drag17544_20962/Image.png">
+<meta property="og:updated_time" content="2018-10-26T07:24:38.610Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luozy&#39;s Blog">
-<meta name="twitter:description" content="���������������������̰���������ܼ�������̰����">
+<meta name="twitter:title" content="DOM">
+<meta name="twitter:description" content="文档对象模型DOM（document Object Model） DOM 中的三个字母，D（文档）可以理解为整个 Web 加载的网页文档；O（对象）可 以理解为类似 window 对象之类的东西，可以调用属性和方法，这里我们说的是 document 对象；M（模型）可以理解为网页文档的树型结构。  所谓DOM就是以家族的形式描述HTML       节点有 父子 兄弟  注：在JavaScript">
+<meta name="twitter:image" content="c:/Users/罗中运/AppData/Local/Temp/chrome_drag17544_7625/Image.png">
   
     <link rel="alternative" href="/atom.xml" title="luozy&#39;s Blog" type="application/atom+xml">
   
@@ -142,60 +148,187 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-DOM" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/07/csdn网页/" class="archive-article-date">
-  	<time datetime="2018-01-07T07:58:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-07</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/07/csdn网页/">csdn网页</a>
+    <h1 class="article-title" itemprop="name">
+      DOM
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/10/26/DOM/" class="archive-article-date">
+  	<time datetime="2018-10-26T06:28:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="文档对象模型DOM（document-Object-Model）"><a href="#文档对象模型DOM（document-Object-Model）" class="headerlink" title="文档对象模型DOM（document Object Model）"></a>文档对象模型DOM（document Object Model）</h1><blockquote>
+<p>DOM 中的三个字母，D（文档）可以理解为整个 Web 加载的网页文档；O（对象）可 以理解为类似 window 对象之类的东西，可以调用属性和方法，这里我们说的是 document 对象；M（模型）可以理解为网页文档的树型结构。</p>
+</blockquote>
+<p>所谓DOM就是以家族的形式描述HTML       节点有 父子 兄弟 </p>
+<p>注：在JavaScript里真的这么叫！！！只不过加上了节点两个字称作父子节点，兄弟节点。<img src="C:\Users\罗中运\AppData\Local\Temp\chrome_drag17544_7625\Image.png" alt="Image"></p>
+<h4 id="加载-HTML-页面时，Web-浏览器生成一个树型结构，用来表示页面内部结构。DOM-将-这种树型结构称为节点组成的节点树。"><a href="#加载-HTML-页面时，Web-浏览器生成一个树型结构，用来表示页面内部结构。DOM-将-这种树型结构称为节点组成的节点树。" class="headerlink" title="加载 HTML 页面时，Web 浏览器生成一个树型结构，用来表示页面内部结构。DOM 将 这种树型结构称为节点组成的节点树。"></a>加载 HTML 页面时，Web 浏览器生成一个树型结构，用来表示页面内部结构。DOM 将 这种树型结构称为节点组成的节点树。</h4><h2 id="DOM中所有节点的种类"><a href="#DOM中所有节点的种类" class="headerlink" title="DOM中所有节点的种类"></a>DOM中所有节点的种类</h2><p>元素节点  <div></div></p>
+<p>属性节点 id =‘div1’</p>
+<p>文本节点 div文本</p>
+<p><img src="C:\Users\罗中运\AppData\Local\Temp\chrome_drag17544_26641\Image.png" alt="Image">  W3C 提供了比较方便简单的定位节点的方法和属性，以便我们快速的对节点进行操作。 分别为：getElementById()、getElementsByTagName()、getElementsByName()、getElementsClassName()、getAttribute()、 setAttribute()和 removeAttribute()。<img src="C:\Users\罗中运\AppData\Local\Temp\chrome_drag17544_20962\Image.png" alt="Image"></p>
+<h3 id="获取元素节点"><a href="#获取元素节点" class="headerlink" title="获取元素节点"></a>获取元素节点</h3><blockquote>
+<p>  W3C 提供了比较方便简单的定位节点的方法和属性，以便我们快速的对节点进行操作。 分别为：getElementById()、getElementsByTagName()、getElementsByName()、getElementsClassName()、getAttribute()、 setAttribute()和 removeAttribute()。</p>
+</blockquote>
+<p>ps:代码由上而下执行，script在头部的时候，先执行script的内容，在执行body里面的。</p>
+<p>所以要用到 window.onload</p>
+<h4 id="window-onload-function"><a href="#window-onload-function" class="headerlink" title="window.onload = function(){"></a>window.onload = function(){</h4><h4 id=""><a href="#" class="headerlink" title="}"></a>}</h4><p>方法在页面加载完毕后才会执行。</p>
+<p>这样就可以先加载完body，再执行script里面的内容。</p>
+<h4 id="1、getElementById（）通过id获取节点"><a href="#1、getElementById（）通过id获取节点" class="headerlink" title="1、getElementById（）通过id获取节点"></a>1、getElementById（）通过id获取节点</h4><h4 id="2、getElementsByTagName-获取相同元素的节点列表"><a href="#2、getElementsByTagName-获取相同元素的节点列表" class="headerlink" title="2、getElementsByTagName()    获取相同元素的节点列表"></a>2、getElementsByTagName()    获取相同元素的节点列表</h4><h4 id="3、getElementsByName-获取相同元素名称的节点列表"><a href="#3、getElementsByName-获取相同元素名称的节点列表" class="headerlink" title="3、getElementsByName()获取相同元素名称的节点列表"></a>3、getElementsByName()获取相同元素名称的节点列表</h4><h4 id="4、getAttribute-获取特定元素节点属性的值"><a href="#4、getAttribute-获取特定元素节点属性的值" class="headerlink" title="4、getAttribute()获取特定元素节点属性的值"></a>4、getAttribute()获取特定元素节点属性的值</h4><h4 id="5、setAttribute-设置特点元素特点属性的值"><a href="#5、setAttribute-设置特点元素特点属性的值" class="headerlink" title="5、setAttribute()设置特点元素特点属性的值"></a>5、setAttribute()设置特点元素特点属性的值</h4><h4 id="6、removeAttribute-移除特定元素节点属性"><a href="#6、removeAttribute-移除特定元素节点属性" class="headerlink" title="6、removeAttribute()移除特定元素节点属性"></a>6、removeAttribute()移除特定元素节点属性</h4>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://p1lzepiq0.bkt.clouddn.com/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%B6%E6%AC%BE%E7%A0%81.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.luozy.top/2018/10/26/DOM/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/10/26/BOM/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">BOM</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -218,9 +351,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
