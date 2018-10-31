@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.luozy.top/"/>
-  <updated>2018-10-31T02:08:47.239Z</updated>
+  <updated>2018-10-31T07:40:05.860Z</updated>
   <id>http://www.luozy.top/</id>
   
   <author>
@@ -17,34 +17,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://www.luozy.top/2018/10/31/hello-world/"/>
-    <id>http://www.luozy.top/2018/10/31/hello-world/</id>
-    <published>2018-10-31T02:08:47.239Z</published>
-    <updated>2018-10-31T02:08:47.239Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>事件</title>
     <link href="http://www.luozy.top/2018/10/31/%E4%BA%8B%E4%BB%B6/"/>
     <id>http://www.luozy.top/2018/10/31/事件/</id>
     <published>2018-10-31T01:57:14.000Z</published>
-    <updated>2018-10-31T02:38:10.101Z</updated>
+    <updated>2018-10-31T07:40:05.860Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="内联模式"><a href="#内联模式" class="headerlink" title="内联模式"></a>内联模式</h3><p>​    这种模型是最传统接单的一种处理事件的方法。在内联模型中，事件处理函数是 HTML 标签的一个属性，用于处理指定事件。虽然内联在早期使用较多，但它是和 HTML 混写的， 并没有与 HTML 分离。</p><p>//在 HTML 中把事件处理函数作为属性执行 JS 代码</p><p>&lt;input type=”button”value=”按钮”onclick=”alert(‘Lee’);” /&gt;</p><p>//注意单双引号</p><p>//在 HTML 中把事件处理函数作为属性执行 JS 函数</p><p>&lt;input type=”button”value=”按钮”onclick=”box();” /&gt;</p><p>//执行 JS 的函数 </p><p>PS：函数不得放到 window.onload 里面，这样就看不见了。</p><h3 id="脚本模式"><a href="#脚本模式" class="headerlink" title="脚本模式"></a>脚本模式</h3><p>   由于内联模型违反了 HTML 与 JavaScript 代码层次分离的原则。为了解决这个问题，我们可以在 JavaScript 中处理事件。这种处理方式就是脚本模型。</p><p>var input=document.getElementsByTagName(‘input’)[0];</p><p>//得到 input 对象</p><p>input.onclick=function(){</p><p>//匿名函数执行</p><p>​         alert(‘Lee’);</p><p>};</p><p>PS：通过匿名函数，可以直接触发对应的代码。也可以通过指定的函数名赋值的方式 来执行函数(赋值的函数名不要跟着括号)。</p><p>input.onclick=box;   //把函数名赋值给事件处理函数</p><h4 id="3、事件处理函数"><a href="#3、事件处理函数" class="headerlink" title="3、事件处理函数"></a>3、事件处理函数</h4><p>JavaScript 可以处理的事件类型为：鼠标事件、键盘事件、HTML 事件。</p><p>PS：所有的事件处理函数都会都有两个部分组成，on+ 事件名称，例如 click 事件的事件处理函数就是：onclick。在这里，我们主要谈论脚本模型的方式来构建事件，违反分离原 则的内联模式，我们忽略掉。</p><h5 id="3-1-鼠标事件，页面所有元素都可触发"><a href="#3-1-鼠标事件，页面所有元素都可触发" class="headerlink" title="3.1.鼠标事件，页面所有元素都可触发"></a>3.1.鼠标事件，页面所有元素都可触发</h5><table><thead><tr><th>click：</th><th>当用户单击鼠标按钮或按下回车键时触发</th></tr></thead><tbody><tr><td>dblclick：</td><td>当用户双击主鼠标按钮时触发。</td></tr><tr><td>mousedown：</td><td>当用户按下了鼠标还未弹起时触发。</td></tr><tr><td>mouseup：</td><td>当用户释放鼠标按钮时触发。</td></tr><tr><td>mouseover：</td><td>当鼠标移到某个元素上方时触发。</td></tr><tr><td>mouseout：</td><td>当鼠标移出某个元素上方时触发。</td></tr><tr><td>mousemove：</td><td>当鼠标指针在元素上移动时触发。</td></tr></tbody></table><h5 id="3-2-键盘事件（1、快捷键2、输入文本）"><a href="#3-2-键盘事件（1、快捷键2、输入文本）" class="headerlink" title="3.2.键盘事件（1、快捷键2、输入文本）"></a>3.2.键盘事件（1、快捷键2、输入文本）</h5><blockquote><p>添加在1、全局（window）2、输入框</p><p>keyup keydown keypress</p></blockquote><p>keydown：当用户按下键盘上任意键触发，如果按住不放，会重复触发。</p><p>onkeydown=function(){</p><p>​        alert(‘Lee’);</p><p>};</p><p>keypress：当用户按下键盘上的字符键触发，如果按住不放，会重复触发</p><p>onkeypress= function(){</p><p>​        alert(‘Lee’);</p><p>};</p><p>keyup：当用户释放键盘上的键触发。</p><p>onkeyup=function() {</p><p>​        alert(‘Lee’);</p><p>};</p><h5 id="3-3HTML事件"><a href="#3-3HTML事件" class="headerlink" title="3.3HTML事件"></a>3.3HTML事件</h5><p>window事件</p><table><thead><tr><th>Scroll</th><th>页面滚动的时候触发</th></tr></thead><tbody><tr><td>Resize</td><td>当窗口大小发生变化触发</td></tr><tr><td>load</td><td>页面加载完成的时候触发</td></tr><tr><td>unload</td><td>页面解构的时候执行</td></tr></tbody></table><p>window.onscroll=function() { alert(‘Lee’); };</p><p>window.onresize=function(){ alert(‘Lee’); };</p><p>window.onload=function() { alert(‘Lee’); };</p><p>window.onunload= function(){ alert(‘Lee’); };</p><h5 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h5><table><thead><tr><th>blur</th><th>当文本失去焦点的时候触发</th></tr></thead><tbody><tr><td>focus</td><td>当获取焦点的时候触发</td></tr><tr><td>select</td><td>当用户选择文本框(input 或 textarea)中的一个或多个字符触发。</td></tr><tr><td>change</td><td>当文本框(input 或 textarea)内容改变且失去焦点后触发。</td></tr><tr><td>submit</td><td>当用户点击提交按钮在<form>元素上触发。//只有在form控件里触发</form></td></tr><tr><td>reset</td><td>当用户点击重置按钮在<form>元素上触发。//</form></td></tr></tbody></table><p>input.onblur=function(){ alert(‘Lee’); };</p><p>input.onfocus= function(){ alert(‘Lee’); };</p><p>input.onselect=function(){ alert(‘Lee’); };</p><p>input.onchange=function(){ alert(‘Lee’); };</p><p>form.onsubmit=function(){ alert(‘Lee’); };</p><p>form.onreset=function(){ alert(‘Lee’); };</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="内联模式"><a href="#内联模式" class="headerlink" title="内联模式"></a>内联模式</h3><p>​    这种模型是最传统接单的一种处理事件的方法。在内联模型中，事件处理函数是 HTML 标签的一个属性，用于处理指定事件。虽然内联在早期使用较多，但它是和 HTML 混写的， 并没有与 HTML 分离。</p><p>//在 HTML 中把事件处理函数作为属性执行 JS 代码</p><p>&lt;input type=”button”value=”按钮”onclick=”alert(‘Lee’);” /&gt;</p><p>//注意单双引号</p><p>//在 HTML 中把事件处理函数作为属性执行 JS 函数</p><p>&lt;input type=”button”value=”按钮”onclick=”box();” /&gt;</p><p>//执行 JS 的函数 </p><p>PS：函数不得放到 window.onload 里面，这样就看不见了。</p><h3 id="脚本模式"><a href="#脚本模式" class="headerlink" title="脚本模式"></a>脚本模式</h3><p>   由于内联模型违反了 HTML 与 JavaScript 代码层次分离的原则。为了解决这个问题，我们可以在 JavaScript 中处理事件。这种处理方式就是脚本模型。</p><p>var input=document.getElementsByTagName(‘input’)[0];</p><p>//得到 input 对象</p><p>input.onclick=function(){</p><p>//匿名函数执行</p><p>​         alert(‘Lee’);</p><p>};</p><p>PS：通过匿名函数，可以直接触发对应的代码。也可以通过指定的函数名赋值的方式 来执行函数(赋值的函数名不要跟着括号)。</p><p>input.onclick=box;   //把函数名赋值给事件处理函数</p><h4 id="3、事件处理函数"><a href="#3、事件处理函数" class="headerlink" title="3、事件处理函数"></a>3、事件处理函数</h4><p>JavaScript 可以处理的事件类型为：鼠标事件、键盘事件、HTML 事件。</p><p>PS：所有的事件处理函数都会都有两个部分组成，on+ 事件名称，例如 click 事件的事件处理函数就是：onclick。在这里，我们主要谈论脚本模型的方式来构建事件，违反分离原 则的内联模式，我们忽略掉。</p><h5 id="3-1-鼠标事件，页面所有元素都可触发"><a href="#3-1-鼠标事件，页面所有元素都可触发" class="headerlink" title="3.1.鼠标事件，页面所有元素都可触发"></a>3.1.鼠标事件，页面所有元素都可触发</h5><table><thead><tr><th>click：</th><th>当用户单击鼠标按钮或按下回车键时触发</th></tr></thead><tbody><tr><td>dblclick：</td><td>当用户双击主鼠标按钮时触发。</td></tr><tr><td>mousedown：</td><td>当用户按下了鼠标还未弹起时触发。</td></tr><tr><td>mouseup：</td><td>当用户释放鼠标按钮时触发。</td></tr><tr><td>mouseover：</td><td>当鼠标移到某个元素上方时触发。</td></tr><tr><td>mouseout：</td><td>当鼠标移出某个元素上方时触发。</td></tr><tr><td>mousemove：</td><td>当鼠标指针在元素上移动时触发。</td></tr></tbody></table><h5 id="3-2-键盘事件（1、快捷键2、输入文本）"><a href="#3-2-键盘事件（1、快捷键2、输入文本）" class="headerlink" title="3.2.键盘事件（1、快捷键2、输入文本）"></a>3.2.键盘事件（1、快捷键2、输入文本）</h5><blockquote><p>添加在1、全局（window）2、输入框</p><p>keyup keydown keypress</p></blockquote><p>keydown：当用户按下键盘上任意键触发，如果按住不放，会重复触发。</p><p>onkeydown=function(){</p><p>​        alert(‘Lee’);</p><p>};</p><p>keypress：当用户按下键盘上的字符键触发，如果按住不放，会重复触发</p><p>onkeypress= function(){</p><p>​        alert(‘Lee’);</p><p>};</p><p>keyup：当用户释放键盘上的键触发。</p><p>onkeyup=function() {</p><p>​        alert(‘Lee’);</p><p>};</p><h5 id="3-3HTML事件"><a href="#3-3HTML事件" class="headerlink" title="3.3HTML事件"></a>3.3HTML事件</h5><p>window事件</p><table><thead><tr><th>Scroll</th><th>页面滚动的时候触发</th></tr></thead><tbody><tr><td>Resize</td><td>当窗口大小发生变化触发</td></tr><tr><td>load</td><td>页面加载完成的时候触发</td></tr><tr><td>unload</td><td>页面解构的时候执行</td></tr></tbody></table><p>window.onscroll=function() { alert(‘Lee’); };</p><p>window.onresize=function(){ alert(‘Lee’); };</p><p>window.onload=function() { alert(‘Lee’); };</p><p>window.onunload= function(){ alert(‘Lee’); };</p><h5 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h5><table><thead><tr><th>blur</th><th>当文本失去焦点的时候触发</th></tr></thead><tbody><tr><td>focus</td><td>当获取焦点的时候触发</td></tr><tr><td>select</td><td>当用户选择文本框(input 或 textarea)中的一个或多个字符触发。</td></tr><tr><td>change</td><td>当文本框(input 或 textarea)内容改变且失去焦点后触发。</td></tr><tr><td>submit</td><td>当用户点击提交按钮在<form>元素上触发。//只有在form控件里触发</form></td></tr><tr><td>reset</td><td>当用户点击重置按钮在<form>元素上触发。//</form></td></tr></tbody></table><p>input.onblur=function(){ alert(‘Lee’); };</p><p>input.onfocus= function(){ alert(‘Lee’); };</p><p>input.onselect=function(){ alert(‘Lee’); };</p><p>input.onchange=function(){ alert(‘Lee’); };</p><p>form.onsubmit=function(){ alert(‘Lee’); };</p><p>form.onreset=function(){ alert(‘Lee’); };</p><h3 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h3><p><strong>事件绑定格式：</strong></p><p><strong>元素节点.on+事件类型 = function（）{</strong></p><p>​    </p><p><strong>}</strong></p><p><strong>组成部分：</strong></p><blockquote><p>元素节点</p><p>事件类型</p><p>用于赋值的函数</p></blockquote><p> 【注】如果事件绑定成立，说明契约已成，系统会自动生成一个对象，这个对象叫做事件对象。</p><p>事件绑定中的函数，是系统调用的。</p><p>事件对象，会在我们触发事件，系统调用对应的时间处理函数的时候，将这个事件对象当做参数传入到我们的事件处理函数中。</p><p>这个对象可以通过argument【0】获取</p><p>btn.onclick = function(event){</p><p>​    //短路操作</p><p>​    var e = event || window.event;</p><p>}</p><h3 id="事件对象属性"><a href="#事件对象属性" class="headerlink" title="事件对象属性"></a>事件对象属性</h3><p>1、</p><p>button</p><p>oDiv.onmousedown = function(event){</p><p>​    var e = event || window.event;</p><p>​    alert(e.button);//右键0，滚轮1，左键2</p><p>}；</p><p>2、</p><p>clientX     clientY    原点为止当前浏览器可视内容屏幕左上角；</p><p>pageX     pageY    原点为页面的左上角；</p><p>screenX     screenY    原点为电脑屏幕的左上角；</p><h5 id="鼠标事件（修改键）"><a href="#鼠标事件（修改键）" class="headerlink" title="鼠标事件（修改键）"></a>鼠标事件（修改键）</h5><blockquote><p>有时，我们需要通过键盘上的某些键来配合鼠标来触发一些特殊的事件。这些键为： Shfit、Ctrl、Alt 和 Meat(Windows 中就是 Windows 键，苹果机中是 Cmd 键)，它们经常被用 来修改鼠标事件和行为，所以叫修改键。</p></blockquote><p><img src="C:\Users\罗中运\AppData\Local\Temp\chrome_drag12552_27359\Image.png" alt="Image"></p><h4 id="键盘事件属性"><a href="#键盘事件属性" class="headerlink" title="键盘事件属性"></a>键盘事件属性</h4><h5 id="1、keyCode建码"><a href="#1、keyCode建码" class="headerlink" title="1、keyCode建码"></a>1、keyCode建码</h5><p><strong>keydown</strong> 和 <strong>keyup</strong></p><blockquote><p>在发生 <strong>keydown</strong> 和 <strong>keyup</strong> 事件时，event 对象的 keyCode 属性中会包含一个代码，与键盘上一个特定的键对应。对数字字母字符集，<strong>keyCode</strong> 属性的值与 <strong>ASCII 码</strong>中对应<strong>大写字母</strong>或数字的编码相同。字母中大小写不影响。</p><p>document.onkeydown=function(evt) {</p><p>​      alert(evt.keyCode); //按任意键，得到相应的 keyCode</p><p>};</p></blockquote><h5 id="2、charCode字符编码-只支持字符不支持功能键"><a href="#2、charCode字符编码-只支持字符不支持功能键" class="headerlink" title="2、charCode字符编码(只支持字符不支持功能键)"></a>2、charCode字符编码(只支持字符不支持功能键)</h5><p><strong>keypress</strong> </p><blockquote><p> Firefox、Chrome 和 Safari 的 event 对象都支持一个 <strong>charCode</strong> 属性，这个属性只有在发 生 <strong>keypress</strong> 事件时才包含值，而且这个值是按下的那个键所代表字符的 <strong>ASCII 编码</strong>。此时 的 keyCode 通常等于 0 或者也可能等于所按键的编码。</p><p>function getCharCode(evt) {</p><p>​     if(typeof evt.charCode== ‘number’) {</p><p>​         return evt.charCode; </p><p>​     }else{</p><p>​         return evt.keyCode;</p><p>​     }</p><p>}</p><p>PS：可以使用 String.fromCharCode()将 ASCII 编码转换成实际的字符。</p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -494,6 +473,31 @@
       
       
         &lt;video controls autoplay loop preload=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;​    &lt;source id=&quot;mp4&quot; src=&quot;http://pgip9g5iy.bkt.clouddn.com/Alan%20Walker%20-%20The%20Spect
+      
+    
+    </summary>
+    
+    
+      <category term="H5" scheme="http://www.luozy.top/tags/H5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS3</title>
+    <link href="http://www.luozy.top/2018/10/13/CSS3/"/>
+    <id>http://www.luozy.top/2018/10/13/CSS3/</id>
+    <published>2018-10-13T03:16:08.000Z</published>
+    <updated>2018-10-23T03:08:56.569Z</updated>
+    
+    <content type="html"><![CDATA[<p>[TOC]</p><h1 id="CSS3的概念和优势"><a href="#CSS3的概念和优势" class="headerlink" title="CSS3的概念和优势"></a>CSS3的概念和优势</h1><blockquote><p>CSS3是css技术的升级版本，CSS3语言开发是朝着模块化发展的。以前的规范作为一个模块实在是太庞大而且比较复杂，所以，把它分解为一些小的模块，更多新的模块也被加入进来。这些模块包括： 盒子模型、列表模块、超链接方式 、语言模块 、背景和边框 、文字特效 、多栏布局等。</p><p>css3的优点：CSS3将完全向后兼容，所以没有必要修改现在的设计来让它们继续运作。网络浏览器也还将继续支持CSS2。对我们来说，CSS3主要的影响是将可以使用新的可用的选择器和属性，这些会允许实现新的设计效果（譬如动态和渐变），而且可以很简单的设计出现在的设计效果（比如说使用分栏）</p></blockquote><h1 id="渐进增强和优雅降级"><a href="#渐进增强和优雅降级" class="headerlink" title="渐进增强和优雅降级"></a>渐进增强和优雅降级</h1><h4 id="渐进增强-progressive-enhancement"><a href="#渐进增强-progressive-enhancement" class="headerlink" title="渐进增强 progressive enhancement"></a>渐进增强 progressive enhancement</h4><p>针对低版本浏览器进行构建页面，保证最近本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p><h4 id="优雅降级-graceful-degradation"><a href="#优雅降级-graceful-degradation" class="headerlink" title="优雅降级 graceful degradation"></a>优雅降级 graceful degradation</h4><p>一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</p><h4 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h4><p>优雅降级是从复杂的现状开始的，并试图减少龙湖的体验供给，而渐进增强则是从一个非常基础的能够起作用的版本开始，并不断扩充，以适应未来环境的需要。降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h1 id=&quot;CSS3的概念和优势&quot;&gt;&lt;a href=&quot;#CSS3的概念和优势&quot; class=&quot;headerlink&quot; title=&quot;CSS3的概念和优势&quot;&gt;&lt;/a&gt;CSS3的概念和优势&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;CSS3是css技术的升
       
     
     </summary>

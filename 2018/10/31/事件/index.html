@@ -16,10 +16,12 @@
 <meta property="og:site_name" content="luozy&#39;s Blog">
 <meta property="og:description" content="内联模式​    这种模型是最传统接单的一种处理事件的方法。在内联模型中，事件处理函数是 HTML 标签的一个属性，用于处理指定事件。虽然内联在早期使用较多，但它是和 HTML 混写的， 并没有与 HTML 分离。 //在 HTML 中把事件处理函数作为属性执行 JS 代码 &amp;lt;input type=”button”value=”按钮”onclick=”alert(‘Lee’);” /&amp;gt;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-31T02:38:10.101Z">
+<meta property="og:image" content="c:/Users/罗中运/AppData/Local/Temp/chrome_drag12552_27359/Image.png">
+<meta property="og:updated_time" content="2018-10-31T07:40:05.860Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事件">
 <meta name="twitter:description" content="内联模式​    这种模型是最传统接单的一种处理事件的方法。在内联模型中，事件处理函数是 HTML 标签的一个属性，用于处理指定事件。虽然内联在早期使用较多，但它是和 HTML 混写的， 并没有与 HTML 分离。 //在 HTML 中把事件处理函数作为属性执行 JS 代码 &amp;lt;input type=”button”value=”按钮”onclick=”alert(‘Lee’);” /&amp;gt;">
+<meta name="twitter:image" content="c:/Users/罗中运/AppData/Local/Temp/chrome_drag12552_27359/Image.png">
   
     <link rel="alternative" href="/atom.xml" title="luozy&#39;s Blog" type="application/atom+xml">
   
@@ -305,6 +307,57 @@
 <p>input.onchange=function(){ alert(‘Lee’); };</p>
 <p>form.onsubmit=function(){ alert(‘Lee’); };</p>
 <p>form.onreset=function(){ alert(‘Lee’); };</p>
+<h3 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h3><p><strong>事件绑定格式：</strong></p>
+<p><strong>元素节点.on+事件类型 = function（）{</strong></p>
+<p>​    </p>
+<p><strong>}</strong></p>
+<p><strong>组成部分：</strong></p>
+<blockquote>
+<p>元素节点</p>
+<p>事件类型</p>
+<p>用于赋值的函数</p>
+</blockquote>
+<p> 【注】如果事件绑定成立，说明契约已成，系统会自动生成一个对象，这个对象叫做事件对象。</p>
+<p>事件绑定中的函数，是系统调用的。</p>
+<p>事件对象，会在我们触发事件，系统调用对应的时间处理函数的时候，将这个事件对象当做参数传入到我们的事件处理函数中。</p>
+<p>这个对象可以通过argument【0】获取</p>
+<p>btn.onclick = function(event){</p>
+<p>​    //短路操作</p>
+<p>​    var e = event || window.event;</p>
+<p>}</p>
+<h3 id="事件对象属性"><a href="#事件对象属性" class="headerlink" title="事件对象属性"></a>事件对象属性</h3><p>1、</p>
+<p>button</p>
+<p>oDiv.onmousedown = function(event){</p>
+<p>​    var e = event || window.event;</p>
+<p>​    alert(e.button);//右键0，滚轮1，左键2</p>
+<p>}；</p>
+<p>2、</p>
+<p>clientX     clientY    原点为止当前浏览器可视内容屏幕左上角；</p>
+<p>pageX     pageY    原点为页面的左上角；</p>
+<p>screenX     screenY    原点为电脑屏幕的左上角；</p>
+<h5 id="鼠标事件（修改键）"><a href="#鼠标事件（修改键）" class="headerlink" title="鼠标事件（修改键）"></a>鼠标事件（修改键）</h5><blockquote>
+<p>有时，我们需要通过键盘上的某些键来配合鼠标来触发一些特殊的事件。这些键为： Shfit、Ctrl、Alt 和 Meat(Windows 中就是 Windows 键，苹果机中是 Cmd 键)，它们经常被用 来修改鼠标事件和行为，所以叫修改键。</p>
+</blockquote>
+<p><img src="C:\Users\罗中运\AppData\Local\Temp\chrome_drag12552_27359\Image.png" alt="Image"></p>
+<h4 id="键盘事件属性"><a href="#键盘事件属性" class="headerlink" title="键盘事件属性"></a>键盘事件属性</h4><h5 id="1、keyCode建码"><a href="#1、keyCode建码" class="headerlink" title="1、keyCode建码"></a>1、keyCode建码</h5><p><strong>keydown</strong> 和 <strong>keyup</strong></p>
+<blockquote>
+<p>在发生 <strong>keydown</strong> 和 <strong>keyup</strong> 事件时，event 对象的 keyCode 属性中会包含一个代码，与键盘上一个特定的键对应。对数字字母字符集，<strong>keyCode</strong> 属性的值与 <strong>ASCII 码</strong>中对应<strong>大写字母</strong>或数字的编码相同。字母中大小写不影响。</p>
+<p>document.onkeydown=function(evt) {</p>
+<p>​      alert(evt.keyCode); //按任意键，得到相应的 keyCode</p>
+<p>};</p>
+</blockquote>
+<h5 id="2、charCode字符编码-只支持字符不支持功能键"><a href="#2、charCode字符编码-只支持字符不支持功能键" class="headerlink" title="2、charCode字符编码(只支持字符不支持功能键)"></a>2、charCode字符编码(只支持字符不支持功能键)</h5><p><strong>keypress</strong> </p>
+<blockquote>
+<p> Firefox、Chrome 和 Safari 的 event 对象都支持一个 <strong>charCode</strong> 属性，这个属性只有在发 生 <strong>keypress</strong> 事件时才包含值，而且这个值是按下的那个键所代表字符的 <strong>ASCII 编码</strong>。此时 的 keyCode 通常等于 0 或者也可能等于所按键的编码。</p>
+<p>function getCharCode(evt) {</p>
+<p>​     if(typeof evt.charCode== ‘number’) {</p>
+<p>​         return evt.charCode; </p>
+<p>​     }else{</p>
+<p>​         return evt.keyCode;</p>
+<p>​     }</p>
+<p>}</p>
+<p>PS：可以使用 String.fromCharCode()将 ASCII 编码转换成实际的字符。</p>
+</blockquote>
 
       
 
@@ -408,15 +461,6 @@
 
   
 <nav id="article-nav">
-  
-    <a href="/2018/10/31/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Hello World
-        
-      </div>
-    </a>
   
   
     <a href="/2018/10/26/Brower对象/" id="article-nav-older" class="article-nav-link-wrap">
@@ -562,10 +606,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">H5 js 函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
@@ -578,11 +618,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -591,6 +631,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">H5 js 函数</a>
               </li>
              
               <li class="article-tag-list-item">
