@@ -1,349 +1,186 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="">
+<html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.0.6" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.6">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.6">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.6">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.6" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '6.0.6',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="[TOC] js组成 JavaScript 1、ECMAScript标准 4.0 5.0 6.0 2、BoM   浏览器对象 3、DOM 对象  JS语法规范 srcipt标签两个作用  1、方法一 js代码写在script标签里面 2、方法二 外部引入js文件方式 ps: 不可混合使用 执行顺序自上而下 type表明要执行的内容格式 如不可： 123&amp;lt;script src = &quot;demo.">
-<meta name="keywords" content="H5">
-<meta property="og:type" content="article">
-<meta property="og:title" content="js基础">
-<meta property="og:url" content="http://www.luozy.top/2018/10/17/js基础/index.html">
-<meta property="og:site_name" content="luozy&#39;s Blog">
-<meta property="og:description" content="[TOC] js组成 JavaScript 1、ECMAScript标准 4.0 5.0 6.0 2、BoM   浏览器对象 3、DOM 对象  JS语法规范 srcipt标签两个作用  1、方法一 js代码写在script标签里面 2、方法二 外部引入js文件方式 ps: 不可混合使用 执行顺序自上而下 type表明要执行的内容格式 如不可： 123&amp;lt;script src = &quot;demo.">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-23T03:06:16.844Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js基础">
-<meta name="twitter:description" content="[TOC] js组成 JavaScript 1、ECMAScript标准 4.0 5.0 6.0 2、BoM   浏览器对象 3、DOM 对象  JS语法规范 srcipt标签两个作用  1、方法一 js代码写在script标签里面 2、方法二 外部引入js文件方式 ps: 不可混合使用 执行顺序自上而下 type表明要执行的内容格式 如不可： 123&amp;lt;script src = &quot;demo.">
-
-
-
-  <link rel="alternate" href="/atom.xml" title="luozy's Blog" type="application/atom+xml">
-
-
-
-
-  <link rel="canonical" href="http://www.luozy.top/2018/10/17/js基础/">
-
-
-
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
-  <title>js基础 | luozy's Blog</title>
-  
-
-
-
-
-
-
-
-
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
-
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="luozy">
     
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> 
-
-<div class="site-brand-wrapper">
-  <div class="site-meta ">
+    <meta name="description" content="���������������������̰���������ܼ�������̰����">
     
+    
+    
+    
+    
+    
+    <title>js基础 | luozy&#39;s Blog</title>
+    <!-- inject:style -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <!-- endinject -->
+    <style>
+        .cube-loading {
+            top: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: url('/images/lg/loading.gif') no-repeat center center;
+            background-color: rgba(0,0,0,.7);
+        }
 
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">luozy's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">Inflexible thinking, bad humor</p>
-      
-  </div>
+        .cube-loading.out {
+            display: none;
+        }
 
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
+        .cube-loading:before {
+            display: block;
+            content: 'Loading';
+            position: relative;
+            width: 100%;
+            top: 50%;
+            right: -50%;
+            color: #fff;
+        }
 
-<nav class="site-nav">
-  
+        @media(max-width: 768px) {
+            .cube-loading:before {
+                font-size: 1.2em;
+                transform: translate(-24px,20px);
+                -webkit-transform: translate(-24px,20px);
+                -o-transform: translate(-24px,20px);
+                -ms-transform: translate(-24px,20px);
+            }
+        }
 
-  
-    <ul id="menu" class="menu">
-      
+        @media(min-width: 768px) {
+            .cube-loading:before {
+
+            }
+        }
+    </style>
+    
+</head></html>
+<body>
+<div class="cube-body">
+    <nav id="cube-top-memu" class="cube-menu">
+    <ul class="cube-menu-collapse">
         
+        <li>
+            <i class="cube-icon cube-icon-home" aria-hidden="true"></i>
+            <a href="/">首页</a>
+        </li>
         
-          
-  <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
-</li>
-
-      
+        <li>
+            <i class="cube-icon cube-icon-archive" aria-hidden="true"></i>
+            <a href="/archives">归档</a>
+        </li>
         
+        <li>
+            <i class="cube-icon cube-icon-categories" aria-hidden="true"></i>
+            <a href="/categories">分类</a>
+        </li>
         
-          
-  <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
-</li>
-
-      
-
-      
+        <li>
+            <i class="cube-icon cube-icon-tags" aria-hidden="true"></i>
+            <a href="/tags">标签</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-about" aria-hidden="true"></i>
+            <a href="/about-me">关于我</a>
+        </li>
+        
     </ul>
-  
-
-  
-    
-
-  
-
-  
 </nav>
-
-
-  
-
-
-
- </div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.luozy.top/2018/10/17/js基础/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luozy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="luozy's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
+<nav class="cube-side-menu" id="cube-side-menu">
+    <ul class="cube-menu-list">
         
+        <li>
+            <a class="lrc-control">Open Lyrics</a>
+        </li>
         
-          <h1 class="post-title" itemprop="name headline">js基础</h1>
+        <li>
+            <a class="scroll-to-top">Top</a>
+        </li>
+    </ul>
+</nav>
+    <header class="cube-header" id="cube-header">
+    <img src=" http://cube-1252774894.cosgz.myqcloud.com/background.png " alt="头部背景图片">
+    
+    <div class="cube-type">
+        <span class="cube-typed-title">Sakuraの娜娜奇</span>
+        <span class="cube-typed-cursor">|</span>
+    </div>
+    
+</header>
+
+    <style>
+        nav.cube-menu:before {
+            content: '';
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 44px;
         
+            filter: blur(4px);
+            -webkit-filter: blur(4px);
+        
+            z-index: -1;
+            background-image: url('http://cube-1252774894.cosgz.myqcloud.com/background.png');
+            background-repeat: no-repeat;
+            background-position: center -356px;
+            background-size: cover;
+            background-color: transparent;
+        }
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-17T08:49:01+08:00">2018-10-17</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+        header.cube-background.cube-header-background {
+            visibility: hidden;
+            background-image: url('http://cube-1252774894.cosgz.myqcloud.com/background.png');
+            background-position: center -400px;
+        }
+    </style>
+    <header class="cube-background cube-header-background">
+        
+        <div class="cube-type">
+            <span class="cube-typed-title">Sakuraの娜娜奇</span>
+            <span class="cube-typed-cursor">|</span>
         </div>
-      </header>
-    
+        
+    </header>
+    <div class="load-header-background"></div>
+    <script>
+        (function (window) {
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+            window.headerModule = {}
+            window.headerModule.image = {
+                width: '2000',
+                height: '1414'
+            }
 
-      
-      
-
-      
+        })(window)
+    </script>
+    
+    <div class="cube-content">
+        <div class="cube-left">
+            <div class="cube-article">
+    <h1 class="title">js基础</h1>
+    
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2018-10-17
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/H5/">#H5</a>
+    
+</div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
         <p>[TOC]</p>
 <h2 id="js组成"><a href="#js组成" class="headerlink" title="js组成"></a>js组成</h2><blockquote>
 <p>JavaScript</p>
@@ -479,618 +316,339 @@
 <p>​    格式：　！表达式</p>
 <p>​    特点：　！true = false</p>
 </h1></h1>
-      
     </div>
+</div>
 
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/H5/" rel="tag"># H5</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/10/13/The-Spectre（Alan-Walker）/" rel="next" title="The Spectre（Alan Walker）">
-                <i class="fa fa-chevron-left"></i> The Spectre（Alan Walker）
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/17/js流程控制语句/" rel="prev" title="js流程控制语句">
-                js流程控制语句 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-  
-
-
-
-        </div>
+<div class="cube-article-nav">
+    <ul>
         
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
+        <li class="prev">
+            <a href="/2018/10/17/js流程控制语句/">
+                <i class="cube-icon cube-prev" aria-hidden="true"></i>
+                js流程控制语句
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2018/10/13/The-Spectre（Alan-Walker）/">
+                The Spectre（Alan Walker）
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
 
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
 
-      
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+
+        </div>
+        <div class="cube-right">
             
-              <p class="site-author-name" itemprop="name">luozy</p>
-              <p class="site-description motion-element" itemprop="description">���������������������̰���������ܼ�������̰����</p>
-          </div>
 
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">50</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
+<div class="cube-search cube-sidebar" id="cube-search">
+    <div class="search-container">
+        <input type="text" placeholder="Search" class="cube-search-input" id="cube-search-input">
+        <i class="cube-icon cube-icon-search cube-search-submit" aria-hidden="true"></i>
+    </div>
+    <!-- TODO 通过给window赋一个全局变量，通过脚本赋值 -->
+</div>
+<script>
+    (function (window) {
+        'use strict';
+        window.searchModule = {}
+        window.searchModule.JSONUrl = '/content.json'
+        window.searchModule.rootUrl = '/'
+    })(window)
+</script>
+<div class="cube-search-form">
+    <div class="cube-search-control">
+        <input type="text" placeholder="Search" class="search-input">
+        <a class="close-button">
+            <i class="cube-icon cube-close" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="cube-search-result"></div>
+</div>
 
-              
 
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">13</span>
-                    <span class="site-state-item-name">tags</span>
-                  
-                </div>
-              
-            </nav>
-          
+<div class="cube-author cube-sidebar" id="cube-author">
+    
+    
+    <span>luozy</span>
+    
+    
+    <a title="���������������������̰���������ܼ�������̰����">���������������������̰���������ܼ�������̰����</a>
+    
+    <div class="count">
+        <a class="count articles"><span>50</span>Article</a>
+        <a class="count tags"><span>13</span>Tags</a>
+        <a class="count categories"><span>0</span>Categories</a>
+    </div>
+</div>
 
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
+
+
+<div class="cube-music cube-sidebar" id="cube-music">
+    <div class="cube-player aplayer" id="cube-player"></div>
+</div>
+<script>
+    (function (window) {
+        window.musicModule = {}
+        window.musicModule.musicConfig = '{"narrow":false,"autoplay":false,"showlrc":3,"theme":"#b7daff","mutex":true,"mode":"circulation","preload":"auto","listmaxheight":"513px","music":[{"title":"Dear friends","author":"TRIPLANE","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/TRIPLANE - Dear friends.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Dear friends - TRIPLANE.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/TRIPLANE - Dear friends.jpg"},{"title":"Butter-Fly","author":"和田光司","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/和田光司 - Butter-Fly (ピアノヴァージョン).mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Butter-Fly (ピアノヴァージョン) - 和田光司.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/和田光司 - Butter-Fly (ピアノヴァージョン).jpg"},{"title":"宵闇花火","author":"葉月ゆら","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/葉月ゆら - 宵闇花火.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/宵闇花火 - 葉月ゆら.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/葉月ゆら - 宵闇花火.jpg"}]}'
+        window.musicModule.lrcConfig = {
+            open: 'Open Lyrics',
+            close: 'Close Lyrics'
+        }
+    })(window)
+</script>
+
+
+
+<div class="cube-recent-posts cube-sidebar" id="cube-recent-posts">
+    <div class="title">
+        <a>Recent Posts</a>
+    </div>
+    <ul class="list">
+        
+        
+        <li>
+            <!-- TODO 如果文章要显示图片，那么在front-matter上添加preview属性(url or path) -->
+            
+            <div class="normal">
+                <p class="index first">
+                    <span>1</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/10/31/hello-world/" title="Hello World">Hello World</a>
+                </p>
             </div>
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
             
-          
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#js组成"><span class="nav-number">1.</span> <span class="nav-text">js组成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JS语法规范"><span class="nav-number">1.1.</span> <span class="nav-text">JS语法规范</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码规范"><span class="nav-number">1.1.1.</span> <span class="nav-text">代码规范</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注释"><span class="nav-number">1.1.2.</span> <span class="nav-text">注释</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js输出方式"><span class="nav-number">2.</span> <span class="nav-text">js输出方式</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">hello world“);console.log(“hello”);
-要想输出标签要用 &amp;lt； 和&amp;gt；
-document.write(“&lt;srcipt &gt;”);常量和变量常量（字面量）
-数据类型: 
-​    基本数据类型：
-​    number 数字 0, 10 ,3.14
-​    string  字符串 所带单引号和双引号的都叫字符串
-​    boolean 布尔值 true false
-​    特殊数据类型：
-​    null 空
-​    undefined 未声明
-​    NaN not a number 不是一个数字
-关键字（有特殊功能的单词）：typeof ；//输出当前数据的输出类型。
-
-变量
-值可以修改的叫做变量
-​    1、声明变量，适合内存申请一部分空间，存储数据
-​    2、变量的数据，是根据存储的数据决定的
-​    初始化：声明变量后接着赋值叫做初始化
-​    【注】如果声明变量的时候，没有赋值，默认是undefined。
-​    /*
-​        避免后续赋值的时候多出抹除undefined操作，先将值赋值为null。
-​    */
-​    
-
-命名规则：
-【注】所有用户自定义的名字都叫标识符，变量名也叫标识符
-*只能有数字、字母、下划线、$组成
-​    *变量名不能有数字开头
-​    *不能用关键字（如typeof）和保留字（系统已经征用的）
-​    *js区分大小写 a和A不是一个
-​    *见名思意
-​    *尽量别用拼音和缩写，使用英文全拼（驼峰式命名className/烤串式命名class_name）
-
-​    
-var num = 10；
-alert（num）；
-内存32 位操作系统
-64位操作系统
-位：地址总线 可最大寻址数
-进制转换十进制转2进制：
-要从右到左用二进制的每个数去乘以2的相应次方,小数点后则是从左往右
-num.toString(2);
-num.toString(8);
-num.toString(10);
-num.toString(16);
-运算符算术运算符 + - * /
-关系运算符 &lt; &gt; &gt;= &lt;= == === !=
-逻辑运算符 &amp;&amp; || ！
-赋值运算符 -= += /= %=
-自增 、自减 ++ –
-表达式
-概念： 任何运算符和操作数（变量/常量）组成的式子都叫做表达式；
-1、表达式的值
-2、表达式的功能
-
-算术表达式算术运算符和操作符组成的式子
-1、如果两个数都是数字，进行数学运算
-2、不同类型数据进行运算，会进行自动类型数据转换
-自动数据类型转换1、假设进行的运算是加法运算，并且一种有一个操作数是字符串，那么运算会变成字符串拼接
-如： ‘10’+123=”10123”;
-2、任何数据类型做除加法以外的运算，都会将别的类型转换为数字再进行运算。
-ps: 
-1）当把一个带字母的字符串转化为数字时会转成NaN，而且NaN和任何数据进行运算都会变成NaN；
-2）如果操作数是纯数字的字符串进行运算会转换为数字再进行运算；
-3）true转换为数字是1，false是0；
-4）undefined转换为数字是NaN，null是0；
-3、
-var num = 10 / 0 = Infinity
-var num = -10 /0 = -Infinity
-ps 计算机不会进行小数运算
-强制数据类型转换人为地进行数据转换
-Number（）将别的数据类型转换为数字1）纯数字的字符会转换成数字
-2）如果带有非数字的字符会转成NaN
-3）true=&gt;1, false=&gt;0
-4)null=&gt;0,undefined=&gt;Nan
-Boolean（）将别的数据类型转换为布尔值1)数字：非0即真
-2）有内容字符串=&gt;true,空字符串(“”)=&gt;true,非空即真
-3）null=&gt;false,undefined=&gt;false,NaN=&gt;false;
-parseInt()      取整：parseInt(20aa)=20;parseInt(a20aa)=NaN;parseFloat()   取浮点数赋值运算符
-1、= 功能： 就是用来赋值，将等号右边的值赋给左边的变量
-2、复合赋值运算符： += , -= , /= , *= , %=
-3、一元运算符：++ –
-​    a++： 先取a的值作为a++的值，在对a进行加一
-​    ++a: 先对a进行加一，再取++a的值
-
-关系运算符&lt;  &gt; = &gt;= &lt;= == === !=
-关系运算符运算规则
-1、两个都是数字，对数字进行比较；
-2、其中一个是数字，另一个转化为数字进行比较
-3、当两个操作数是字符串的时候
-​    1）实际上是比较字符的ASCII码
-​    2）逐个进行比较： 如”asd”&lt;”bsdf”=true因为a的ASCII码大于b的。
-ps: true 转换成1进行比较，false转换成0进行比较
-NaN和任何数据（包括自己）==都为false ！=都为true
-4、全等（恒等）=== （1）值必须相等（2）数据类型也必须相等
-特殊值undefined == 0 false
-null == 0 false
-逻辑运算符与/且     &amp;&amp;
-​    格式： 表达式1 &amp;&amp; 表达式2
-​    特点： 两个表达式都为真他才为真
-或        ||
-​    格式： 表达式1 ||　表达式２
-​    特点：　只有两个表达式都为加表达式才为假
-非　    ！
-​    格式：　！表达式
-​    特点：　！true = false
-</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">“);console.log(“hello”);
-要想输出标签要用 &amp;lt； 和&amp;gt；
-document.write(“&lt;srcipt &gt;”);常量和变量常量（字面量）
-数据类型: 
-​    基本数据类型：
-​    number 数字 0, 10 ,3.14
-​    string  字符串 所带单引号和双引号的都叫字符串
-​    boolean 布尔值 true false
-​    特殊数据类型：
-​    null 空
-​    undefined 未声明
-​    NaN not a number 不是一个数字
-关键字（有特殊功能的单词）：typeof ；//输出当前数据的输出类型。
-
-变量
-值可以修改的叫做变量
-​    1、声明变量，适合内存申请一部分空间，存储数据
-​    2、变量的数据，是根据存储的数据决定的
-​    初始化：声明变量后接着赋值叫做初始化
-​    【注】如果声明变量的时候，没有赋值，默认是undefined。
-​    /*
-​        避免后续赋值的时候多出抹除undefined操作，先将值赋值为null。
-​    */
-​    
-
-命名规则：
-【注】所有用户自定义的名字都叫标识符，变量名也叫标识符
-*只能有数字、字母、下划线、$组成
-​    *变量名不能有数字开头
-​    *不能用关键字（如typeof）和保留字（系统已经征用的）
-​    *js区分大小写 a和A不是一个
-​    *见名思意
-​    *尽量别用拼音和缩写，使用英文全拼（驼峰式命名className/烤串式命名class_name）
-
-​    
-var num = 10；
-alert（num）；
-内存32 位操作系统
-64位操作系统
-位：地址总线 可最大寻址数
-进制转换十进制转2进制：
-要从右到左用二进制的每个数去乘以2的相应次方,小数点后则是从左往右
-num.toString(2);
-num.toString(8);
-num.toString(10);
-num.toString(16);
-运算符算术运算符 + - * /
-关系运算符 &lt; &gt; &gt;= &lt;= == === !=
-逻辑运算符 &amp;&amp; || ！
-赋值运算符 -= += /= %=
-自增 、自减 ++ –
-表达式
-概念： 任何运算符和操作数（变量/常量）组成的式子都叫做表达式；
-1、表达式的值
-2、表达式的功能
-
-算术表达式算术运算符和操作符组成的式子
-1、如果两个数都是数字，进行数学运算
-2、不同类型数据进行运算，会进行自动类型数据转换
-自动数据类型转换1、假设进行的运算是加法运算，并且一种有一个操作数是字符串，那么运算会变成字符串拼接
-如： ‘10’+123=”10123”;
-2、任何数据类型做除加法以外的运算，都会将别的类型转换为数字再进行运算。
-ps: 
-1）当把一个带字母的字符串转化为数字时会转成NaN，而且NaN和任何数据进行运算都会变成NaN；
-2）如果操作数是纯数字的字符串进行运算会转换为数字再进行运算；
-3）true转换为数字是1，false是0；
-4）undefined转换为数字是NaN，null是0；
-3、
-var num = 10 / 0 = Infinity
-var num = -10 /0 = -Infinity
-ps 计算机不会进行小数运算
-强制数据类型转换人为地进行数据转换
-Number（）将别的数据类型转换为数字1）纯数字的字符会转换成数字
-2）如果带有非数字的字符会转成NaN
-3）true=&gt;1, false=&gt;0
-4)null=&gt;0,undefined=&gt;Nan
-Boolean（）将别的数据类型转换为布尔值1)数字：非0即真
-2）有内容字符串=&gt;true,空字符串(“”)=&gt;true,非空即真
-3）null=&gt;false,undefined=&gt;false,NaN=&gt;false;
-parseInt()      取整：parseInt(20aa)=20;parseInt(a20aa)=NaN;parseFloat()   取浮点数赋值运算符
-1、= 功能： 就是用来赋值，将等号右边的值赋给左边的变量
-2、复合赋值运算符： += , -= , /= , *= , %=
-3、一元运算符：++ –
-​    a++： 先取a的值作为a++的值，在对a进行加一
-​    ++a: 先对a进行加一，再取++a的值
-
-关系运算符&lt;  &gt; = &gt;= &lt;= == === !=
-关系运算符运算规则
-1、两个都是数字，对数字进行比较；
-2、其中一个是数字，另一个转化为数字进行比较
-3、当两个操作数是字符串的时候
-​    1）实际上是比较字符的ASCII码
-​    2）逐个进行比较： 如”asd”&lt;”bsdf”=true因为a的ASCII码大于b的。
-ps: true 转换成1进行比较，false转换成0进行比较
-NaN和任何数据（包括自己）==都为false ！=都为true
-4、全等（恒等）=== （1）值必须相等（2）数据类型也必须相等
-特殊值undefined == 0 false
-null == 0 false
-逻辑运算符与/且     &amp;&amp;
-​    格式： 表达式1 &amp;&amp; 表达式2
-​    特点： 两个表达式都为真他才为真
-或        ||
-​    格式： 表达式1 ||　表达式２
-​    特点：　只有两个表达式都为加表达式才为假
-非　    ！
-​    格式：　！表达式
-​    特点：　！true = false
-</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#document-write-“-lt-srcipt-gt-”"><span class="nav-number">1.</span> <span class="nav-text">document.write(“&lt;srcipt &gt;”);</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常量和变量"><span class="nav-number">2.</span> <span class="nav-text">常量和变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#常量（字面量）"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">常量（字面量）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#变量"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">变量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名规则："><span class="nav-number">3.</span> <span class="nav-text">命名规则：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内存"><span class="nav-number">3.1.</span> <span class="nav-text">内存</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进制转换"><span class="nav-number">3.1.1.</span> <span class="nav-text">进制转换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算符"><span class="nav-number"></span> <span class="nav-text">运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#表达式"><span class="nav-number">0.1.</span> <span class="nav-text">表达式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算术表达式"><span class="nav-number">1.</span> <span class="nav-text">算术表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自动数据类型转换"><span class="nav-number">1.0.1.</span> <span class="nav-text">自动数据类型转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#强制数据类型转换"><span class="nav-number">1.0.2.</span> <span class="nav-text">强制数据类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Number（）将别的数据类型转换为数字"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">Number（）将别的数据类型转换为数字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Boolean（）将别的数据类型转换为布尔值"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">Boolean（）将别的数据类型转换为布尔值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#parseInt-取整：parseInt-20aa-20-parseInt-a20aa-NaN"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">parseInt()      取整：parseInt(20aa)=20;parseInt(a20aa)=NaN;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#parseFloat-取浮点数"><span class="nav-number">1.0.2.4.</span> <span class="nav-text">parseFloat()   取浮点数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值运算符"><span class="nav-number">2.</span> <span class="nav-text">赋值运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系运算符"><span class="nav-number">3.</span> <span class="nav-text">关系运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#特殊值"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">特殊值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">4.</span> <span class="nav-text">逻辑运算符</span></a></li></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
+        </li>
         
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">luozy</span>
-
-  
-
-  
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>2</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/10/31/事件/" title="事件">事件</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>3</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/10/26/Brower对象/" title="Brower对象">Brower对象</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>4</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/10/26/DOM/" title="DOM">DOM</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>5</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/10/26/BOM/" title="BOM">BOM</a>
+                </p>
+            </div>
+        </li>
+        
+        
+    </ul>
 </div>
 
 
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.6</div>
-
-
-
-
+<div class="cube-tagcloud cube-sidebar" id="cube-tagcloud">
+    <div class="title">
+        <a href="/tags">Tagcloud</a>
+    </div>
+    <div class="cube-boxs">
         
-
-
-
-
-
-
-
-
         
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
+        <div class="cube-box-bg ">
+            <a href="/tags/js/">#js</a>
+        </div>
         
-      </div>
+        
+        <div class="cube-box ">
+            <a href="/tags/H5/">#H5</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/H5-js/">#H5 js</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/学习/">#学习</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/github/">#github</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/H5-js-循环/">#H5 js 循环</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/H5-js-函数/">#H5 js 函数</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/js-H5/">#js H5</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/算法/">#算法</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/jsp/">#jsp</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/网页推荐/">#网页推荐</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/前端/">#前端</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/对象/">#对象</a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="cube-links cube-sidebar" id="cube-links">
+    <div class="title">
+        <a>Links</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/GitHub.png">
+            
+            <a href="https://github.com/luozygithub" target="_blank">GitHub</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/Coding.png">
+            
+            <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/SF.png">
+            
+            <a href="https://segmentfault.com/u/aonosora" target="_blank">SF社区</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/开发者头条.png">
+            
+            <a href="https://toutiao.io/u/148070" target="_blank">开发者头条</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+<div class="cube-friend-links cube-sidebar" id="cube-friend-links">
+    <div class="title">
+        <a>Friend Links</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/friend_links/micblo.png">
+            <a href="https://blog.micblo.com/" target="_blank">罗大佬</a>
+        </li>
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/friend_links/DIYgod.jpg">
+            <a href="https://www.anotherhome.net/" target="_blank">DIYgod</a>
+        </li>
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="/images/friend_links.jpg ">
+            <a href="https://aonosora.com/" target="_blank">咪西西の部落格</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+    </div>
+</div>
+<footer class="cube-footer">
     
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.6"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.6"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.6"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.0.6"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.6"></script>
-
-
-
-  
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
+© 2017 luozy
+
+<br>
+Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+</footer>
+<!-- inject:script -->
+<script src="/js/script.js"></script>
+<!-- endinject -->
+<div class="cube-loading out"></div>
 </body>
 </html>

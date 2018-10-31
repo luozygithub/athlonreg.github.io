@@ -1,353 +1,188 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="">
+<html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.0.6" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.6">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.6">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.6">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.6" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '6.0.6',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="���������������������̰���������ܼ�������̰����">
-<meta property="og:type" content="website">
-<meta property="og:title" content="luozy&#39;s Blog">
-<meta property="og:url" content="http://www.luozy.top/page/2/index.html">
-<meta property="og:site_name" content="luozy&#39;s Blog">
-<meta property="og:description" content="���������������������̰���������ܼ�������̰����">
-<meta property="og:locale" content="default">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luozy&#39;s Blog">
-<meta name="twitter:description" content="���������������������̰���������ܼ�������̰����">
-
-
-
-  <link rel="alternate" href="/atom.xml" title="luozy's Blog" type="application/atom+xml">
-
-
-
-
-  <link rel="canonical" href="http://www.luozy.top/page/2/">
-
-
-
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
-  <title>luozy's Blog</title>
-  
-
-
-
-
-
-
-
-
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
-
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="luozy">
     
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> 
-
-<div class="site-brand-wrapper">
-  <div class="site-meta ">
+    <meta name="description" content="���������������������̰���������ܼ�������̰����">
     
+    
+    
+    
+    
+    
+    <title>luozy&#39;s Blog</title>
+    <!-- inject:style -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <!-- endinject -->
+    <style>
+        .cube-loading {
+            top: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: url('/images/lg/loading.gif') no-repeat center center;
+            background-color: rgba(0,0,0,.7);
+        }
 
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">luozy's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">Inflexible thinking, bad humor</p>
-      
-  </div>
+        .cube-loading.out {
+            display: none;
+        }
 
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
+        .cube-loading:before {
+            display: block;
+            content: 'Loading';
+            position: relative;
+            width: 100%;
+            top: 50%;
+            right: -50%;
+            color: #fff;
+        }
 
-<nav class="site-nav">
-  
+        @media(max-width: 768px) {
+            .cube-loading:before {
+                font-size: 1.2em;
+                transform: translate(-24px,20px);
+                -webkit-transform: translate(-24px,20px);
+                -o-transform: translate(-24px,20px);
+                -ms-transform: translate(-24px,20px);
+            }
+        }
 
-  
-    <ul id="menu" class="menu">
-      
+        @media(min-width: 768px) {
+            .cube-loading:before {
+
+            }
+        }
+    </style>
+    
+</head></html>
+<body>
+<div class="cube-body">
+    <nav id="cube-top-memu" class="cube-menu">
+    <ul class="cube-menu-collapse">
         
+        <li>
+            <i class="cube-icon cube-icon-home" aria-hidden="true"></i>
+            <a href="/">首页</a>
+        </li>
         
-          
-  <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
-</li>
-
-      
+        <li>
+            <i class="cube-icon cube-icon-archive" aria-hidden="true"></i>
+            <a href="/archives">归档</a>
+        </li>
         
+        <li>
+            <i class="cube-icon cube-icon-categories" aria-hidden="true"></i>
+            <a href="/categories">分类</a>
+        </li>
         
-          
-  <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
-</li>
-
-      
-
-      
+        <li>
+            <i class="cube-icon cube-icon-tags" aria-hidden="true"></i>
+            <a href="/tags">标签</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-about" aria-hidden="true"></i>
+            <a href="/about-me">关于我</a>
+        </li>
+        
     </ul>
-  
-
-  
-    
-
-  
-
-  
 </nav>
-
-
-  
-
-
-
- </div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.luozy.top/2018/10/22/js排序/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luozy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="luozy's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
+<nav class="cube-side-menu" id="cube-side-menu">
+    <ul class="cube-menu-list">
         
+        <li>
+            <a class="lrc-control">Open Lyrics</a>
+        </li>
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/22/js排序/" itemprop="url">js排序</a></h1>
+        <li>
+            <a class="scroll-to-top">Top</a>
+        </li>
+    </ul>
+</nav>
+    <header class="cube-header" id="cube-header">
+    <img src=" http://cube-1252774894.cosgz.myqcloud.com/background.png " alt="头部背景图片">
+    
+    <div class="cube-type">
+        <span class="cube-typed-title">Sakuraの娜娜奇</span>
+        <span class="cube-typed-cursor">|</span>
+    </div>
+    
+</header>
+
+    <style>
+        nav.cube-menu:before {
+            content: '';
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 44px;
         
+            filter: blur(4px);
+            -webkit-filter: blur(4px);
+        
+            z-index: -1;
+            background-image: url('http://cube-1252774894.cosgz.myqcloud.com/background.png');
+            background-repeat: no-repeat;
+            background-position: center -356px;
+            background-size: cover;
+            background-color: transparent;
+        }
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-22T15:32:22+08:00">2018-10-22</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+        header.cube-background.cube-header-background {
+            visibility: hidden;
+            background-image: url('http://cube-1252774894.cosgz.myqcloud.com/background.png');
+            background-position: center -400px;
+        }
+    </style>
+    <header class="cube-background cube-header-background">
+        
+        <div class="cube-type">
+            <span class="cube-typed-title">Sakuraの娜娜奇</span>
+            <span class="cube-typed-cursor">|</span>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
         
-          
-            <p>[TOC]</p>
+    </header>
+    <div class="load-header-background"></div>
+    <script>
+        (function (window) {
+
+            window.headerModule = {}
+            window.headerModule.image = {
+                width: '2000',
+                height: '1414'
+            }
+
+        })(window)
+    </script>
+    
+    <div class="cube-content">
+        <div class="cube-left">
+            
+<div class="cube-excerpt" id="cube-excerpt-js排序">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2018/10/22/js排序/">js排序</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2018-10-22
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+                
+                <a href="/tags/H5-js/" class="cube-excerpt-tag-link">#H5 js</a>
+                
+            </div>
+        </div>
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
+        
+        
+           <p>[TOC]</p>
 <h2 id="系统自带"><a href="#系统自带" class="headerlink" title="系统自带"></a>系统自带</h2><p>系统有自带的sort排序方法，但是他是对字符串进行判断排序</p>
 <p>所以要对数字排序要给他写一个判断方法：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">sequence</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(a &gt; b)&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">     &#125;<span class="keyword">else</span> <span class="keyword">if</span>(a &lt; b)&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">     &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">5</span> ,<span class="number">56</span>, <span class="number">65</span>, <span class="number">84</span>, <span class="number">98</span>];</span><br><span class="line">alert(arr.sort(sequence));</span><br></pre></td></tr></table></figure>
@@ -374,129 +209,33 @@
 <p>​    每一轮比较次数：数组长度 - 当前轮数</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectSort</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j = i + <span class="number">1</span>; j &lt; arr.length; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[i] &gt; arr[j])&#123;</span><br><span class="line">                <span class="keyword">var</span> temp = arr[i];</span><br><span class="line">                arr[i] = arr[j];</span><br><span class="line">                arr[j] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-          
         
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2018/10/22/js排序/">Read More</a>
     </footer>
-  </div>
-  
-  
-  
-  </article>
+</div>
 
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.luozy.top/2018/10/20/JavaScript组成/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luozy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="luozy's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+<div class="cube-excerpt" id="cube-excerpt-JavaScript组成">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2018/10/20/JavaScript组成/">JavaScript组成</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2018-10-20
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
                 
-                <a class="post-title-link" href="/2018/10/20/JavaScript组成/" itemprop="url">JavaScript组成</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-20T17:22:14+08:00">2018-10-20</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+                <a href="/tags/H5-js/" class="cube-excerpt-tag-link">#H5 js</a>
+                
+            </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
         
-          
-            <p>[TOC]</p>
+        
+           <p>[TOC]</p>
 <h2 id="JavaScript组成部分——ECMAScript、DOM、BOM"><a href="#JavaScript组成部分——ECMAScript、DOM、BOM" class="headerlink" title="JavaScript组成部分——ECMAScript、DOM、BOM"></a>JavaScript组成部分——ECMAScript、DOM、BOM</h2><blockquote>
 <p>虽然 JavaScript 和 ECMAScript 通常被人们用来表达相同的含义，但 JavaScript 的含义却比ECMA-262标准中规定的要多得多。 一个完整的JavaScript应该由下列三个不同的部分组成</p>
 </blockquote>
@@ -515,129 +254,33 @@
 <p>DOM把整个网页映射成为一个多层节点</p>
 <h3 id="浏览器对象模型（BOM）——对应window对象"><a href="#浏览器对象模型（BOM）——对应window对象" class="headerlink" title="浏览器对象模型（BOM）——对应window对象"></a>浏览器对象模型（BOM）——对应window对象</h3><p>他提供了很多对象，用于访问浏览器的功能；这些功能与人和网页内容无关；</p>
 
-          
         
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2018/10/20/JavaScript组成/">Read More</a>
     </footer>
-  </div>
-  
-  
-  
-  </article>
+</div>
 
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.luozy.top/2018/10/19/js数组/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luozy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="luozy's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+<div class="cube-excerpt" id="cube-excerpt-js数组">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2018/10/19/js数组/">js数组</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2018-10-19
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
                 
-                <a class="post-title-link" href="/2018/10/19/js数组/" itemprop="url">js数组</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-19T14:30:53+08:00">2018-10-19</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+                <a href="/tags/H5-js/" class="cube-excerpt-tag-link">#H5 js</a>
+                
+            </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
         
-          
-            <p>[TOC]</p>
+        
+           <p>[TOC]</p>
 <p>//underfined、null、boolean、string、number为基本数值类型。逗号一并定义初始化多个变量。基本包装类型String、Boolean、Number通过valueOf()可以获取基本数值类型，可以实现自动装箱和拆箱操作。</p>
 <blockquote>
 <p>数组：存储批量数据的一个数据结构</p>
@@ -738,129 +381,33 @@
 </blockquote>
 <p>ps :<strong>concat slice jion不修改原数组；</strong></p>
 
-          
         
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2018/10/19/js数组/">Read More</a>
     </footer>
-  </div>
-  
-  
-  
-  </article>
+</div>
 
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.luozy.top/2018/10/19/js作用域/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luozy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="luozy's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+<div class="cube-excerpt" id="cube-excerpt-js作用域">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2018/10/19/js作用域/">js作用域</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2018-10-19
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
                 
-                <a class="post-title-link" href="/2018/10/19/js作用域/" itemprop="url">js作用域</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-19T09:17:42+08:00">2018-10-19</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+                <a href="/tags/H5-js/" class="cube-excerpt-tag-link">#H5 js</a>
+                
+            </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
         
-          
-            <p>[TOC]</p>
+        
+           <p>[TOC]</p>
 <p>程序必须读到内存中，才能被CPU运行。</p>
 <p>声明变量 分配内存空间的过程。</p>
 <p>函数调用，函数运行的时候，需要内存空间来运行；</p>
@@ -888,129 +435,33 @@
 <p>​    }</p>
 <p>【注】：如果不写var直接声明变量，那么这个变量将会被声明为全局变量。</p>
 
-          
         
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2018/10/19/js作用域/">Read More</a>
     </footer>
-  </div>
-  
-  
-  
-  </article>
+</div>
 
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.luozy.top/2018/10/18/js函数的概念和作用/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luozy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="luozy's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+<div class="cube-excerpt" id="cube-excerpt-js函数的概念和作用">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2018/10/18/js函数的概念和作用/">js函数的概念和作用</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2018-10-18
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
                 
-                <a class="post-title-link" href="/2018/10/18/js函数的概念和作用/" itemprop="url">js函数的概念和作用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-18T14:11:06+08:00">2018-10-18</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+                <a href="/tags/H5-js-函数/" class="cube-excerpt-tag-link">#H5 js 函数</a>
+                
+            </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
         
-          
-            <p>[TOC]</p>
+        
+           <p>[TOC]</p>
 <h1 id="JS函数及作用"><a href="#JS函数及作用" class="headerlink" title="JS函数及作用"></a>JS函数及作用</h1><ol>
 <li>函数的概念，及作用</li>
 <li>函数的声明</li>
@@ -1083,129 +534,33 @@
 <p>1、递归会导致内存溢出，尾递归除外- -</p>
 <p>2、为了能回溯，递归函数的参数和地址需要分配在 call stack 上，大部分语言的 call stack 大小都是有限的，递归太深就会爆掉</p>
 
-          
         
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2018/10/18/js函数的概念和作用/">Read More</a>
     </footer>
-  </div>
-  
-  
-  
-  </article>
+</div>
 
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.luozy.top/2018/10/18/如何在JavaScript中获取CSS值/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luozy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="luozy's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+<div class="cube-excerpt" id="cube-excerpt-如何在JavaScript中获取CSS值">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2018/10/18/如何在JavaScript中获取CSS值/">如何在JavaScript中获取CSS值</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2018-10-18
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
                 
-                <a class="post-title-link" href="/2018/10/18/如何在JavaScript中获取CSS值/" itemprop="url">如何在JavaScript中获取CSS值</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-18T11:57:51+08:00">2018-10-18</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+                <a href="/tags/H5-js/" class="cube-excerpt-tag-link">#H5 js</a>
+                
+            </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
         
-          
-            <blockquote>
+        
+           <blockquote>
 <p>有时候单独的使用CSS是不够的。您可能需要使用JavaScript控制CSS值。但是你如何在JavaScript中获得CSS值？</p>
 <p>有两种可能的方式，取决于您是尝试获取内联样式还是计算样式</p>
 </blockquote>
@@ -1247,253 +602,61 @@
 <p><code>style</code> 属性仅检索内联CSS值，而 <code>getComputedStyle</code> 样式检索计算的CSS值。</p>
 <p>原文链接：<a href="https://zellwk.com/blog/css-values-in-js/" target="_blank" rel="noopener">https://zellwk.com/blog/css-values-in-js/</a></p>
 
-          
         
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2018/10/18/如何在JavaScript中获取CSS值/">Read More</a>
     </footer>
-  </div>
-  
-  
-  
-  </article>
+</div>
 
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.luozy.top/2018/10/18/js循环嵌套练习/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luozy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="luozy's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+<div class="cube-excerpt" id="cube-excerpt-js循环练习">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2018/10/18/js循环嵌套练习/">js循环练习</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2018-10-18
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
                 
-                <a class="post-title-link" href="/2018/10/18/js循环嵌套练习/" itemprop="url">js循环练习</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-18T10:40:40+08:00">2018-10-18</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+                <a href="/tags/H5-js-循环/" class="cube-excerpt-tag-link">#H5 js 循环</a>
+                
+            </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
         
-          
-            <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 水仙花</span></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;h3&gt;找出所有的水仙花数，三位数，各位立方和等于该数本身。153 = 1 ^ 3 + 5 ^ 3 + 3 ^ 3&lt;/h3&gt;"</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">100</span>; i &lt; <span class="number">1000</span>; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>((<span class="built_in">Math</span>.pow((i % <span class="number">10</span>),<span class="number">3</span>) +  <span class="built_in">Math</span>.pow( (<span class="built_in">parseInt</span>(i / <span class="number">10</span>) % <span class="number">10</span>),<span class="number">3</span>) + <span class="built_in">Math</span>.pow((<span class="built_in">parseInt</span>(i / <span class="number">100</span>) % <span class="number">10</span>),<span class="number">3</span>)) == i)&#123;</span><br><span class="line">        <span class="built_in">document</span>.write( <span class="string">"&lt;br/&gt;"</span> + <span class="string">"&amp;nbsp;"</span> + i + <span class="string">" : "</span>);</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="built_in">Math</span>.pow((i % <span class="number">10</span>),<span class="number">3</span>) + <span class="string">"*"</span> + <span class="built_in">Math</span>.pow( (<span class="built_in">parseInt</span>(i / <span class="number">10</span>) % <span class="number">10</span>),<span class="number">3</span>) + <span class="string">"*"</span> + <span class="built_in">Math</span>.pow((<span class="built_in">parseInt</span>(i / <span class="number">100</span>) % <span class="number">10</span>),<span class="number">3</span>)+ <span class="string">"="</span>+ i );</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//最大公约数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;h3&gt;最大公约数&lt;/h3&gt;"</span>);</span><br><span class="line"><span class="keyword">var</span> num1 = <span class="number">6</span>;</span><br><span class="line"><span class="keyword">var</span> num2 = <span class="number">9</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = (num1 &gt; num2 ? num1 : num2); i &gt; <span class="number">1</span>; i--)&#123;</span><br><span class="line">    <span class="keyword">if</span>(num1 % i== <span class="number">0</span> &amp;&amp; num2 % i == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">"最大公约数为"</span> + i);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//最小公倍数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;h3&gt;最小公倍数&lt;/h3&gt;"</span>);</span><br><span class="line"><span class="keyword">var</span> num3 = <span class="number">6</span>;</span><br><span class="line"><span class="keyword">var</span> num4 = <span class="number">9</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = (num3 &gt; num4 ? num4 : num3); i &lt; num1 * num2; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(i % num3 == <span class="number">0</span> &amp;&amp; i % num4 == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">"最大公约数为"</span> + i);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//输入两个数n，a，如果n==3，a==2； 输出 2 + 22 + 222 的值。（不用输出式子）如果n==4，a==3；输出 3 + 33 + 333 + 3333的值。</span></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;h3&gt;2 + 22 + 222 =&lt;/h3&gt;"</span>);</span><br><span class="line"><span class="keyword">var</span> count = <span class="number">9</span>;</span><br><span class="line"><span class="keyword">var</span> number = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> flag = number;</span><br><span class="line"><span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= count; i++)&#123;</span><br><span class="line">    <span class="built_in">document</span>.write(flag + <span class="string">" + "</span>);</span><br><span class="line">    sum += flag;</span><br><span class="line">    flag += <span class="built_in">Math</span>.pow(<span class="number">10</span> , i) * number;   </span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">" = "</span> + sum);</span><br><span class="line"><span class="comment">//回文数</span></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;h3&gt;回文数&lt;/h3&gt;"</span>);</span><br><span class="line"><span class="keyword">var</span> num5 = <span class="number">123321</span>;</span><br><span class="line"><span class="keyword">var</span> places = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> flag5 = num5;</span><br><span class="line"><span class="keyword">while</span>(flag5 / <span class="number">10</span> &gt; <span class="number">1</span>)&#123;</span><br><span class="line">    places++;</span><br><span class="line">    flag5 /= <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.write(places + <span class="string">"位数"</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; places; i+=<span class="number">2</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">parseInt</span>(num5 / <span class="built_in">Math</span>.pow(<span class="number">10</span> , places-i)) == (num5 % <span class="number">10</span>))&#123;</span><br><span class="line">        num5 %= <span class="built_in">Math</span>.pow(<span class="number">10</span> , places-i);</span><br><span class="line">        num5 /= <span class="number">10</span>;</span><br><span class="line">        num5 = <span class="built_in">parseInt</span>(num5);</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">"不是回文数"</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
         
-      
-    </div>
+           <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 水仙花</span></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;h3&gt;找出所有的水仙花数，三位数，各位立方和等于该数本身。153 = 1 ^ 3 + 5 ^ 3 + 3 ^ 3&lt;/h3&gt;"</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">100</span>; i &lt; <span class="number">1000</span>; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>((<span class="built_in">Math</span>.pow((i % <span class="number">10</span>),<span class="number">3</span>) +  <span class="built_in">Math</span>.pow( (<span class="built_in">parseInt</span>(i / <span class="number">10</span>) % <span class="number">10</span>),<span class="number">3</span>) + <span class="built_in">Math</span>.pow((<span class="built_in">parseInt</span>(i / <span class="number">100</span>) % <span class="number">10</span>),<span class="number">3</span>)) == i)&#123;</span><br><span class="line">        <span class="built_in">document</span>.write( <span class="string">"&lt;br/&gt;"</span> + <span class="string">"&amp;nbsp;"</span> + i + <span class="string">" : "</span>);</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="built_in">Math</span>.pow((i % <span class="number">10</span>),<span class="number">3</span>) + <span class="string">"*"</span> + <span class="built_in">Math</span>.pow( (<span class="built_in">parseInt</span>(i / <span class="number">10</span>) % <span class="number">10</span>),<span class="number">3</span>) + <span class="string">"*"</span> + <span class="built_in">Math</span>.pow((<span class="built_in">parseInt</span>(i / <span class="number">100</span>) % <span class="number">10</span>),<span class="number">3</span>)+ <span class="string">"="</span>+ i );</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//最大公约数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;h3&gt;最大公约数&lt;/h3&gt;"</span>);</span><br><span class="line"><span class="keyword">var</span> num1 = <span class="number">6</span>;</span><br><span class="line"><span class="keyword">var</span> num2 = <span class="number">9</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = (num1 &gt; num2 ? num1 : num2); i &gt; <span class="number">1</span>; i--)&#123;</span><br><span class="line">    <span class="keyword">if</span>(num1 % i== <span class="number">0</span> &amp;&amp; num2 % i == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">"最大公约数为"</span> + i);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//最小公倍数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;h3&gt;最小公倍数&lt;/h3&gt;"</span>);</span><br><span class="line"><span class="keyword">var</span> num3 = <span class="number">6</span>;</span><br><span class="line"><span class="keyword">var</span> num4 = <span class="number">9</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = (num3 &gt; num4 ? num4 : num3); i &lt; num1 * num2; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(i % num3 == <span class="number">0</span> &amp;&amp; i % num4 == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">"最大公约数为"</span> + i);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//输入两个数n，a，如果n==3，a==2； 输出 2 + 22 + 222 的值。（不用输出式子）如果n==4，a==3；输出 3 + 33 + 333 + 3333的值。</span></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;h3&gt;2 + 22 + 222 =&lt;/h3&gt;"</span>);</span><br><span class="line"><span class="keyword">var</span> count = <span class="number">9</span>;</span><br><span class="line"><span class="keyword">var</span> number = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> flag = number;</span><br><span class="line"><span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= count; i++)&#123;</span><br><span class="line">    <span class="built_in">document</span>.write(flag + <span class="string">" + "</span>);</span><br><span class="line">    sum += flag;</span><br><span class="line">    flag += <span class="built_in">Math</span>.pow(<span class="number">10</span> , i) * number;   </span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">" = "</span> + sum);</span><br><span class="line"><span class="comment">//回文数</span></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;h3&gt;回文数&lt;/h3&gt;"</span>);</span><br><span class="line"><span class="keyword">var</span> num5 = <span class="number">123321</span>;</span><br><span class="line"><span class="keyword">var</span> places = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> flag5 = num5;</span><br><span class="line"><span class="keyword">while</span>(flag5 / <span class="number">10</span> &gt; <span class="number">1</span>)&#123;</span><br><span class="line">    places++;</span><br><span class="line">    flag5 /= <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.write(places + <span class="string">"位数"</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; places; i+=<span class="number">2</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">parseInt</span>(num5 / <span class="built_in">Math</span>.pow(<span class="number">10</span> , places-i)) == (num5 % <span class="number">10</span>))&#123;</span><br><span class="line">        num5 %= <span class="built_in">Math</span>.pow(<span class="number">10</span> , places-i);</span><br><span class="line">        num5 /= <span class="number">10</span>;</span><br><span class="line">        num5 = <span class="built_in">parseInt</span>(num5);</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">"不是回文数"</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
+        
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2018/10/18/js循环嵌套练习/">Read More</a>
     </footer>
-  </div>
-  
-  
-  
-  </article>
+</div>
 
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.luozy.top/2018/10/17/js流程控制语句/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luozy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="luozy's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+<div class="cube-excerpt" id="cube-excerpt-js流程控制语句">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2018/10/17/js流程控制语句/">js流程控制语句</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2018-10-17
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
                 
-                <a class="post-title-link" href="/2018/10/17/js流程控制语句/" itemprop="url">js流程控制语句</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-17T14:29:22+08:00">2018-10-17</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+                <a href="/tags/js-H5/" class="cube-excerpt-tag-link">#js H5</a>
+                
+            </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
         
-          
-            <p>[TOC]</p>
+        
+           <p>[TOC]</p>
 <h1 id="流程控制语句"><a href="#流程控制语句" class="headerlink" title="流程控制语句"></a>流程控制语句</h1><h4 id="1、顺序结构"><a href="#1、顺序结构" class="headerlink" title="1、顺序结构"></a>1、顺序结构</h4><p>​    默认</p>
 <h4 id="2、选择结构-分支语句-条件语句（双分支语句if、多分支语句switch）"><a href="#2、选择结构-分支语句-条件语句（双分支语句if、多分支语句switch）" class="headerlink" title="2、选择结构/分支语句/条件语句（双分支语句if、多分支语句switch）"></a>2、选择结构/分支语句/条件语句（双分支语句if、多分支语句switch）</h4><blockquote>
 <p>if(条件判断语句){</p>
@@ -1553,129 +716,33 @@
 <p>​    功能：跳过这次循环，直接进入下次循环。</p>
 </blockquote>
 
-          
         
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2018/10/17/js流程控制语句/">Read More</a>
     </footer>
-  </div>
-  
-  
-  
-  </article>
+</div>
 
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.luozy.top/2018/10/17/js基础/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luozy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="luozy's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+<div class="cube-excerpt" id="cube-excerpt-js基础">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2018/10/17/js基础/">js基础</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2018-10-17
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
                 
-                <a class="post-title-link" href="/2018/10/17/js基础/" itemprop="url">js基础</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-17T08:49:01+08:00">2018-10-17</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+                <a href="/tags/H5/" class="cube-excerpt-tag-link">#H5</a>
+                
+            </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
         
-          
-            <p>[TOC]</p>
+        
+           <p>[TOC]</p>
 <h2 id="js组成"><a href="#js组成" class="headerlink" title="js组成"></a>js组成</h2><blockquote>
 <p>JavaScript</p>
 <p>1、ECMAScript标准 4.0 5.0 6.0</p>
@@ -1810,479 +877,400 @@
 <p>​    格式：　！表达式</p>
 <p>​    特点：　！true = false</p>
 </h1></h1>
-          
         
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2018/10/17/js基础/">Read More</a>
     </footer>
-  </div>
-  
-  
-  
-  </article>
+</div>
 
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.luozy.top/2018/10/13/The-Spectre（Alan-Walker）/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luozy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="luozy's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/13/The-Spectre（Alan-Walker）/" itemprop="url">The Spectre（Alan Walker）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-13T11:27:26+08:00">2018-10-13</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <video controls autoplay loop preload=""><br><br>​    <source id="mp4" src="http://pgip9g5iy.bkt.clouddn.com/Alan%20Walker%20-%20The%20Spectre.mp4" type="video/mp4"><br><br></video>
-
-
-
-
-
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
-
-
-
-          </div>
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">luozy</p>
-              <p class="site-description motion-element" itemprop="description">���������������������̰���������ܼ�������̰����</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">50</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">13</span>
-                    <span class="site-state-item-name">tags</span>
-                  
-                </div>
-              
-            </nav>
-          
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
+<div class="cube-excerpt" id="cube-excerpt-The Spectre（Alan Walker）">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2018/10/13/The-Spectre（Alan-Walker）/">The Spectre（Alan Walker）</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2018-10-13
             </div>
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-            
-          
-          
-
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+                
+                <a href="/tags/H5/" class="cube-excerpt-tag-link">#H5</a>
+                
+            </div>
         </div>
-      </section>
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
+        
+        
+           <video controls autoplay loop preload=""><br><br>​    <source id="mp4" src="http://pgip9g5iy.bkt.clouddn.com/Alan%20Walker%20-%20The%20Spectre.mp4" type="video/mp4"><br><br></video>
 
-      
 
-      
 
-    </div>
-  </aside>
+
 
 
         
-      </div>
-    </main>
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2018/10/13/The-Spectre（Alan-Walker）/">Read More</a>
+    </footer>
+</div>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">luozy</span>
 
-  
 
-  
+<ul class="cube-pagination cube-pagination-7">
+    
+    <li class="cube-pagination-prev">
+        <a href="/">« Prev</a>
+    </li>
+    
+    
+        
+            
+            <li class="cube-pagination-index">
+                <a href="/">1</a>
+            </li>
+            
+        
+            
+            <li class="cube-pagination-index disabled">
+                <span>2</span>
+            </li>
+            
+        
+            
+            <li class="cube-pagination-index">
+                <a href="/page/3">3</a>
+            </li>
+            
+        
+            
+            <li class="cube-pagination-index">
+                <a href="/page/4">4</a>
+            </li>
+            
+        
+            
+            <li class="cube-pagination-index">
+                <a href="/page/5">5</a>
+            </li>
+            
+        
+    
+
+    
+    <li class="cube-pagination-next">
+        <a href="/page/3/">Next »</a>
+    </li>
+    
+</ul>
+
+<!--其他组件后续添加-->
+        </div>
+        <div class="cube-right">
+            
+
+<div class="cube-search cube-sidebar" id="cube-search">
+    <div class="search-container">
+        <input type="text" placeholder="Search" class="cube-search-input" id="cube-search-input">
+        <i class="cube-icon cube-icon-search cube-search-submit" aria-hidden="true"></i>
+    </div>
+    <!-- TODO 通过给window赋一个全局变量，通过脚本赋值 -->
+</div>
+<script>
+    (function (window) {
+        'use strict';
+        window.searchModule = {}
+        window.searchModule.JSONUrl = '/content.json'
+        window.searchModule.rootUrl = '/'
+    })(window)
+</script>
+<div class="cube-search-form">
+    <div class="cube-search-control">
+        <input type="text" placeholder="Search" class="search-input">
+        <a class="close-button">
+            <i class="cube-icon cube-close" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="cube-search-result"></div>
+</div>
+
+
+<div class="cube-author cube-sidebar" id="cube-author">
+    
+    
+    <span>luozy</span>
+    
+    
+    <a title="���������������������̰���������ܼ�������̰����">���������������������̰���������ܼ�������̰����</a>
+    
+    <div class="count">
+        <a class="count articles"><span>50</span>Article</a>
+        <a class="count tags"><span>13</span>Tags</a>
+        <a class="count categories"><span>0</span>Categories</a>
+    </div>
+</div>
+
+
+
+<div class="cube-music cube-sidebar" id="cube-music">
+    <div class="cube-player aplayer" id="cube-player"></div>
+</div>
+<script>
+    (function (window) {
+        window.musicModule = {}
+        window.musicModule.musicConfig = '{"narrow":false,"autoplay":false,"showlrc":3,"theme":"#b7daff","mutex":true,"mode":"circulation","preload":"auto","listmaxheight":"513px","music":[{"title":"Dear friends","author":"TRIPLANE","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/TRIPLANE - Dear friends.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Dear friends - TRIPLANE.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/TRIPLANE - Dear friends.jpg"},{"title":"Butter-Fly","author":"和田光司","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/和田光司 - Butter-Fly (ピアノヴァージョン).mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Butter-Fly (ピアノヴァージョン) - 和田光司.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/和田光司 - Butter-Fly (ピアノヴァージョン).jpg"},{"title":"宵闇花火","author":"葉月ゆら","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/葉月ゆら - 宵闇花火.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/宵闇花火 - 葉月ゆら.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/葉月ゆら - 宵闇花火.jpg"}]}'
+        window.musicModule.lrcConfig = {
+            open: 'Open Lyrics',
+            close: 'Close Lyrics'
+        }
+    })(window)
+</script>
+
+
+
+<div class="cube-recent-posts cube-sidebar" id="cube-recent-posts">
+    <div class="title">
+        <a>Recent Posts</a>
+    </div>
+    <ul class="list">
+        
+        
+        <li>
+            <!-- TODO 如果文章要显示图片，那么在front-matter上添加preview属性(url or path) -->
+            
+            <div class="normal">
+                <p class="index first">
+                    <span>1</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/10/31/hello-world/" title="Hello World">Hello World</a>
+                </p>
+            </div>
+            
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>2</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/10/31/事件/" title="事件">事件</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>3</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/10/26/Brower对象/" title="Brower对象">Brower对象</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>4</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/10/26/DOM/" title="DOM">DOM</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>5</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/10/26/BOM/" title="BOM">BOM</a>
+                </p>
+            </div>
+        </li>
+        
+        
+    </ul>
 </div>
 
 
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.6</div>
-
-
-
-
+<div class="cube-tagcloud cube-sidebar" id="cube-tagcloud">
+    <div class="title">
+        <a href="/tags">Tagcloud</a>
+    </div>
+    <div class="cube-boxs">
         
-
-
-
-
-
-
-
-
         
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
+        <div class="cube-box-bg ">
+            <a href="/tags/js/">#js</a>
+        </div>
         
-      </div>
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/H5/">#H5</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/H5-js/">#H5 js</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/学习/">#学习</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/github/">#github</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/H5-js-循环/">#H5 js 循环</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/H5-js-函数/">#H5 js 函数</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/js-H5/">#js H5</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/算法/">#算法</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/jsp/">#jsp</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/网页推荐/">#网页推荐</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/前端/">#前端</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/对象/">#对象</a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="cube-links cube-sidebar" id="cube-links">
+    <div class="title">
+        <a>Links</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/GitHub.png">
+            
+            <a href="https://github.com/luozygithub" target="_blank">GitHub</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/Coding.png">
+            
+            <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/SF.png">
+            
+            <a href="https://segmentfault.com/u/aonosora" target="_blank">SF社区</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/开发者头条.png">
+            
+            <a href="https://toutiao.io/u/148070" target="_blank">开发者头条</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+<div class="cube-friend-links cube-sidebar" id="cube-friend-links">
+    <div class="title">
+        <a>Friend Links</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/friend_links/micblo.png">
+            <a href="https://blog.micblo.com/" target="_blank">罗大佬</a>
+        </li>
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/friend_links/DIYgod.jpg">
+            <a href="https://www.anotherhome.net/" target="_blank">DIYgod</a>
+        </li>
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="/images/friend_links.jpg ">
+            <a href="https://aonosora.com/" target="_blank">咪西西の部落格</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+    </div>
+</div>
+<footer class="cube-footer">
     
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.6"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.6"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.6"></script>
-
-
-
-  
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
+© 2017 luozy
+
+<br>
+Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+</footer>
+<!-- inject:script -->
+<script src="/js/script.js"></script>
+<!-- endinject -->
+<div class="cube-loading out"></div>
 </body>
 </html>
