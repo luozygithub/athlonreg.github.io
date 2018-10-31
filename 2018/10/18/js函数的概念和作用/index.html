@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.0.6" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.6">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.6">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.6">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.6" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.0.6',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="[TOC] JS函数及作用 函数的概念，及作用 函数的声明 如何执行函数（调用） 函数的参数（实参，形参）,返回值 arguments 作用域 DOM的简单操作 递归   在js的世界里存在函数，函数是把强大的功能集中在一起； 调用函数，执行函数中具体的代码，最终把函数的功能实现了； 书写步骤： ​    1、在标签或文件里书写函数 ​    2、在一处调用  1、概念：函数就是把完成特定功能的一">
+<meta name="keywords" content="H5 js 函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js函数的概念和作用">
+<meta property="og:url" content="http://www.luozy.top/2018/10/18/js函数的概念和作用/index.html">
+<meta property="og:site_name" content="luozy&#39;s Blog">
+<meta property="og:description" content="[TOC] JS函数及作用 函数的概念，及作用 函数的声明 如何执行函数（调用） 函数的参数（实参，形参）,返回值 arguments 作用域 DOM的简单操作 递归   在js的世界里存在函数，函数是把强大的功能集中在一起； 调用函数，执行函数中具体的代码，最终把函数的功能实现了； 书写步骤： ​    1、在标签或文件里书写函数 ​    2、在一处调用  1、概念：函数就是把完成特定功能的一">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-23T03:06:30.919Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js函数的概念和作用">
+<meta name="twitter:description" content="[TOC] JS函数及作用 函数的概念，及作用 函数的声明 如何执行函数（调用） 函数的参数（实参，形参）,返回值 arguments 作用域 DOM的简单操作 递归   在js的世界里存在函数，函数是把强大的功能集中在一起； 调用函数，执行函数中具体的代码，最终把函数的功能实现了； 书写步骤： ​    1、在标签或文件里书写函数 ​    2、在一处调用  1、概念：函数就是把完成特定功能的一">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="luozy's Blog" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://www.luozy.top/2018/10/18/js函数的概念和作用/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>js函数的概念和作用 | luozy's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> 
+
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">luozy's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Inflexible thinking, bad humor</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+          
+  <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+</li>
+
+      
+
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.luozy.top/2018/10/18/js函数的概念和作用/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="luozy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="luozy's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js函数的概念和作用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-18T14:11:06+08:00">2018-10-18</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[TOC]</p>
+<h1 id="JS函数及作用"><a href="#JS函数及作用" class="headerlink" title="JS函数及作用"></a>JS函数及作用</h1><ol>
+<li>函数的概念，及作用</li>
+<li>函数的声明</li>
+<li>如何执行函数（调用）</li>
+<li>函数的参数（实参，形参）,返回值</li>
+<li>arguments</li>
+<li>作用域</li>
+<li>DOM的简单操作</li>
+<li>递归</li>
+</ol>
+<blockquote>
+<p>在js的世界里存在函数，函数是把强大的功能集中在一起；</p>
+<p>调用函数，执行函数中具体的代码，最终把函数的功能实现了；</p>
+<p>书写步骤：</p>
+<p>​    1、在标签或文件里书写函数</p>
+<p>​    2、在一处调用</p>
+</blockquote>
+<h3 id="1、概念："><a href="#1、概念：" class="headerlink" title="1、概念："></a>1、概念：</h3><p>函数就是把完成特定功能的一段代码[抽象出来]，使之成为程序中的一个<strong>[独立实体]</strong>，起个名字<strong>（函数名）</strong>。可以在同一个程序或其他程序中多次重复使用<strong>（通过函数名调用）</strong>。</p>
+<h4 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h4><ul>
+<li>使程序变得简短而清晰</li>
+<li>有利于程序维护</li>
+<li>可以提高程序开发效率</li>
+<li>提高了代码的重用性（复用性</li>
+</ul>
+<h3 id="2、声明函数"><a href="#2、声明函数" class="headerlink" title="2、声明函数"></a>2、声明函数</h3><p>function     函数名(){</p>
+<p>​    具体要执行的代码；</p>
+<p>}</p>
+<h4 id="调用："><a href="#调用：" class="headerlink" title="调用："></a>调用：</h4><p>函数名();</p>
+<h3 id="3、函数的分类"><a href="#3、函数的分类" class="headerlink" title="3、函数的分类"></a>3、函数的分类</h3><p>分三大类：</p>
+<p>​    1、内置函数（系统函数）</p>
+<p>​    2、用户自定义函数</p>
+<p>​    3、事件驱动函数</p>
+<h3 id="4、函数参数"><a href="#4、函数参数" class="headerlink" title="4、函数参数"></a>4、函数参数</h3><blockquote>
+<p>不确定的值要当做参数去假设；</p>
+<p>分为： 形参、实参</p>
+<p>形参（形式上的参数）</p>
+<p>传参：用实际的参数去代替原来形式上的参数。</p>
+</blockquote>
+<p>如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>)</span>&#123;</span><br><span class="line">    alert(x + y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//传参</span></span><br><span class="line">add(<span class="number">10</span>， <span class="number">20</span>)；</span><br></pre></td></tr></table></figure>
+<h3 id="返回值（return）"><a href="#返回值（return）" class="headerlink" title="返回值（return）"></a>返回值（return）</h3><blockquote>
+<p>可有可无</p>
+<p>作用：</p>
+<p>1、作为函数的值，return后面表达式的值就是函数的返回值；</p>
+<p>2、在执行return后，函数后面的代码不会再执行；</p>
+</blockquote>
+<h4 id="编写一个函数"><a href="#编写一个函数" class="headerlink" title="编写一个函数"></a>编写一个函数</h4><p>1、确定未知量</p>
+<p>也就是形参数量，多个形参通过逗号隔开；</p>
+<p>2、编写函数；</p>
+<p>3、确认返回值；（只会执行一个）</p>
+<h2 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h2><blockquote>
+<p>每一个函数内部都有一个arguments</p>
+</blockquote>
+<p>功能： 当我们调用函数的时候，给函数传入实参，会全部存储在arguments里面。</p>
+<p>使用arguments</p>
+<p>​    arguments.length 传入了几个实参</p>
+<p>​    arguments[下标]    通过索引访问</p>
+<p>ps：为了让函数可读性更高，尽量不要用arguments</p>
+<h3 id="函数递归"><a href="#函数递归" class="headerlink" title="函数递归"></a>函数递归</h3><p>特点：</p>
+<p>​    1、函数自己调用自己；</p>
+<p>​    2、递归函数一般都有参数；</p>
+<p>​    3、递归函数一般都有return；</p>
+<p>功能：</p>
+<p>​    循环能做的，递归都能做，循环做不到的递归也能做；</p>
+<p>作用：</p>
+<p>​    精简代码</p>
+<h4 id="递归的规律"><a href="#递归的规律" class="headerlink" title="递归的规律"></a>递归的规律</h4><p>​    1、找出临界值（），临界值无需计算直接可以得出</p>
+<p>​    2、找出第n次和第n-1次的关系</p>
+<p>​    3、假设函数运行，写出第n次和第n-1次的关系</p>
+<p>1、递归会导致内存溢出，尾递归除外- -</p>
+<p>2、为了能回溯，递归函数的参数和地址需要分配在 call stack 上，大部分语言的 call stack 大小都是有限的，递归太深就会爆掉</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/H5-js-函数/" rel="tag"># H5 js 函数</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/18/如何在JavaScript中获取CSS值/" rel="next" title="如何在JavaScript中获取CSS值">
+                <i class="fa fa-chevron-left"></i> 如何在JavaScript中获取CSS值
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/19/js作用域/" rel="prev" title="js作用域">
+                js作用域 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">luozy</p>
+              <p class="site-description motion-element" itemprop="description">���������������������̰���������ܼ�������̰����</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">50</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JS函数及作用"><span class="nav-number">1.</span> <span class="nav-text">JS函数及作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、概念："><span class="nav-number">1.0.1.</span> <span class="nav-text">1、概念：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#作用："><span class="nav-number">1.0.1.1.</span> <span class="nav-text">作用：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、声明函数"><span class="nav-number">1.0.2.</span> <span class="nav-text">2、声明函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#调用："><span class="nav-number">1.0.2.1.</span> <span class="nav-text">调用：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、函数的分类"><span class="nav-number">1.0.3.</span> <span class="nav-text">3、函数的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、函数参数"><span class="nav-number">1.0.4.</span> <span class="nav-text">4、函数参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回值（return）"><span class="nav-number">1.0.5.</span> <span class="nav-text">返回值（return）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#编写一个函数"><span class="nav-number">1.0.5.1.</span> <span class="nav-text">编写一个函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arguments"><span class="nav-number">1.1.</span> <span class="nav-text">arguments</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数递归"><span class="nav-number">1.1.1.</span> <span class="nav-text">函数递归</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#递归的规律"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">递归的规律</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">luozy</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.6</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.6"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.6"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.6"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.6"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.6"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
