@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.luozy.top">
-  <title>csdn网页 | luozy&#39;s Blog</title>
+  <title>js兼容写法 | luozy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JAVA上百实例源码以及开源项目">
-<meta name="keywords" content="学习">
+  <meta name="description" content="1、关于获取行外样式currentStyle 和 getComputedStyle出现的兼容性问题我们都知道通过style不能获取行外样式，当我们需要获取行外样式时： 我们一般通过这两个方法获取行外样式： IE下： currentStyle Chrome，FireFox： getComputedStyle（oDiv，false）； 兼容两个浏览器的写法：(包含低版本IE6，7) function">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="csdn网页">
-<meta property="og:url" content="http://www.luozy.top/2018/01/07/csdn网页/index.html">
+<meta property="og:title" content="js兼容写法">
+<meta property="og:url" content="http://www.luozy.top/2018/11/01/js兼容写法/index.html">
 <meta property="og:site_name" content="luozy&#39;s Blog">
-<meta property="og:description" content="JAVA上百实例源码以及开源项目">
+<meta property="og:description" content="1、关于获取行外样式currentStyle 和 getComputedStyle出现的兼容性问题我们都知道通过style不能获取行外样式，当我们需要获取行外样式时： 我们一般通过这两个方法获取行外样式： IE下： currentStyle Chrome，FireFox： getComputedStyle（oDiv，false）； 兼容两个浏览器的写法：(包含低版本IE6，7) function">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-01-25T03:38:11.142Z">
+<meta property="og:updated_time" content="2018-11-01T11:59:31.831Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="csdn网页">
-<meta name="twitter:description" content="JAVA上百实例源码以及开源项目">
+<meta name="twitter:title" content="js兼容写法">
+<meta name="twitter:description" content="1、关于获取行外样式currentStyle 和 getComputedStyle出现的兼容性问题我们都知道通过style不能获取行外样式，当我们需要获取行外样式时： 我们一般通过这两个方法获取行外样式： IE下： currentStyle Chrome，FireFox： getComputedStyle（oDiv，false）； 兼容两个浏览器的写法：(包含低版本IE6，7) function">
   
     <link rel="alternative" href="/atom.xml" title="luozy&#39;s Blog" type="application/atom+xml">
   
@@ -153,27 +153,88 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-csdn网页" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-js兼容写法" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      csdn网页
+      js兼容写法
     </h1>
   
 
         
-        <a href="/2018/01/07/csdn网页/" class="archive-article-date">
-  	<time datetime="2018-01-07T07:58:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-07</time>
+        <a href="/2018/11/01/js兼容写法/" class="archive-article-date">
+  	<time datetime="2018-11-01T07:50:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/banketree/article/details/9194675" target="_blank" rel="noopener">JAVA上百实例源码以及开源项目</a></p>
+        <h2 id="1、关于获取行外样式"><a href="#1、关于获取行外样式" class="headerlink" title="1、关于获取行外样式"></a>1、关于获取行外样式</h2><h2 id="currentStyle-和-getComputedStyle出现的兼容性问题"><a href="#currentStyle-和-getComputedStyle出现的兼容性问题" class="headerlink" title="currentStyle 和 getComputedStyle出现的兼容性问题"></a>currentStyle 和 getComputedStyle出现的兼容性问题</h2><p>我们都知道通过style不能获取行外样式，当我们需要获取行外样式时：</p>
+<p>我们一般通过这两个方法获取行外样式：</p>
+<p>IE下：</p>
+<p>currentStyle</p>
+<p>Chrome，FireFox：</p>
+<p>getComputedStyle（oDiv，false）；</p>
+<p>兼容两个浏览器的写法：(包含低版本IE6，7)</p>
+<p>function  getStyle(node.styleStr){</p>
+<p>Return node.currentStyle ? Node.currentStyle[styleStr] : getComputedStyle(node)[styleStr];</p>
+<p>}</p>
+<p>调用：</p>
+<p>getStyle（oDiv，’width’）；</p>
+<h2 id="2、关于用“索引”获取字符串每一项-出现的兼容问题："><a href="#2、关于用“索引”获取字符串每一项-出现的兼容问题：" class="headerlink" title="2、关于用“索引”获取字符串每一项 出现的兼容问题："></a>2、关于用“索引”获取字符串每一项 出现的兼容问题：</h2><p>对于字符串也有类似 数组 这样的通过下标索引 获取每一项的值，</p>
+<p>var  str = “abscd;</p>
+<p>alert(str[1]);</p>
+<p>但是低版本的IE不兼容</p>
+<p>兼容方法：str.charAt(i);//全部浏览器兼容</p>
+<h2 id="3、关于DOM中childNodes获取子节点出现的兼容问题"><a href="#3、关于DOM中childNodes获取子节点出现的兼容问题" class="headerlink" title="3、关于DOM中childNodes获取子节点出现的兼容问题"></a>3、关于DOM中childNodes获取子节点出现的兼容问题</h2><p>childNodes:获取子节点</p>
+<p>–IE~8：获取的是元素节点，正常</p>
+<p>–高版本的浏览器：会获取包含空白文本节点以及元素节点</p>
+<p>解决方法：</p>
+<p>上面的childNodes为我们带了的困扰可以由children属性来代替。</p>
+<p>children属性：</p>
+<p>只获取元素节点，不获取文本节点，兼容所有浏览器，</p>
+<p>所以我们在获取子节点时，可用children；</p>
+<p>children获取元素节点</p>
+<p>firstElementChild</p>
+<p>lastElementChild</p>
+<p>nextElementSibling()获取兄弟节点的下一个节点</p>
+<p>.innerHTML与.outerHTML</p>
+<p>区别：一个是内部内容不包含自身标签，outer包含本标签</p>
+<h3 id="childNodes去空白节点"><a href="#childNodes去空白节点" class="headerlink" title="childNodes去空白节点"></a>childNodes去空白节点</h3><p>//方法一：返回一个新数组</p>
+<p>Function removeSpaceNodes(nodes){</p>
+<p>var arr = [];</p>
+<p>for(var i = 0; i &lt; nodes.length; i++){</p>
+<p>if(node[i].nodeType == 3 &amp;&amp;( /^\s+$/).test(nodes[i])){</p>
+<p>continue;</p>
+<p>arr.push(nodes[i]);</p>
+<p>}</p>
+<p>}</p>
+<p>return arr;</p>
+<p>}</p>
+<p>ps: 上面的方法，采用的忽略空白节点的方法，把得到的元素节点累加到数组里返回，还有一种做法就是，直接删除空白文本节点即可</p>
+<p>//修改原数组</p>
+<p>function filterSpaceNode(nodes){</p>
+<p>for(var I = 0; I &lt; nodes.length; I ++){</p>
+<p>//得到空白节点之后，移动到父节点上，删除子节点；</p>
+<p>if(node[i].nodeType = 3 &amp;&amp; /^\s + $/.test(nodes[i].nodeValue)){</p>
+<p>nodes[i].parentNode.removeChild(nodes[i]);</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<h2 id="4、使用event对象出现的兼容问题"><a href="#4、使用event对象出现的兼容问题" class="headerlink" title="4、使用event对象出现的兼容问题"></a>4、使用event对象出现的兼容问题</h2><p>解决方法：</p>
+<p> btn.onclick = function(event){</p>
+<p>​         var e = event || window.event;</p>
+<p> }</p>
+<h2 id="5-、target兼容问题"><a href="#5-、target兼容问题" class="headerlink" title="5 、target兼容问题"></a>5 、target兼容问题</h2><p>解决方法：</p>
+<p>btn.onclick = function(event){</p>
+<p>var e = event || window.event;</p>
+<p>var target = e.target || e.srcElement;</p>
+<p>}</p>
+<p><strong>6.关于为一个元素绑定两个相同事件：attachEvent/attachEventLister 出现的兼容问题</strong><br>​    事件绑定:(不兼容需要两个结合做兼容if..else..)<br>​    IE8以下用: attachEvent(‘事件名’,fn);<br>​    FF,Chrome,IE9-10用: attachEventLister(‘事件名’,fn,false);<br>​    多事件绑定封装成一个兼容函数:<br>​    function myAddEvent(obj,ev,fn){<br>​      if(obj.attachEvent){<br>​        //IE8以下<br>​        obj.attachEvent(‘on’+ev,fn);<br>​      }else{<br>​        //FF,Chrome,IE9-10<br>​        obj.attachEventLister(ev,fn,false);<br>​      }<br>​    }<br>​    myAddEvent(oBtn,’click’,function(){<br>​      alert(a);<br>​    });<br>​    myAddEvent(oBtn,’click’,function(){<br>​      alert(b);<br>​    });</p>
 
       
 
@@ -208,7 +269,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
@@ -264,7 +325,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.luozy.top/2018/01/07/csdn网页/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.luozy.top/2018/11/01/js兼容写法/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -278,18 +339,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/17/动态规划总结/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          动态规划总结
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/07/前端学习网页推荐/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">前端学习网页推荐</div>
+    <a href="/2018/10/31/事件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">事件</div>
       <i class="icon-circle-right"></i>
     </a>
   
