@@ -153,6 +153,213 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-js基础" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/17/js基础/">js基础</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/17/js基础/" class="archive-article-date">
+  	<time datetime="2018-10-17T00:49:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h2 id="js组成"><a href="#js组成" class="headerlink" title="js组成"></a>js组成</h2><blockquote>
+<p>JavaScript</p>
+<p>1、ECMAScript标准 4.0 5.0 6.0</p>
+<p>2、BoM   浏览器对象</p>
+<p>3、DOM 对象</p>
+</blockquote>
+<h3 id="JS语法规范"><a href="#JS语法规范" class="headerlink" title="JS语法规范"></a>JS语法规范</h3><blockquote>
+<p>srcipt标签两个作用</p>
+</blockquote>
+<p>1、方法一 js代码写在script标签里面</p>
+<p>2、方法二 外部引入js文件方式</p>
+<p>ps: 不可混合使用</p>
+<p>执行顺序自上而下</p>
+<p>type表明要执行的内容格式</p>
+<p>如不可：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span> = <span class="string">"demo.js"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	alert(<span class="string">"hello world"</span>);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h4><p>1、代码缩进；</p>
+<p>2、每一条语句结尾都加一个分号；</p>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p>单行注释 // ctrl ＋ /</p>
+<p>多行注释 /<em>  </em>/  ctrl ＋ shift ＋ /</p>
+<h2 id="js输出方式"><a href="#js输出方式" class="headerlink" title="js输出方式"></a>js输出方式</h2><blockquote>
+<p>1） alert(); //弹出警告框，在警告框上显示内容</p>
+<p>2）document write(); // 直接显示在页面上</p>
+<p>3）console log(); //控制台输出，一般用来调试代码用的</p>
+</blockquote>
+<p>ps：</p>
+<p>document.write(“hello world”);<br>document.write(“</p><h1>hello <em>world</em><h1>“);<br>console.log(“hello”);<p></p>
+<p>要想输出标签要用 &amp;lt； 和&amp;gt；</p>
+<h2 id="document-write-“-lt-srcipt-gt-”"><a href="#document-write-“-lt-srcipt-gt-”" class="headerlink" title="document.write(“&lt;srcipt &gt;”);"></a>document.write(“&lt;srcipt &gt;”);</h2><h2 id="常量和变量"><a href="#常量和变量" class="headerlink" title="常量和变量"></a>常量和变量</h2><h5 id="常量（字面量）"><a href="#常量（字面量）" class="headerlink" title="常量（字面量）"></a>常量（字面量）</h5><blockquote>
+<p>数据类型: </p>
+<p>​    基本数据类型：</p>
+<p>​    number 数字 0, 10 ,3.14</p>
+<p>​    string  字符串 所带单引号和双引号的都叫字符串</p>
+<p>​    boolean 布尔值 true false</p>
+<p>​    特殊数据类型：</p>
+<p>​    null 空</p>
+<p>​    undefined 未声明</p>
+<p>​    NaN not a number 不是一个数字</p>
+<p>关键字（有特殊功能的单词）：typeof ；//输出当前数据的输出类型。</p>
+</blockquote>
+<h5 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h5><blockquote>
+<p>值可以修改的叫做变量</p>
+<p>​    1、声明变量，适合内存申请一部分空间，存储数据</p>
+<p>​    2、变量的数据，是根据存储的数据决定的</p>
+<p>​    初始化：声明变量后接着赋值叫做初始化</p>
+<p>​    【注】如果声明变量的时候，没有赋值，默认是undefined。</p>
+<p>​    /*</p>
+<p>​        避免后续赋值的时候多出抹除undefined操作，先将值赋值为null。</p>
+<p>​    */</p>
+<p>​    </p>
+</blockquote>
+<h2 id="命名规则："><a href="#命名规则：" class="headerlink" title="命名规则："></a>命名规则：</h2><blockquote>
+<p>【注】所有用户自定义的名字都叫标识符，变量名也叫标识符</p>
+<p>*只能有数字、字母、下划线、$组成</p>
+<p>​    *变量名不能有数字开头</p>
+<p>​    *不能用关键字（如typeof）和保留字（系统已经征用的）</p>
+<p>​    *js区分大小写 a和A不是一个</p>
+<p>​    *见名思意</p>
+<p>​    *尽量别用拼音和缩写，使用英文全拼（驼峰式命名className/烤串式命名class_name）</p>
+</blockquote>
+<p>​    </p>
+<p>var num = 10；</p>
+<p>alert（num）；</p>
+<h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3><p>32 位操作系统</p>
+<p>64位操作系统</p>
+<p>位：地址总线 可最大寻址数</p>
+<h4 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h4><p>十进制转2进制：</p>
+<pre><code>要从右到左用二进制的每个数去乘以2的相应次方,小数点后则是从左往右
+</code></pre><p>num.toString(2);</p>
+<p>num.toString(8);</p>
+<p>num.toString(10);</p>
+<p>num.toString(16);</p>
+<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><p>算术运算符 + - * /</p>
+<p>关系运算符 &lt; &gt; &gt;= &lt;= == === !=</p>
+<p>逻辑运算符 &amp;&amp; || ！</p>
+<p>赋值运算符 -= += /= %=</p>
+<p>自增 、自减 ++ –</p>
+<h3 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h3><blockquote>
+<p>概念： 任何运算符和操作数（变量/常量）组成的式子都叫做表达式；</p>
+<p>1、表达式的值</p>
+<p>2、表达式的功能</p>
+</blockquote>
+<h2 id="算术表达式"><a href="#算术表达式" class="headerlink" title="算术表达式"></a>算术表达式</h2><p>算术运算符和操作符组成的式子</p>
+<p>1、如果两个数都是数字，进行数学运算</p>
+<p>2、不同类型数据进行运算，会进行自动类型数据转换</p>
+<h4 id="自动数据类型转换"><a href="#自动数据类型转换" class="headerlink" title="自动数据类型转换"></a>自动数据类型转换</h4><p>1、假设进行的运算是加法运算，并且一种有一个操作数是字符串，那么运算会变成字符串拼接</p>
+<p>如： ‘10’+123=”10123”;</p>
+<p>2、任何数据类型做除加法以外的运算，都会将别的类型转换为数字再进行运算。</p>
+<p>ps: </p>
+<p>1）当把一个带字母的字符串转化为数字时会转成NaN，而且NaN和任何数据进行运算都会变成NaN；</p>
+<p>2）如果操作数是纯数字的字符串进行运算会转换为数字再进行运算；</p>
+<p>3）true转换为数字是1，false是0；</p>
+<p>4）undefined转换为数字是NaN，null是0；</p>
+<p>3、</p>
+<p>var num = 10 / 0 = Infinity</p>
+<p>var num = -10 /0 = -Infinity</p>
+<p>ps 计算机不会进行小数运算</p>
+<h4 id="强制数据类型转换"><a href="#强制数据类型转换" class="headerlink" title="强制数据类型转换"></a>强制数据类型转换</h4><p>人为地进行数据转换</p>
+<h5 id="Number（）将别的数据类型转换为数字"><a href="#Number（）将别的数据类型转换为数字" class="headerlink" title="Number（）将别的数据类型转换为数字"></a>Number（）将别的数据类型转换为数字</h5><p>1）纯数字的字符会转换成数字</p>
+<p>2）如果带有非数字的字符会转成NaN</p>
+<p>3）true=&gt;1, false=&gt;0</p>
+<p>4)null=&gt;0,undefined=&gt;Nan</p>
+<h5 id="Boolean（）将别的数据类型转换为布尔值"><a href="#Boolean（）将别的数据类型转换为布尔值" class="headerlink" title="Boolean（）将别的数据类型转换为布尔值"></a>Boolean（）将别的数据类型转换为布尔值</h5><p>1)数字：非0即真</p>
+<p>2）有内容字符串=&gt;true,空字符串(“”)=&gt;true,非空即真</p>
+<p>3）null=&gt;false,undefined=&gt;false,NaN=&gt;false;</p>
+<h5 id="parseInt-取整：parseInt-20aa-20-parseInt-a20aa-NaN"><a href="#parseInt-取整：parseInt-20aa-20-parseInt-a20aa-NaN" class="headerlink" title="parseInt()      取整：parseInt(20aa)=20;parseInt(a20aa)=NaN;"></a>parseInt()      取整：parseInt(20aa)=20;parseInt(a20aa)=NaN;</h5><h5 id="parseFloat-取浮点数"><a href="#parseFloat-取浮点数" class="headerlink" title="parseFloat()   取浮点数"></a>parseFloat()   取浮点数</h5><h2 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h2><blockquote>
+<p>1、= 功能： 就是用来赋值，将等号右边的值赋给左边的变量</p>
+<p>2、复合赋值运算符： += , -= , /= , *= , %=</p>
+<p>3、一元运算符：++ –</p>
+<p>​    a++： 先取a的值作为a++的值，在对a进行加一</p>
+<p>​    ++a: 先对a进行加一，再取++a的值</p>
+</blockquote>
+<h2 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h2><p>&lt;  &gt; = &gt;= &lt;= == === !=</p>
+<p>关系运算符运算规则</p>
+<p>1、两个都是数字，对数字进行比较；</p>
+<p>2、其中一个是数字，另一个转化为数字进行比较</p>
+<p>3、当两个操作数是字符串的时候</p>
+<p>​    1）实际上是比较字符的ASCII码</p>
+<p>​    2）逐个进行比较： 如”asd”&lt;”bsdf”=true因为a的ASCII码大于b的。</p>
+<p>ps: true 转换成1进行比较，false转换成0进行比较</p>
+<p>NaN和任何数据（包括自己）==都为false ！=都为true</p>
+<p>4、全等（恒等）=== （1）值必须相等（2）数据类型也必须相等</p>
+<h5 id="特殊值"><a href="#特殊值" class="headerlink" title="特殊值"></a>特殊值</h5><p>undefined == 0 false</p>
+<p>null == 0 false</p>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>与/且     &amp;&amp;</p>
+<p>​    格式： 表达式1 &amp;&amp; 表达式2</p>
+<p>​    特点： 两个表达式都为真他才为真</p>
+<p>或        ||</p>
+<p>​    格式： 表达式1 ||　表达式２</p>
+<p>​    特点：　只有两个表达式都为加表达式才为假</p>
+<p>非　    ！</p>
+<p>​    格式：　！表达式</p>
+<p>​    特点：　！true = false</p>
+</h1></h1>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">H5</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/17/js基础/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="w-The-Spectre（Alan-Walker）" class="article article-type-w  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -978,136 +1185,6 @@
 
 
   
-    <article id="post-表单" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/26/表单/">表单</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/26/表单/" class="archive-article-date">
-  	<time datetime="2018-09-26T02:43:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="表单的作用：用来收集用户的信息的"><a href="#表单的作用：用来收集用户的信息的" class="headerlink" title="表单的作用：用来收集用户的信息的"></a>表单的作用：用来收集用户的信息的</h2><p>1)、表单框</p>
-<form name="表单名称" method="post/get" action=""></form>
-
-<p>2）文本框</p>
-<input type="text" value="默认值">
-
-<p>3)密码框</p>
-<input type="password">
-
-<input type="password" placeholder="密码">
-
-<p>4)重置按钮</p>
-<input type="reset" value="按钮内容">
-
-<p>5）单选框/单选按钮</p>
-<input type="radio" name="ral">
-
-<input type="radio" name="ral" checked="checked">
-
-<p>单选按钮里的name属性必须写，同一组单选按钮的name属性值必须一样。</p>
-<p>checked=”checked”(默认选中；) disabled=”disabled”禁用</p>
-<p>6）复选框</p>
-<input type="checkbox" name="like">
-
-<p><input type="checkbox" name="like" disabled="disabled"> (disabled=”disabled” :禁用)</p>
-<p>(checked=”checked” :默认选中)</p>
-<p>7)下拉菜单</p>
-<select name=""><br><br><option>菜单内容</option><br><br></select>
-
-<p>8）多行文本框（文本域）</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">"textareal"</span> <span class="attr">cols</span>=<span class="string">"字符宽度"</span> <span class="attr">rows</span>=<span class="string">"行数"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>9)按钮</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"'"</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"按钮内容"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"'"</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"按钮内容"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="button和submit的区别是：、"><a href="#button和submit的区别是：、" class="headerlink" title="button和submit的区别是：、"></a>button和submit的区别是：、</h4><p>submit是提交按钮起到提交信息的作用，type类型是button只起到跳转的作用，不进行提交。</p>
-<p>扩展知识点3：对于不同的输入类型，value 属性的用法的意义</p>
-<p>value 属性为 input 元素设定值。</p>
-<p>对于不同的输入类型，value 属性的用法也不同：</p>
-<p>type=”button”, “reset”, “submit” - 定义按钮上的显示的文本</p>
-<p>type=”text”, “password” - 定义输入字段的初始值</p>
-<p>type=”checkbox”, “radio” - 定义与输入相关联的值</p>
-<p>注释：<input type="checkbox"> 和 <input type="radio"> 中必须设置 value 属性。</p>
-<h3 id="扩展知识点4："><a href="#扩展知识点4：" class="headerlink" title="扩展知识点4："></a>扩展知识点4：</h3><form name="表单名称" method="post/get" action=""></form>
-
-<h4 id="Form中的获取数据的两个方式get和post的区别？"><a href="#Form中的获取数据的两个方式get和post的区别？" class="headerlink" title="Form中的获取数据的两个方式get和post的区别？"></a>Form中的获取数据的两个方式get和post的区别？</h4><ol>
-<li><p>get是从服务器上获取数据，post是向服务器传送数据。</p>
-</li>
-<li><p>get是把参数数据队列加到提交表单的ACTION属性所指的URL中，值和表单内各个字段一一对应，在URL中可以看到。post是通过HTTP post机制，将表单内各个字段与其内容放置在HTML HEADER内一起传送到ACTION属性所指的URL地址。用户看不到这个过程。</p>
-</li>
-<li><p>对于get方式，服务器端用Request.QueryString获取变量的值，对于post方式，服务器端用Request.Form获取提交的数据。</p>
-</li>
-<li><p>get传送的数据量较小，不能大于2KB。post传送的数据量较大，一般被默认为不受限制。</p>
-</li>
-<li><p>get安全性非常低，post安全性较高。但是执行效率却比Post方法好。</p>
-</li>
-</ol>
-<h4 id="建议："><a href="#建议：" class="headerlink" title="建议："></a>建议：</h4><p>1、get方式的安全性较Post方式要差些，包含机密信息的话，建议用Post数据提交方式；</p>
-<p>2、在做数据查询时，建议用Get方式；而在做数据添加、修改或删除时，建议用Post方式；</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">H5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/26/表单/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -1205,11 +1282,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color3">H5</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1217,15 +1294,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">H5 js 函数</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1234,6 +1307,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">js H5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">H5 js 函数</a>
               </li>
              
               <li class="article-tag-list-item">

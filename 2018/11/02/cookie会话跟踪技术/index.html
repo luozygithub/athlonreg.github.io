@@ -18,7 +18,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/705728/201604/705728-20160424234824085-667046040.png">
 <meta property="og:image" content="https://img-blog.csdn.net/20170317150321773?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemhzaHVsaW4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:updated_time" content="2018-11-02T08:25:49.175Z">
+<meta property="og:updated_time" content="2018-11-02T11:34:44.536Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cookie会话跟踪技术">
 <meta name="twitter:description" content="[TOC] 学习目标：  PHPNow集成包服务器搭建 TCP协议 UDP协议 认识cookie 封装设置cookie和获取的方法  安装、阿帕奇+MySQL  后台  PHP + MySQL如果你想要磁盘的某一部分，想要被别人能访问。只有你电脑上安装的服务端程序，你的磁盘这部分才能被别人所访问。 PHPnow = 阿帕奇+MySQL;PHPnow/htdocs 这台电脑上运行服务器的根目录 对外">
@@ -256,7 +256,7 @@
 <p>//封装传入键，来获取对应的值</p>
 <p>//删除cookie</p>
 <p>removeCookie()</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeCookie</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.cookie = <span class="built_in">encodeURIComponent</span>(name) + <span class="string">"=;expires="</span> + <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line">alert(getCookie(<span class="string">"DC英雄"</span>));</span><br><span class="line">removeCookie(<span class="string">"DC英雄"</span>);</span><br><span class="line">alert(getCookie(<span class="string">"DC英雄"</span>));</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeCookie</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.cookie = <span class="built_in">encodeURIComponent</span>(name) + <span class="string">"=;expires="</span> + <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line">alert(getCookie(<span class="string">"DC英雄"</span>));</span><br><span class="line">			removeCookie(<span class="string">"DC英雄"</span>);</span><br><span class="line">			alert(getCookie(<span class="string">"DC英雄"</span>));</span><br></pre></td></tr></table></figure>
 
       
 
@@ -365,6 +365,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/11/02/正则表达式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          正则表达式
+        
+      </div>
+    </a>
   
   
     <a href="/2018/11/01/js兼容写法/" id="article-nav-older" class="article-nav-link-wrap">
@@ -507,11 +516,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color3">H5</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -519,15 +528,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">H5 js 函数</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -536,6 +541,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">js H5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">H5 js 函数</a>
               </li>
              
               <li class="article-tag-list-item">

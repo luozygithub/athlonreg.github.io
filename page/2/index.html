@@ -153,6 +153,95 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-let和var的区别" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/23/let和var的区别/">let和var的区别</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/23/let和var的区别/" class="archive-article-date">
+  	<time datetime="2018-10-23T03:32:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="let与var"><a href="#let与var" class="headerlink" title="let与var"></a>let与var</h1><p>let是ES6新增的变量类型，是用来替代var的设计，与var不同的是：</p>
+<p>1、let使用块级作用域<br>2、let不支持在同作用域中声明标识符相同的变量<br>3、let用TDZ禁止了声明前访问<br>我们一条一条说明：</p>
+<p>1、JavaScript的作用域（scope）只有全局和局部，对于var声明的变量，只有函数才能为它创建新的作用域，而let支持块级作用域，花括号就能为它创建新的作用域；<br>2、相同作用域，var可以反复声明相同标识符的变量，而let是不允许的;<br>3、let声明的变量禁止在声明前访问，这也是为什么很多人认为let是不支持变量提升的原因，但真的是这样吗？我们来讨论这个问题：</p>
+<p>我们先说明一下什么是变量提升（hoisting）</p>
+<h3 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h3><p><a href="https://blog.csdn.net/demo_18/article/details/78493489" target="_blank" rel="noopener">https://blog.csdn.net/demo_18/article/details/78493489</a></p>
+<p>先上一个简单的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">"hey I am now hoisting"</span>;</span><br></pre></td></tr></table></figure>
+<p>看起来，我们在a被声明前调用a，没有报错，反而是返回一个undefined值，原因是：a其实已经在调用前被声明了，只是没有被初始化。JavaScript会把作用域里的所有变量和函数提到函数的顶部声明，相当于：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line">a = <span class="string">"hey I am now hoisting"</span>;</span><br></pre></td></tr></table></figure>
+<p>JavaScript会使用undefined缺省值创建变量a，注意，事实上浏览器并没有把声明语句放到作用域的顶部，在编译阶段，控制流进入域，该域所有的变量和函数的声明先进入内存，文中代码的相对位置不会变动的。</p>
+<p>由此可以知道，变量提升指的是变量声明的提升，不会提升变量的初始化和赋值。</p>
+<p>对于let来说，情况有点不同:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//Uncaught ReferenceError: a is not defined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = <span class="string">"hey I am now hoisting"</span>;</span><br><span class="line"></span><br><span class="line">这里抛出了一个错误，浏览器认为a并没有声明，这是否意味着<span class="keyword">let</span>并没有使a变量提升呢？我们再看一个例子</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = <span class="string">"hey I am outside"</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);<span class="comment">//Uncaught ReferenceError: a is not defined</span></span><br><span class="line">    <span class="keyword">let</span> a = <span class="string">"hey I am inside"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意看，这里同样抛出了一个错误，认为a没有声明，但是，如果a没有变量提升，执行到console.log时应该是输出全局作用域中的a，而不是出现错误。</p>
+<p>我们可以推知，这里确实出现了变量提升，而我们不能够访问的原因事实上是因为let的死区（temporal dead zone）设计：当前作用域顶部到该变量声明位置中间的部分，都是该let变量的死区，在死区中，禁止访问该变量。由此，我们给出结论，let声明的变量存在变量提升， 但是由于死区我们无法在声明前访问这个变量。</p>
+<h5 id="最后要指出的是，函数也是存在提升（hoisting）的，并且，函数的提升不同于变量的提升，函数相当于把自己的声明、赋值整个的放到了当前作用域的顶部。"><a href="#最后要指出的是，函数也是存在提升（hoisting）的，并且，函数的提升不同于变量的提升，函数相当于把自己的声明、赋值整个的放到了当前作用域的顶部。" class="headerlink" title="最后要指出的是，函数也是存在提升（hoisting）的，并且，函数的提升不同于变量的提升，函数相当于把自己的声明、赋值整个的放到了当前作用域的顶部。"></a>最后要指出的是，函数也是存在提升（hoisting）的，并且，函数的提升不同于变量的提升，函数相当于把自己的声明、赋值整个的放到了当前作用域的顶部。</h5>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/23/let和var的区别/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ECMA5新增标签" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -1214,213 +1303,6 @@
 
 
   
-    <article id="post-js基础" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/17/js基础/">js基础</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/17/js基础/" class="archive-article-date">
-  	<time datetime="2018-10-17T00:49:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h2 id="js组成"><a href="#js组成" class="headerlink" title="js组成"></a>js组成</h2><blockquote>
-<p>JavaScript</p>
-<p>1、ECMAScript标准 4.0 5.0 6.0</p>
-<p>2、BoM   浏览器对象</p>
-<p>3、DOM 对象</p>
-</blockquote>
-<h3 id="JS语法规范"><a href="#JS语法规范" class="headerlink" title="JS语法规范"></a>JS语法规范</h3><blockquote>
-<p>srcipt标签两个作用</p>
-</blockquote>
-<p>1、方法一 js代码写在script标签里面</p>
-<p>2、方法二 外部引入js文件方式</p>
-<p>ps: 不可混合使用</p>
-<p>执行顺序自上而下</p>
-<p>type表明要执行的内容格式</p>
-<p>如不可：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span> = <span class="string">"demo.js"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	alert(<span class="string">"hello world"</span>);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h4><p>1、代码缩进；</p>
-<p>2、每一条语句结尾都加一个分号；</p>
-<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p>单行注释 // ctrl ＋ /</p>
-<p>多行注释 /<em>  </em>/  ctrl ＋ shift ＋ /</p>
-<h2 id="js输出方式"><a href="#js输出方式" class="headerlink" title="js输出方式"></a>js输出方式</h2><blockquote>
-<p>1） alert(); //弹出警告框，在警告框上显示内容</p>
-<p>2）document write(); // 直接显示在页面上</p>
-<p>3）console log(); //控制台输出，一般用来调试代码用的</p>
-</blockquote>
-<p>ps：</p>
-<p>document.write(“hello world”);<br>document.write(“</p><h1>hello <em>world</em><h1>“);<br>console.log(“hello”);<p></p>
-<p>要想输出标签要用 &amp;lt； 和&amp;gt；</p>
-<h2 id="document-write-“-lt-srcipt-gt-”"><a href="#document-write-“-lt-srcipt-gt-”" class="headerlink" title="document.write(“&lt;srcipt &gt;”);"></a>document.write(“&lt;srcipt &gt;”);</h2><h2 id="常量和变量"><a href="#常量和变量" class="headerlink" title="常量和变量"></a>常量和变量</h2><h5 id="常量（字面量）"><a href="#常量（字面量）" class="headerlink" title="常量（字面量）"></a>常量（字面量）</h5><blockquote>
-<p>数据类型: </p>
-<p>​    基本数据类型：</p>
-<p>​    number 数字 0, 10 ,3.14</p>
-<p>​    string  字符串 所带单引号和双引号的都叫字符串</p>
-<p>​    boolean 布尔值 true false</p>
-<p>​    特殊数据类型：</p>
-<p>​    null 空</p>
-<p>​    undefined 未声明</p>
-<p>​    NaN not a number 不是一个数字</p>
-<p>关键字（有特殊功能的单词）：typeof ；//输出当前数据的输出类型。</p>
-</blockquote>
-<h5 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h5><blockquote>
-<p>值可以修改的叫做变量</p>
-<p>​    1、声明变量，适合内存申请一部分空间，存储数据</p>
-<p>​    2、变量的数据，是根据存储的数据决定的</p>
-<p>​    初始化：声明变量后接着赋值叫做初始化</p>
-<p>​    【注】如果声明变量的时候，没有赋值，默认是undefined。</p>
-<p>​    /*</p>
-<p>​        避免后续赋值的时候多出抹除undefined操作，先将值赋值为null。</p>
-<p>​    */</p>
-<p>​    </p>
-</blockquote>
-<h2 id="命名规则："><a href="#命名规则：" class="headerlink" title="命名规则："></a>命名规则：</h2><blockquote>
-<p>【注】所有用户自定义的名字都叫标识符，变量名也叫标识符</p>
-<p>*只能有数字、字母、下划线、$组成</p>
-<p>​    *变量名不能有数字开头</p>
-<p>​    *不能用关键字（如typeof）和保留字（系统已经征用的）</p>
-<p>​    *js区分大小写 a和A不是一个</p>
-<p>​    *见名思意</p>
-<p>​    *尽量别用拼音和缩写，使用英文全拼（驼峰式命名className/烤串式命名class_name）</p>
-</blockquote>
-<p>​    </p>
-<p>var num = 10；</p>
-<p>alert（num）；</p>
-<h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3><p>32 位操作系统</p>
-<p>64位操作系统</p>
-<p>位：地址总线 可最大寻址数</p>
-<h4 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h4><p>十进制转2进制：</p>
-<pre><code>要从右到左用二进制的每个数去乘以2的相应次方,小数点后则是从左往右
-</code></pre><p>num.toString(2);</p>
-<p>num.toString(8);</p>
-<p>num.toString(10);</p>
-<p>num.toString(16);</p>
-<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><p>算术运算符 + - * /</p>
-<p>关系运算符 &lt; &gt; &gt;= &lt;= == === !=</p>
-<p>逻辑运算符 &amp;&amp; || ！</p>
-<p>赋值运算符 -= += /= %=</p>
-<p>自增 、自减 ++ –</p>
-<h3 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h3><blockquote>
-<p>概念： 任何运算符和操作数（变量/常量）组成的式子都叫做表达式；</p>
-<p>1、表达式的值</p>
-<p>2、表达式的功能</p>
-</blockquote>
-<h2 id="算术表达式"><a href="#算术表达式" class="headerlink" title="算术表达式"></a>算术表达式</h2><p>算术运算符和操作符组成的式子</p>
-<p>1、如果两个数都是数字，进行数学运算</p>
-<p>2、不同类型数据进行运算，会进行自动类型数据转换</p>
-<h4 id="自动数据类型转换"><a href="#自动数据类型转换" class="headerlink" title="自动数据类型转换"></a>自动数据类型转换</h4><p>1、假设进行的运算是加法运算，并且一种有一个操作数是字符串，那么运算会变成字符串拼接</p>
-<p>如： ‘10’+123=”10123”;</p>
-<p>2、任何数据类型做除加法以外的运算，都会将别的类型转换为数字再进行运算。</p>
-<p>ps: </p>
-<p>1）当把一个带字母的字符串转化为数字时会转成NaN，而且NaN和任何数据进行运算都会变成NaN；</p>
-<p>2）如果操作数是纯数字的字符串进行运算会转换为数字再进行运算；</p>
-<p>3）true转换为数字是1，false是0；</p>
-<p>4）undefined转换为数字是NaN，null是0；</p>
-<p>3、</p>
-<p>var num = 10 / 0 = Infinity</p>
-<p>var num = -10 /0 = -Infinity</p>
-<p>ps 计算机不会进行小数运算</p>
-<h4 id="强制数据类型转换"><a href="#强制数据类型转换" class="headerlink" title="强制数据类型转换"></a>强制数据类型转换</h4><p>人为地进行数据转换</p>
-<h5 id="Number（）将别的数据类型转换为数字"><a href="#Number（）将别的数据类型转换为数字" class="headerlink" title="Number（）将别的数据类型转换为数字"></a>Number（）将别的数据类型转换为数字</h5><p>1）纯数字的字符会转换成数字</p>
-<p>2）如果带有非数字的字符会转成NaN</p>
-<p>3）true=&gt;1, false=&gt;0</p>
-<p>4)null=&gt;0,undefined=&gt;Nan</p>
-<h5 id="Boolean（）将别的数据类型转换为布尔值"><a href="#Boolean（）将别的数据类型转换为布尔值" class="headerlink" title="Boolean（）将别的数据类型转换为布尔值"></a>Boolean（）将别的数据类型转换为布尔值</h5><p>1)数字：非0即真</p>
-<p>2）有内容字符串=&gt;true,空字符串(“”)=&gt;true,非空即真</p>
-<p>3）null=&gt;false,undefined=&gt;false,NaN=&gt;false;</p>
-<h5 id="parseInt-取整：parseInt-20aa-20-parseInt-a20aa-NaN"><a href="#parseInt-取整：parseInt-20aa-20-parseInt-a20aa-NaN" class="headerlink" title="parseInt()      取整：parseInt(20aa)=20;parseInt(a20aa)=NaN;"></a>parseInt()      取整：parseInt(20aa)=20;parseInt(a20aa)=NaN;</h5><h5 id="parseFloat-取浮点数"><a href="#parseFloat-取浮点数" class="headerlink" title="parseFloat()   取浮点数"></a>parseFloat()   取浮点数</h5><h2 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h2><blockquote>
-<p>1、= 功能： 就是用来赋值，将等号右边的值赋给左边的变量</p>
-<p>2、复合赋值运算符： += , -= , /= , *= , %=</p>
-<p>3、一元运算符：++ –</p>
-<p>​    a++： 先取a的值作为a++的值，在对a进行加一</p>
-<p>​    ++a: 先对a进行加一，再取++a的值</p>
-</blockquote>
-<h2 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h2><p>&lt;  &gt; = &gt;= &lt;= == === !=</p>
-<p>关系运算符运算规则</p>
-<p>1、两个都是数字，对数字进行比较；</p>
-<p>2、其中一个是数字，另一个转化为数字进行比较</p>
-<p>3、当两个操作数是字符串的时候</p>
-<p>​    1）实际上是比较字符的ASCII码</p>
-<p>​    2）逐个进行比较： 如”asd”&lt;”bsdf”=true因为a的ASCII码大于b的。</p>
-<p>ps: true 转换成1进行比较，false转换成0进行比较</p>
-<p>NaN和任何数据（包括自己）==都为false ！=都为true</p>
-<p>4、全等（恒等）=== （1）值必须相等（2）数据类型也必须相等</p>
-<h5 id="特殊值"><a href="#特殊值" class="headerlink" title="特殊值"></a>特殊值</h5><p>undefined == 0 false</p>
-<p>null == 0 false</p>
-<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>与/且     &amp;&amp;</p>
-<p>​    格式： 表达式1 &amp;&amp; 表达式2</p>
-<p>​    特点： 两个表达式都为真他才为真</p>
-<p>或        ||</p>
-<p>​    格式： 表达式1 ||　表达式２</p>
-<p>​    特点：　只有两个表达式都为加表达式才为假</p>
-<p>非　    ！</p>
-<p>​    格式：　！表达式</p>
-<p>​    特点：　！true = false</p>
-</h1></h1>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">H5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/17/js基础/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1518,11 +1400,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color3">H5</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1530,15 +1412,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">H5 js 函数</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1547,6 +1425,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">js H5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">H5 js 函数</a>
               </li>
              
               <li class="article-tag-list-item">

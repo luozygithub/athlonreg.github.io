@@ -153,6 +153,136 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-表单" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/26/表单/">表单</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/26/表单/" class="archive-article-date">
+  	<time datetime="2018-09-26T02:43:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="表单的作用：用来收集用户的信息的"><a href="#表单的作用：用来收集用户的信息的" class="headerlink" title="表单的作用：用来收集用户的信息的"></a>表单的作用：用来收集用户的信息的</h2><p>1)、表单框</p>
+<form name="表单名称" method="post/get" action=""></form>
+
+<p>2）文本框</p>
+<input type="text" value="默认值">
+
+<p>3)密码框</p>
+<input type="password">
+
+<input type="password" placeholder="密码">
+
+<p>4)重置按钮</p>
+<input type="reset" value="按钮内容">
+
+<p>5）单选框/单选按钮</p>
+<input type="radio" name="ral">
+
+<input type="radio" name="ral" checked="checked">
+
+<p>单选按钮里的name属性必须写，同一组单选按钮的name属性值必须一样。</p>
+<p>checked=”checked”(默认选中；) disabled=”disabled”禁用</p>
+<p>6）复选框</p>
+<input type="checkbox" name="like">
+
+<p><input type="checkbox" name="like" disabled="disabled"> (disabled=”disabled” :禁用)</p>
+<p>(checked=”checked” :默认选中)</p>
+<p>7)下拉菜单</p>
+<select name=""><br><br><option>菜单内容</option><br><br></select>
+
+<p>8）多行文本框（文本域）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">"textareal"</span> <span class="attr">cols</span>=<span class="string">"字符宽度"</span> <span class="attr">rows</span>=<span class="string">"行数"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>9)按钮</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"'"</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"按钮内容"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"'"</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"按钮内容"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="button和submit的区别是：、"><a href="#button和submit的区别是：、" class="headerlink" title="button和submit的区别是：、"></a>button和submit的区别是：、</h4><p>submit是提交按钮起到提交信息的作用，type类型是button只起到跳转的作用，不进行提交。</p>
+<p>扩展知识点3：对于不同的输入类型，value 属性的用法的意义</p>
+<p>value 属性为 input 元素设定值。</p>
+<p>对于不同的输入类型，value 属性的用法也不同：</p>
+<p>type=”button”, “reset”, “submit” - 定义按钮上的显示的文本</p>
+<p>type=”text”, “password” - 定义输入字段的初始值</p>
+<p>type=”checkbox”, “radio” - 定义与输入相关联的值</p>
+<p>注释：<input type="checkbox"> 和 <input type="radio"> 中必须设置 value 属性。</p>
+<h3 id="扩展知识点4："><a href="#扩展知识点4：" class="headerlink" title="扩展知识点4："></a>扩展知识点4：</h3><form name="表单名称" method="post/get" action=""></form>
+
+<h4 id="Form中的获取数据的两个方式get和post的区别？"><a href="#Form中的获取数据的两个方式get和post的区别？" class="headerlink" title="Form中的获取数据的两个方式get和post的区别？"></a>Form中的获取数据的两个方式get和post的区别？</h4><ol>
+<li><p>get是从服务器上获取数据，post是向服务器传送数据。</p>
+</li>
+<li><p>get是把参数数据队列加到提交表单的ACTION属性所指的URL中，值和表单内各个字段一一对应，在URL中可以看到。post是通过HTTP post机制，将表单内各个字段与其内容放置在HTML HEADER内一起传送到ACTION属性所指的URL地址。用户看不到这个过程。</p>
+</li>
+<li><p>对于get方式，服务器端用Request.QueryString获取变量的值，对于post方式，服务器端用Request.Form获取提交的数据。</p>
+</li>
+<li><p>get传送的数据量较小，不能大于2KB。post传送的数据量较大，一般被默认为不受限制。</p>
+</li>
+<li><p>get安全性非常低，post安全性较高。但是执行效率却比Post方法好。</p>
+</li>
+</ol>
+<h4 id="建议："><a href="#建议：" class="headerlink" title="建议："></a>建议：</h4><p>1、get方式的安全性较Post方式要差些，包含机密信息的话，建议用Post数据提交方式；</p>
+<p>2、在做数据查询时，建议用Get方式；而在做数据添加、修改或删除时，建议用Post方式；</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">H5</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/26/表单/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-H5基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -960,68 +1090,6 @@
 
 
   
-    <article id="post-mysql常用语句" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/07/mysql常用语句/">mysql常用语句</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/07/mysql常用语句/" class="archive-article-date">
-  	<time datetime="2018-01-06T18:00:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/07/mysql常用语句/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -1119,11 +1187,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color3">H5</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1131,15 +1199,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">H5 js 函数</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1148,6 +1212,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">js H5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">H5 js 函数</a>
               </li>
              
               <li class="article-tag-list-item">
