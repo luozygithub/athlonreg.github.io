@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.luozy.top/"/>
-  <updated>2018-11-01T11:59:31.831Z</updated>
+  <updated>2018-11-02T08:25:49.175Z</updated>
   <id>http://www.luozy.top/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>cookie会话跟踪技术</title>
+    <link href="http://www.luozy.top/2018/11/02/cookie%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA%E6%8A%80%E6%9C%AF/"/>
+    <id>http://www.luozy.top/2018/11/02/cookie会话跟踪技术/</id>
+    <published>2018-11-02T02:31:12.000Z</published>
+    <updated>2018-11-02T08:25:49.175Z</updated>
+    
+    <content type="html"><![CDATA[<p>[TOC]</p><p>学习目标：</p><ol><li>PHPNow集成包服务器搭建</li><li>TCP协议</li><li>UDP协议</li><li>认识cookie</li><li>封装设置cookie和获取的方法</li></ol><h4 id="安装、阿帕奇-MySQL-后台-PHP-MySQL"><a href="#安装、阿帕奇-MySQL-后台-PHP-MySQL" class="headerlink" title="安装、阿帕奇+MySQL  后台  PHP + MySQL"></a>安装、阿帕奇+MySQL  后台  PHP + MySQL</h4><p>如果你想要磁盘的某一部分，想要被别人能访问。只有你电脑上安装的服务端程序，你的磁盘这部分才能被别人所访问。</p><h4 id="PHPnow-阿帕奇-MySQL"><a href="#PHPnow-阿帕奇-MySQL" class="headerlink" title="PHPnow = 阿帕奇+MySQL;"></a>PHPnow = 阿帕奇+MySQL;</h4><p>PHPnow/htdocs 这台电脑上运行服务器的根目录 对外开放</p><p>【注】1、大家的cookie代码，要放在这个文件夹内。</p><p>​           2、<a href="http://10.9.161.62/index.html" target="_blank" rel="noopener">http://10.9.161.62/index.html</a></p><p>127.0.0.1   本机访问当前电脑的服务器。  PHPnow/htdocs</p><p>localhost   本机访问当前电脑的服务器。  PHPnow/htdocs</p><p>10.9.161.131  </p><p>默认会去加载index开头的文件：index.html  index.jsp  index.php</p><p>PHPnow/htdocs/index.html</p><h3 id="一、TCP、UDP协议"><a href="#一、TCP、UDP协议" class="headerlink" title="一、TCP、UDP协议"></a>一、TCP、UDP协议</h3><p>1、TCP传输  面向连接传输协议</p><p>​    1）先建立连接</p><p>​    2）传输数据</p><p>​    3）断开连接</p><p>通信协议是什么？</p><p>​    我们在公路上需要遵守交通法则，同样数据在网络上进行传输我们也得遵守数据传输的规则。</p><p>​    在数据传输的规则，也就是协议中，最常见的协议就是TCP和UDP协议。其中http协议就是TCP实现的。</p><p><strong>TCP协议概念：</strong></p><p>TCP是一种面向连接的、可靠的、基于字节流的传输层通信协议。</p><p>1、账目密码</p><p>2、PC端网络</p><p>【注】如果需要传输，就先建立链接，开始传输数据，当数据传输结束，就直接断开链接。如果再要进行传输，重新建立链接。</p><p>好处：安全，准确性高，面向链接</p><p>坏处：TCP协议比较耗费时间，耗费资源。</p><p><img src="https://images2015.cnblogs.com/blog/705728/201604/705728-20160424234824085-667046040.png" alt="img"></p><p><a href="https://www.cnblogs.com/qishui/p/5428938.html" target="_blank" rel="noopener">https://www.cnblogs.com/qishui/p/5428938.html</a></p><p><strong>一张图了解TCP/IP五层网络模型</strong></p><p><img src="https://img-blog.csdn.net/20170317150321773?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemhzaHVsaW4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="img"></p><p><strong>UDP概念：</strong></p><p>UDP 是User Datagram Protocol的简称，  参考模型中一种无连接的传输层协议，提供面向事务的简单不可靠信息传送服务。</p><p>1、不连接，直接传</p><p>2、不安全，容易丢。</p><p>及时性要求非常高，数据完整度要求不高：</p><p>及时的语音视频聊天软件。</p><h2 id="cookie会话跟踪技术"><a href="#cookie会话跟踪技术" class="headerlink" title="cookie会话跟踪技术"></a>cookie会话跟踪技术</h2><p>​    打开一个窗口（会话开始），关闭这个窗口会话结束</p><h4 id="cookie使用方式"><a href="#cookie使用方式" class="headerlink" title="cookie使用方式"></a>cookie使用方式</h4><p>document.cookie = “字符串”;</p><p>name = value;[expires = date];[path = path];[domain = somewhere.com];[secure]</p><p>name 和 value用户自定义 []内元素为用户自己选用</p><p><strong>为了防止乱码问题：</strong></p><p>可对中文先进行编码在进行存储</p><p>在读中文的时候再解码去读。</p><p>中文 —&gt; 字符 encodeURIComponent()</p><p>字符 —-&gt; 中文 decodeURIComponent();</p><p>utf-8编码：</p><p>一个汉字 相当于三个字符</p><h4 id="1、expires-日期对象"><a href="#1、expires-日期对象" class="headerlink" title="1、expires = 日期对象"></a>1、expires = 日期对象</h4><p>用法：</p><p>设置当前这条cookie过期时间</p><p>如果不去设置的话expires这个键的话，默认为关闭浏览器过期</p><p>获取n天后的某一天</p><p>function numOfDate（num）{</p><p>​    var d = new Date();</p><p>​    var day = d.getDate();</p><p>​     d.setDate(dat + num)</p><p>​    return d;</p><p>}</p><p>ps:</p><p>var d = new Date(0);//1970年. . . . . </p><h4 id="2、path-限制访问路径"><a href="#2、path-限制访问路径" class="headerlink" title="2、path 限制访问路径"></a>2、path 限制访问路径</h4><p>如果不去设置path，默认是当前加载文件路径</p><p>如果存储的cookie路径和访问的cookie路径不一样的话，禁止访问这个cookie</p><h4 id="3、domain-限制访问域名"><a href="#3、domain-限制访问域名" class="headerlink" title="3、domain 限制访问域名"></a>3、domain 限制访问域名</h4><p>document.cookie = “username = 123 ;domain = ” + “localhost”；</p><p>设置cookie的时候，加载文件的域名和域名不一致，设置域名不一致，设置失败</p><h4 id="4、source-安全设置"><a href="#4、source-安全设置" class="headerlink" title="4、source 安全设置"></a>4、source 安全设置</h4><p>如果不设置，任何协议都可以访问cookie</p><p>如果设置，必须是https才能访问cookie</p><h4 id="封装cookie"><a href="#封装cookie" class="headerlink" title="封装cookie"></a>封装cookie</h4><p>//设置cookie</p><p>setCookie()</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//name=value;[expires=date];[path=path];[domain=somewhere.com];[secure]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">中文 -&gt; 字符 encodeURIComponent()</span></span><br><span class="line"><span class="comment">字符 -&gt; 中文 decodeURIComponent()</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//设置cookie</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setCookie</span>(<span class="params">name, value, expires, path, domain, secure</span>)</span>&#123;</span><br><span class="line"><span class="comment">//将name和value转成字符</span></span><br><span class="line"><span class="keyword">var</span> cookieStr = <span class="built_in">encodeURIComponent</span>(name) + <span class="string">"="</span> + <span class="built_in">encodeURIComponent</span>(value);</span><br><span class="line"><span class="keyword">if</span>(expires)&#123;</span><br><span class="line"><span class="comment">//传入数字，将数字转成对应日期</span></span><br><span class="line">cookieStr += <span class="string">";expires="</span> + numOfDate(expires); </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(path)&#123;</span><br><span class="line">cookieStr += <span class="string">";path="</span> + path;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(domain)&#123;</span><br><span class="line">cookieStr += <span class="string">";domain="</span> + domain;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(secure)&#123;</span><br><span class="line">cookieStr += <span class="string">";secure"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.cookie = cookieStr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">numOfDate</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">var</span> day = d.getDate();</span><br><span class="line">d.setDate(day + num);</span><br><span class="line"><span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setCookie(<span class="string">"漫威英雄"</span>, <span class="string">"钢铁侠"</span>, <span class="number">7</span>);</span><br><span class="line">setCookie(<span class="string">"DC英雄"</span>, <span class="string">"绿灯侠"</span>, <span class="number">30</span>);</span><br><span class="line">setCookie(<span class="string">"变种人"</span>, <span class="string">"凤凰之力"</span>, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//输出</span></span><br><span class="line"><span class="comment">// alert(decodeURIComponent(document.cookie));</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//封装传入键name获取对应值value</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//漫威英雄=钢铁侠; DC英雄=绿灯侠; 变种人=凤凰之力</span></span><br></pre></td></tr></table></figure><p>//获取cookie</p><p>getCookie()</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line"><span class="keyword">var</span> cookieStr = <span class="built_in">decodeURIComponent</span>(<span class="built_in">document</span>.cookie);</span><br><span class="line"><span class="comment">//1、先找name开始的下标</span></span><br><span class="line"><span class="keyword">var</span> start = cookieStr.indexOf(name);</span><br><span class="line"><span class="keyword">if</span>(start == <span class="number">-1</span>)&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line"><span class="comment">//2、键肯定存在，找出结束的位置</span></span><br><span class="line"><span class="keyword">var</span> end = cookieStr.indexOf(<span class="string">";"</span>, start);</span><br><span class="line"><span class="keyword">if</span>(end == <span class="number">-1</span>)&#123;</span><br><span class="line">end = cookieStr.length;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//3、通过start和end，将键值对提取出来</span></span><br><span class="line"><span class="keyword">var</span> subStr = cookieStr.substring(start, end);</span><br><span class="line"><span class="comment">//4、用等号进行字符串分割</span></span><br><span class="line"><span class="keyword">var</span> arr = subStr.split(<span class="string">"="</span>);</span><br><span class="line"><span class="keyword">return</span> arr[<span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>//封装传入键，来获取对应的值</p><p>//删除cookie</p><p>removeCookie()</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeCookie</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.cookie = <span class="built_in">encodeURIComponent</span>(name) + <span class="string">"=;expires="</span> + <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line">alert(getCookie(<span class="string">"DC英雄"</span>));</span><br><span class="line">removeCookie(<span class="string">"DC英雄"</span>);</span><br><span class="line">alert(getCookie(<span class="string">"DC英雄"</span>));</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;p&gt;学习目标：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;PHPNow集成包服务器搭建&lt;/li&gt;
+&lt;li&gt;TCP协议&lt;/li&gt;
+&lt;li&gt;UDP协议&lt;/li&gt;
+&lt;li&gt;认识cookie&lt;/li&gt;
+&lt;li&gt;封装设置cookie和获取的方法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 i
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://www.luozy.top/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>js兼容写法</title>
@@ -473,29 +505,6 @@
 &lt;h2 id=&quot;js组成&quot;&gt;&lt;a href=&quot;#js组成&quot; class=&quot;headerlink&quot; title=&quot;js组成&quot;&gt;&lt;/a&gt;js组成&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;JavaScript&lt;/p&gt;
 &lt;p&gt;1、ECMAScript标准 4.0
-      
-    
-    </summary>
-    
-    
-      <category term="H5" scheme="http://www.luozy.top/tags/H5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>The Spectre（Alan Walker）</title>
-    <link href="http://www.luozy.top/2018/10/13/The-Spectre%EF%BC%88Alan-Walker%EF%BC%89/"/>
-    <id>http://www.luozy.top/2018/10/13/The-Spectre（Alan-Walker）/</id>
-    <published>2018-10-13T03:27:26.000Z</published>
-    <updated>2018-10-13T03:45:58.625Z</updated>
-    
-    <content type="html"><![CDATA[<video controls autoplay loop preload=""><br><br>​    <source id="mp4" src="http://pgip9g5iy.bkt.clouddn.com/Alan%20Walker%20-%20The%20Spectre.mp4" type="video/mp4"><br><br></video>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;video controls autoplay loop preload=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;​    &lt;source id=&quot;mp4&quot; src=&quot;http://pgip9g5iy.bkt.clouddn.com/Alan%20Walker%20-%20The%20Spect
       
     
     </summary>

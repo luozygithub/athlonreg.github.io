@@ -153,6 +153,160 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-cookie会话跟踪技术" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/02/cookie会话跟踪技术/">cookie会话跟踪技术</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/02/cookie会话跟踪技术/" class="archive-article-date">
+  	<time datetime="2018-11-02T02:31:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<p>学习目标：</p>
+<ol>
+<li>PHPNow集成包服务器搭建</li>
+<li>TCP协议</li>
+<li>UDP协议</li>
+<li>认识cookie</li>
+<li>封装设置cookie和获取的方法</li>
+</ol>
+<h4 id="安装、阿帕奇-MySQL-后台-PHP-MySQL"><a href="#安装、阿帕奇-MySQL-后台-PHP-MySQL" class="headerlink" title="安装、阿帕奇+MySQL  后台  PHP + MySQL"></a>安装、阿帕奇+MySQL  后台  PHP + MySQL</h4><p>如果你想要磁盘的某一部分，想要被别人能访问。只有你电脑上安装的服务端程序，你的磁盘这部分才能被别人所访问。</p>
+<h4 id="PHPnow-阿帕奇-MySQL"><a href="#PHPnow-阿帕奇-MySQL" class="headerlink" title="PHPnow = 阿帕奇+MySQL;"></a>PHPnow = 阿帕奇+MySQL;</h4><p>PHPnow/htdocs 这台电脑上运行服务器的根目录 对外开放</p>
+<p>【注】1、大家的cookie代码，要放在这个文件夹内。</p>
+<p>​           2、<a href="http://10.9.161.62/index.html" target="_blank" rel="noopener">http://10.9.161.62/index.html</a></p>
+<p>127.0.0.1   本机访问当前电脑的服务器。  PHPnow/htdocs</p>
+<p>localhost   本机访问当前电脑的服务器。  PHPnow/htdocs</p>
+<p>10.9.161.131  </p>
+<p>默认会去加载index开头的文件：index.html  index.jsp  index.php</p>
+<p>PHPnow/htdocs/index.html</p>
+<h3 id="一、TCP、UDP协议"><a href="#一、TCP、UDP协议" class="headerlink" title="一、TCP、UDP协议"></a>一、TCP、UDP协议</h3><p>1、TCP传输  面向连接传输协议</p>
+<p>​    1）先建立连接</p>
+<p>​    2）传输数据</p>
+<p>​    3）断开连接</p>
+<p>通信协议是什么？</p>
+<p>​    我们在公路上需要遵守交通法则，同样数据在网络上进行传输我们也得遵守数据传输的规则。</p>
+<p>​    在数据传输的规则，也就是协议中，最常见的协议就是TCP和UDP协议。其中http协议就是TCP实现的。</p>
+<p><strong>TCP协议概念：</strong></p>
+<p>TCP是一种面向连接的、可靠的、基于字节流的传输层通信协议。</p>
+<p>1、账目密码</p>
+<p>2、PC端网络</p>
+<p>【注】如果需要传输，就先建立链接，开始传输数据，当数据传输结束，就直接断开链接。如果再要进行传输，重新建立链接。</p>
+<p>好处：安全，准确性高，面向链接</p>
+<p>坏处：TCP协议比较耗费时间，耗费资源。</p>
+<p><img src="https://images2015.cnblogs.com/blog/705728/201604/705728-20160424234824085-667046040.png" alt="img"></p>
+<p><a href="https://www.cnblogs.com/qishui/p/5428938.html" target="_blank" rel="noopener">https://www.cnblogs.com/qishui/p/5428938.html</a></p>
+<p><strong>一张图了解TCP/IP五层网络模型</strong></p>
+<p><img src="https://img-blog.csdn.net/20170317150321773?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemhzaHVsaW4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="img"></p>
+<p><strong>UDP概念：</strong></p>
+<p>UDP 是User Datagram Protocol的简称，  参考模型中一种无连接的传输层协议，提供面向事务的简单不可靠信息传送服务。</p>
+<p>1、不连接，直接传</p>
+<p>2、不安全，容易丢。</p>
+<p>及时性要求非常高，数据完整度要求不高：</p>
+<p>及时的语音视频聊天软件。</p>
+<h2 id="cookie会话跟踪技术"><a href="#cookie会话跟踪技术" class="headerlink" title="cookie会话跟踪技术"></a>cookie会话跟踪技术</h2><p>​    打开一个窗口（会话开始），关闭这个窗口会话结束</p>
+<h4 id="cookie使用方式"><a href="#cookie使用方式" class="headerlink" title="cookie使用方式"></a>cookie使用方式</h4><p>document.cookie = “字符串”;</p>
+<p>name = value;[expires = date];[path = path];[domain = somewhere.com];[secure]</p>
+<p>name 和 value用户自定义 []内元素为用户自己选用</p>
+<p><strong>为了防止乱码问题：</strong></p>
+<p>可对中文先进行编码在进行存储</p>
+<p>在读中文的时候再解码去读。</p>
+<p>中文 —&gt; 字符 encodeURIComponent()</p>
+<p>字符 —-&gt; 中文 decodeURIComponent();</p>
+<p>utf-8编码：</p>
+<p>一个汉字 相当于三个字符</p>
+<h4 id="1、expires-日期对象"><a href="#1、expires-日期对象" class="headerlink" title="1、expires = 日期对象"></a>1、expires = 日期对象</h4><p>用法：</p>
+<p>设置当前这条cookie过期时间</p>
+<p>如果不去设置的话expires这个键的话，默认为关闭浏览器过期</p>
+<p>获取n天后的某一天</p>
+<p>function numOfDate（num）{</p>
+<p>​    var d = new Date();</p>
+<p>​    var day = d.getDate();</p>
+<p>​     d.setDate(dat + num)</p>
+<p>​    return d;</p>
+<p>}</p>
+<p>ps:</p>
+<p>var d = new Date(0);//1970年. . . . . </p>
+<h4 id="2、path-限制访问路径"><a href="#2、path-限制访问路径" class="headerlink" title="2、path 限制访问路径"></a>2、path 限制访问路径</h4><p>如果不去设置path，默认是当前加载文件路径</p>
+<p>如果存储的cookie路径和访问的cookie路径不一样的话，禁止访问这个cookie</p>
+<h4 id="3、domain-限制访问域名"><a href="#3、domain-限制访问域名" class="headerlink" title="3、domain 限制访问域名"></a>3、domain 限制访问域名</h4><p>document.cookie = “username = 123 ;domain = ” + “localhost”；</p>
+<p>设置cookie的时候，加载文件的域名和域名不一致，设置域名不一致，设置失败</p>
+<h4 id="4、source-安全设置"><a href="#4、source-安全设置" class="headerlink" title="4、source 安全设置"></a>4、source 安全设置</h4><p>如果不设置，任何协议都可以访问cookie</p>
+<p>如果设置，必须是https才能访问cookie</p>
+<h4 id="封装cookie"><a href="#封装cookie" class="headerlink" title="封装cookie"></a>封装cookie</h4><p>//设置cookie</p>
+<p>setCookie()</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//name=value;[expires=date];[path=path];[domain=somewhere.com];[secure]</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">/*</span></span><br><span class="line"><span class="comment">				中文 -&gt; 字符 encodeURIComponent()</span></span><br><span class="line"><span class="comment">				字符 -&gt; 中文 decodeURIComponent()</span></span><br><span class="line"><span class="comment">			*/</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">//设置cookie</span></span><br><span class="line">			<span class="function"><span class="keyword">function</span> <span class="title">setCookie</span>(<span class="params">name, value, expires, path, domain, secure</span>)</span>&#123;</span><br><span class="line">				<span class="comment">//将name和value转成字符</span></span><br><span class="line">				<span class="keyword">var</span> cookieStr = <span class="built_in">encodeURIComponent</span>(name) + <span class="string">"="</span> + <span class="built_in">encodeURIComponent</span>(value);</span><br><span class="line">				<span class="keyword">if</span>(expires)&#123;</span><br><span class="line">					<span class="comment">//传入数字，将数字转成对应日期</span></span><br><span class="line">					cookieStr += <span class="string">";expires="</span> + numOfDate(expires); </span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(path)&#123;</span><br><span class="line">					cookieStr += <span class="string">";path="</span> + path;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(domain)&#123;</span><br><span class="line">					cookieStr += <span class="string">";domain="</span> + domain;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(secure)&#123;</span><br><span class="line">					cookieStr += <span class="string">";secure"</span>;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				<span class="built_in">document</span>.cookie = cookieStr;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="function"><span class="keyword">function</span> <span class="title">numOfDate</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">				<span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">				<span class="keyword">var</span> day = d.getDate();</span><br><span class="line">				d.setDate(day + num);</span><br><span class="line">				<span class="keyword">return</span> d;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			setCookie(<span class="string">"漫威英雄"</span>, <span class="string">"钢铁侠"</span>, <span class="number">7</span>);</span><br><span class="line">			setCookie(<span class="string">"DC英雄"</span>, <span class="string">"绿灯侠"</span>, <span class="number">30</span>);</span><br><span class="line">			setCookie(<span class="string">"变种人"</span>, <span class="string">"凤凰之力"</span>, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			<span class="comment">//输出</span></span><br><span class="line">			<span class="comment">// alert(decodeURIComponent(document.cookie));</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">//封装传入键name获取对应值value</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">//漫威英雄=钢铁侠; DC英雄=绿灯侠; 变种人=凤凰之力</span></span><br></pre></td></tr></table></figure>
+<p>//获取cookie</p>
+<p>getCookie()</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> cookieStr = <span class="built_in">decodeURIComponent</span>(<span class="built_in">document</span>.cookie);</span><br><span class="line">	<span class="comment">//1、先找name开始的下标</span></span><br><span class="line">	<span class="keyword">var</span> start = cookieStr.indexOf(name);</span><br><span class="line">	<span class="keyword">if</span>(start == <span class="number">-1</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="comment">//2、键肯定存在，找出结束的位置</span></span><br><span class="line">		<span class="keyword">var</span> end = cookieStr.indexOf(<span class="string">";"</span>, start);</span><br><span class="line">		<span class="keyword">if</span>(end == <span class="number">-1</span>)&#123;</span><br><span class="line">			end = cookieStr.length;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//3、通过start和end，将键值对提取出来</span></span><br><span class="line">	<span class="keyword">var</span> subStr = cookieStr.substring(start, end);</span><br><span class="line">	<span class="comment">//4、用等号进行字符串分割</span></span><br><span class="line">	<span class="keyword">var</span> arr = subStr.split(<span class="string">"="</span>);</span><br><span class="line">	<span class="keyword">return</span> arr[<span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>//封装传入键，来获取对应的值</p>
+<p>//删除cookie</p>
+<p>removeCookie()</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeCookie</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.cookie = <span class="built_in">encodeURIComponent</span>(name) + <span class="string">"=;expires="</span> + <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line">alert(getCookie(<span class="string">"DC英雄"</span>));</span><br><span class="line">removeCookie(<span class="string">"DC英雄"</span>);</span><br><span class="line">alert(getCookie(<span class="string">"DC英雄"</span>));</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/02/cookie会话跟踪技术/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-js兼容写法" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -1915,142 +2069,9 @@
 
 
   
-    <article id="post-ECMA5新增标签" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/23/ECMA5新增标签/">ECMA5新增标签</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/23/ECMA5新增标签/" class="archive-article-date">
-  	<time datetime="2018-10-23T02:41:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h3 id="学习目标："><a href="#学习目标：" class="headerlink" title="学习目标："></a>学习目标：</h3><ol>
-<li>ECMA5新增知识点</li>
-<li>严格模式</li>
-<li>新增数组方法</li>
-<li>新增字符串方法</li>
-<li>认识字符串，字符串概念</li>
-<li>字符串的属性和函数</li>
-<li>字符串练习</li>
-<li>实现登录注册严格模式</li>
-</ol>
-<p>  除了正常运行模式，ECMAscript 5 添加了第二种运行模式：”严格模式”（strict mode）。顾名思义，这种模式使得Javascript在更严格的条件下运行。</p>
-<h3 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h3><p>1、在严格模式下，声明变量必须使用var；</p>
-<p>2、在严格模式下， 函数参数不能重名；</p>
-<p>3、</p>
-<p>this无法指向全局对象；</p>
-<script>
-   “use strict”;
-
-
-    console.log(“已经进入严格模式”);
-
-    function a(){
-
-        this.b = 10; //报错，因为this是undefined
-
-    }
-
-    a();
-</script>
-
-
-
-
-
-<p>4、在严格模式下，arguments存储的是函数传参时候的参数，在修改参数值后，arguments里面的值不会改变；    4.1arguments对象不允许被动态改变：</p>
-<p>5、在严格模式下，新增保留字：implements, interface, let, package, private, protected, public, static, yield。</p>
-<h2 id="ECMA新增的数组方法"><a href="#ECMA新增的数组方法" class="headerlink" title="ECMA新增的数组方法"></a>ECMA新增的数组方法</h2><h3 id="indexOf-data-start"><a href="#indexOf-data-start" class="headerlink" title="indexOf(data,start);"></a>indexOf(data,start);</h3><p>格式：数组.indexOf(data, start);</p>
-<p>参数： data     要查找的元素；</p>
-<p>​         start      从哪个位置开始查找</p>
-<p>功能：查找某一个元素在数组中第一次出现的位置。</p>
-<p>返回值：-1没找到； &gt;=找到了</p>
-<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h3><p>功能：数组遍历</p>
-<p>var arr = [‘num1’,’num2’];</p>
-<p>arr.forEach(function(item, index, array){</p>
-<p>​    }</p>
-<p>)</p>
-<p>item    当前遍历到的元素num1;num2；</p>
-<p>index    当前遍历到的元素的下标0；1</p>
-<p>array    遍历的数组本身num1,num2</p>
-<h3 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h3><p>会遍历当前数组，然后调用参数中的方法，返回当前方法的返回值;</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]; </span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> newArr = arr.map(<span class="function"><span class="keyword">function</span>(<span class="params">item, index, arr</span>)</span>&#123; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> item + <span class="number">1</span>; </span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(newArr);</span><br><span class="line"></span><br><span class="line"><span class="comment">//map不会改变原有数组，而是将函数执行一次之后的返回值组成一个数组，返回回来。</span></span><br></pre></td></tr></table></figure>
-<h3 id="filter-过滤"><a href="#filter-过滤" class="headerlink" title="filter() 过滤"></a>filter() 过滤</h3><p>var res = [88,69,92,77,90,96,98,99].filter(function(item, index, array){ </p>
-<p>​    return item&gt;80; //找出所有大于80的元素 </p>
-<p>}); </p>
-<p>结果：[88,92,90,96,98,99];//影响原数组</p>
-<h3 id="reduce-归并"><a href="#reduce-归并" class="headerlink" title="reduce()归并"></a>reduce()归并</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> res = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>].reduce(<span class="function"><span class="keyword">function</span>(<span class="params">pre, next, index, array</span>)</span>&#123; </span><br><span class="line">    <span class="comment">//参数中的x和y，代表了之前的处理结果和下一个元素 return x+y; //return的结果会赋值给下一个函数的x参数 </span></span><br><span class="line">&#125;); 结果 ： <span class="number">10</span></span><br></pre></td></tr></table></figure>
-<h3 id="some-某些"><a href="#some-某些" class="headerlink" title="some()某些"></a>some()某些</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>([<span class="string">"yt"</span>,<span class="string">"hr"</span>,<span class="string">"wc"</span>,<span class="string">"jk"</span>].some(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123; </span><br><span class="line"><span class="comment">//判断数组中是否存在yt？ 如果找到了匹配的元素就不在运行了</span></span><br><span class="line">    <span class="keyword">return</span> item==<span class="string">"yt”; </span></span><br><span class="line"><span class="string">&#125;))&#123; </span></span><br><span class="line"><span class="string">    alert("</span>好的！<span class="string">"); </span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="every"><a href="#every" class="headerlink" title="every()"></a>every()</h3><p>跟some一样，但要求每一项都符合，才返回true 有一项不合格就返回false</p>
-<h3 id="String的trim方法"><a href="#String的trim方法" class="headerlink" title="String的trim方法"></a>String的trim方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">" abc "</span>.trim(); </span><br><span class="line">首尾去空格 </span><br><span class="line"><span class="string">"abc"</span></span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">H5 js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/23/ECMA5新增标签/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -2145,11 +2166,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color3">H5</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2157,11 +2178,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">

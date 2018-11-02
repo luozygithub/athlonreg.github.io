@@ -153,6 +153,139 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ECMA5新增标签" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/23/ECMA5新增标签/">ECMA5新增标签</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/23/ECMA5新增标签/" class="archive-article-date">
+  	<time datetime="2018-10-23T02:41:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h3 id="学习目标："><a href="#学习目标：" class="headerlink" title="学习目标："></a>学习目标：</h3><ol>
+<li>ECMA5新增知识点</li>
+<li>严格模式</li>
+<li>新增数组方法</li>
+<li>新增字符串方法</li>
+<li>认识字符串，字符串概念</li>
+<li>字符串的属性和函数</li>
+<li>字符串练习</li>
+<li>实现登录注册严格模式</li>
+</ol>
+<p>  除了正常运行模式，ECMAscript 5 添加了第二种运行模式：”严格模式”（strict mode）。顾名思义，这种模式使得Javascript在更严格的条件下运行。</p>
+<h3 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h3><p>1、在严格模式下，声明变量必须使用var；</p>
+<p>2、在严格模式下， 函数参数不能重名；</p>
+<p>3、</p>
+<p>this无法指向全局对象；</p>
+<script>
+   “use strict”;
+
+
+    console.log(“已经进入严格模式”);
+
+    function a(){
+
+        this.b = 10; //报错，因为this是undefined
+
+    }
+
+    a();
+</script>
+
+
+
+
+
+<p>4、在严格模式下，arguments存储的是函数传参时候的参数，在修改参数值后，arguments里面的值不会改变；    4.1arguments对象不允许被动态改变：</p>
+<p>5、在严格模式下，新增保留字：implements, interface, let, package, private, protected, public, static, yield。</p>
+<h2 id="ECMA新增的数组方法"><a href="#ECMA新增的数组方法" class="headerlink" title="ECMA新增的数组方法"></a>ECMA新增的数组方法</h2><h3 id="indexOf-data-start"><a href="#indexOf-data-start" class="headerlink" title="indexOf(data,start);"></a>indexOf(data,start);</h3><p>格式：数组.indexOf(data, start);</p>
+<p>参数： data     要查找的元素；</p>
+<p>​         start      从哪个位置开始查找</p>
+<p>功能：查找某一个元素在数组中第一次出现的位置。</p>
+<p>返回值：-1没找到； &gt;=找到了</p>
+<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h3><p>功能：数组遍历</p>
+<p>var arr = [‘num1’,’num2’];</p>
+<p>arr.forEach(function(item, index, array){</p>
+<p>​    }</p>
+<p>)</p>
+<p>item    当前遍历到的元素num1;num2；</p>
+<p>index    当前遍历到的元素的下标0；1</p>
+<p>array    遍历的数组本身num1,num2</p>
+<h3 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h3><p>会遍历当前数组，然后调用参数中的方法，返回当前方法的返回值;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]; </span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> newArr = arr.map(<span class="function"><span class="keyword">function</span>(<span class="params">item, index, arr</span>)</span>&#123; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> item + <span class="number">1</span>; </span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(newArr);</span><br><span class="line"></span><br><span class="line"><span class="comment">//map不会改变原有数组，而是将函数执行一次之后的返回值组成一个数组，返回回来。</span></span><br></pre></td></tr></table></figure>
+<h3 id="filter-过滤"><a href="#filter-过滤" class="headerlink" title="filter() 过滤"></a>filter() 过滤</h3><p>var res = [88,69,92,77,90,96,98,99].filter(function(item, index, array){ </p>
+<p>​    return item&gt;80; //找出所有大于80的元素 </p>
+<p>}); </p>
+<p>结果：[88,92,90,96,98,99];//影响原数组</p>
+<h3 id="reduce-归并"><a href="#reduce-归并" class="headerlink" title="reduce()归并"></a>reduce()归并</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> res = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>].reduce(<span class="function"><span class="keyword">function</span>(<span class="params">pre, next, index, array</span>)</span>&#123; </span><br><span class="line">    <span class="comment">//参数中的x和y，代表了之前的处理结果和下一个元素 return x+y; //return的结果会赋值给下一个函数的x参数 </span></span><br><span class="line">&#125;); 结果 ： <span class="number">10</span></span><br></pre></td></tr></table></figure>
+<h3 id="some-某些"><a href="#some-某些" class="headerlink" title="some()某些"></a>some()某些</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>([<span class="string">"yt"</span>,<span class="string">"hr"</span>,<span class="string">"wc"</span>,<span class="string">"jk"</span>].some(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123; </span><br><span class="line"><span class="comment">//判断数组中是否存在yt？ 如果找到了匹配的元素就不在运行了</span></span><br><span class="line">    <span class="keyword">return</span> item==<span class="string">"yt”; </span></span><br><span class="line"><span class="string">&#125;))&#123; </span></span><br><span class="line"><span class="string">    alert("</span>好的！<span class="string">"); </span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="every"><a href="#every" class="headerlink" title="every()"></a>every()</h3><p>跟some一样，但要求每一项都符合，才返回true 有一项不合格就返回false</p>
+<h3 id="String的trim方法"><a href="#String的trim方法" class="headerlink" title="String的trim方法"></a>String的trim方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">" abc "</span>.trim(); </span><br><span class="line">首尾去空格 </span><br><span class="line"><span class="string">"abc"</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">H5 js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/23/ECMA5新增标签/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-js排序" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -1288,88 +1421,9 @@
 
 
   
-    <article id="w-The-Spectre（Alan-Walker）" class="article article-type-w  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/13/The-Spectre（Alan-Walker）/">The Spectre（Alan Walker）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/13/The-Spectre（Alan-Walker）/" class="archive-article-date">
-  	<time datetime="2018-10-13T03:27:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <video controls autoplay loop preload=""><br><br>​    <source id="mp4" src="http://pgip9g5iy.bkt.clouddn.com/Alan%20Walker%20-%20The%20Spectre.mp4" type="video/mp4"><br><br></video>
-
-
-
-
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">H5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/13/The-Spectre（Alan-Walker）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -1464,11 +1518,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color3">H5</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1476,11 +1530,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
