@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="luozy&#39;s Blog">
 <meta property="og:description" content="学习目标： 正则表达式的概念  创建正则表达式的方式  字符串的正则表达式方法  正则表达式的元字符详解   一、正则表达式的概念 假设用户需要在HTML表单中填写姓名、地址、出生日期等。那么在将表单提交到服务器进一步处理前，JavaScript程序会检查表单以确认用户确实输入了信息并且这些信息是符合要求的 ​    正则表达式， super string。 ​    正则表达式（regular">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-02T13:10:32.998Z">
+<meta property="og:updated_time" content="2018-11-03T06:49:53.454Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
 <meta name="twitter:description" content="学习目标： 正则表达式的概念  创建正则表达式的方式  字符串的正则表达式方法  正则表达式的元字符详解   一、正则表达式的概念 假设用户需要在HTML表单中填写姓名、地址、出生日期等。那么在将表单提交到服务器进一步处理前，JavaScript程序会检查表单以确认用户确实输入了信息并且这些信息是符合要求的 ​    正则表达式， super string。 ​    正则表达式（regular">
@@ -360,6 +360,118 @@
 </table>
 <h4 align="center">字符类：锚字符</h4>
 
+<table>
+<thead>
+<tr>
+<th style="text-align:center">元字符/元符号</th>
+<th style="text-align:center">匹配情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">^</td>
+<td style="text-align:center">行首匹配</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:center">行尾匹配</td>
+</tr>
+<tr>
+<td style="text-align:center">\A</td>
+<td style="text-align:center">只有匹配字符串开始处</td>
+</tr>
+<tr>
+<td style="text-align:center">\b</td>
+<td style="text-align:center">匹配单词边界，词在[]内时无效</td>
+</tr>
+<tr>
+<td style="text-align:center">\B</td>
+<td style="text-align:center">匹配飞单词边界</td>
+</tr>
+<tr>
+<td style="text-align:center">\G</td>
+<td style="text-align:center">匹配当前搜索的开始位置</td>
+</tr>
+<tr>
+<td style="text-align:center">\Z</td>
+<td style="text-align:center">匹配字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">\z</td>
+<td style="text-align:center">只匹配字符串结束处</td>
+</tr>
+</tbody>
+</table>
+<h4 align="center">字符类：重复字符</h4>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">元字符/元符号</th>
+<th style="text-align:center">匹配情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">x？</td>
+<td style="text-align:center">匹配0个或1个x</td>
+</tr>
+<tr>
+<td style="text-align:center">x*</td>
+<td style="text-align:center">匹配0个或多个x</td>
+</tr>
+<tr>
+<td style="text-align:center">x+</td>
+<td style="text-align:center">匹配至少一个x</td>
+</tr>
+<tr>
+<td style="text-align:center">(xyz)+</td>
+<td style="text-align:center">匹配至少一个(xyz)</td>
+</tr>
+<tr>
+<td style="text-align:center">x{m，n}</td>
+<td style="text-align:center">匹配最少m个、最多n个x</td>
+</tr>
+</tbody>
+</table>
+<h4 align="center">字符类：替代字符<br></h4>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">元字符/元符号</th>
+<th style="text-align:center">匹配情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">this\</td>
+<td style="text-align:center">where\</td>
+<td>logo</td>
+<td>匹配this或where或logo中的任意一个</td>
+</tr>
+</tbody>
+</table>
+<h4 id="五、常用正则"><a href="#五、常用正则" class="headerlink" title="五、常用正则"></a>五、常用正则</h4><p>1、检查邮政编码</p>
+<p>var pattern = /[1-9] ‘[0-9]’{5}/共六位数字，第一位不能为0</p>
+<p>var str = ‘224000’;</p>
+<p>alert(pattern.test(str));</p>
+<p>2、检查文件压缩包</p>
+<p>var pattern =/[\w] + \ .zip|rar|gz/; //\d\w表示所有数字和字母加下划线</p>
+<p>var str = ‘123.zip’</p>
+<p>alert(pattern.test(str));</p>
+<p>3删除多余空格</p>
+<p>var pattern = /\s/g;</p>
+<p>var str = “111 222 333”;</p>
+<p>var result = str.replace(pattern,””);</p>
+<p>alert(result);</p>
+<p>4、删除首位空格</p>
+<p>var pattern = /^\s + /;</p>
+<p>var str = ‘        goo   gle      ‘;</p>
+<p>var result = str.replace(pattern,””)</p>
+<p>pattern = /\s + $/;</p>
+<p>result = result.replace(pattern, “”)</p>
+<p>alert(‘|’ + result + “|”);;</p>
 
       
 
@@ -469,6 +581,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/11/03/js控制style/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          js控制style
+        
+      </div>
+    </a>
+  
   
     <a href="/2018/11/02/cookie会话跟踪技术/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">cookie会话跟踪技术</div>
@@ -498,7 +619,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#学习目标："><span class="toc-number">1.</span> <span class="toc-text">学习目标：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一、正则表达式的概念"><span class="toc-number">2.</span> <span class="toc-text">一、正则表达式的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、创建正则表达式的方式"><span class="toc-number">3.</span> <span class="toc-text">二、创建正则表达式的方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.</span> <span class="toc-text">模式修饰符的可选参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.</span> <span class="toc-text">RegExp对象方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、字符串中使用正则表达式的方法"><span class="toc-number">4.</span> <span class="toc-text">三、字符串中使用正则表达式的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">4.1.</span> <span class="toc-text">String对象中的正则表达式方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、元字符"><span class="toc-number">5.</span> <span class="toc-text">四、元字符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.1.</span> <span class="toc-text">字符类：单个字符串和数字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.2.</span> <span class="toc-text">字符类：空白字符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.3.</span> <span class="toc-text">字符类：锚字符</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#学习目标："><span class="toc-number">1.</span> <span class="toc-text">学习目标：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一、正则表达式的概念"><span class="toc-number">2.</span> <span class="toc-text">一、正则表达式的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、创建正则表达式的方式"><span class="toc-number">3.</span> <span class="toc-text">二、创建正则表达式的方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.</span> <span class="toc-text">模式修饰符的可选参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.</span> <span class="toc-text">RegExp对象方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、字符串中使用正则表达式的方法"><span class="toc-number">4.</span> <span class="toc-text">三、字符串中使用正则表达式的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">4.1.</span> <span class="toc-text">String对象中的正则表达式方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、元字符"><span class="toc-number">5.</span> <span class="toc-text">四、元字符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.1.</span> <span class="toc-text">字符类：单个字符串和数字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.2.</span> <span class="toc-text">字符类：空白字符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.3.</span> <span class="toc-text">字符类：锚字符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.4.</span> <span class="toc-text">字符类：重复字符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.5.</span> <span class="toc-text">字符类：替代字符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五、常用正则"><span class="toc-number">5.6.</span> <span class="toc-text">五、常用正则</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -630,15 +751,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">H5 js 函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">H5 js 循环</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">js H5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">H5 js 函数</a>
               </li>
              
               <li class="article-tag-list-item">
