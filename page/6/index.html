@@ -153,6 +153,98 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-smartupload文件上传问题" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/07/smartupload文件上传问题/">smartupload文件上传问题</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/07/smartupload文件上传问题/" class="archive-article-date">
+  	<time datetime="2018-01-06T17:35:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="文件上传问题"><a href="#文件上传问题" class="headerlink" title="文件上传问题"></a>文件上传问题</h3><p>upload.jsp</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;上传界面&lt;/title&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="comment">//预览图片</span></span><br><span class="line">	<span class="function">function <span class="title">viewImage</span><span class="params">(file)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> preview = document.getElementById(<span class="string">'preview'</span>);</span><br><span class="line">		<span class="keyword">if</span> (file.files &amp;&amp; file.files[<span class="number">0</span>]) &#123;</span><br><span class="line">			<span class="comment">//火狐下</span></span><br><span class="line">			preview.style.display = <span class="string">"block"</span>;</span><br><span class="line">			preview.style.width = <span class="string">"300px"</span>;</span><br><span class="line">			preview.style.height = <span class="string">"120px"</span>;</span><br><span class="line">			preview.src = window.URL.createObjectURL(file.files[<span class="number">0</span>]);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="comment">//ie下，使用滤镜</span></span><br><span class="line">			file.select();</span><br><span class="line">			<span class="keyword">var</span> imgSrc = document.selection.createRange().text;</span><br><span class="line">			<span class="keyword">var</span> localImagId = document.getElementById(<span class="string">"localImag"</span>);</span><br><span class="line">			<span class="comment">//必须设置初始大小 </span></span><br><span class="line">			localImagId.style.width = <span class="string">"250px"</span>;</span><br><span class="line">			localImagId.style.height = <span class="string">"200px"</span>;</span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				localImagId.style.filter = <span class="string">"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)"</span>;</span><br><span class="line">				locem(<span class="string">"DXImageTransform.Microsoft.AlphaImageLoader"</span>).src = imgSrc;</span><br><span class="line">			&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">				alert(<span class="string">"您上传的图片格式不正确，请重新选择!"</span>);</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			preview.style.display = <span class="string">'none'</span>;</span><br><span class="line">			document.selection.empty();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;center&gt;</span><br><span class="line">		&lt;div id=<span class="string">"localImag"</span>&gt;</span><br><span class="line">			&lt;img id=<span class="string">"preview"</span> width=-<span class="number">1</span> height=-<span class="number">1</span> style=<span class="string">"diplay:none"</span> /&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;h2&gt;上传图片&lt;/h2&gt;</span><br><span class="line">		&lt;form method=<span class="string">"post"</span> action=<span class="string">"uploaddeal.jsp"</span></span><br><span class="line">			enctype=<span class="string">"multipart/form-data"</span>&gt;</span><br><span class="line">			&lt;table width=<span class="string">"315"</span> border=<span class="string">"0"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"table"</span>&gt;</span><br><span class="line">				&lt;tr align=<span class="string">"center"</span>&gt;</span><br><span class="line">					&lt;th&gt;&lt;input type="text" name="picname" &gt;&lt;/th&gt;</span><br><span class="line">				&lt;/tr&gt;</span><br><span class="line">				&lt;tr&gt;</span><br><span class="line">					&lt;td width=<span class="string">"309"</span> align=<span class="string">"center"</span>&gt;&lt;label <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-primary"</span>&gt;</span><br><span class="line">							&lt;input type=<span class="string">"file"</span> style=<span class="string">"display: none"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span></span><br><span class="line">							id=<span class="string">"caseImage"</span> name=<span class="string">"caseImage"</span> onchange=<span class="string">"viewImage(this)"</span> /&gt;选择图片</span><br><span class="line">					&lt;/label&gt;&lt;/td&gt;</span><br><span class="line">				&lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">				&lt;tr&gt;</span><br><span class="line">					&lt;td align=<span class="string">"center"</span>&gt;&lt;input type=<span class="string">"submit"</span> name=<span class="string">"Submit"</span></span><br><span class="line">						value="上传"&gt;&lt;/td&gt;</span><br><span class="line">				&lt;/tr&gt;</span><br><span class="line">			&lt;/table&gt;</span><br><span class="line">		&lt;/form&gt;</span><br><span class="line">	&lt;/center&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>doupload.jsp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">	&lt;%</span><br><span class="line">		Dbutil dbutil = new Dbutil();</span><br><span class="line">		String piccity=&quot;&quot;;</span><br><span class="line">		String place=&quot;&quot;;</span><br><span class="line">		String Picpath=&quot;&quot;;</span><br><span class="line">		// 新建一个SmartUpload对象</span><br><span class="line">		SmartUpload su = new SmartUpload();</span><br><span class="line">		// 上传初始化</span><br><span class="line">		su.initialize(pageContext);</span><br><span class="line">		// 设定上传限制</span><br><span class="line">		// 1.限制每个上传文件的最大长度。</span><br><span class="line">		// su.setMaxFileSize(10000);</span><br><span class="line">		// 2.限制总上传数据的长度。</span><br><span class="line">		// su.setTotalMaxFileSize(20000);</span><br><span class="line">		// 3.设定允许上传的文件（通过扩展名限制）,仅允许doc,txt文件。</span><br><span class="line">		// su.setAllowedFilesList(&quot;doc,txt&quot;);</span><br><span class="line">		// 4.设定禁止上传的文件（通过扩展名限制）,禁止上传带有exe,bat,jsp,htm,html扩展名的文件和没有</span><br><span class="line">		//扩展名的文件。</span><br><span class="line">		// su.setDeniedFilesList(&quot;exe,bat,jsp,htm,html,,&quot;);</span><br><span class="line">		// 上传文件</span><br><span class="line">		su.upload();</span><br><span class="line">		// 将上传文件全部保存到指定目录，需要先在在Web应用的根目录下，创建一个upload目录</span><br><span class="line">		su.save(&quot;M:/javaee/travel/WebRoot/picture&quot;);</span><br><span class="line">		</span><br><span class="line">		//int count = su.save(&quot;/upload&quot;);</span><br><span class="line">		//out.println(count+&quot;个文件上传成功！&lt;br&gt;&quot;);</span><br><span class="line">		// 利用Request对象获取参数之值</span><br><span class="line">		out.println(&quot;TEST=&quot; + su.getRequest().getParameter(&quot;TEST&quot;) + &quot;&lt;BR&gt;&lt;BR&gt;&quot;);</span><br><span class="line">		// 逐一提取上传文件信息，同时可保存文件。</span><br><span class="line">		for (int i = 0; i &lt; su.getFiles().getCount(); i++) &#123;</span><br><span class="line">			com.jspsmart.upload.File file = su.getFiles().getFile(i);</span><br><span class="line">			// 若文件不存在则继续</span><br><span class="line">			Picpath=file.getFileName();</span><br><span class="line">			place=file.getFileName();</span><br><span class="line">			piccity=su.getRequest().getParameter(&quot;picname&quot;);</span><br><span class="line">			out.println(Picpath);</span><br><span class="line">		</span><br><span class="line">			if (file.isMissing())</span><br><span class="line">				continue;</span><br><span class="line">			// 显示当前文件信息</span><br><span class="line">			out.println(&quot;&lt;TABLE BORDER=1&gt;&quot;);</span><br><span class="line">			out.println(&quot;&lt;TR&gt;&lt;TD&gt;表单项名（FieldName）&lt;/TD&gt;&lt;TD&gt;&quot; + file.getFieldName() + &quot;&lt;/TD&gt;&lt;/TR&gt;&quot;);</span><br><span class="line">			out.println(&quot;&lt;TR&gt;&lt;TD&gt;文件长度（Size）&lt;/TD&gt;&lt;TD&gt;&quot; + file.getSize() + &quot;&lt;/TD&gt;&lt;/TR&gt;&quot;);</span><br><span class="line">			out.println(&quot;&lt;TR&gt;&lt;TD&gt;文件名（FileName）&lt;/TD&gt;&lt;TD&gt;&quot; + file.getFileName() + &quot;&lt;/TD&gt;&lt;/TR&gt;&quot;);</span><br><span class="line">			out.println(&quot;&lt;TR&gt;&lt;TD&gt;文件扩展名（FileExt）&lt;/TD&gt;&lt;TD&gt;&quot; + file.getFileExt() + &quot;&lt;/TD&gt;&lt;/TR&gt;&quot;);</span><br><span class="line">			out.println(&quot;&lt;TR&gt;&lt;TD&gt;文件全名（FilePathName）&lt;/TD&gt;&lt;TD&gt;&quot; + file.getFilePathName() + &quot;&lt;/TD&gt;&lt;/TR&gt;&quot;);</span><br><span class="line">			out.println(&quot;&lt;/TABLE&gt;&lt;BR&gt;&quot;);</span><br><span class="line">			// 将文件另存</span><br><span class="line">			// file.saveAs(&quot;/upload/&quot; + myFile.getFileName());</span><br><span class="line">			// 另存到以WEB应用程序的根目录为文件根目录的目录下</span><br><span class="line">			// file.saveAs(&quot;/upload/&quot; + myFile.getFileName(),su.SAVE_VIRTUAL);</span><br><span class="line">			// 另存到操作系统的根目录为文件根目录的目录下</span><br><span class="line">			// file.saveAs(&quot;c:\\temp\\&quot; + myFile.getFileName(),su.SAVE_PHYSICAL);</span><br><span class="line">		</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		String picpath=&quot;&quot;;	  /* 	</span><br><span class="line">		int i;</span><br><span class="line">		String[] str=Picpath.split(&quot;\\\\&quot;);</span><br><span class="line">		for(i=0;i&lt;str.length-1;i++)&#123;</span><br><span class="line">			picpath=picpath+str[i]+&quot;\\\\&quot;;</span><br><span class="line">		&#125;*/</span><br><span class="line">	/*</span><br><span class="line">	*存图片到数据库操作</span><br><span class="line">	*/</span><br><span class="line">		/*</span><br><span class="line">		picpath=&quot;./picture&quot;+&quot;\\\\&quot;+Picpath; </span><br><span class="line">		String sql =&quot;insert into scenicpicture values(&apos;&quot; + place + &quot;&apos;,&apos;&quot; + picpath + &quot;&apos;,&apos;&quot; + piccity + &quot;&apos;)&quot;;   </span><br><span class="line">		Connection connection = dbutil.getCon();</span><br><span class="line">		Statement statement = (Statement) connection.createStatement();</span><br><span class="line">		statement.executeUpdate(sql); </span><br><span class="line">		dbutil.closeCon(connection);</span><br><span class="line">		statement.close();  </span><br><span class="line">		*/</span><br><span class="line">	%&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>其中主要：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SmartUpload su = <span class="keyword">new</span> SmartUpload();</span><br><span class="line">SmartUpload su = <span class="keyword">new</span> SmartUpload();</span><br><span class="line">su.upload();</span><br><span class="line">su.save(<span class="string">"M:/javaee/travel/WebRoot/picture"</span>);<span class="comment">//需要修改此地址为你项目存储文件地址</span></span><br></pre></td></tr></table></figure>
+<p>相关网址：</p>
+<p><a href="https://jingyan.baidu.com/album/922554468c4a64851648f4e7.html?picindex=3" target="_blank" rel="noopener">图片即时预览</a></p>
+<blockquote>
+<p>概述：</p>
+<p>在Tomcat下找到server.xml</p>
+<p>在server.xml下找到<host>标签添加一行代码：</host></p>
+<p><strong><context crosscontext="true" docbase="/home/jason/upload" path="/upload" reloadable="true"></context></strong></p>
+<p>其中docBase就是本地电脑的绝对路径，path就是设置的虚拟路径</p>
+<p>修改完之后需要重启tomcat服务器</p>
+<p>这样你就可以通过类似<img src="/picture/name.jpg">显示图片了</p>
+</blockquote>
+<p><a href="http://m.blog.csdn.net/sweet_hong/article/details/50037569" target="_blank" rel="noopener">上传文件</a></p>
+<p><a href="http://p26cyjfoo.bkt.clouddn.com/jspsmartupload.jar" target="_blank" rel="noopener">smartupload.jar包</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jsp</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/07/smartupload文件上传问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-n皇后问题" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -535,11 +627,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color3">H5</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -547,11 +639,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -571,15 +663,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网页推荐</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
               <li class="article-tag-list-item">
