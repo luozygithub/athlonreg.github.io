@@ -153,6 +153,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-怪异盒模型" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="怪异盒模型"><a href="#怪异盒模型" class="headerlink" title="怪异盒模型"></a>怪异盒模型</h1><blockquote>
+<p>Box-sizing</p>
+<p>box-sizing属性允许您以特定的方式定义匹配某个区域的特定元素。</p>
+</blockquote>
+<p>属性值1：content-box（默认）</p>
+<blockquote>
+<p>这是由、CSS2.1规定的默认宽度高度行为。宽度和高度分别应用到元素的内容框。在宽度和高度之外绘制元素的内边距和边框。</p>
+</blockquote>
+<p><img src="file:///F:/%E5%89%8D%E9%94%8B%E5%AD%A6%E4%B9%A0/day15%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90/13%E5%BC%B9%E6%80%A7%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%AC%94%E8%AE%B0/1.jpg" alt="img"></p>
+<p>属性值2: border-box</p>
+<blockquote>
+<p>为元素设定的宽度和高度决定乐元素的边框盒。</p>
+<p>就是说，微元素制定的任何内边距和边框豆浆在已设定的宽度和高度内进行绘制。</p>
+<p>通过从已设定的宽度和高度分别减去边框盒内边距才能得到内容的宽度和高度。</p>
+</blockquote>
+<p><img src="file:///F:/%E5%89%8D%E9%94%8B%E5%AD%A6%E4%B9%A0/day15%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90/13%E5%BC%B9%E6%80%A7%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%AC%94%E8%AE%B0/2.jpg" alt="img"></p>
+<h2 id="CSS3弹性盒"><a href="#CSS3弹性盒" class="headerlink" title="CSS3弹性盒"></a>CSS3弹性盒</h2><blockquote>
+<p>新版弹性盒</p>
+</blockquote>
+<h3 id="1-display-flex"><a href="#1-display-flex" class="headerlink" title="1.display: flex"></a>1.display: flex</h3><blockquote>
+<p>设置为弹性盒（父元素添加）</p>
+</blockquote>
+<h3 id="2-flex-direction-主轴排列方式"><a href="#2-flex-direction-主轴排列方式" class="headerlink" title="2.flex-direction(主轴排列方式)"></a>2.flex-direction(主轴排列方式)</h3><blockquote>
+<p>顺序指定了弹性子元素在父容器中的位置<br>　　　　row 默认在一行内排列<br>row-reverse：反转横向排列（右对齐，从后往前排，最后一项排在最前面。<br>column：纵向排列。<br>column-reverse：反转纵向排列，从下往上排，最后一项排在最上面</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/06/怪异盒模型/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-TCP、UDP" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -314,6 +386,33 @@
 <p>​    【注】我们吧这个范围更小的作用域称为跨块级作用域</p>
 <p>例</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> aBtns = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"button"</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; aBtns.length; i++)&#123;</span><br><span class="line">        aBtns[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            alert(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//用let就会生成多个作用域i对这个作用域里面的i不影响，这些i= 0 1 2 3 4....</span></span><br><span class="line"><span class="comment">//如果用var i最终都会变成5</span></span><br></pre></td></tr></table></figure>
+<h2 id="const-声明常量"><a href="#const-声明常量" class="headerlink" title="const 声明常量"></a>const 声明常量</h2><p>【注】一旦被声明，后续就没有办法修改。</p>
+<h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> add = <span class="function">(<span class="params">x, y</span>) =&gt;</span> x + y; <span class="comment">//等价于上述代码，省略了function和return</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//1、无参</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">document</span>.write(<span class="string">"hellow world"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> print = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="built_in">document</span>.write(<span class="string">"hellow world"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//2、有参</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">"hellow world"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span>  print = <span class="function"><span class="params">n</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">"hellow world"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//3、多个参数有返回值，无函数体</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> add = <span class="function">(<span class="params">x, y</span>) =&gt;</span> x + y; </span><br><span class="line"><span class="comment">//4、多干参数有返回值，有函数体</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">"hello"</span>);</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> add = <span class="function">(<span class="params">x, y</span>) =&gt;</span>)&#123;</span><br><span class="line">    alert(<span class="string">"hello"</span>);</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//应用</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>];</span><br><span class="line">arr.forEach(item) =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Destructuring解构"><a href="#Destructuring解构" class="headerlink" title="Destructuring解构"></a>Destructuring解构</h2><p><strong>中括号解构</strong></p>
+<p>var x = 10, y = 20, z = 30;</p>
+<p>var [x, y, z] = [10, 20, 30];</p>
+<p>var [x, [y, z]] = [10, [20, 30]];</p>
+<p><strong>大括号结构</strong></p>
+<p>上面的代码给解构对象赋值了一个具有具体属性的对象（这里简称属性对象），必需保证解构对象中的变量名和属性对象中的属性名相同，如果我们把属性对象中的名字改变的话，如下：</p>
+<p>var { foo, bar } = { foo2: “lorem”, bar2: “ipsum” };<br> //undefined<br> console.log(foo);<br> //undefined</p>
+<p>console.log(bar);</p>
+<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a><strong>应用</strong></h4><h5 id="交换两个数的值"><a href="#交换两个数的值" class="headerlink" title="交换两个数的值"></a>交换两个数的值</h5><p>[num1, num2] = [num2, num1];</p>
+<h5 id="return返回多个值"><a href="#return返回多个值" class="headerlink" title="return返回多个值"></a>return返回多个值</h5><p>function(){</p>
+<p>​    return [“结果1”，”结果2”];</p>
+<p>}</p>
+<p>var [a, b] = hanshu();</p>
+<h1 id="ECMA6"><a href="#ECMA6" class="headerlink" title="ECMA6"></a>ECMA6</h1><p>ecma字符串</p>
+<p><code></code> </p>
+<p>与传统字符串区别</p>
+<p>1、传统字符串内不能有换行，换行要用\来标志</p>
+<p><code></code> 里面换行可行，而且找原样输出</p>
+<p>2、传统字符串用+ 连接</p>
+<p>ECMA6用占位符$进行拼接</p>
+<p>name{$name}</p>
+<h3 id="合并对象"><a href="#合并对象" class="headerlink" title="合并对象"></a>合并对象</h3><h5 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign"></a>Object.assign</h5><p>Object.assign(obj1, obj2);</p>
+<p>合并对象并生成一个新对象</p>
+<h5 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h5><p>可以创建对象，创建出来的对象和自己相等，和任何除自己之外的都不相等。</p>
+<p>Symbol(“he”) == Symbol(“he”);//false</p>
 
       
 
@@ -2019,126 +2118,6 @@
 
 
   
-    <article id="post-BOM" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/26/BOM/">BOM</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/26/BOM/" class="archive-article-date">
-  	<time datetime="2018-10-26T01:26:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="BOM-Browser-object-model-浏览器对象模型"><a href="#BOM-Browser-object-model-浏览器对象模型" class="headerlink" title="BOM(Browser object model)浏览器对象模型"></a>BOM(Browser object model)浏览器对象模型</h1><blockquote>
-<p> 一个浏览器窗口就是一个bom（浏览器对象）</p>
-</blockquote>
-<p><img src="C:\Users\罗中运\AppData\Roaming\Typora\typora-user-images\1540517515858.png" alt="1540517515858"></p>
-<h5 id="window下的方法，通常情况下window开头的方法函数都可以省略window使用"><a href="#window下的方法，通常情况下window开头的方法函数都可以省略window使用" class="headerlink" title="window下的方法，通常情况下window开头的方法函数都可以省略window使用"></a>window下的方法，通常情况下window开头的方法函数都可以省略window使用</h5><h4 id="confirm（）方法"><a href="#confirm（）方法" class="headerlink" title="confirm（）方法"></a>confirm（）方法</h4><blockquote>
-<p>confirm() 方法用于显示一个带有指定消息和 OK 及取消按钮的对话框。</p>
-</blockquote>
-<p>返回值：点击确定，返回true</p>
-<p>​        点击取消，返回false </p>
-<h4 id="prompt"><a href="#prompt" class="headerlink" title="prompt()"></a>prompt()</h4><blockquote>
-<p>prompt()方法用于显示可提示用户进行输入的对话框。</p>
-<p>这个方法返回用户输入的字符串。</p>
-</blockquote>
-<p>参数： 第一个参数 提示面板上显示的内容</p>
-<p>​          第二个参数 输入框上显示的内容（可以不填）</p>
-<p>返回值：输入框的内容    </p>
-<h4 id="open"><a href="#open" class="headerlink" title="open()"></a>open()</h4><blockquote>
-<p>open() 方法用于打开一个新的浏览器窗口或查找一个已命名的窗口。</p>
-</blockquote>
-<p>第一个参数： 加载的url</p>
-<p>第二个参数：指定target属性窗口的名称，（）</p>
-<p>第三个参数：一串特殊意义的字符串，配置我们打开窗口的大小坐标</p>
-<h5 id="url完整组成"><a href="#url完整组成" class="headerlink" title="url完整组成"></a>url完整组成</h5><h5 id="协议：-主机名：端口号-路径-？查询字符串-锚点"><a href="#协议：-主机名：端口号-路径-？查询字符串-锚点" class="headerlink" title="协议：//主机名：端口号/路径/？查询字符串#锚点"></a>协议：//主机名：端口号/路径/？查询字符串#锚点</h5><h5 id="protocol-hostname-port-pathname-search-hash"><a href="#protocol-hostname-port-pathname-search-hash" class="headerlink" title="protocol://hostname:port/pathname/?search#hash"></a>protocol://hostname:port/pathname/?search#hash</h5><h4 id="opener打开当前窗口的父窗口的对象（只有火狐浏览器兼容）"><a href="#opener打开当前窗口的父窗口的对象（只有火狐浏览器兼容）" class="headerlink" title="opener打开当前窗口的父窗口的对象（只有火狐浏览器兼容）"></a>opener打开当前窗口的父窗口的对象（只有火狐浏览器兼容）</h4><p>opener.document.write(“father”);//父窗口输出</p>
-<h4 id="setTimeout-延时器"><a href="#setTimeout-延时器" class="headerlink" title="setTimeout()延时器"></a>setTimeout()延时器</h4><p>格式：</p>
-<p>var timer = setTimerout(函数，毫秒数);</p>
-<p>功能： 延迟对应毫秒数，去执行函数，有且仅执行一次；</p>
-<p>取消延时器</p>
-<p>clearTImeout(timer);</p>
-<h4 id="history-历史对象"><a href="#history-历史对象" class="headerlink" title="history 历史对象"></a>history 历史对象</h4><p>window.history</p>
-<p>属性</p>
-<p>history.length    历史纪录长度</p>
-<p>方法：</p>
-<p>​    history.back();//后退</p>
-<p>​    history.forward();//前进</p>
-<p>​    history.go();//到指定历史界面</p>
-<p>​        参数：正整数，负整数，0 前进/后退n条记录；0重新加载</p>
-<h4 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h4><blockquote>
-<p>地址栏部分</p>
-<p>url：统一资源定位符</p>
-<p>组成一个完整的url，必须按格式进行填写。</p>
-</blockquote>
-<h5 id="第一部分：location-protocol-协议"><a href="#第一部分：location-protocol-协议" class="headerlink" title="第一部分：location.protocol 协议"></a>第一部分：location.protocol 协议</h5><p>http://</p>
-<p>https://</p>
-<p>传输方式</p>
-<h5 id="第二部分：主机名-location-hostname"><a href="#第二部分：主机名-location-hostname" class="headerlink" title="第二部分：主机名 location.hostname"></a>第二部分：主机名 location.hostname</h5><p><a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 域名IP的昵称</p>
-<p>61.135.169.125 IP 全网唯一</p>
-<h5 id="location-port-端口号"><a href="#location-port-端口号" class="headerlink" title="location.port 端口号"></a>location.port 端口号</h5><p>系统会给当前使用网络的app，分配一个号码，这个号码就是端口号</p>
-<p>当前电脑内唯一识别正在使用网络的软件；</p>
-<p>ip：port 在全球范围内定位当前使用网络的软件</p>
-<h5 id="pathname路径"><a href="#pathname路径" class="headerlink" title="pathname路径"></a>pathname路径</h5><p>location.pathname</p>
-<h5 id="search向服务器提交数据部分（查询字符串）"><a href="#search向服务器提交数据部分（查询字符串）" class="headerlink" title="search向服务器提交数据部分（查询字符串）"></a>search向服务器提交数据部分（查询字符串）</h5><p>location.search </p>
-<p>查询字符串</p>
-<p>？name1 =value&amp; name2 = value</p>
-<h5 id="hash锚点"><a href="#hash锚点" class="headerlink" title="hash锚点"></a>hash锚点</h5><p>location.hash</p>
-<h3 id="location方法"><a href="#location方法" class="headerlink" title="location方法"></a>location方法</h3><p>location.assign（） 跳转到某一个url</p>
-<p>location.replace（） 在当前窗口替换url</p>
-<p>assign和replace区别assign有历史记录，replace没有</p>
-<p>location.reload（） 刷新网页 参数location.reload（true）：不经过缓存直接刷新页面</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/26/BOM/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -2236,11 +2215,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color3">H5</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
