@@ -5,22 +5,22 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="http://www.luozy.top">
+  <link rel="dns-prefetch" href="http://tianjiec.top">
   <title>事件 | luozy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="内联模式​    这种模型是最传统接单的一种处理事件的方法。在内联模型中，事件处理函数是 HTML 标签的一个属性，用于处理指定事件。虽然内联在早期使用较多，但它是和 HTML 混写的， 并没有与 HTML 分离。 //在 HTML 中把事件处理函数作为属性执行 JS 代码 &amp;lt;input type=”button”value=”按钮”onclick=”alert(‘Lee’);” /&amp;gt;">
+  <meta name="description" content="内联模式​    这种模型是最传统接单的一种处理事件的方法。在内联模型中，事件处理函数是 HTML 标签的一个属性，用于处理指定事件。虽然内联在早期使用较多，但它是和 HTML 混写的， 并没有与 HTML 分离。 //在 HTML 中把事件处理函数作为属性执行 JS 代码   //注意单双引号 //在 HTML 中把事件处理函数作为属性执行 JS 函数   //执行 JS 的函数  PS：函数不">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="事件">
-<meta property="og:url" content="http://www.luozy.top/2018/10/31/事件/index.html">
+<meta property="og:url" content="http://tianjiec.top/2018/10/31/事件/index.html">
 <meta property="og:site_name" content="luozy&#39;s Blog">
-<meta property="og:description" content="内联模式​    这种模型是最传统接单的一种处理事件的方法。在内联模型中，事件处理函数是 HTML 标签的一个属性，用于处理指定事件。虽然内联在早期使用较多，但它是和 HTML 混写的， 并没有与 HTML 分离。 //在 HTML 中把事件处理函数作为属性执行 JS 代码 &amp;lt;input type=”button”value=”按钮”onclick=”alert(‘Lee’);” /&amp;gt;">
+<meta property="og:description" content="内联模式​    这种模型是最传统接单的一种处理事件的方法。在内联模型中，事件处理函数是 HTML 标签的一个属性，用于处理指定事件。虽然内联在早期使用较多，但它是和 HTML 混写的， 并没有与 HTML 分离。 //在 HTML 中把事件处理函数作为属性执行 JS 代码   //注意单双引号 //在 HTML 中把事件处理函数作为属性执行 JS 函数   //执行 JS 的函数  PS：函数不">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="c:/Users/罗中运/AppData/Local/Temp/chrome_drag12552_27359/Image.png">
 <meta property="og:updated_time" content="2018-11-01T07:48:11.313Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事件">
-<meta name="twitter:description" content="内联模式​    这种模型是最传统接单的一种处理事件的方法。在内联模型中，事件处理函数是 HTML 标签的一个属性，用于处理指定事件。虽然内联在早期使用较多，但它是和 HTML 混写的， 并没有与 HTML 分离。 //在 HTML 中把事件处理函数作为属性执行 JS 代码 &amp;lt;input type=”button”value=”按钮”onclick=”alert(‘Lee’);” /&amp;gt;">
+<meta name="twitter:description" content="内联模式​    这种模型是最传统接单的一种处理事件的方法。在内联模型中，事件处理函数是 HTML 标签的一个属性，用于处理指定事件。虽然内联在早期使用较多，但它是和 HTML 混写的， 并没有与 HTML 分离。 //在 HTML 中把事件处理函数作为属性执行 JS 代码   //注意单双引号 //在 HTML 中把事件处理函数作为属性执行 JS 函数   //执行 JS 的函数  PS：函数不">
 <meta name="twitter:image" content="c:/Users/罗中运/AppData/Local/Temp/chrome_drag12552_27359/Image.png">
   
     <link rel="alternative" href="/atom.xml" title="luozy&#39;s Blog" type="application/atom+xml">
@@ -177,10 +177,12 @@
       
         <h3 id="内联模式"><a href="#内联模式" class="headerlink" title="内联模式"></a>内联模式</h3><p>​    这种模型是最传统接单的一种处理事件的方法。在内联模型中，事件处理函数是 HTML 标签的一个属性，用于处理指定事件。虽然内联在早期使用较多，但它是和 HTML 混写的， 并没有与 HTML 分离。</p>
 <p>//在 HTML 中把事件处理函数作为属性执行 JS 代码</p>
-<p>&lt;input type=”button”value=”按钮”onclick=”alert(‘Lee’);” /&gt;</p>
+<input type="button" value="按钮" onclick="alert('Lee');">
+
 <p>//注意单双引号</p>
 <p>//在 HTML 中把事件处理函数作为属性执行 JS 函数</p>
-<p>&lt;input type=”button”value=”按钮”onclick=”box();” /&gt;</p>
+<input type="button" value="按钮" onclick="box();">
+
 <p>//执行 JS 的函数 </p>
 <p>PS：函数不得放到 window.onload 里面，这样就看不见了。</p>
 <h3 id="脚本模式"><a href="#脚本模式" class="headerlink" title="脚本模式"></a>脚本模式</h3><p>   由于内联模型违反了 HTML 与 JavaScript 代码层次分离的原则。为了解决这个问题，我们可以在 JavaScript 中处理事件。这种处理方式就是脚本模型。</p>
@@ -506,7 +508,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.luozy.top/2018/10/31/事件/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://tianjiec.top/2018/10/31/事件/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -670,11 +672,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color3">H5</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -682,11 +684,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
