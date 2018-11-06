@@ -153,6 +153,114 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="w-ECMA5、6" class="article article-type-w  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/06/ECMA5、6/">ECMA5、6</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/06/ECMA5、6/" class="archive-article-date">
+  	<time datetime="2018-11-06T01:20:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、this关键字详解"><a href="#一、this关键字详解" class="headerlink" title="一、this关键字详解"></a>一、this关键字详解</h2><p><strong>改变this指向的方法call、apply、bind深度分析</strong></p>
+<h3 id="1、this的使用场景"><a href="#1、this的使用场景" class="headerlink" title="1、this的使用场景"></a>1、this的使用场景</h3><h4 id="1-1-this的记忆规则"><a href="#1-1-this的记忆规则" class="headerlink" title="1.1 this的记忆规则"></a>1.1 this的记忆规则</h4><blockquote>
+<p>​    每一个函数中，都有一个内置的变量this，这个this中存储着当前函数的主人，所以，要知道this是谁，就要通过上下文分析，当前函数的主人是谁。this永远存储的是当前函数的主人。</p>
+</blockquote>
+<h4 id="1-2全局函数中指向window"><a href="#1-2全局函数中指向window" class="headerlink" title="1.2全局函数中指向window"></a>1.2全局函数中指向window</h4><p>var num= 10；//num也属于window相当于window.num</p>
+<p>function show(){</p>
+<p>​    alert(this);//输出window，此处show相当于window.show（）</p>
+<p>}</p>
+<h4 id="1-3对象方法指向该对象"><a href="#1-3对象方法指向该对象" class="headerlink" title="1.3对象方法指向该对象"></a>1.3对象方法指向该对象</h4><p>var obj = {</p>
+<p>​    showName ： function(){</p>
+<p>​    }</p>
+<p>}</p>
+<h4 id="1-4事件绑定中，指向目标对象"><a href="#1-4事件绑定中，指向目标对象" class="headerlink" title="1.4事件绑定中，指向目标对象"></a>1.4事件绑定中，指向目标对象</h4><p>window.onload = function(){</p>
+<p>​    btn.onclick = function(){<br>​    }</p>
+<p>}</p>
+<h3 id="2、call、apply、bind方法区别详解"><a href="#2、call、apply、bind方法区别详解" class="headerlink" title="2、call、apply、bind方法区别详解"></a>2、call、apply、bind方法区别详解</h3><p>【注】这三个方法只会改变当前方法的this对象</p>
+<h4 id="call"><a href="#call" class="headerlink" title="call"></a>call</h4><p>格式：函数名.call(this指向的对象，本应该传的参数);</p>
+<h4 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h4><p>格式：函数.apply(this指向的对象，[愿所有的参数]);</p>
+<h4 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h4><p>格式：函数名.bind(this指向的对象)</p>
+<p>作用：是一个</p>
+<p>返回值：是一个预设好this指向的原函数</p>
+<h4 id="具体用法"><a href="#具体用法" class="headerlink" title="具体用法"></a>具体用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>);</span><br><span class="line">    alert(num1, + <span class="string">','</span> +num2);</span><br><span class="line">&#125;</span><br><span class="line">show.call(<span class="string">"call"</span>, <span class="number">30</span>, <span class="number">40</span>);<span class="comment">//this为call</span></span><br><span class="line">show();<span class="comment">//this 为[object Window]</span></span><br><span class="line"></span><br><span class="line">show.apply(<span class="string">"apply"</span>, [<span class="number">50</span>, <span class="number">60</span>]);</span><br><span class="line">show();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bindF = show.bind(<span class="string">"bind"</span>);</span><br><span class="line">bindF();</span><br><span class="line">show();</span><br><span class="line">show.bind(<span class="string">"bind"</span>)();</span><br></pre></td></tr></table></figure>
+<p><strong>修改函数本身</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> oBtn = <span class="built_in">document</span>.getElementById(<span class="string">"btn1"</span>);</span><br><span class="line">    <span class="comment">/*oBtn.onclick = function()&#123;</span></span><br><span class="line"><span class="comment">					btnClick.call('hello');</span></span><br><span class="line"><span class="comment">				&#125;;*/</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*oBtn.onclick = function()&#123;</span></span><br><span class="line"><span class="comment">					btnClick.apply('hello');</span></span><br><span class="line"><span class="comment">				&#125;;*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//给按钮赋值一个预设号this指向的函数。</span></span><br><span class="line">    oBtn.onclick = btnClick.bind(<span class="string">"bind"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="let关键字"><a href="#let关键字" class="headerlink" title="let关键字"></a>let关键字</h1><p>功能：就是用来声明变量的</p>
+<p>【注】使用let关键字声明变量</p>
+<p>​    1、不能重复声明变量</p>
+<p>​    2、let关键字声明变量。只要遇到大括号就会形成作用域</p>
+<p>【区分】</p>
+<p>​    1、var声明的变量是，必须是函数的大括号才能形成作用域；</p>
+<p>​    2、let关键字声明变量，只要遇到大括号，就会生成作用域。</p>
+<p>​        if    for    switch</p>
+<p>​    【注】我们吧这个范围更小的作用域称为跨块级作用域</p>
+<p>例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> aBtns = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"button"</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; aBtns.length; i++)&#123;</span><br><span class="line">        aBtns[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            alert(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//用let就会生成多个作用域i对这个作用域里面的i不影响，这些i= 0 1 2 3 4....</span></span><br><span class="line"><span class="comment">//如果用var i最终都会变成5</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/06/ECMA5、6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="w-js控制style" class="article article-type-w  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -481,6 +589,9 @@
 </table>
 <h4 align="center">字符类：重复字符</h4>
 
+<blockquote>
+<p>x 代表单个字符或元字符</p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -529,6 +640,7 @@
 </tr>
 </tbody>
 </table>
+<p>和元提付重意的字符 如. 要添加转义字符</p>
 <h3 id="五、常用正则"><a href="#五、常用正则" class="headerlink" title="五、常用正则"></a>五、常用正则</h3><p>1、检查邮政编码</p>
 <p>var pattern = /[1-9] ‘[0-9]’{5}/共六位数字，第一位不能为0</p>
 <p>var str = ‘224000’;</p>
@@ -2055,188 +2167,6 @@
 
 
   
-    <article id="post-Math对象和日期对象" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/25/Math对象和日期对象/">Math对象和日期对象</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/25/Math对象和日期对象/" class="archive-article-date">
-  	<time datetime="2018-10-25T01:07:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1、Math对象"><a href="#1、Math对象" class="headerlink" title="1、Math对象"></a>1、Math对象</h2><h4 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random()"></a>Math.random()</h4><p>[0,1)返回随机数</p>
-<h4 id="Math-max-num1-num2-Math-min-num1-num2"><a href="#Math-max-num1-num2-Math-min-num1-num2" class="headerlink" title="Math.max(num1,num2),Math.min(num1,num2);"></a>Math.max(num1,num2),Math.min(num1,num2);</h4><p>取较大，较小值</p>
-<h4 id="Math-round"><a href="#Math-round" class="headerlink" title="Math.round()"></a>Math.round()</h4><p>四舍五入，变成整数</p>
-<h4 id="Math-floor-Math-ceil"><a href="#Math-floor-Math-ceil" class="headerlink" title="Math.floor(), Math.ceil()"></a>Math.floor(), Math.ceil()</h4><p>向下，上取整</p>
-<h4 id="Math-sqrt"><a href="#Math-sqrt" class="headerlink" title="Math.sqrt()"></a>Math.sqrt()</h4><p>开平方</p>
-<h4 id="Math-abs"><a href="#Math-abs" class="headerlink" title="Math.abs()"></a>Math.abs()</h4><p>取绝对值</p>
-<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p><img src="C:\Users\罗中运\Pictures\Saved Pictures\对象.png" alt="对象"></p>
-<h4 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h4><p>1、抽象：抽指把核心的东西抽出来，把与我们要解决的问题有关的东西拿出来摆在面前 </p>
-<p>2、封装：让使用对象的人不考虑内部实现，只考虑功能使用  把内部的代码保护起来，只留出一些个api接口供用户使用</p>
-<p>3、继承：就是为了代码的复用，从父类上继承出一些方法和属性，子类也有自己的一些属性 </p>
-<p>4、多态：实际上是不同对象作用与同一操作产生不同的效果。多态的思想实际上是把“想做什么”和“谁去做“分开</p>
-<h5 id="面向对象和面向过程的区别"><a href="#面向对象和面向过程的区别" class="headerlink" title="面向对象和面向过程的区别"></a>面向对象和面向过程的区别</h5><p>面向过程就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了；面向对象是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。</p>
-<p>可以拿生活中的实例来理解面向过程与面向对象，例如五子棋，面向过程的设计思路就是首先分析问题的步骤：1、开始游戏，2、黑子先走，3、绘制画面，4、判断输赢，5、轮到白子，6、绘制画面，7、判断输赢，8、返回步骤2，9、输出最后结果。把上面每个步骤用不同的方法来实现。</p>
-<h6 id="如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。"><a href="#如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。" class="headerlink" title="如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。"></a>如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。</h6><h6 id="可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。"><a href="#可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。" class="headerlink" title="可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。"></a>可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。</h6><p>###### </p>
-<h4 id="对象的组成"><a href="#对象的组成" class="headerlink" title="对象的组成"></a>对象的组成</h4><p>1、方法   函数：过程、动态的</p>
-<p>2、属性   变量：状态、静态的，</p>
-<h4 id="this当前的方法属于谁就是谁"><a href="#this当前的方法属于谁就是谁" class="headerlink" title="this当前的方法属于谁就是谁"></a>this<strong>当前的方法属于谁就是谁</strong></h4><p>例如点击事件里的this，其实就是触发事件的那个dom对象的onclick方法里的this，当然是人家自己咯</p>
-<p> 再比如说一个函数里的this，这个函数都属于window的一个方法，当然里面的this也是window咯</p>
-<p>  还有哦，不要在系统对象上面添加属性和方法，这样不太好</p>
-<p> 那么在谁身上加呢？在object这个对象身上，别的date呀array呀，这些对象都是有一些个好玩的功能的，</p>
-<p>  object也就自己最强大的一个功能就是，没有功能~~~~ 这样咱们就可以随意给他加属性和方法而不用去想会不会覆盖了</p>
-<p>1、通过历史</p>
-<p>​    面向过程语言：汇编、c语言</p>
-<p>​    面向对象语言：c++，java</p>
-<p>2、编程思想</p>
-<p>​    面向过程：只关心数字逻辑</p>
-<p>​    面向过程：具体某一个是提来的，唯一的实体。</p>
-<p>3、语法：<br>​    在JS中需要通过两个语法实现面向对象程序。<br>​    类   在JS没有类这个概念。<br>​    对象 </p>
-<p>​    类：将具有同一类特征的事物总结，抽象的概念。<br>​    对象：唯一的某一个个体。</p>
-<p>​    类           对象<br>​    人          你、我、他<br>​    复仇者联盟  钢铁侠    </p>
-<p>4、代码<br>​    数据类型：<br>​            基本数据类型：<br>​            特殊数据类型：null undefined NaN<br>​            复合数据类型：数组、字符串、对象</p>
-<p>5、数据结构：<br>​    基本数据类型(只能存储单个的值)  -&gt;  数组(可以处理批量的数据)  -&gt;  对象(既能存储数据，又能存储函数)</p>
-<h4 id="创建对象的方法"><a href="#创建对象的方法" class="headerlink" title="创建对象的方法"></a>创建对象的方法</h4><p>1、最基础的</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1、通过new声明对象</span></span><br><span class="line"><span class="comment">// var obj = new Object();</span></span><br><span class="line"><span class="comment">//2、省略new声明对象</span></span><br><span class="line"><span class="comment">// var obj = Object();</span></span><br><span class="line"><span class="comment">//3、直接通过对象常量赋值</span></span><br><span class="line"><span class="comment">/*var obj = &#123;&#125;;</span></span><br><span class="line"><span class="comment">添加对象的属性  和普通的变量是一样的</span></span><br><span class="line"><span class="comment">obj.name = '小明';</span></span><br><span class="line"><span class="comment">obj.age = 18;</span></span><br><span class="line"><span class="comment">//添加对象的方法/函数</span></span><br><span class="line"><span class="comment">obj.run = function()&#123;</span></span><br><span class="line"><span class="comment">	alert("会跑")</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">alert(obj.name);</span></span><br><span class="line"><span class="comment">obj.run();*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*var obj = &#123;</span></span><br><span class="line"><span class="comment">	name: "小明",</span></span><br><span class="line"><span class="comment">	age: 18,</span></span><br><span class="line"><span class="comment">	run: function()&#123;</span></span><br><span class="line"><span class="comment">	alert("会跑");</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">alert(obj.name);</span></span><br><span class="line"><span class="comment">obj.run();*/</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加对象的属性  和普通的变量是一样的</span></span><br><span class="line">obj.name = <span class="string">'小明'</span>;</span><br><span class="line">obj[<span class="string">'age'</span>] = <span class="number">18</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加对象的方法/函数</span></span><br><span class="line">obj.run = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">"会跑"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(obj[<span class="string">'name'</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除对象的属性和方法的关键字 delete</span></span><br><span class="line"><span class="comment">// delete删除对象属性，delete删除不了变量及原型链中的变量</span></span><br><span class="line"><span class="keyword">delete</span> obj.name;</span><br><span class="line">alert(obj.name);</span><br><span class="line"></span><br><span class="line">obj.run();</span><br></pre></td></tr></table></figure>
-<p>但是这样太麻烦，我要写100个人，那得写100次。有别的方法吗？有</p>
-<p>2、工厂方式 通过构造函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//原料</span></span><br><span class="line">    <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    <span class="comment">//加工</span></span><br><span class="line">    obj.name = name;</span><br><span class="line">    obj.age=age;</span><br><span class="line">    obj.showAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         alert(<span class="keyword">this</span>.age)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//出厂</span></span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1=createPerson(<span class="string">"shizhikai"</span>,<span class="string">'3岁'</span>)</span><br><span class="line"><span class="keyword">var</span> obj2=createPerson(<span class="string">"ni"</span>,<span class="string">'18岁'</span>);</span><br><span class="line"></span><br><span class="line">alert(obj1.showName)<span class="comment">//function()&#123;alert(this.name)&#125;</span></span><br><span class="line">alert(obj2.showName)<span class="comment">//function()&#123;alert(this.name)&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="日起对象Date"><a href="#日起对象Date" class="headerlink" title="日起对象Date"></a>日起对象Date</h2><p>Date对象代表日期</p>
-<p> Date</p>
-<p>类型使用自 UTC（Coordinated Universal Time，国际协调时间）1970 年 1 月 1 日午夜（零时）开始经过的毫秒数来保存日期。Date 类型保存的日期能够精确到 1970 年 1 月 1 日之前或之后的 285616 年。</p>
-<p>创建一个日期对象，使用 new 运算符和 Date 构造方法(构造函数)即可。</p>
-<p>​    <strong>var d = new Date();</strong></p>
-<p>在调用 Date 构造方法而不传递参数的情况下，新建的对象自动获取当前的时间和日期。</p>
-<p>创建日期对象并指定时间</p>
-<p>​    <strong>var d = new Date(“2015/08/22”);</strong></p>
-<p>​    <strong>var d = new Date(2016,04,13,14,34);</strong></p>
-<p>【注】time可以是“2015/08/22”， “2015-08-22”  ，或1970年当前日期的毫秒数56521211021</p>
-<h4 id="5、日期对象Date（格式化方法，了解即可）"><a href="#5、日期对象Date（格式化方法，了解即可）" class="headerlink" title="5、日期对象Date（格式化方法，了解即可）"></a>5、日期对象Date（格式化方法，了解即可）</h4><table>
-<thead>
-<tr>
-<th>alert(box.toDateString());</th>
-<th>//以特定的格式显示星期几、月、日和年</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>alert(box.toTimeString());</td>
-<td>//以特定的格式显示时、分、秒和时区</td>
-</tr>
-<tr>
-<td>alert(box.toLocaleDateString());</td>
-<td>//以特定地区格式显示星期几、月、日和年</td>
-</tr>
-<tr>
-<td>alert(box.toLocaleTimeString());</td>
-<td>//以特定地区格式显示时、分、秒和时区</td>
-</tr>
-<tr>
-<td>alert(box.toUTCString());</td>
-<td>//以特定的格式显示完整的 UTC 日期。</td>
-</tr>
-</tbody>
-</table>
-<h4 id="6、日期对象Date方法"><a href="#6、日期对象Date方法" class="headerlink" title="6、日期对象Date方法"></a>6、日期对象Date方法</h4><p>x(“2015-08-24”);</p>
-<p>//转换格式默认支持2015-08-24或2015/08/24</p>
-<p>//返回距离1970年1月1日0时的毫秒数</p>
-<p>d.getTime()/d.setTime()</p>
-<p>getTime获取某个日期自1970年以来的毫秒数</p>
-<p>setTime修改日期的毫秒数，对应的日期时间也会修改</p>
-<p>var myDate = new Date();</p>
-<p>myDate.getTime();</p>
-<h4 id="7、日期对象方法"><a href="#7、日期对象方法" class="headerlink" title="7、日期对象方法"></a>7、日期对象方法</h4><h5 id="重点记忆（set-get既能获取又能够赋值-get只能获取）"><a href="#重点记忆（set-get既能获取又能够赋值-get只能获取）" class="headerlink" title="重点记忆（set/get既能获取又能够赋值    get只能获取）"></a>重点记忆（set/get既能获取又能够赋值    get只能获取）</h5><blockquote>
-<p>调用格式： 日期对象.方法()</p>
-</blockquote>
-<p>set/getDate() 从Date对象中返回一个月中的某一天(1~31)</p>
-<p>getDay() 从Date对象返回一周中的某一天(0~6 )    获取日期星期几（0~6）0是周日</p>
-<p>set/getMonth() 从Date对象中返回月份(0~11)对应（1~12）</p>
-<p>set/getFullYear() 从Date对象以四位数返回年份</p>
-<p>set/getHours() 返回Date对象的小时(0~23)</p>
-<p>set/getMinutes() 返回Date对象的分钟(0~59)</p>
-<p>set/getSeconds() 返回Date对象的秒数(0~59)</p>
-<p>set/getMilliseconds()   返回Date对象的毫秒</p>
-<p>set/getTime() 返回1970年1月1日至今的毫秒数</p>
-<p>getTimezoneOffset()     返回本地时间与格林威治标准时间(GMT)的分钟差</p>
-<h3 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h3><h4 id="setInterval-函数，毫秒数"><a href="#setInterval-函数，毫秒数" class="headerlink" title="setInterval(函数，毫秒数)"></a>setInterval(函数，毫秒数)</h4><p>此处函数不加小括号，此处含义是把函数传过去让他执行</p>
-<p>格式： var timer = setInterval(show, 1000);</p>
-<p>返回值：当前定时器的编码</p>
-<h4 id="clearInterval（timer）；-关闭定时器"><a href="#clearInterval（timer）；-关闭定时器" class="headerlink" title="clearInterval（timer）；//关闭定时器"></a>clearInterval（timer）；//关闭定时器</h4><p>函数写法：</p>
-<p>1、</p>
-<p>function show(){</p>
-<p>}</p>
-<p>2、</p>
-<p>var show = function(){</p>
-<p>}</p>
-<p>show();</p>
-<p>所以上面写法可以替换为</p>
-<p>格式： setInterval( function(){</p>
-<p>}, 1000);</p>
-<p>此处函数叫做匿名函数；</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/25/Math对象和日期对象/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -2334,11 +2264,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color3">H5</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2354,11 +2284,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">H5 js 循环</a>
+                <a href="javascript:void(0)" class="js-tag color4">H5 js 函数</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">H5 js 函数</a>
+                <a href="javascript:void(0)" class="js-tag color4">H5 js 循环</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2370,15 +2300,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网页推荐</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
               <li class="article-tag-list-item">

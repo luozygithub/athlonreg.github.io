@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.luozy.top">
-  <title>CSS垂直居中技巧 | luozy&#39;s Blog</title>
+  <title>ECMA5、6 | luozy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一种123456789101112131415161718&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;	&amp;lt;head&amp;gt;    	&amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;        &amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;    &amp;lt;/head&amp;gt;    &amp;lt;body&amp;gt;        &amp;lt;div style=&quot;">
-<meta name="keywords" content="H5">
+  <meta name="description" content="一、this关键字详解改变this指向的方法call、apply、bind深度分析 1、this的使用场景1.1 this的记忆规则 ​    每一个函数中，都有一个内置的变量this，这个this中存储着当前函数的主人，所以，要知道this是谁，就要通过上下文分析，当前函数的主人是谁。this永远存储的是当前函数的主人。  1.2全局函数中指向windowvar num= 10；//num也属于">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS垂直居中技巧">
-<meta property="og:url" content="http://www.luozy.top/2018/09/27/CSS垂直居中技巧/index.html">
+<meta property="og:title" content="ECMA5、6">
+<meta property="og:url" content="http://www.luozy.top/2018/11/06/ECMA5、6/index.html">
 <meta property="og:site_name" content="luozy&#39;s Blog">
-<meta property="og:description" content="第一种123456789101112131415161718&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;	&amp;lt;head&amp;gt;    	&amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;        &amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;    &amp;lt;/head&amp;gt;    &amp;lt;body&amp;gt;        &amp;lt;div style=&quot;">
+<meta property="og:description" content="一、this关键字详解改变this指向的方法call、apply、bind深度分析 1、this的使用场景1.1 this的记忆规则 ​    每一个函数中，都有一个内置的变量this，这个this中存储着当前函数的主人，所以，要知道this是谁，就要通过上下文分析，当前函数的主人是谁。this永远存储的是当前函数的主人。  1.2全局函数中指向windowvar num= 10；//num也属于">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-27T08:04:10.103Z">
+<meta property="og:updated_time" content="2018-11-06T03:45:47.858Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS垂直居中技巧">
-<meta name="twitter:description" content="第一种123456789101112131415161718&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;	&amp;lt;head&amp;gt;    	&amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;        &amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;    &amp;lt;/head&amp;gt;    &amp;lt;body&amp;gt;        &amp;lt;div style=&quot;">
+<meta name="twitter:title" content="ECMA5、6">
+<meta name="twitter:description" content="一、this关键字详解改变this指向的方法call、apply、bind深度分析 1、this的使用场景1.1 this的记忆规则 ​    每一个函数中，都有一个内置的变量this，这个this中存储着当前函数的主人，所以，要知道this是谁，就要通过上下文分析，当前函数的主人是谁。this永远存储的是当前函数的主人。  1.2全局函数中指向windowvar num= 10；//num也属于">
   
     <link rel="alternative" href="/atom.xml" title="luozy&#39;s Blog" type="application/atom+xml">
   
@@ -153,27 +153,61 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CSS垂直居中技巧" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="w-ECMA5、6" class="article article-type-w " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      CSS垂直居中技巧
+      ECMA5、6
     </h1>
   
 
         
-        <a href="/2018/09/27/CSS垂直居中技巧/" class="archive-article-date">
-  	<time datetime="2018-09-27T07:59:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+        <a href="/2018/11/06/ECMA5、6/" class="archive-article-date">
+  	<time datetime="2018-11-06T01:20:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 600px;</span></span></span><br><span class="line"><span class="tag"><span class="string">                    height: 600px;</span></span></span><br><span class="line"><span class="tag"><span class="string">                    backgrond-color: purple;</span></span></span><br><span class="line"><span class="tag"><span class="string">                    text-align: center;</span></span></span><br><span class="line"><span class="tag"><span class="string">                    vertical-align: middle;"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"line-height: 600px"</span>&gt;</span></span><br><span class="line">                sadfghj</span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h2 id="一、this关键字详解"><a href="#一、this关键字详解" class="headerlink" title="一、this关键字详解"></a>一、this关键字详解</h2><p><strong>改变this指向的方法call、apply、bind深度分析</strong></p>
+<h3 id="1、this的使用场景"><a href="#1、this的使用场景" class="headerlink" title="1、this的使用场景"></a>1、this的使用场景</h3><h4 id="1-1-this的记忆规则"><a href="#1-1-this的记忆规则" class="headerlink" title="1.1 this的记忆规则"></a>1.1 this的记忆规则</h4><blockquote>
+<p>​    每一个函数中，都有一个内置的变量this，这个this中存储着当前函数的主人，所以，要知道this是谁，就要通过上下文分析，当前函数的主人是谁。this永远存储的是当前函数的主人。</p>
+</blockquote>
+<h4 id="1-2全局函数中指向window"><a href="#1-2全局函数中指向window" class="headerlink" title="1.2全局函数中指向window"></a>1.2全局函数中指向window</h4><p>var num= 10；//num也属于window相当于window.num</p>
+<p>function show(){</p>
+<p>​    alert(this);//输出window，此处show相当于window.show（）</p>
+<p>}</p>
+<h4 id="1-3对象方法指向该对象"><a href="#1-3对象方法指向该对象" class="headerlink" title="1.3对象方法指向该对象"></a>1.3对象方法指向该对象</h4><p>var obj = {</p>
+<p>​    showName ： function(){</p>
+<p>​    }</p>
+<p>}</p>
+<h4 id="1-4事件绑定中，指向目标对象"><a href="#1-4事件绑定中，指向目标对象" class="headerlink" title="1.4事件绑定中，指向目标对象"></a>1.4事件绑定中，指向目标对象</h4><p>window.onload = function(){</p>
+<p>​    btn.onclick = function(){<br>​    }</p>
+<p>}</p>
+<h3 id="2、call、apply、bind方法区别详解"><a href="#2、call、apply、bind方法区别详解" class="headerlink" title="2、call、apply、bind方法区别详解"></a>2、call、apply、bind方法区别详解</h3><p>【注】这三个方法只会改变当前方法的this对象</p>
+<h4 id="call"><a href="#call" class="headerlink" title="call"></a>call</h4><p>格式：函数名.call(this指向的对象，本应该传的参数);</p>
+<h4 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h4><p>格式：函数.apply(this指向的对象，[愿所有的参数]);</p>
+<h4 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h4><p>格式：函数名.bind(this指向的对象)</p>
+<p>作用：是一个</p>
+<p>返回值：是一个预设好this指向的原函数</p>
+<h4 id="具体用法"><a href="#具体用法" class="headerlink" title="具体用法"></a>具体用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>);</span><br><span class="line">    alert(num1, + <span class="string">','</span> +num2);</span><br><span class="line">&#125;</span><br><span class="line">show.call(<span class="string">"call"</span>, <span class="number">30</span>, <span class="number">40</span>);<span class="comment">//this为call</span></span><br><span class="line">show();<span class="comment">//this 为[object Window]</span></span><br><span class="line"></span><br><span class="line">show.apply(<span class="string">"apply"</span>, [<span class="number">50</span>, <span class="number">60</span>]);</span><br><span class="line">show();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bindF = show.bind(<span class="string">"bind"</span>);</span><br><span class="line">bindF();</span><br><span class="line">show();</span><br><span class="line">show.bind(<span class="string">"bind"</span>)();</span><br></pre></td></tr></table></figure>
+<p><strong>修改函数本身</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> oBtn = <span class="built_in">document</span>.getElementById(<span class="string">"btn1"</span>);</span><br><span class="line">    <span class="comment">/*oBtn.onclick = function()&#123;</span></span><br><span class="line"><span class="comment">					btnClick.call('hello');</span></span><br><span class="line"><span class="comment">				&#125;;*/</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*oBtn.onclick = function()&#123;</span></span><br><span class="line"><span class="comment">					btnClick.apply('hello');</span></span><br><span class="line"><span class="comment">				&#125;;*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//给按钮赋值一个预设号this指向的函数。</span></span><br><span class="line">    oBtn.onclick = btnClick.bind(<span class="string">"bind"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="let关键字"><a href="#let关键字" class="headerlink" title="let关键字"></a>let关键字</h1><p>功能：就是用来声明变量的</p>
+<p>【注】使用let关键字声明变量</p>
+<p>​    1、不能重复声明变量</p>
+<p>​    2、let关键字声明变量。只要遇到大括号就会形成作用域</p>
+<p>【区分】</p>
+<p>​    1、var声明的变量是，必须是函数的大括号才能形成作用域；</p>
+<p>​    2、let关键字声明变量，只要遇到大括号，就会生成作用域。</p>
+<p>​        if    for    switch</p>
+<p>​    【注】我们吧这个范围更小的作用域称为跨块级作用域</p>
+<p>例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> aBtns = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"button"</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; aBtns.length; i++)&#123;</span><br><span class="line">        aBtns[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            alert(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//用let就会生成多个作用域i对这个作用域里面的i不影响，这些i= 0 1 2 3 4....</span></span><br><span class="line"><span class="comment">//如果用var i最终都会变成5</span></span><br></pre></td></tr></table></figure>
 
       
 
@@ -213,7 +247,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">H5</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
@@ -269,7 +303,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.luozy.top/2018/09/27/CSS垂直居中技巧/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.luozy.top/2018/11/06/ECMA5、6/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -283,18 +317,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/29/怪异盒模型/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/09/26/表单/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">表单</div>
+    <a href="/2018/11/03/js控制style/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js控制style</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -321,8 +346,8 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一种"><span class="toc-number">1.</span> <span class="toc-text">第一种</span></a></li></ol>
-                    </div>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、this关键字详解"><span class="toc-number">1.</span> <span class="toc-text">一、this关键字详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、this的使用场景"><span class="toc-number">1.1.</span> <span class="toc-text">1、this的使用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-this的记忆规则"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 this的记忆规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2全局函数中指向window"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2全局函数中指向window</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3对象方法指向该对象"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3对象方法指向该对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4事件绑定中，指向目标对象"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.4事件绑定中，指向目标对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、call、apply、bind方法区别详解"><span class="toc-number">1.2.</span> <span class="toc-text">2、call、apply、bind方法区别详解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#call"><span class="toc-number">1.2.1.</span> <span class="toc-text">call</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#apply"><span class="toc-number">1.2.2.</span> <span class="toc-text">apply</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#bind"><span class="toc-number">1.2.3.</span> <span class="toc-text">bind</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#具体用法"><span class="toc-number">1.2.4.</span> <span class="toc-text">具体用法</span></a></li></ol></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#let关键字"><span class="toc-number"></span> <span class="toc-text">let关键字</span></a>
+                    </li></div>
                 </span>
             </div>
         </div>
