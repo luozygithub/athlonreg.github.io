@@ -1,0 +1,790 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+
+
+	<!DOCTYPE html>
+	<html>
+		
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<title>js基础</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="luozy">
+    <meta name="keywords" content="">
+    <meta name="description" content="Inflexible thinking, bad humor">
+   	<!-- css -->
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- favicon -->
+	<link href="/img/favicon.ico" rel="Shortcut Icon" type="image/ico">
+	
+	<!-- font-awesome -->
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+	<body>	
+		<!--Preloader-->
+<div id="preloader">
+	<div id="status">
+		<img alt="PRELOADER" src="/img/logo.png">
+	</div>
+</div>
+<!--Preloader end-->
+
+<!-- header -->
+
+	<header id="header-bg-2">
+
+	
+		<div id="cd-logo"><a href="/"><img src="/img/logo.png" alt="Logo"></a></div>
+	
+	
+	<!-- motto or description -->
+		
+ 		<p class="motto">���������������������̰���������ܼ�������̰����</p>
+	
+	
+	<!-- current page name or title -->
+	
+		
+		
+			
+			<p class="page-name">当前文章&nbsp;:&nbsp;《js基础》</p>
+			
+		
+	
+	
+	<!-- others: such as change-bg, time... -->
+	<p class="page-name-other">
+		11/7/2018 
+		<style type="text/css">
+	header:after {
+		content: '';
+		position: relative;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: #222222;
+		opacity: .5;
+		z-index: -1;
+	}
+	
+	.change-header-bg{
+		font-style: normal;
+	}
+	.change-header-bg i{
+		text-align: center;
+		cursor: pointer;
+		pointer-events: bounding-box;
+	}
+	@media(max-width:512px) {
+		.change-header-bg {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	
+</style>
+
+<script type="text/javascript">
+	function changeHeaderBg(){
+		var random_bg = Math.floor(Math.random() * 109 + 1);
+		var bg = 'url(https://XXX-youname-XXX.github.io/Random-img/' + random_bg + '.jpg)';
+		$("#header-bg-2").css("background-image", bg);
+	}
+</script>
+
+<span class="change-header-bg">
+	——&nbsp;<i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>	
+</span>
+	</p>		
+</header>
+
+<!-- nav -->
+<div id="cd-nav">
+	<a href="#0" title="menu" class="cd-nav-trigger"><span></span></a>
+
+	<nav id="cd-main-nav">
+		<ul>
+			
+      		<li class="fa fa-/">
+           		<a href="/" title="主页">主页</a>	
+      		</li>
+    		
+      		<li class="fa fa-/archives">
+           		<a href="/archives" title="归档">归档</a>	
+      		</li>
+    		
+      		<li class="fa fa-/categories">
+           		<a href="/categories" title="分类">分类</a>	
+      		</li>
+    		
+      		<li class="fa fa-/tags">
+           		<a href="/tags" title="标签">标签</a>	
+      		</li>
+    		
+      		<li class="fa fa-/about">
+           		<a href="/about" title="关于">关于</a>	
+      		</li>
+    		
+      		<li class="fa fa-/gallery">
+           		<a href="/gallery" title="相册">相册</a>	
+      		</li>
+    		
+    		
+        	
+		</ul>
+	</nav>
+</div>
+
+		<!--main-->
+		<main> 
+		<div class="page-container">
+		<!-- content srart -->
+<div class="am-g am-g-fixed blog-fixed blog-content">
+	<div class="am-u-md-8 am-u-sm-12">
+
+		<article class="am-article blog-article-p">
+
+			<div class="am-article-hd">
+				
+
+
+				<h1 class="am-article-title blog-text-center">
+					
+					
+	
+		<a href="/2018/10/17/js基础/" itemprop="url">		
+			js基础		
+		</a>
+	
+
+				</h1>
+
+				<p class="am-article-meta blog-text-center">
+					<span>
+						<i class="fa fa-clock-o"></i> 
+						<a href="/2018/10/17/js基础/" itemprop="url">
+	<time datetime="2018-10-17T00:49:01.000Z" itemprop="datePublished">
+  		2018-10-17
+  </time>
+</a>    
+&nbsp;
+					</span>
+					
+					<span>						
+						
+							<i class="fa fa-tags"></i>
+							
+								<a href="#H5" title="H5" rel="11">H5</a>&nbsp;
+													 											
+						
+					</span>
+				</p>
+			</div>
+
+			<div class="am-article-bd">
+				<div class="content" id="post-content">
+					
+						<p>[TOC]</p>
+<h2 id="js组成"><a href="#js组成" class="headerlink" title="js组成"></a>js组成</h2><blockquote>
+<p>JavaScript</p>
+<p>1、ECMAScript标准 4.0 5.0 6.0</p>
+<p>2、BoM   浏览器对象</p>
+<p>3、DOM 对象</p>
+</blockquote>
+<h3 id="JS语法规范"><a href="#JS语法规范" class="headerlink" title="JS语法规范"></a>JS语法规范</h3><blockquote>
+<p>srcipt标签两个作用</p>
+</blockquote>
+<p>1、方法一 js代码写在script标签里面</p>
+<p>2、方法二 外部引入js文件方式</p>
+<p>ps: 不可混合使用</p>
+<p>执行顺序自上而下</p>
+<p>type表明要执行的内容格式</p>
+<p>如不可：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span> = <span class="string">"demo.js"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	alert(<span class="string">"hello world"</span>);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h4><p>1、代码缩进；</p>
+<p>2、每一条语句结尾都加一个分号；</p>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p>单行注释 // ctrl ＋ /</p>
+<p>多行注释 /<em>  </em>/  ctrl ＋ shift ＋ /</p>
+<h2 id="js输出方式"><a href="#js输出方式" class="headerlink" title="js输出方式"></a>js输出方式</h2><blockquote>
+<p>1） alert(); //弹出警告框，在警告框上显示内容</p>
+<p>2）document write(); // 直接显示在页面上</p>
+<p>3）console log(); //控制台输出，一般用来调试代码用的</p>
+</blockquote>
+<p>ps：</p>
+<p>document.write(“hello world”);<br>document.write(“</p><h1>hello <em>world</em><h1>“);<br>console.log(“hello”);<p></p>
+<p>要想输出标签要用 &amp;lt； 和&amp;gt；</p>
+<h2 id="document-write-“-lt-srcipt-gt-”"><a href="#document-write-“-lt-srcipt-gt-”" class="headerlink" title="document.write(“&lt;srcipt &gt;”);"></a>document.write(“&lt;srcipt &gt;”);</h2><h2 id="常量和变量"><a href="#常量和变量" class="headerlink" title="常量和变量"></a>常量和变量</h2><h5 id="常量（字面量）"><a href="#常量（字面量）" class="headerlink" title="常量（字面量）"></a>常量（字面量）</h5><blockquote>
+<p>数据类型: </p>
+<p>​    基本数据类型：</p>
+<p>​    number 数字 0, 10 ,3.14</p>
+<p>​    string  字符串 所带单引号和双引号的都叫字符串</p>
+<p>​    boolean 布尔值 true false</p>
+<p>​    特殊数据类型：</p>
+<p>​    null 空</p>
+<p>​    undefined 未声明</p>
+<p>​    NaN not a number 不是一个数字</p>
+<p>关键字（有特殊功能的单词）：typeof ；//输出当前数据的输出类型。</p>
+</blockquote>
+<h5 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h5><blockquote>
+<p>值可以修改的叫做变量</p>
+<p>​    1、声明变量，适合内存申请一部分空间，存储数据</p>
+<p>​    2、变量的数据，是根据存储的数据决定的</p>
+<p>​    初始化：声明变量后接着赋值叫做初始化</p>
+<p>​    【注】如果声明变量的时候，没有赋值，默认是undefined。</p>
+<p>​    /*</p>
+<p>​        避免后续赋值的时候多出抹除undefined操作，先将值赋值为null。</p>
+<p>​    */</p>
+<p>​    </p>
+</blockquote>
+<h2 id="命名规则："><a href="#命名规则：" class="headerlink" title="命名规则："></a>命名规则：</h2><blockquote>
+<p>【注】所有用户自定义的名字都叫标识符，变量名也叫标识符</p>
+<p>*只能有数字、字母、下划线、$组成</p>
+<p>​    *变量名不能有数字开头</p>
+<p>​    *不能用关键字（如typeof）和保留字（系统已经征用的）</p>
+<p>​    *js区分大小写 a和A不是一个</p>
+<p>​    *见名思意</p>
+<p>​    *尽量别用拼音和缩写，使用英文全拼（驼峰式命名className/烤串式命名class_name）</p>
+</blockquote>
+<p>​    </p>
+<p>var num = 10；</p>
+<p>alert（num）；</p>
+<h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3><p>32 位操作系统</p>
+<p>64位操作系统</p>
+<p>位：地址总线 可最大寻址数</p>
+<h4 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h4><p>十进制转2进制：</p>
+<pre><code>要从右到左用二进制的每个数去乘以2的相应次方,小数点后则是从左往右
+</code></pre><p>num.toString(2);</p>
+<p>num.toString(8);</p>
+<p>num.toString(10);</p>
+<p>num.toString(16);</p>
+<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><p>算术运算符 + - * /</p>
+<p>关系运算符 &lt; &gt; &gt;= &lt;= == === !=</p>
+<p>逻辑运算符 &amp;&amp; || ！</p>
+<p>赋值运算符 -= += /= %=</p>
+<p>自增 、自减 ++ –</p>
+<h3 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h3><blockquote>
+<p>概念： 任何运算符和操作数（变量/常量）组成的式子都叫做表达式；</p>
+<p>1、表达式的值</p>
+<p>2、表达式的功能</p>
+</blockquote>
+<h2 id="算术表达式"><a href="#算术表达式" class="headerlink" title="算术表达式"></a>算术表达式</h2><p>算术运算符和操作符组成的式子</p>
+<p>1、如果两个数都是数字，进行数学运算</p>
+<p>2、不同类型数据进行运算，会进行自动类型数据转换</p>
+<h4 id="自动数据类型转换"><a href="#自动数据类型转换" class="headerlink" title="自动数据类型转换"></a>自动数据类型转换</h4><p>1、假设进行的运算是加法运算，并且一种有一个操作数是字符串，那么运算会变成字符串拼接</p>
+<p>如： ‘10’+123=”10123”;</p>
+<p>2、任何数据类型做除加法以外的运算，都会将别的类型转换为数字再进行运算。</p>
+<p>ps: </p>
+<p>1）当把一个带字母的字符串转化为数字时会转成NaN，而且NaN和任何数据进行运算都会变成NaN；</p>
+<p>2）如果操作数是纯数字的字符串进行运算会转换为数字再进行运算；</p>
+<p>3）true转换为数字是1，false是0；</p>
+<p>4）undefined转换为数字是NaN，null是0；</p>
+<p>3、</p>
+<p>var num = 10 / 0 = Infinity</p>
+<p>var num = -10 /0 = -Infinity</p>
+<p>ps 计算机不会进行小数运算</p>
+<h4 id="强制数据类型转换"><a href="#强制数据类型转换" class="headerlink" title="强制数据类型转换"></a>强制数据类型转换</h4><p>人为地进行数据转换</p>
+<h5 id="Number（）将别的数据类型转换为数字"><a href="#Number（）将别的数据类型转换为数字" class="headerlink" title="Number（）将别的数据类型转换为数字"></a>Number（）将别的数据类型转换为数字</h5><p>1）纯数字的字符会转换成数字</p>
+<p>2）如果带有非数字的字符会转成NaN</p>
+<p>3）true=&gt;1, false=&gt;0</p>
+<p>4)null=&gt;0,undefined=&gt;Nan</p>
+<h5 id="Boolean（）将别的数据类型转换为布尔值"><a href="#Boolean（）将别的数据类型转换为布尔值" class="headerlink" title="Boolean（）将别的数据类型转换为布尔值"></a>Boolean（）将别的数据类型转换为布尔值</h5><p>1)数字：非0即真</p>
+<p>2）有内容字符串=&gt;true,空字符串(“”)=&gt;true,非空即真</p>
+<p>3）null=&gt;false,undefined=&gt;false,NaN=&gt;false;</p>
+<h5 id="parseInt-取整：parseInt-20aa-20-parseInt-a20aa-NaN"><a href="#parseInt-取整：parseInt-20aa-20-parseInt-a20aa-NaN" class="headerlink" title="parseInt()      取整：parseInt(20aa)=20;parseInt(a20aa)=NaN;"></a>parseInt()      取整：parseInt(20aa)=20;parseInt(a20aa)=NaN;</h5><h5 id="parseFloat-取浮点数"><a href="#parseFloat-取浮点数" class="headerlink" title="parseFloat()   取浮点数"></a>parseFloat()   取浮点数</h5><h2 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h2><blockquote>
+<p>1、= 功能： 就是用来赋值，将等号右边的值赋给左边的变量</p>
+<p>2、复合赋值运算符： += , -= , /= , *= , %=</p>
+<p>3、一元运算符：++ –</p>
+<p>​    a++： 先取a的值作为a++的值，在对a进行加一</p>
+<p>​    ++a: 先对a进行加一，再取++a的值</p>
+</blockquote>
+<h2 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h2><p>&lt;  &gt; = &gt;= &lt;= == === !=</p>
+<p>关系运算符运算规则</p>
+<p>1、两个都是数字，对数字进行比较；</p>
+<p>2、其中一个是数字，另一个转化为数字进行比较</p>
+<p>3、当两个操作数是字符串的时候</p>
+<p>​    1）实际上是比较字符的ASCII码</p>
+<p>​    2）逐个进行比较： 如”asd”&lt;”bsdf”=true因为a的ASCII码大于b的。</p>
+<p>ps: true 转换成1进行比较，false转换成0进行比较</p>
+<p>NaN和任何数据（包括自己）==都为false ！=都为true</p>
+<p>4、全等（恒等）=== （1）值必须相等（2）数据类型也必须相等</p>
+<h5 id="特殊值"><a href="#特殊值" class="headerlink" title="特殊值"></a>特殊值</h5><p>undefined == 0 false</p>
+<p>null == 0 false</p>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>与/且     &amp;&amp;</p>
+<p>​    格式： 表达式1 &amp;&amp; 表达式2</p>
+<p>​    特点： 两个表达式都为真他才为真</p>
+<p>或        ||</p>
+<p>​    格式： 表达式1 ||　表达式２</p>
+<p>​    特点：　只有两个表达式都为加表达式才为假</p>
+<p>非　    ！</p>
+<p>​    格式：　！表达式</p>
+<p>​    特点：　！true = false</p>
+</h1></h1>
+					
+				</div>
+			</div>
+		</article>
+
+		<ul class="am-pagination">
+    
+    	<li class="am-pagination-prev">
+   		<a class="pull-left" href="/2018/10/17/js流程控制语句/" title="js流程控制语句">
+      		&laquo; 上一篇
+		</a>
+		</li>
+	
+	
+		<li class="am-pagination-next">
+		<a class="pull-right" href="/2018/10/13/The-Spectre（Alan-Walker）/" title="The Spectre（Alan Walker）">
+			下一篇 &raquo;
+		</a>
+		</li>
+	 
+ </ul>
+        
+
+		<div class="theme-annie-comment-button-container">
+	<button id="annie-comment-button" class="theme-annie-comment-button" onclick="Annie_Comment()">
+		加载评论
+		<!--加载评论-->
+	</button>
+</div>
+
+<div id="annie-comment-container" class="theme-annie-comment-main-container">
+
+	
+		
+			<!-- comment valine -->
+			<!-- show valine comment -->
+<div id="valineComment" class="comment"></div>
+
+<!-- valine`s js & css -->
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/js/valine.min.js"></script>
+<link rel="stylesheet" href="/css/comment.css">
+
+<script>
+	var checkExistComment = setInterval(function() {
+		if( $('#valineComment').length ) {
+			new Valine({
+				// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+				av: AV,
+				//使用id寻找div元素（使用class可能找不到）
+				el: '#valineComment',
+				emoticon_url: 'https://cloud.panjunwen.com/alu',
+				emoticon_list: ["吐.png", "期待.png", "高兴.png", "吐血倒地.png", "哭泣.png", "欢呼.png"],
+				app_id: "3333....", //获取APP ID
+				app_key: "3333......", //获取APP KEY
+				placeholder: "no any!", //评论框占位提示文字        			
+			});
+			clearInterval(checkExistComment);
+		}
+	}, 100);
+</script>
+		
+	
+
+</div>
+
+<script type="text/javascript">
+	/* Show Comment */
+	var Annie_Comment = function() {
+		function Show_Hidden(obj) {
+			obj.style.display = 'block';
+		}
+		
+		//var obutton = $('#annie-comment-button');
+		//var obutton = $('#annie-comment-container');
+		var obutton = document.getElementById("annie-comment-button" || "0");
+		var odiv = document.getElementById("annie-comment-container");
+		if( 'obutton' ) {
+			obutton.onclick = function() {
+				Show_Hidden(odiv);
+				$("#annie-comment-button").css("display", 'none');
+				return false;
+			}
+		}
+	};
+
+	(function Annie_Init() {
+		Annie_Comment();
+	})();
+</script>
+		
+		<!--
+	时间：2018-09-24
+	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
+-->
+
+	
+		<aside class="post-widget">
+			<nav class="post-toc-wrap" id="post-toc">
+				
+					<strong>文章目录</strong>
+				
+				
+				<!--toc(post.content)-->
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#js组成"><span class="post-toc-text">js组成</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JS语法规范"><span class="post-toc-text">JS语法规范</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#代码规范"><span class="post-toc-text">代码规范</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注释"><span class="post-toc-text">注释</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#js输出方式"><span class="post-toc-text">js输出方式</span></a></li></ol><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#undefined"><span class="post-toc-text">hello world“);console.log(“hello”);
+要想输出标签要用 &amp;lt； 和&amp;gt；
+document.write(“&lt;srcipt &gt;”);常量和变量常量（字面量）
+数据类型: 
+​    基本数据类型：
+​    number 数字 0, 10 ,3.14
+​    string  字符串 所带单引号和双引号的都叫字符串
+​    boolean 布尔值 true false
+​    特殊数据类型：
+​    null 空
+​    undefined 未声明
+​    NaN not a number 不是一个数字
+关键字（有特殊功能的单词）：typeof ；//输出当前数据的输出类型。
+
+变量
+值可以修改的叫做变量
+​    1、声明变量，适合内存申请一部分空间，存储数据
+​    2、变量的数据，是根据存储的数据决定的
+​    初始化：声明变量后接着赋值叫做初始化
+​    【注】如果声明变量的时候，没有赋值，默认是undefined。
+​    /*
+​        避免后续赋值的时候多出抹除undefined操作，先将值赋值为null。
+​    */
+​    
+
+命名规则：
+【注】所有用户自定义的名字都叫标识符，变量名也叫标识符
+*只能有数字、字母、下划线、$组成
+​    *变量名不能有数字开头
+​    *不能用关键字（如typeof）和保留字（系统已经征用的）
+​    *js区分大小写 a和A不是一个
+​    *见名思意
+​    *尽量别用拼音和缩写，使用英文全拼（驼峰式命名className/烤串式命名class_name）
+
+​    
+var num = 10；
+alert（num）；
+内存32 位操作系统
+64位操作系统
+位：地址总线 可最大寻址数
+进制转换十进制转2进制：
+要从右到左用二进制的每个数去乘以2的相应次方,小数点后则是从左往右
+num.toString(2);
+num.toString(8);
+num.toString(10);
+num.toString(16);
+运算符算术运算符 + - * /
+关系运算符 &lt; &gt; &gt;= &lt;= == === !=
+逻辑运算符 &amp;&amp; || ！
+赋值运算符 -= += /= %=
+自增 、自减 ++ –
+表达式
+概念： 任何运算符和操作数（变量/常量）组成的式子都叫做表达式；
+1、表达式的值
+2、表达式的功能
+
+算术表达式算术运算符和操作符组成的式子
+1、如果两个数都是数字，进行数学运算
+2、不同类型数据进行运算，会进行自动类型数据转换
+自动数据类型转换1、假设进行的运算是加法运算，并且一种有一个操作数是字符串，那么运算会变成字符串拼接
+如： ‘10’+123=”10123”;
+2、任何数据类型做除加法以外的运算，都会将别的类型转换为数字再进行运算。
+ps: 
+1）当把一个带字母的字符串转化为数字时会转成NaN，而且NaN和任何数据进行运算都会变成NaN；
+2）如果操作数是纯数字的字符串进行运算会转换为数字再进行运算；
+3）true转换为数字是1，false是0；
+4）undefined转换为数字是NaN，null是0；
+3、
+var num = 10 / 0 = Infinity
+var num = -10 /0 = -Infinity
+ps 计算机不会进行小数运算
+强制数据类型转换人为地进行数据转换
+Number（）将别的数据类型转换为数字1）纯数字的字符会转换成数字
+2）如果带有非数字的字符会转成NaN
+3）true=&gt;1, false=&gt;0
+4)null=&gt;0,undefined=&gt;Nan
+Boolean（）将别的数据类型转换为布尔值1)数字：非0即真
+2）有内容字符串=&gt;true,空字符串(“”)=&gt;true,非空即真
+3）null=&gt;false,undefined=&gt;false,NaN=&gt;false;
+parseInt()      取整：parseInt(20aa)=20;parseInt(a20aa)=NaN;parseFloat()   取浮点数赋值运算符
+1、= 功能： 就是用来赋值，将等号右边的值赋给左边的变量
+2、复合赋值运算符： += , -= , /= , *= , %=
+3、一元运算符：++ –
+​    a++： 先取a的值作为a++的值，在对a进行加一
+​    ++a: 先对a进行加一，再取++a的值
+
+关系运算符&lt;  &gt; = &gt;= &lt;= == === !=
+关系运算符运算规则
+1、两个都是数字，对数字进行比较；
+2、其中一个是数字，另一个转化为数字进行比较
+3、当两个操作数是字符串的时候
+​    1）实际上是比较字符的ASCII码
+​    2）逐个进行比较： 如”asd”&lt;”bsdf”=true因为a的ASCII码大于b的。
+ps: true 转换成1进行比较，false转换成0进行比较
+NaN和任何数据（包括自己）==都为false ！=都为true
+4、全等（恒等）=== （1）值必须相等（2）数据类型也必须相等
+特殊值undefined == 0 false
+null == 0 false
+逻辑运算符与/且     &amp;&amp;
+​    格式： 表达式1 &amp;&amp; 表达式2
+​    特点： 两个表达式都为真他才为真
+或        ||
+​    格式： 表达式1 ||　表达式２
+​    特点：　只有两个表达式都为加表达式才为假
+非　    ！
+​    格式：　！表达式
+​    特点：　！true = false
+</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#undefined"><span class="post-toc-text">“);console.log(“hello”);
+要想输出标签要用 &amp;lt； 和&amp;gt；
+document.write(“&lt;srcipt &gt;”);常量和变量常量（字面量）
+数据类型: 
+​    基本数据类型：
+​    number 数字 0, 10 ,3.14
+​    string  字符串 所带单引号和双引号的都叫字符串
+​    boolean 布尔值 true false
+​    特殊数据类型：
+​    null 空
+​    undefined 未声明
+​    NaN not a number 不是一个数字
+关键字（有特殊功能的单词）：typeof ；//输出当前数据的输出类型。
+
+变量
+值可以修改的叫做变量
+​    1、声明变量，适合内存申请一部分空间，存储数据
+​    2、变量的数据，是根据存储的数据决定的
+​    初始化：声明变量后接着赋值叫做初始化
+​    【注】如果声明变量的时候，没有赋值，默认是undefined。
+​    /*
+​        避免后续赋值的时候多出抹除undefined操作，先将值赋值为null。
+​    */
+​    
+
+命名规则：
+【注】所有用户自定义的名字都叫标识符，变量名也叫标识符
+*只能有数字、字母、下划线、$组成
+​    *变量名不能有数字开头
+​    *不能用关键字（如typeof）和保留字（系统已经征用的）
+​    *js区分大小写 a和A不是一个
+​    *见名思意
+​    *尽量别用拼音和缩写，使用英文全拼（驼峰式命名className/烤串式命名class_name）
+
+​    
+var num = 10；
+alert（num）；
+内存32 位操作系统
+64位操作系统
+位：地址总线 可最大寻址数
+进制转换十进制转2进制：
+要从右到左用二进制的每个数去乘以2的相应次方,小数点后则是从左往右
+num.toString(2);
+num.toString(8);
+num.toString(10);
+num.toString(16);
+运算符算术运算符 + - * /
+关系运算符 &lt; &gt; &gt;= &lt;= == === !=
+逻辑运算符 &amp;&amp; || ！
+赋值运算符 -= += /= %=
+自增 、自减 ++ –
+表达式
+概念： 任何运算符和操作数（变量/常量）组成的式子都叫做表达式；
+1、表达式的值
+2、表达式的功能
+
+算术表达式算术运算符和操作符组成的式子
+1、如果两个数都是数字，进行数学运算
+2、不同类型数据进行运算，会进行自动类型数据转换
+自动数据类型转换1、假设进行的运算是加法运算，并且一种有一个操作数是字符串，那么运算会变成字符串拼接
+如： ‘10’+123=”10123”;
+2、任何数据类型做除加法以外的运算，都会将别的类型转换为数字再进行运算。
+ps: 
+1）当把一个带字母的字符串转化为数字时会转成NaN，而且NaN和任何数据进行运算都会变成NaN；
+2）如果操作数是纯数字的字符串进行运算会转换为数字再进行运算；
+3）true转换为数字是1，false是0；
+4）undefined转换为数字是NaN，null是0；
+3、
+var num = 10 / 0 = Infinity
+var num = -10 /0 = -Infinity
+ps 计算机不会进行小数运算
+强制数据类型转换人为地进行数据转换
+Number（）将别的数据类型转换为数字1）纯数字的字符会转换成数字
+2）如果带有非数字的字符会转成NaN
+3）true=&gt;1, false=&gt;0
+4)null=&gt;0,undefined=&gt;Nan
+Boolean（）将别的数据类型转换为布尔值1)数字：非0即真
+2）有内容字符串=&gt;true,空字符串(“”)=&gt;true,非空即真
+3）null=&gt;false,undefined=&gt;false,NaN=&gt;false;
+parseInt()      取整：parseInt(20aa)=20;parseInt(a20aa)=NaN;parseFloat()   取浮点数赋值运算符
+1、= 功能： 就是用来赋值，将等号右边的值赋给左边的变量
+2、复合赋值运算符： += , -= , /= , *= , %=
+3、一元运算符：++ –
+​    a++： 先取a的值作为a++的值，在对a进行加一
+​    ++a: 先对a进行加一，再取++a的值
+
+关系运算符&lt;  &gt; = &gt;= &lt;= == === !=
+关系运算符运算规则
+1、两个都是数字，对数字进行比较；
+2、其中一个是数字，另一个转化为数字进行比较
+3、当两个操作数是字符串的时候
+​    1）实际上是比较字符的ASCII码
+​    2）逐个进行比较： 如”asd”&lt;”bsdf”=true因为a的ASCII码大于b的。
+ps: true 转换成1进行比较，false转换成0进行比较
+NaN和任何数据（包括自己）==都为false ！=都为true
+4、全等（恒等）=== （1）值必须相等（2）数据类型也必须相等
+特殊值undefined == 0 false
+null == 0 false
+逻辑运算符与/且     &amp;&amp;
+​    格式： 表达式1 &amp;&amp; 表达式2
+​    特点： 两个表达式都为真他才为真
+或        ||
+​    格式： 表达式1 ||　表达式２
+​    特点：　只有两个表达式都为加表达式才为假
+非　    ！
+​    格式：　！表达式
+​    特点：　！true = false
+</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#document-write-“-lt-srcipt-gt-”"><span class="post-toc-text">document.write(“&lt;srcipt &gt;”);</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常量和变量"><span class="post-toc-text">常量和变量</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#常量（字面量）"><span class="post-toc-text">常量（字面量）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#变量"><span class="post-toc-text">变量</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#命名规则："><span class="post-toc-text">命名规则：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内存"><span class="post-toc-text">内存</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#进制转换"><span class="post-toc-text">进制转换</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#运算符"><span class="post-toc-text">运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#表达式"><span class="post-toc-text">表达式</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#算术表达式"><span class="post-toc-text">算术表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#自动数据类型转换"><span class="post-toc-text">自动数据类型转换</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#强制数据类型转换"><span class="post-toc-text">强制数据类型转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Number（）将别的数据类型转换为数字"><span class="post-toc-text">Number（）将别的数据类型转换为数字</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Boolean（）将别的数据类型转换为布尔值"><span class="post-toc-text">Boolean（）将别的数据类型转换为布尔值</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#parseInt-取整：parseInt-20aa-20-parseInt-a20aa-NaN"><span class="post-toc-text">parseInt()      取整：parseInt(20aa)=20;parseInt(a20aa)=NaN;</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#parseFloat-取浮点数"><span class="post-toc-text">parseFloat()   取浮点数</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#赋值运算符"><span class="post-toc-text">赋值运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关系运算符"><span class="post-toc-text">关系运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#特殊值"><span class="post-toc-text">特殊值</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#逻辑运算符"><span class="post-toc-text">逻辑运算符</span></a></li>
+			</nav>
+			<div class="post-toc-bar"><div>
+		</div></div></aside>
+	
+
+	</div>
+</div>
+		</div>
+		</main>
+		
+		<!--footer-->
+		<footer>
+	<div class="blog-text-center">
+		<div class="theme-annie-social">
+				
+				
+					<a href="http://github.com/" title="Github" target="_blank"><i class="fa fa-github"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="Weibo" target="_blank"><i class="fa fa-weibo"></i>&nbsp;</a>
+				
+				
+					<a href="http://github.com/" title="Email" target="_blank"><i class="fa fa-envelope-o"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="QQ" target="_blank"><i class="fa fa-qq"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="Twitter" target="_blank"><i class="fa fa-twitter"></i>&nbsp;</a>
+						
+				
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			
+				&copy; 2017 - 2018, content by luozy. All Rights Reserved.			       	
+			
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.		
+		</div>
+	</div>
+</footer>
+		<!-- <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script> -->
+
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+
+<style>
+	.motto {
+		color: #000000;
+		font-size: 20px;
+		margin: 100px 25% 0;
+		width: 50%;
+		line-height: 1.4;
+		font-family:"KaiTi", "STXingkai", "Source Sans Pro", "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+		text-align: center;
+	}
+	@media(max-width: 890px) {
+		.motto {	
+			margin: 100px 10% 0;
+			width: 80%;
+		}
+	}
+	@media(max-width: 890px) {
+		.motto {
+			margin: 100px 5% 0;
+			width: 90%;
+		}
+	}
+</style>
+
+
+	<script src="/js/motto.js"></script>
+	<script type="text/javascript">
+		$(".motto").html(getMingYanContent());
+	</script>	
+
+
+
+
+
+
+
+	<script type="text/javascript" src="/js/toc.js"></script>
+
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript">
+	//generate a random img that pre_name 'from 0 to 110'
+	var random_bg = Math.floor(Math.random() * 109 + 1);
+
+	//var bg = 'url(/img/random/' + random_bg + '.jpg)';		
+	var bg = 'url(https://XXX-youname-XXX.github.io/Random-img/' + random_bg + '.jpg)';
+
+	$("#header-bg-2").css("background-image", bg);
+</script>
+		
+		<!--back to top-->
+        <style type="text/css">
+	#totop {
+		background: white;
+		border-radius: 50%;
+		position: fixed;
+		right: 5.4%;
+		bottom: 80px;
+		cursor: pointer;
+	}
+	
+	#totop a {
+		color: #474747;
+		background-color: transparent;
+		padding: 10px;
+		text-decoration: none;
+	}
+	
+	@media(max-width:512px) {
+		#totop {
+			display: none;
+			visibility: hidden;
+		}
+	}
+</style>
+
+
+	<div id="totop">
+  		<a href="javascript:;" class="fa fa-arrow-up"></a>
+	</div>
+
+	</body>
+	</html>
+

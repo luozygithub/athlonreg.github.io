@@ -1,0 +1,589 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+
+
+	<!DOCTYPE html>
+	<html>
+		
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<title>DOM</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="luozy">
+    <meta name="keywords" content="">
+    <meta name="description" content="Inflexible thinking, bad humor">
+   	<!-- css -->
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- favicon -->
+	<link href="/img/favicon.ico" rel="Shortcut Icon" type="image/ico">
+	
+	<!-- font-awesome -->
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+	<body>	
+		<!--Preloader-->
+<div id="preloader">
+	<div id="status">
+		<img alt="PRELOADER" src="/img/logo.png">
+	</div>
+</div>
+<!--Preloader end-->
+
+<!-- header -->
+
+	<header id="header-bg-2">
+
+	
+		<div id="cd-logo"><a href="/"><img src="/img/logo.png" alt="Logo"></a></div>
+	
+	
+	<!-- motto or description -->
+		
+ 		<p class="motto">���������������������̰���������ܼ�������̰����</p>
+	
+	
+	<!-- current page name or title -->
+	
+		
+		
+			
+			<p class="page-name">当前文章&nbsp;:&nbsp;《DOM》</p>
+			
+		
+	
+	
+	<!-- others: such as change-bg, time... -->
+	<p class="page-name-other">
+		11/7/2018 
+		<style type="text/css">
+	header:after {
+		content: '';
+		position: relative;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: #222222;
+		opacity: .5;
+		z-index: -1;
+	}
+	
+	.change-header-bg{
+		font-style: normal;
+	}
+	.change-header-bg i{
+		text-align: center;
+		cursor: pointer;
+		pointer-events: bounding-box;
+	}
+	@media(max-width:512px) {
+		.change-header-bg {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	
+</style>
+
+<script type="text/javascript">
+	function changeHeaderBg(){
+		var random_bg = Math.floor(Math.random() * 109 + 1);
+		var bg = 'url(https://XXX-youname-XXX.github.io/Random-img/' + random_bg + '.jpg)';
+		$("#header-bg-2").css("background-image", bg);
+	}
+</script>
+
+<span class="change-header-bg">
+	——&nbsp;<i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>	
+</span>
+	</p>		
+</header>
+
+<!-- nav -->
+<div id="cd-nav">
+	<a href="#0" title="menu" class="cd-nav-trigger"><span></span></a>
+
+	<nav id="cd-main-nav">
+		<ul>
+			
+      		<li class="fa fa-/">
+           		<a href="/" title="主页">主页</a>	
+      		</li>
+    		
+      		<li class="fa fa-/archives">
+           		<a href="/archives" title="归档">归档</a>	
+      		</li>
+    		
+      		<li class="fa fa-/categories">
+           		<a href="/categories" title="分类">分类</a>	
+      		</li>
+    		
+      		<li class="fa fa-/tags">
+           		<a href="/tags" title="标签">标签</a>	
+      		</li>
+    		
+      		<li class="fa fa-/about">
+           		<a href="/about" title="关于">关于</a>	
+      		</li>
+    		
+      		<li class="fa fa-/gallery">
+           		<a href="/gallery" title="相册">相册</a>	
+      		</li>
+    		
+    		
+        	
+		</ul>
+	</nav>
+</div>
+
+		<!--main-->
+		<main> 
+		<div class="page-container">
+		<!-- content srart -->
+<div class="am-g am-g-fixed blog-fixed blog-content">
+	<div class="am-u-md-8 am-u-sm-12">
+
+		<article class="am-article blog-article-p">
+
+			<div class="am-article-hd">
+				
+
+
+				<h1 class="am-article-title blog-text-center">
+					
+					
+	
+		<a href="/2018/10/26/DOM/" itemprop="url">		
+			DOM		
+		</a>
+	
+
+				</h1>
+
+				<p class="am-article-meta blog-text-center">
+					<span>
+						<i class="fa fa-clock-o"></i> 
+						<a href="/2018/10/26/DOM/" itemprop="url">
+	<time datetime="2018-10-26T06:28:51.000Z" itemprop="datePublished">
+  		2018-10-26
+  </time>
+</a>    
+&nbsp;
+					</span>
+					
+					<span>						
+						
+							<i class="fa fa-tags"></i>
+							
+								<a href="#js" title="js" rel="12">js</a>&nbsp;
+													 											
+						
+					</span>
+				</p>
+			</div>
+
+			<div class="am-article-bd">
+				<div class="content" id="post-content">
+					
+						<p>[TOC]</p>
+<h1 id="文档对象模型DOM（document-Object-Model）"><a href="#文档对象模型DOM（document-Object-Model）" class="headerlink" title="文档对象模型DOM（document Object Model）"></a>文档对象模型DOM（document Object Model）</h1><blockquote>
+<p>DOM 中的三个字母，D（文档）可以理解为整个 Web 加载的网页文档；O（对象）可 以理解为类似 window 对象之类的东西，可以调用属性和方法，这里我们说的是 document 对象；M（模型）可以理解为网页文档的树型结构。</p>
+</blockquote>
+<p>所谓DOM就是以家族的形式描述HTML       节点有 父子 兄弟 </p>
+<p>注：在JavaScript里真的这么叫！！！只不过加上了节点两个字称作父子节点，兄弟节点。<img src="C:\Users\罗中运\AppData\Local\Temp\chrome_drag17544_7625\Image.png" alt="Image"></p>
+<h4 id="加载-HTML-页面时，Web-浏览器生成一个树型结构，用来表示页面内部结构。DOM-将-这种树型结构称为节点组成的节点树。"><a href="#加载-HTML-页面时，Web-浏览器生成一个树型结构，用来表示页面内部结构。DOM-将-这种树型结构称为节点组成的节点树。" class="headerlink" title="加载 HTML 页面时，Web 浏览器生成一个树型结构，用来表示页面内部结构。DOM 将 这种树型结构称为节点组成的节点树。"></a>加载 HTML 页面时，Web 浏览器生成一个树型结构，用来表示页面内部结构。DOM 将 这种树型结构称为节点组成的节点树。</h4><h2 id="DOM中所有节点的种类"><a href="#DOM中所有节点的种类" class="headerlink" title="DOM中所有节点的种类"></a>DOM中所有节点的种类</h2><p>元素节点  <div></div></p>
+<p>属性节点 id =‘div1’</p>
+<p>文本节点 div文本</p>
+<p><img src="C:\Users\罗中运\AppData\Local\Temp\chrome_drag17544_26641\Image.png" alt="Image">  W3C 提供了比较方便简单的定位节点的方法和属性，以便我们快速的对节点进行操作。 分别为：getElementById()、getElementsByTagName()、getElementsByName()、getElementsClassName()、getAttribute()、 setAttribute()和 removeAttribute()。<img src="C:\Users\罗中运\AppData\Local\Temp\chrome_drag17544_20962\Image.png" alt="Image"></p>
+<h3 id="获取元素节点"><a href="#获取元素节点" class="headerlink" title="获取元素节点"></a>获取元素节点</h3><blockquote>
+<p>W3C 提供了比较方便简单的定位节点的方法和属性，以便我们快速的对节点进行操作。 分别为：getElementById()、getElementsByTagName()、getElementsByName()、getElementsClassName()、getAttribute()、 setAttribute()和 removeAttribute()。</p>
+</blockquote>
+<p>ps:代码由上而下执行，script在头部的时候，先执行script的内容，在执行body里面的。</p>
+<p>所以要用到 window.onload</p>
+<h4 id="window-onload-function"><a href="#window-onload-function" class="headerlink" title="window.onload = function(){"></a>window.onload = function(){</h4><h4 id=""><a href="#" class="headerlink" title="}"></a>}</h4><p><strong>方法在页面加载完毕后才会执行。</strong></p>
+<p>这样就可以先加载完body，再执行script里面的内容。</p>
+<h4 id="1、document-getElementById（）通过id获取元素节点"><a href="#1、document-getElementById（）通过id获取元素节点" class="headerlink" title="1、document.getElementById（）通过id获取元素节点"></a>1、document.getElementById（）通过id获取元素节点</h4><h4 id="2、node-getElementsByTagName-获取相同元素的节点列表"><a href="#2、node-getElementsByTagName-获取相同元素的节点列表" class="headerlink" title="2、node.getElementsByTagName()    获取相同元素的节点列表"></a>2、node.getElementsByTagName()    获取相同元素的节点列表</h4><p>​    参数：小写的标签名</p>
+<p>​    返回值：获取所有符合条件的元素节点，使用起来和数组差不多</p>
+<p>​    </p>
+<p>​    可以指定在哪个节点开始找元素</p>
+<p>​    var op = ducument.getElementById(“h1”);</p>
+<p>​    var nodes = op.getElementsByTagName(“div”);</p>
+<p>​    //作用： 获取到h1下的所有div</p>
+<h4 id="3、document-getElementsByName-获取相同元素名称（name）的节点列表"><a href="#3、document-getElementsByName-获取相同元素名称（name）的节点列表" class="headerlink" title="3、document.getElementsByName()获取相同元素名称（name）的节点列表"></a>3、document.getElementsByName()获取相同元素名称（name）的节点列表</h4><h4 id="4、node-getElementsByClassName-获取相同ClassName的节点-IE8以上才兼容"><a href="#4、node-getElementsByClassName-获取相同ClassName的节点-IE8以上才兼容" class="headerlink" title="4、node.getElementsByClassName() 获取相同ClassName的节点(IE8以上才兼容)"></a>4、node.getElementsByClassName() 获取相同ClassName的节点(IE8以上才兼容)</h4><p>​    也可以指定在哪个节点开始找元素</p>
+<p>​    封装getElementsByClassName():</p>
+<p>​    function elementByClassName(node, className){</p>
+<p>​        var nodes =    node.getElementsByTagName(“*”);</p>
+<p>​        var arr = [];        </p>
+<p>​        for(var i = 0; i &lt; nodes.length; i++){</p>
+<p>​            if(nodes[i].className == className){</p>
+<p>​                arr.push(nodes[i]);</p>
+<p>​            }</p>
+<p>​        }</p>
+<p>​        return arr;</p>
+<p>​    }</p>
+<h4 id="5、getAttribute-获取特定元素节点属性的值"><a href="#5、getAttribute-获取特定元素节点属性的值" class="headerlink" title="5、getAttribute()获取特定元素节点属性的值"></a>5、getAttribute()获取特定元素节点属性的值</h4><h4 id="6、setAttribute-设置特点元素特点属性的值"><a href="#6、setAttribute-设置特点元素特点属性的值" class="headerlink" title="6、setAttribute()设置特点元素特点属性的值"></a>6、setAttribute()设置特点元素特点属性的值</h4><h4 id="7、removeAttribute-移除特定元素节点属性"><a href="#7、removeAttribute-移除特定元素节点属性" class="headerlink" title="7、removeAttribute()移除特定元素节点属性"></a>7、removeAttribute()移除特定元素节点属性</h4><h4 id="document-querySelector-IE8以下不兼容"><a href="#document-querySelector-IE8以下不兼容" class="headerlink" title="document.querySelector() //IE8以下不兼容"></a>document.querySelector() //IE8以下不兼容</h4><p>返回值：只返回符合条件的第一个节点。</p>
+<h4 id="document-querySelectorAll"><a href="#document-querySelectorAll" class="headerlink" title="document.querySelectorAll()"></a>document.querySelectorAll()</h4><p>必须是document开头，返回一个数组</p>
+<p>参数:都是css选择器的格式去写的字符串。</p>
+<p>如：</p>
+<p>​    var node = document.querySelector(“.box”);//获取class等于box的第一个节点</p>
+<p>​    var node = document.querySelector(“ol .box”);//ol下class==box的第一个节点</p>
+<p>​    var nodes = document.querySelector(“className”)；//返回的是数组，即使是获取id</p>
+<h3 id="获取属性"><a href="#获取属性" class="headerlink" title="获取属性"></a>获取属性</h3><p>只要是元素节点，都有以下两个属性</p>
+<p>​    tagName    输出当前元素节点的标签类型</p>
+<p>​    innerHTML（双标签）    获取标签建内容（元素节点也是text格式显示）</p>
+<p>​    设置的时候标签会以样式输出</p>
+<h4 id="通过属性名访问属性的值"><a href="#通过属性名访问属性的值" class="headerlink" title="通过属性名访问属性的值"></a>通过属性名访问属性的值</h4><p>​    .id，.title，.className，.width ，.style.width,.style.backgroundColor  …</p>
+<p>​    ps: 样式里面的-换成首字母大写，即烤串式写法换为驼峰式写法</p>
+<p>​    获取样式只能获取行间样式</p>
+<h5 id="获取style标签内样式-：-跨浏览器获取当前有效样式的方法"><a href="#获取style标签内样式-：-跨浏览器获取当前有效样式的方法" class="headerlink" title="获取style标签内样式 ：//    跨浏览器获取当前有效样式的方法"></a>获取style标签内样式 ：//    跨浏览器获取当前有效样式的方法</h5><p>Div.currentStyle[‘height’];//IE</p>
+<p>getCompitedStyle(oDiv)[‘height’];//谷歌火狐等</p>
+<p>自定义兼容写法</p>
+<p>​    function getStyle(node , styleStr){</p>
+<p>​            return node.currentStyle ? node.currentStyle[styleStr] : getComputedStyle(node)[styleStr];</p>
+<p>​     }</p>
+<h4 id="通过getAttribute属性获取"><a href="#通过getAttribute属性获取" class="headerlink" title="通过getAttribute属性获取"></a>通过getAttribute属性获取</h4><p>ele.getAttribute();</p>
+<p>ele.setAttribute();</p>
+<p>removeAttribute();</p>
+<h3 id="属性设置和方法设置区别"><a href="#属性设置和方法设置区别" class="headerlink" title="属性设置和方法设置区别"></a>属性设置和方法设置区别</h3><p>​            //1、区别<br>​            // alert(oDiv.className);<br>​            // alert(oDiv.getAttribute(“class”));</p>
+<p>​            // oDiv.className = ‘xxx’;<br>​            // oDiv.setAttribute(“class”, “xxx”);</p>
+<p>​            //2、自定义属性<br>​            // alert(oDiv.xxx);<br>​            // alert(oDiv.getAttribute(“xxx”));</p>
+<p>​            //设置自定义属性<br>​            /<em>oDiv.zzz = ‘mmm’;<br>​            alert(oDiv.zzz);</em>/</p>
+<p>​            //如果你想添加一个属性，并且将这个属性显示在行间<br>​            // oDiv.setAttribute(‘zzz’, ‘mmm’);</p>
+<p>​            /<em><br>​                removeAttribute();<br>​            </em>/</p>
+<p>​            // oDiv.className = “”;<br>​            oDiv.removeAttribute(“class”);</p>
+<h3 id="子节点"><a href="#子节点" class="headerlink" title="子节点"></a>子节点</h3><p>childNodes</p>
+<p>DOM节点</p>
+<p><strong>1、元素节点</strong></p>
+<p><strong>2、属性节点</strong></p>
+<p><strong>3、文本节点</strong></p>
+<p>上述文本通用属性</p>
+<p>​        nodeName    nodeType    nodevalue</p>
+<p>元素    标签名        1            </p>
+<p>属性    属性名        2            属性值</p>
+<p>文本    #text        3            文本内容</p>
+<p>【注】文本节点只能通过标签（元素节点）的子节点获取；</p>
+<p>【注】 空格回车也会当做文本节点；！！！会导致节点变多</p>
+<p>firstChild    子节点中的第一个节点</p>
+<p>lastChild        子节点中的最后一个节点</p>
+<p><strong>children获取元素节点</strong></p>
+<p>firstElementChild</p>
+<p>lastElementChild</p>
+<p>nextElementSibling()获取兄弟节点的下一个节点</p>
+<p>.innerHTML与.outerHTML</p>
+<p>区别：一个是内部内容不包含自身标签，outer包含本标签</p>
+<h4 id="attribute属性节点"><a href="#attribute属性节点" class="headerlink" title="attribute属性节点"></a>attribute属性节点</h4><p>attributes是一个集合</p>
+<p>集合：特点  1、无序，2、不重复</p>
+<p>不可以通过序列下标获取，可以通过具体索引获取</p>
+<p>box.attributes                //NamedNodeMap</p>
+<p>box.attributes.length;        //返回属性节点个数</p>
+<p>box.attributes[0];            //Attr，返回最后一个属性节点</p>
+<p>box.attributes[0].nodeType;   //2，节点类型</p>
+<p>box.attributes[0].nodeValue;  //属性值</p>
+<p>box.attributes[‘id’];         //Attr，返回属性为 id 的节点</p>
+<p>box.attributes.getNamedItem(‘id’); //Attr</p>
+<h3 id="去空白节点"><a href="#去空白节点" class="headerlink" title="去空白节点"></a>去空白节点</h3><p>//返回一个新数组</p>
+<p>function removeSpaceNodes(nodes){</p>
+<p>​    var arr = [];</p>
+<p>​    for(var i = 0; i &lt; nodes.length; i++){</p>
+<p>​        if(node[i].nodeType == 3 &amp;&amp; （/^\s+$/).test(nodes[i])){</p>
+<p>​            continue;</p>
+<p>​            arr.push(nodes[i]);</p>
+<p>​        }</p>
+<p>​    }</p>
+<p>​    return arr;</p>
+<p>}</p>
+<p>PS：上面的方法，采用的忽略空白文件节点的方法，把得到元素节点累加到数组里返 回。那么还有一种做法是，直接删除空位文件节点即可</p>
+<p>//修改原数组</p>
+<p>function filterSpaceNode(nodes){</p>
+<p>​    for(vari=0;i&lt;nodes.length;i++) {</p>
+<p>​          if(nodes[i].nodeType== 3&amp;&amp;/^\s+$/.test(nodes[i].nodeValue)){</p>
+<p>​          //得到空白节点之后，移到父节点上，删除子节点           </p>
+<p>​            nodes[i].parentNode.removeChild(nodes[i]);</p>
+<p>​         }</p>
+<p>​    }</p>
+<p>​    return nodes;</p>
+<p>}</p>
+<h2 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作**"></a>节点操作**</h2><p><strong>document.write();</strong></p>
+<p>会覆盖页面上原有的内容；所以一般不会用在节点操作上</p>
+<p><strong>document.createElement(标签名);</strong></p>
+<p>功能：生成一个标签</p>
+<p>返回值：新创建的这个元素节点</p>
+<p><strong>node1.appendChild(node2);</strong></p>
+<p>功能：将node2插入到node1的子节点末尾。</p>
+<p><strong>document.createTextNode()</strong>；</p>
+<p>功能：创建文本节点</p>
+<p>node.appendChild(tNode);</p>
+<p>相同功能：node.innerHTML</p>
+<p><strong>.insertBefore</strong>()</p>
+<p>格式： node1.parentNode.insertBefore(node2,nide1)</p>
+<p>功能：将node2插入到node1之前</p>
+<p><strong>replaceChild()</strong></p>
+<p>格式：node1.parentNode.replace(node2, node1)</p>
+<p>功能：用node2将node1替换掉</p>
+<p><strong>cloneNode()</strong></p>
+<p>格式：node.cloneNode();</p>
+<p>参数：true：即克隆标签也克隆文本 ，默认false</p>
+<p><strong>removeChild()</strong></p>
+<p>格式：node.parentNode.removeChild();</p>
+<h2 id="事件驱动方法-两种写法"><a href="#事件驱动方法-两种写法" class="headerlink" title="事件驱动方法 两种写法"></a>事件驱动方法 两种写法</h2><p>行间</p>
+<p>onclick = “func();”</p>
+<p>写在script里面</p>
+<p>先通过id获取元素</p>
+<p>ele.onclick = function(){</p>
+<p>}</p>
+<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p>每一个函数，系统都会提供一个内置的变量，这个变量就是this.this存储的都是当前函数</p>
+
+					
+				</div>
+			</div>
+		</article>
+
+		<ul class="am-pagination">
+    
+    	<li class="am-pagination-prev">
+   		<a class="pull-left" href="/2018/10/26/Brower对象/" title="Brower对象">
+      		&laquo; 上一篇
+		</a>
+		</li>
+	
+	
+		<li class="am-pagination-next">
+		<a class="pull-right" href="/2018/10/26/BOM/" title="BOM">
+			下一篇 &raquo;
+		</a>
+		</li>
+	 
+ </ul>
+        
+
+		<div class="theme-annie-comment-button-container">
+	<button id="annie-comment-button" class="theme-annie-comment-button" onclick="Annie_Comment()">
+		加载评论
+		<!--加载评论-->
+	</button>
+</div>
+
+<div id="annie-comment-container" class="theme-annie-comment-main-container">
+
+	
+		
+			<!-- comment valine -->
+			<!-- show valine comment -->
+<div id="valineComment" class="comment"></div>
+
+<!-- valine`s js & css -->
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/js/valine.min.js"></script>
+<link rel="stylesheet" href="/css/comment.css">
+
+<script>
+	var checkExistComment = setInterval(function() {
+		if( $('#valineComment').length ) {
+			new Valine({
+				// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+				av: AV,
+				//使用id寻找div元素（使用class可能找不到）
+				el: '#valineComment',
+				emoticon_url: 'https://cloud.panjunwen.com/alu',
+				emoticon_list: ["吐.png", "期待.png", "高兴.png", "吐血倒地.png", "哭泣.png", "欢呼.png"],
+				app_id: "3333....", //获取APP ID
+				app_key: "3333......", //获取APP KEY
+				placeholder: "no any!", //评论框占位提示文字        			
+			});
+			clearInterval(checkExistComment);
+		}
+	}, 100);
+</script>
+		
+	
+
+</div>
+
+<script type="text/javascript">
+	/* Show Comment */
+	var Annie_Comment = function() {
+		function Show_Hidden(obj) {
+			obj.style.display = 'block';
+		}
+		
+		//var obutton = $('#annie-comment-button');
+		//var obutton = $('#annie-comment-container');
+		var obutton = document.getElementById("annie-comment-button" || "0");
+		var odiv = document.getElementById("annie-comment-container");
+		if( 'obutton' ) {
+			obutton.onclick = function() {
+				Show_Hidden(odiv);
+				$("#annie-comment-button").css("display", 'none');
+				return false;
+			}
+		}
+	};
+
+	(function Annie_Init() {
+		Annie_Comment();
+	})();
+</script>
+		
+		<!--
+	时间：2018-09-24
+	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
+-->
+
+	
+		<aside class="post-widget">
+			<nav class="post-toc-wrap" id="post-toc">
+				
+					<strong>文章目录</strong>
+				
+				
+				<!--toc(post.content)-->
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#文档对象模型DOM（document-Object-Model）"><span class="post-toc-text">文档对象模型DOM（document Object Model）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#加载-HTML-页面时，Web-浏览器生成一个树型结构，用来表示页面内部结构。DOM-将-这种树型结构称为节点组成的节点树。"><span class="post-toc-text">加载 HTML 页面时，Web 浏览器生成一个树型结构，用来表示页面内部结构。DOM 将 这种树型结构称为节点组成的节点树。</span></a></li></ol></li></ol><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM中所有节点的种类"><span class="post-toc-text">DOM中所有节点的种类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取元素节点"><span class="post-toc-text">获取元素节点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#window-onload-function"><span class="post-toc-text">window.onload = function(){</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#"><span class="post-toc-text">}</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、document-getElementById（）通过id获取元素节点"><span class="post-toc-text">1、document.getElementById（）通过id获取元素节点</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、node-getElementsByTagName-获取相同元素的节点列表"><span class="post-toc-text">2、node.getElementsByTagName()    获取相同元素的节点列表</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3、document-getElementsByName-获取相同元素名称（name）的节点列表"><span class="post-toc-text">3、document.getElementsByName()获取相同元素名称（name）的节点列表</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4、node-getElementsByClassName-获取相同ClassName的节点-IE8以上才兼容"><span class="post-toc-text">4、node.getElementsByClassName() 获取相同ClassName的节点(IE8以上才兼容)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5、getAttribute-获取特定元素节点属性的值"><span class="post-toc-text">5、getAttribute()获取特定元素节点属性的值</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#6、setAttribute-设置特点元素特点属性的值"><span class="post-toc-text">6、setAttribute()设置特点元素特点属性的值</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7、removeAttribute-移除特定元素节点属性"><span class="post-toc-text">7、removeAttribute()移除特定元素节点属性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#document-querySelector-IE8以下不兼容"><span class="post-toc-text">document.querySelector() //IE8以下不兼容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#document-querySelectorAll"><span class="post-toc-text">document.querySelectorAll()</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取属性"><span class="post-toc-text">获取属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#通过属性名访问属性的值"><span class="post-toc-text">通过属性名访问属性的值</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#获取style标签内样式-：-跨浏览器获取当前有效样式的方法"><span class="post-toc-text">获取style标签内样式 ：//    跨浏览器获取当前有效样式的方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#通过getAttribute属性获取"><span class="post-toc-text">通过getAttribute属性获取</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性设置和方法设置区别"><span class="post-toc-text">属性设置和方法设置区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#子节点"><span class="post-toc-text">子节点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#attribute属性节点"><span class="post-toc-text">attribute属性节点</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#去空白节点"><span class="post-toc-text">去空白节点</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#节点操作"><span class="post-toc-text">节点操作**</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#事件驱动方法-两种写法"><span class="post-toc-text">事件驱动方法 两种写法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#this"><span class="post-toc-text">this</span></a></li></ol></li>
+			</nav>
+			<div class="post-toc-bar"><div>
+		</div></div></aside>
+	
+
+	</div>
+</div>
+		</div>
+		</main>
+		
+		<!--footer-->
+		<footer>
+	<div class="blog-text-center">
+		<div class="theme-annie-social">
+				
+				
+					<a href="http://github.com/" title="Github" target="_blank"><i class="fa fa-github"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="Weibo" target="_blank"><i class="fa fa-weibo"></i>&nbsp;</a>
+				
+				
+					<a href="http://github.com/" title="Email" target="_blank"><i class="fa fa-envelope-o"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="QQ" target="_blank"><i class="fa fa-qq"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="Twitter" target="_blank"><i class="fa fa-twitter"></i>&nbsp;</a>
+						
+				
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			
+				&copy; 2017 - 2018, content by luozy. All Rights Reserved.			       	
+			
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.		
+		</div>
+	</div>
+</footer>
+		<!-- <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script> -->
+
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+
+<style>
+	.motto {
+		color: #000000;
+		font-size: 20px;
+		margin: 100px 25% 0;
+		width: 50%;
+		line-height: 1.4;
+		font-family:"KaiTi", "STXingkai", "Source Sans Pro", "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+		text-align: center;
+	}
+	@media(max-width: 890px) {
+		.motto {	
+			margin: 100px 10% 0;
+			width: 80%;
+		}
+	}
+	@media(max-width: 890px) {
+		.motto {
+			margin: 100px 5% 0;
+			width: 90%;
+		}
+	}
+</style>
+
+
+	<script src="/js/motto.js"></script>
+	<script type="text/javascript">
+		$(".motto").html(getMingYanContent());
+	</script>	
+
+
+
+
+
+
+
+	<script type="text/javascript" src="/js/toc.js"></script>
+
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript">
+	//generate a random img that pre_name 'from 0 to 110'
+	var random_bg = Math.floor(Math.random() * 109 + 1);
+
+	//var bg = 'url(/img/random/' + random_bg + '.jpg)';		
+	var bg = 'url(https://XXX-youname-XXX.github.io/Random-img/' + random_bg + '.jpg)';
+
+	$("#header-bg-2").css("background-image", bg);
+</script>
+		
+		<!--back to top-->
+        <style type="text/css">
+	#totop {
+		background: white;
+		border-radius: 50%;
+		position: fixed;
+		right: 5.4%;
+		bottom: 80px;
+		cursor: pointer;
+	}
+	
+	#totop a {
+		color: #474747;
+		background-color: transparent;
+		padding: 10px;
+		text-decoration: none;
+	}
+	
+	@media(max-width:512px) {
+		#totop {
+			display: none;
+			visibility: hidden;
+		}
+	}
+</style>
+
+
+	<div id="totop">
+  		<a href="javascript:;" class="fa fa-arrow-up"></a>
+	</div>
+
+	</body>
+	</html>
+

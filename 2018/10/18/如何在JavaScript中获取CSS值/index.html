@@ -1,0 +1,483 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+
+
+	<!DOCTYPE html>
+	<html>
+		
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<title>如何在JavaScript中获取CSS值</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="luozy">
+    <meta name="keywords" content="">
+    <meta name="description" content="Inflexible thinking, bad humor">
+   	<!-- css -->
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- favicon -->
+	<link href="/img/favicon.ico" rel="Shortcut Icon" type="image/ico">
+	
+	<!-- font-awesome -->
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+	<body>	
+		<!--Preloader-->
+<div id="preloader">
+	<div id="status">
+		<img alt="PRELOADER" src="/img/logo.png">
+	</div>
+</div>
+<!--Preloader end-->
+
+<!-- header -->
+
+	<header id="header-bg-2">
+
+	
+		<div id="cd-logo"><a href="/"><img src="/img/logo.png" alt="Logo"></a></div>
+	
+	
+	<!-- motto or description -->
+		
+ 		<p class="motto">���������������������̰���������ܼ�������̰����</p>
+	
+	
+	<!-- current page name or title -->
+	
+		
+		
+			
+			<p class="page-name">当前文章&nbsp;:&nbsp;《如何在JavaScript中获取CSS值》</p>
+			
+		
+	
+	
+	<!-- others: such as change-bg, time... -->
+	<p class="page-name-other">
+		11/7/2018 
+		<style type="text/css">
+	header:after {
+		content: '';
+		position: relative;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: #222222;
+		opacity: .5;
+		z-index: -1;
+	}
+	
+	.change-header-bg{
+		font-style: normal;
+	}
+	.change-header-bg i{
+		text-align: center;
+		cursor: pointer;
+		pointer-events: bounding-box;
+	}
+	@media(max-width:512px) {
+		.change-header-bg {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	
+</style>
+
+<script type="text/javascript">
+	function changeHeaderBg(){
+		var random_bg = Math.floor(Math.random() * 109 + 1);
+		var bg = 'url(https://XXX-youname-XXX.github.io/Random-img/' + random_bg + '.jpg)';
+		$("#header-bg-2").css("background-image", bg);
+	}
+</script>
+
+<span class="change-header-bg">
+	——&nbsp;<i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>	
+</span>
+	</p>		
+</header>
+
+<!-- nav -->
+<div id="cd-nav">
+	<a href="#0" title="menu" class="cd-nav-trigger"><span></span></a>
+
+	<nav id="cd-main-nav">
+		<ul>
+			
+      		<li class="fa fa-/">
+           		<a href="/" title="主页">主页</a>	
+      		</li>
+    		
+      		<li class="fa fa-/archives">
+           		<a href="/archives" title="归档">归档</a>	
+      		</li>
+    		
+      		<li class="fa fa-/categories">
+           		<a href="/categories" title="分类">分类</a>	
+      		</li>
+    		
+      		<li class="fa fa-/tags">
+           		<a href="/tags" title="标签">标签</a>	
+      		</li>
+    		
+      		<li class="fa fa-/about">
+           		<a href="/about" title="关于">关于</a>	
+      		</li>
+    		
+      		<li class="fa fa-/gallery">
+           		<a href="/gallery" title="相册">相册</a>	
+      		</li>
+    		
+    		
+        	
+		</ul>
+	</nav>
+</div>
+
+		<!--main-->
+		<main> 
+		<div class="page-container">
+		<!-- content srart -->
+<div class="am-g am-g-fixed blog-fixed blog-content">
+	<div class="am-u-md-8 am-u-sm-12">
+
+		<article class="am-article blog-article-p">
+
+			<div class="am-article-hd">
+				
+
+
+				<h1 class="am-article-title blog-text-center">
+					
+					
+	
+		<a href="/2018/10/18/如何在JavaScript中获取CSS值/" itemprop="url">		
+			如何在JavaScript中获取CSS值		
+		</a>
+	
+
+				</h1>
+
+				<p class="am-article-meta blog-text-center">
+					<span>
+						<i class="fa fa-clock-o"></i> 
+						<a href="/2018/10/18/如何在JavaScript中获取CSS值/" itemprop="url">
+	<time datetime="2018-10-18T03:57:51.000Z" itemprop="datePublished">
+  		2018-10-18
+  </time>
+</a>    
+&nbsp;
+					</span>
+					
+					<span>						
+						
+							<i class="fa fa-tags"></i>
+							
+								<a href="#H5 js" title="H5 js" rel="6">H5 js</a>&nbsp;
+													 											
+						
+					</span>
+				</p>
+			</div>
+
+			<div class="am-article-bd">
+				<div class="content" id="post-content">
+					
+						<blockquote>
+<p>有时候单独的使用CSS是不够的。您可能需要使用JavaScript控制CSS值。但是你如何在JavaScript中获得CSS值？</p>
+<p>有两种可能的方式，取决于您是尝试获取内联样式还是计算样式</p>
+</blockquote>
+<h2 id="获取内联样式"><a href="#获取内联样式" class="headerlink" title="获取内联样式"></a>获取内联样式</h2><blockquote>
+<p>内联样式是存在于 HTML <code>style</code> 属性(attribute)中的样式。</p>
+</blockquote>
+<h5 id="html-代码："><a href="#html-代码：" class="headerlink" title="html 代码："></a>html 代码：</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element"</span> <span class="attr">style</span>=<span class="string">"font-size: 2em; color: red;"</span>&gt;</span></span><br><span class="line">    Red hot chili pepper!</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="JavaScript代码"><a href="#JavaScript代码" class="headerlink" title="JavaScript代码"></a>JavaScript代码</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="built_in">document</span>.querySelector(<span class="string">'.element'</span>)</span><br><span class="line"><span class="keyword">const</span> fontSize = element.style.fontSize</span><br><span class="line"><span class="built_in">console</span>.log(fontSize) <span class="comment">// 2em</span></span><br><span class="line"><span class="keyword">const</span> color = element.style.color</span><br><span class="line"><span class="built_in">console</span>.log(color) <span class="comment">// red</span></span><br></pre></td></tr></table></figure>
+<h2 id="获取计算样式"><a href="#获取计算样式" class="headerlink" title="获取计算样式"></a>获取计算样式</h2><p>如果您的样式是在CSS文件中编写的，则需要获取计算出的样式。为此，您可以使用 <code>getComputedStyle</code> 。</p>
+<p>它有两个值：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JavaScript 代码:<span class="keyword">const</span> style = getComputedStyle(Element, );</span><br></pre></td></tr></table></figure>
+<p>这里的<code>Element</code>是指您使用 <code>querySelector</code> 选择的元素。</p>
+<p>这里的 <code>pseudoElement</code> 指的是你想要获取的伪类元素的字符串（如果有的话）。如果您没有选择伪元素，则可以省略这个值。</p>
+<p>让我们通过一个例子来帮助理解。假设您有以下HTML和CSS：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HTML 代码:<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element"</span>&gt;</span> This is my element <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">CSS 代码:.element &#123; background-color: red &#125;</span><br></pre></td></tr></table></figure>
+<p>首先，您需要使用 <code>querySelector</code> 选择元素。然后，使用 <code>getComputedStyle</code> 获取元素的样式。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JavaScript 代码:<span class="keyword">const</span> element = <span class="built_in">document</span>.querySelector(<span class="string">'.element'</span>)<span class="keyword">const</span> style = getComputedStyle(element)</span><br></pre></td></tr></table></figure>
+<p>如果你用 <code>console.log(style)</code> 打印，您应该看到一个包含每个CSS属性及其各自值的对象。</p>
+<p><img src="http://newimg88.b0.upaiyun.com/newimg88/2018/07/all-properties.png" alt="img"></p>
+<p>图注：<code>getComputedStyle</code> 返回一个包含每个CSS属性及其各自值的对象</p>
+<p>您还可以在Chrome和Firefox的开发工具中看到此对象。</p>
+<p>对于Firefox开发工具，请查看 “Inspector”，“Computed”。</p>
+<p><img src="http://newimg88.b0.upaiyun.com/newimg88/2018/07/firefox.png" alt="img"></p>
+<p>图注：Firefox dev工具计算样式选项卡</p>
+<p>对于Chrome开发工具，请查看“Elements” 面板。 如果开发工具窗口很大，您可以在右侧面板上看到计算出的样式。 如果开发工具窗口很小，您可以在“Computed”选项卡下查看。</p>
+<p><img src="http://newimg88.b0.upaiyun.com/newimg88/2018/07/chrome.png" alt="img"></p>
+<p>图注：Chrome dev工具计算样式选项卡</p>
+<p>要获取CSS属性的值，请以驼峰形式编写属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JavaScript 代码:<span class="keyword">const</span> style = getComputedStyle(element)<span class="keyword">const</span> backgroundColor = style.backgroundColorconsole.log(backgroundColor) <span class="comment">// rgb(0, 0, 0)</span></span><br></pre></td></tr></table></figure>
+<p>注意：<code>getComputedStyle</code> 是只读的。您无法使用 <code>getComputedStyle</code> 设置CSS值。</p>
+<p>注意2：<code>getComputedStyle</code> 获取计算出的CSS值。你将从 <code>getComputedStyle</code> 获得 px 单位值，而不是像 <code>em</code> 和 <code>rem</code> 这样的相对单位。</p>
+<h2 id="从伪类元素中获取样式"><a href="#从伪类元素中获取样式" class="headerlink" title="从伪类元素中获取样式"></a>从伪类元素中获取样式</h2><p>要从伪类元素获取样式，您需要将伪类元素的字符串作为第二个参数传递给 <code>getComputedStyle</code> 。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HTML 代码:<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element"</span>&gt;</span> This is my element <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">CSS 代码:element &#123; background-color: red &#125;.element::before &#123; content: "Before pseudo element"; &#125;</span><br><span class="line">JavaScript 代码:const element = document.querySelector('.element')pseudoElementStyle = getComputedStyle(element, '::before')console.log(pseudoElementStyle.content) // Before pseudo element</span><br></pre></td></tr></table></figure>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>您可以通过两种方法在JavaScript中获取CSS值：</p>
+<ol>
+<li><code>style</code> 属性(property)</li>
+<li><code>getComputedStyle</code> 。</li>
+</ol>
+<p><code>style</code> 属性仅检索内联CSS值，而 <code>getComputedStyle</code> 样式检索计算的CSS值。</p>
+<p>原文链接：<a href="https://zellwk.com/blog/css-values-in-js/" target="_blank" rel="noopener">https://zellwk.com/blog/css-values-in-js/</a></p>
+
+					
+				</div>
+			</div>
+		</article>
+
+		<ul class="am-pagination">
+    
+    	<li class="am-pagination-prev">
+   		<a class="pull-left" href="/2018/10/18/js函数的概念和作用/" title="js函数的概念和作用">
+      		&laquo; 上一篇
+		</a>
+		</li>
+	
+	
+		<li class="am-pagination-next">
+		<a class="pull-right" href="/2018/10/18/js循环嵌套练习/" title="js循环练习">
+			下一篇 &raquo;
+		</a>
+		</li>
+	 
+ </ul>
+        
+
+		<div class="theme-annie-comment-button-container">
+	<button id="annie-comment-button" class="theme-annie-comment-button" onclick="Annie_Comment()">
+		加载评论
+		<!--加载评论-->
+	</button>
+</div>
+
+<div id="annie-comment-container" class="theme-annie-comment-main-container">
+
+	
+		
+			<!-- comment valine -->
+			<!-- show valine comment -->
+<div id="valineComment" class="comment"></div>
+
+<!-- valine`s js & css -->
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/js/valine.min.js"></script>
+<link rel="stylesheet" href="/css/comment.css">
+
+<script>
+	var checkExistComment = setInterval(function() {
+		if( $('#valineComment').length ) {
+			new Valine({
+				// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+				av: AV,
+				//使用id寻找div元素（使用class可能找不到）
+				el: '#valineComment',
+				emoticon_url: 'https://cloud.panjunwen.com/alu',
+				emoticon_list: ["吐.png", "期待.png", "高兴.png", "吐血倒地.png", "哭泣.png", "欢呼.png"],
+				app_id: "3333....", //获取APP ID
+				app_key: "3333......", //获取APP KEY
+				placeholder: "no any!", //评论框占位提示文字        			
+			});
+			clearInterval(checkExistComment);
+		}
+	}, 100);
+</script>
+		
+	
+
+</div>
+
+<script type="text/javascript">
+	/* Show Comment */
+	var Annie_Comment = function() {
+		function Show_Hidden(obj) {
+			obj.style.display = 'block';
+		}
+		
+		//var obutton = $('#annie-comment-button');
+		//var obutton = $('#annie-comment-container');
+		var obutton = document.getElementById("annie-comment-button" || "0");
+		var odiv = document.getElementById("annie-comment-container");
+		if( 'obutton' ) {
+			obutton.onclick = function() {
+				Show_Hidden(odiv);
+				$("#annie-comment-button").css("display", 'none');
+				return false;
+			}
+		}
+	};
+
+	(function Annie_Init() {
+		Annie_Comment();
+	})();
+</script>
+		
+		<!--
+	时间：2018-09-24
+	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
+-->
+
+	
+		<aside class="post-widget">
+			<nav class="post-toc-wrap" id="post-toc">
+				
+					<strong>文章目录</strong>
+				
+				
+				<!--toc(post.content)-->
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取内联样式"><span class="post-toc-text">获取内联样式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#html-代码："><span class="post-toc-text">html 代码：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#JavaScript代码"><span class="post-toc-text">JavaScript代码</span></a></li></ol></li></ol><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取计算样式"><span class="post-toc-text">获取计算样式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#从伪类元素中获取样式"><span class="post-toc-text">从伪类元素中获取样式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#小结"><span class="post-toc-text">小结</span></a></li>
+			</nav>
+			<div class="post-toc-bar"><div>
+		</div></div></aside>
+	
+
+	</div>
+</div>
+		</div>
+		</main>
+		
+		<!--footer-->
+		<footer>
+	<div class="blog-text-center">
+		<div class="theme-annie-social">
+				
+				
+					<a href="http://github.com/" title="Github" target="_blank"><i class="fa fa-github"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="Weibo" target="_blank"><i class="fa fa-weibo"></i>&nbsp;</a>
+				
+				
+					<a href="http://github.com/" title="Email" target="_blank"><i class="fa fa-envelope-o"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="QQ" target="_blank"><i class="fa fa-qq"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="Twitter" target="_blank"><i class="fa fa-twitter"></i>&nbsp;</a>
+						
+				
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			
+				&copy; 2017 - 2018, content by luozy. All Rights Reserved.			       	
+			
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.		
+		</div>
+	</div>
+</footer>
+		<!-- <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script> -->
+
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+
+<style>
+	.motto {
+		color: #000000;
+		font-size: 20px;
+		margin: 100px 25% 0;
+		width: 50%;
+		line-height: 1.4;
+		font-family:"KaiTi", "STXingkai", "Source Sans Pro", "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+		text-align: center;
+	}
+	@media(max-width: 890px) {
+		.motto {	
+			margin: 100px 10% 0;
+			width: 80%;
+		}
+	}
+	@media(max-width: 890px) {
+		.motto {
+			margin: 100px 5% 0;
+			width: 90%;
+		}
+	}
+</style>
+
+
+	<script src="/js/motto.js"></script>
+	<script type="text/javascript">
+		$(".motto").html(getMingYanContent());
+	</script>	
+
+
+
+
+
+
+
+	<script type="text/javascript" src="/js/toc.js"></script>
+
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript">
+	//generate a random img that pre_name 'from 0 to 110'
+	var random_bg = Math.floor(Math.random() * 109 + 1);
+
+	//var bg = 'url(/img/random/' + random_bg + '.jpg)';		
+	var bg = 'url(https://XXX-youname-XXX.github.io/Random-img/' + random_bg + '.jpg)';
+
+	$("#header-bg-2").css("background-image", bg);
+</script>
+		
+		<!--back to top-->
+        <style type="text/css">
+	#totop {
+		background: white;
+		border-radius: 50%;
+		position: fixed;
+		right: 5.4%;
+		bottom: 80px;
+		cursor: pointer;
+	}
+	
+	#totop a {
+		color: #474747;
+		background-color: transparent;
+		padding: 10px;
+		text-decoration: none;
+	}
+	
+	@media(max-width:512px) {
+		#totop {
+			display: none;
+			visibility: hidden;
+		}
+	}
+</style>
+
+
+	<div id="totop">
+  		<a href="javascript:;" class="fa fa-arrow-up"></a>
+	</div>
+
+	</body>
+	</html>
+

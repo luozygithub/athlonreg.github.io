@@ -1,0 +1,735 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+
+
+	<!DOCTYPE html>
+	<html>
+		
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<title>正则表达式</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="luozy">
+    <meta name="keywords" content="">
+    <meta name="description" content="Inflexible thinking, bad humor">
+   	<!-- css -->
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- favicon -->
+	<link href="/img/favicon.ico" rel="Shortcut Icon" type="image/ico">
+	
+	<!-- font-awesome -->
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+	<body>	
+		<!--Preloader-->
+<div id="preloader">
+	<div id="status">
+		<img alt="PRELOADER" src="/img/logo.png">
+	</div>
+</div>
+<!--Preloader end-->
+
+<!-- header -->
+
+	<header id="header-bg-2">
+
+	
+		<div id="cd-logo"><a href="/"><img src="/img/logo.png" alt="Logo"></a></div>
+	
+	
+	<!-- motto or description -->
+		
+ 		<p class="motto">���������������������̰���������ܼ�������̰����</p>
+	
+	
+	<!-- current page name or title -->
+	
+		
+		
+			
+			<p class="page-name">当前文章&nbsp;:&nbsp;《正则表达式》</p>
+			
+		
+	
+	
+	<!-- others: such as change-bg, time... -->
+	<p class="page-name-other">
+		11/7/2018 
+		<style type="text/css">
+	header:after {
+		content: '';
+		position: relative;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: #222222;
+		opacity: .5;
+		z-index: -1;
+	}
+	
+	.change-header-bg{
+		font-style: normal;
+	}
+	.change-header-bg i{
+		text-align: center;
+		cursor: pointer;
+		pointer-events: bounding-box;
+	}
+	@media(max-width:512px) {
+		.change-header-bg {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	
+</style>
+
+<script type="text/javascript">
+	function changeHeaderBg(){
+		var random_bg = Math.floor(Math.random() * 109 + 1);
+		var bg = 'url(https://XXX-youname-XXX.github.io/Random-img/' + random_bg + '.jpg)';
+		$("#header-bg-2").css("background-image", bg);
+	}
+</script>
+
+<span class="change-header-bg">
+	——&nbsp;<i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>	
+</span>
+	</p>		
+</header>
+
+<!-- nav -->
+<div id="cd-nav">
+	<a href="#0" title="menu" class="cd-nav-trigger"><span></span></a>
+
+	<nav id="cd-main-nav">
+		<ul>
+			
+      		<li class="fa fa-/">
+           		<a href="/" title="主页">主页</a>	
+      		</li>
+    		
+      		<li class="fa fa-/archives">
+           		<a href="/archives" title="归档">归档</a>	
+      		</li>
+    		
+      		<li class="fa fa-/categories">
+           		<a href="/categories" title="分类">分类</a>	
+      		</li>
+    		
+      		<li class="fa fa-/tags">
+           		<a href="/tags" title="标签">标签</a>	
+      		</li>
+    		
+      		<li class="fa fa-/about">
+           		<a href="/about" title="关于">关于</a>	
+      		</li>
+    		
+      		<li class="fa fa-/gallery">
+           		<a href="/gallery" title="相册">相册</a>	
+      		</li>
+    		
+    		
+        	
+		</ul>
+	</nav>
+</div>
+
+		<!--main-->
+		<main> 
+		<div class="page-container">
+		<!-- content srart -->
+<div class="am-g am-g-fixed blog-fixed blog-content">
+	<div class="am-u-md-8 am-u-sm-12">
+
+		<article class="am-article blog-article-p">
+
+			<div class="am-article-hd">
+				
+
+
+				<h1 class="am-article-title blog-text-center">
+					
+					
+	
+		<a href="/2018/11/02/正则表达式/" itemprop="url">		
+			正则表达式		
+		</a>
+	
+
+				</h1>
+
+				<p class="am-article-meta blog-text-center">
+					<span>
+						<i class="fa fa-clock-o"></i> 
+						<a href="/2018/11/02/正则表达式/" itemprop="url">
+	<time datetime="2018-11-02T12:33:11.000Z" itemprop="datePublished">
+  		2018-11-02
+  </time>
+</a>    
+&nbsp;
+					</span>
+					
+					<span>						
+						
+							<i class="fa fa-tags"></i>
+							
+								<a href="#js" title="js" rel="12">js</a>&nbsp;
+													 											
+						
+					</span>
+				</p>
+			</div>
+
+			<div class="am-article-bd">
+				<div class="content" id="post-content">
+					
+						<p>[TOC]</p>
+<h3 id="一、正则表达式的概念"><a href="#一、正则表达式的概念" class="headerlink" title="一、正则表达式的概念"></a>一、正则表达式的概念</h3><blockquote>
+<p>假设用户需要在HTML表单中填写姓名、地址、出生日期等。那么在将表单提交到服务器进一步处理前，JavaScript程序会检查表单以确认用户确实输入了信息并且这些信息是符合要求的</p>
+<h3 id="正则表达式，-super-string。"><a href="#正则表达式，-super-string。" class="headerlink" title="正则表达式， super string。"></a>正则表达式， super string。</h3><p>​    正则表达式（regular expression）是一个描述字符模式的对象。</p>
+<p>ECMAScript的RegExp类 表示正则表达式，而Sreing 和 正则表达式都定义了进行强大的【模式匹配】和【文本检索】与【替换】的函数。</p>
+</blockquote>
+<h3 id="二、创建正则表达式的方式"><a href="#二、创建正则表达式的方式" class="headerlink" title="二、创建正则表达式的方式"></a>二、创建正则表达式的方式</h3><blockquote>
+<p>创建正则表达式和创建字符串类似，创建正则表达式提供了两种方法，一种是采用new运算符，另一种是采用字面量的方式。</p>
+</blockquote>
+<p>1、两种创建方式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'box'</span>);<span class="comment">//第一个参数字符串</span></span><br><span class="line"><span class="keyword">var</span> box = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'box'</span>, <span class="string">'ig'</span>);<span class="comment">//第二个参数可选模式修饰符</span></span><br><span class="line"><span class="keyword">var</span> box = <span class="regexp">/box/</span>;<span class="comment">//直接用两个反斜杠创建</span></span><br><span class="line"><span class="keyword">var</span> box = <span class="regexp">/box/ig</span>; <span class="comment">//在第二个反斜杠后面加上模式修饰符</span></span><br></pre></td></tr></table></figure>
+<h4 align="center">模式修饰符的可选参数</h4>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">i</td>
+<td style="text-align:center">忽略大小写</td>
+</tr>
+<tr>
+<td style="text-align:center">g</td>
+<td style="text-align:center">全局匹配</td>
+</tr>
+<tr>
+<td style="text-align:center">m</td>
+<td style="text-align:center">多行匹配</td>
+</tr>
+</tbody>
+</table>
+<p>2、正则表达式对象的方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*使用 new 运算符的 test 方法示例*/</span></span><br><span class="line"><span class="keyword">var</span> pattern= newRegExp(<span class="string">'box'</span>, <span class="string">'i'</span>); <span class="comment">//创建正则模式，不区分大小写</span></span><br><span class="line"><span class="keyword">var</span> str =<span class="string">'This is a Box!'</span>; <span class="comment">//创建要比对的字符串</span></span><br><span class="line">alert(pattern.test(str)); <span class="comment">//通过 test()方法验证是否匹配</span></span><br><span class="line"><span class="comment">/*使用字面量方式的 test 方法示例*/</span></span><br><span class="line"><span class="keyword">var</span> pattern= <span class="regexp">/box/i</span>; <span class="comment">//创建正则模式，不区分大小写</span></span><br><span class="line"><span class="keyword">var</span> str =<span class="string">'This is a Box!'</span>;</span><br><span class="line">alert(pattern.test(str));</span><br><span class="line"><span class="comment">/*使用一条语句实现正则匹配*/</span></span><br><span class="line">alert(<span class="regexp">/box/i</span>.test(<span class="string">'This is aBox!'</span>)); <span class="comment">//模式和字符串替换掉了两个变量</span></span><br><span class="line"><span class="comment">/*使用 exec 返回匹配数组*/</span></span><br><span class="line"><span class="keyword">var</span> pattern= <span class="regexp">/box/i</span>;</span><br><span class="line"><span class="keyword">var</span> str =<span class="string">'This is a Box!'</span>;</span><br><span class="line">alert(pattern.exec(str)); <span class="comment">//匹配了返回数组，否则返回 nullc 方法还</span></span><br></pre></td></tr></table></figure>
+<h4 align="center">RegExp对象方法</h4>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">test</td>
+<td style="text-align:center">在字符串中测试模式匹配，返回true或false</td>
+</tr>
+<tr>
+<td style="text-align:center">exec</td>
+<td style="text-align:center">在字符串中执行匹配搜索，返回结束数组</td>
+</tr>
+</tbody>
+</table>
+<p><strong>【注】正则表达式就是一个增强版的字符串</strong></p>
+<h3 id="三、字符串中使用正则表达式的方法"><a href="#三、字符串中使用正则表达式的方法" class="headerlink" title="三、字符串中使用正则表达式的方法"></a>三、字符串中使用正则表达式的方法</h3><p>除了test() 和exec()方法，String对象也提供了4个使用正则表达式的方法。</p>
+<h4 align="center">String对象中的正则表达式方法</h4>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">match(patten)</td>
+<td style="text-align:center">返回pattern中的子串或null</td>
+</tr>
+<tr>
+<td style="text-align:center">replace(pattern,replacement)</td>
+<td style="text-align:center">用replacement替换pattern</td>
+</tr>
+<tr>
+<td style="text-align:center">search(pattern)</td>
+<td style="text-align:center">返回字符串中pattern开始位置</td>
+</tr>
+<tr>
+<td style="text-align:center">split(pattern)</td>
+<td style="text-align:center">返回字符串指定pattern拆分的数组</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*使用 match 方法获取获取匹配数组*/</span></span><br><span class="line"><span class="keyword">var</span> pattern= <span class="regexp">/box/ig</span>; <span class="comment">//全局搜索</span></span><br><span class="line"><span class="keyword">var</span> str =<span class="string">'This is a Box!，That is a Box too'</span>;</span><br><span class="line">alert(str.match(pattern)); <span class="comment">//匹配到两个 Box,Box </span></span><br><span class="line">alert(str.match(pattern).length); <span class="comment">//获取数组的长度</span></span><br><span class="line"><span class="comment">/*使用 search 来查找匹配数据*/</span></span><br><span class="line"><span class="keyword">var</span> pattern= <span class="regexp">/box/ig</span>;</span><br><span class="line"><span class="keyword">var</span> str =<span class="string">'This is a Box!，That is a Box too'</span>;</span><br><span class="line">alert(str.search(pattern)); <span class="comment">//查找到返回位置，否则返回-1</span></span><br><span class="line">PS：因为 search 方法查找到即返回，也就是说无需 g 全局。</span><br><span class="line"></span><br><span class="line"><span class="comment">/*使用 replace 替换匹配到的数据*/</span></span><br><span class="line"><span class="keyword">var</span> pattern= <span class="regexp">/box/ig</span>;</span><br><span class="line"><span class="keyword">var</span> str =<span class="string">'This is a Box!，That is a Box too'</span>; </span><br><span class="line">alert(str.replace(pattern,<span class="string">'Tom'</span>)); <span class="comment">//将 Box 替换成了 Tom</span></span><br><span class="line"><span class="comment">/*使用 split 拆分成字符串数组*/</span></span><br><span class="line"><span class="keyword">var</span> pattern= <span class="comment">//ig;</span></span><br><span class="line"><span class="keyword">var</span> str =<span class="string">'This is a Box!，That is a Box too'</span>;</span><br><span class="line">alert(str.split(pattern)); <span class="comment">//将空格拆开分组成数组</span></span><br></pre></td></tr></table></figure>
+<h3 id="四、元字符"><a href="#四、元字符" class="headerlink" title="四、元字符"></a>四、元字符</h3><blockquote>
+<p>正则表达式元字符包含特殊含义的字符。他们有一些特殊功能，可以控制匹配模式的方式。</p>
+</blockquote>
+<h4 align="center">字符类：单个字符串和数字</h4>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">元字符/元符号</th>
+<th style="text-align:center">匹配情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.</td>
+<td style="text-align:center">匹配出换行字符外的任意字符</td>
+</tr>
+<tr>
+<td style="text-align:center">[a-z 0-9]</td>
+<td style="text-align:center">匹配括号中的字符集中的任意字符</td>
+</tr>
+<tr>
+<td style="text-align:center">[^a-z 0-9]</td>
+<td style="text-align:center">匹配任意不在括号中的字符集中的字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\d</td>
+<td style="text-align:center">匹配数字</td>
+</tr>
+<tr>
+<td style="text-align:center">\D</td>
+<td style="text-align:center">匹配非数字同[^0-9]</td>
+</tr>
+<tr>
+<td style="text-align:center">\w</td>
+<td style="text-align:center">匹配字母和数字及_</td>
+</tr>
+<tr>
+<td style="text-align:center">\W</td>
+<td style="text-align:center">匹配非字母和数字及_</td>
+</tr>
+</tbody>
+</table>
+<h4 align="center">字符类：空白字符</h4>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">元字符/元符号</th>
+<th style="text-align:center">匹配情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">\0</td>
+<td style="text-align:center">匹配null字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\b</td>
+<td style="text-align:center">匹配空格字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\f</td>
+<td style="text-align:center">匹配进制字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\n</td>
+<td style="text-align:center">匹配换行符</td>
+</tr>
+<tr>
+<td style="text-align:center">\r</td>
+<td style="text-align:center">匹配回车符</td>
+</tr>
+<tr>
+<td style="text-align:center">\t</td>
+<td style="text-align:center">匹配制表符</td>
+</tr>
+<tr>
+<td style="text-align:center">\s</td>
+<td style="text-align:center">匹配空白字符、空格、制表符和换行符</td>
+</tr>
+<tr>
+<td style="text-align:center">\S</td>
+<td style="text-align:center">匹配非空字符串</td>
+</tr>
+</tbody>
+</table>
+<h4 align="center">字符类：锚字符</h4>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">元字符/元符号</th>
+<th style="text-align:center">匹配情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">^</td>
+<td style="text-align:center">行首匹配</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:center">行尾匹配</td>
+</tr>
+<tr>
+<td style="text-align:center">\A</td>
+<td style="text-align:center">只有匹配字符串开始处</td>
+</tr>
+<tr>
+<td style="text-align:center">\b</td>
+<td style="text-align:center">匹配单词边界，词在[]内时无效</td>
+</tr>
+<tr>
+<td style="text-align:center">\B</td>
+<td style="text-align:center">匹配飞单词边界</td>
+</tr>
+<tr>
+<td style="text-align:center">\G</td>
+<td style="text-align:center">匹配当前搜索的开始位置</td>
+</tr>
+<tr>
+<td style="text-align:center">\Z</td>
+<td style="text-align:center">匹配字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">\z</td>
+<td style="text-align:center">只匹配字符串结束处</td>
+</tr>
+</tbody>
+</table>
+<h4 align="center">字符类：重复字符</h4>
+
+<blockquote>
+<p>x 代表单个字符或元字符</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">元字符/元符号</th>
+<th style="text-align:center">匹配情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">x？</td>
+<td style="text-align:center">匹配0个或1个x</td>
+</tr>
+<tr>
+<td style="text-align:center">x*</td>
+<td style="text-align:center">匹配0个或多个x</td>
+</tr>
+<tr>
+<td style="text-align:center">x+</td>
+<td style="text-align:center">匹配至少一个x</td>
+</tr>
+<tr>
+<td style="text-align:center">(xyz)+</td>
+<td style="text-align:center">匹配至少一个(xyz)</td>
+</tr>
+<tr>
+<td style="text-align:center">x{m，n}</td>
+<td style="text-align:center">匹配最少m个、最多n个x</td>
+</tr>
+</tbody>
+</table>
+<h4 align="center">字符类：替代字符<br></h4>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">元字符/元符号</th>
+<th style="text-align:center">匹配情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">this\</td>
+<td style="text-align:center">where\</td>
+<td>logo</td>
+<td>匹配this或where或logo中的任意一个</td>
+</tr>
+</tbody>
+</table>
+<p>和元提付重意的字符 如. 要添加转义字符</p>
+<h3 id="五、常用正则"><a href="#五、常用正则" class="headerlink" title="五、常用正则"></a>五、常用正则</h3><p>1、检查邮政编码</p>
+<p>var pattern = /[1-9] ‘[0-9]’{5}/共六位数字，第一位不能为0</p>
+<p>var str = ‘224000’;</p>
+<p>alert(pattern.test(str));</p>
+<p>2、检查文件压缩包</p>
+<p>var pattern =/[\w] + \ .zip|rar|gz/; //\d\w表示所有数字和字母加下划线</p>
+<p>var str = ‘123.zip’</p>
+<p>alert(pattern.test(str));</p>
+<p>3删除多余空格</p>
+<p>var pattern = /\s/g;</p>
+<p>var str = “111 222 333”;</p>
+<p>var result = str.replace(pattern,””);</p>
+<p>alert(result);</p>
+<p>4、删除首位空格</p>
+<p>var pattern = /^\s + /;</p>
+<p>var str = ‘        goo   gle      ‘;</p>
+<p>var result = str.replace(pattern,””)</p>
+<p>pattern = /\s + $/;</p>
+<p>result = result.replace(pattern, “”)</p>
+<p>alert(‘|’ + result + “|”);;</p>
+
+					
+				</div>
+			</div>
+		</article>
+
+		<ul class="am-pagination">
+    
+    	<li class="am-pagination-prev">
+   		<a class="pull-left" href="/2018/11/03/js控制style/" title="js控制style">
+      		&laquo; 上一篇
+		</a>
+		</li>
+	
+	
+		<li class="am-pagination-next">
+		<a class="pull-right" href="/2018/11/02/cookie会话跟踪技术/" title="cookie会话跟踪技术">
+			下一篇 &raquo;
+		</a>
+		</li>
+	 
+ </ul>
+        
+
+		<div class="theme-annie-comment-button-container">
+	<button id="annie-comment-button" class="theme-annie-comment-button" onclick="Annie_Comment()">
+		加载评论
+		<!--加载评论-->
+	</button>
+</div>
+
+<div id="annie-comment-container" class="theme-annie-comment-main-container">
+
+	
+		
+			<!-- comment valine -->
+			<!-- show valine comment -->
+<div id="valineComment" class="comment"></div>
+
+<!-- valine`s js & css -->
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/js/valine.min.js"></script>
+<link rel="stylesheet" href="/css/comment.css">
+
+<script>
+	var checkExistComment = setInterval(function() {
+		if( $('#valineComment').length ) {
+			new Valine({
+				// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+				av: AV,
+				//使用id寻找div元素（使用class可能找不到）
+				el: '#valineComment',
+				emoticon_url: 'https://cloud.panjunwen.com/alu',
+				emoticon_list: ["吐.png", "期待.png", "高兴.png", "吐血倒地.png", "哭泣.png", "欢呼.png"],
+				app_id: "3333....", //获取APP ID
+				app_key: "3333......", //获取APP KEY
+				placeholder: "no any!", //评论框占位提示文字        			
+			});
+			clearInterval(checkExistComment);
+		}
+	}, 100);
+</script>
+		
+	
+
+</div>
+
+<script type="text/javascript">
+	/* Show Comment */
+	var Annie_Comment = function() {
+		function Show_Hidden(obj) {
+			obj.style.display = 'block';
+		}
+		
+		//var obutton = $('#annie-comment-button');
+		//var obutton = $('#annie-comment-container');
+		var obutton = document.getElementById("annie-comment-button" || "0");
+		var odiv = document.getElementById("annie-comment-container");
+		if( 'obutton' ) {
+			obutton.onclick = function() {
+				Show_Hidden(odiv);
+				$("#annie-comment-button").css("display", 'none');
+				return false;
+			}
+		}
+	};
+
+	(function Annie_Init() {
+		Annie_Comment();
+	})();
+</script>
+		
+		<!--
+	时间：2018-09-24
+	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
+-->
+
+	
+		<aside class="post-widget">
+			<nav class="post-toc-wrap" id="post-toc">
+				
+					<strong>文章目录</strong>
+				
+				
+				<!--toc(post.content)-->
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、正则表达式的概念"><span class="post-toc-text">一、正则表达式的概念</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#正则表达式，-super-string。"><span class="post-toc-text">正则表达式， super string。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、创建正则表达式的方式"><span class="post-toc-text">二、创建正则表达式的方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#undefined"><span class="post-toc-text">模式修饰符的可选参数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#undefined"><span class="post-toc-text">RegExp对象方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、字符串中使用正则表达式的方法"><span class="post-toc-text">三、字符串中使用正则表达式的方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#undefined"><span class="post-toc-text">String对象中的正则表达式方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、元字符"><span class="post-toc-text">四、元字符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#undefined"><span class="post-toc-text">字符类：单个字符串和数字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#undefined"><span class="post-toc-text">字符类：空白字符</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#undefined"><span class="post-toc-text">字符类：锚字符</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#undefined"><span class="post-toc-text">字符类：重复字符</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#undefined"><span class="post-toc-text">字符类：替代字符</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五、常用正则"><span class="post-toc-text">五、常用正则</span></a></li></ol>
+			</nav>
+			<div class="post-toc-bar"><div>
+		</div></div></aside>
+	
+
+	</div>
+</div>
+		</div>
+		</main>
+		
+		<!--footer-->
+		<footer>
+	<div class="blog-text-center">
+		<div class="theme-annie-social">
+				
+				
+					<a href="http://github.com/" title="Github" target="_blank"><i class="fa fa-github"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="Weibo" target="_blank"><i class="fa fa-weibo"></i>&nbsp;</a>
+				
+				
+					<a href="http://github.com/" title="Email" target="_blank"><i class="fa fa-envelope-o"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="QQ" target="_blank"><i class="fa fa-qq"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="Twitter" target="_blank"><i class="fa fa-twitter"></i>&nbsp;</a>
+						
+				
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			
+				&copy; 2017 - 2018, content by luozy. All Rights Reserved.			       	
+			
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.		
+		</div>
+	</div>
+</footer>
+		<!-- <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script> -->
+
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+
+<style>
+	.motto {
+		color: #000000;
+		font-size: 20px;
+		margin: 100px 25% 0;
+		width: 50%;
+		line-height: 1.4;
+		font-family:"KaiTi", "STXingkai", "Source Sans Pro", "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+		text-align: center;
+	}
+	@media(max-width: 890px) {
+		.motto {	
+			margin: 100px 10% 0;
+			width: 80%;
+		}
+	}
+	@media(max-width: 890px) {
+		.motto {
+			margin: 100px 5% 0;
+			width: 90%;
+		}
+	}
+</style>
+
+
+	<script src="/js/motto.js"></script>
+	<script type="text/javascript">
+		$(".motto").html(getMingYanContent());
+	</script>	
+
+
+
+
+
+
+
+	<script type="text/javascript" src="/js/toc.js"></script>
+
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript">
+	//generate a random img that pre_name 'from 0 to 110'
+	var random_bg = Math.floor(Math.random() * 109 + 1);
+
+	//var bg = 'url(/img/random/' + random_bg + '.jpg)';		
+	var bg = 'url(https://XXX-youname-XXX.github.io/Random-img/' + random_bg + '.jpg)';
+
+	$("#header-bg-2").css("background-image", bg);
+</script>
+		
+		<!--back to top-->
+        <style type="text/css">
+	#totop {
+		background: white;
+		border-radius: 50%;
+		position: fixed;
+		right: 5.4%;
+		bottom: 80px;
+		cursor: pointer;
+	}
+	
+	#totop a {
+		color: #474747;
+		background-color: transparent;
+		padding: 10px;
+		text-decoration: none;
+	}
+	
+	@media(max-width:512px) {
+		#totop {
+			display: none;
+			visibility: hidden;
+		}
+	}
+</style>
+
+
+	<div id="totop">
+  		<a href="javascript:;" class="fa fa-arrow-up"></a>
+	</div>
+
+	</body>
+	</html>
+

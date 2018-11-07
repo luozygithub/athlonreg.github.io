@@ -1,0 +1,551 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+
+
+	<!DOCTYPE html>
+	<html>
+		
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<title>Math对象和日期对象</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="luozy">
+    <meta name="keywords" content="">
+    <meta name="description" content="Inflexible thinking, bad humor">
+   	<!-- css -->
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- favicon -->
+	<link href="/img/favicon.ico" rel="Shortcut Icon" type="image/ico">
+	
+	<!-- font-awesome -->
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+	<body>	
+		<!--Preloader-->
+<div id="preloader">
+	<div id="status">
+		<img alt="PRELOADER" src="/img/logo.png">
+	</div>
+</div>
+<!--Preloader end-->
+
+<!-- header -->
+
+	<header id="header-bg-2">
+
+	
+		<div id="cd-logo"><a href="/"><img src="/img/logo.png" alt="Logo"></a></div>
+	
+	
+	<!-- motto or description -->
+		
+ 		<p class="motto">���������������������̰���������ܼ�������̰����</p>
+	
+	
+	<!-- current page name or title -->
+	
+		
+		
+			
+			<p class="page-name">当前文章&nbsp;:&nbsp;《Math对象和日期对象》</p>
+			
+		
+	
+	
+	<!-- others: such as change-bg, time... -->
+	<p class="page-name-other">
+		11/7/2018 
+		<style type="text/css">
+	header:after {
+		content: '';
+		position: relative;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: #222222;
+		opacity: .5;
+		z-index: -1;
+	}
+	
+	.change-header-bg{
+		font-style: normal;
+	}
+	.change-header-bg i{
+		text-align: center;
+		cursor: pointer;
+		pointer-events: bounding-box;
+	}
+	@media(max-width:512px) {
+		.change-header-bg {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	
+</style>
+
+<script type="text/javascript">
+	function changeHeaderBg(){
+		var random_bg = Math.floor(Math.random() * 109 + 1);
+		var bg = 'url(https://XXX-youname-XXX.github.io/Random-img/' + random_bg + '.jpg)';
+		$("#header-bg-2").css("background-image", bg);
+	}
+</script>
+
+<span class="change-header-bg">
+	——&nbsp;<i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>	
+</span>
+	</p>		
+</header>
+
+<!-- nav -->
+<div id="cd-nav">
+	<a href="#0" title="menu" class="cd-nav-trigger"><span></span></a>
+
+	<nav id="cd-main-nav">
+		<ul>
+			
+      		<li class="fa fa-/">
+           		<a href="/" title="主页">主页</a>	
+      		</li>
+    		
+      		<li class="fa fa-/archives">
+           		<a href="/archives" title="归档">归档</a>	
+      		</li>
+    		
+      		<li class="fa fa-/categories">
+           		<a href="/categories" title="分类">分类</a>	
+      		</li>
+    		
+      		<li class="fa fa-/tags">
+           		<a href="/tags" title="标签">标签</a>	
+      		</li>
+    		
+      		<li class="fa fa-/about">
+           		<a href="/about" title="关于">关于</a>	
+      		</li>
+    		
+      		<li class="fa fa-/gallery">
+           		<a href="/gallery" title="相册">相册</a>	
+      		</li>
+    		
+    		
+        	
+		</ul>
+	</nav>
+</div>
+
+		<!--main-->
+		<main> 
+		<div class="page-container">
+		<!-- content srart -->
+<div class="am-g am-g-fixed blog-fixed blog-content">
+	<div class="am-u-md-8 am-u-sm-12">
+
+		<article class="am-article blog-article-p">
+
+			<div class="am-article-hd">
+				
+
+
+				<h1 class="am-article-title blog-text-center">
+					
+					
+	
+		<a href="/2018/10/25/Math对象和日期对象/" itemprop="url">		
+			Math对象和日期对象		
+		</a>
+	
+
+				</h1>
+
+				<p class="am-article-meta blog-text-center">
+					<span>
+						<i class="fa fa-clock-o"></i> 
+						<a href="/2018/10/25/Math对象和日期对象/" itemprop="url">
+	<time datetime="2018-10-25T01:07:48.000Z" itemprop="datePublished">
+  		2018-10-25
+  </time>
+</a>    
+&nbsp;
+					</span>
+					
+					<span>						
+						
+							<i class="fa fa-tags"></i>
+							
+								<a href="#js" title="js" rel="12">js</a>&nbsp;
+													 											
+						
+					</span>
+				</p>
+			</div>
+
+			<div class="am-article-bd">
+				<div class="content" id="post-content">
+					
+						<h2 id="1、Math对象"><a href="#1、Math对象" class="headerlink" title="1、Math对象"></a>1、Math对象</h2><h4 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random()"></a>Math.random()</h4><p>[0,1)返回随机数</p>
+<h4 id="Math-max-num1-num2-Math-min-num1-num2"><a href="#Math-max-num1-num2-Math-min-num1-num2" class="headerlink" title="Math.max(num1,num2),Math.min(num1,num2);"></a>Math.max(num1,num2),Math.min(num1,num2);</h4><p>取较大，较小值</p>
+<h4 id="Math-round"><a href="#Math-round" class="headerlink" title="Math.round()"></a>Math.round()</h4><p>四舍五入，变成整数</p>
+<h4 id="Math-floor-Math-ceil"><a href="#Math-floor-Math-ceil" class="headerlink" title="Math.floor(), Math.ceil()"></a>Math.floor(), Math.ceil()</h4><p>向下，上取整</p>
+<h4 id="Math-sqrt"><a href="#Math-sqrt" class="headerlink" title="Math.sqrt()"></a>Math.sqrt()</h4><p>开平方</p>
+<h4 id="Math-abs"><a href="#Math-abs" class="headerlink" title="Math.abs()"></a>Math.abs()</h4><p>取绝对值</p>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p><img src="C:\Users\罗中运\Pictures\Saved Pictures\对象.png" alt="对象"></p>
+<h4 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h4><p>1、抽象：抽指把核心的东西抽出来，把与我们要解决的问题有关的东西拿出来摆在面前 </p>
+<p>2、封装：让使用对象的人不考虑内部实现，只考虑功能使用  把内部的代码保护起来，只留出一些个api接口供用户使用</p>
+<p>3、继承：就是为了代码的复用，从父类上继承出一些方法和属性，子类也有自己的一些属性 </p>
+<p>4、多态：实际上是不同对象作用与同一操作产生不同的效果。多态的思想实际上是把“想做什么”和“谁去做“分开</p>
+<h5 id="面向对象和面向过程的区别"><a href="#面向对象和面向过程的区别" class="headerlink" title="面向对象和面向过程的区别"></a>面向对象和面向过程的区别</h5><p>面向过程就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了；面向对象是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。</p>
+<p>可以拿生活中的实例来理解面向过程与面向对象，例如五子棋，面向过程的设计思路就是首先分析问题的步骤：1、开始游戏，2、黑子先走，3、绘制画面，4、判断输赢，5、轮到白子，6、绘制画面，7、判断输赢，8、返回步骤2，9、输出最后结果。把上面每个步骤用不同的方法来实现。</p>
+<h6 id="如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。"><a href="#如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。" class="headerlink" title="如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。"></a>如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。</h6><h6 id="可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。"><a href="#可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。" class="headerlink" title="可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。"></a>可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。</h6><p>###### </p>
+<h4 id="对象的组成"><a href="#对象的组成" class="headerlink" title="对象的组成"></a>对象的组成</h4><p>1、方法   函数：过程、动态的</p>
+<p>2、属性   变量：状态、静态的，</p>
+<h4 id="this当前的方法属于谁就是谁"><a href="#this当前的方法属于谁就是谁" class="headerlink" title="this当前的方法属于谁就是谁"></a>this<strong>当前的方法属于谁就是谁</strong></h4><p>例如点击事件里的this，其实就是触发事件的那个dom对象的onclick方法里的this，当然是人家自己咯</p>
+<p> 再比如说一个函数里的this，这个函数都属于window的一个方法，当然里面的this也是window咯</p>
+<p>  还有哦，不要在系统对象上面添加属性和方法，这样不太好</p>
+<p> 那么在谁身上加呢？在object这个对象身上，别的date呀array呀，这些对象都是有一些个好玩的功能的，</p>
+<p>  object也就自己最强大的一个功能就是，没有功能~~~~ 这样咱们就可以随意给他加属性和方法而不用去想会不会覆盖了</p>
+<p>1、通过历史</p>
+<p>​    面向过程语言：汇编、c语言</p>
+<p>​    面向对象语言：c++，java</p>
+<p>2、编程思想</p>
+<p>​    面向过程：只关心数字逻辑</p>
+<p>​    面向过程：具体某一个是提来的，唯一的实体。</p>
+<p>3、语法：<br>​    在JS中需要通过两个语法实现面向对象程序。<br>​    类   在JS没有类这个概念。<br>​    对象 </p>
+<p>​    类：将具有同一类特征的事物总结，抽象的概念。<br>​    对象：唯一的某一个个体。</p>
+<p>​    类           对象<br>​    人          你、我、他<br>​    复仇者联盟  钢铁侠    </p>
+<p>4、代码<br>​    数据类型：<br>​            基本数据类型：<br>​            特殊数据类型：null undefined NaN<br>​            复合数据类型：数组、字符串、对象</p>
+<p>5、数据结构：<br>​    基本数据类型(只能存储单个的值)  -&gt;  数组(可以处理批量的数据)  -&gt;  对象(既能存储数据，又能存储函数)</p>
+<h4 id="创建对象的方法"><a href="#创建对象的方法" class="headerlink" title="创建对象的方法"></a>创建对象的方法</h4><p>1、最基础的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1、通过new声明对象</span></span><br><span class="line"><span class="comment">// var obj = new Object();</span></span><br><span class="line"><span class="comment">//2、省略new声明对象</span></span><br><span class="line"><span class="comment">// var obj = Object();</span></span><br><span class="line"><span class="comment">//3、直接通过对象常量赋值</span></span><br><span class="line"><span class="comment">/*var obj = &#123;&#125;;</span></span><br><span class="line"><span class="comment">添加对象的属性  和普通的变量是一样的</span></span><br><span class="line"><span class="comment">obj.name = '小明';</span></span><br><span class="line"><span class="comment">obj.age = 18;</span></span><br><span class="line"><span class="comment">//添加对象的方法/函数</span></span><br><span class="line"><span class="comment">obj.run = function()&#123;</span></span><br><span class="line"><span class="comment">	alert("会跑")</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">alert(obj.name);</span></span><br><span class="line"><span class="comment">obj.run();*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*var obj = &#123;</span></span><br><span class="line"><span class="comment">	name: "小明",</span></span><br><span class="line"><span class="comment">	age: 18,</span></span><br><span class="line"><span class="comment">	run: function()&#123;</span></span><br><span class="line"><span class="comment">	alert("会跑");</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">alert(obj.name);</span></span><br><span class="line"><span class="comment">obj.run();*/</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加对象的属性  和普通的变量是一样的</span></span><br><span class="line">obj.name = <span class="string">'小明'</span>;</span><br><span class="line">obj[<span class="string">'age'</span>] = <span class="number">18</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加对象的方法/函数</span></span><br><span class="line">obj.run = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">"会跑"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(obj[<span class="string">'name'</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除对象的属性和方法的关键字 delete</span></span><br><span class="line"><span class="comment">// delete删除对象属性，delete删除不了变量及原型链中的变量</span></span><br><span class="line"><span class="keyword">delete</span> obj.name;</span><br><span class="line">alert(obj.name);</span><br><span class="line"></span><br><span class="line">obj.run();</span><br></pre></td></tr></table></figure>
+<p>但是这样太麻烦，我要写100个人，那得写100次。有别的方法吗？有</p>
+<p>2、工厂方式 通过构造函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//原料</span></span><br><span class="line">    <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    <span class="comment">//加工</span></span><br><span class="line">    obj.name = name;</span><br><span class="line">    obj.age=age;</span><br><span class="line">    obj.showAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         alert(<span class="keyword">this</span>.age)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//出厂</span></span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1=createPerson(<span class="string">"shizhikai"</span>,<span class="string">'3岁'</span>)</span><br><span class="line"><span class="keyword">var</span> obj2=createPerson(<span class="string">"ni"</span>,<span class="string">'18岁'</span>);</span><br><span class="line"></span><br><span class="line">alert(obj1.showName)<span class="comment">//function()&#123;alert(this.name)&#125;</span></span><br><span class="line">alert(obj2.showName)<span class="comment">//function()&#123;alert(this.name)&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="日起对象Date"><a href="#日起对象Date" class="headerlink" title="日起对象Date"></a>日起对象Date</h2><p>Date对象代表日期</p>
+<p> Date</p>
+<p>类型使用自 UTC（Coordinated Universal Time，国际协调时间）1970 年 1 月 1 日午夜（零时）开始经过的毫秒数来保存日期。Date 类型保存的日期能够精确到 1970 年 1 月 1 日之前或之后的 285616 年。</p>
+<p>创建一个日期对象，使用 new 运算符和 Date 构造方法(构造函数)即可。</p>
+<p>​    <strong>var d = new Date();</strong></p>
+<p>在调用 Date 构造方法而不传递参数的情况下，新建的对象自动获取当前的时间和日期。</p>
+<p>创建日期对象并指定时间</p>
+<p>​    <strong>var d = new Date(“2015/08/22”);</strong></p>
+<p>​    <strong>var d = new Date(2016,04,13,14,34);</strong></p>
+<p>【注】time可以是“2015/08/22”， “2015-08-22”  ，或1970年当前日期的毫秒数56521211021</p>
+<h4 id="5、日期对象Date（格式化方法，了解即可）"><a href="#5、日期对象Date（格式化方法，了解即可）" class="headerlink" title="5、日期对象Date（格式化方法，了解即可）"></a>5、日期对象Date（格式化方法，了解即可）</h4><table>
+<thead>
+<tr>
+<th>alert(box.toDateString());</th>
+<th>//以特定的格式显示星期几、月、日和年</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alert(box.toTimeString());</td>
+<td>//以特定的格式显示时、分、秒和时区</td>
+</tr>
+<tr>
+<td>alert(box.toLocaleDateString());</td>
+<td>//以特定地区格式显示星期几、月、日和年</td>
+</tr>
+<tr>
+<td>alert(box.toLocaleTimeString());</td>
+<td>//以特定地区格式显示时、分、秒和时区</td>
+</tr>
+<tr>
+<td>alert(box.toUTCString());</td>
+<td>//以特定的格式显示完整的 UTC 日期。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="6、日期对象Date方法"><a href="#6、日期对象Date方法" class="headerlink" title="6、日期对象Date方法"></a>6、日期对象Date方法</h4><p>x(“2015-08-24”);</p>
+<p>//转换格式默认支持2015-08-24或2015/08/24</p>
+<p>//返回距离1970年1月1日0时的毫秒数</p>
+<p>d.getTime()/d.setTime()</p>
+<p>getTime获取某个日期自1970年以来的毫秒数</p>
+<p>setTime修改日期的毫秒数，对应的日期时间也会修改</p>
+<p>var myDate = new Date();</p>
+<p>myDate.getTime();</p>
+<h4 id="7、日期对象方法"><a href="#7、日期对象方法" class="headerlink" title="7、日期对象方法"></a>7、日期对象方法</h4><h5 id="重点记忆（set-get既能获取又能够赋值-get只能获取）"><a href="#重点记忆（set-get既能获取又能够赋值-get只能获取）" class="headerlink" title="重点记忆（set/get既能获取又能够赋值    get只能获取）"></a>重点记忆（set/get既能获取又能够赋值    get只能获取）</h5><blockquote>
+<p>调用格式： 日期对象.方法()</p>
+</blockquote>
+<p>set/getDate() 从Date对象中返回一个月中的某一天(1~31)</p>
+<p>getDay() 从Date对象返回一周中的某一天(0~6 )    获取日期星期几（0~6）0是周日</p>
+<p>set/getMonth() 从Date对象中返回月份(0~11)对应（1~12）</p>
+<p>set/getFullYear() 从Date对象以四位数返回年份</p>
+<p>set/getHours() 返回Date对象的小时(0~23)</p>
+<p>set/getMinutes() 返回Date对象的分钟(0~59)</p>
+<p>set/getSeconds() 返回Date对象的秒数(0~59)</p>
+<p>set/getMilliseconds()   返回Date对象的毫秒</p>
+<p>set/getTime() 返回1970年1月1日至今的毫秒数</p>
+<p>getTimezoneOffset()     返回本地时间与格林威治标准时间(GMT)的分钟差</p>
+<h3 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h3><h4 id="setInterval-函数，毫秒数"><a href="#setInterval-函数，毫秒数" class="headerlink" title="setInterval(函数，毫秒数)"></a>setInterval(函数，毫秒数)</h4><p>此处函数不加小括号，此处含义是把函数传过去让他执行</p>
+<p>格式： var timer = setInterval(show, 1000);</p>
+<p>返回值：当前定时器的编码</p>
+<h4 id="clearInterval（timer）；-关闭定时器"><a href="#clearInterval（timer）；-关闭定时器" class="headerlink" title="clearInterval（timer）；//关闭定时器"></a>clearInterval（timer）；//关闭定时器</h4><p>函数写法：</p>
+<p>1、</p>
+<p>function show(){</p>
+<p>}</p>
+<p>2、</p>
+<p>var show = function(){</p>
+<p>}</p>
+<p>show();</p>
+<p>所以上面写法可以替换为</p>
+<p>格式： setInterval( function(){</p>
+<p>}, 1000);</p>
+<p>此处函数叫做匿名函数；</p>
+
+					
+				</div>
+			</div>
+		</article>
+
+		<ul class="am-pagination">
+    
+    	<li class="am-pagination-prev">
+   		<a class="pull-left" href="/2018/10/25/面向对象和面向过程/" title="面向对象和面向过程">
+      		&laquo; 上一篇
+		</a>
+		</li>
+	
+	
+		<li class="am-pagination-next">
+		<a class="pull-right" href="/2018/10/23/字符串String/" title="字符串String">
+			下一篇 &raquo;
+		</a>
+		</li>
+	 
+ </ul>
+        
+
+		<div class="theme-annie-comment-button-container">
+	<button id="annie-comment-button" class="theme-annie-comment-button" onclick="Annie_Comment()">
+		加载评论
+		<!--加载评论-->
+	</button>
+</div>
+
+<div id="annie-comment-container" class="theme-annie-comment-main-container">
+
+	
+		
+			<!-- comment valine -->
+			<!-- show valine comment -->
+<div id="valineComment" class="comment"></div>
+
+<!-- valine`s js & css -->
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/js/valine.min.js"></script>
+<link rel="stylesheet" href="/css/comment.css">
+
+<script>
+	var checkExistComment = setInterval(function() {
+		if( $('#valineComment').length ) {
+			new Valine({
+				// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+				av: AV,
+				//使用id寻找div元素（使用class可能找不到）
+				el: '#valineComment',
+				emoticon_url: 'https://cloud.panjunwen.com/alu',
+				emoticon_list: ["吐.png", "期待.png", "高兴.png", "吐血倒地.png", "哭泣.png", "欢呼.png"],
+				app_id: "3333....", //获取APP ID
+				app_key: "3333......", //获取APP KEY
+				placeholder: "no any!", //评论框占位提示文字        			
+			});
+			clearInterval(checkExistComment);
+		}
+	}, 100);
+</script>
+		
+	
+
+</div>
+
+<script type="text/javascript">
+	/* Show Comment */
+	var Annie_Comment = function() {
+		function Show_Hidden(obj) {
+			obj.style.display = 'block';
+		}
+		
+		//var obutton = $('#annie-comment-button');
+		//var obutton = $('#annie-comment-container');
+		var obutton = document.getElementById("annie-comment-button" || "0");
+		var odiv = document.getElementById("annie-comment-container");
+		if( 'obutton' ) {
+			obutton.onclick = function() {
+				Show_Hidden(odiv);
+				$("#annie-comment-button").css("display", 'none');
+				return false;
+			}
+		}
+	};
+
+	(function Annie_Init() {
+		Annie_Comment();
+	})();
+</script>
+		
+		<!--
+	时间：2018-09-24
+	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
+-->
+
+	
+		<aside class="post-widget">
+			<nav class="post-toc-wrap" id="post-toc">
+				
+					<strong>文章目录</strong>
+				
+				
+				<!--toc(post.content)-->
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1、Math对象"><span class="post-toc-text">1、Math对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Math-random"><span class="post-toc-text">Math.random()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Math-max-num1-num2-Math-min-num1-num2"><span class="post-toc-text">Math.max(num1,num2),Math.min(num1,num2);</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Math-round"><span class="post-toc-text">Math.round()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Math-floor-Math-ceil"><span class="post-toc-text">Math.floor(), Math.ceil()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Math-sqrt"><span class="post-toc-text">Math.sqrt()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Math-abs"><span class="post-toc-text">Math.abs()</span></a></li></ol></li></ol><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对象"><span class="post-toc-text">对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#面向对象"><span class="post-toc-text">面向对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#面向对象和面向过程的区别"><span class="post-toc-text">面向对象和面向过程的区别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。"><span class="post-toc-text">如果是面向对象的设计思想来解决问题。面向对象的设计则是从另外的思路来解决问题。整个五子棋可以分为1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。"><span class="post-toc-text">可以明显地看出，面向对象是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在面向过程的设计中分散在了多个步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对象的组成"><span class="post-toc-text">对象的组成</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#this当前的方法属于谁就是谁"><span class="post-toc-text">this当前的方法属于谁就是谁</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建对象的方法"><span class="post-toc-text">创建对象的方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#日起对象Date"><span class="post-toc-text">日起对象Date</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5、日期对象Date（格式化方法，了解即可）"><span class="post-toc-text">5、日期对象Date（格式化方法，了解即可）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#6、日期对象Date方法"><span class="post-toc-text">6、日期对象Date方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7、日期对象方法"><span class="post-toc-text">7、日期对象方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#重点记忆（set-get既能获取又能够赋值-get只能获取）"><span class="post-toc-text">重点记忆（set/get既能获取又能够赋值    get只能获取）</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定时器"><span class="post-toc-text">定时器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#setInterval-函数，毫秒数"><span class="post-toc-text">setInterval(函数，毫秒数)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#clearInterval（timer）；-关闭定时器"><span class="post-toc-text">clearInterval（timer）；//关闭定时器</span></a></li></ol></li>
+			</nav>
+			<div class="post-toc-bar"><div>
+		</div></div></aside>
+	
+
+	</div>
+</div>
+		</div>
+		</main>
+		
+		<!--footer-->
+		<footer>
+	<div class="blog-text-center">
+		<div class="theme-annie-social">
+				
+				
+					<a href="http://github.com/" title="Github" target="_blank"><i class="fa fa-github"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="Weibo" target="_blank"><i class="fa fa-weibo"></i>&nbsp;</a>
+				
+				
+					<a href="http://github.com/" title="Email" target="_blank"><i class="fa fa-envelope-o"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="QQ" target="_blank"><i class="fa fa-qq"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="Twitter" target="_blank"><i class="fa fa-twitter"></i>&nbsp;</a>
+						
+				
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			
+				&copy; 2017 - 2018, content by luozy. All Rights Reserved.			       	
+			
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.		
+		</div>
+	</div>
+</footer>
+		<!-- <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script> -->
+
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+
+<style>
+	.motto {
+		color: #000000;
+		font-size: 20px;
+		margin: 100px 25% 0;
+		width: 50%;
+		line-height: 1.4;
+		font-family:"KaiTi", "STXingkai", "Source Sans Pro", "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+		text-align: center;
+	}
+	@media(max-width: 890px) {
+		.motto {	
+			margin: 100px 10% 0;
+			width: 80%;
+		}
+	}
+	@media(max-width: 890px) {
+		.motto {
+			margin: 100px 5% 0;
+			width: 90%;
+		}
+	}
+</style>
+
+
+	<script src="/js/motto.js"></script>
+	<script type="text/javascript">
+		$(".motto").html(getMingYanContent());
+	</script>	
+
+
+
+
+
+
+
+	<script type="text/javascript" src="/js/toc.js"></script>
+
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript">
+	//generate a random img that pre_name 'from 0 to 110'
+	var random_bg = Math.floor(Math.random() * 109 + 1);
+
+	//var bg = 'url(/img/random/' + random_bg + '.jpg)';		
+	var bg = 'url(https://XXX-youname-XXX.github.io/Random-img/' + random_bg + '.jpg)';
+
+	$("#header-bg-2").css("background-image", bg);
+</script>
+		
+		<!--back to top-->
+        <style type="text/css">
+	#totop {
+		background: white;
+		border-radius: 50%;
+		position: fixed;
+		right: 5.4%;
+		bottom: 80px;
+		cursor: pointer;
+	}
+	
+	#totop a {
+		color: #474747;
+		background-color: transparent;
+		padding: 10px;
+		text-decoration: none;
+	}
+	
+	@media(max-width:512px) {
+		#totop {
+			display: none;
+			visibility: hidden;
+		}
+	}
+</style>
+
+
+	<div id="totop">
+  		<a href="javascript:;" class="fa fa-arrow-up"></a>
+	</div>
+
+	</body>
+	</html>
+
