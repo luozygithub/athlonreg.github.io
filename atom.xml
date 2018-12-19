@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tianjiec.top/"/>
-  <updated>2018-12-14T13:06:22.092Z</updated>
+  <updated>2018-12-19T02:43:33.203Z</updated>
   <id>https://tianjiec.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>面试题</title>
+    <link href="https://tianjiec.top/2018/12/18/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>https://tianjiec.top/2018/12/18/面试题/</id>
+    <published>2018-12-18T01:21:11.000Z</published>
+    <updated>2018-12-19T02:43:33.203Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="1、你做的页面在那些浏览器测试过？这些浏览器的内核分别是什么？"><a href="#1、你做的页面在那些浏览器测试过？这些浏览器的内核分别是什么？" class="headerlink" title="1、你做的页面在那些浏览器测试过？这些浏览器的内核分别是什么？"></a>1、你做的页面在那些浏览器测试过？这些浏览器的内核分别是什么？</h4><p>IE：trident内核</p><p>Firefox：gecko内核</p><p>Safari：webkit内核</p><p>Opera：以前是presto内核，现在改用Google的Chrome的blink内核</p><p>Chrome：blink（基于webkit，Google与Opera共同开发）</p><h4 id="2、每个HTML文件里开头都有一个很重要的东西，Doctype，知道这是干什么的吗？"><a href="#2、每个HTML文件里开头都有一个很重要的东西，Doctype，知道这是干什么的吗？" class="headerlink" title="2、每个HTML文件里开头都有一个很重要的东西，Doctype，知道这是干什么的吗？"></a>2、每个HTML文件里开头都有一个很重要的东西，Doctype，知道这是干什么的吗？</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE&gt;</span> 声明于文档中的最前面的位置，处于<span class="tag">&lt;<span class="name">html</span>&gt;</span> 标签之前。此标签可告知浏览器文档使用哪种HTML 或 XHTML 规范。（重点：告诉浏览器按照何种规范解析页面）</span><br></pre></td></tr></table></figure><h4 id="3、Quirks-模式-是什么？-他和Standards模式有什么区别"><a href="#3、Quirks-模式-是什么？-他和Standards模式有什么区别" class="headerlink" title="3、Quirks 模式 是什么？ 他和Standards模式有什么区别"></a>3、Quirks 模式 是什么？ 他和Standards模式有什么区别</h4><p>从IE6开始，引入了Standards模式， 标准模式中，浏览器尝试给符合标准的文档在规范上的正确处理达到在指定浏览器中的程度。</p><p>在IE6之前 CSS 还不够成熟， 所以 IE5 等之前的浏览器 对 CSS 的支持很差， IE6将对CSS提供更好的支持，然而这时的问题来了，因为有很多页面是基于旧的布局方式写的，而如果IE6支持CSS则将令这些页面显示不正常，如果在既保证不破坏现有页面，有提供新的渲染机制呢？</p><p>在写程序的时候我们也会经常遇到这样的问题，如何保证原来的接口不变，有提供更强大的功能，尤其是新功能不兼容旧功能的时候。 遇到这样的问题是一个常见的做法是增加参数和分支，即当某个参数为真时，我们就使用新功能，而如果这个参数不为真时，就是使用旧功能，这样就能不破坏原有程序，又提供新功能。IE刘也是类似这样做的，它将DTD当成了这个参数，就意味着这个页面都将采用CSS支持更好的布局，而如果没有，则将采用兼容之前的布局方式。 这就是Quirks模式（怪癖模式，诡异模式， 怪异模式）。</p><p>区别：</p><p>总体会有布局、 样式解析和脚本执行这三方面的区别。</p><p>盒模型：</p><p>在W3C标准中，如果设置了一个元素的宽和高，指的是元素内容的宽度和高度，而在Quirks模式下。IE的宽度和高度还包含了padding和border。</p><p>设置行内元素的高度：</p><p>在Standards 模式下，给<span>等行内元素设置width和height都不会生效，而在quirks模式下，则会生效。</span></p><p>设置百分比的高度：在standards模式下， 一个元素的高度石油其包含的元素内容来决定的，如果父元素没有设置百分比高度，子元素设置一个百分比高度是无效的。</p><p>margin：0 auto设置水平居中：使用margin:0 auto 在standards模式下 可以使元素水平居中，但在quirks 模式下会失效</p><p>（还有很多，答出什么不重要，关键是看他答出的这些是不是自己经验遇到的，还是说都是看文章看的，甚至完全不知道。）</p><h4 id="4、div-css布局较table布局有什么优点？"><a href="#4、div-css布局较table布局有什么优点？" class="headerlink" title="4、div+css布局较table布局有什么优点？"></a>4、div+css布局较table布局有什么优点？</h4><p>改版的时候更方便  是要改css文件。</p><p>页面加载的速度更快、结构化清晰、页面显示简洁。</p><p>表现与结构相分离；</p><p>易于优化（seo）搜索引擎更友好，排名更靠前。</p><h4 id="5、img的alt-与-title-有何异同？-strong-与-em-的异同？"><a href="#5、img的alt-与-title-有何异同？-strong-与-em-的异同？" class="headerlink" title="5、img的alt 与 title 有何异同？ strong 与 em 的异同？"></a>5、img的alt 与 title 有何异同？ strong 与 em 的异同？</h4><p>a: alt（alt text）： 为了能显示图像、窗体或applets的用户代理（UA），alt属性用来指定替换的文字。</p><p>替换文字的语言用lang属性来决定。（在IE浏览器下会在没有title时把 alt 当成 tool tip 显示）</p><p>title（tool tip）：该属性为设置该属性的元素提供建议性的信息。</p><p>strong：粗体强调标签，强调，表示内容的重要性；</p><p>em：斜体强调标签，更强烈强调，表示内容强调点；</p><h4 id="6、你能描述一下渐进增强和优雅降级之间的不同吗？"><a href="#6、你能描述一下渐进增强和优雅降级之间的不同吗？" class="headerlink" title="6、你能描述一下渐进增强和优雅降级之间的不同吗？"></a>6、你能描述一下渐进增强和优雅降级之间的不同吗？</h4><p><strong>渐进增强</strong>： progressive enhancement：针对低版本浏览器进行构建页面，保证最基本的功能，然后在针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p><p><strong>优雅降级</strong>：graceful degradation ： 一开始就构建完整的功能，然后再针对低版本的浏览器进行兼容。</p><p><strong>区别：</strong>优雅降级是从复杂的现状开始的，并试图减少用户体验的供给，而渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要。降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带。</p><p><strong>优雅降级</strong>观点</p><p>优雅降级观点认为应该针对那些最高级、最完善的浏览器来设计网站。而将那些被认为过时 或有功能缺失的浏览器下的测试安排在开发周期的最后阶段，并把测试对象限定为主流浏览器 （如IE、Mozilla等）的前一个版本。</p><p>在这种设计规范下，旧版本的浏览器被认为仅能提供“简陋却无妨（poor ，but passable）”的浏览体验。你可以做一些小的调整来适应某个特定的浏览器。但由于他们并非我们所关注的焦点，因此除了修复较大的错误之外，其他的差异将被直接忽略。</p><p><strong>渐进增强</strong>观点</p><p>渐进增强观点则认为应关注内容本身。</p><p>内容使我们创建网站的诱因。有的网站展示它，有的网站收集他，有的寻求，有的操作，还有的网站甚至会包含以上的种种，但相同点是它们全都涉及到内容。这使得“渐进增强”成为一种更为合理的设计范例。这也是它立即被 Yahoo! 所采纳并用以构建其“分级式浏览器支持 (Graded Browser Support)”策略的原因所在。</p><p>那么问题来了。现在产品经理看到IE6,7,8网页效果相对高版本现代浏览器少了很多圆角，阴影（CSS3），要求兼容（使用图片背景，放弃CSS3），你会如何说服他？</p><h4 id="7、为什么利用多个域名来存储网站资源会更有效？"><a href="#7、为什么利用多个域名来存储网站资源会更有效？" class="headerlink" title="7、为什么利用多个域名来存储网站资源会更有效？"></a>7、为什么利用多个域名来存储网站资源会更有效？</h4><p>CDN缓存更方便</p><p>突破浏览器并发限制</p><p>节约cookie带宽</p><p>节约主域名的连接数，优化页面响应速度</p><p>防止不必要的安全问题</p><p>8、请谈一下你对网页标准和标准定义机构重要性的理解。</p><p>网页标准和标准定制机构都是为了让web发展的更健康，开发者遵循统一的标准，降低开发难度，开发成本，SEO也会更好做，也不会因为滥用代码而导致各种BUG、安全问题，最终提高网站的易用性。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;1、你做的页面在那些浏览器测试过？这些浏览器的内核分别是什么？&quot;&gt;&lt;a href=&quot;#1、你做的页面在那些浏览器测试过？这些浏览器的内核分别是什么？&quot; class=&quot;headerlink&quot; title=&quot;1、你做的页面在那些浏览器测试过？这些浏览器的内核分别是什么
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>夜、萤火虫和你</title>
