@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>5-1Node.js编写 | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="学前需求 一、node安装和运行 12会安装node，搭建node环境会运行node执行node程序  二、node基础模块的使用 12345Buffer：二进制数据处理模块Events：事件模块fs：文件系统模块Net：网络模块Http：http模块  https://nodejs.org/api/  前台管理功能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5-1Node.js编写">
+<meta property="og:url" content="https://tianjiec.top/2018/12/20/5-1Node-js编写/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="学前需求 一、node安装和运行 12会安装node，搭建node环境会运行node执行node程序  二、node基础模块的使用 12345Buffer：二进制数据处理模块Events：事件模块fs：文件系统模块Net：网络模块Http：http模块  https://nodejs.org/api/  前台管理功能">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V13wE8sQ0FBtUy/BUkKRSYer6YG8srS1RteyV39UGe04Zi8kcWL7bwoQas!/b/dGYBAAAAAAAA&bo=cgF6AQAAAAADByo!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V13wE8sQ0FBtUy/R660H48.QMim2kKOUN.K5Pkfhpdcpu2cfnZmsIuDq.k!/b/dDEBAAAAAAAA&bo=KAKqAwAAAAADB6E!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V13wE8sQ0FBtUy/KEvmeky95HuJ4YaPSjoF5hjfAx9M9Q3bz6WsqtErtqQ!/b/dFYBAAAAAAAA&bo=xgKcAQAAAAADB3s!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V13wE8sQ0FBtUy/yrwfg0RB5*BrSANs3IltkSPIIe76l7bseNEbdTw4DDY!/b/dFYBAAAAAAAA&bo=BAKIAQAAAAADB60!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V13wE8sQ0FBtUy/yd3sN3SlMU22RfznIbFMYtreROhe80JUaw8Zx0xj7QU!/b/dFYBAAAAAAAA&bo=BgIEAgAAAAADByA!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V13wE8sQ0FBtUy/Rh6kslhjswehoKgecSqxrliFSMIG4q9rm*DjmbSuZs8!/b/dF4BAAAAAAAA&bo=EgJeAQAAAAADB20!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V13wE8sQ0FBtUy/bDrNzQyw4OQ2Xwat*g6CDTXSQcAgDzaFrgLSIH0L4HY!/b/dGcBAAAAAAAA&bo=JgJ0AQAAAAADB3M!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V13wE8sQ0FBtUy/YRE0y3xWBvM4MuKGsuZoc0aAjLYcIhTQP6kXcNCa73o!/b/dFYBAAAAAAAA&bo=jAEOAQAAAAADB6A!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V13wE8sQ0FBtUy/x3.YvajSctA1zqznjRIefek90Yg7PR.8IIHL4RPwLx8!/b/dFYBAAAAAAAA&bo=8AFkAQAAAAADB7Y!&rf=viewer_4">
+<meta property="og:updated_time" content="2018-12-20T09:18:20.569Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="5-1Node.js编写">
+<meta name="twitter:description" content="学前需求 一、node安装和运行 12会安装node，搭建node环境会运行node执行node程序  二、node基础模块的使用 12345Buffer：二进制数据处理模块Events：事件模块fs：文件系统模块Net：网络模块Http：http模块  https://nodejs.org/api/  前台管理功能">
+<meta name="twitter:image" content="http://m.qpic.cn/psb?/V13wE8sQ0FBtUy/BUkKRSYer6YG8srS1RteyV39UGe04Zi8kcWL7bwoQas!/b/dGYBAAAAAAAA&bo=cgF6AQAAAAADByo!&rf=viewer_4">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">5-1Node.js编写</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">5-1Node.js编写</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-12-20T09:17:09.000Z" itemprop="datePublished" class="page-time">
+  2018-12-20
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#学前需求"><span class="post-toc-number">1.</span> <span class="post-toc-text">学前需求</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、node安装和运行"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">一、node安装和运行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、node基础模块的使用"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">二、node基础模块的使用</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前台管理功能"><span class="post-toc-number">2.</span> <span class="post-toc-text">前台管理功能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#后台页面"><span class="post-toc-number">3.</span> <span class="post-toc-text">后台页面</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、技术框架介绍"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">三、技术框架介绍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、第三方模块-amp-中间件"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">四、第三方模块&amp;中间件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五、项目初始化"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">五、项目初始化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#六、依赖模块安装（要联网、要联网、要联网）"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">六、依赖模块安装（要联网、要联网、要联网）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#应用创建"><span class="post-toc-number">4.</span> <span class="post-toc-text">应用创建</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#准备：目录结构"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">准备：目录结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、创建应用、监听端口-app-js中"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">一、创建应用、监听端口(app.js中)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、用户的访问"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">二、用户的访问</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、处理请求输出"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">三、处理请求输出</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、内容输出"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">四、内容输出</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五、使用模板"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">五、使用模板</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#六、划分模块"><span class="post-toc-number">5.</span> <span class="post-toc-text">六、划分模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#根据功能进行模块划分"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">根据功能进行模块划分</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前台路由-模板"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">前台路由+模板</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#后台路由-模块"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">后台路由+模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#功能开发顺序"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">功能开发顺序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#首先我们来看一下如何链接数据库mongoDB"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">首先我们来看一下如何链接数据库mongoDB</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据库的使用"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">数据库的使用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用户注册"><span class="post-toc-number">5.7.</span> <span class="post-toc-text">用户注册</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置用户主页"><span class="post-toc-number">5.8.</span> <span class="post-toc-text">设置用户主页</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#添加数据库验证"><span class="post-toc-number">5.9.</span> <span class="post-toc-text">添加数据库验证</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-5-1Node-js编写" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">5-1Node.js编写</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-12-20 17:17:09" datetime="2018-12-20T09:17:09.000Z" itemprop="datePublished">2018-12-20</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="学前需求"><a href="#学前需求" class="headerlink" title="学前需求"></a>学前需求</h2><blockquote>
+<h3 id="一、node安装和运行"><a href="#一、node安装和运行" class="headerlink" title="一、node安装和运行"></a>一、node安装和运行</h3></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">会安装node，搭建node环境</span><br><span class="line">会运行node执行node程序</span><br></pre></td></tr></table></figure>
+<blockquote>
+<h3 id="二、node基础模块的使用"><a href="#二、node基础模块的使用" class="headerlink" title="二、node基础模块的使用"></a>二、node基础模块的使用</h3></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Buffer：二进制数据处理模块</span><br><span class="line">Events：事件模块</span><br><span class="line">fs：文件系统模块</span><br><span class="line">Net：网络模块</span><br><span class="line">Http：http模块</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://nodejs.org/api/" target="_blank" rel="noopener">https://nodejs.org/api/</a></p>
+</blockquote>
+<h2 id="前台管理功能"><a href="#前台管理功能" class="headerlink" title="前台管理功能"></a>前台管理功能</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://m.qpic.cn/psb?/V13wE8sQ0FBtUy/BUkKRSYer6YG8srS1RteyV39UGe04Zi8kcWL7bwoQas!/b/dGYBAAAAAAAA&bo=cgF6AQAAAAADByo!&rf=viewer_4" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<h2 id="后台页面"><a href="#后台页面" class="headerlink" title="后台页面"></a>后台页面</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://m.qpic.cn/psb?/V13wE8sQ0FBtUy/R660H48.QMim2kKOUN.K5Pkfhpdcpu2cfnZmsIuDq.k!/b/dDEBAAAAAAAA&bo=KAKqAwAAAAADB6E!&rf=viewer_4" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<blockquote>
+<h3 id="三、技术框架介绍"><a href="#三、技术框架介绍" class="headerlink" title="三、技术框架介绍"></a>三、技术框架介绍</h3><p>NodeJS、Express、Mongodb</p>
+<h3 id="四、第三方模块-amp-中间件"><a href="#四、第三方模块-amp-中间件" class="headerlink" title="四、第三方模块&amp;中间件"></a>四、第三方模块&amp;中间件</h3></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">body-parser:解析post请求数据</span><br><span class="line">cookies:读/写cookie</span><br><span class="line">swig:模板解析引擎</span><br><span class="line">mongoose:操作mongodb数据</span><br><span class="line">markdown:markdown语法解析生成模块</span><br></pre></td></tr></table></figure>
+<blockquote>
+<h3 id="五、项目初始化"><a href="#五、项目初始化" class="headerlink" title="五、项目初始化"></a>五、项目初始化</h3></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+<blockquote>
+<h3 id="六、依赖模块安装（要联网、要联网、要联网）"><a href="#六、依赖模块安装（要联网、要联网、要联网）" class="headerlink" title="六、依赖模块安装（要联网、要联网、要联网）"></a>六、依赖模块安装（要联网、要联网、要联网）</h3></blockquote>
+<h2 id="应用创建"><a href="#应用创建" class="headerlink" title="应用创建"></a>应用创建</h2><blockquote>
+<h3 id="准备：目录结构"><a href="#准备：目录结构" class="headerlink" title="准备：目录结构"></a>准备：目录结构</h3></blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://m.qpic.cn/psb?/V13wE8sQ0FBtUy/KEvmeky95HuJ4YaPSjoF5hjfAx9M9Q3bz6WsqtErtqQ!/b/dFYBAAAAAAAA&bo=xgKcAQAAAAADB3s!&rf=viewer_4" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<blockquote>
+<h3 id="一、创建应用、监听端口-app-js中"><a href="#一、创建应用、监听端口-app-js中" class="headerlink" title="一、创建应用、监听端口(app.js中)"></a>一、创建应用、监听端口(app.js中)</h3></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//加载express模块</span><br><span class="line">var express = require(&quot;express&quot;);</span><br><span class="line">//创建app应用  =&gt; NodeJS Http.createServer();</span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line">//监听http请求</span><br><span class="line">app.listen(8081);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<h3 id="二、用户的访问"><a href="#二、用户的访问" class="headerlink" title="二、用户的访问"></a>二、用户的访问</h3><p>(1)用户通过URL访问web应用，如 http:localhost:8081/<br>(2)web后端根据用户访问的URL处理不同的业务逻辑</p>
+<h3 id="三、处理请求输出"><a href="#三、处理请求输出" class="headerlink" title="三、处理请求输出"></a>三、处理请求输出</h3><p>(1)路由绑定：<br>通过app.get()或者app.post()等方法可以把一个url路径和一个或N个函数进行绑定。<br>app.get(“/“, function(req, res, next){}) req：request对象 - 保存客户端请求的一个数据 http.request<br>res：response对象 - 服务端输出对象，提供了一些服务器端输出相关的一些方法 - http.response<br>next：方法，用于执行下一个和路径匹配的函数</p>
+<h3 id="四、内容输出"><a href="#四、内容输出" class="headerlink" title="四、内容输出"></a>四、内容输出</h3><p>通过res.send(string)发送内容到客户端</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//加载express模块</span><br><span class="line">var express = require(&quot;express&quot;);</span><br><span class="line">//创建app应用  =&gt; NodeJS Http.createServer();</span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">	首页</span><br><span class="line">	监听到输入路径/，处理的操作</span><br><span class="line">*/</span><br><span class="line">app.get(&quot;/&quot;, function(req, res, next)&#123;</span><br><span class="line">	res.send(&quot;&lt;h1&gt;欢迎光临我的博客!&lt;/h1&gt;&quot;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//监听http请求</span><br><span class="line">app.listen(8081);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<h3 id="五、使用模板"><a href="#五、使用模板" class="headerlink" title="五、使用模板"></a>五、使用模板</h3><p>（1）模板的使用<br>后端逻辑和页面表现分离 - 前后端分离<br>（2）模板的配置</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">//加载express模块</span><br><span class="line">var express = require(&quot;express&quot;);</span><br><span class="line">//加载模板处理前后端</span><br><span class="line">var swig = require(&quot;swig&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//创建app应用  =&gt; NodeJS Http.createServer();</span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line">//配置应用模板</span><br><span class="line">/*</span><br><span class="line">	定义当前应用所使用的模板引擎,使用swig.renderFile方法解析后缀为html的文件</span><br><span class="line">	第一个参数：模板引擎的名称，同时也是模板文件的后缀</span><br><span class="line">	第二个参数：表示用于解析处理模板内容的方法</span><br><span class="line">*/</span><br><span class="line">app.engine(&quot;html&quot;, swig.renderFile);</span><br><span class="line">/*</span><br><span class="line">	设置模板文件存放的目录</span><br><span class="line">	第一个参数必须是views</span><br><span class="line">	第二个参数是目录</span><br><span class="line">*/</span><br><span class="line">app.set(&quot;views&quot;, &quot;./views&quot;);</span><br><span class="line">/*</span><br><span class="line">	注册所使用的模板引擎</span><br><span class="line">	第一个参数：不能改必须是view engine</span><br><span class="line">	第二个参数：和app.engine这个方法中定义的模板引擎的名称（第一个参数）是一致的</span><br><span class="line">*/</span><br><span class="line">app.set(&quot;view engine&quot;, &quot;html&quot;);</span><br><span class="line">/*</span><br><span class="line">	【注】这里注意，在开发过程中，需要取消模板缓存</span><br><span class="line">*/</span><br><span class="line">swig.setDefaults(&#123;cache: false&#125;);</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">	首页</span><br><span class="line">	监听到输入路径/，处理的操作</span><br><span class="line">*/</span><br><span class="line">app.get(&quot;/&quot;, function(req, res, next)&#123;</span><br><span class="line">	// res.send(&quot;&lt;h1&gt;欢迎光临我的博客!&lt;/h1&gt;&quot;);</span><br><span class="line">	//将前后台页面进行分离</span><br><span class="line">	/*</span><br><span class="line">		读取view目录下的指定文件，解析并返回给客户端</span><br><span class="line">		第一个参数，表示模板文件，相对于views目录 views/index.html</span><br><span class="line">		第二个参数，传递给模板使用的数据。</span><br><span class="line">	*/</span><br><span class="line">	res.render(&quot;index&quot;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//监听http请求</span><br><span class="line">app.listen(8081);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>当我们在设置main.css样式链接的时候，提示请求失败，是因为我们没有设置对应的路由操作</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">app.get(&quot;/main.css&quot;, function(req, res, next)&#123;</span><br><span class="line">	</span><br><span class="line">		// 默认发送的是html格式数据，没有办法解析</span><br><span class="line">		// 在这里需要设置解析格式头</span><br><span class="line">	</span><br><span class="line">	res.setHeader(&quot;content-type&quot;, &quot;text/css&quot;);</span><br><span class="line"></span><br><span class="line">	res.send(&quot;body &#123;background-color: red;&#125;&quot;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>但是上述这种操作处理静态文件过于麻烦，我们可以设置静态文件托管目录</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//修改index.html</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;/public/main.css&quot;&gt;</span><br><span class="line"></span><br><span class="line">//修改app.js</span><br><span class="line">/*</span><br><span class="line">	设置静态文件托管</span><br><span class="line">	下述代码的意思是，如果加载路径url是以/public开头的，就以后续操作处理</span><br><span class="line">*/</span><br><span class="line">app.use(&quot;/public&quot;, express.static(__dirname + &quot;/public&quot;));</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>【注】项目逻辑：<br>用户发送http请求 -&gt; url -&gt; 解析路由 -&gt; 找到匹配的规则 -&gt; 满足规则执行绑定的函数 -&gt; 返回对应的内容。<br>/public -&gt; 静态 -&gt; 直接读取指定目录下的文件，返回用户<br>动态 -&gt; 处理业务逻辑，加载模板，解析模板 -&gt; 返回数据给用户。</p>
+<h2 id="六、划分模块"><a href="#六、划分模块" class="headerlink" title="六、划分模块"></a>六、划分模块</h2><h3 id="根据功能进行模块划分"><a href="#根据功能进行模块划分" class="headerlink" title="根据功能进行模块划分"></a>根据功能进行模块划分</h3><p>前台模块<br>后台管理模块<br>API模块</p>
+<p>使用app.use()进行模块划分</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.use(&quot;/admin&quot;, require(&apos;./routers/admin&apos;));</span><br><span class="line">app.use(&quot;/api&quot;, require(&quot;.routers/api&quot;));</span><br><span class="line">app.use(&quot;/&quot;, require(&quot;./routers/main&quot;));</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>创建routers/admin.js routers/api.js routers/main.js</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&quot;express&quot;);</span><br><span class="line">var router = express.Router();</span><br><span class="line"></span><br><span class="line">//这里不需要些/admin/user，因为前面已经处理过了</span><br><span class="line">router.get(&quot;/user&quot;, function(req, res, next)&#123;</span><br><span class="line">	res.send(&quot;ADMIN - User&quot;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">module.exports = router;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<h3 id="前台路由-模板"><a href="#前台路由-模板" class="headerlink" title="前台路由+模板"></a>前台路由+模板</h3></blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://m.qpic.cn/psb?/V13wE8sQ0FBtUy/yrwfg0RB5*BrSANs3IltkSPIIe76l7bseNEbdTw4DDY!/b/dFYBAAAAAAAA&bo=BAKIAQAAAAADB60!&rf=viewer_4" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<blockquote>
+<h3 id="后台路由-模块"><a href="#后台路由-模块" class="headerlink" title="后台路由+模块"></a>后台路由+模块</h3></blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://m.qpic.cn/psb?/V13wE8sQ0FBtUy/yd3sN3SlMU22RfznIbFMYtreROhe80JUaw8Zx0xj7QU!/b/dFYBAAAAAAAA&bo=BgIEAgAAAAADByA!&rf=viewer_4" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<blockquote>
+<h3 id="功能开发顺序"><a href="#功能开发顺序" class="headerlink" title="功能开发顺序"></a>功能开发顺序</h3></blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://m.qpic.cn/psb?/V13wE8sQ0FBtUy/Rh6kslhjswehoKgecSqxrliFSMIG4q9rm*DjmbSuZs8!/b/dF4BAAAAAAAA&bo=EgJeAQAAAAADB20!&rf=viewer_4" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<blockquote>
+<h3 id="首先我们来看一下如何链接数据库mongoDB"><a href="#首先我们来看一下如何链接数据库mongoDB" class="headerlink" title="首先我们来看一下如何链接数据库mongoDB"></a>首先我们来看一下如何链接数据库mongoDB</h3></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod --dbpath=磁盘路径 port=端口号</span><br></pre></td></tr></table></figure>
+<blockquote>
+<h3 id="数据库的使用"><a href="#数据库的使用" class="headerlink" title="数据库的使用"></a>数据库的使用</h3></blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://m.qpic.cn/psb?/V13wE8sQ0FBtUy/bDrNzQyw4OQ2Xwat*g6CDTXSQcAgDzaFrgLSIH0L4HY!/b/dGcBAAAAAAAA&bo=JgJ0AQAAAAADB3M!&rf=viewer_4" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<blockquote>
+<p>（1）首先在app.js中链接数据库</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//加载数据库模块</span><br><span class="line">var mongoose = require(&quot;mongoose&quot;);</span><br><span class="line">//链接数据库</span><br><span class="line">mongoose.connect(&quot;mongodb://127.0.0.1:27017&quot;, function(err)&#123;</span><br><span class="line">	if(err)&#123;</span><br><span class="line">		console.log(&quot;数据库链接失败：&quot; + err);</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		console.log(&quot;数据库链接成功&quot;);</span><br><span class="line">		//当我们数据库链接成功以后，监听http请求</span><br><span class="line">		app.listen(8081);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>（2）创建schemas/users.js</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var mongoose = require(&quot;mongoose&quot;);</span><br><span class="line"></span><br><span class="line">//定义用户的表结构,并对外提供接口</span><br><span class="line">module.exports = new mongoose.Schema(&#123;</span><br><span class="line">	//用户名</span><br><span class="line">	username: String,</span><br><span class="line">	//密码</span><br><span class="line">	password: String</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>（3）创建models/User.js</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var mongoose = require(&quot;mongoose&quot;);</span><br><span class="line"></span><br><span class="line">var usersSchema = require(&quot;../schemas/users&quot;);</span><br><span class="line"></span><br><span class="line">//完成了一个模型类</span><br><span class="line">module.exports = mongoose.model(&quot;User&quot;, usersSchema);</span><br><span class="line">/*</span><br><span class="line">	【注】后期可以通过这个模型类创建对象</span><br><span class="line">	直接对表中的数据进行操作。</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<blockquote>
+<h3 id="用户注册"><a href="#用户注册" class="headerlink" title="用户注册"></a>用户注册</h3></blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://m.qpic.cn/psb?/V13wE8sQ0FBtUy/YRE0y3xWBvM4MuKGsuZoc0aAjLYcIhTQP6kXcNCa73o!/b/dFYBAAAAAAAA&bo=jAEOAQAAAAADB6A!&rf=viewer_4" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<blockquote>
+<h3 id="设置用户主页"><a href="#设置用户主页" class="headerlink" title="设置用户主页"></a>设置用户主页</h3><p>修改routers/main.js</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&quot;express&quot;);</span><br><span class="line">var router = express.Router();</span><br><span class="line"></span><br><span class="line">//这里不需要些/admin/user，因为前面已经处理过了</span><br><span class="line">router.get(&quot;/&quot;, function(req, res, next)&#123;</span><br><span class="line">	// res.send(&quot;首页&quot;);</span><br><span class="line">	//加载index.html</span><br><span class="line">	res.render(&quot;main/index&quot;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">module.exports = router;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>拷贝对应的index.html（已经写好了） 页面到views/main/index.html<br>同时拷贝对应的其他文件到public中</p>
+</blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://m.qpic.cn/psb?/V13wE8sQ0FBtUy/x3.YvajSctA1zqznjRIefek90Yg7PR.8IIHL4RPwLx8!/b/dFYBAAAAAAAA&bo=8AFkAQAAAAADB7Y!&rf=viewer_4" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<blockquote>
+<p>在public/js/index.js中编写登录注册逻辑</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">//设置登录和注册互斥显示</span><br><span class="line">$(function()&#123;</span><br><span class="line">	$loginBox = $(&quot;#loginBox&quot;);</span><br><span class="line">	$registerBox = $(&quot;#registerBox&quot;);</span><br><span class="line"></span><br><span class="line">	//点击马上注册，切换到注册面板</span><br><span class="line">	$loginBox.find(&quot;a&quot;).on(&quot;click&quot;, function()&#123;</span><br><span class="line">		$registerBox.show();</span><br><span class="line">		$loginBox.hide();</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	//切换到登录面板</span><br><span class="line">	$registerBox.find(&quot;a&quot;).on(&quot;click&quot;, function()&#123;</span><br><span class="line">		$registerBox.hide();</span><br><span class="line">		$loginBox.show();</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	//注册</span><br><span class="line">	$registerBox.find(&quot;button&quot;).on(&quot;click&quot;, function()&#123;</span><br><span class="line">		//点击注册按钮，通过ajax提交请求</span><br><span class="line">		$.ajax(&#123;</span><br><span class="line">			type: &quot;POST&quot;,</span><br><span class="line">			url: &quot;/api/user/register&quot;,</span><br><span class="line">			data: &#123;</span><br><span class="line">				username: $registerBox.find(&quot;[name=username]&quot;).val(),</span><br><span class="line">				password: $registerBox.find(&quot;[name=password]&quot;).val(),</span><br><span class="line">				repassword: $registerBox.find(&quot;[name=repassword]&quot;).val()</span><br><span class="line">			&#125;,</span><br><span class="line">			dataType: &quot;json&quot;,</span><br><span class="line">			success: function(result)&#123;</span><br><span class="line">				console.log(result);</span><br><span class="line">			&#125;,</span><br><span class="line">			error: function(err)&#123;</span><br><span class="line">				console.log(&quot;请求错误：&quot; + err);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;)</span><br><span class="line">//这个部分我们只是完成了前端注册信息的提交</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>下面我们给后端增加注册的逻辑<br>处理post请求数据需要引入body-parser模块<br>在app.js中设置该模块</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var bodyParser = require(&quot;body-parser&quot;); </span><br><span class="line">/*</span><br><span class="line">	bodyParser设置</span><br><span class="line">*/</span><br><span class="line">app.use(bodyParser.urlencoded(&#123;extended: true&#125;));</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在 routers/api.js 中实现</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&quot;express&quot;);</span><br><span class="line">var router = express.Router();</span><br><span class="line"></span><br><span class="line">//定义统一返回格式</span><br><span class="line">var responseData;</span><br><span class="line"></span><br><span class="line">router.use(function(req, res, next)&#123;</span><br><span class="line">	responseData = &#123;</span><br><span class="line">		code: 0,    //错误码</span><br><span class="line">		message: &quot;&quot; //信息</span><br><span class="line">	&#125;</span><br><span class="line">	next();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//这里不需要些/admin/user，因为前面已经处理过了</span><br><span class="line">//在api.js中增加路由</span><br><span class="line">/*</span><br><span class="line">	用户注册</span><br><span class="line">	这里我们需要获取到提交的post数据，</span><br><span class="line">	这里需要用到模块body-parser,用来处理post提交过来的数据</span><br><span class="line">	在app.js中引入该模块</span><br><span class="line">	body-parser引入以后，还需要进行一些相关配置，具体百度</span><br><span class="line">	设置以后，会自动在req中增加一个属性body</span><br><span class="line">	这个属性中有我们post请求提交的数据</span><br><span class="line">*/</span><br><span class="line">router.post(&quot;/user/register&quot;, function(req, res, next)&#123;</span><br><span class="line">	// console.log(&quot;register&quot;);</span><br><span class="line">	// console.log(req.body);</span><br><span class="line">	/*</span><br><span class="line">		下面我们编写注册逻辑</span><br><span class="line">		1、基本的注册逻辑判断</span><br><span class="line">			（1）用户名不能为空</span><br><span class="line">			（2）密码不能为空</span><br><span class="line">			（3）两次输入的密码必须一致</span><br><span class="line">		2、和数据库中的数据进行比对，判断是否被注册了</span><br><span class="line">			（1）数据库的查询</span><br><span class="line">		【注】在判断过程中，我们需要随时返回判断结果，所以需要设置统一接口</span><br><span class="line">	*/</span><br><span class="line">	var username = req.body.username;</span><br><span class="line">	var password = req.body.password;</span><br><span class="line">	var repassword = req.body.repassword;</span><br><span class="line"></span><br><span class="line">	//用户名是否为空</span><br><span class="line">	if(username == &quot;&quot;)&#123;</span><br><span class="line">		responseData.code = 1;</span><br><span class="line">		responseData.message = &quot;用户名不能为空&quot;;</span><br><span class="line">		//返回前端</span><br><span class="line">		res.json(responseData);</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	//密码不能为空</span><br><span class="line">	if(password == &quot;&quot;)&#123;</span><br><span class="line">		responseData.code = 2;</span><br><span class="line">		responseData.message = &quot;密码不能为空&quot;;</span><br><span class="line">		res.json(responseData);</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	//两次输入的密码不一致，必须一致</span><br><span class="line">	if(password != repassword)&#123;</span><br><span class="line">		responseData.code = 3</span><br><span class="line">		responseData.message = &quot;两次输入的密码不一致&quot;;</span><br><span class="line">		res.json(responseData);</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	//注册成功</span><br><span class="line">	responseData.message = &quot;注册成功&quot;;</span><br><span class="line">	res.json(responseData);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">module.exports = router;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<h3 id="添加数据库验证"><a href="#添加数据库验证" class="headerlink" title="添加数据库验证"></a>添加数据库验证</h3><p>routers/api.js</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">   //引入数据模型</span><br><span class="line">   var User = require(&quot;../models/User&quot;);</span><br><span class="line">   //插入到一般判断后面</span><br><span class="line">/*</span><br><span class="line">	用户名是否已经被注册了，</span><br><span class="line">	如果数据库已经存在和我们要注册的用户名同名的数据</span><br><span class="line">	表示用户名已经被注册了</span><br><span class="line">*/</span><br><span class="line">User.findOne(&#123;</span><br><span class="line">	username: username</span><br><span class="line">&#125;).then(function(userInfo)&#123;</span><br><span class="line">	// console.log(userInfo);</span><br><span class="line">	if(userInfo)&#123;</span><br><span class="line">		//表示数据库中有该记录</span><br><span class="line">		responseData.code = 4;</span><br><span class="line">		responseData.message = &quot;用户名已经被注册了&quot;;</span><br><span class="line">		res.json(responseData);</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	//保存用户注册的信息到数据库中</span><br><span class="line">	var user = new User(&#123;</span><br><span class="line">		username: username,</span><br><span class="line">		password: password</span><br><span class="line">	&#125;);</span><br><span class="line">	//保存到数据库</span><br><span class="line">	return user.save(); </span><br><span class="line">&#125;).then(function(newUserInfo)&#123;</span><br><span class="line">	console.log(newUserInfo);</span><br><span class="line">	//注册成功 数据成功存储在了admin数据库中</span><br><span class="line">	responseData.message = &quot;注册成功&quot;;</span><br><span class="line">	res.json(responseData);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>将注册成功的信息显示在页面上(public/js/index.js)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">success: function(result)&#123;</span><br><span class="line">	// console.log(result);</span><br><span class="line">	$registerBox.find(&quot;.colWarning&quot;).html(result.message);</span><br><span class="line">	if(!result.code)&#123;</span><br><span class="line">		//注册成功</span><br><span class="line">		setTimeout(function()&#123;</span><br><span class="line">			//显示登录页面，隐藏注册页面</span><br><span class="line">			$registerBox.hide();</span><br><span class="line">			$loginBox.show();</span><br><span class="line">		&#125;, 1000);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>同样的原理，编写登录<br>public/js/index.js</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//登录</span><br><span class="line">	$loginBox.find(&quot;button&quot;).on(&quot;click&quot;, function()&#123;</span><br><span class="line">		//通过ajax提交请求</span><br><span class="line">		$.ajax(&#123;</span><br><span class="line">			type: &quot;post&quot;,</span><br><span class="line">			url: &quot;api/user/login&quot;,</span><br><span class="line">			data: &#123;</span><br><span class="line">				username: $loginBox.find(&quot;[name=username]&quot;).val(),</span><br><span class="line">				password: $loginBox.find(&quot;[name=password]&quot;).val()</span><br><span class="line">			&#125;,</span><br><span class="line">			dataType: &quot;json&quot;,</span><br><span class="line">			success: function(result)&#123;</span><br><span class="line">				//提示信息</span><br><span class="line">				$loginBox.find(&quot;.colWarning&quot;).html(result.message);</span><br><span class="line">				// console.log(result);</span><br><span class="line">				if(!result.code)&#123;</span><br><span class="line">					//登录成功</span><br><span class="line">					setTimeout(function()&#123;</span><br><span class="line">						//显示登录页面，隐藏注册页面</span><br><span class="line">						$loginBox.hide();</span><br><span class="line">						$userInfo.show();</span><br><span class="line"></span><br><span class="line">						//将用户信息显示在页面上</span><br><span class="line">						$userInfo.find(&quot;.username&quot;).html(result.userInfo.username);</span><br><span class="line">						$userInfo.find(&quot;.info&quot;).html(&quot;你好，欢迎光临我的博客！😁&quot;);</span><br><span class="line">					&#125;, 1000);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在routers/api.js中新增登录的路由</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">//新增登录的路由</span><br><span class="line">/*</span><br><span class="line">	登录</span><br><span class="line">*/</span><br><span class="line">router.post(&quot;/user/login&quot;, function(req, res, next)&#123;</span><br><span class="line">	var username = req.body.username;</span><br><span class="line">	var password = req.body.password;</span><br><span class="line"></span><br><span class="line">	if(username == &quot;&quot; || password == &quot;&quot;)&#123;</span><br><span class="line">		responseData.code = 1;</span><br><span class="line">		responseData.message = &quot;用户名和密码不能为空&quot;;</span><br><span class="line">		res.json(responseData);</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//查询数据库中相同用户名和密码的记录是否存在，如果存在则登录成功</span><br><span class="line">	User.findOne(&#123;</span><br><span class="line">		username: username,</span><br><span class="line">		password: password</span><br><span class="line">	&#125;).then(function(userInfo)&#123;</span><br><span class="line">		if(!userInfo)&#123;</span><br><span class="line">			responseData.code = 2;</span><br><span class="line">			responseData.message = &quot;用户名或密码错误&quot;;</span><br><span class="line">			res.json(responseData);</span><br><span class="line">			return;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		//用户名和密码正确</span><br><span class="line">		responseData.message = &quot;登录成功&quot;;</span><br><span class="line">		//将登录信息返回前端页面</span><br><span class="line">		responseData.userInfo = &#123;</span><br><span class="line">			_id: userInfo._id,</span><br><span class="line">			username: userInfo.username</span><br><span class="line">		&#125;</span><br><span class="line">		res.json(responseData);</span><br><span class="line">		return;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最終更新：<time datetime="2018-12-20T09:18:20.569Z" itemprop="dateUpdated">2018-12-20 17:18:20</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/12/20/5-1Node-js编写/" target="_blank" rel="external">https://tianjiec.top/2018/12/20/5-1Node-js编写/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2018/12/20/5-1Node-js编写/&title=《5-1Node.js编写》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2018/12/20/5-1Node-js编写/&title=《5-1Node.js编写》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2018/12/20/5-1Node-js编写/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《5-1Node.js编写》 — chentj's Blog&url=https://tianjiec.top/2018/12/20/5-1Node-js编写/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2018/12/20/5-1Node-js编写/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/12/20/express的路由/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">express的路由</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2018/12/20/5-1Node-js编写/&title=《5-1Node.js编写》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2018/12/20/5-1Node-js编写/&title=《5-1Node.js编写》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2018/12/20/5-1Node-js编写/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《5-1Node.js编写》 — chentj's Blog&url=https://tianjiec.top/2018/12/20/5-1Node-js编写/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2018/12/20/5-1Node-js编写/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3aS27cMBAFQN//0pOtg0DKe005gcjiaiCNLZYWPezP11e8Pt/Wn1dmd68+f7/y8MLAwHgt43O77hn31GTTOexqbxgYGOcwriJY8p0kpK6z/7JnDAwMjFFAnAEwMDAwnmK0j0wS3f8QcDEwMF7FyAtks03nh78fz8UxMDBeyMir7v/+84/0NzAwMF7F+JTr2SPjyk5+ewoGBsbWjPXH5Jik3DbbDwYGxgmM2XZnY2SzsbA8hcbAwNiP0Zau8se0gbhtZ16ecDEwMDZl1M3CeGBidjePohgYGKcx1pPMWVNzlgBjYGCcw2iblMnW74NmO8ZRJ9IYGBjbMWZHsaKtuPxSousYGBhbM5Kw+Gwi2h4671sUGBgYpzHW09eiQBYE4jrBxsDA2JRxH2TbcJkPbbQHxzr/xsDA2IjRPjgZiZgF2dn/ufz1wMDA2IjRNhTbwdankuEoyGJgYBzDyAtwbSOh/QUojokYGBhbM9bDbl6km7GLEI+BgXEAoy2KrR/77jfXprUYGBgnMNqCfl6Ay9sJKw1RDAyMcxjtUa+9O3tZUTjGwMDYlPEpV14IS/4qSYmjMTIMDIytGflabzTmL+Wp4QwMDIydGG2QnQ2Q5ey8/IeBgXEaIznqzUJze/QcIjEwMDBGzYMkcW3LdsVYGAYGxvGMPDS3SWmOfyDgYmBgvIqRJLH59badmbcTHsjFMTAwXsjIU8f2m+1I2azZiYGBsTXjF5yzS6lNc9WjAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
