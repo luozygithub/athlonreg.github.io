@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Vue1 | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="-js -vue">
+    <meta name="description" content="总结一demo112345678910111213141516171819&amp;lt;div id=&quot;app&quot;&amp;gt;    &amp;lt;p&amp;gt;        &amp;#123;&amp;#123;message&amp;#125;&amp;#125;    &amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script src=&quot;./base/vue.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;">
+<meta name="keywords" content="-js -vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue1">
+<meta property="og:url" content="https://tianjiec.top/2018/12/24/Vue1/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="总结一demo112345678910111213141516171819&amp;lt;div id=&quot;app&quot;&amp;gt;    &amp;lt;p&amp;gt;        &amp;#123;&amp;#123;message&amp;#125;&amp;#125;    &amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script src=&quot;./base/vue.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-24T03:36:55.093Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue1">
+<meta name="twitter:description" content="总结一demo112345678910111213141516171819&amp;lt;div id=&quot;app&quot;&amp;gt;    &amp;lt;p&amp;gt;        &amp;#123;&amp;#123;message&amp;#125;&amp;#125;    &amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script src=&quot;./base/vue.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Vue1</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Vue1</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-12-24T03:09:56.000Z" itemprop="datePublished" class="page-time">
+  2018-12-24
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#总结一"><span class="post-toc-number">1.</span> <span class="post-toc-text">总结一</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#demo1"><span class="post-toc-number">1.0.0.1.</span> <span class="post-toc-text">demo1</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#mvc-设计模式示例"><span class="post-toc-number">1.0.0.2.</span> <span class="post-toc-text">mvc 设计模式示例</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vue的mvvm-设计模式"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">vue的mvvm 设计模式</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Vue1" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Vue1</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-12-24 11:09:56" datetime="2018-12-24T03:09:56.000Z" itemprop="datePublished">2018-12-24</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="总结一"><a href="#总结一" class="headerlink" title="总结一"></a>总结一</h1><h4 id="demo1"><a href="#demo1" class="headerlink" title="demo1"></a>demo1</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        &#123;&#123;message&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./base/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    //每一个应用都是从创建一个实例开始的</span></span><br><span class="line"><span class="undefined">    //每一个应用起码得来这么一个实例</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    //声明式渲染：声明一条数据之后再利用特殊的模板语法将数据渲染到页面中</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    new Vue(&#123;</span></span><br><span class="line"><span class="undefined">        el:"#app",</span></span><br><span class="line"><span class="undefined">        data:&#123;</span></span><br><span class="line"><span class="undefined">            message:"hello world"</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="mvc-设计模式示例"><a href="#mvc-设计模式示例" class="headerlink" title="mvc 设计模式示例"></a>mvc 设计模式示例</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn"</span>&gt;</span>toggle<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn2"</span>&gt;</span>big<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./base/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    //mvc的设计模式  设计项目逻辑</span></span><br><span class="line"><span class="undefined">    //m: model 数据模型  v: view 视图  c: controller 控制器</span></span><br><span class="line"><span class="undefined">    //c层需要控制model 在 view 进行显示</span></span><br><span class="line"><span class="undefined">    //M层的数据和v层的显示存在一个映射关系， 当我们建立好c层之后，焦点关注在数据变化上就行了。</span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="undefined">    //通过简单的mvc的设计思想来构建</span></span><br><span class="line"><span class="undefined">    //view层</span></span><br><span class="line"><span class="undefined">    let view = document.getElementsByClassName('box')[0];</span></span><br><span class="line"><span class="undefined">    //model</span></span><br><span class="line"><span class="undefined">    let model = &#123;</span></span><br><span class="line"><span class="undefined">        isShow: true,</span></span><br><span class="line"><span class="undefined">        isBig: false</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    //controller</span></span><br><span class="line"><span class="undefined">    function Controller()&#123;</span></span><br><span class="line"><span class="undefined">        this.init()；</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    Controller.prototype = &#123;</span></span><br><span class="line"><span class="undefined">        constructor: Controller,</span></span><br><span class="line"><span class="undefined">        init()&#123;</span></span><br><span class="line"><span class="undefined">			this.addEvent();</span></span><br><span class="line"><span class="undefined">            this.render();</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        addEvent()&#123;</span></span><br><span class="line"><span class="undefined">            //let self = self;</span></span><br><span class="line"><span class="undefined">            //let This = this;</span></span><br><span class="line"><span class="undefined">            let btn = document.getElementsByClassName("btn")[0];</span></span><br><span class="line"><span class="undefined">            let btn2 = document.getElementsByClassName("btn2")[0];</span></span><br><span class="line"><span class="undefined">            btn.onclick = ()=&gt;&#123;</span></span><br><span class="line"><span class="undefined">                model.isShow = !model.isShow;</span></span><br><span class="line"><span class="undefined">                this.render();</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            btn2.onclick = () =&gt; &#123;</span></span><br><span class="line"><span class="undefined">                model.isBig = true;</span></span><br><span class="line"><span class="undefined">                this.render();</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        render()&#123;//渲染的过程</span></span><br><span class="line"><span class="undefined">            view.style.display = model.isShow?"block":"none";</span></span><br><span class="line"><span class="undefined">            view.style.width = (model.isBig ? 400 : 50)+"px";</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    new Controller();</span></span><br></pre></td></tr></table></figure>
+<h3 id="vue的mvvm-设计模式"><a href="#vue的mvvm-设计模式" class="headerlink" title="vue的mvvm 设计模式"></a>vue的mvvm 设计模式</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 标签内 数据不需要&#123;&#123;&#125;&#125; --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- v-model 是vue 提供的指令 它的作用是操作dom --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model</span>=<span class="string">"message"</span>&gt;</span></span><br><span class="line">        &#123;&#123;message&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        //Vue 采用的是MVVM模式，这是MVC衍生出来的</span></span><br><span class="line"><span class="undefined">        //区别：视图与vieqmodel直接的关系紧密</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        //M层的数据会与v层视图 建立联系</span></span><br><span class="line"><span class="undefined">        //v-model就是vue提供的指令 操作dom</span></span><br><span class="line"><span class="undefined">        let data = &#123;</span></span><br><span class="line"><span class="undefined">            message: "hello World"</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        let vm = new Vue(&#123;</span></span><br><span class="line"><span class="undefined">            el:".app",</span></span><br><span class="line"><span class="undefined">            // data:data</span></span><br><span class="line"><span class="undefined">            //data与data名相同 可简写为data</span></span><br><span class="line"><span class="undefined">            data</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined">        //Vue当中实现双向数据绑定的原理：</span></span><br><span class="line"><span class="undefined">        //vue在创建viewmodel的时候，会将数据配置在实例中，然后会是使用Object.defineProperty对这</span></span><br><span class="line"><span class="undefined">        //些数据进行处理，并且为这些数据添加getter，setter方法，当数据改变之后，就会触发此数据绑定的setter方法</span></span><br><span class="line"><span class="undefined">        //从而触发vm的watcher方法，然后数据改变了，然后vm进一步渲染view视图。</span></span><br><span class="line"><span class="undefined">        </span></span><br><span class="line"><span class="undefined">        let data = &#123;</span></span><br><span class="line"><span class="undefined">            message: "Hello world"</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        let vm = new Vue(&#123;</span></span><br><span class="line"><span class="undefined">            el:".app",</span></span><br><span class="line"><span class="undefined">            data</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">        //Object.defineProperty()  es5提供的 ie8不支持</span></span><br><span class="line"><span class="undefined">        let _data = &#123;</span></span><br><span class="line"><span class="undefined">            </span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        let temp = 123;</span></span><br><span class="line"><span class="undefined">          temp = 123;</span></span><br><span class="line"><span class="undefined">        Object.defineProperty(_data,"msg",&#123;</span></span><br><span class="line"><span class="undefined">            get()&#123;</span></span><br><span class="line"><span class="undefined">                console.log("getter")</span></span><br><span class="line"><span class="undefined">                return temp;</span></span><br><span class="line"><span class="undefined">              </span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined">            set(vel)&#123;</span></span><br><span class="line"><span class="undefined">                console.log("setter")</span></span><br><span class="line"><span class="undefined">                temp = vel;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined">        //获取数据</span></span><br><span class="line"><span class="undefined">        console.log(_data.msg)</span></span><br><span class="line"><span class="undefined">        //设置属性的时候会执行setter方法</span></span><br><span class="line"><span class="undefined">        _data.msg = 456;</span></span><br><span class="line"><span class="undefined">        console.log(_data.msg)</span></span><br><span class="line"><span class="undefined">        //vue双向数据绑定原理</span></span><br><span class="line"><span class="undefined">        /* </span></span><br><span class="line"><span class="undefined">            当view层数据改变时， 通过监听viewmodel获取数据  viewmodel再去改变 model数据层</span></span><br><span class="line"><span class="undefined">            数据修改之后 viewmodel再去设置 view层的显示</span></span><br><span class="line"><span class="undefined">         */</span></span><br><span class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最終更新：<time datetime="2018-12-24T03:36:55.093Z" itemprop="dateUpdated">2018-12-24 11:36:55</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/12/24/Vue1/" target="_blank" rel="external">https://tianjiec.top/2018/12/24/Vue1/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js-vue/">-js -vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2018/12/24/Vue1/&title=《Vue1》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2018/12/24/Vue1/&title=《Vue1》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2018/12/24/Vue1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vue1》 — chentj's Blog&url=https://tianjiec.top/2018/12/24/Vue1/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2018/12/24/Vue1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/12/21/node-js取参的四种方法/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">node.js取参的四种方法</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2018/12/24/Vue1/&title=《Vue1》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2018/12/24/Vue1/&title=《Vue1》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2018/12/24/Vue1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vue1》 — chentj's Blog&url=https://tianjiec.top/2018/12/24/Vue1/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2018/12/24/Vue1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABu0lEQVR42u3aQYrDMAwF0N7/0p3tQEn6JcVuAs+rElz7JQshS3694vH+Nz6fH838HOerXTZwcXHH3N4GRzOP1j//V2LAxcXdz022SYJX73liwMXFfRY3T1x6a+Li4j6Fm6CrCRMuLu7duMkG5ynOJHgtOavh4uIOuHmVct3vJfVdXFzcFvddHEmC0iuORLvj4uJu4eYBJSHmqU+evuDi4t6BmzdE8/nV5KbQZMXFxV3ArSYr+dWK3pxCRoaLi7uMm4SP3pMqt1xAwcXFXczNt89Tk2rgK1ztwsXF3cKtFjrzYuikbfNld1xc3I3c6mWpXtjq0XFxcfdwJ5ck8qQkL4V8+XC4uLhbuHkxNKHkQSovjBZWxsXFvZSbpyl5k7X5hfLKLi4u7nbuJE3Jm6zNpiwuLu5G7lUjIVavXODi4t6Bm6c7vcNM9dBV77Tg4uL2ufMgVS189D4TLi7uTu7kSsQk8M0bNri4uKu5vcNMr8BabbLi4uL+lpsHmt5r9Obg4uI+i5uXPidtlXJtBhcX9wbc6uWMSZUDFxd3Pzc5/FQDVnVmVDTBxcXdwi2HkkFgqiY0o/ouLi5uh/sH0Z17inZh8j8AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
