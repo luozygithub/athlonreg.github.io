@@ -117,7 +117,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -151,6 +151,87 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-js的this" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-24 12:14:45" datetime="2018-12-24T04:14:45.000Z" itemprop="datePublished">2018-12-24</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/24/js的this/">js的this</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        this 指向详细解析（箭头函数）前言this 指向问题是入坑前端必须了解知识点，现在迎来了ES6时代，因为箭头函数的出现，所以感觉有必要对 this 问题梳理一下，遂有此文
+在非箭头函数下， this 指向调用其所在函数的对象，而且是离谁近就是指向谁（此对于常规对象，原型链， getter &amp; setter等都适用）；构造函数下，this与被创建的新对象绑定；DOM事件，this指...
+    
+
+        <a href="/2018/12/24/js的this/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-箭头函数this" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-24 12:03:14" datetime="2018-12-24T04:03:14.000Z" itemprop="datePublished">2018-12-24</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/24/箭头函数this/">箭头函数this</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        箭头函数中的this由于箭头函数不绑定this，他会捕捉所在上下文的this值，作为自己的this值，
+​    1、所以call()/apply()/bind() 方法对于箭头函数来说只是传入参数，对他的this值毫无影响。
+​    2、考虑到this是语法层面上的，严格模式中this相关的规则都可以忽略。（可以忽略是否在严格模式下的影响）
+因为箭头函数可以捕获其上下文的this值所以
+...
+    
+
+        <a href="/2018/12/24/箭头函数this/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-Vue1" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -180,14 +261,8 @@
     
 
         <a href="/2018/12/24/Vue1/" class="post-more waves-effect waves-button">
-            続きを読む…
+            Continue reading...
         </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js-vue/">-js -vue</a></li></ul>
-
     </div>
     
 </article>
@@ -229,7 +304,7 @@
     
 
         <a href="/2018/12/21/node-js取参的四种方法/" class="post-more waves-effect waves-button">
-            続きを読む…
+            Continue reading...
         </a>
     </div>
     
@@ -275,7 +350,7 @@
     
 
         <a href="/2018/12/20/soket/" class="post-more waves-effect waves-button">
-            続きを読む…
+            Continue reading...
         </a>
     </div>
     
@@ -324,7 +399,7 @@ https://nodejs.org/api/
     
 
         <a href="/2018/12/20/5-1Node-js编写/" class="post-more waves-effect waves-button">
-            続きを読む…
+            Continue reading...
         </a>
     </div>
     
@@ -365,7 +440,7 @@ Express模型的核心为Express中定义的路由和路由器。分析Express�
     
 
         <a href="/2018/12/20/express的路由/" class="post-more waves-effect waves-button">
-            続きを読む…
+            Continue reading...
         </a>
     </div>
     
@@ -405,7 +480,7 @@ Express模型的核心为Express中定义的路由和路由器。分析Express�
     
 
         <a href="/2018/12/20/mongoose/" class="post-more waves-effect waves-button">
-            続きを読む…
+            Continue reading...
         </a>
     </div>
     
@@ -443,7 +518,7 @@ Express模型的核心为Express中定义的路由和路由器。分析Express�
     
 
         <a href="/2018/12/19/框架初探-blog项目/" class="post-more waves-effect waves-button">
-            続きを読む…
+            Continue reading...
         </a>
     </div>
     
@@ -485,90 +560,7 @@ Promise是一个构造函数，自己身上有all、reject、resolve这几个眼
     
 
         <a href="/2018/12/19/ES6-Promise用法/" class="post-more waves-effect waves-button">
-            続きを読む…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-面包屑导航" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-19 19:27:56" datetime="2018-12-19T11:27:56.000Z" itemprop="datePublished">2018-12-19</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/19/面包屑导航/">面包屑导航</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        面包屑导航(BreadcrumbNavigation)这个概念来自童话故事”汉赛尔和格莱特“，当汉赛尔和格莱特穿过森林时，不小心迷路了，但是他们发现在沿途走过的地方都撒下了面包屑，让这些面包屑来帮助他们找到回家的路。所以，面包屑导航的作用是告诉访问者他们目前在网站中的位置以及如何返回。
-主页 &gt;栏目页&gt;文章页面
-小型站点便于优化，可以把主页改成你的关键词，目的是关键词集权于首页。...
-    
-
-        <a href="/2018/12/19/面包屑导航/" class="post-more waves-effect waves-button">
-            続きを読む…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-面试题" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-18 09:21:11" datetime="2018-12-18T01:21:11.000Z" itemprop="datePublished">2018-12-18</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/18/面试题/">面试题</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        1、你做的页面在那些浏览器测试过？这些浏览器的内核分别是什么？IE：trident内核
-Firefox：gecko内核
-Safari：webkit内核
-Opera：以前是presto内核，现在改用Google的Chrome的blink内核
-Chrome：blink（基于webkit，Google与Opera共同开发）
-2、每个HTML文件里开头都有一个很重要的东西，Doctype，知道这是干...
-    
-
-        <a href="/2018/12/18/面试题/" class="post-more waves-effect waves-button">
-            続きを読む…
+            Continue reading...
         </a>
     </div>
     
@@ -605,7 +597,7 @@ Chrome：blink（基于webkit，Google与Opera共同开发）
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
