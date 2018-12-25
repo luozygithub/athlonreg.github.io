@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>作用域、变量提升、this.js | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="js">
+    <meta name="description" content="变量提升1234567// console.log(a);var a = 10function abc()&amp;#123;    console.log(a);//undefined    var a = 20;&amp;#125;abc(); function 执行过程是 查找var let 将声明提前 然后再在原有位置进行赋值 var 和 let变量提升区别： let变量提升 在死区部分无法访问 ，而我们">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="作用域、变量提升、this.js">
+<meta property="og:url" content="https://tianjiec.top/2018/12/25/作用域、变量提升、this-js/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="变量提升1234567// console.log(a);var a = 10function abc()&amp;#123;    console.log(a);//undefined    var a = 20;&amp;#125;abc(); function 执行过程是 查找var let 将声明提前 然后再在原有位置进行赋值 var 和 let变量提升区别： let变量提升 在死区部分无法访问 ，而我们">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-25T12:09:37.743Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="作用域、变量提升、this.js">
+<meta name="twitter:description" content="变量提升1234567// console.log(a);var a = 10function abc()&amp;#123;    console.log(a);//undefined    var a = 20;&amp;#125;abc(); function 执行过程是 查找var let 将声明提前 然后再在原有位置进行赋值 var 和 let变量提升区别： let变量提升 在死区部分无法访问 ，而我们">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">作用域、变量提升、this.js</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">作用域、变量提升、this.js</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-12-25T11:53:29.000Z" itemprop="datePublished" class="page-time">
+  2018-12-25
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#变量提升"><span class="post-toc-number">1.</span> <span class="post-toc-text">变量提升</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#this（有关对象和函数）"><span class="post-toc-number">2.</span> <span class="post-toc-text">this（有关对象和函数）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#bind-call-applay"><span class="post-toc-number">3.</span> <span class="post-toc-text">bind call applay</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-作用域、变量提升、this-js" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">作用域、变量提升、this.js</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-12-25 19:53:29" datetime="2018-12-25T11:53:29.000Z" itemprop="datePublished">2018-12-25</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h4 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// console.log(a);</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">abc</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);<span class="comment">//undefined</span></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">20</span>;</span><br><span class="line">&#125;</span><br><span class="line">abc();</span><br></pre></td></tr></table></figure>
+<p>function 执行过程是</p>
+<p>查找var let 将声明提前</p>
+<p>然后再在原有位置进行赋值</p>
+<p>var 和 let变量提升区别：</p>
+<p>let变量提升 在死区部分无法访问 ，而我们不能够访问的原因事实上是因为let的死区（temporal dead zone）设计：当前作用域顶部到该变量声明位置中间的部分，都是该let变量的死区，在死区中，禁止访问该变量。由此，我们给出结论，let声明的变量存在变量提升， 但是由于死区我们无法在声明前访问这个变量。<br>原文：<a href="https://blog.csdn.net/triumphs/article/details/80142721" target="_blank" rel="noopener">https://blog.csdn.net/triumphs/article/details/80142721</a> </p>
+<h4 id="this（有关对象和函数）"><a href="#this（有关对象和函数）" class="headerlink" title="this（有关对象和函数）"></a>this（有关对象和函数）</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">username = <span class="string">"lisi"</span></span><br><span class="line"><span class="keyword">var</span> json = &#123;</span><br><span class="line">    username:<span class="string">"张三"</span>,</span><br><span class="line">    fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = json.fn()</span><br><span class="line"><span class="built_in">console</span>.log(obj.username)<span class="comment">//张三 正常</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = json.fn</span><br><span class="line"><span class="built_in">console</span>.log(obj().username) <span class="comment">//lisi  原因：此时obj为一个函数，函数的this指向window</span></span><br></pre></td></tr></table></figure>
+<h4 id="bind-call-applay"><a href="#bind-call-applay" class="headerlink" title="bind call applay"></a>bind call applay</h4><blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> json = &#123;</span><br><span class="line">    username:<span class="string">"张三"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//window对象上面属性不存在就会是undefined</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.username,(a+b))</span><br><span class="line">&#125;</span><br><span class="line">fn();<span class="comment">//undefined NaN</span></span><br><span class="line">fn.call(json,<span class="number">1</span>,<span class="number">2</span>);<span class="comment">//张三 3</span></span><br><span class="line">fn.apply(json,[<span class="number">1</span>,<span class="number">2</span>]);<span class="comment">//张三 3</span></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"box"</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>,a)</span><br><span class="line">&#125;.bind(json,<span class="number">100</span>);&#123;<span class="attr">username</span>: <span class="string">"张三"</span>&#125; <span class="number">100</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-12-25T12:09:37.743Z" itemprop="dateUpdated">2018-12-25 20:09:37</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/12/25/作用域、变量提升、this-js/" target="_blank" rel="external">https://tianjiec.top/2018/12/25/作用域、变量提升、this-js/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2018/12/25/作用域、变量提升、this-js/&title=《作用域、变量提升、this.js》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2018/12/25/作用域、变量提升、this-js/&title=《作用域、变量提升、this.js》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2018/12/25/作用域、变量提升、this-js/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《作用域、变量提升、this.js》 — chentj's Blog&url=https://tianjiec.top/2018/12/25/作用域、变量提升、this-js/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2018/12/25/作用域、变量提升、this-js/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/12/25/todoList/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">todoList</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2018/12/25/作用域、变量提升、this-js/&title=《作用域、变量提升、this.js》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2018/12/25/作用域、变量提升、this-js/&title=《作用域、变量提升、this.js》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2018/12/25/作用域、变量提升、this-js/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《作用域、变量提升、this.js》 — chentj's Blog&url=https://tianjiec.top/2018/12/25/作用域、变量提升、this-js/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2018/12/25/作用域、变量提升、this-js/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACu0lEQVR42u3aQY4iMQwFUO5/6R5pVrMY4H87oVm8WiFUVPLSUtlt+/GIr5+/V/LNv1fytNf3589cXXh4eHijrT+7nm3i2ZI5O1k3Wf3NEeDh4eFd481e38Mlg7X29+Dh4eF9A2+T8iZHs7kfDw8P75t5+/Q3Wf3XAgMeHh5ezEuKEe2jXz/n9Z3tER+oteDh4eHNKwOPNkh8/vPF/h4eHh7eoqueBImk/d8WIJIWWrRbPDw8vAu8pLWfvHU3283T5TwKRJVmPDw8vDUveXT+OS/XtmGgTfTx8PDwzvLa5n2yibapNlslOlw8PDy8y7yk8X+2gtreWRd88fDw8K7x2n/+8wZVOzTQIg/MRODh4eGVvCTN3STNCSY5xOS3bxpgeHh4eBd4beI7+37WxJqNJuDh4eF9hrdJlNu0OHlC20J7Exjw8PDwLvPa0m2bRm9KvUXTDg8PD+8oL28m5YWAtnCQFzLyJPvNZAQeHh7eId7s3/6zjFmIeroTPDw8vMu8NkjkOftsc/uiBh4eHt4N3myIKi8czIrCh0vAeHh4eEd57Ws9b1C1G50l3MXfDQ8PD+8CL3m5J6/pNmDMVik6b3h4eHgXeEkSnKfIeQF3FkiKb/Dw8PAu8IpiaFm2yJPgUwcahQ08PDy8o7w2SOQJ8WxU61SajoeHh3eWNyuttkvmgScfw4rux8PDw/sgbwPIR6nytDgPRf9pgOHh4eEd5SWv/hlg33jLG11R2MDDw8M7xPspr01Hvr1nVuzAw8PDu83LrzwJvpGOtyNieHh4eLd5bTDYFHw3gwJJAIg6e3h4eHiHeLMaRv7bZHRgnyLj4eHhfRvvNTgv6c6GBoaDBXh4eHhfwEtKtJvkOF8rSv3x8PDwrvHaYkQ0jxC84vMRhPxw8fDw8G7zZoNNNxr/m4M71t/Dw8PDe7WTPwvD+T7C9+BCAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

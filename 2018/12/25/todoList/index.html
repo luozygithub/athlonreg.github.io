@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>todoList | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="sui vue">
+    <meta name="description" content="任务列表功能： 显示所有任务 ； 已完成任务 ；未完成任务； 每个任务点击对号记入已完成任务；每个任务有个删除功能；未完成任务在删除的时候弹出确认删除未完成任务的对话框；  技术：SUI Mobile框架 vue框架 实现：1、借用SUI Mobile写样式首先将sui的样式css文件引入 1&amp;lt;link rel=&quot;stylesheet&quot; href=&quot;http://g.alicdn.com/m">
+<meta name="keywords" content="sui vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="todoList">
+<meta property="og:url" content="https://tianjiec.top/2018/12/25/todoList/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="任务列表功能： 显示所有任务 ； 已完成任务 ；未完成任务； 每个任务点击对号记入已完成任务；每个任务有个删除功能；未完成任务在删除的时候弹出确认删除未完成任务的对话框；  技术：SUI Mobile框架 vue框架 实现：1、借用SUI Mobile写样式首先将sui的样式css文件引入 1&amp;lt;link rel=&quot;stylesheet&quot; href=&quot;http://g.alicdn.com/m">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="c:/Users/罗中运/AppData/Roaming/Typora/typora-user-images/1545735525618.png">
+<meta property="og:image" content="c:/Users/罗中运/AppData/Roaming/Typora/typora-user-images/1545736203312.png">
+<meta property="og:updated_time" content="2018-12-25T11:34:44.295Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="todoList">
+<meta name="twitter:description" content="任务列表功能： 显示所有任务 ； 已完成任务 ；未完成任务； 每个任务点击对号记入已完成任务；每个任务有个删除功能；未完成任务在删除的时候弹出确认删除未完成任务的对话框；  技术：SUI Mobile框架 vue框架 实现：1、借用SUI Mobile写样式首先将sui的样式css文件引入 1&amp;lt;link rel=&quot;stylesheet&quot; href=&quot;http://g.alicdn.com/m">
+<meta name="twitter:image" content="c:/Users/罗中运/AppData/Roaming/Typora/typora-user-images/1545735525618.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">todoList</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">todoList</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-12-25T09:51:57.000Z" itemprop="datePublished" class="page-time">
+  2018-12-25
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#任务列表"><span class="post-toc-number">1.</span> <span class="post-toc-text">任务列表</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#功能："><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">功能：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#技术："><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">技术：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现："><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">实现：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、借用SUI-Mobile写样式"><span class="post-toc-number">1.0.3.1.</span> <span class="post-toc-text">1、借用SUI Mobile写样式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、借助Vue插入数据"><span class="post-toc-number">1.0.3.2.</span> <span class="post-toc-text">2、借助Vue插入数据</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3、添加完成任务和删除任务按钮"><span class="post-toc-number">1.0.3.3.</span> <span class="post-toc-text">3、添加完成任务和删除任务按钮</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#删除："><span class="post-toc-number">1.0.3.4.</span> <span class="post-toc-text">删除：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4、添加分类按钮"><span class="post-toc-number">1.0.3.5.</span> <span class="post-toc-text">4、添加分类按钮</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-todoList" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">todoList</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-12-25 17:51:57" datetime="2018-12-25T09:51:57.000Z" itemprop="datePublished">2018-12-25</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h1><h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><blockquote>
+<p>显示所有任务 ； 已完成任务 ；未完成任务；</p>
+<p>每个任务点击对号记入已完成任务；每个任务有个删除功能；未完成任务在删除的时候弹出确认删除未完成任务的对话框；</p>
+</blockquote>
+<h3 id="技术："><a href="#技术：" class="headerlink" title="技术："></a>技术：</h3><p>SUI Mobile框架</p>
+<p>vue框架</p>
+<h3 id="实现："><a href="#实现：" class="headerlink" title="实现："></a>实现：</h3><h4 id="1、借用SUI-Mobile写样式"><a href="#1、借用SUI-Mobile写样式" class="headerlink" title="1、借用SUI Mobile写样式"></a>1、借用SUI Mobile写样式</h4><p><strong>首先将sui的样式css文件引入</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>ps:这里sui他给的href或src地址要加上http: ， 不然会找不到资源</p>
+<p><strong>然后找到相应的组件</strong></p>
+<p>标题栏、图标、卡片</p>
+<h4 id="2、借助Vue插入数据"><a href="#2、借助Vue插入数据" class="headerlink" title="2、借助Vue插入数据"></a>2、借助Vue插入数据</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card"</span> <span class="attr">v-for</span>=<span class="string">"todo in showTodo"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-content-inner"</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;todo.content&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"> <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">     el: <span class="string">"#app"</span>,</span></span><br><span class="line"><span class="undefined">     data: &#123;</span></span><br><span class="line"><span class="undefined">         todos: [&#123;</span></span><br><span class="line"><span class="undefined">                 id: 1,</span></span><br><span class="line"><span class="javascript">                 content: <span class="string">"hello,今天又是美好的一天"</span>,</span></span><br><span class="line"><span class="javascript">                 isFinished: <span class="literal">false</span></span></span><br><span class="line"><span class="undefined">             &#125;,</span></span><br><span class="line"><span class="undefined">             &#123;</span></span><br><span class="line"><span class="undefined">                  id: 2,</span></span><br><span class="line"><span class="javascript">                  content: <span class="string">"你好"</span>,</span></span><br><span class="line"><span class="javascript">                  isFinished: <span class="literal">false</span></span></span><br><span class="line"><span class="undefined">              &#125;</span></span><br><span class="line"><span class="undefined">          ],</span></span><br><span class="line"><span class="undefined">     &#125;</span></span><br><span class="line"><span class="undefined"> &#125;)</span></span><br><span class="line"><span class="undefined"> </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="3、添加完成任务和删除任务按钮"><a href="#3、添加完成任务和删除任务按钮" class="headerlink" title="3、添加完成任务和删除任务按钮"></a>3、添加完成任务和删除任务按钮</h4><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="C:\Users\罗中运\AppData\Roaming\Typora\typora-user-images\1545735525618.png" alt="1545735525618" title="">
+                </div>
+                <div class="image-caption">1545735525618</div>
+            </figure>
+<p>在内容 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;content&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>下添加 sui 的按钮组件</p>
+<p>为button添加 data isFinished: false属性（在每个todo 对象里面）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"button button-round"</span> </span></span><br><span class="line"><span class="tag">	<span class="attr">:class</span>=<span class="string">"(todo.isFinished?'active':'')"</span> </span></span><br><span class="line"><span class="tag">	@<span class="attr">click</span>=<span class="string">"todo.isFinished=!todo.isFinished"</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br></pre></td></tr></table></figure>
+<p>1、为其添加 vue的 v-bind:class  用isFinished数据控制 它的样式</p>
+<p>2、再为其添加 v-on:click 点击事件 来改变 isFinished的值来间接控制它的样式</p>
+<p><strong>为删除任务添加事件</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"button button-round"</span></span></span><br><span class="line"><span class="tag">	@<span class="attr">click</span>=<span class="string">"checkTodo(todo.id,todo.isFinished)"</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在任务状态为已完成（isFinished=true时）直接删除</p>
+<p>在任务状态为未完成  弹出对话框</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="C:\Users\罗中运\AppData\Roaming\Typora\typora-user-images\1545736203312.png" alt="1545736203312" title="">
+                </div>
+                <div class="image-caption">1545736203312</div>
+            </figure>
+<p>为对话框是否显示 添加数据  isRemoveShow: </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> @<span class="attr">click</span>=<span class="string">"isRemoveShow=false"</span> <span class="attr">v-if</span>=<span class="string">"isRemoveShow"</span> <span class="attr">class</span>=<span class="string">"decive-content"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>v-if =true的时候显示 =false的时候隐藏</p>
+<p>设置点击 除确定 的地方 将其隐藏 ： @click=”isRemoveShow=false” </p>
+<h4 id="删除："><a href="#删除：" class="headerlink" title="删除："></a>删除：</h4><p>在 vue对象中：</p>
+<blockquote>
+<p> 删除按钮： <a href="#" class="button button-round" @click="checkTodo(todo.id,todo.isFinished)"></a></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">        removeTodo(id) &#123;</span><br><span class="line">            <span class="keyword">this</span>.todos = <span class="keyword">this</span>.todos.filter(<span class="function"><span class="params">todo</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> todo.id !== id ? todo : <span class="string">""</span>;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;,</span><br><span class="line">        checkTodo(id, isFinished) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!isFinished) &#123;</span><br><span class="line">                <span class="keyword">this</span>.isRemoveShow = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">this</span>.preRemoveId = id;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">this</span>.removeTodo(id);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>为对话框的确定添加删除功能</p>
+<p> <span class="modal-button modal-button-bold" @click="removeTodo(preRemoveId)">确定</span></p>
+<p>为了给确定指明删除哪一个</p>
+<p>在点击删除未完成任务的时候 存一个preRemoveId 用来记录此时的数据的id</p>
+<h4 id="4、添加分类按钮"><a href="#4、添加分类按钮" class="headerlink" title="4、添加分类按钮"></a>4、添加分类按钮</h4><p>用sui的样式 和 vue的v-for循环添加</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>  </span></span><br><span class="line"><span class="tag">    <span class="attr">:class</span>=<span class="string">"['button',activeType === btn.type?'active':'']"</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">v-for</span>=<span class="string">"(btn) in btns"</span> <span class="attr">:key</span>=<span class="string">"btn.id"</span></span></span><br><span class="line"><span class="tag">    @<span class="attr">click</span>=<span class="string">"activeType=btn.type"</span></span></span><br><span class="line"><span class="tag">&gt;</span>&#123;&#123;btn.title&#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>为按钮创建数据模型</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">btns: [&#123;</span><br><span class="line">    id: <span class="number">1</span>,</span><br><span class="line">    type: <span class="string">"all"</span>,</span><br><span class="line">    title: <span class="string">"A"</span>,</span><br><span class="line">&#125;,</span><br><span class="line">   &#123;</span><br><span class="line">       id: <span class="number">2</span>,</span><br><span class="line">       type: <span class="string">"finished"</span>,</span><br><span class="line">       title: <span class="string">"F"</span>,</span><br><span class="line">   &#125;,</span><br><span class="line">   &#123;</span><br><span class="line">       id: <span class="number">3</span>,</span><br><span class="line">       type: <span class="string">"unfinished"</span>,</span><br><span class="line">       title: <span class="string">"U"</span>,</span><br><span class="line">   &#125;,</span><br><span class="line">  ],</span><br><span class="line">    activeType: <span class="string">"all"</span></span><br></pre></td></tr></table></figure>
+<p>title 用于显示文本、type用来匹配当前选中 哪一个 activeType 用来 表示 哪个选中</p>
+<p><strong>按钮的</strong>  :calss 用来通过数据决定哪个被选中 </p>
+<p><strong>添加点击事件改变选中</strong>：@click=”activeType=btn.type”</p>
+<p>PS：所以，对于任何复杂逻辑，你都应当使用<strong>计算属性</strong>。</p>
+<p><strong>添加计算属性 来 控制显示 哪一部分数据</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">            finished()&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">this</span>.todos.filter(<span class="function"><span class="params">todo</span>=&gt;</span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> todo.isFinished?todo:<span class="string">""</span>;</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;,</span><br><span class="line">            unfinished()&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">this</span>.todos.filter(<span class="function"><span class="params">todo</span>=&gt;</span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> !todo.isFinished?todo:<span class="string">""</span>;</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;,</span><br><span class="line">            showTodo()&#123;</span><br><span class="line">                <span class="keyword">switch</span>(<span class="keyword">this</span>.activeType)&#123;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">"all"</span>:</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">this</span>.todos;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">"finished"</span>:</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">this</span>.finished;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">"unfinished"</span>:</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">this</span>.unfinished;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//&lt;div class="card" v-for="todo in showTodo"&gt;</span></span><br><span class="line"><span class="comment">//修改循环显示的 数据</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-12-25T11:34:44.295Z" itemprop="dateUpdated">2018-12-25 19:34:44</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/12/25/todoList/" target="_blank" rel="external">https://tianjiec.top/2018/12/25/todoList/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sui-vue/">sui vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2018/12/25/todoList/&title=《todoList》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2018/12/25/todoList/&title=《todoList》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2018/12/25/todoList/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《todoList》 — chentj's Blog&url=https://tianjiec.top/2018/12/25/todoList/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2018/12/25/todoList/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/12/25/作用域、变量提升、this-js/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">作用域、变量提升、this.js</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/12/24/js的this/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">js的this</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2018/12/25/todoList/&title=《todoList》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2018/12/25/todoList/&title=《todoList》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2018/12/25/todoList/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《todoList》 — chentj's Blog&url=https://tianjiec.top/2018/12/25/todoList/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2018/12/25/todoList/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABv0lEQVR42u3awa7DIAwEwP7/T+dJPfXyUq8NtJWGUxVVMMkBYS+PR3lcz5H+5/XJ9TLqczYHLi7umHvdjsp/7inz+XFxcT/Fvd+Y7jep+92mMmfFgIuL+53cyWLzGXBxcb+Zmz7HxcX9XW69mLl/sq9AwsXFPclNG6Y7fm/s7+Li4obcazzmx5dgLVxc3CPcepFTb3OkTdI4iMXFxT3ITSPV3hWNyou9KXtwcXGPcNOLVnVuZclJlIuLi7ub24tJ5kVOvQeCi4t7hlvfOCpbWBrD1MOYeKfExcUdcFPopPjpxbTB+QsXF3cDtxeCpoi0bRp8Y1xc3EXcXhGStjsn8/+bCePi4n6IW3lef4F6e7S5keHi4m7gpkumiHlUg4uLe4Y7aYmuOtws+NK4uLhLub1IY3JhK90oS8UPLi7uUm599K5cxHfBVs2Ai4s74F7hqJQ392VSGqmW2iK4uLhLub1tpX7QqTdQmpkwLi7uNm5v4Uq4knYzKi+Ji4t7kjsPU9MjTrNWw8XF/RHuhB4XP7i4uF/GTWuQNJgJ0mBcXNwj3F7x0wtQe1EuLi7uSe6kYVpvqqbB7Zb+Li4u7nvuHxTeJQtrkzlNAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
