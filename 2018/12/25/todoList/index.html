@@ -31,7 +31,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="c:/Users/罗中运/AppData/Roaming/Typora/typora-user-images/1545735525618.png">
 <meta property="og:image" content="c:/Users/罗中运/AppData/Roaming/Typora/typora-user-images/1545736203312.png">
-<meta property="og:updated_time" content="2018-12-25T11:34:44.295Z">
+<meta property="og:updated_time" content="2018-12-25T12:27:59.464Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="todoList">
 <meta name="twitter:description" content="任务列表功能： 显示所有任务 ； 已完成任务 ；未完成任务； 每个任务点击对号记入已完成任务；每个任务有个删除功能；未完成任务在删除的时候弹出确认删除未完成任务的对话框；  技术：SUI Mobile框架 vue框架 实现：1、借用SUI Mobile写样式首先将sui的样式css文件引入 1&amp;lt;link rel=&quot;stylesheet&quot; href=&quot;http://g.alicdn.com/m">
@@ -122,7 +122,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -232,6 +232,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">        removeTodo(id) &#123;</span><br><span class="line">            <span class="keyword">this</span>.todos = <span class="keyword">this</span>.todos.filter(<span class="function"><span class="params">todo</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> todo.id !== id ? todo : <span class="string">""</span>;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;,</span><br><span class="line">        checkTodo(id, isFinished) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!isFinished) &#123;</span><br><span class="line">                <span class="keyword">this</span>.isRemoveShow = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">this</span>.preRemoveId = id;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">this</span>.removeTodo(id);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 <p>为对话框的确定添加删除功能</p>
 <p> <span class="modal-button modal-button-bold" @click="removeTodo(preRemoveId)">确定</span></p>
+<p>ps:这里 点击发生了冒泡，再删除数据的同时，也冒泡触发了 其父元素的 @click=”isRemoveShow=false”事件</p>
 <p>为了给确定指明删除哪一个</p>
 <p>在点击删除未完成任务的时候 存一个preRemoveId 用来记录此时的数据的id</p>
 <h4 id="4、添加分类按钮"><a href="#4、添加分类按钮" class="headerlink" title="4、添加分类按钮"></a>4、添加分类按钮</h4><p>用sui的样式 和 vue的v-for循环添加</p>
@@ -252,7 +253,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-12-25T11:34:44.295Z" itemprop="dateUpdated">2018-12-25 19:34:44</time>
+    Last updated: <time datetime="2018-12-25T12:27:59.464Z" itemprop="dateUpdated">2018-12-25 20:27:59</time>
 </span><br>
 
 
@@ -392,7 +393,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
