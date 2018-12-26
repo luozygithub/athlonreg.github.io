@@ -2,16 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://tianjiec.top/2018/12/25/todoList/</loc>
+    <loc>https://tianjiec.top/2018/12/26/xhr/</loc>
     
-    <lastmod>2018-12-25T12:27:59.464Z</lastmod>
+    <lastmod>2018-12-26T12:11:47.062Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tianjiec.top/2018/12/26/Vue-extend%E6%9E%84%E9%80%A0%E5%99%A8/</loc>
+    
+    <lastmod>2018-12-26T11:51:08.332Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tianjiec.top/2018/12/26/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/</loc>
+    
+    <lastmod>2018-12-26T03:51:45.203Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://tianjiec.top/2018/12/25/%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%E3%80%81this-js/</loc>
     
-    <lastmod>2018-12-25T12:09:37.743Z</lastmod>
+    <lastmod>2018-12-26T03:36:40.406Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tianjiec.top/2018/12/25/todoList/</loc>
+    
+    <lastmod>2018-12-25T12:27:59.464Z</lastmod>
     
   </url>
   

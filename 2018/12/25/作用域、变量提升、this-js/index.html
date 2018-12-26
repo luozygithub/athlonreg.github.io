@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="js">
-    <meta name="description" content="变量提升1234567// console.log(a);var a = 10function abc()&amp;#123;    console.log(a);//undefined    var a = 20;&amp;#125;abc(); function 执行过程是 查找var let 将声明提前 然后再在原有位置进行赋值 var 和 let变量提升区别： let变量提升 在死区部分无法访问 ，而我们">
+    <meta name="description" content="变量提升12345678// console.log(a);var a = 10function abc()&amp;#123;    console.log(a);//undefined    var a = 20;&amp;#125;abc(); function 执行过程是 查找var let 将声明提前 然后再在原有位置进行赋值 var 和 let变量提升区别： let 局部 变量提升出现死区例子 123">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="作用域、变量提升、this.js">
 <meta property="og:url" content="https://tianjiec.top/2018/12/25/作用域、变量提升、this-js/index.html">
 <meta property="og:site_name" content="chentj&#39;s Blog">
-<meta property="og:description" content="变量提升1234567// console.log(a);var a = 10function abc()&amp;#123;    console.log(a);//undefined    var a = 20;&amp;#125;abc(); function 执行过程是 查找var let 将声明提前 然后再在原有位置进行赋值 var 和 let变量提升区别： let变量提升 在死区部分无法访问 ，而我们">
+<meta property="og:description" content="变量提升12345678// console.log(a);var a = 10function abc()&amp;#123;    console.log(a);//undefined    var a = 20;&amp;#125;abc(); function 执行过程是 查找var let 将声明提前 然后再在原有位置进行赋值 var 和 let变量提升区别： let 局部 变量提升出现死区例子 123">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-25T12:09:37.743Z">
+<meta property="og:updated_time" content="2018-12-26T03:36:40.406Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="作用域、变量提升、this.js">
-<meta name="twitter:description" content="变量提升1234567// console.log(a);var a = 10function abc()&amp;#123;    console.log(a);//undefined    var a = 20;&amp;#125;abc(); function 执行过程是 查找var let 将声明提前 然后再在原有位置进行赋值 var 和 let变量提升区别： let变量提升 在死区部分无法访问 ，而我们">
+<meta name="twitter:description" content="变量提升12345678// console.log(a);var a = 10function abc()&amp;#123;    console.log(a);//undefined    var a = 20;&amp;#125;abc(); function 执行过程是 查找var let 将声明提前 然后再在原有位置进行赋值 var 和 let变量提升区别： let 局部 变量提升出现死区例子 123">
     
         <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
     
@@ -119,7 +119,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -158,7 +158,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#变量提升"><span class="post-toc-number">1.</span> <span class="post-toc-text">变量提升</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#this（有关对象和函数）"><span class="post-toc-number">2.</span> <span class="post-toc-text">this（有关对象和函数）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#bind-call-applay"><span class="post-toc-number">3.</span> <span class="post-toc-text">bind call applay</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#变量提升"><span class="post-toc-number">1.</span> <span class="post-toc-text">变量提升</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#函数变量的变量提升："><span class="post-toc-number">2.</span> <span class="post-toc-text">函数变量的变量提升：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#this（有关对象和函数）"><span class="post-toc-number">3.</span> <span class="post-toc-text">this（有关对象和函数）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#bind-call-applay"><span class="post-toc-number">4.</span> <span class="post-toc-text">bind call applay</span></a></li></ol>
         </nav>
     </aside>
 
@@ -181,12 +181,15 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h4 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// console.log(a);</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">abc</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);<span class="comment">//undefined</span></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">20</span>;</span><br><span class="line">&#125;</span><br><span class="line">abc();</span><br></pre></td></tr></table></figure>
+            <h4 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// console.log(a);</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">abc</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);<span class="comment">//undefined</span></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">20</span>;</span><br><span class="line">&#125;</span><br><span class="line">abc();</span><br></pre></td></tr></table></figure>
 <p>function 执行过程是</p>
 <p>查找var let 将声明提前</p>
 <p>然后再在原有位置进行赋值</p>
 <p>var 和 let变量提升区别：</p>
+<p>let 局部 变量提升出现死区例子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">"hey I am outside"</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);<span class="comment">//Uncaught ReferenceError: a is not defined</span></span><br><span class="line">    <span class="keyword">let</span> a = <span class="string">"hey I am inside"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>let变量提升 在死区部分无法访问 ，而我们不能够访问的原因事实上是因为let的死区（temporal dead zone）设计：当前作用域顶部到该变量声明位置中间的部分，都是该let变量的死区，在死区中，禁止访问该变量。由此，我们给出结论，let声明的变量存在变量提升， 但是由于死区我们无法在声明前访问这个变量。<br>原文：<a href="https://blog.csdn.net/triumphs/article/details/80142721" target="_blank" rel="noopener">https://blog.csdn.net/triumphs/article/details/80142721</a> </p>
+<h4 id="函数变量的变量提升："><a href="#函数变量的变量提升：" class="headerlink" title="函数变量的变量提升："></a>函数变量的变量提升：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">fn();<span class="comment">//1</span></span><br><span class="line"><span class="comment">//声明式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fn2();<span class="comment">//fn2 not is a function</span></span><br><span class="line"><span class="comment">//定义式</span></span><br><span class="line"><span class="keyword">var</span> fun2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="this（有关对象和函数）"><a href="#this（有关对象和函数）" class="headerlink" title="this（有关对象和函数）"></a>this（有关对象和函数）</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">username = <span class="string">"lisi"</span></span><br><span class="line"><span class="keyword">var</span> json = &#123;</span><br><span class="line">    username:<span class="string">"张三"</span>,</span><br><span class="line">    fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = json.fn()</span><br><span class="line"><span class="built_in">console</span>.log(obj.username)<span class="comment">//张三 正常</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = json.fn</span><br><span class="line"><span class="built_in">console</span>.log(obj().username) <span class="comment">//lisi  原因：此时obj为一个函数，函数的this指向window</span></span><br></pre></td></tr></table></figure>
 <h4 id="bind-call-applay"><a href="#bind-call-applay" class="headerlink" title="bind call applay"></a>bind call applay</h4><blockquote>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
@@ -200,7 +203,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-12-25T12:09:37.743Z" itemprop="dateUpdated">2018-12-25 20:09:37</time>
+    最終更新：<time datetime="2018-12-26T03:36:40.406Z" itemprop="dateUpdated">2018-12-26 11:36:40</time>
 </span><br>
 
 
@@ -277,7 +280,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/12/26/箭头函数/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">箭头函数</h4>
+      </a>
+    </div>
   
 
   
@@ -333,7 +343,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">
