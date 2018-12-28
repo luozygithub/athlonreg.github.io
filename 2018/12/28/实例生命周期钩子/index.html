@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>实例生命周期钩子 | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vue">
+    <meta name="description" content="实例生命周期钩子 每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。  比如 created 钩子可以用来在一个实例被创建之后执行代码： 12345678910new Vue(&amp;#123;  data: &amp;#1">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实例生命周期钩子">
+<meta property="og:url" content="https://tianjiec.top/2018/12/28/实例生命周期钩子/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="实例生命周期钩子 每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。  比如 created 钩子可以用来在一个实例被创建之后执行代码： 12345678910new Vue(&amp;#123;  data: &amp;#1">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://cn.vuejs.org/images/lifecycle.png">
+<meta property="og:updated_time" content="2018-12-28T03:46:46.476Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="实例生命周期钩子">
+<meta name="twitter:description" content="实例生命周期钩子 每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。  比如 created 钩子可以用来在一个实例被创建之后执行代码： 12345678910new Vue(&amp;#123;  data: &amp;#1">
+<meta name="twitter:image" content="https://cn.vuejs.org/images/lifecycle.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">实例生命周期钩子</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">实例生命周期钩子</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-12-28T01:59:32.000Z" itemprop="datePublished" class="page-time">
+  2018-12-28
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#实例生命周期钩子"><span class="post-toc-number">1.</span> <span class="post-toc-text">实例生命周期钩子</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#生命周期图示"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">生命周期图示</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#生命周期"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">生命周期</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#钩子函数"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">钩子函数</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-实例生命周期钩子" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">实例生命周期钩子</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-12-28 09:59:32" datetime="2018-12-28T01:59:32.000Z" itemprop="datePublished">2018-12-28</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="实例生命周期钩子"><a href="#实例生命周期钩子" class="headerlink" title="实例生命周期钩子"></a>实例生命周期钩子</h1><blockquote>
+<p>每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做<strong>生命周期钩子</strong>的函数，这给了用户在不同阶段添加自己的代码的机会。</p>
+</blockquote>
+<p>比如 <a href="https://cn.vuejs.org/v2/api/#created" target="_blank" rel="noopener"><code>created</code></a> 钩子可以用来在一个实例被创建之后执行代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    a: <span class="number">1</span></span><br><span class="line">  &#125;,</span><br><span class="line">  created: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// `this` 指向 vm 实例</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a is: '</span> + <span class="keyword">this</span>.a)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// =&gt; "a is: 1"</span></span><br></pre></td></tr></table></figure>
+<p>也有一些其它的钩子，在实例生命周期的不同阶段被调用，如 <a href="https://cn.vuejs.org/v2/api/#mounted" target="_blank" rel="noopener"><code>mounted</code></a>、<a href="https://cn.vuejs.org/v2/api/#updated" target="_blank" rel="noopener"><code>updated</code></a> 和 <a href="https://cn.vuejs.org/v2/api/#destroyed" target="_blank" rel="noopener"><code>destroyed</code></a>。生命周期钩子的 <code>this</code> 上下文指向调用它的 Vue 实例。</p>
+<p>ps:</p>
+<blockquote>
+<p>不要在选项属性或回调上使用<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank" rel="noopener">箭头函数</a>，比如 <code>created: () =&gt; console.log(this.a)</code> 或 <code>vm.$watch(&#39;a&#39;, newValue =&gt; this.myMethod())</code>。因为箭头函数是和父级上下文绑定在一起的，<code>this</code> 不会是如你所预期的 Vue 实例，经常导致 <code>Uncaught TypeError: Cannot read property of undefined</code>或 <code>Uncaught TypeError: this.myMethod is not a function</code>之类的错误</p>
+</blockquote>
+<h2 id="生命周期图示"><a href="#生命周期图示" class="headerlink" title="生命周期图示"></a><a href="https://cn.vuejs.org/v2/guide/instance.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE%E7%A4%BA" target="_blank" rel="noopener">生命周期图示</a></h2><p>下图展示了实例的生命周期。你不需要立马弄明白所有的东西，不过随着你的不断学习和使用，它的参考价值会越来越高。</p>
+<p><img src="https://cn.vuejs.org/images/lifecycle.png" alt="Vue 实例生命周期"></p>
+<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p>每个 Vue 实例在从创建到销毁的一系列过程，</p>
+<p>vue在整个生命周期中为我们提供了很多的一些钩子函数</p>
+<p>钩子函数特点就是会在生命周期某一时刻进行触发。</p>
+<blockquote>
+<p>组件从创建到销毁的一系列过程就叫做组建的生命周期</p>
+<p>vue在整个生命周期中为我们提供了很多的一些钩子函数</p>
+<p>钩子函数的特点就是会在生命周期某一时刻进行触发</p>
+<p><strong>组件的生命周期可以分为三个过程</strong> </p>
+<p><strong>初始化、运行中、 销毁</strong></p>
+<p><strong>初始化阶段</strong>：beforeCreate、 created、beforeMount、mounted</p>
+<p><strong>运行中阶段</strong>：beforeUpdate、updated</p>
+<p><strong>销毁阶段</strong>：beforeDestory、destoryed</p>
+<p>初始化阶段</p>
+<p>1、一个示例/组件的生命周期是从new 开始</p>
+<p>2、实例化之后，会初始化一些事件和生命周期相关的配置</p>
+</blockquote>
+<h3 id="钩子函数"><a href="#钩子函数" class="headerlink" title="钩子函数"></a>钩子函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">"my-component"</span>,&#123;</span><br><span class="line">	template: <span class="string">"#my-component"</span>,</span><br><span class="line">    data()&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            message: <span class="string">"component"</span>,</span><br><span class="line">            num: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        destory()&#123;</span><br><span class="line">            <span class="keyword">this</span>.$destory();<span class="comment">//销毁组件/实例</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//初始化阶段</span></span><br><span class="line">    <span class="comment">//1.一个组件的生命周期是从new开始</span></span><br><span class="line">    <span class="comment">//2.实例化之后，会初始化一些事件和生命周期相关的配置</span></span><br><span class="line">    beforeCreate()&#123;</span><br><span class="line">       	<span class="comment">//3.在这里，数据还没有进行挂载，dom也没有进行渲染。此钩子函数基本无用</span></span><br><span class="line">    &#125;,</span><br><span class="line">    created()&#123;</span><br><span class="line">    	 <span class="comment">//4.在这里，数据已经挂载完毕，但是dom还是没有进行渲染</span></span><br><span class="line">         <span class="comment">//在这个函数里面，如果同步的更改数据，则不会触发其他运行中钩子函数的执行</span></span><br><span class="line">         <span class="comment">//做一些初始化数据的配置  掉接口就可以在这里写</span></span><br><span class="line">        <span class="keyword">this</span>.message = <span class="keyword">this</span>.message.toUpperCase();</span><br><span class="line">        <span class="comment">//想要this.num进行累计操作</span></span><br><span class="line">        <span class="keyword">this</span>.timer = setInterval(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="number">1111</span>)</span><br><span class="line">            <span class="keyword">this</span>.num++</span><br><span class="line">        &#125;,<span class="number">2000</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//ps：</span></span><br><span class="line">        <span class="comment">//同步：执行完这些代码之后才会继续向后执行</span></span><br><span class="line">        <span class="comment">//异步：此处继续执行，但后面的代码也继续执行，不阻塞</span></span><br><span class="line">        <span class="comment">//此处为一示例</span></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="built_in">window</span>.onscroll = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="number">111111111</span>)</span><br><span class="line">            <span class="keyword">this</span>.num++</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//接下来过程是我们的组建或实例去查找对应的模板，然后将编译成虚拟dom放入rander函数中</span></span><br><span class="line">    beforeMount()&#123;</span><br><span class="line">        <span class="comment">//5代表dom马上将要被渲染，但是还没有真正的渲染出来！</span></span><br><span class="line">        <span class="comment">//做一些初始化数据的配置</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"beforeMount"</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message, <span class="built_in">document</span>.getElementById(<span class="string">"title"</span>))</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// render()&#123;</span></span><br><span class="line">    <span class="comment">//     console.log(11111111)</span></span><br><span class="line">    <span class="comment">// &#125;,</span></span><br><span class="line">    mounted()&#123;</span><br><span class="line">        <span class="comment">//6.当mounted执行完毕的时候，说明组件生命周期的初始化阶段已经结束了</span></span><br><span class="line">        <span class="comment">//这个函数是初始化阶段的最后一个函数，在这里可以获取到真实dom结构</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"mounted"</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message, <span class="built_in">document</span>.getElementById(<span class="string">"title"</span>))</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeUpdate()&#123;</span><br><span class="line">        <span class="comment">//7.这里数据刚刚更改，dom还是没有进行渲染</span></span><br><span class="line">        <span class="comment">//在这个钩子函数里面，我们不会做任何的操作</span></span><br><span class="line">        <span class="comment">//this.message+=2;</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"beforeUpdate"</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">document</span>.getElementById(<span class="string">"title"</span>).innerHTML)</span><br><span class="line">    &#125;,</span><br><span class="line">    updated()&#123;</span><br><span class="line">        <span class="comment">//8在这里可以获取到更新之后的dom,我们不会做任何的操作</span></span><br><span class="line">        <span class="comment">//当数据更改之后，引起dom重新渲染之后，此钩子函数才会执行</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"updated"</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">document</span>.getElementById(<span class="string">"title"</span>).innerHTML)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeDestroy()&#123;</span><br><span class="line">        <span class="comment">//组件即将要被销毁，但是还没有被销毁</span></span><br><span class="line">        <span class="comment">//在这个钩子函数里面，我们可以做一些善后的操作</span></span><br><span class="line">        <span class="comment">//例如清空定时器、清空绑定的事件</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"beforeDestroy"</span>)</span><br><span class="line">        clearInterval(<span class="keyword">this</span>.timer)</span><br><span class="line">        <span class="built_in">window</span>.onscroll = <span class="literal">null</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    destroyed()&#123;</span><br><span class="line">        <span class="comment">//组件已经被销毁了，生命周期已经结束了！</span></span><br><span class="line">        <span class="comment">//组件把数据绑定、事件监听都给去掉，但是组件的dom结构还是存在的！</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"destroyed"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">new</span> Vue(&#123;&#125;).$mount(<span class="string">"#app"</span>);</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-12-28T03:46:46.476Z" itemprop="dateUpdated">2018-12-28 11:46:46</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/12/28/实例生命周期钩子/" target="_blank" rel="external">https://tianjiec.top/2018/12/28/实例生命周期钩子/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2018/12/28/实例生命周期钩子/&title=《实例生命周期钩子》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2018/12/28/实例生命周期钩子/&title=《实例生命周期钩子》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2018/12/28/实例生命周期钩子/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《实例生命周期钩子》 — chentj's Blog&url=https://tianjiec.top/2018/12/28/实例生命周期钩子/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2018/12/28/实例生命周期钩子/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/12/28/setTimeout/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">setTimeout</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/12/27/组件传值/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">组件传值</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2018/12/28/实例生命周期钩子/&title=《实例生命周期钩子》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2018/12/28/实例生命周期钩子/&title=《实例生命周期钩子》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2018/12/28/实例生命周期钩子/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《实例生命周期钩子》 — chentj's Blog&url=https://tianjiec.top/2018/12/28/实例生命周期钩子/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2018/12/28/实例生命周期钩子/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACH0lEQVR42u3aQW7kMAwEwPn/p5NrgN0Y3ZQdwFLpNBhMZJUPDCny84nXV7z+/f3Pb5LPP7+5eWFgYLyW0R4rx1wfOvlN/hQMDIwTGO3Wvz3mtz2Tb2ZsDAwMjOtDtMlivjMGBgbGesCdBdBkBwwMDIyVInYWiFde0CO1OAYGxgsZ+a37339+pL+BgYHxKsbsuv+5q7fZwsDA2JuRB7gkaUtSwzZxzM+DgYGxK6Mdp2iPshKyi/YnBgbG1ozrMrVN4NrqcqVJgIGBcQ5j5SJ+VsrmeyZp4n9qcQwMjO0Ys6JxvfhM4mTbosDAwNiVMSsg7z1oklYWc20YGBjbMdpBhxk1fxFJAhr938DAwNiIMStQW95dYT2aGcHAwNiOMQuR7ZVZXVXfFcQxMDC2YOTDpvkj2zHWPKBjYGCczPiUK398HqDblzWskjEwMF7OyLdbaRLkgOK5GBgYxzPaS/yV4dT2+g8DA+MERt4MmI2fJgH03t0wMDB2Zdx1ld82Gq/T0Pp6DgMD4zBGm7RdHz0foG/DOgYGxmmMtnAdZqBlUM4bDBgYGLsyvso1u3qbJYhF4oiBgbE1YzZg0SZ/bfshOXrd5sTAwHg5Iy9Ek+1W/ralYmBgnMZYCXztEWcl9LCFiYGBcSRjFqbzYDrMYTEwMDDilkB7Gdc2Sh9JDTEwMF7CaC/Unhj2asc+MDAwzmG0eddd/YekxJ2FfgwMjI0Y3x0TvCp02yz3AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
