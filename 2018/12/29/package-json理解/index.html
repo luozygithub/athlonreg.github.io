@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>package.json理解 | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="对package.json的理解和学习一、初步理解 \1. npm安装package.json时  直接转到当前项目目录下用命令npm install 或npm install –save-dev安装即可，自动将package.json中的模块安装到node-modules文件夹下 \2. package.json 中添加中文注释会编译出错 \3. 每个项目的根目录下面，一般都有一个package">
+<meta property="og:type" content="article">
+<meta property="og:title" content="package.json理解">
+<meta property="og:url" content="https://tianjiec.top/2018/12/29/package-json理解/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="对package.json的理解和学习一、初步理解 \1. npm安装package.json时  直接转到当前项目目录下用命令npm install 或npm install –save-dev安装即可，自动将package.json中的模块安装到node-modules文件夹下 \2. package.json 中添加中文注释会编译出错 \3. 每个项目的根目录下面，一般都有一个package">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-30T12:39:08.328Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="package.json理解">
+<meta name="twitter:description" content="对package.json的理解和学习一、初步理解 \1. npm安装package.json时  直接转到当前项目目录下用命令npm install 或npm install –save-dev安装即可，自动将package.json中的模块安装到node-modules文件夹下 \2. package.json 中添加中文注释会编译出错 \3. 每个项目的根目录下面，一般都有一个package">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">package.json理解</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">package.json理解</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-12-29T02:39:22.000Z" itemprop="datePublished" class="page-time">
+  2018-12-29
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#对package-json的理解和学习"><span class="post-toc-number">1.</span> <span class="post-toc-text">对package.json的理解和学习</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-dependencies，devDependencies"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">3  dependencies，devDependencies</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#dependencies和devDependencies两项，分别指定了项目运行所依赖的模块、项目开发所需要的模块。它们都指向一个对象，该对象的各个成员，分别由模块名和对应的版本要去组成，表示依赖的模块及其版本范围"><span class="post-toc-number">1.0.1.0.0.1.</span> <span class="post-toc-text">dependencies和devDependencies两项，分别指定了项目运行所依赖的模块、项目开发所需要的模块。它们都指向一个对象，该对象的各个成员，分别由模块名和对应的版本要去组成，表示依赖的模块及其版本范围</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#–save参数表示将该模块写入dependencies属性，"><span class="post-toc-number">1.0.1.0.0.2.</span> <span class="post-toc-text">–save参数表示将该模块写入dependencies属性，</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#–save-dev表示将该模块写入devDependencies属性。"><span class="post-toc-number">1.0.1.0.0.3.</span> <span class="post-toc-text">–save-dev表示将该模块写入devDependencies属性。</span></a></li></ol></li></ol></li></ol><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4、config字段"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">4、config字段</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#“bin”-“myapp”-“-cli-js”"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">{ “bin” : { “myapp” : “./cli.js” } }</span></a></li></ol></li>
+        </nav>
+    </aside>
+
+
+<article id="post-package-json理解" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">package.json理解</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-12-29 10:39:22" datetime="2018-12-29T02:39:22.000Z" itemprop="datePublished">2018-12-29</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="对package-json的理解和学习"><a href="#对package-json的理解和学习" class="headerlink" title="对package.json的理解和学习"></a><a href="https://www.cnblogs.com/whkl-m/p/6617540.html" target="_blank" rel="noopener">对package.json的理解和学习</a></h1><p><strong>一、初步理解</strong></p>
+<p>\1. npm安装package.json时  直接转到当前项目目录下用命令npm install 或npm install –save-dev安装即可，自动将package.json中的模块安装到node-modules文件夹下</p>
+<p>\2. package.json 中添加中文注释会编译出错</p>
+<p>\3. 每个项目的根目录下面，一般都有一个package.json文件，定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）。npm install 命令根据这个配置文件，自动下载所需的模块，也就是配置项目所需的运行和开发环境。</p>
+<p>\4. package.json文件可以手工编写，也可以使用<strong>npm init</strong>命令自动生成。</p>
+<p>注意：npm init 时，用户需回答一些问题，然后在当前目录生成一个基本的package.json文件。所有问题之中，只有项目名称（name）和项目版本（version）是必填的，其他都是选填的。</p>
+<p><strong>二、进一步理解 （完整的字段说明：<a href="http://www.mujiang.info/translation/npmjs/files/package.json.html" target="_blank" rel="noopener">http://www.mujiang.info/translation/npmjs/files/package.json.html</a>  中文版）</strong></p>
+<p>以下是根据 创建vue项目的时候 npm init自动生成的package.json做详细的理解</p>
+<p>1.下面是最简单的的一个package.json 文件（只有两个数据，项目名称和项目版本，他们都是必须的，如果没有就无法install）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`&#123;``  ``&quot;name&quot;``: ``&quot;kocla_test&quot;``,``  ``&quot;version&quot;``: ``&quot;1.0.0&quot;``,``&#125;`</span><br></pre></td></tr></table></figure>
+<p>2.scripts</p>
+<p>指定了运行脚本命令的npm命令行缩写，比如start指定了运行npm run start时，所要执行的命令。</p>
+<p>下面的设置指定了npm run dev、npm run bulid、npm run unit、npm run test<em>、npm run lint</em>时，所要执行的命令。　</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`"scripts"`</span><span class="string">`: &#123;`</span><span class="string">`    `</span><span class="string">`"dev"`</span><span class="string">`: `</span><span class="string">`"node build/dev-server.js"`</span><span class="string">`,`</span><span class="string">`    `</span><span class="string">`"build"`</span><span class="string">`: `</span><span class="string">`"node build/build.js"`</span><span class="string">`,`</span><span class="string">`    `</span><span class="string">`"unit"`</span><span class="string">`: `</span><span class="string">`"cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run"`</span><span class="string">`,`</span><span class="string">`    `</span><span class="string">`"test"`</span><span class="string">`: `</span><span class="string">`"npm run unit"`</span><span class="string">`,`</span><span class="string">`    `</span><span class="string">`"lint"`</span><span class="string">`: `</span><span class="string">`"eslint --ext .js,.vue src test/unit/specs"`</span><span class="string">`  `</span><span class="string">`&#125;,`</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-dependencies，devDependencies"><a href="#3-dependencies，devDependencies" class="headerlink" title="3  dependencies，devDependencies"></a>3  <em>dependencies，devDependencies</em></h3><h6 id="dependencies和devDependencies两项，分别指定了项目运行所依赖的模块、项目开发所需要的模块。它们都指向一个对象，该对象的各个成员，分别由模块名和对应的版本要去组成，表示依赖的模块及其版本范围"><a href="#dependencies和devDependencies两项，分别指定了项目运行所依赖的模块、项目开发所需要的模块。它们都指向一个对象，该对象的各个成员，分别由模块名和对应的版本要去组成，表示依赖的模块及其版本范围" class="headerlink" title="dependencies和devDependencies两项，分别指定了项目运行所依赖的模块、项目开发所需要的模块。它们都指向一个对象，该对象的各个成员，分别由模块名和对应的版本要去组成，表示依赖的模块及其版本范围"></a>dependencies和devDependencies两项，分别指定了项目运行所依赖的模块、项目开发所需要的模块。它们都指向一个对象，该对象的各个成员，分别由模块名和对应的版本要去组成，表示依赖的模块及其版本范围</h6><h6 id="–save参数表示将该模块写入dependencies属性，"><a href="#–save参数表示将该模块写入dependencies属性，" class="headerlink" title="–save参数表示将该模块写入dependencies属性，"></a>–save参数表示将该模块写入dependencies属性，</h6><h6 id="–save-dev表示将该模块写入devDependencies属性。"><a href="#–save-dev表示将该模块写入devDependencies属性。" class="headerlink" title="–save-dev表示将该模块写入devDependencies属性。"></a>–save-dev表示将该模块写入devDependencies属性。</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`"dependencies"`</span><span class="string">`: &#123;`</span><span class="string">`    `</span><span class="string">`"vue"`</span><span class="string">`: `</span><span class="string">`"^2.2.2"`</span><span class="string">`,`</span><span class="string">`    `</span><span class="string">`"vue-router"`</span><span class="string">`: `</span><span class="string">`"^2.2.0"`</span><span class="string">`  `</span><span class="string">`&#125;,`</span><span class="string">`  `</span><span class="string">`"devDependencies"`</span><span class="string">`: &#123;`</span><span class="string">`    `</span><span class="string">`"autoprefixer"`</span><span class="string">`: `</span><span class="string">`"^6.7.2"`</span><span class="string">`,`</span><span class="string">`    `</span><span class="string">`"babel-core"`</span><span class="string">`: `</span><span class="string">`"^6.22.1"`</span><span class="string">`,`</span><span class="string">`    `</span><span class="string">`"babel-eslint"`</span><span class="string">`: `</span><span class="string">`"^7.1.1"`</span><span class="string">`,`</span><span class="string">`    `</span><span class="string">`"babel-loader"`</span><span class="string">`: `</span><span class="string">`"^6.2.10"`</span><span class="string">`,`</span><span class="string">`    `</span><span class="string">`"babel-plugin-transform-runtime"`</span><span class="string">`: `</span><span class="string">`"^6.22.0"`</span><span class="string">`,`</span><span class="string">`    `</span><span class="string">`"babel-preset-env"`</span><span class="string">`: `</span><span class="string">`"^1.2.1"`</span><span class="string">`,`</span><span class="string">`    `</span><span class="string">`"babel-preset-stage-2"`</span><span class="string">`: `</span><span class="string">`"^6.22.0"`</span><span class="string">`,`</span><span class="string">`    `</span><span class="string">`"babel-register"`</span><span class="string">`: `</span><span class="string">`"^6.22.0"`</span><span class="string">`,`</span><span class="string">`    `</span><span class="string">`"chalk"`</span><span class="string">`: `</span><span class="string">`"^1.1.3"`</span><span class="string">`,`</span><span class="string">`&#125;`</span></span><br></pre></td></tr></table></figure>
+<h2 id="4、config字段"><a href="#4、config字段" class="headerlink" title="4、config字段"></a>4、config字段</h2><p>config字段用于向环境变量输出值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`&#123; `</span><span class="string">`  `</span><span class="string">`"name"`</span> <span class="string">`: `</span><span class="string">`"foo"`</span><span class="string">`, `</span><span class="string">`  `</span><span class="string">`"config"`</span> <span class="string">`: &#123; `</span><span class="string">`"port"`</span> <span class="string">`: `</span><span class="string">`"8080"`</span> <span class="string">`&#125;, `</span><span class="string">`  `</span><span class="string">`"scripts"`</span> <span class="string">`: &#123; `</span><span class="string">`"start"`</span> <span class="string">`: `</span><span class="string">`"node server.js"`</span> <span class="string">`&#125; `</span><span class="string">`&#125; `</span></span><br></pre></td></tr></table></figure>
+<p>　　</p>
+<p>5.engines 字段</p>
+<p>指明了该项目所需要的node.js版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`&quot;engines&quot;``: &#123;``   ``&quot;node&quot;``: ``&quot;&gt;= 4.0.0&quot;``,``   ``&quot;npm&quot;``: ``&quot;&gt;= 3.0.0&quot;`` ``&#125;,`</span><br></pre></td></tr></table></figure>
+<p>　　</p>
+<p><strong>6.bin</strong></p>
+<p>许多包有一个或多个可执行文件希望被安装到系统路径。在npm下要这么做非常容易(事实上，npm就是这么运行的)。</p>
+<p>这需要在你的package.json中提供一个bin字段，它是一个命令名和本地文件名的映射。在安装时，如果是全局安装，npm将会使用符号链接把这些文件链接到prefix/bin，如果是本地安装，会链接到./node_modules/.bin/。</p>
+<p>比如，要使用myapp作为命令时可以这么做：</p>
+<h3 id="“bin”-“myapp”-“-cli-js”"><a href="#“bin”-“myapp”-“-cli-js”" class="headerlink" title="{ “bin” : { “myapp” : “./cli.js” } }"></a>{ “bin” : { “myapp” : “./cli.js” } }</h3><p>这么一来，当你安装myapp，npm会从cli.js文件创建一个到/usr/local/bin/myapp的符号链接(这使你可以直接在命令行执行myapp)。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最終更新：<time datetime="2018-12-30T12:39:08.328Z" itemprop="dateUpdated">2018-12-30 20:39:08</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/12/29/package-json理解/" target="_blank" rel="external">https://tianjiec.top/2018/12/29/package-json理解/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2018/12/29/package-json理解/&title=《package.json理解》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2018/12/29/package-json理解/&title=《package.json理解》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2018/12/29/package-json理解/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《package.json理解》 — chentj's Blog&url=https://tianjiec.top/2018/12/29/package-json理解/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2018/12/29/package-json理解/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/12/29/vue脚手架各文件意义/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">vue脚手架各文件意义</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/12/28/函数加不加括号的区别/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">函数加不加括号的区别</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2018/12/29/package-json理解/&title=《package.json理解》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2018/12/29/package-json理解/&title=《package.json理解》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2018/12/29/package-json理解/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《package.json理解》 — chentj's Blog&url=https://tianjiec.top/2018/12/29/package-json理解/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2018/12/29/package-json理解/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3awW7DIBAE0P7/T6dST5HSOjNLWjXwOFmRY/N8GMEuHx/xuH2N++v7X67vebz/+vrxyS8bGBgYb8u4XY78xT/dc33nT/fkc8PAwDiHsR6y+bTytyRzw8DAwGgDNwnHFoaBgYHRBm67TLyO4PyTYWBgYCSb2CRGE0D+hF/Zi2NgYLwhY9YY+JvrX+9vYGBg/HvGrRxtgM7KavWsMDAwtmYkBa+VNkDSwkx4URxjYGBsykgWYSvF/dmiMPmsT6IWAwNjI0Yec22ArsRrvp3GwMA4gdEejJiV+9uCWh3WGBgYBzDaEtgMkETwcDOMgYFxGCPfWOYLxPxDvCxwMTAwDmC0mPVDYLOZYGBgnMbIDzrklbwZPm9LYGBgnMbIy/SzYtls4xp9IAwMjAMYrzpf1h7LmLUQvnkLBgbG1oyVZmR+RGO9qDc8HIaBgbEFY6UoX5TD4khtS34YGBgnMGZ/mIVsEtN5me/J0hADA2M7Rv6HWZtz5aPkbU4MDIxdGbOFYP6C4XdtW6EYGBgHMNpjFu0Crl0mtvGNgYGxN2Ol+NWSZvcXrQsMDIxNGbdy5EvGWVMz31RjYGCcw8hHEqBtC3PW4Gw3wBgYGHsw2pBtt6YrjYQ83DEwME5grC/yZsGdP+HJfDAwMDDiJdpKjCatiCdnRjAwMDBGJf420JPy3AsCFwMD4w0Z7QGLlYjM31VENgYGxtaM9cZAG5ptrOcLUAwMjO0Yn9+unpyPrgiIAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
