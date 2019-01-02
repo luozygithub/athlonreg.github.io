@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>meta标签的作用及整理 | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="js">
+    <meta name="description" content="meta的标签的使用是我在前端学习中曾经困惑过一段时间的问题。一方面不是很了解meta标签的用途，另一方面是对于meta标签里的属性和值不是懂，也不知道从哪里冒出来的，所以这篇文章专门整理下meta标签，一个必用且关键的标签。 什么是meta标签？引自下W3school的定义说明一下。 元数据（metadata）是关于数据的信息。 标签提供关于 HTML 文档的元数据。元数据不会显示在页面上，但是">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="meta标签的作用及整理">
+<meta property="og:url" content="https://tianjiec.top/2019/01/02/meta标签的作用及整理/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="meta的标签的使用是我在前端学习中曾经困惑过一段时间的问题。一方面不是很了解meta标签的用途，另一方面是对于meta标签里的属性和值不是懂，也不知道从哪里冒出来的，所以这篇文章专门整理下meta标签，一个必用且关键的标签。 什么是meta标签？引自下W3school的定义说明一下。 元数据（metadata）是关于数据的信息。 标签提供关于 HTML 文档的元数据。元数据不会显示在页面上，但是">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-02T12:35:45.468Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="meta标签的作用及整理">
+<meta name="twitter:description" content="meta的标签的使用是我在前端学习中曾经困惑过一段时间的问题。一方面不是很了解meta标签的用途，另一方面是对于meta标签里的属性和值不是懂，也不知道从哪里冒出来的，所以这篇文章专门整理下meta标签，一个必用且关键的标签。 什么是meta标签？引自下W3school的定义说明一下。 元数据（metadata）是关于数据的信息。 标签提供关于 HTML 文档的元数据。元数据不会显示在页面上，但是">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">meta标签的作用及整理</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">meta标签的作用及整理</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-02T12:34:57.000Z" itemprop="datePublished" class="page-time">
+  2019-01-02
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">1.</span> <span class="post-toc-text"></span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-meta标签的作用及整理" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">meta标签的作用及整理</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-02 20:34:57" datetime="2019-01-02T12:34:57.000Z" itemprop="datePublished">2019-01-02</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>meta的标签的使用是我在前端学习中曾经困惑过一段时间的问题。一方面不是很了解meta标签的用途，另一方面是对于meta标签里的属性和值不是懂，也不知道从哪里冒出来的，所以这篇文章专门整理下meta标签，一个必用且关键的标签。</p>
+<p>什么是meta标签？<br>引自下W3school的定义说明一下。</p>
+<p>元数据（metadata）是关于数据的信息。</p>
+<p>标签提供关于 HTML 文档的元数据。元数据不会显示在页面上，但是对于机器是可读的。</p>
+<p>典型的情况是，meta 元素被用于规定页面的描述、关键词、文档的作者、最后修改时间以及其他元数据。</p>
+<p>标签始终位于 head 元素中。</p>
+<p>元数据可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 web 服务。</p>
+<p>其实对上面的概念简单总结下就是：<meta> 标签提供关于 HTML 文档的元数据。它不会显示在页面上，但是对于机器是可读的。可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 web 服务。</p>
+<p>meta的作用<br>meta里的数据是供机器解读的，告诉机器该如何解析这个页面，还有一个用途是可以添加服务器发送到浏览器的http头部内容，例如我们为页面中添加如下meta标签：</p>
+<p><meta http-equiv="charset" content="iso-8859-1"></p>
+<p><meta http-equiv="expires" content="31 Dec 2008"><br>1<br>2<br>那么浏览器的头部就会包括这些:</p>
+<p>charset:iso-8859-1<br>expires:31 Dec 2008<br>1<br>2<br>当然，只有浏览器可以接受这些附加的头部字段，并能以适当的方式使用它们时，这些字段才有意义。</p>
+<p>meta的必需属性和可选属性<br>必需属性content<br>meta的必需属性是content，当然并不是说meta标签里一定要有content，而是当有http-equiv或name属性的时候，一定要有content属性对其进行说明。例如：</p>
+<meta name="keywords" content="HTML,ASP,PHP,SQL">
+
+<p>这里面content里的属性就是对keywords进行的说明，所以呢也可以理解成一个键值对吧，就是{keywords:”HTML,ASP,PHP,SQL”}。</p>
+<p>可选属性<br>在W3school中，对于meta的可选属性说到了三个，分别是http-equiv、name和scheme。考虑到scheme不是很常用，所以就只说下前两个属性吧。</p>
+<p>http-equiv<br>http-equiv属性是添加http头部内容，对一些自定义的，或者需要额外添加的http头部内容，需要发送到浏览器中，我们就可以是使用这个属性。在上面的meta作用中也有简单的说明，那么现在再举个例子。例如我们不想使用js来重定向，用http头部内容控制，那么就可以这样控制：</p>
+<p><meta http-equiv="Refresh" content="5;url=http://blog.yangchen123h.cn"><br>1<br>在页面中加入这个后，5秒钟后就会跳转到指定页面啦，效果可看W3school的例子</p>
+<p>name<br>第二个可选属性是name，这个属性是供浏览器进行解析，对于一些浏览器兼容性问题，name属性是最常用的，当然有个前提就是浏览器能够解析你写进去的name属性才可以，不然就是没有意义的。还是举个例子吧:</p>
+<p><meta name="renderer" content="webkit"><br>1<br>这个meta标签的意思就是告诉浏览器，用webkit内核进行解析，当然前提是浏览器有webkit内核才可以，不然就是没有意义的啦。当然看到这个你可能会有疑问，这个renderer是从哪里冒出来的，我要怎么知道呢？这个就是在对应的浏览器的开发文档里就会有表明的，例如这个renderer是在360浏览器里说明的。360浏览器内核控制Meta标签说明文档</p>
+<p>常用meta标签大总结<br>接下来就是常用的meta标签大总结啦，我会尽可能的做到全</p>
+<p>charset<br>charset是声明文档使用的字符编码，解决乱码问题主要用的就是它，值得一提的是，这个charset一定要写第一行，不然就可能会产生乱码了。</p>
+<p>charset有两种写法</p>
+<p><meta charset="utf-8"></p>
+<p><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><br>1<br>2<br>两个都是等效的。</p>
+<p>百度禁止转码<br>百度会自动对网页进行转码，这个标签是禁止百度的自动转码</p>
+<p><meta http-equiv="Cache-Control" content="no-siteapp"><br>1<br>SEO 优化部分<br><!-- 页面标题<title>标签(head 头部必须) --></p>
+<p><title>your title</title><br><!-- 页面关键词 keywords --></p>
+<p><meta name="keywords" content="your keywords"><br><!-- 页面描述内容 description --></p>
+<p><meta name="description" content="your description"><br><!-- 定义网页作者 author --></p>
+<p><meta name="author" content="author,email address"><br><!-- 定义网页搜索引擎索引方式，robotterms 是一组使用英文逗号「,」分割的值，通常有如下几种取值：none，noindex，nofollow，all，index和follow。 --></p>
+<p><meta name="robots" content="index,follow"><br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>viewport<br>viewport主要是影响移动端页面布局的，例如：</p>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<p>1<br>2<br>3<br>content 参数：</p>
+<p>width viewport 宽度(数值/device-width)<br>height viewport 高度(数值/device-height)<br>initial-scale 初始缩放比例<br>maximum-scale 最大缩放比例<br>minimum-scale 最小缩放比例<br>user-scalable 是否允许用户缩放(yes/no)<br>各浏览器平台<br>Microsoft Internet Explorer<br><!-- 优先使用最新的ie版本 --></p>
+<p><meta http-equiv="x-ua-compatible" content="ie=edge"><br><!-- 是否开启cleartype显示效果 --></p>
+<p><meta http-equiv="cleartype" content="on"></p>
+<meta name="skype_toolbar" content="skype_toolbar_parser_compatible">
+
+
+<!-- Pinned Site -->
+<!-- IE 10 / Windows 8 -->
+<p><meta name="msapplication-TileImage" content="pinned-tile-144.png"></p>
+<p><meta name="msapplication-TileColor" content="#009900"><br><!-- IE 11 / Windows 9.1 --></p>
+<p><meta name="msapplication-config" content="ieconfig.xml"><br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>Google Chrome<br><!-- 优先使用最新的chrome版本 --></p>
+<p><meta http-equiv="X-UA-Compatible" content="chrome=1"><br><!-- 禁止自动翻译 --></p>
+<p><meta name="google" value="notranslate"><br>1<br>2<br>3<br>4<br>360浏览器<br><!-- 选择使用的浏览器解析内核 --></p>
+<p><meta name="renderer" content="webkit|ie-comp|ie-stand"><br>1<br>2<br>UC手机浏览器<br><!-- 将屏幕锁定在特定的方向 --></p>
+<p><meta name="screen-orientation" content="landscape/portrait"><br><!-- 全屏显示页面 --></p>
+<p><meta name="full-screen" content="yes"><br><!-- 强制图片显示，即使是"text mode" --></p>
+<p><meta name="imagemode" content="force"><br><!-- 应用模式，默认将全屏，禁止长按菜单，禁止手势，标准排版，强制图片显示。 --></p>
+<p><meta name="browsermode" content="application"><br><!-- 禁止夜间模式显示 --></p>
+<p><meta name="nightmode" content="disable"><br><!-- 使用适屏模式显示 --></p>
+<p><meta name="layoutmode" content="fitscreen"><br><!-- 当页面有太多文字时禁止缩放 --></p>
+<p><meta name="wap-font-scale" content="no"><br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>UCBrowser_U3_API</p>
+<p>QQ手机浏览器<br><!-- 锁定屏幕在特定方向 --></p>
+<p><meta name="x5-orientation" content="landscape/portrait"><br><!-- 全屏显示 --></p>
+<p><meta name="x5-fullscreen" content="true"><br><!-- 页面将以应用模式显示 --></p>
+<p><meta name="x5-page-mode" content="app"><br>1<br>2<br>3<br>4<br>5<br>6<br>Apple iOS<br><!-- Smart App Banner --></p>
+<meta name="apple-itunes-app" content="app-id=APP_ID,affiliate-data=AFFILIATE_ID,app-argument=SOME_TEXT">
+
+
+<!-- 禁止自动探测并格式化手机号码 -->
+<meta name="format-detection" content="telephone=no">
+
+
+<!-- Add to Home Screen添加到主屏 -->
+<!-- 是否启用 WebApp 全屏模式 -->
+<p><meta name="apple-mobile-web-app-capable" content="yes"><br><!-- 设置状态栏的背景颜色,只有在 “apple-mobile-web-app-capable” content=”yes” 时生效 --></p>
+<p><meta name="apple-mobile-web-app-status-bar-style" content="black"><br><!-- 添加到主屏后的标题 --></p>
+<p><meta name="apple-mobile-web-app-title" content="App Title"><br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>Google Android</p>
+<p><meta name="theme-color" content="#E64545"><br><!-- 添加到主屏 --></p>
+<p><meta name="mobile-web-app-capable" content="yes"><br><!-- More info: https://developer.chrome.com/multidevice/android/installtohomescreen --><br>1<br>2<br>3<br>4<br>App Links<br><!-- iOS --></p>
+<p><meta property="al:ios:url" content="applinks://docs"></p>
+<p><meta property="al:ios:app_store_id" content="12345"></p>
+<p><meta property="al:ios:app_name" content="App Links"><br><!-- Android --></p>
+<p><meta property="al:android:url" content="applinks://docs"></p>
+<p><meta property="al:android:app_name" content="App Links"></p>
+<p><meta property="al:android:package" content="org.applinks"><br><!-- Web Fallback --></p>
+<p><meta property="al:web:url" content="http://applinks.org/documentation"><br><!-- More info: http://applinks.org/documentation/ --><br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>最后——移动端常用的meta</p>
+<p><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"></p>
+<p><meta name="apple-mobile-web-app-capable" content="yes"></p>
+<p><meta name="apple-mobile-web-app-status-bar-style" content="black"></p>
+<p><meta name="format-detection" content="telephone=no, email=no"></p>
+<p><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"></p>
+<p><meta name="apple-mobile-web-app-capable" content="yes"><!-- 删除苹果默认的工具栏和菜单栏 --></p>
+<p><meta name="apple-mobile-web-app-status-bar-style" content="black"><!-- 设置苹果工具栏颜色 --></p>
+<p><meta name="format-detection" content="telphone=no, email=no"><!-- 忽略页面中的数字识别为电话，忽略email识别 --><br><!-- 启用360浏览器的极速模式(webkit) --></p>
+<p><meta name="renderer" content="webkit"><br><!-- 避免IE使用兼容模式 --></p>
+<p><meta http-equiv="X-UA-Compatible" content="IE=edge"><br><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 --></p>
+<p><meta name="HandheldFriendly" content="true"><br><!-- 微软的老式浏览器 --></p>
+<p><meta name="MobileOptimized" content="320"><br><!-- uc强制竖屏 --></p>
+<p><meta name="screen-orientation" content="portrait"><br><!-- QQ强制竖屏 --></p>
+<p><meta name="x5-orientation" content="portrait"><br><!-- UC强制全屏 --></p>
+<p><meta name="full-screen" content="yes"><br><!-- QQ强制全屏 --></p>
+<p><meta name="x5-fullscreen" content="true"><br><!-- UC应用模式 --></p>
+<p><meta name="browsermode" content="application"><br><!-- QQ应用模式 --></p>
+<p><meta name="x5-page-mode" content="app"><br><!-- windows phone 点击无高光 --></p>
+<p><meta name="msapplication-tap-highlight" content="no"></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><!-- 适应移动端end --></h2><p>作者：阿Q虾米<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/yc123h/article/details/51356143" target="_blank" rel="noopener">https://blog.csdn.net/yc123h/article/details/51356143</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-01-02T12:35:45.468Z" itemprop="dateUpdated">2019-01-02 20:35:45</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/01/02/meta标签的作用及整理/" target="_blank" rel="external">https://tianjiec.top/2019/01/02/meta标签的作用及整理/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/01/02/meta标签的作用及整理/&title=《meta标签的作用及整理》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/01/02/meta标签的作用及整理/&title=《meta标签的作用及整理》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/01/02/meta标签的作用及整理/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《meta标签的作用及整理》 — chentj's Blog&url=https://tianjiec.top/2019/01/02/meta标签的作用及整理/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/01/02/meta标签的作用及整理/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/01/02/ES6模块的import和export用法总结/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">ES6模块的import和export用法总结</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/01/02/meta标签的作用及整理/&title=《meta标签的作用及整理》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/01/02/meta标签的作用及整理/&title=《meta标签的作用及整理》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/01/02/meta标签的作用及整理/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《meta标签的作用及整理》 — chentj's Blog&url=https://tianjiec.top/2019/01/02/meta标签的作用及整理/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/01/02/meta标签的作用及整理/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJUlEQVR42u3ay66DMAxFUf7/p+m0EgLtY6eVcHZGV9w2sBi48eM48Dov6/s6+cz1Otl/8ZIhQ8ZrGefjunvc63eve97dhezJn02GDBn7MO4iGPnM8yNyWHpfGTJkyCDbpfuQ/8qQIUNGh5EmsSSh5UdGGTJkyOC3r1W6nr/FX9+CXFyGDBkvZPCq+////kl/Q4YMGa9inOFKG5y1x42fSoYMGaMZtcSy1pisDVWQI6kMGTL2YaTnrn4pnyD565MhQ8YOjM4oGE87V42Rod8NGTJkjGDwYMoZtd1qhTYZMmTswOiMavF0t9OqrB0cZciQMYlRK/fzG/BiWSsEy5AhYzSj02LkiS5JWRdclyFDxlBGGhZrLc9a2a7Vg5UhQ8YgRq1JmY5EpGe5dLxDhgwZOzB4A4AUy0ganGKC1ypDhoyhjFqjMb1l7bAYhGMZMmQMZaSDETxAp4fFtNB28LguQ4aMEQx+UEt3SEc3eMIsQ4aMfRi8McmLcTwZ5iE7+DGQIUPGUAY/xvHyWTpGtiCUy5AhYwPGqvDK8ZxXnG6TIUPGIAYPdmm7sdO87AR9GTJkTGKc4UoDdOcoyRufMmTImM3gqzPNkbY2O2MZMmTImMrgQbbTjEwZaZiWIUPGDgwS+NLGJB/mWJCLy5AhQ0Z4pOu0B/ihE91ehgwZMnDbgJfnZMiQIYNvzRPUWoWP44OjoQwZMoYyeOpYSzhr1LSpKUOGjKGMD7xZUJbdJsFPAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

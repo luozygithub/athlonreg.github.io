@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>ES6模块的import和export用法总结 | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="es6">
+    <meta name="description" content="ES6模块的import和export用法总结ES6之前已经出现了js模块加载的方案，最主要的是CommonJS和AMD规范。commonjs主要应用于服务器，实现同步加载，如nodejs。AMD规范应用于浏览器，如requirejs，为异步加载。同时还有CMD规范，为同步加载方案如seaJS。 ES6在语言规格的层面上，实现了模块功能，而且实现得相当简单，完全可以取代现有的CommonJS和AM">
+<meta name="keywords" content="es6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6模块的import和export用法总结">
+<meta property="og:url" content="https://tianjiec.top/2019/01/02/ES6模块的import和export用法总结/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="ES6模块的import和export用法总结ES6之前已经出现了js模块加载的方案，最主要的是CommonJS和AMD规范。commonjs主要应用于服务器，实现同步加载，如nodejs。AMD规范应用于浏览器，如requirejs，为异步加载。同时还有CMD规范，为同步加载方案如seaJS。 ES6在语言规格的层面上，实现了模块功能，而且实现得相当简单，完全可以取代现有的CommonJS和AM">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="javascript:void(0);">
+<meta property="og:image" content="javascript:void(0);">
+<meta property="og:image" content="javascript:void(0);">
+<meta property="og:updated_time" content="2019-01-02T12:36:04.298Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6模块的import和export用法总结">
+<meta name="twitter:description" content="ES6模块的import和export用法总结ES6之前已经出现了js模块加载的方案，最主要的是CommonJS和AMD规范。commonjs主要应用于服务器，实现同步加载，如nodejs。AMD规范应用于浏览器，如requirejs，为异步加载。同时还有CMD规范，为同步加载方案如seaJS。 ES6在语言规格的层面上，实现了模块功能，而且实现得相当简单，完全可以取代现有的CommonJS和AM">
+<meta name="twitter:image" content="javascript:void(0);">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">ES6模块的import和export用法总结</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">ES6模块的import和export用法总结</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-02T12:33:21.000Z" itemprop="datePublished" class="page-time">
+  2019-01-02
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ES6模块的import和export用法总结"><span class="post-toc-number">1.</span> <span class="post-toc-text">ES6模块的import和export用法总结</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-ES6模块的import和export用法总结" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">ES6模块的import和export用法总结</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-02 20:33:21" datetime="2019-01-02T12:33:21.000Z" itemprop="datePublished">2019-01-02</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="ES6模块的import和export用法总结"><a href="#ES6模块的import和export用法总结" class="headerlink" title="ES6模块的import和export用法总结"></a><a href="https://www.cnblogs.com/dupd/p/5951311.html" target="_blank" rel="noopener">ES6模块的import和export用法总结</a></h1><p>ES6之前已经出现了js模块加载的方案，最主要的是CommonJS和AMD规范。commonjs主要应用于服务器，实现同步加载，如nodejs。AMD规范应用于浏览器，如requirejs，为异步加载。同时还有CMD规范，为同步加载方案如seaJS。</p>
+<p>ES6在语言规格的层面上，实现了模块功能，而且实现得相当简单，完全可以取代现有的CommonJS和AMD规范，成为浏览器和服务器通用的模块解决方案。</p>
+<p>ES6模块主要有两个功能：export和import</p>
+<p>export用于对外输出本模块（一个文件可以理解为一个模块）变量的接口</p>
+<p>import用于在一个模块中加载另一个含有export接口的模块。</p>
+<p>也就是说使用<code>export</code>命令定义了模块的对外接口以后，其他JS文件就可以通过<code>import</code>命令加载这个模块（文件）。如下图(假设a和b文件在同一目录下)</p>
+<p>按 Ctrl+C 复制代码</p>
+<p>按 Ctrl+C 复制代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// b.js</span><br><span class="line">通过import获取a.js文件的内部变量，&#123;&#125;括号内的变量来自于a.js文件export出的变量标识符。</span><br><span class="line">import &#123;sex,echo&#125; from &quot;./a.js&quot; </span><br><span class="line">console.log(sex)   // boy</span><br><span class="line">echo(sex) // boy</span><br></pre></td></tr></table></figure>
+<p>a.js文件也可以按如下export语法写，但不如上边直观，不太推荐。</p>
+<p>[<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="javascript:void(0);" alt="复制代码](https://common.cnblogs.com/images/copycode.gif)" title="">
+                </div>
+                <div class="image-caption">复制代码](https://common.cnblogs.com/images/copycode.gif)</div>
+            </figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// a.js</span><br><span class="line">export var sex=&quot;boy&quot;;</span><br><span class="line">export var echo=function(value)&#123;</span><br><span class="line">　　console.log(value)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//因为function echo()&#123;&#125;等价于 var echo=function()&#123;&#125;所以也可以写成</span><br><span class="line">export function echo(value)&#123;</span><br><span class="line">　　　console.log(value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>[<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="javascript:void(0);" alt="复制代码](https://common.cnblogs.com/images/copycode.gif)" title="">
+                </div>
+                <div class="image-caption">复制代码](https://common.cnblogs.com/images/copycode.gif)</div>
+            </figure></p>
+<p><strong>以上是export与module的基本用法，再进行拓展学习</strong></p>
+<p>前面的例子可以看出，b.js使用<code>import</code>命令的时候，用户需要知道a.js所暴露出的变量标识符，否则无法加载。可以使用<strong>export default</strong>命令，为模块指定默认输出，这样就不需要知道所要加载模块的变量名。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//a.js</span><br><span class="line">var sex=&quot;boy&quot;;</span><br><span class="line">export default sex（sex不能加大括号）</span><br><span class="line">//原本直接export sex外部是无法识别的，加上default就可以了.但是一个文件内最多只能有一个export default。</span><br><span class="line">其实此处相当于为sex变量值&quot;boy&quot;起了一个系统默认的变量名default，自然default只能有一个值，所以一个文件内不能有多个export default。</span><br></pre></td></tr></table></figure>
+<p>[<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="javascript:void(0);" alt="复制代码](https://common.cnblogs.com/images/copycode.gif)" title="">
+                </div>
+                <div class="image-caption">复制代码](https://common.cnblogs.com/images/copycode.gif)</div>
+            </figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// b.js</span><br><span class="line">本质上，a.js文件的export default输出一个叫做default的变量，然后系统允许你为它取任意名字。所以可以为import的模块起任何变量名，且不需要用大括号包含</span><br><span class="line">import any from &quot;./a.js&quot;</span><br><span class="line">import any12 from &quot;./a.js&quot; </span><br><span class="line">console.log(any,any12)   // boy,boy</span><br></pre></td></tr></table></figure>
+<p>原文：<a href="https://www.cnblogs.com/dupd/p/5951311.html" target="_blank" rel="noopener">https://www.cnblogs.com/dupd/p/5951311.html</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-01-02T12:36:04.298Z" itemprop="dateUpdated">2019-01-02 20:36:04</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/01/02/ES6模块的import和export用法总结/" target="_blank" rel="external">https://tianjiec.top/2019/01/02/ES6模块的import和export用法总结/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/01/02/ES6模块的import和export用法总结/&title=《ES6模块的import和export用法总结》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/01/02/ES6模块的import和export用法总结/&title=《ES6模块的import和export用法总结》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/01/02/ES6模块的import和export用法总结/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ES6模块的import和export用法总结》 — chentj's Blog&url=https://tianjiec.top/2019/01/02/ES6模块的import和export用法总结/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/01/02/ES6模块的import和export用法总结/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/01/02/meta标签的作用及整理/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">meta标签的作用及整理</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/12/30/移动端开发/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">移动端开发</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/01/02/ES6模块的import和export用法总结/&title=《ES6模块的import和export用法总结》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/01/02/ES6模块的import和export用法总结/&title=《ES6模块的import和export用法总结》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/01/02/ES6模块的import和export用法总结/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ES6模块的import和export用法总结》 — chentj's Blog&url=https://tianjiec.top/2019/01/02/ES6模块的import和export用法总结/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/01/02/ES6模块的import和export用法总结/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvUlEQVR42u3aUW7jMAwE0Nz/0t0DdOvMkFLQAs9fBZrafCpgMUO9XvH19e16/szz3yb3ef758IWHh4e3Lv3749viktKfi/7p6fWS4eHh4V3jtS/o54Voi8jvkNeMh4eH93t4yYu7/at8mfDw8PD+Ii9/xT+32nl4kQcTeHh4eJ/k5a/ppOjDgcKiWcfDw8O7wcunSL/n5yvzPTw8PLz1VH3TOudhRD4Yq6vFw8PDu8DLX7hJQzwrq62hrRMPDw/vLG9WSn4Mqz1YsDm89Z/f4uHh4V3gbUKHTUGryDUYlR3IVPDw8PAeR1/5q7wttwW0bXcdQ+Dh4eEd4uURw6zczeD/wIEAPDw8vKO8fBC1Dx1mce2BY1t4eHh413jtyH9/RODsAOxNdIuHh4d3jbd56Sev77zXnVX4Y5iLh4eHd4iXf/lvj5PmI7G2US4ObOHh4eF9hJc8OB+M5XHGbBN6s/R4eHh4F3jtmH//+m5jjtmz6iQDDw8PL+ZtGuVZ5DobYuUbWBRG4OHh4S14s7Z1E8vO9q52wFacjMDDw8Nb8FZf9cst5Gy8++aeeHh4eEd5+Ufb0f4sUGi3gTeLgoeHh3eBlzep7cGCJKrYL9mBSAIPDw+v5OXN9D4syBvlfAne1ImHh4d3gXc2UGib49ngLdm08PDw8G7z2ra1baPb8dXs6dF/DA8PD+8oL3/5tovyKq/2KFidsuDh4eEd5e1j2XbDSMZmq4AYDw8P7yjvq7yS4DUZdG1a82Ih8PDw8C7wNvtJO+KaLWje3LdjMzw8PLwNr711kpS2rXMei9SbDR4eHt41Xl50exhrtoVsYt/o13h4eHgf580iiTy6nW1F0QAMDw8P7+O8JFptA4XZPaNkBQ8PD+8aLx963TsEsI8t6ikfHh4e3og3+8KfD7ryVnt2UGB1aAAPDw+v4/0Dk1BUudsTv10AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
