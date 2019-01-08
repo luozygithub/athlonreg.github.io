@@ -151,6 +151,99 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-实例生命周期钩子" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-28 09:59:32" datetime="2018-12-28T01:59:32.000Z" itemprop="datePublished">2018-12-28</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/28/实例生命周期钩子/">实例生命周期钩子</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        实例生命周期钩子
+每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。
+
+比如 created 钩子可以用来在一个实例被创建之后执行代码：
+12345678910new Vue(&#123;  data: ...
+    
+
+        <a href="/2018/12/28/实例生命周期钩子/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-组件传值" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-27 16:21:14" datetime="2018-12-27T08:21:14.000Z" itemprop="datePublished">2018-12-27</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/27/组件传值/">组件传值</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        父组件——》子组件在父组件 global
+123456789&lt;template id="father"&gt;    &lt;div&gt;        &lt;p&gt;这是父组件&lt;/p&gt;        &lt;input type="text" v-model="message.value"&gt;        &lt;p&gt;message: &#123;&#1...
+    
+
+        <a href="/2018/12/27/组件传值/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-vue-resource" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -512,86 +605,6 @@ vue框架
     
 
         <a href="/2018/12/24/js的this/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-箭头函数this" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-24 12:03:14" datetime="2018-12-24T04:03:14.000Z" itemprop="datePublished">2018-12-24</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/24/箭头函数this/">箭头函数this</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        箭头函数中的this由于箭头函数不绑定this，他会捕捉所在上下文的this值，作为自己的this值，
-​    1、所以call()/apply()/bind() 方法对于箭头函数来说只是传入参数，对他的this值毫无影响。
-​    2、考虑到this是语法层面上的，严格模式中this相关的规则都可以忽略。（可以忽略是否在严格模式下的影响）
-因为箭头函数可以捕获其上下文的this值所以
-...
-    
-
-        <a href="/2018/12/24/箭头函数this/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Vue1" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-24 11:09:56" datetime="2018-12-24T03:09:56.000Z" itemprop="datePublished">2018-12-24</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/24/Vue1/">Vue1</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        总结一demo112345678910111213141516171819&lt;div id="app"&gt;    &lt;p&gt;        &#123;&#123;message&#125;&#125;    &lt;/p&gt;&lt;/div&gt;&lt;script src="./base/vue.js"&gt;&lt;/script&gt;&lt;script&gt...
-    
-
-        <a href="/2018/12/24/Vue1/" class="post-more waves-effect waves-button">
             Continue reading...
         </a>
     </div>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>No title | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="React框架学习React中的事件对象react中对于事件进行了处理，解决了一些兼容性问题，react事件对象上面挂载着nativeEvent，这个就是原生的事件对象 react对事件对象做了优化，如果不取值的话，值都是null React中组件通信方式父组件与子组件通信  父组件将自己的状态传递给子组件，子组件当做属性来接收，当父组件更改自己状态的时候，子组件接收到的属性就会发生改变  父组件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="No title">
+<meta property="og:url" content="https://tianjiec.top/2019/01/08/react_02/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="React框架学习React中的事件对象react中对于事件进行了处理，解决了一些兼容性问题，react事件对象上面挂载着nativeEvent，这个就是原生的事件对象 react对事件对象做了优化，如果不取值的话，值都是null React中组件通信方式父组件与子组件通信  父组件将自己的状态传递给子组件，子组件当做属性来接收，当父组件更改自己状态的时候，子组件接收到的属性就会发生改变  父组件">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-08T03:03:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="No title">
+<meta name="twitter:description" content="React框架学习React中的事件对象react中对于事件进行了处理，解决了一些兼容性问题，react事件对象上面挂载着nativeEvent，这个就是原生的事件对象 react对事件对象做了优化，如果不取值的话，值都是null React中组件通信方式父组件与子组件通信  父组件将自己的状态传递给子组件，子组件当做属性来接收，当父组件更改自己状态的时候，子组件接收到的属性就会发生改变  父组件">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">No title</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">No title</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-08T09:33:42.410Z" itemprop="datePublished" class="page-time">
+  2019-01-08
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#React框架学习"><span class="post-toc-number">1.</span> <span class="post-toc-text">React框架学习</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#React中的事件对象"><span class="post-toc-number">1.0.0.0.1.</span> <span class="post-toc-text">React中的事件对象</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#React中组件通信方式"><span class="post-toc-number">1.0.0.0.2.</span> <span class="post-toc-text">React中组件通信方式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#React中表单元素默认值"><span class="post-toc-number">1.0.0.0.3.</span> <span class="post-toc-text">React中表单元素默认值</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#React-keys"><span class="post-toc-number">1.0.0.0.4.</span> <span class="post-toc-text">React-keys</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#状态提升"><span class="post-toc-number">1.0.0.0.5.</span> <span class="post-toc-text">状态提升</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#组合"><span class="post-toc-number">1.0.0.0.6.</span> <span class="post-toc-text">组合</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-react_02" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">No title</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-08 17:33:42" datetime="2019-01-08T09:33:42.410Z" itemprop="datePublished">2019-01-08</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="React框架学习"><a href="#React框架学习" class="headerlink" title="React框架学习"></a>React框架学习</h1><h5 id="React中的事件对象"><a href="#React中的事件对象" class="headerlink" title="React中的事件对象"></a>React中的事件对象</h5><p>react中对于事件进行了处理，解决了一些兼容性问题，react事件对象上面挂载着nativeEvent，这个就是原生的事件对象</p>
+<p>react对事件对象做了优化，如果不取值的话，值都是null</p>
+<h5 id="React中组件通信方式"><a href="#React中组件通信方式" class="headerlink" title="React中组件通信方式"></a>React中组件通信方式</h5><p>父组件与子组件通信</p>
+<ol>
+<li><p>父组件将自己的状态传递给子组件，子组件当做属性来接收，当父组件更改自己状态的时候，子组件接收到的属性就会发生改变</p>
+</li>
+<li><p>父组件利用ref对子组件做标记，通过调用子组件的方法以更改子组件的状态..</p>
+</li>
+</ol>
+<p>子组件与父组件通信</p>
+<p>父组件将自己的某个方法传递给子组件，在方法里可以做任意操作，比如可以更改状态，子组件通过this.props接收到父组件的方法后调用。</p>
+<p>兄弟组件通信</p>
+<p>在react没有类似vue中的事件总线来解决这个问题，我们只能借助它们共同的父级组件来实现，将非父子关系装换成多维度的父子关系</p>
+<p>复杂的非父子组件通信在react中很难处理，多组件间的数据共享也不好处理，所以我们会使用flux、redux来实现这样的功能，解决这个问题</p>
+<h5 id="React中表单元素默认值"><a href="#React中表单元素默认值" class="headerlink" title="React中表单元素默认值"></a>React中表单元素默认值</h5><p>在react中，如果需要 给表单元素设置默认value或者checked，需要设置成defaultValue/defaultChecked，否则设置默认值以后，用户无法更改</p>
+<h5 id="React-keys"><a href="#React-keys" class="headerlink" title="React-keys"></a>React-keys</h5><p>我们在react中循环列表数据的时候，需要对循环出来的虚拟jsx节点传入上key这个数据，</p>
+<p>Keys可以在DOM中的某些元素被增加或删除的时候帮助React识别哪些元素发生了变化。因此你应当给数组中的每一个元素赋予一个确定的标识。</p>
+<h5 id="状态提升"><a href="#状态提升" class="headerlink" title="状态提升"></a>状态提升</h5><p>就是如果有多个组件共享一个数据，把这个数据放到共同的父级组件中来管理</p>
+<h5 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h5><p>在vue中有一个内容分发叫slot，在react中也有实现，就是可以在使用组件的时候，在组件标签内部放入一些不固定的内容，在该组件的模板中，只有{this.props.children}来表示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//App</span><br><span class="line">&lt;Dialog</span><br><span class="line">close=&#123;this.ToggleDialogShow&#125; isShow=&#123;isDialogShow&#125;</span><br><span class="line">&gt;</span><br><span class="line">    &lt;ContentA/&gt;</span><br><span class="line">    &lt;ContentA/&gt;</span><br><span class="line">    &lt;ContentB/&gt;</span><br><span class="line">&lt;/Dialog&gt;</span><br><span class="line"></span><br><span class="line">//dialog</span><br><span class="line">&lt;div style=&#123;&#123;display:isShow?&apos;block&apos;:&apos;none&apos;&#125;&#125; className=&quot;dialog&quot;&gt;</span><br><span class="line">    &lt;Button handler=&#123;this.props.close&#125; text=&quot;关闭&quot;/&gt;   </span><br><span class="line">    &#123;this.props.children&#125;//这里就是slot</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-01-08T03:03:33.000Z" itemprop="dateUpdated">2019-01-08 11:03:33</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/01/08/react_02/" target="_blank" rel="external">https://tianjiec.top/2019/01/08/react_02/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/01/08/react_02/&title=《No title》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/01/08/react_02/&title=《No title》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/01/08/react_02/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《No title》 — chentj's Blog&url=https://tianjiec.top/2019/01/08/react_02/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/01/08/react_02/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/01/08/react_01/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">No title</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/01/08/react_02/&title=《No title》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/01/08/react_02/&title=《No title》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/01/08/react_02/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《No title》 — chentj's Blog&url=https://tianjiec.top/2019/01/08/react_02/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/01/08/react_02/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABxklEQVR42u3awa6DIBAF0P7/T/u2Ji/FOwOiaQ6rBg0eu7hxBj6feByncZ6ZuXqeWTxwcXGnucdwfLtnPP9//eo6X9fExcXdyE0ekwRT8shx8F3YcHFxX8wd/05mcHFxf487Ll2qxQ8uLu47uUnxM74/p+dr4uLiPsXNu5T3/b6lv4uLi9viHsUxLmnG88nVi6fj4uJu4eaBMn5kEnnJatGduLi4N3Or2yH543uvcRF/uLi427lJxOTbq3nztLBNi4uLu4WbI6rohNJrvuDi4j7FnWluVj90qn8NLi7uU9zqNmd+nKK3Y/KZyVFcXNwWtxpAvfjrHae4+I9xcXFv4FY/Qarz1aLoIhZxcXG3cFediRpH3vxquLi4+7nj4FgVQ6saK7i4uPu5vXZGcpxi2aYsLi7udm6+aVqNwpx+Ufzg4uJu5K6KpFWlUfcLCBcXd5Z7FEceczMN02Y3BRcXdxF3vmHa3NGNA3RxfxcXFzfmlsuPifKm2nLFxcV9llsNmvwFbqzVcHFxX8PNt1SrB78KFRsuLu7LuL04m2l8LPjEwcXFbXFnmqR5qEWHMseviouLu4VbjpL44EXSeJ1pueLi4t7A/QO7WuIxh1vHNQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
