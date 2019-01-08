@@ -151,6 +151,418 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-vue-resource" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-27 11:27:16" datetime="2018-12-27T03:27:16.000Z" itemprop="datePublished">2018-12-27</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/27/vue-resource/">vue-resource</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        概述Vue.js是数据驱动的，这使得我们并不需要直接操作DOM，如果我们不需要使用jQuery的DOM选择器，就没有必要引入jQuery。vue-resource是Vue.js的一款插件，它可以通过XMLHttpRequest或JSONP发起请求并处理响应。也就是说，$.ajax能做的事情，vue-resource插件一样也能做到，而且vue-resource的API更为简洁。另外，vue-...
+    
+
+        <a href="/2018/12/27/vue-resource/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-组件-Prop" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-27 10:45:16" datetime="2018-12-27T02:45:16.000Z" itemprop="datePublished">2018-12-27</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/27/组件-Prop/">组件-Prop</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        PropProp的大小写（camelCase vs kebab-case）
+
+HTML 中的特性名是大小写不敏感的，所以浏览器会把所有大写字符解释为小写字符。这意味着当你使用DOM中的模板是，calmelCase（驼峰命名法）的prop名需要使用等价的kebab-case（短横线分隔命名）命名：
+
+12345Vue.component('blog-post', &#123;  // 在 Ja...
+    
+
+        <a href="/2018/12/27/组件-Prop/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-xhr" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-26 19:58:39" datetime="2018-12-26T11:58:39.000Z" itemprop="datePublished">2018-12-26</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/26/xhr/">xhr</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        深入理解ajax——XHR对象前面的话　　1999年，微软公司发布IE5，第一次引入新功能：允许javascript脚本向服务器发起HTTP请求。这个功能当时并没有引起注意，直到2004年Gmail发布和2005年Google Map发布，才引起广泛重视。2005年2月，ajax这个词第一次正式提出，指围绕这个功能进行开发的一整套做法。从此，ajax成为脚本发起HTTP通信的代名词，W3C也...
+    
+
+        <a href="/2018/12/26/xhr/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/">ajax</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Vue-extend构造器" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-26 17:48:26" datetime="2018-12-26T09:48:26.000Z" itemprop="datePublished">2018-12-26</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/26/Vue-extend构造器/">Vue.extend构造器</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        1.简单介绍Vue.extend(options)
+参数：对象
+用法：使用Vue构造器，创建一个“子类”，参数是一个包含组件选项的对象，其中,data选项中必须是函数
+
+描述：Vue.extend返回的是一个“扩展实例构造器”，也就是预设了部分选项的Vue的实例构造器，它常常服务于Vue.component用来生成组件，可以简单理解为当在模板中遇到该组件作为标签的自定义元素时，会自动调用“扩...
+    
+
+        <a href="/2018/12/26/Vue-extend构造器/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-箭头函数" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-26 11:27:09" datetime="2018-12-26T03:27:09.000Z" itemprop="datePublished">2018-12-26</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/26/箭头函数/">箭头函数</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        ##### 
+123456789101112//一个参数var	fn1 = a =&gt;&#123;    console.log(a);&#125;//多个参数var fn2 = (a, b)=&gt;&#123;    console.log(a+b)&#125;//只有return语句 返回值var fn3 = (a)=&gt;avar fn4 = (a, b)=&gt;（a+b）
+...
+    
+
+        <a href="/2018/12/26/箭头函数/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6-js/">es6 js</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-作用域、变量提升、this-js" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-25 19:53:29" datetime="2018-12-25T11:53:29.000Z" itemprop="datePublished">2018-12-25</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/25/作用域、变量提升、this-js/">作用域、变量提升、this.js</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        变量提升12345678// console.log(a);var a = 10function abc()&#123;    console.log(a);//undefined    var a = 20;&#125;abc();
+function 执行过程是
+查找var let 将声明提前
+然后再在原有位置进行赋值
+var 和 let变量提升区别：
+let 局部 变量提升出现死区例子
+...
+    
+
+        <a href="/2018/12/25/作用域、变量提升、this-js/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-todoList" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-25 17:51:57" datetime="2018-12-25T09:51:57.000Z" itemprop="datePublished">2018-12-25</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/25/todoList/">todoList</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        任务列表功能：
+显示所有任务 ； 已完成任务 ；未完成任务；
+每个任务点击对号记入已完成任务；每个任务有个删除功能；未完成任务在删除的时候弹出确认删除未完成任务的对话框；
+
+技术：SUI Mobile框架
+vue框架
+实现：1、借用SUI Mobile写样式首先将sui的样式css文件引入
+1&lt;link rel="stylesheet" href="http://g.alicdn.co...
+    
+
+        <a href="/2018/12/25/todoList/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sui-vue/">sui vue</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-js的this" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-24 12:14:45" datetime="2018-12-24T04:14:45.000Z" itemprop="datePublished">2018-12-24</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/24/js的this/">js的this</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        this 指向详细解析（箭头函数）前言this 指向问题是入坑前端必须了解知识点，现在迎来了ES6时代，因为箭头函数的出现，所以感觉有必要对 this 问题梳理一下，遂有此文
+在非箭头函数下， this 指向调用其所在函数的对象，而且是离谁近就是指向谁（此对于常规对象，原型链， getter &amp; setter等都适用）；构造函数下，this与被创建的新对象绑定；DOM事件，this指...
+    
+
+        <a href="/2018/12/24/js的this/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-箭头函数this" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-24 12:03:14" datetime="2018-12-24T04:03:14.000Z" itemprop="datePublished">2018-12-24</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/24/箭头函数this/">箭头函数this</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        箭头函数中的this由于箭头函数不绑定this，他会捕捉所在上下文的this值，作为自己的this值，
+​    1、所以call()/apply()/bind() 方法对于箭头函数来说只是传入参数，对他的this值毫无影响。
+​    2、考虑到this是语法层面上的，严格模式中this相关的规则都可以忽略。（可以忽略是否在严格模式下的影响）
+因为箭头函数可以捕获其上下文的this值所以
+...
+    
+
+        <a href="/2018/12/24/箭头函数this/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-Vue1" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -188,394 +600,12 @@
 
         </li>
     
-        <li class="post-list-item fade">
-            <article id="post-node-js取参的四种方法" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-21 19:59:17" datetime="2018-12-21T11:59:17.000Z" itemprop="datePublished">2018-12-21</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/21/node-js取参的四种方法/">node.js取参的四种方法</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        node.js取参四种方法req.body,req.params,req.param,req.body参考：https://my.oschina.net/u/2519530/blog/535309
-获取请求很中的参数是每个web后台处理的必经之路，nodejs的 express框架 提供了四种方法来实现。
-1,req.body
-2,req.query
-3,req.params
-4,req.p...
-    
-
-        <a href="/2018/12/21/node-js取参的四种方法/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-soket" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-20 20:35:54" datetime="2018-12-20T12:35:54.000Z" itemprop="datePublished">2018-12-20</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/20/soket/">soket</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        同步和异步当前程序执行：
-同步：阻塞，当前程序是否能够去执行，必须等前一个程序执行完毕之后，才能够去执行。
-异步：非阻塞，当前程序的执行，并不受前一个程序是否执行完毕的影响。
-多个程序之间的关系 （串行/并行）
-并行： 多个程序之间可以同时或者不同时去执行，叫做并行
-串行： 多个程序之间必须按照顺序去执行，这叫串行。
-1、同步执行的程序，必然是串行的
-2、异步执行的程序，可以实现串行
-3、并...
-    
-
-        <a href="/2018/12/20/soket/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-5-1Node-js编写" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-20 17:17:09" datetime="2018-12-20T09:17:09.000Z" itemprop="datePublished">2018-12-20</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/20/5-1Node-js编写/">5-1Node.js编写</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        学前需求
-一、node安装和运行
-12会安装node，搭建node环境会运行node执行node程序
-
-二、node基础模块的使用
-12345Buffer：二进制数据处理模块Events：事件模块fs：文件系统模块Net：网络模块Http：http模块
-
-https://nodejs.org/api/
-
-前台管理功能
-                
-                    ...
-    
-
-        <a href="/2018/12/20/5-1Node-js编写/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-express的路由" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-20 10:42:13" datetime="2018-12-20T02:42:13.000Z" itemprop="datePublished">2018-12-20</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/20/express的路由/">express的路由</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        express路由与应用模式1. 引言
-Express是一个基于Node.js的轻量级web开发框架，具有体积小，使用灵活等特点。查看Express的源码，如果不计供使用的中间件，主体框架只有一千余行代码，非常简练。
-Express模型的核心为Express中定义的路由和路由器。分析Express源码可发现Express的路由提供多种灵活的应用模式。
-我们首先介绍一下Express中的路由、...
-    
-
-        <a href="/2018/12/20/express的路由/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-mongoose" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-20 10:18:28" datetime="2018-12-20T02:18:28.000Z" itemprop="datePublished">2018-12-20</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/20/mongoose/">mongoose</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        简介　　Mongoose是在node.js异步环境下对mongodb进行便捷操作的对象模型工具
-　　那么要使用它，首先你得装上node.js和mongodb,关于mongodb的安装和操作介绍可以参考：http://www.cnblogs.com/zhongweiv/p/node_mongodb.html
-　　Github地址：https://github.com/Automattic/mo...
-    
-
-        <a href="/2018/12/20/mongoose/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-框架初探-blog项目" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-19 19:51:16" datetime="2018-12-19T11:51:16.000Z" itemprop="datePublished">2018-12-19</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/19/框架初探-blog项目/">框架初探-blog项目</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-    
-
-        <a href="/2018/12/19/框架初探-blog项目/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-ES6-Promise用法" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-19 19:33:07" datetime="2018-12-19T11:33:07.000Z" itemprop="datePublished">2018-12-19</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/19/ES6-Promise用法/">ES6 Promise用法</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        ES6 Promise 用法讲解
-Promise是一个构造函数，自己身上有all、reject、resolve这几个眼熟的方法，原型上有then、catch等同样很眼熟的方法。
-
-那就new一个
-1234567var p = new Promise(function(resolve, reject)&#123;    //异步操作    setTimeout(function()&#123;...
-    
-
-        <a href="/2018/12/19/ES6-Promise用法/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-面包屑导航" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-19 19:27:56" datetime="2018-12-19T11:27:56.000Z" itemprop="datePublished">2018-12-19</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/19/面包屑导航/">面包屑导航</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        面包屑导航(BreadcrumbNavigation)这个概念来自童话故事”汉赛尔和格莱特“，当汉赛尔和格莱特穿过森林时，不小心迷路了，但是他们发现在沿途走过的地方都撒下了面包屑，让这些面包屑来帮助他们找到回家的路。所以，面包屑导航的作用是告诉访问者他们目前在网站中的位置以及如何返回。
-主页 &gt;栏目页&gt;文章页面
-小型站点便于优化，可以把主页改成你的关键词，目的是关键词集权于首页。...
-    
-
-        <a href="/2018/12/19/面包屑导航/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-面试题" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-18 09:21:11" datetime="2018-12-18T01:21:11.000Z" itemprop="datePublished">2018-12-18</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/18/面试题/">面试题</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        1、你做的页面在那些浏览器测试过？这些浏览器的内核分别是什么？IE：trident内核
-Firefox：gecko内核
-Safari：webkit内核
-Opera：以前是presto内核，现在改用Google的Chrome的blink内核
-Chrome：blink（基于webkit，Google与Opera共同开发）
-2、每个HTML文件里开头都有一个很重要的东西，Doctype，知道这是干...
-    
-
-        <a href="/2018/12/18/面试题/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
     </ul>
 
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">下一页</a>
+    <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">下一页</a>
     </div>
 </nav>
 

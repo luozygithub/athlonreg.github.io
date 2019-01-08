@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>vue学习5 | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vue学习">
+    <meta name="description" content="过滤器vue中可以设置filter(过滤器)来实现数据格式化，双花括号插值和 v-bind 表达式中使用 vue1.0的有默认的过滤器，但是在2.0的时候全部给去掉了 所以在vue中如果想要使用过滤器就需要自定义 自定义的方法有两种：全局定义和局部定义，全局定义的过滤器在任意的实例、组件中都可以使用，局部定义就是在实例、组件中定义，只能在这个实例或组件中使用  全局定义 Vue.filter(na">
+<meta name="keywords" content="vue学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue学习5">
+<meta property="og:url" content="https://tianjiec.top/2019/01/08/vue学习5/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="过滤器vue中可以设置filter(过滤器)来实现数据格式化，双花括号插值和 v-bind 表达式中使用 vue1.0的有默认的过滤器，但是在2.0的时候全部给去掉了 所以在vue中如果想要使用过滤器就需要自定义 自定义的方法有两种：全局定义和局部定义，全局定义的过滤器在任意的实例、组件中都可以使用，局部定义就是在实例、组件中定义，只能在这个实例或组件中使用  全局定义 Vue.filter(na">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-08T09:19:18.531Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue学习5">
+<meta name="twitter:description" content="过滤器vue中可以设置filter(过滤器)来实现数据格式化，双花括号插值和 v-bind 表达式中使用 vue1.0的有默认的过滤器，但是在2.0的时候全部给去掉了 所以在vue中如果想要使用过滤器就需要自定义 自定义的方法有两种：全局定义和局部定义，全局定义的过滤器在任意的实例、组件中都可以使用，局部定义就是在实例、组件中定义，只能在这个实例或组件中使用  全局定义 Vue.filter(na">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue学习5</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vue学习5</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-08T09:18:36.000Z" itemprop="datePublished" class="page-time">
+  2019-01-08
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#过滤器"><span class="post-toc-number">1.</span> <span class="post-toc-text">过滤器</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#条件渲染"><span class="post-toc-number">2.</span> <span class="post-toc-text">条件渲染</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#v-if-vs-v-show"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">v-if vs v-show</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#虚拟dom"><span class="post-toc-number">3.</span> <span class="post-toc-text">虚拟dom</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#组件化"><span class="post-toc-number">4.</span> <span class="post-toc-text">组件化</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#组件"><span class="post-toc-number">5.</span> <span class="post-toc-text">组件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#注意浏览器规则"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">注意浏览器规则</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#template"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">template</span></a></li></ol></li></ol><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#undefined"><span class="post-toc-number"></span> <span class="post-toc-text">AAAAAAAAAAAAA</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#undefined"><span class="post-toc-number"></span> <span class="post-toc-text">BBBBBBBBBBBBB</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#undefined"><span class="post-toc-number"></span> <span class="post-toc-text"></span></a>
+        </li></nav>
+    </aside>
+
+
+<article id="post-vue学习5" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vue学习5</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-08 17:18:36" datetime="2019-01-08T09:18:36.000Z" itemprop="datePublished">2019-01-08</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h5 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h5><p>vue中可以设置filter(过滤器)来实现数据格式化，双花括号插值和 v-bind 表达式中使用</p>
+<p>vue1.0的有默认的过滤器，但是在2.0的时候全部给去掉了</p>
+<p>所以在vue中如果想要使用过滤器就需要自定义</p>
+<p>自定义的方法有两种：全局定义和局部定义，全局定义的过滤器在任意的实例、组件中都可以使用，局部定义就是在实例、组件中定义，只能在这个实例或组件中使用</p>
+<ol>
+<li><p>全局定义</p>
+<p>Vue.filter(name,handler)</p>
+<p>name是过滤器的名字，handler是数据格式化处理函数，接收的第一个参数就是要处理的数据，返回什么数据，格式化的结果就是什么</p>
+<p>在模板中通过 | (管道符) 来使用,在过滤器名字后面加（）来传参，参数会在handler函数中第二个及后面的形参来接收</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123;msg | firstUpper(3,2)&#125;&#125;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">Vue.filter(&apos;firstUpper&apos;,function (value,num=1,num2) &#123;</span><br><span class="line">    console.log(num2)</span><br><span class="line">    return value.substr(0,num).toUpperCase()+value.substr(num).toLowerCase()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>局部定义</p>
+<p>在实例、组件的配置项中设置 filters，键名为过滤器名，值为handler</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">filters:&#123;</span><br><span class="line">    firstUpper:function (value,num=1,num2) &#123;</span><br><span class="line">    console.log(num2)</span><br><span class="line">    return value.substr(0,num).toUpperCase()+value.substr(num).toLowerCase()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h5><p>在Vue中可以使用v-if来控制模板里元素的显示和隐藏，值为true就显示，为false就隐藏</p>
+<p>v-if控制的是是否渲染这个节点</p>
+<p>当我们需要控制一组元素显示隐藏的时候，可以用template标签将其包裹，将指令设置在template上，等等vm渲染这一组元素的时候，不会渲染template</p>
+<p>当有else分支逻辑的时候，可以给该元素加上v-else指令来控制，v-else会根据上面的那个v-if来控制，效果与v-if相反，注意，一定要紧挨着</p>
+<p>还有v-else-if指令可以实现多分支逻辑</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; v-model=&quot;mode&quot;&gt;  </span><br><span class="line">  &lt;template  v-if=&quot;mode==&apos;A&apos;&quot;&gt;</span><br><span class="line">    &lt;h1&gt;1.title&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;我的第一个P标签&lt;/p&gt;  </span><br><span class="line">  &lt;/template&gt;</span><br><span class="line"> &lt;template  v-else-if=&quot;mode==&apos;B&apos;&quot;&gt;</span><br><span class="line">    &lt;h1&gt;2.title&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;我的第二个P标签&lt;/p&gt;</span><br><span class="line"> &lt;/template&gt;</span><br><span class="line"> &lt;template  v-else-if=&quot;mode==&apos;C&apos;&quot;&gt;</span><br><span class="line">    &lt;h1&gt;3.title&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;我的第三个P标签&lt;/p&gt;</span><br><span class="line"> &lt;/template&gt;</span><br><span class="line"> &lt;template  v-else&gt;</span><br><span class="line">   </span><br><span class="line">    &lt;p&gt;不好意思，输入有误&lt;/p&gt;</span><br><span class="line"> &lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p>需要注意的另一个地方是：Vue 会尽可能高效地渲染元素，通常会复用已有元素而不是从头开始渲染。这样确实能使Vue变得更快，性能更高，但是有的时候我们需要让实例去更新dom而不是复用，就需要给dom加上不同的key属性，因为vue在判断到底渲染什么的时候，包括哪些dom可以复用，都会参考key值，如果dom表现基本一致，符合复用的条件，但是key值不同，依然不会复用</p>
+<p>Vue还提供了v-show指令，用法和v-if基本一样，控制的是元素的css中display属性，从而控制元素的显示和隐藏 ， 不能和v-else配合使用,且不能使用在template标签上，因为template不会渲染，再更改它的css属性也不会渲染，不会生效</p>
+<h6 id="v-if-vs-v-show"><a href="#v-if-vs-v-show" class="headerlink" title="v-if vs v-show"></a>v-if vs v-show</h6><p>v-if 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。<br>v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。<br>相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。<br>一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。</p>
+<h5 id="虚拟dom"><a href="#虚拟dom" class="headerlink" title="虚拟dom"></a>虚拟dom</h5><p>频繁且复杂的dom操作通常是前端性能瓶颈的产生点，Vue提供了虚拟dom的解决办法</p>
+<p>虚拟的DOM的核心思想是：对复杂的文档DOM结构，提供一种方便的工具，进行最小化地DOM操作。这句话，也许过于抽象，却基本概况了虚拟DOM的设计思想</p>
+<p>(1) 提供一种方便的工具，使得开发效率得到保证<br>(2) 保证最小化的DOM操作，使得执行效率得到保证</p>
+<p>也就是说，虚拟dom的框架/工具都是这么做的：</p>
+<ol>
+<li>根据现有的虚拟dom来渲染真实dom树结构</li>
+<li>当数据变化，或者说是页面需要重新渲染的时候，会重新生成一个新的完整的虚拟dom</li>
+<li>拿新的虚拟dom来和旧的虚拟dom做对比（使用diff算法），。得到需要更新的地方之后，更新内容</li>
+</ol>
+<p>这样的话，就能大量减少真实dom的操作,提高性能</p>
+<h5 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h5><p>模块化就是将系统功能分离成独立的功能部分的方法，一般指的是单个的某一种东西，例如js、css</p>
+<p>而组件化针对的是页面中的整个完整的功能模块划分，组件是一个html、css、js、image等外链资源，这些部分组成的一个聚合体</p>
+<p>优点：代码复用，便于维护</p>
+<p>划分组件的原则：复用率高的，独立性强的</p>
+<p>组件应该拥有的特性：可组合，可重用，可测试，可维护</p>
+<h5 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h5><p> <hello></hello>   Vue.component(“hello”,{template:””})</p>
+<p>在vue中，我们通过Vue.extend来创建Vue的子类，这个东西其实就是组件</p>
+<p>也就是说Vue实例和组件的实例有差别但是差别不带，因为毕竟一个是父类一个是子类</p>
+<p>一般的应用，会拥有一个根实例，在根实例里面都是一个一个的组件</p>
+<p>因为组件是要嵌入到实例或者父组件里的，也就是说，组件可以互相嵌套，而且，所有的组件最外层必须有一个根实例，所以组件分为：全局组件和局部组件</p>
+<p>全局组件在任意的实例、父级组件中都能使用，局部组件只能在创建自己的父级组件或者实例中使用</p>
+<p>组件通过不同的注册方法成为全局、局部组件</p>
+<p>创建组件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.extend(options)</span><br></pre></td></tr></table></figure>
+<p>全局注册：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var App = Vue.extend(&#123;</span><br><span class="line">    template:&quot;&lt;h1&gt;hello world&lt;/h1&gt;&quot;</span><br><span class="line">&#125;)</span><br><span class="line">Vue.component(&apos;my-app&apos;,App)</span><br></pre></td></tr></table></figure>
+<p>简便写法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 创建组件构造器和注册组件合并一起  </span><br><span class="line"> Vue.component(&apos;hello&apos;,&#123;//Vue会自动的将此对象给Vue.extend</span><br><span class="line">     template:&quot;&lt;h1&gt;hello&lt;/h1&gt;&quot;</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+<p>组件通过template来确定自己的模板,template里的模板必须有根节点，标签必须闭合</p>
+<p>组件的属性挂载通过：data方法来返回一个对象作为组件的属性，这样做的目的是为了每一个组件实例都拥有独立的data属性</p>
+<p>局部注册：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">    el:&quot;#app&quot;,</span><br><span class="line">    filters:&#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    components:&#123;</span><br><span class="line">        &apos;my-app&apos;:App</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>简便写法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data:&#123;&#125;,</span><br><span class="line">components:&#123;</span><br><span class="line">    &apos;hello&apos;:&#123;</span><br><span class="line">        template:&quot;&lt;h1&gt;asdasdasdasdasdas&lt;/h1&gt;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在实例或者组件中注册另一个组件，这个时候，被注册的组件只能在注册它的实例或组件的模板中使用，一个组件可以被多个组件或实例注册</p>
+<h6 id="注意浏览器规则"><a href="#注意浏览器规则" class="headerlink" title="注意浏览器规则"></a>注意浏览器规则</h6><p>因为vue在解析模板的时候会根据某些html的规则，例如，在table里只能放tr,td,th..，如果放入组件不会解析 这个时候我们可以放入tr使用is方式来标识这个tr其实是组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;table id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;tr is=&quot;hello&quot;&gt;&lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="template"><a href="#template" class="headerlink" title="template"></a>template</h6><p>我们可以在html的某个地方通过template标签来定义组件的模板，在组件的template属性中通过选择器指定对应的template标签内容就可以了,注意，需要给template标签加id来指定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;template id=&quot;my-hello&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;hello world&lt;/h1&gt;</span><br><span class="line">        &lt;p&gt;hahahah&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">//组件中</span><br><span class="line">Vue.component(&quot;hello&quot;,&#123;</span><br><span class="line">    template:&quot;#my-hello&quot;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">###### is切换</span><br><span class="line"></span><br><span class="line">在实例、组件的模板中的某一个标签上，可以通过is属性来指定为另一个目标的组件，这个时候我们一般会使用component标签来占位、设置is属性来指定目标组件</span><br></pre></td></tr></table></figure>
+<p><button @click="type=type==='aaa'?'bbb':'aaa"></button></p>
+<component :is="type"></component>
+
+<p>//组件中</p>
+<p>data:{<br>​    type:’aaa’<br>},<br>components:{<br>​    ‘aaa’:{template:”</p><h1>AAAAAAAAAAAAA</h1>“},<br>​    ‘bbb’:{template:”<h1>BBBBBBBBBBBBB</h1>“}<br>}<p></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">###### 组件嵌套</span><br><span class="line"></span><br><span class="line">应用中划分的组件可能会很多，为了更好的实现代码复用，所以必然会存在组件的嵌套关系</span><br><span class="line"></span><br><span class="line">组件设计初衷就是要配合使用的，最常见的就是形成父子组件的关系：组件 A 在它的模板中使用了组件 B。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">###### prop 传递数据</span><br><span class="line"></span><br><span class="line">组件实例的作用域是孤立的,父组件不能直接使用子组件的数据，子组件也不能直接使用父组件的数据</span><br><span class="line"></span><br><span class="line">父组件在模板中使用子组件的时候可以给子组件传递数据</span><br></pre></td></tr></table></figure>
+  <bbb money="2"></bbb>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">子组件需要通过props属性来接收后才能使用</span><br></pre></td></tr></table></figure>
+<p>‘bbb’:{<br>​    props:[‘money’]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果父组件传递属性给子组件的时候键名有&apos;-&apos;，子组件接收的时候写成小驼峰的模式</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;bbb clothes-logo=&apos;amani&apos; clothes-price=&quot;16.58&quot;&gt;&lt;/bbb&gt;</span><br><span class="line">////</span><br><span class="line">props:[&apos;clothesLogo&apos;,&apos;clothesPrice&apos;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">我们可以用 v-bind 来动态地将 prop 绑定到父组件的数据。每当父组件的数据变化时，该变化也会传导给子组件</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">###### 单向数据流</span><br><span class="line"></span><br><span class="line">Prop 是单向绑定的：当父组件的属性变化时，将传导给子组件，但是反过来不会。这是为了防止子组件无意间修改了父组件的状态，来避免应用的数据流变得难以理解。</span><br><span class="line"></span><br><span class="line">另外，每次父组件更新时，子组件的所有 prop 都会更新为最新值。这意味着你不应该在子组件内部改变 prop。如果你这么做了，Vue 会在控制台给出警告。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt;注意在 JavaScript 中对象和数组是引用类型，指向同一个内存空间，如果 prop 是一个对象或数组，在子组件内部改变它会影响父组件的状态。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">###### prop验证</span><br><span class="line"></span><br><span class="line">我们可以为组件的 prop 指定验证规则。如果传入的数据不符合要求，Vue 会发出警告。这对于开发给他人使用的组件非常有用</span><br><span class="line"></span><br><span class="line">验证主要分为：类型验证、必传验证、默认值设置、自定义验证</span><br></pre></td></tr></table></figure>
+<p>props:{<br>​    //类型验证:<br>​    str:String,<br>​    strs:[String,Number],<br>​    //必传验证<br>​    num:{<br>​        type:Number,<br>​        required:true<br>​    },<br>​    //默认数据<br>​    bool:{<br>​        type:Boolean,<br>​        // default:true,<br>​        default:function(){</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">        return true</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">//自定义验证函数</span><br><span class="line">nums:&#123;</span><br><span class="line">    type:Number,</span><br><span class="line">    validator: function (value) &#123;</span><br><span class="line">        return value %2 == 0</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">当父组件传递数据给子组件的时候，子组件不接收，这个数据就会挂载在子组件的模板的根节点上</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">##### slot</span><br><span class="line"></span><br><span class="line">vue里提供了一种将父组件的内容和子组件的模板整合的方法：内容分发，通过slot插槽来实现</span><br><span class="line"></span><br><span class="line">1. 匿名插槽</span><br></pre></td></tr></table></figure>
+<aaa>abc</aaa>
+
+<p>template:”</p><h1><slot></slot></h1>“<p></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">在父组件中使用子组件的时候，在子组件标签内部写的内容，在子组件的模板中可以通过&lt;slot&gt;&lt;/slot&gt;来使用</span><br><span class="line"></span><br><span class="line">2. 具名插槽</span><br><span class="line"></span><br><span class="line">父组件在子组件标签内写的多个内容我们可以给其设置slot属性来命名，在子组件的模板通过通过使用带有name属性的slot标签来放置对应的slot，当slot不存在的时候，slot标签内写的内容就出现</span><br></pre></td></tr></table></figure>
+<p><my-button>提交</my-button></p>
+<p><my-button>重置</my-button></p>
+<p><my-button></my-button></p>
+<p>template:”<button><slot>按钮</slot></button>“</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">##### transition</span><br><span class="line"></span><br><span class="line">Vue提供了transition组件来帮助我们实现过渡效果，依据就是在控制元素显示隐藏的时候为dom在指定的时刻添加上对应的类名</span><br><span class="line"></span><br><span class="line">而我们只要在这些类名里写上对应的css样式</span><br><span class="line"></span><br><span class="line">在进入/离开的过渡中，会有 6 个 class 切换(v代表的是transition的name属性的值)。</span><br><span class="line"></span><br><span class="line">v-enter：定义进入过渡的开始状态。在元素被插入时生效，在下一个帧移除。</span><br><span class="line"></span><br><span class="line">v-enter-active：定义过渡的状态。在元素整个过渡过程中作用，在元素被插入时生效，在 transition/animation 完成之后移除。这个类可以被用来定义过渡的过程时间，延迟和曲线函数。</span><br><span class="line"></span><br><span class="line">v-enter-to: 2.1.8版及以上 定义进入过渡的结束状态。在元素被插入一帧后生效 (于此同时 v-enter 被删除)，在 transition/animation 完成之后移除。</span><br><span class="line"></span><br><span class="line">v-leave: 定义离开过渡的开始状态。在离开过渡被触发时生效，在下一个帧移除。</span><br><span class="line"></span><br><span class="line">v-leave-active：定义过渡的状态。在元素整个过渡过程中作用，在离开过渡被触发后立即生效，在 transition/animation 完成之后移除。这个类可以被用来定义过渡的过程时间，延迟和曲线函数。</span><br><span class="line"></span><br><span class="line">v-leave-to: 2.1.8版及以上 定义离开过渡的结束状态。在离开过渡被触发一帧后生效 (于此同时 v-leave 被删除)，在 transition/animation 完成之后移除。</span><br><span class="line"></span><br><span class="line">![className](https://cn.vuejs.org/images/transition.png)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">如果有多个元素需要用transition-group包裹，并且需要有key值做标记</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">animate.css:</span><br><span class="line"></span><br><span class="line">引入animate.css之后，按照下面的写法：</span><br></pre></td></tr></table></figure>
+<transition ​="" leave-active-class="animated fadeOut" enter-active-class="animated slideInLeft"><br>​        <p v-if="isShow" class="box"></p><br></transition>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">##### Vue里组件的通信</span><br><span class="line"></span><br><span class="line">通信：传参、控制（A操控B做一个事件）、数据共享</span><br><span class="line"></span><br><span class="line">模式：父子组件间、非父子组件</span><br><span class="line"></span><br><span class="line">1. 父组件可以将一条数据传递给子组件，这条数据可以是动态的，父组件的数据更改的时候，子组件接收的也会变化</span><br><span class="line"></span><br><span class="line">    子组件被动的接收父组件的数据,子组件不要再更改这条数据了</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">2. 父组件如果将一个引用类型的动态数据传递给子组价的时候，数据会变成双向控制的，子组件改数据的时候父组件也能接收到数据变化,因为子组件改的时候不是在改数据(地址)，而是在改数据里的内容，也就是说引用类型数据的地址始终没有变化，不算改父组件数据</span><br><span class="line"></span><br><span class="line">    父子间数据共享（双向控制）,基本不会使用，违背了单向数据流</span><br><span class="line"></span><br><span class="line">3. 父组件可以将一个方法传递给子组件，子组件调用这个方法的时候，就可以给父组件传递数据</span><br><span class="line"></span><br><span class="line">    父组件被动的接收子组件的数据</span><br><span class="line"></span><br><span class="line">4. 父组件可以将一个事件绑定在子组件的身上，这个事件的处理程序是父组件某一个方法，当子组件触发自己的这个被绑定的事件的时候，相当于触发了父组件的方法</span><br><span class="line"></span><br><span class="line">    父组件被动的接收子组件的数据</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">5. 在组件间可以用过ref形成ref链，组件还拥有一个关系链（$parent,$children,$root）,通过这两种链；理论来说，任意的两个组件都可以互相访问，互相进行通信</span><br><span class="line"></span><br><span class="line">    任意组件通信，用的少...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">6. event bus  事件总线  小天使  专注于非父子组件的通信，其实父子组件也可以使用，只是没有必要</span><br><span class="line"></span><br><span class="line">    在B组件的某个钩子函数为event_bus绑定一个事件，事件的处理程序是B想做的事情</span><br><span class="line"></span><br><span class="line">    在A组件的某一个操作里，触发event_bus绑定的事件</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">7. 大量组件间数据共享的时候  vuex</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-01-08T09:19:18.531Z" itemprop="dateUpdated">2019-01-08 17:19:18</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/01/08/vue学习5/" target="_blank" rel="external">https://tianjiec.top/2019/01/08/vue学习5/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue学习/">vue学习</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/01/08/vue学习5/&title=《vue学习5》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/01/08/vue学习5/&title=《vue学习5》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/01/08/vue学习5/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue学习5》 — chentj's Blog&url=https://tianjiec.top/2019/01/08/vue学习5/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/01/08/vue学习5/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/01/08/vue学习6/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">vue学习6</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/01/08/vue学习4/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vue学习4</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/01/08/vue学习5/&title=《vue学习5》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/01/08/vue学习5/&title=《vue学习5》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/01/08/vue学习5/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue学习5》 — chentj's Blog&url=https://tianjiec.top/2019/01/08/vue学习5/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/01/08/vue学习5/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIUlEQVR42u3aS47CMBAFQO5/aUaaLUrynh2QYpdXaICxK4umP3694vX+X59/+Vz5u0evP/e6bWFgYDyW8T5d5xsfbZ+zzxnJtzAwMPZhnAfZFpZ/K9/l4swYGBgYwUHz4JiEZgwMDIxvBNyL1C0uUzEwMDBmitixEjen/qgWx8DAeCCjHQz88vUX5xsYGBgPYbzL1Q4D7k00D0+FgYGxNCNpeLVtsjw1vHdUgIGBsTMj2X5meHl+6CJZxMDA2IyRf7kNkXn6WH8GAwNjaUbblB8bYbYNtcFmHAYGxqKMtpV2V/k6FlIPT4KBgbE0Y6z4bMvR+SSybr1hYGAsx0g+lLfe2iHo/IPDwMBYlTG2QX4BIm/9t0knBgbGboz8ysVMAG0vmSVDCwwMjB0YyZoPpm2Lf6a1h4GBsR6jTdTa53FXuXvxk4CBgbExo03a2mJ1/n9iYGDsw7jrithYk65oqx2BMTAwlmYkRWZb9bZNuvZaGAYGxm6MsQ3aUJs319qWHwYGxj6M/CLF2NGTd/NxwkWGi4GBsRwjGVLOpIN5AP3irwcGBsbDGe9ytXcbZoJpcfkMAwNjacZME20wupdpX55oYmBgrM3Ig2x+6PlwXF/XwMDA2IDRbtkWrvOJ3cUjwMDAwCiL2LZwzcP3IR4DAwOjPHT+ONpx5m0BFwMD44GMmWFA29afH51Gk1gMDIyFGGMFZBEKJ9LBsfQUAwNjIcYfyndqmFzywdIAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

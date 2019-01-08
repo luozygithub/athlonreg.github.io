@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>vuex | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vue学习">
+    <meta name="description" content="Vuex是vue提供的一个全局的状态管理工具，主要处理项目中多组件间状态共享 当你不知道该不该使用vuex的时候，你就不需要使用vuex 整个vuex的使用都是从创建store开始的 store中包含了这样的几个部分： state（存储状态的） getters （用来派生新状态） mutations （负责更改state） actions （负责做异步操作） 在这里以一个购物车的小例子来学习，因为">
+<meta name="keywords" content="vue学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vuex">
+<meta property="og:url" content="https://tianjiec.top/2019/01/08/vuex/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="Vuex是vue提供的一个全局的状态管理工具，主要处理项目中多组件间状态共享 当你不知道该不该使用vuex的时候，你就不需要使用vuex 整个vuex的使用都是从创建store开始的 store中包含了这样的几个部分： state（存储状态的） getters （用来派生新状态） mutations （负责更改state） actions （负责做异步操作） 在这里以一个购物车的小例子来学习，因为">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-08T09:20:59.079Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vuex">
+<meta name="twitter:description" content="Vuex是vue提供的一个全局的状态管理工具，主要处理项目中多组件间状态共享 当你不知道该不该使用vuex的时候，你就不需要使用vuex 整个vuex的使用都是从创建store开始的 store中包含了这样的几个部分： state（存储状态的） getters （用来派生新状态） mutations （负责更改state） actions （负责做异步操作） 在这里以一个购物车的小例子来学习，因为">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vuex</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vuex</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-08T09:18:59.000Z" itemprop="datePublished" class="page-time">
+  2019-01-08
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Vuex"><span class="post-toc-number">1.</span> <span class="post-toc-text">Vuex</span></a></li></ol><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用方法"><span class="post-toc-number"></span> <span class="post-toc-text">使用方法</span></a>
+        </li></nav>
+    </aside>
+
+
+<article id="post-vuex" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vuex</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-08 17:18:59" datetime="2019-01-08T09:18:59.000Z" itemprop="datePublished">2019-01-08</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h3><p>是vue提供的一个全局的状态管理工具，主要处理项目中多组件间状态共享</p>
+<p>当你不知道该不该使用vuex的时候，你就不需要使用vuex</p>
+<p>整个vuex的使用都是从创建store开始的</p>
+<p>store中包含了这样的几个部分：</p>
+<p>state（存储状态的）</p>
+<p>getters （用来派生新状态）</p>
+<p>mutations （负责更改state）</p>
+<p>actions （负责做异步操作）</p>
+<p>在这里以一个购物车的小例子来学习，因为没有后端，所以数据交互只能与localStorage交互了</p>
+<p>路由组件： 列表组件、购物车组件</p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ol>
+<li><p>创建一个store</p>
+</li>
+<li><p>将创建好的store注入到根实例里,目的就是在任意组件中都可以使用到$store的api，用以使用vuex</p>
+</li>
+<li><p>创建state交由store来管理</p>
+</li>
+<li><p>在组件中使用state中的数据</p>
+<p>组件可以直接从$store.state中得到vuex管理的状态，但是，不要这么用！</p>
+<p>如果在视图中直接使用$store.state.num，num更改后组件的视图会更改，但是我们一般使用的时候都是在data里挂载，或者说直接this.num去使用，这样的话，当num更改的时候，组件无法得到更新</p>
+<p>所以。vuex规定，我们要利用计算属性来使用vuex中的数据</p>
+<p>其实大部分情况下，我们都会使用mapState这个辅助函数（作用：将vuex中state管理的状态通过计算属性放入到组件中）</p>
+</li>
+<li><p>如果需要从现有的状态派生出一个新的状态，使用getters，例如，已经有了一个num，现在需要再来一个doubleNum</p>
+<p>getters里的数据，在组件中，我们也需要使用计算属性来接收，在这里也可以使用mapGetters的辅助函数，注意，mapGetters的使用方法和mapState一模一样</p>
+</li>
+<li><p>mutations是专门更改state的，也就是说，想要改state必须通过mutations才能改<br>mutations里有很多方法，方法被调用的时候，更改state，而且，注意一定要很谨慎的使用mutations，所以，建议大家，给mutations挂载方法的时候，方法名字使用常量</p>
+<p>在组件中通过this.$store.commit(methodname,params)</p>
+<p>使用mapMutations辅助函数可以将mutations中的方法与组件的方法耦合起来，使用方法与mapState、mapGetters一样，只是要放入在methods</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注意，要让mutations纯粹！！！！。里面只有数据的更改，没有其他的逻辑代码</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>当我们想要像后端发送请求，根据结果再来更改state，这个时候，注意，不能把获取数据的异步逻辑写在mutations，也不要写在组件里，不方便维护和复用，所以，需要把他们写在actions，也就是说，vuex中的actions专门负责异步操作</p>
+<p>actions里面有很多方法，这些方法里面可以进行异步操作</p>
+</li>
+</ol>
+<p>// vuex的模块处理</p>
+<p>在vuex中，我们可以配置一些模块，在每一个模块中都去创建自己的state、mutations、actions、getters，这样的话，每一个部分，或者说每一个开发者，去管理自己的一个模块，方便于维护</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">分开模块之后，注意，state中的数据在组件中使用的时候需要this.$store.statea.modulenme.num</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-01-08T09:20:59.079Z" itemprop="dateUpdated">2019-01-08 17:20:59</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/01/08/vuex/" target="_blank" rel="external">https://tianjiec.top/2019/01/08/vuex/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue学习/">vue学习</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/01/08/vuex/&title=《vuex》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/01/08/vuex/&title=《vuex》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/01/08/vuex/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vuex》 — chentj's Blog&url=https://tianjiec.top/2019/01/08/vuex/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/01/08/vuex/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/01/08/vue学习6/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vue学习6</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/01/08/vuex/&title=《vuex》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/01/08/vuex/&title=《vuex》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/01/08/vuex/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vuex》 — chentj's Blog&url=https://tianjiec.top/2019/01/08/vuex/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/01/08/vuex/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAByElEQVR42u3aO27EMAwFwL3/pZ12i1h+pD5xgFFlGII0dkFIJD+feFxf4/vN3fPduFtt8cDFxZ3mzmww3ni8TvUjcXFxz3PvNpuZk39ksj4uLu77uWNEdU1cXNz/zq0Gr/wNLi7u27jJ5Wc8f5zHmE+m4OLinuTmWcp9z1vyu7i4uC3uVRzJVaeXHIl2x8XFPcLNA0rvApOXWPJ9cXFxd3N7Yaga2qqHm4cQhouLe5w73iBBzMwpnMhwcXE3c3u5iKjsMbHCL8+4uLhHuL1SR/XokwS1vIULFxd3N3e8ZRJ0qkGtVzGJ7mG4uLiLuNVUyExbVa+dIsrv4uLibuBOhZXWYSgp0zYbNXBxcZdyE9aqRqtekwcuLu55btJCkYSeXrqkV47FxcXdx12VBKkWWZtFWVxc3IPcJEWSzOyVZ5JQiIuLe55bDSi9Mkze8FHOoeLi4i7iXsVR/dQ85RFdjXBxcY9wV7VEzLdo9FbAxcXdx61eP/KCaC+QPQRBXFzcg9z5QJPPr5ZScHFx38+dudJU0yiFrAkuLu6fcqttGdW2rQchLi7uQW61uSo/rOSBL/pZuLi4R7jlUDIRmKoHmqn8Li4ubof7A7NXCwlheEqbAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
