@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>webpack | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="React框架学习开发依赖devDependenvies与运行依赖dependencies npm自己的文档说dependencies是运行时依赖，devDependencies是开发时的依赖。即devDependencies 下列出的模块，是我们开发时用的，比如 我们安装 js的压缩包gulp-uglify 时，我们采用的是 “npm install –save-dev gulp-uglify">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack">
+<meta property="og:url" content="https://tianjiec.top/2019/01/09/webpack/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="React框架学习开发依赖devDependenvies与运行依赖dependencies npm自己的文档说dependencies是运行时依赖，devDependencies是开发时的依赖。即devDependencies 下列出的模块，是我们开发时用的，比如 我们安装 js的压缩包gulp-uglify 时，我们采用的是 “npm install –save-dev gulp-uglify">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-09T10:00:09.384Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack">
+<meta name="twitter:description" content="React框架学习开发依赖devDependenvies与运行依赖dependencies npm自己的文档说dependencies是运行时依赖，devDependencies是开发时的依赖。即devDependencies 下列出的模块，是我们开发时用的，比如 我们安装 js的压缩包gulp-uglify 时，我们采用的是 “npm install –save-dev gulp-uglify">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">webpack</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">webpack</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-09T08:55:22.000Z" itemprop="datePublished" class="page-time">
+  2019-01-09
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#React框架学习"><span class="post-toc-number">1.</span> <span class="post-toc-text">React框架学习</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开发依赖devDependenvies与运行依赖dependencies"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">开发依赖devDependenvies与运行依赖dependencies</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#webpack（facebook）"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">webpack（facebook）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#entry"><span class="post-toc-number">1.0.2.1.</span> <span class="post-toc-text">entry</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#output"><span class="post-toc-number">1.0.2.2.</span> <span class="post-toc-text">output</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#env"><span class="post-toc-number">1.0.2.3.</span> <span class="post-toc-text">env</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#plugins"><span class="post-toc-number">1.0.2.4.</span> <span class="post-toc-text">plugins</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#html-webpack-plugin"><span class="post-toc-number">1.0.2.5.</span> <span class="post-toc-text">html-webpack-plugin</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#LOADERS"><span class="post-toc-number">1.0.2.6.</span> <span class="post-toc-text">LOADERS</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#postcss-loader兼容前缀"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">postcss-loader兼容前缀</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-webpack" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">webpack</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-09 16:55:22" datetime="2019-01-09T08:55:22.000Z" itemprop="datePublished">2019-01-09</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="React框架学习"><a href="#React框架学习" class="headerlink" title="React框架学习"></a>React框架学习</h1><h3 id="开发依赖devDependenvies与运行依赖dependencies"><a href="#开发依赖devDependenvies与运行依赖dependencies" class="headerlink" title="开发依赖devDependenvies与运行依赖dependencies"></a>开发依赖devDependenvies与运行依赖dependencies</h3><blockquote>
+<p>npm自己的文档说dependencies是运行时依赖，devDependencies是开发时的依赖。即devDependencies 下列出的模块，是我们开发时用的，比如 我们安装 js的压缩包gulp-uglify 时，我们采用的是 “npm install –save-dev gulp-uglify ”命令安装，因为我们在发布后用不到它，而只是在我们开发才用到它。<br>dependencies 下的模块，则是我们发布后还需要依赖的模块，譬如像jQuery库或者Angular框架类似的，我们在开发完后后肯定还要依赖它们，否则就运行不了。</p>
+</blockquote>
+<h3 id="webpack（facebook）"><a href="#webpack（facebook）" class="headerlink" title="webpack（facebook）"></a>webpack（facebook）</h3><p>前端工程化：包管理器：npm、cnpm、yarn、bower | 构建工具：grunt、gulp、webpack</p>
+<p>gulp： 基于流的前端自动化构建工具，基于流的任务式的工具</p>
+<p>webpack： 是一款模块化打包工具，webpack是基于配置的，通过配置一些选项来让webpack执行打包任务。npm i webpack -g</p>
+<p>npm i webpack-cli -g (4.0+)</p>
+<p>npm i yarn -g    </p>
+<p>webpack在打包的时候，依靠依赖关系图，在打包的时候需要告知webpack两个概念：入口和出口</p>
+<p>一般情况下，我们需要使用webpack.config.js进行配置</p>
+<h4 id="entry"><a href="#entry" class="headerlink" title="entry"></a>entry</h4><p>entry配置项目打包的入口，值可以为单个的字符串执行某一个文件的地址，这个时候该文件就是入口文件，webpack会根据入口文件里各个模块之间的关系形成依赖关系图，然后根据依赖关系图打包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">entry:&apos;./src/app.js&apos;,</span><br><span class="line">output:&#123;</span><br><span class="line">    path:path.join(__dirname,&apos;build&apos;);</span><br><span class="line">    filename:&apos;app.js&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是有的时候我么需要的是多入口，我们就需要写成数组的形式，数组里的每一个字符串地址指向的都是一个独立的入口，webpack会将这些入口依赖打包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">entry:[&apos;./src/app.js&apos;,&apos;./src/vendor.js&apos;],</span><br><span class="line">output:&#123;</span><br><span class="line">    path:path.join(__dirname,&apos;build&apos;),</span><br><span class="line">    filename:&apos;[name]&apos;.js//不确定名字的时候，这里会打包成main.js</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样，因为filename里写成名字是[name],所以会根据entry的配置的键名来为打包出的js文件命名，has是每次打包的一个随机的hash值，可以用来做版本控制</p>
+<h4 id="output"><a href="#output" class="headerlink" title="output"></a>output</h4><p>在这里我们配置打包输出的一些选项</p>
+<p>filename可以确定打包出来的文件的名字，在我们里面可以使用[name],[hash]这样的占位符</p>
+<p>path配置打包出去的文件路径，需要是绝对路径。</p>
+<h4 id="env"><a href="#env" class="headerlink" title="env"></a>env</h4><p>在命令行或者终端中执行 wbpack –env hello命令，就相当于在打包的时候传入一个参数为 hello</p>
+<p>在webpack.config.js中可以暴露出一个函数，这个函数就可以接收到env参数，当然函数就可以根据env参数来有选择的返回某一个或多个配置对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">module.exports = (env)=&gt;&#123;</span><br><span class="line">    if(env==&apos;production&apos;)&#123;</span><br><span class="line">        return productionConfig</span><br><span class="line">    &#125;</span><br><span class="line">    return developmentConfig</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>–watch 可以让webpack去监听文件的改变。<br>可以在package.json里的scripts中配置一些快捷操作，通过npm run来运行</p>
+<h4 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a>plugins</h4><p>在webpack编译用的是loader,但是有一些loader无法完成的任务，交由插件（plugin）来完成 插件的时候需要在配置项中配置plugins选项，值是数组，可以放入多个插件的使用，而一般的插件都是一个构造器，我们只需要在plugins数组中放入该插件的实例即可。</p>
+<h4 id="html-webpack-plugin"><a href="#html-webpack-plugin" class="headerlink" title="html-webpack-plugin"></a>html-webpack-plugin</h4><p>这个插件可以选择是否依据模板来生成一个打包好的html文件，在里面可以配置、title、template、filename、minify等选项，详情请查阅<a href="https://segmentfault.com/a/1190000007294861" target="_blank" rel="noopener">文档</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">plugins:[</span><br><span class="line">	new HtmlWebpackPlugin(&#123;</span><br><span class="line">		template:&apos;./src/index.html&apos;,</span><br><span class="line">        minify:&#123;</span><br><span class="line">            collapseWhitespace:true</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h4 id="LOADERS"><a href="#LOADERS" class="headerlink" title="LOADERS"></a>LOADERS</h4><p>在webpack中专门有一些东西用来编译文件、处理文件，这些东西就叫loader，loader的使用就是在配置项中，设置module，在module中设置rules值为数组，在数组里放入多个匹配规则：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">module:&#123;</span><br><span class="line">    rules:[</span><br><span class="line">        &#123;test:/\.css$/,use:&apos;css-loader&apos;&#125;</span><br><span class="line">    ],</span><br><span class="line">    //before</span><br><span class="line">        loaders:[</span><br><span class="line">            &#123;test:/\.css$/,loader:&apos;css-loader&apos;&#125;</span><br><span class="line">        ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>test为此次匹配要匹配的文件正则规则，use代表要使用的loader</p>
+<p>使用url-loader可以将css中引入的图片（背景图）、js中生成的img图片处理一下，生成到打包目录里</p>
+<p>视图html-withimg-loader可以将html中img标签引入的img图片打包到打包目录</p>
+<p>file-loader</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    test:/\.(png|jpe?g|svg|gif)$/,</span><br><span class="line">    // use:&apos;url-loader?limit=1000&amp;name=images/[hash:8].[name].[ext]&apos;</span><br><span class="line">    use:[</span><br><span class="line">        &#123;</span><br><span class="line">            loader:&apos;url-loader&apos;,</span><br><span class="line">            options:&#123;</span><br><span class="line">                limit:1000,</span><br><span class="line">                name:&apos;/static/images/assets/[hash:8].[name].[ext]&apos;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">    test:/\.html$/,</span><br><span class="line">    use:&apos;html-withimg-loader&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>处理css:</p>
+<p>cnpm i css-loader style-loader –save-dev</p>
+<p>配置：</p>
+<p>{<br>​    test:/.css$/,<br>​    use:[‘style-loader’,’css-loader’]<br>}</p>
+<p>注意。webpack中loader的使用是从后往前的</p>
+<p>css-loader可以将引入到js中的css代码给抽离出来，style-loader可以将抽离出来的css代码放入到style标签中</p>
+<p>处理sass</p>
+<p>{<br>test:/.scss$/,<br>use:[‘style-loader’,’css-loader’,’sass-loader’]<br>},</p>
+<h2 id="postcss-loader兼容前缀"><a href="#postcss-loader兼容前缀" class="headerlink" title="postcss-loader兼容前缀"></a>postcss-loader兼容前缀</h2>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最終更新：<time datetime="2019-01-09T10:00:09.384Z" itemprop="dateUpdated">2019-01-09 18:00:09</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/01/09/webpack/" target="_blank" rel="external">https://tianjiec.top/2019/01/09/webpack/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/01/09/webpack/&title=《webpack》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/01/09/webpack/&title=《webpack》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/01/09/webpack/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《webpack》 — chentj's Blog&url=https://tianjiec.top/2019/01/09/webpack/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/01/09/webpack/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/01/09/react_03/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">[no title]</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/01/08/react_02/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">[no title]</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/01/09/webpack/&title=《webpack》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/01/09/webpack/&title=《webpack》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/01/09/webpack/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《webpack》 — chentj's Blog&url=https://tianjiec.top/2019/01/09/webpack/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/01/09/webpack/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABvUlEQVR42u3aS27DMAwFwNz/0u66KGw/krLiAqNV4ATyKAuCH30+8Tou19lv/j4/e7J44eLijrk9So812R8XF3c/9yxinH1Ots6fJwZcXNz3cyepUr4nLi7uf+Em4ayX+uDi4r6Nm7yyF56S4PVIrYaLizvgrkpNJp8f6e/i4uK2uEdxJQHoeufR23Fxcbdw84DSSzuuS5rqe3Fxcfdz80FIj1ItpaJaDRcX9zFuXvAkGyXQSfsVFxd3JzcpaSaD0upRb3bGxcXdwq2WJdXWai843nhwcXG3cHtj1ySJmUxMRiMWXFzccVskTz6q/0HvGDcNU1xc3Ae41ylItSCphrZkQPtrN1xc3C3ceVtzPjpt7omLi/swtzreSALfpByKQhguLu5G7uQK5qph7c1RcXFxt3NX4aqt1bw5i4uLu5M7ST7ytCYvjbpf4+LiTrlHca3dYfHsFxcXdxF37Q2OavC6aX9MLnPg4uKOuZNrWKtGL4UhKy4u7kZutdSpjksfr9VwcXG/yk12qI5JyhUbLi7uK7nJC/IDF4S4uLgbufn1i96TpASKjoqLi7uFu2q8moe2PKEZ9XdxcXE73B9hPMNCGcmB3AAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
