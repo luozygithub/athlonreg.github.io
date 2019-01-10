@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="chentj&#39;s Blog">
 <meta property="og:description" content="reduxredux有四个组成部分： store用来存储数据reducer：真正的来管理数据actionCreator：创建action，交由reducer处理view： 用来使用数据，在这里，一般用react组件来充当 使用的方法 创建store 从redux工具中取出createStore去生成一个store  创建一个reducer，然后将其传入到createStore中辅助store的创建">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-10T13:06:03.435Z">
+<meta property="og:updated_time" content="2019-01-10T13:12:35.125Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redux">
 <meta name="twitter:description" content="reduxredux有四个组成部分： store用来存储数据reducer：真正的来管理数据actionCreator：创建action，交由reducer处理view： 用来使用数据，在这里，一般用react组件来充当 使用的方法 创建store 从redux工具中取出createStore去生成一个store  创建一个reducer，然后将其传入到createStore中辅助store的创建">
@@ -158,7 +158,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#redux"><span class="post-toc-number">1.</span> <span class="post-toc-text">redux</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用的方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用的方法</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#redux"><span class="post-toc-number">1.</span> <span class="post-toc-text">redux</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用的方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用的方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#具体使用："><span class="post-toc-number">2.1.</span> <span class="post-toc-text">具体使用：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#无状态组件"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">无状态组件</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#本地存储"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">本地存储</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -200,6 +200,28 @@
 <li><p>我们可以在组件中，利用store.subscribe方法去订阅数据的变化，也就是可以传入一个函数，当数据变化的时候，传入的函数会执行，在这个函数中让组件去获取最新的状态</p>
 </li>
 </ol>
+<h4 id="具体使用："><a href="#具体使用：" class="headerlink" title="具体使用："></a>具体使用：</h4><p>react js组件里面调用组件中的方法=》派发action actionCreator 通过actionCreator.方法名 // 在store/actionCreator中的方法 =》 render匹配 处理数据 返回新数据</p>
+<h5 id="无状态组件"><a href="#无状态组件" class="headerlink" title="无状态组件"></a>无状态组件</h5><p>组件只有属性没有状态，其实就是一个函数，接收外部传入属性做出相应的渲染</p>
+<h4 id="本地存储"><a href="#本地存储" class="headerlink" title="本地存储"></a>本地存储</h4><p>在数据 初始获取地方 加入本地存储</p>
+<p>const state = {</p>
+<p>todos:localStorage.todos?JSON.parse(localStorage.todos):[]</p>
+<p>}</p>
+<p>export default state;</p>
+<p>在修改数据地方 存入本地存储</p>
+<p>localStorage.todos = JSON.stringify(new_state.todos)</p>
+<p>reducer-&gt; strore - &gt; react显示</p>
+<p>用常量定义方法名 便于维护</p>
+<p>const.js</p>
+<p>const ADD_NEW_TODO =ADD_NEW_TODO;</p>
+<p>export {ADD_NEW_TODO}</p>
+<p>react显示</p>
+<p>在</p>
+<p>conponentWillMount里面设置state为store获取过来的数据</p>
+<p>store.subscribe(()=&gt;{//通过这个方法订阅一下 视图层 得到数据重新渲染</p>
+<p>this.setState( {</p>
+<p>todo: store.getState().todos</p>
+<p>});</p>
+<p>});</p>
 
         </div>
 
@@ -208,7 +230,7 @@
     <div class="content">
         
 <span class="post-time">
-    最終更新：<time datetime="2019-01-10T13:06:03.435Z" itemprop="dateUpdated">2019-01-10 21:06:03</time>
+    最終更新：<time datetime="2019-01-10T13:12:35.125Z" itemprop="dateUpdated">2019-01-10 21:12:35</time>
 </span><br>
 
 
