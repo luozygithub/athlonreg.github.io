@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="chentj&#39;s Blog">
 <meta property="og:description" content="React框架学习开发依赖devDependenvies与运行依赖dependencies npm自己的文档说dependencies是运行时依赖，devDependencies是开发时的依赖。即devDependencies 下列出的模块，是我们开发时用的，比如 我们安装 js的压缩包gulp-uglify 时，我们采用的是 “npm install –save-dev gulp-uglify">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-09T10:00:09.384Z">
+<meta property="og:updated_time" content="2019-01-10T00:59:36.326Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack">
 <meta name="twitter:description" content="React框架学习开发依赖devDependenvies与运行依赖dependencies npm自己的文档说dependencies是运行时依赖，devDependencies是开发时的依赖。即devDependencies 下列出的模块，是我们开发时用的，比如 我们安装 js的压缩包gulp-uglify 时，我们采用的是 “npm install –save-dev gulp-uglify">
@@ -220,7 +220,17 @@
 <p>css-loader可以将引入到js中的css代码给抽离出来，style-loader可以将抽离出来的css代码放入到style标签中</p>
 <p>处理sass</p>
 <p>{<br>test:/.scss$/,<br>use:[‘style-loader’,’css-loader’,’sass-loader’]<br>},</p>
-<h2 id="postcss-loader兼容前缀"><a href="#postcss-loader兼容前缀" class="headerlink" title="postcss-loader兼容前缀"></a>postcss-loader兼容前缀</h2>
+<h2 id="postcss-loader兼容前缀"><a href="#postcss-loader兼容前缀" class="headerlink" title="postcss-loader兼容前缀"></a>postcss-loader兼容前缀</h2><p>//<a href="https://www.cnblogs.com/RoadAspenBK/p/9342850.html" target="_blank" rel="noopener">https://www.cnblogs.com/RoadAspenBK/p/9342850.html</a></p>
+<p>yarn add postcss-loader autoprefixer</p>
+<p>//根目录创建postcss.config.js<br>module.exports = {<br>​    plugins:[<br>​        require(“autoprefixer”)<br>​    ]<br>}</p>
+<p>//loader配置<br>use: [‘style-loader’,’css-loader’,{<br>​        loader: ‘postcss-loader’,<br>​        options: {<br>​            config: {<br>​                path: ‘postcss.config.js’  // 这个得在项目根目录创建此文件<br>​            }<br>​        }<br>​        },’sass-loader’]</p>
+<p>//package.json上面添加<br>“browserslist”: [<br>​    “defaults”,<br>​    “not ie &lt; 11”,<br>​    “last 2 versions”,<br>​    “&gt; 1%”,<br>​    “iOS 7”,<br>​    “last 3 iOS versions”<br>  ]</p>
+<p>将引入项目的css文件、scss文件抽成一个文件，引入到页面中</p>
+<p>因为ExtracTextWebPackPlugin对webpack4支持不是很好，所以我们这样解决：</p>
+<p>cnpm i extract-text-webpack-plugin@next -D</p>
+<p>yarn add extract-text-webpack-plugin@next -D</p>
+<p>@next下载的就是最新的版本，可能是开发版本   3.x的版本过时了<br>“extract-text-webpack-plugin”: “^4.0.0-beta.0”</p>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -228,7 +238,7 @@
     <div class="content">
         
 <span class="post-time">
-    最終更新：<time datetime="2019-01-09T10:00:09.384Z" itemprop="dateUpdated">2019-01-09 18:00:09</time>
+    最終更新：<time datetime="2019-01-10T00:59:36.326Z" itemprop="dateUpdated">2019-01-10 08:59:36</time>
 </span><br>
 
 
