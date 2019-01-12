@@ -2,23 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://tianjiec.top/2019/01/10/redux/</loc>
+    <loc>https://tianjiec.top/2019/01/12/react%E5%AD%A6%E4%B9%A02/</loc>
     
-    <lastmod>2019-01-10T13:12:35.125Z</lastmod>
+    <lastmod>2019-01-12T09:38:55.292Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tianjiec.top/2019/01/12/react%E5%AD%A6%E4%B9%A01/</loc>
+    
+    <lastmod>2019-01-12T09:38:19.301Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://tianjiec.top/2019/01/09/webpack/</loc>
     
-    <lastmod>2019-01-10T00:59:36.326Z</lastmod>
+    <lastmod>2019-01-12T09:37:20.840Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tianjiec.top/2019/01/09/react_03/</loc>
+    <loc>https://tianjiec.top/2019/01/12/react%E5%AD%A6%E4%B9%A03/</loc>
     
-    <lastmod>2019-01-09T09:58:49.950Z</lastmod>
+    <lastmod>2019-01-12T09:36:59.035Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tianjiec.top/2019/01/12/react-redux%E6%95%B4%E5%90%88/</loc>
+    
+    <lastmod>2019-01-12T09:35:59.025Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tianjiec.top/2019/01/11/react-redux/</loc>
+    
+    <lastmod>2019-01-12T09:33:59.444Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tianjiec.top/2019/01/10/redux/</loc>
+    
+    <lastmod>2019-01-11T06:59:48.563Z</lastmod>
     
   </url>
   
@@ -68,20 +96,6 @@
     <loc>https://tianjiec.top/2019/01/08/vue%E5%AD%A6%E4%B9%A01/</loc>
     
     <lastmod>2019-01-08T09:16:29.005Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tianjiec.top/2019/01/08/react_02/</loc>
-    
-    <lastmod>2019-01-08T03:03:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tianjiec.top/2019/01/08/react_01/</loc>
-    
-    <lastmod>2019-01-07T01:33:33.000Z</lastmod>
     
   </url>
   

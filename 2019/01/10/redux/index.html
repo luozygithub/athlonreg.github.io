@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="react">
-    <meta name="description" content="reduxredux有四个组成部分： store用来存储数据reducer：真正的来管理数据actionCreator：创建action，交由reducer处理view： 用来使用数据，在这里，一般用react组件来充当 使用的方法 创建store 从redux工具中取出createStore去生成一个store  创建一个reducer，然后将其传入到createStore中辅助store的创建">
+    <meta name="description" content="reduxredux有四个组成部分： store用来存储数据reducer：真正的来管理数据actionCreator：创建action，交由reducer处理view： 用来使用数据，在这里，一般用react组件来充当 设计思想（1）web应用是一个状态机，视图与状态是一一对应的。 （2）所有的状态，保存在一个对象里面 单一数据源：store是唯一的 使用的方法 创建store 从redux工具">
 <meta name="keywords" content="react">
 <meta property="og:type" content="article">
 <meta property="og:title" content="redux">
 <meta property="og:url" content="https://tianjiec.top/2019/01/10/redux/index.html">
 <meta property="og:site_name" content="chentj&#39;s Blog">
-<meta property="og:description" content="reduxredux有四个组成部分： store用来存储数据reducer：真正的来管理数据actionCreator：创建action，交由reducer处理view： 用来使用数据，在这里，一般用react组件来充当 使用的方法 创建store 从redux工具中取出createStore去生成一个store  创建一个reducer，然后将其传入到createStore中辅助store的创建">
+<meta property="og:description" content="reduxredux有四个组成部分： store用来存储数据reducer：真正的来管理数据actionCreator：创建action，交由reducer处理view： 用来使用数据，在这里，一般用react组件来充当 设计思想（1）web应用是一个状态机，视图与状态是一一对应的。 （2）所有的状态，保存在一个对象里面 单一数据源：store是唯一的 使用的方法 创建store 从redux工具">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-10T13:12:35.125Z">
+<meta property="og:updated_time" content="2019-01-11T06:59:48.563Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redux">
-<meta name="twitter:description" content="reduxredux有四个组成部分： store用来存储数据reducer：真正的来管理数据actionCreator：创建action，交由reducer处理view： 用来使用数据，在这里，一般用react组件来充当 使用的方法 创建store 从redux工具中取出createStore去生成一个store  创建一个reducer，然后将其传入到createStore中辅助store的创建">
+<meta name="twitter:description" content="reduxredux有四个组成部分： store用来存储数据reducer：真正的来管理数据actionCreator：创建action，交由reducer处理view： 用来使用数据，在这里，一般用react组件来充当 设计思想（1）web应用是一个状态机，视图与状态是一一对应的。 （2）所有的状态，保存在一个对象里面 单一数据源：store是唯一的 使用的方法 创建store 从redux工具">
     
         <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
     
@@ -158,7 +158,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#redux"><span class="post-toc-number">1.</span> <span class="post-toc-text">redux</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用的方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用的方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#具体使用："><span class="post-toc-number">2.1.</span> <span class="post-toc-text">具体使用：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#无状态组件"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">无状态组件</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#本地存储"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">本地存储</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#redux"><span class="post-toc-number">1.</span> <span class="post-toc-text">redux</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#设计思想"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">设计思想</span></a></li></ol></li></ol><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用的方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用的方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#具体使用："><span class="post-toc-number">2.1.</span> <span class="post-toc-text">具体使用：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#无状态组件"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">无状态组件</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#本地存储"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">本地存储</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#在数据-初始获取地方-加入本地存储"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">在数据 初始获取地方 加入本地存储</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#在修改数据地方-存入本地存储"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">在修改数据地方 存入本地存储</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text"> </span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#用常量定义方法名-便于维护"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">用常量定义方法名 便于维护</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数据处理"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">数据处理</span></a></li></ol></li>
         </nav>
     </aside>
 
@@ -183,6 +183,8 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <h3 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h3><p>redux有四个组成部分：</p>
 <p>store用来存储数据<br>reducer：真正的来管理数据<br>actionCreator：创建action，交由reducer处理<br>view： 用来使用数据，在这里，一般用react组件来充当</p>
+<h5 id="设计思想"><a href="#设计思想" class="headerlink" title="设计思想"></a>设计思想</h5><p>（1）web应用是一个状态机，视图与状态是一一对应的。</p>
+<p>（2）所有的状态，保存在一个对象里面 单一数据源：store是唯一的</p>
 <h3 id="使用的方法"><a href="#使用的方法" class="headerlink" title="使用的方法"></a>使用的方法</h3><ol>
 <li><p>创建store</p>
 <p>从redux工具中取出createStore去生成一个store</p>
@@ -196,32 +198,38 @@
 <li><p>组件产生用户操作，调用actionCreator的方法创建一个action，利用store.dispatch方法传递给reducer</p>
 </li>
 <li><p>reducer对action上的标示性信息做出判断后对新状态进行处理，然后返回新状态，这个时候store的数据就会发生改变</p>
+<p>ps:reducer是个纯函数，也就是 他不能改变原来的state，所以state里面的引用数据要深拷贝。比如 arr=date.slice()</p>
 </li>
 <li><p>我们可以在组件中，利用store.subscribe方法去订阅数据的变化，也就是可以传入一个函数，当数据变化的时候，传入的函数会执行，在这个函数中让组件去获取最新的状态</p>
 </li>
 </ol>
-<h4 id="具体使用："><a href="#具体使用：" class="headerlink" title="具体使用："></a>具体使用：</h4><p>react js组件里面调用组件中的方法=》派发action actionCreator 通过actionCreator.方法名 // 在store/actionCreator中的方法 =》 render匹配 处理数据 返回新数据</p>
+<h4 id="具体使用："><a href="#具体使用：" class="headerlink" title="具体使用："></a>具体使用：</h4><p>react js组件里面调用组件中的方法=》派发action actionCreator 通过actionCreator.方法名 // 在store/actionCreator中的方法 =》 render匹配 处理数据 在state里面获取旧数据 处理数据 返回新数据</p>
 <h5 id="无状态组件"><a href="#无状态组件" class="headerlink" title="无状态组件"></a>无状态组件</h5><p>组件只有属性没有状态，其实就是一个函数，接收外部传入属性做出相应的渲染</p>
-<h4 id="本地存储"><a href="#本地存储" class="headerlink" title="本地存储"></a>本地存储</h4><p>在数据 初始获取地方 加入本地存储</p>
-<p>const state = {</p>
+<h4 id="本地存储"><a href="#本地存储" class="headerlink" title="本地存储"></a>本地存储</h4><h5 id="在数据-初始获取地方-加入本地存储"><a href="#在数据-初始获取地方-加入本地存储" class="headerlink" title="在数据 初始获取地方 加入本地存储"></a>在数据 初始获取地方 加入本地存储</h5><p>const state = {</p>
 <p>todos:localStorage.todos?JSON.parse(localStorage.todos):[]</p>
 <p>}</p>
 <p>export default state;</p>
-<p>在修改数据地方 存入本地存储</p>
-<p>localStorage.todos = JSON.stringify(new_state.todos)</p>
+<h5 id="在修改数据地方-存入本地存储"><a href="#在修改数据地方-存入本地存储" class="headerlink" title="在修改数据地方 存入本地存储"></a>在修改数据地方 存入本地存储</h5><p>localStorage.todos = JSON.stringify(new_state.todos)</p>
 <p>reducer-&gt; strore - &gt; react显示</p>
-<p>用常量定义方法名 便于维护</p>
-<p>const.js</p>
+<h5 id=""><a href="#" class="headerlink" title=" "></a> </h5><h4 id="用常量定义方法名-便于维护"><a href="#用常量定义方法名-便于维护" class="headerlink" title="用常量定义方法名 便于维护"></a>用常量定义方法名 便于维护</h4><p>const.js</p>
 <p>const ADD_NEW_TODO =ADD_NEW_TODO;</p>
 <p>export {ADD_NEW_TODO}</p>
 <p>react显示</p>
 <p>在</p>
 <p>conponentWillMount里面设置state为store获取过来的数据</p>
 <p>store.subscribe(()=&gt;{//通过这个方法订阅一下 视图层 得到数据重新渲染</p>
-<p>this.setState( {</p>
-<p>todo: store.getState().todos</p>
+<p>​    this.setState( {</p>
+<p>​        todo: store.getState().todos</p>
+<p>​    });</p>
 <p>});</p>
-<p>});</p>
+<h4 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h4><p>store里面</p>
+<p>state存放数据    react组件里面可以直接通过 store.getState() 获取数据</p>
+<p>reducer处理数据  通过引入state 获取旧数据 然后 返回新数据</p>
+<p>actionCreators 派发处理数据任务 里面有各类方法 ，通过action.type 派发给reducer 去根据不同action处理数据</p>
+<p>index.js 用来通过reducer初始rudux</p>
+<p>用户修改数据：组件里面 调用actionCreator里面的方法 =》 通过dispatch 将action派发给（store）reducer匹配action 然后处理数据 =》 reducer返回新的数据 =》用户获取新的数据</p>
+<p>用户获取数据：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.setState( &#123;</span><br><span class="line"></span><br><span class="line">	todo: store.getState().todos</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -230,7 +238,7 @@
     <div class="content">
         
 <span class="post-time">
-    最終更新：<time datetime="2019-01-10T13:12:35.125Z" itemprop="dateUpdated">2019-01-10 21:12:35</time>
+    最終更新：<time datetime="2019-01-11T06:59:48.563Z" itemprop="dateUpdated">2019-01-11 14:59:48</time>
 </span><br>
 
 
@@ -307,14 +315,21 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/01/11/react-redux/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">react-redux</h4>
+      </a>
+    </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/01/09/react_03/" id="post-next" class="post-nav-link">
+      <a href="/2019/01/09/webpack/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">[no title]</h4>
+        <h4 class="title">webpack</h4>
       </a>
     </div>
   

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>react+redux整合 | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="react">
+    <meta name="description" content="React里面index.js是入口 ，App.js是源组件，其他组件放在它里面。 然后App.js放在public index.html里面的div.root里面。 reducer拆分store里面 index.js不变，唯一数据源 把和todo数据相关的 放入 todolist文件夹。 在store文件夹写一个 总的reducer import todolist from “todulist/">
+<meta name="keywords" content="react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react+redux整合">
+<meta property="og:url" content="https://tianjiec.top/2019/01/12/react-redux整合/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="React里面index.js是入口 ，App.js是源组件，其他组件放在它里面。 然后App.js放在public index.html里面的div.root里面。 reducer拆分store里面 index.js不变，唯一数据源 把和todo数据相关的 放入 todolist文件夹。 在store文件夹写一个 总的reducer import todolist from “todulist/">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-12T09:35:59.025Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react+redux整合">
+<meta name="twitter:description" content="React里面index.js是入口 ，App.js是源组件，其他组件放在它里面。 然后App.js放在public index.html里面的div.root里面。 reducer拆分store里面 index.js不变，唯一数据源 把和todo数据相关的 放入 todolist文件夹。 在store文件夹写一个 总的reducer import todolist from “todulist/">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">react+redux整合</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">react+redux整合</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-12T09:35:21.000Z" itemprop="datePublished" class="page-time">
+  2019-01-12
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#React里面"><span class="post-toc-number">1.</span> <span class="post-toc-text">React里面</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#reducer拆分"><span class="post-toc-number">2.</span> <span class="post-toc-text">reducer拆分</span></a></li></ol><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#react-redux"><span class="post-toc-number"></span> <span class="post-toc-text">react-redux</span></a>
+        </li></nav>
+    </aside>
+
+
+<article id="post-react-redux整合" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">react+redux整合</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-12 17:35:21" datetime="2019-01-12T09:35:21.000Z" itemprop="datePublished">2019-01-12</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="React里面"><a href="#React里面" class="headerlink" title="React里面"></a>React里面</h2><p>index.js是入口 ，App.js是源组件，其他组件放在它里面。</p>
+<p>然后App.js放在public index.html里面的div.root里面。</p>
+<h2 id="reducer拆分"><a href="#reducer拆分" class="headerlink" title="reducer拆分"></a>reducer拆分</h2><p>store里面</p>
+<p>index.js不变，唯一数据源</p>
+<p>把和todo数据相关的 放入 todolist文件夹。</p>
+<p>在store文件夹写一个 总的reducer</p>
+<p>import todolist from “todulist/reducer”</p>
+<p>const reducer = combineReducers({</p>
+<p>todolist</p>
+<p>})</p>
+<p>然后组件要回去它的数据的话要通过 store.getState().todolist.todos拿到todos的数据</p>
+<p>calculator文件夹里面</p>
+<p>state.js存放数据</p>
+<p>export default{</p>
+<p>}</p>
+<p>reducer.js</p>
+<p>import state from “./state”</p>
+<p>const reducer = (prevState = state, action=&gt;{</p>
+<p>let new_state = {…prevState};</p>
+<p>return new_state;</p>
+<p>}</p>
+<p>onchange绑定方法：  为性能考虑 在input change的时候 在</p>
+<p>constructor里面通过bind将触发方法和 处理方法绑定起来，这样就值绑定一次</p>
+<p>this.触发方法= this.处理方法.bind(this,”具体哪个类型”)</p>
+<p>input 里面defaultvalue在数据变化的时候不会重新渲染</p>
+<p>input只是渲染默认值的话，我们就是使用defaultvalue</p>
+<p>如果input的值不仅仅是渲染初始值，而且你的状态变化的时候，也要去更改value的时候就不能使用defaultValue了 ，必须使用value</p>
+<h1 id="react-redux"><a href="#react-redux" class="headerlink" title="react-redux"></a>react-redux</h1><p>核心组件</p>
+<p>Prodiver 提供者 属性上的  将自身store属性传给需要使用的容器组件</p>
+<p>容器组件可以监控状态改变，一旦有新的状态，就会给ui组件传递给 </p>
+<p>包在 最外层 即 App组件的外层 规定必须传一个store属性</p>
+<p>store={store}</p>
+<p>获取数据</p>
+<p>通过connect上下文环境 写容器组件</p>
+<p>//当状态发生改变，容器组件就会监听到数据变化，把最新的数据返回给ui组件 UI组件通过props接收最新数据</p>
+<p>显示数据的一个组件 容器组件 ui组件 木偶组件</p>
+<p>这个方法返回什么 ui组件 props上面就是什么</p>
+<p>const mapStateToProps = state =&gt;{//通过这个方法 //props上面挂了属性</p>
+<p>return state</p>
+<p>}</p>
+<p>这样这个组件里面就可以通过 this.props.值 就可以获取值</p>
+<p>export default connect（mapStateToProps）(TodoInfo);//通过上下文生成容器组件</p>
+<p>hoc高阶组件  容器组件</p>
+<p>状态以改变  容器组件就会监听转台改变=》通过属性的方式给ui组件传递新的数据。</p>
+<p>export default connect（mapStateToProps，mapDispatchToProps）(TodoInfo);</p>
+<p>mapDispatchToProps:将派发的一些action 进行挂载，ui组件props上面就会哟什么方法。</p>
+<p>const mapDispatchToProps = dispatch=&gt;{</p>
+<p>return {</p>
+<p>addNewTodo(title){</p>
+<p>let action = actionCreator.addNewTodo(title)</p>
+<p>dispatch(action)//在这里将actionCreator的action方法拿过来用 并且react-redex把dispatch拿了过来，所以可以在这里派发给reducer</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>const mapDispatchToProps = dispatch=&gt;{</p>
+<p>}</p>
+<p>import {connect} from “react-redex”</p>
+<p>import {bindActionCreator} from “redux”</p>
+<p>//将state里面的数据绑定到ui组建的props上，将actioncreator方法绑定到props上</p>
+<p>export default connect（state=&gt;state，dispatch=&gt;{</p>
+<p>return bindActionCreators(actionCreators,dispatch)</p>
+<p>}）(TodoInfo);</p>
+<p>异步操作在action里面去做需要 安装redux 中间件 （因为在redux架构里面）</p>
+<p>redux-thunk redux-saga redux-promise</p>
+<p>cnpm install redux-thunk -S</p>
+<p>在store/index.js 里面配置</p>
+<p>import thunk from “redux-thunk”</p>
+<p>import (applayMiddleware) from “redux”</p>
+<p>action 方法里面</p>
+<p>compute(){</p>
+<p>return dispatch =&gt;{</p>
+<p>seTimeout(()=&gt;{</p>
+<p>let action= {</p>
+<p>type: COMPUTE,</p>
+<p>}</p>
+<p>dispatch(action)</p>
+<p>})</p>
+<p>}</p>
+<p>}</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最終更新：<time datetime="2019-01-12T09:35:59.025Z" itemprop="dateUpdated">2019-01-12 17:35:59</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/01/12/react-redux整合/" target="_blank" rel="external">https://tianjiec.top/2019/01/12/react-redux整合/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/01/12/react-redux整合/&title=《react+redux整合》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/01/12/react-redux整合/&title=《react+redux整合》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/01/12/react-redux整合/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《react+redux整合》 — chentj's Blog&url=https://tianjiec.top/2019/01/12/react-redux整合/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/01/12/react-redux整合/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/01/12/react学习3/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">react学习3</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/01/11/react-redux/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">react-redux</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/01/12/react-redux整合/&title=《react+redux整合》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/01/12/react-redux整合/&title=《react+redux整合》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/01/12/react-redux整合/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《react+redux整合》 — chentj's Blog&url=https://tianjiec.top/2019/01/12/react-redux整合/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/01/12/react-redux整合/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKklEQVR42u3aS3LDIBAFQN//0k5VVlnE8GaQnQhaK5c/gtbiGWZ4POLr+X39fJ1cr77/6v7j71xwYWBg3JaRT6V6n+RBvPo0nxsGBsY5jCRkX01iPGSOGY87mTMGBgZGvOzLfzWObAwMDIxrAzeJzl6YYmBgYFQ3seMBqpvhP9uLY2Bg3JDRawx85vXb+xsYGBj/nvFcvvKITJZ3zTlgYGBszRhvQZN8S97PE7JXesPAwDiH0Tuq1ZtQNXCjR4mBgbEp4x0D55vh6ob5sn8ADAyMWzGSpVjeJKi2DXqfTngYGBhHMt4Si8Fjqi4WMTAwzmH0qlgrAd1rak5OjmBgYGzNyJdu4y1uEqDjKVYfIgYGxq6M3oSubXZW5/DLOxgYGMcwqlPMN8AXHKQY/zFgYGAcwFjvBq7Ebi/6C31RDAyMLRjV21VDs1pWy0fHwMA4h/GZ4xEr2+ao3IaBgXEAIymoJU3K5KhEtQA3CWUMDIytGclEV4pivXbmBRgMDIztGLkyn8S1SVgIWQwMjK0ZydTz7e5Kwa7ZJMDAwNiakZfvewNXS2n5ohMDA+MExrN4VeOvd/984Tg53YaBgbEFoxdzKxvd/Dhafo4CAwPjBEYegivgcXznxzgmjQEMDIytGSvBl1fpV7J/wsPAwMBYPgRWXauW4x4DAwOjuFzrhXJCnTQvMTAwtmZUi/X5Iq/a4Oy1NjEwMPZm9I449MpzvQbDSqxjYGDcnPEFwn0i4JqvhAIAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
