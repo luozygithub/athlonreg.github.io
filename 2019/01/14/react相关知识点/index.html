@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>react相关知识点 | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="react">
+    <meta name="description" content="React相关知识点React核心是组件！React精髓是函数式编程！ 1.react和vue对比：   vue状态改变，只改变自己的视图   vue很多的思想都是借鉴的react组件，并且又做了一些优化   核心库都关注与视图层 2.React项目开源时间是：41395 3.React 16 将提供一个内置函数 componentDidCatch，如果 render() 函数抛出错误，则会触发该">
+<meta name="keywords" content="react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react相关知识点">
+<meta property="og:url" content="https://tianjiec.top/2019/01/14/react相关知识点/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="React相关知识点React核心是组件！React精髓是函数式编程！ 1.react和vue对比：   vue状态改变，只改变自己的视图   vue很多的思想都是借鉴的react组件，并且又做了一些优化   核心库都关注与视图层 2.React项目开源时间是：41395 3.React 16 将提供一个内置函数 componentDidCatch，如果 render() 函数抛出错误，则会触发该">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-14T12:43:23.501Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react相关知识点">
+<meta name="twitter:description" content="React相关知识点React核心是组件！React精髓是函数式编程！ 1.react和vue对比：   vue状态改变，只改变自己的视图   vue很多的思想都是借鉴的react组件，并且又做了一些优化   核心库都关注与视图层 2.React项目开源时间是：41395 3.React 16 将提供一个内置函数 componentDidCatch，如果 render() 函数抛出错误，则会触发该">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">react相关知识点</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">react相关知识点</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-14T12:42:35.000Z" itemprop="datePublished" class="page-time">
+  2019-01-14
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#React相关知识点"><span class="post-toc-number">1.</span> <span class="post-toc-text">React相关知识点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#flux知识点汇总：-https-www-cnblogs-com-fliu-articles-5245923-html"><span class="post-toc-number">2.</span> <span class="post-toc-text">flux知识点汇总：[https://www.cnblogs.com/fliu/articles/5245923.html]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#虚拟dom理解？-https-www-jianshu-com-p-616999666920"><span class="post-toc-number">3.</span> <span class="post-toc-text">虚拟dom理解？[https://www.jianshu.com/p/616999666920]</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-react相关知识点" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">react相关知识点</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-14 20:42:35" datetime="2019-01-14T12:42:35.000Z" itemprop="datePublished">2019-01-14</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="React相关知识点"><a href="#React相关知识点" class="headerlink" title="React相关知识点"></a>React相关知识点</h2><p>React核心是组件！<br>React精髓是函数式编程！</p>
+<p>1.react和vue对比：<br>   vue状态改变，只改变自己的视图<br>   vue很多的思想都是借鉴的react组件，并且又做了一些优化<br>   核心库都关注与视图层</p>
+<p>2.React项目开源时间是：41395</p>
+<p>3.React 16 将提供一个内置函数 componentDidCatch，如果 render() 函数抛出错误，则会触发该函数<br>componentDidCatch钩子函数是当项目发生错误的时候触发的</p>
+<p>4.Redux中哪个方法收到action？<br>  dispatch方法负责收到、派发action (dispatch(action))<br>  actionCreator负责创建action<br>  reducer负责接收store传递过来的action</p>
+<p>5.react－router4.0 核心对象包含Router/BrowserRouter/hashRouter/Route/Switch/withRouter等</p>
+<p>6.react-router2.0中路由容器是｛this.props.children｝</p>
+<ol>
+<li>react中key值作用：<br>keys是什么帮助 React 跟踪哪些项目已更改、添加或从列表中删除。<br>每个 keys 在兄弟元素之间是独一无二的。<br>keys 使处理列表时更加高效，因为 React 可以使用子元素上的 keys 快速知道元素是新的还是在比较树时才被移动。<br>keys 不仅使这个过程更有效率，而且没有 keys ，React 不知道哪个本地状态对应于移动中的哪个项目。</li>
+</ol>
+<p>8.无状态组件与有状态的组件的区别是什么？<br>  没有状态，没有生命周期，只是简单的接受 props 渲染生成 DOM 结构。<br>  无状态组件非常简单，开销很低，如果可能的话尽量使用无状态组件。<br>  无状态的函数创建的组件是无状态组件，它是一种只负责展示的纯组件，<br>  无状态组件可以使用纯函数来实现。</p>
+<p>  无状态组件定义函数方式如：（就是一个函数，根据接受到的属性来做不同的操作渲染）<br>​    const app = (props)=&gt;{return (<div>aaa</div>)}</p>
+<p>9.在自定义的React组件当中，哪个生命周期函数必写？render函数</p>
+<h2 id="flux知识点汇总：-https-www-cnblogs-com-fliu-articles-5245923-html"><a href="#flux知识点汇总：-https-www-cnblogs-com-fliu-articles-5245923-html" class="headerlink" title="flux知识点汇总：[https://www.cnblogs.com/fliu/articles/5245923.html]"></a>flux知识点汇总：[<a href="https://www.cnblogs.com/fliu/articles/5245923.html" target="_blank" rel="noopener">https://www.cnblogs.com/fliu/articles/5245923.html</a>]</h2><p>1.flux中能够调用setState方法的对象是(顶层容器)<br>2.Flux架构包含哪些部分?<br>​    View： 视图层<br>​    Action（动作）：视图层发出的消息（比如mouseClick）<br>​    Dispatcher（派发器）：用来接收Actions、执行回调函数、是中心枢纽<br>​    Store（数据层）：用来存放应用的状态，一旦发生变动，就提醒Views要更新页面</p>
+<ol>
+<li>Flux 的最大特点，就是数据的”单向流动”。<br>用户访问 View<br>View 发出用户的 Action<br>Dispatcher 收到 Action，要求 Store 进行相应的更新<br>Store 更新后，发出一个”change”事件<br>View 收到”change”事件后，更新页面</li>
+</ol>
+<p>可以通过redux与flux架构进行react的状态管理</p>
+<h2 id="虚拟dom理解？-https-www-jianshu-com-p-616999666920"><a href="#虚拟dom理解？-https-www-jianshu-com-p-616999666920" class="headerlink" title="虚拟dom理解？[https://www.jianshu.com/p/616999666920]"></a>虚拟dom理解？[<a href="https://www.jianshu.com/p/616999666920" target="_blank" rel="noopener">https://www.jianshu.com/p/616999666920</a>]</h2><p>所谓virtual，指的是对真实DOM的一种模拟。相对于直接操作真实的DOM结构，我们构建一棵虚拟的树，将各种数据和操作直接应用在这棵虚拟的树上，然后再将对虚拟的树的修改应用到真实的DOM结构上。<br>通过虚拟dom可能会减少真实DOM操作次数，带来性能上的提升，即使我们频繁操作虚拟DOM，我们只需要一定时刻一次性同步修改到真实DOM上即可.</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最終更新：<time datetime="2019-01-14T12:43:23.501Z" itemprop="dateUpdated">2019-01-14 20:43:23</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/01/14/react相关知识点/" target="_blank" rel="external">https://tianjiec.top/2019/01/14/react相关知识点/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/01/14/react相关知识点/&title=《react相关知识点》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/01/14/react相关知识点/&title=《react相关知识点》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/01/14/react相关知识点/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《react相关知识点》 — chentj's Blog&url=https://tianjiec.top/2019/01/14/react相关知识点/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/01/14/react相关知识点/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/01/14/react-pro/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">react-pro</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/01/12/react学习2/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">react学习2</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/01/14/react相关知识点/&title=《react相关知识点》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/01/14/react相关知识点/&title=《react相关知识点》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/01/14/react相关知识点/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《react相关知识点》 — chentj's Blog&url=https://tianjiec.top/2019/01/14/react相关知识点/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/01/14/react相关知识点/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3a0U7DMAwF0P3/Tw+JJxBqd+20E3NOnyYYTU+RrhLbj0d8Pb+vn597P/n72/O/uvjCwMD4WMbz9Dp6iKM7nH///EHPYUfPhoGBsQ+jF7LJHZJXkH//8OcYGBgYcQgm4ZhvDTEwMDB6gdvbuq3HOgYGBkZyiG0uEGwK89d3wVkcAwPjAxm9xsB7Pt/e38DAwPj3jGsPor2i//ohGQMDYzbjqk1btT2ZPHR1S4qBgTGbkZDuHr84fxH5i8bAwJjNyIPv/E30APkq0f8BAwNjKGNlC1htYSaY5G8xMDB2YFSPoCvNy14TNIp+DAyM0Yzq8tWi/8pGsHxPDAyM0Yz8pr3CWa85mg+KYWBg7MzoFb96hf68ePdiI4uBgTGOce0QWDV818c+MDAwdmAk8bcyYNHrTvRWwcDAmMpISlq9zdxK0a0cxxgYGKMZeaMx3w5WHyhnLzUGMDAwPpyRLJzE631DY0tRi4GBMYhxR4BWI7vXLsXAwJjNSMLxvlGMF1XA/FViYGBswKgOW1SLdHmgV5uXv6qGGBgYQxlJ5PVmzaoB2lsdAwNjB8azeOWNhJXxi/K6GBgYoxkrDYBeNOeMZicWAwNjKCM/uFaHM6qAPFJfHGIxMDCGMpIlqw2D/J4XhD4GBgZGUGKrjovlUVtuZGJgYGzP6B1oe0MehcYnBgbGBox8wCIfnqgeU3txjIGBsQOjGprVz3lxbanchoGBMZPxBU96N/XgbMctAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

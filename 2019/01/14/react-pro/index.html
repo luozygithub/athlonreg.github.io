@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>react-pro | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="react">
+    <meta name="description" content="react项目搭建流程1.初始化项目  create-react-app react-pro  抽离配置文件  yarn eject  安装相关依赖  yarn add node-sass -D  yarn add redux redux-thunk react-redux axios -S  搭建项目结构  并且  创建Storesrc/assets   /stylesheets/main.sc">
+<meta name="keywords" content="react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-pro">
+<meta property="og:url" content="https://tianjiec.top/2019/01/14/react-pro/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="react项目搭建流程1.初始化项目  create-react-app react-pro  抽离配置文件  yarn eject  安装相关依赖  yarn add node-sass -D  yarn add redux redux-thunk react-redux axios -S  搭建项目结构  并且  创建Storesrc/assets   /stylesheets/main.sc">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-14T12:45:42.648Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react-pro">
+<meta name="twitter:description" content="react项目搭建流程1.初始化项目  create-react-app react-pro  抽离配置文件  yarn eject  安装相关依赖  yarn add node-sass -D  yarn add redux redux-thunk react-redux axios -S  搭建项目结构  并且  创建Storesrc/assets   /stylesheets/main.sc">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">react-pro</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">react-pro</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-14T12:45:27.000Z" itemprop="datePublished" class="page-time">
+  2019-01-14
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#react项目搭建流程"><span class="post-toc-number">1.</span> <span class="post-toc-text">react项目搭建流程</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-react-pro" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">react-pro</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-14 20:45:27" datetime="2019-01-14T12:45:27.000Z" itemprop="datePublished">2019-01-14</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="react项目搭建流程"><a href="#react项目搭建流程" class="headerlink" title="react项目搭建流程"></a>react项目搭建流程</h2><p>1.初始化项目  create-react-app react-pro<br>  抽离配置文件  yarn eject<br>  安装相关依赖<br>  yarn add node-sass -D<br>  yarn add redux redux-thunk react-redux axios -S</p>
+<ol>
+<li><p>搭建项目结构  并且  创建Store<br>src/assets<br>   /stylesheets/main.scss(_base.scss,_common.scss,_mixin.scss,_reset.scss)<br>   /components/commons<br>​              /pages<br>​              /template<br>​              /template-css<br>​               index.js<br>​               index.scss<br>   /store/commons(state.js,actionCreators.js,reducer.js,const.js)<br>​         /index.js (createStore(reducer,applyMiddlermare(thunk)))<br>​         /reducer.js (combineReducers({commons}))</p>
+<p>   /modules/rem.js<br>​           /axios-util/</p>
+</li>
+<li><p>rem设置</p>
+</li>
+</ol>
+<ol>
+<li><p>配置axios<br><a href="https://www.kancloud.cn/yunye/axios/234845" target="_blank" rel="noopener">https://www.kancloud.cn/yunye/axios/234845</a></p>
+<p>src/modules/axios-util<br>​          (get.js/post.js/index.js)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//index.js文件</span><br><span class="line">import Post from &quot;./post&quot;</span><br><span class="line">import Get from &quot;./get&quot;</span><br><span class="line">import &#123;Component&#125; from &quot;react&quot;</span><br><span class="line">//方便在react组件中直接通过this.$post/this.$get直接请求数据</span><br><span class="line">Component.prototype.$post = Post;</span><br><span class="line">Component.prototype.$get = Get;</span><br><span class="line">//为了方便其他地方去使用请求，例如非组件的模块  actionCreators?可以发送异步请求</span><br><span class="line">export &#123;</span><br><span class="line">      Post,</span><br><span class="line">      Get</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>一级路由的配置<br>cnpm install react-router-dom -S<br>  1)首先现在最外层包裹上Router，Router分为两种：BrowserRouter/HashRouter<br>  2)在需要切换路由的时候，引入Route，path指定路径，component指定要渲染的组件<br> exact属性设置之后，只有完全匹配之后才能使用<br>  3)switch 里面只运行渲染一个路由，可以有效的防止同级路由多次渲染</p>
+   <switch><br>​         <route path="/" component="{Home}" exact=""><br>​         <route path="/list" component="{List}"><br>​         <route path="/buycar" component="{BuyCar}"><br>​         <route path="/mine" component="{Mine}"><br>   </route></route></route></route></switch>
+
+<p>   renderRoutes(){<br>   let {routes} = this.props;<br>   return (<br>​         <switch><br>​         {<br>​         routes.map(item=&gt;(<route key="{item.id}" path="{item.path}" component="{item.component}" exact="{item.exact}">))<br>​         }<br>​         </route></switch><br>   )<br>   }</p>
+</li>
+<li><p>AppFooter的设置<br>将通用的AppFooter放入在commons文件夹里面<br>用到AppFooter了，将他放入哪里呢？<br>1）第一种放入App.js文件里面 我们需要对于不需要底部的例如mine不需要，单独处理<br>2）第二种哪里需要直接扔哪里</p>
+</li>
+</ol>
+<p>思考？<br>​      把AppFooter放入App.js文件里面，那么所有的页面都会有footer了,如果mine组件不希望有footer，怎么处理？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">让App组件监听路由的变化，然后做出判断，选择性的去渲染AppFooter</span><br><span class="line"></span><br><span class="line">*Mine组件是路由组件，app组件不是路由组件</span><br><span class="line">*Mine组件的属性上后history/location/match,app组件上没有</span><br><span class="line">-&gt;路由自身的属性上有history/location/match这些属性！</span><br><span class="line"></span><br><span class="line">*当路由切换的时候，App组件render函数会重新执行</span><br><span class="line">*只有属性或者状态改变的时候，render函数才会重新执行</span><br><span class="line">*发现app组件没有状态，属性也没用发生改变（componentWillReceiveProps不会执行），那为什么它的render函数会重新执行呢？</span><br><span class="line">*原因就是父组件Router的属性或者状态发生变化了，render了，导致子组件APP也进行了渲染，所以App的render函数会重新执行！可不可以在shouldComponentUpdate钩子函数里面进行状态的更改呢？不可以的，因为在这里设置状态，会导致死循环！</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*当hash值变化的时候，Mine组件的render函数会重新执行</span><br><span class="line">*只有属性或者状态更改的时候render函数才会重新执行</span><br><span class="line">*Mine组件没有状态，但是发现componentWillReceiveProps钩子函数每当路由变化的时候会重新执行</span><br><span class="line">-&gt;路由变化的时候，Mine组件的属性就会发生变化</span><br><span class="line">-&gt;路由变化的时候路由组件的属性会发生变化，如果我们想在路由组件中监听路由的变化，只需要在componentWillReceiveProps里面写代码即可</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*问题是： 路由组件可以监听路由的变化，但是app组件不是路由组件，如何也能让他监听路由的变化呢？</span><br><span class="line">*只要App组件外面也套一个Route路由组件，就可以监听到路由的变化了！</span><br><span class="line">*解决办法  需要引入withRouter,作用就是将不是路由组件的普通组件变成伪路由组件，不会跳转，但是呢，可以监听到路由的变化！     </span><br><span class="line">-&gt;只要引入withRouter,就可以变成伪路由组件，不是真正的路由组件，但是Route相关的属性或者方法。</span><br></pre></td></tr></table></figure>
+<p>​<br>​       </p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最終更新：<time datetime="2019-01-14T12:45:42.648Z" itemprop="dateUpdated">2019-01-14 20:45:42</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/01/14/react-pro/" target="_blank" rel="external">https://tianjiec.top/2019/01/14/react-pro/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/01/14/react-pro/&title=《react-pro》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/01/14/react-pro/&title=《react-pro》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/01/14/react-pro/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《react-pro》 — chentj's Blog&url=https://tianjiec.top/2019/01/14/react-pro/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/01/14/react-pro/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/01/14/react-router/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">react-router</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/01/14/react相关知识点/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">react相关知识点</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/01/14/react-pro/&title=《react-pro》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/01/14/react-pro/&title=《react-pro》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/01/14/react-pro/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《react-pro》 — chentj's Blog&url=https://tianjiec.top/2019/01/14/react-pro/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/01/14/react-pro/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABx0lEQVR42u3aS5ICIRAFQO9/6fYA2u170DA6kaxcKCQuKurD4xGv42Vdfyf51dk+NyxcXNxp7nG5Xre+/ub1KfnFTnfGxcXdyG0PaANcsn/0W1xc3B/hzqc4uLi4v8vNj8HFxf0f3KT4uU5x8uInL6hwcXH/ipt3Kdd9XtLfxcXFHeIeE6tNktrg9eZEXFzcLdw26CQtjzbpSXbAxcXdyf1wj7JVmqdEySmnIQwXF3cxd2akmrPaZxxRUYSLi7uMmxc2+cOse5unpykOLi7uFu5M4pIPV8ZCZB1HcXFxp7nz+VHbGE2uEbVKcXFxF3DHHma1Q9mxvyNqiODi4i7gtk2NNokZLHLOPuPi4m7h5iGmLZCKTm1e/ODi4m7hJsS2UTKWZ0VPvnBxcbdw2+FoO4idGbTUDy9wcXFv4uajkbECKW+UROfi4uJu4Y4FsmjgETdS82IMFxd3D/co10xy0/41df8GFxf3Jm47NE3CVn583nDBxcXdzx0LXmOhZ6Z8wsXF3c9tA01OWVir4eLifgE3f5CRF0L1lXBxcb+M215mbAxTjFpxcXEXc1c0SWcSow9DVlxc3MXcmXbGimcZt/V3cXFxR7hPflt2ncpNgeAAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
