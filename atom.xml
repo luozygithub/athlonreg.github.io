@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tianjiec.top/"/>
-  <updated>2019-01-16T13:11:03.361Z</updated>
+  <updated>2019-02-06T12:46:38.853Z</updated>
   <id>https://tianjiec.top/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue常用插件</title>
+    <link href="https://tianjiec.top/2019/02/06/vue%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/"/>
+    <id>https://tianjiec.top/2019/02/06/vue常用插件/</id>
+    <published>2019-02-06T12:44:59.000Z</published>
+    <updated>2019-02-06T12:46:38.853Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><a href="https://github.com/ElemeFE/element" target="_blank" rel="noopener">element</a> ★13489 - 饿了么出品的Vue2的web UI工具套件</li><li><a href="https://github.com/airyland/vux" target="_blank" rel="noopener">Vux</a> ★8133 - 基于Vue和WeUI的组件库</li><li><a href="https://github.com/iview/iview" target="_blank" rel="noopener">iview</a> ★6634 - 基于 Vuejs 的开源 UI 组件库</li><li><a href="https://github.com/ElemeFE/mint-ui" target="_blank" rel="noopener">mint-ui</a> ★6253 - Vue 2的移动UI元素</li><li><a href="https://github.com/museui/muse-ui" target="_blank" rel="noopener">muse-ui</a> ★3705 - 三端样式一致的响应式 UI 库</li><li><a href="https://github.com/marcosmoura/vue-material" target="_blank" rel="noopener">vue-material</a> ★3328 - 通过Vue Material和Vue 2建立精美的app应用</li><li><a href="https://github.com/vuetifyjs/vuetify" target="_blank" rel="noopener">vuetify</a> ★2925 - 为移动而生的Vue JS 2组件框架</li><li><a href="https://github.com/JosephusPaye/Keen-UI" target="_blank" rel="noopener">Keen-UI</a> ★2749 - 轻量级的基本UI组件合集</li><li><a href="https://github.com/wangdahoo/vonic" target="_blank" rel="noopener">vonic</a> ★1913 - 快速构建移动端单页应用</li><li><a href="https://github.com/monterail/vue-multiselect" target="_blank" rel="noopener">vue-multiselect</a> ★1539 - Vue.js选择框解决方案</li><li><a href="https://github.com/egoist/eme" target="_blank" rel="noopener">eme</a> ★1529 - 优雅的Markdown编辑器</li><li><a href="https://github.com/taylorchen709/vueAdmin" target="_blank" rel="noopener">vueAdmin</a> ★1455 - 基于vuejs2和element的简单的管理员模板</li><li><a href="https://github.com/pi0/bootstrap-vue" target="_blank" rel="noopener">bootstrap-vue</a> ★1267 - 应用于Vuejs2的Twitter的Bootstrap 4组件</li><li><a href="https://github.com/David-Desmaisons/Vue.Draggable" target="_blank" rel="noopener">Vue.Draggable</a> ★1191 - 实现拖放和视图模型数组同步</li></ul><p>[详情地址][<a href="https://blog.csdn.net/osdfhv/article/details/78892477" target="_blank" rel="noopener">https://blog.csdn.net/osdfhv/article/details/78892477</a>]</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/ElemeFE/element&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;element&lt;/a&gt; ★13489 - 饿了么出品的Vue2的web UI工具套件&lt;/li&gt;
+&lt;li&gt;&lt;a 
+      
+    
+    </summary>
+    
+    
+      <category term="-插件" scheme="https://tianjiec.top/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>react常用插件</title>
+    <link href="https://tianjiec.top/2019/02/06/react%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/"/>
+    <id>https://tianjiec.top/2019/02/06/react常用插件/</id>
+    <published>2019-02-06T12:43:32.000Z</published>
+    <updated>2019-02-06T12:44:32.466Z</updated>
+    
+    <content type="html"><![CDATA[<p>axios(http请求模块，可用于前端任何场景，很强大)<br>echarts-for-react(可视化图表，别人基于react对echarts的封装，足够用了)<br>recharts(另一个基于react封装的图表，个人觉得是没有echarts好用)<br>nprogress(顶部加载条，蛮好用)<br>react-draft-wysiwyg(别人基于react的富文本封装，如果找到其他更好的可以替换)<br>react-draggable(拖拽模块，找了个简单版的)<br>screenfull(全屏插件)<br>photoswipe(图片弹层查看插件，不依赖jQuery，还是蛮好用)<br>animate.css(css动画库)<br>redux Web 应用是一个状态机，视图与状态是一一对应的.所有的状态，保存在一个对象里面<br>redux-logger 日志<br>Reselect 记忆组件<br>redux-thunk 为了解决异步action的问题<br>redux-saga 为了解决异步action的问题<br>react-router-redux 保持路由与应用状态(state)同步</p><p>react-router-dom</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;axios(http请求模块，可用于前端任何场景，很强大)&lt;br&gt;echarts-for-react(可视化图表，别人基于react对echarts的封装，足够用了)&lt;br&gt;recharts(另一个基于react封装的图表，个人觉得是没有echarts好用)&lt;br&gt;npro
+      
+    
+    </summary>
+    
+    
+      <category term="-插件" scheme="https://tianjiec.top/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>React项目</title>
@@ -441,45 +489,6 @@
     
     
       <category term="vue学习" scheme="https://tianjiec.top/tags/vue%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue项目-豆瓣</title>
-    <link href="https://tianjiec.top/2019/01/04/vue%E9%A1%B9%E7%9B%AE-%E8%B1%86%E7%93%A3/"/>
-    <id>https://tianjiec.top/2019/01/04/vue项目-豆瓣/</id>
-    <published>2019-01-04T09:51:43.000Z</published>
-    <updated>2019-01-04T09:52:49.648Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="vue" scheme="https://tianjiec.top/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>export default</title>
-    <link href="https://tianjiec.top/2019/01/03/export-default/"/>
-    <id>https://tianjiec.top/2019/01/03/export-default/</id>
-    <published>2019-01-03T02:11:51.000Z</published>
-    <updated>2019-01-03T02:45:20.254Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="export-default"><a href="#export-default" class="headerlink" title="export default"></a>export default</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div class=&quot;footer&quot;&gt;</span><br><span class="line">        &#123;&#123;text&#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/ecmascript-6&quot;&gt;</span><br><span class="line">    export default &#123;</span><br><span class="line">        data () &#123;</span><br><span class="line">            return &#123;</span><br><span class="line">                text: &apos;我是footer&apos;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=&quot;css&quot;&gt;</span><br><span class="line">    .footer &#123;</span><br><span class="line">        width:100%;</span><br><span class="line">        height:40px;</span><br><span class="line">        line-height:40px;</span><br><span class="line">        background:rgba(0,0,0,.8);</span><br><span class="line">        color:#fff;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure><p>export default{}返回的是VueComponent的实例对象，</p><h4 id="export-default是es6的用法，那为什么返回的是VueComponent的实例对象？"><a href="#export-default是es6的用法，那为什么返回的是VueComponent的实例对象？" class="headerlink" title="export default是es6的用法，那为什么返回的是VueComponent的实例对象？"></a>export default是es6的用法，那为什么返回的是VueComponent的实例对象？</h4><p>因为用到了vue-loader。vue-loader把.vue文件编译成.js文件，产出的js导出了一个符合vue组件component定义的object对象</p><p><strong>export default中为啥可以使用vue原型Vue.prototype.xx的方法？</strong></p><p>因为<strong>VueComponent通过原型链继承Vue原型上的属性和方法。</strong></p><h2 id="export"><a href="#export" class="headerlink" title="export"></a>export</h2><p>ES6之前已经出现了js模块加载方案，最主要的是CommonJS和AMD规范。commonjs主要应用于服务器，实现同步加载，如nodejs。AMD规范应用于浏览器，如require.js，为异步加载。同时还有CMD规范，为同步加载方案seaJS</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;export-default&quot;&gt;&lt;a href=&quot;#export-default&quot; class=&quot;headerlink&quot; title=&quot;export default&quot;&gt;&lt;/a&gt;export default&lt;/h2&gt;&lt;figure class=&quot;highlight 
-      
-    
-    </summary>
-    
-    
-      <category term="vue es6" scheme="https://tianjiec.top/tags/vue-es6/"/>
     
   </entry>
   
