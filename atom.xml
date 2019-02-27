@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tianjiec.top/"/>
-  <updated>2019-02-26T12:55:13.571Z</updated>
+  <updated>2019-02-27T11:56:30.304Z</updated>
   <id>https://tianjiec.top/</id>
   
   <author>
@@ -21,15 +21,19 @@
     <link href="https://tianjiec.top/2019/02/26/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/"/>
     <id>https://tianjiec.top/2019/02/26/面试题总结/</id>
     <published>2019-02-26T12:51:36.000Z</published>
-    <updated>2019-02-26T12:55:13.571Z</updated>
+    <updated>2019-02-27T11:56:30.304Z</updated>
     
-    <content type="html"><![CDATA[<p>函数变量提升优先于值变量提升，<br>在react框架里面用的比较多的es6语法<br>箭头函数，解构赋值，map方法。<br>箭头this函数和普通函数区别，<br>map和foreach区别，map有返回值，返回新数组。为什么react用map ，<br>promise怎么传值<br>es6之前块级作用域，try catch<br>catch中error是属于块级作用域<br>this的理解<br>git的使用<br>react 中setdate是异步还是同步的 异步 第二个参数作用 在这里面是setdate之后的状态。<br>promise是怎么传值的<br>在这里面<br>组件复用怎么更新数据</p><p>业务、项目模块建议、总结、学习新知识分享、专业外相关知识学习</p>]]></content>
+    <content type="html"><![CDATA[<p>1、函数变量提升优先于值变量提升，提升到作用域最前面<br>2、在react框架里面用的比较多的es6语法</p><blockquote><p>箭头函数，解构赋值，map方法。</p></blockquote><p>3、箭头this函数和普通函数区别，<br>4、map和foreach区别，map有返回值，返回新数组。为什么react用map ，<br>5、promise怎么传值  在这里面<br>6、 es6之前块级作用域，try catch</p><blockquote><p>catch中catch部分是属于块级作用域 error只在 其中有效 </p></blockquote><p>7、 this的理解<br>8、git的使用<br>9、 react 中setdate是异步还是同步的 异步 第二个参数作用 在这里面是setdate之后的状态。</p><p>10、组件复用怎么更新数据</p><p>业务、项目模块建议、总结、学习新知识分享、专业外相关知识学习</p><p>个人总结向其它方向发展</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;函数变量提升优先于值变量提升，&lt;br&gt;在react框架里面用的比较多的es6语法&lt;br&gt;箭头函数，解构赋值，map方法。&lt;br&gt;箭头this函数和普通函数区别，&lt;br&gt;map和foreach区别，map有返回值，返回新数组。为什么react用map ，&lt;br&gt;promise
+        &lt;p&gt;1、函数变量提升优先于值变量提升，提升到作用域最前面&lt;br&gt;2、在react框架里面用的比较多的es6语法&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;箭头函数，解构赋值，map方法。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;3、箭头this函数和普通函数区别，&lt;br&gt;4、m
       
     
     </summary>
