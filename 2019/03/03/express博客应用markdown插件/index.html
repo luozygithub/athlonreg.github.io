@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>express博客应用markdown插件 | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="博客">
+    <meta name="description" content="博客+markdown 12&amp;gt; 博客平台文章txt显示太丑，用html去写文章再用swig模板语言&amp;#123;% autoescape %&amp;#125;&amp;#123;&amp;#123; content.content&amp;#125;&amp;#125;&amp;#123;% endautoescape %&amp;#125;去显示可以 但是 写文章时候太麻烦&amp;gt;  &amp;gt;  所以可借用markdown相关插件 用markd">
+<meta name="keywords" content="博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="express博客应用markdown插件">
+<meta property="og:url" content="https://tianjiec.top/2019/03/03/express博客应用markdown插件/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="博客+markdown 12&amp;gt; 博客平台文章txt显示太丑，用html去写文章再用swig模板语言&amp;#123;% autoescape %&amp;#125;&amp;#123;&amp;#123; content.content&amp;#125;&amp;#125;&amp;#123;% endautoescape %&amp;#125;去显示可以 但是 写文章时候太麻烦&amp;gt;  &amp;gt;  所以可借用markdown相关插件 用markd">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-03T00:48:55.196Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="express博客应用markdown插件">
+<meta name="twitter:description" content="博客+markdown 12&amp;gt; 博客平台文章txt显示太丑，用html去写文章再用swig模板语言&amp;#123;% autoescape %&amp;#125;&amp;#123;&amp;#123; content.content&amp;#125;&amp;#125;&amp;#123;% endautoescape %&amp;#125;去显示可以 但是 写文章时候太麻烦&amp;gt;  &amp;gt;  所以可借用markdown相关插件 用markd">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">express博客应用markdown插件</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">express博客应用markdown插件</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-03-03T00:20:30.000Z" itemprop="datePublished" class="page-time">
+  2019-03-03
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#博客-markdown"><span class="post-toc-number">1.</span> <span class="post-toc-text">博客+markdown</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#写"><span class="post-toc-number">2.</span> <span class="post-toc-text">写</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#HTML结构"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">HTML结构</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#初始化插件"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">初始化插件</span></a></li></ol></li></ol><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#看"><span class="post-toc-number">3.</span> <span class="post-toc-text">看</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#markdown转HTML-使用editor-md"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">markdown转HTML(使用editor.md)</span></a></li></ol></li>
+        </nav>
+    </aside>
+
+
+<article id="post-express博客应用markdown插件"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">express博客应用markdown插件</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-03-03 08:20:30" datetime="2019-03-03T00:20:30.000Z" itemprop="datePublished">2019-03-03</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="博客-markdown"><a href="#博客-markdown" class="headerlink" title="博客+markdown"></a>博客+markdown</h3><blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; 博客平台文章txt显示太丑，用html去写文章再用swig模板语言&#123;% autoescape %&#125;&#123;&#123; content.content&#125;&#125;&#123;% endautoescape %&#125;去显示可以 但是 写文章时候太麻烦</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>所以可借用markdown相关插件 用markdown写 转成 html显示</p>
+<h3 id="写"><a href="#写" class="headerlink" title="写"></a>写</h3><p>借助bootstrap-markdown</p>
+<p>在页面中引入bootstrap相关文件，jquery，以及bootstrap-markdown.min.css和bootstrap-markdown.js文件。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"css/bootstrap.min.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"bootstrap-markdown.min.css"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"js/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"js/bootstrap.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"bootstrap-markdown.js"</span> &gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<h5 id="HTML结构"><a href="#HTML结构" class="headerlink" title="HTML结构"></a>HTML结构</h5><p>使用Bootstrap-Markdown比那家亲的方法非常简单，你只需要在一个<textarea>元素中设置data-provide=”markdown”属性，它就可以自动转换为Markdown编辑器。</textarea></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">"content"</span> <span class="attr">data-provide</span>=<span class="string">"markdown"</span> <span class="attr">rows</span>=<span class="string">"10"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span>  </span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>如果要制作一个内联的Markdown编辑器，可以添加data-provide=”markdown-editable”属性。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-provide</span>=<span class="string">"markdown-editable"</span>&gt;</span></span><br><span class="line">&gt;   <span class="tag">&lt;<span class="name">h3</span>&gt;</span>这是可以编辑的标题<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">&gt;   <span class="tag">&lt;<span class="name">p</span>&gt;</span>所有在 "markdown-editable" 这个div中的内容都是可以编辑的。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<h5 id="初始化插件"><a href="#初始化插件" class="headerlink" title="初始化插件"></a>初始化插件</h5><p>你也可以通过js的方式来初始化该Markdown编辑器插件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; $(<span class="string">"#some-textarea"</span>).markdown(&#123;<span class="attr">autofocus</span>:<span class="literal">false</span>,<span class="attr">savable</span>:<span class="literal">false</span>&#125;)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;<br>&gt;<br>&gt;</p>
+<blockquote>
+<h3 id="看"><a href="#看" class="headerlink" title="看"></a>看</h3><h4 id="markdown转HTML-使用editor-md"><a href="#markdown转HTML-使用editor-md" class="headerlink" title="markdown转HTML(使用editor.md)"></a>markdown转HTML(使用editor.md)</h4><p>editor.md网站地址<a href="http://pandao.github.io/editor.md/" target="_blank" rel="noopener">http://pandao.github.io/editor.md/</a></p>
+<p>首先需要引入对应的css跟js文件，jquery一定要在前面引入</p>
+<p>代码如下：</p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html><br>    <head><meta name="generator" content="Hexo 3.8.0"><br>        <meta charset="utf-8"><br>        <title>mkToHtmlDemo</title></head></html></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="comment">&lt;!--引入样式文件--&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"editor.md-master/examples/css/style.css"</span> /&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"editor.md-master/css/editormd.preview.css"</span> /&gt;</span></span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="comment">&lt;!--引入js文件--&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"editor.md-master/examples/js/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"editor.md-master/lib/marked.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"editor.md-master/lib/prettify.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"editor.md-master/lib/raphael.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"editor.md-master/lib/underscore.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"editor.md-master/lib/sequence-diagram.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"editor.md-master/lib/flowchart.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"editor.md-master/lib/jquery.flowchart.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"editor.md-master/editormd.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">&gt;     <span class="comment">&lt;!--输入需要转换的markdown文件开始--&gt;</span></span><br><span class="line">&gt;     <span class="tag">&lt;<span class="name">h1</span>&gt;</span>转换前<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">&gt;     <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"demo1"</span> <span class="attr">style</span>=<span class="string">"width:800px;height:300px;"</span>&gt;</span></span><br><span class="line">&gt; hadoop命令需在hadoop目录下使用</span><br><span class="line">&gt;         **常用命令**</span><br><span class="line">&gt;         HDFS格式化:</span><br><span class="line">&gt; bin/hadoop namenode -format    格式化namenode</span><br><span class="line">&gt; bin/hadoop datanode -format    格式化datanode</span><br><span class="line">&gt; </span><br><span class="line">&gt; *如不是第一次格式化，为了保证clusterID一致性,</span><br><span class="line">&gt; *需先删除hdfs临时目录,</span><br><span class="line">&gt; *即在配置文件中配置的hadoop.tmp.dir参数路径</span><br><span class="line">&gt;     <span class="tag">&lt;/<span class="name">textarea</span>&gt;</span>   </span><br><span class="line">&gt;     <span class="comment">&lt;!--输入需要转换的markdown文件结束--&gt;</span></span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="comment">&lt;!--点击该按钮进行转换--&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"mdToHml();"</span> <span class="attr">type</span>=<span class="string">"button"</span>&gt;</span>点击转Html<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">p</span>&gt;</span>=================  华丽丽的分割线 ====================<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">h1</span>&gt;</span>转换后<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="comment">&lt;!--在该div中展示,如有初始化的数据可以放在textarea中--&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"testEditorMdview"</span>&gt;</span></span><br><span class="line">&gt;     <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"appendTest"</span> <span class="attr">style</span>=<span class="string">"display:none;"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&gt;     <span class="comment">&lt;!--js开始--&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"> </span></span><br><span class="line"><span class="undefined">&gt; </span></span><br><span class="line"><span class="javascript">&gt;     <span class="comment">//markDown转HTMl的方法</span></span></span><br><span class="line"><span class="javascript">&gt;     <span class="function"><span class="keyword">function</span> <span class="title">mdToHml</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="undefined">&gt; </span></span><br><span class="line"><span class="javascript">&gt;         <span class="comment">//先对容器初始化，在需要展示的容器中创建textarea隐藏标签，</span></span></span><br><span class="line"><span class="xml">&gt;         $("#testEditorMdview").html('<span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"appendTest"</span> <span class="attr">style</span>=<span class="string">"display:none;"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span>');</span></span><br><span class="line"><span class="javascript">&gt;         <span class="keyword">var</span> content=$(<span class="string">"#demo1"</span>).val();<span class="comment">//获取需要转换的内容</span></span></span><br><span class="line"><span class="javascript">&gt;         $(<span class="string">"#appendTest"</span>).val(content);<span class="comment">//将需要转换的内容加到转换后展示容器的textarea隐藏标签中</span></span></span><br><span class="line"><span class="undefined">&gt; </span></span><br><span class="line"><span class="javascript">&gt;         <span class="comment">//转换开始,第一个参数是上面的div的id</span></span></span><br><span class="line"><span class="javascript">&gt;         editormd.markdownToHTML(<span class="string">"testEditorMdview"</span>, &#123;</span></span><br><span class="line"><span class="javascript">&gt;             htmlDecode: <span class="string">"style,script,iframe"</span>, <span class="comment">//可以过滤标签解码</span></span></span><br><span class="line"><span class="javascript">&gt;             emoji: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">&gt;             taskList:<span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">&gt;             tex: <span class="literal">true</span>,               <span class="comment">// 默认不解析</span></span></span><br><span class="line"><span class="javascript">&gt;             flowChart:<span class="literal">true</span>,         <span class="comment">// 默认不解析</span></span></span><br><span class="line"><span class="javascript">&gt;             sequenceDiagram:<span class="literal">true</span>,  <span class="comment">// 默认不解析</span></span></span><br><span class="line"><span class="undefined">&gt;         &#125;);</span></span><br><span class="line"><span class="undefined">&gt;     &#125;</span></span><br><span class="line"><span class="undefined">&gt; </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&gt;  <span class="comment">&lt;!--js结束--&gt;</span></span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-03-03T00:48:55.196Z" itemprop="dateUpdated">2019-03-03 08:48:55</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/03/03/express博客应用markdown插件/" target="_blank" rel="external">https://tianjiec.top/2019/03/03/express博客应用markdown插件/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客/">博客</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/03/03/express博客应用markdown插件/&title=《express博客应用markdown插件》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/03/03/express博客应用markdown插件/&title=《express博客应用markdown插件》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/03/03/express博客应用markdown插件/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《express博客应用markdown插件》 — chentj's Blog&url=https://tianjiec.top/2019/03/03/express博客应用markdown插件/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/03/03/express博客应用markdown插件/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/02/26/面试题总结/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">面试题总结</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/03/03/express博客应用markdown插件/&title=《express博客应用markdown插件》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/03/03/express博客应用markdown插件/&title=《express博客应用markdown插件》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/03/03/express博客应用markdown插件/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《express博客应用markdown插件》 — chentj's Blog&url=https://tianjiec.top/2019/03/03/express博客应用markdown插件/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/03/03/express博客应用markdown插件/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACoElEQVR42u3aQW7DQAgF0Nz/0um2UlX7A0NqVc+rKnXG82ZhCPB6xdf78vp+z89vJSv01j924eHh4a1tfUJK7r/+PD8sPDw8vM/wrh+QLF397vU7PFknORQ8PDy8Z/Kut3i99RyDh4eH9z94yeu+vKEiHg8PD++veHkJtZpS5wEjP6CVWgseHh5ezMu7SM/5e6W/h4eHhzfuqveCRH5MeburuVs8PDy8BV7+wp0kxPlQQu9obvaJh4eHt8ar/rzPi6q9dHneMMPDw8Pb403aUXkq3FutGqhevdiCh4eHF9+fpLmTR05W6IWBm4iHh4eHd5TXCw85Izm+3srNCgoeHh7emFcdseoVcKvNsKQYUejv4eHh4R3lTULC2b/n5RI8PDy8bV5ecp2Hh17YSJJ1PDw8vE/yemNP+aYnK/fweHh4eJ/hTR4zuScPGMnneHh4eNu8vIRaLRDkpdseuBd+8PDw8Oa8ats+X7raxOoNe90cHx4eHt4ar5rs5oXUsyMI5ePDw8PDW+NVG2B58l39vBeWDo8O4OHh4QW8Qhm0OvZUHCDIqeWZMjw8PLxDvEmx4GzZ9xSsPO+Ah4eHN+D12v/zMax5keLmsPDw8PAWeNVGVP55NVmfDCXc/BcPDw/vKC8v1FZDQl6QnRRBClk5Hh4e3jKv2ojKGb3stxk28PDw8D7IywcLrjeXbyUf88rf/Hh4eHhnee/iNUmUq8WOSW7862QEHh4e3pg3+UWfjxHMj6AXcvDw8PD2eNWtJylyL+TMw0k5scbDw8Mb8JJy6ka5Yd7iuin74uHh4T2e1wsY+VhVdUQMDw8P7zm8pKmft8fyhlye9OPh4eFt85IvJw+rbqt6TzWtx8PDw9vg9X7w50dzqiw7Gg7Aw8PDO8P7Aj1j0HXZSAFtAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
