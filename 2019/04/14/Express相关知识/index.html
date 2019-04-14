@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Express相关知识 | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="node 框架 express">
+    <meta name="description" content="Express 路由、中间件和模板引擎  Express是一个基于Node的一个框架，用来快速创建Web服务的一个工具，为什么要使用Express呢，因为创建Web服务如果从Node开始有很多繁琐的工作要做，而Express为你解放了很多工作，从而让你更加关注于逻辑业务开发。 举例：开发一个很简单的网站： 12345678910var http = require(&apos;http&apos;);var url">
+<meta name="keywords" content="node 框架 express">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Express相关知识">
+<meta property="og:url" content="https://tianjiec.top/2019/04/14/Express相关知识/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="Express 路由、中间件和模板引擎  Express是一个基于Node的一个框架，用来快速创建Web服务的一个工具，为什么要使用Express呢，因为创建Web服务如果从Node开始有很多繁琐的工作要做，而Express为你解放了很多工作，从而让你更加关注于逻辑业务开发。 举例：开发一个很简单的网站： 12345678910var http = require(&apos;http&apos;);var url">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-14T11:43:57.333Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Express相关知识">
+<meta name="twitter:description" content="Express 路由、中间件和模板引擎  Express是一个基于Node的一个框架，用来快速创建Web服务的一个工具，为什么要使用Express呢，因为创建Web服务如果从Node开始有很多繁琐的工作要做，而Express为你解放了很多工作，从而让你更加关注于逻辑业务开发。 举例：开发一个很简单的网站： 12345678910var http = require(&apos;http&apos;);var url">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Express相关知识</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Express相关知识</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-04-14T11:43:05.000Z" itemprop="datePublished" class="page-time">
+  2019-04-14
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Express"><span class="post-toc-number">1.</span> <span class="post-toc-text">Express</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Express相关知识" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Express相关知识</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-04-14 19:43:05" datetime="2019-04-14T11:43:05.000Z" itemprop="datePublished">2019-04-14</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Express"><a href="#Express" class="headerlink" title="Express"></a>Express</h1><blockquote>
+<p>路由、中间件和模板引擎</p>
+</blockquote>
+<p>Express是一个基于Node的一个框架，用来快速创建Web服务的一个工具，为什么要使用Express呢，因为创建Web服务如果从Node开始有很多繁琐的工作要做，而Express为你解放了很多工作，从而让你更加关注于逻辑业务开发。</p>
+<p>举例：开发一个很简单的网站：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    res.writeHead(<span class="number">200</span>,&#123;</span><br><span class="line">        <span class="string">'Content-Type'</span>:<span class="string">'text/plain'</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">var</span> url_str = url.parse(req.url,<span class="literal">true</span>);</span><br><span class="line">    res.end(<span class="string">'Hello World\n'</span> + url_str.query);</span><br><span class="line">&#125;).listen(<span class="number">8080</span>,<span class="string">'127.0.0.1'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Server running at http://127.0.0.1'</span>:<span class="number">8080</span>/);</span><br></pre></td></tr></table></figure>
+<p>这是一个简单的 hello world，运行以后访问<a href="http://127.0.0.1会打印相关字符串，这是最普通的页面，但实际上真正的网站要比这个复杂很多，主要有：" target="_blank" rel="noopener">http://127.0.0.1会打印相关字符串，这是最普通的页面，但实际上真正的网站要比这个复杂很多，主要有：</a></p>
+<p>(1) 多页面的路由功能</p>
+<p>(2) 对请求的处理逻辑</p>
+<p>那么使用node</p>
+<p>原生写法就要进行以下处理</p>
+<p>1、原生写法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//加载所需模块</span></span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="comment">//创建Server</span></span><br><span class="line"><span class="keyword">var</span> app = http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(request.url == <span class="string">'/'</span>)&#123;</span><br><span class="line">        response.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">'text/plain'</span>&#125;);</span><br><span class="line">        response.end(<span class="string">'Home Page!\n'</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(request.url == <span class="string">'/about'</span>)&#123;</span><br><span class="line">        response.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">'text/plain'</span>&#125;);</span><br><span class="line">        response.end(<span class="string">'About Page!\n'</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        response.writeHead(<span class="number">404</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">'text/plain'</span>&#125;);</span><br><span class="line">        response.end(<span class="string">"404 Not Found!\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//启动Server</span></span><br><span class="line">app.listen(<span class="number">1984</span>,<span class="string">'localhost'</span>);</span><br></pre></td></tr></table></figure>
+<p>代码在createServer函数里传递一个回调函数来处理http请求并返回结果，在这个函数里有两个工作要做：.</p>
+<p>（1）路由分析，对于不同的路径需要进行分别处理</p>
+<p>（2）逻辑处理和返回，对某个路径进行特别逻辑处理</p>
+<p>这里会有什么问题呢，如果一个大型网站拥有海量的网站（也就是路径），每个网页的处理逻辑也是交错复杂，那这里的写法会非常混乱，没法维护，未解决这个问题，TJ提出了Connect的概念，把Java里面的中间件概念第一次引入到了JS的世界Web请求将一个一个经过中间件，并通过其中一个中间件返回，大大提高了代码的可维护性和开发效率。</p>
+<p>2、使用中间件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入connect模块</span></span><br><span class="line"><span class="keyword">var</span> connect = <span class="built_in">require</span>(<span class="string">'connect'</span>);</span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">var</span> app = connect();</span><br><span class="line"><span class="comment">//建立app</span></span><br><span class="line"><span class="keyword">var</span> app = connect();</span><br><span class="line"><span class="comment">//添加中间件</span></span><br><span class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>)</span>&#123;</span><br><span class="line">    response.writeHead(<span class="number">200</span>, &#123; <span class="string">"Content-Type"</span>: <span class="string">'text/plain'</span>&#125;);</span><br><span class="line">    response.end(<span class="string">'Hello World\n'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//启动</span></span><br><span class="line">http.createServer(app).listen(<span class="number">1337</span>)</span><br></pre></td></tr></table></figure>
+<p>但是TJ认为应该更好一点，于是Express诞生了，通过Express开发以上的例子：</p>
+<p>3、使用Express：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    res.send(<span class="string">'Hello World!'</span>);</span><br><span class="line">&#125;);</span><br><span class="line">app.get(<span class="string">'/about'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    res.send(<span class="string">"Ablout"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">var</span> server = app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> host = server.address().address;</span><br><span class="line">    <span class="keyword">var</span> port = server.address().port;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Exampleapplistening"</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>从这个例子可以看出，使用Express大大减少了代码函数，而且逻辑更为简洁，所以使用Express可以提高开发效率并降低工程维护成本。</p>
+<p>首先Express有几个比较重要的概念：路由、中间件、模板引擎</p>
+<p>开发人员可以为Web页面注册路由，将不同的路径请求区分到不同的模块中去，从而避免了上面例子1所说的海量路径问题，例如</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"></span><br><span class="line">app.all(<span class="string">'*'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>)</span>&#123;</span><br><span class="line">    response.end(<span class="string">"Welcome to the home page!"</span>);</span><br><span class="line">&#125;)</span><br><span class="line">app.get(<span class="string">'/about'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    res.end(<span class="string">"Welconme to the about page!"</span>);</span><br><span class="line">&#125;)</span><br><span class="line">app.get(<span class="string">'*'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    res.end(<span class="string">"404!"</span>)</span><br><span class="line">&#125;)</span><br><span class="line">http.createServer(app).listen(<span class="number">1337</span>);</span><br></pre></td></tr></table></figure>
+<p>开发人员可以为特定的路由开发中间件模块，中间件模块可以复用，从而解决了复杂逻辑的交错引用问题，例如</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"><span class="comment">//没有挂载路径的中间件，应用的每个请求都会执行该中间件</span></span><br><span class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Time:'</span>,<span class="built_in">Date</span>.now());</span><br><span class="line">    next();</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//挂载至 /user/:id 的中间件，任何执行/user/:id 的请求都会执行它</span></span><br><span class="line">app.use(<span class="string">'user/:id'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>)</span>&#123;</span><br><span class="line">    res.send(<span class="string">'User'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">var</span> server = app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> host = server.address().address;</span><br><span class="line">    <span class="keyword">var</span> port = server.address().port;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">'Example app listening at http://%s:%s'</span>, host, port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.cnblogs.com/zhusheng2008/p/5264096.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhusheng2008/p/5264096.html</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-04-14T11:43:57.333Z" itemprop="dateUpdated">2019-04-14 19:43:57</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/04/14/Express相关知识/" target="_blank" rel="external">https://tianjiec.top/2019/04/14/Express相关知识/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-框架-express/">node 框架 express</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/04/14/Express相关知识/&title=《Express相关知识》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/04/14/Express相关知识/&title=《Express相关知识》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/04/14/Express相关知识/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Express相关知识》 — chentj's Blog&url=https://tianjiec.top/2019/04/14/Express相关知识/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/04/14/Express相关知识/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/04/14/swig使用/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">swig使用</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/04/14/Express相关知识/&title=《Express相关知识》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/04/14/Express相关知识/&title=《Express相关知识》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/04/14/Express相关知识/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Express相关知识》 — chentj's Blog&url=https://tianjiec.top/2019/04/14/Express相关知识/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/04/14/Express相关知识/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJUlEQVR42u3a227cIBQF0Pz/T09fK1X27H1wWxmWn0YJAZYjMZzLz0/8fILnavzvP0k+/znbYw8GBsZrGcnm7jfdrnI/5/2Yyz1gYGAcwLha+H5Mst37kbN1MTAwMNrp8kPznno/DwYGBsb6wZdsNw+AMTAwMGZBbBuOJsvP2BgYGKcx8tD033/+K/UNDAyMVzE+5ZOEoCupt9mDgYGxNyM/4HJSm6SbHbgYGBgY+TGaN2estIVFl0UMDIxNGbOU/UqpctYK9iVVh4GBcQBjVmjMSwJ5cr89ajEwMM5hzALL/IjMV5mVPDEwMPZm5Nttw858hjys/bIWBgbGpoyVBH0S6Oblz/p4vbrhYmBgHMCoT+uyDNC+lOhrAAMDY2tGW85MRuYbyi+LdasZBgbG1oynCgN54Jq3kQ3/JxgYGC9nrKTp2wLkrFEjmh8DA2Nrxsp2kxaKlZfywIOBgbEFI99QUgxoS5h5M+uXtTAwMLZmPFWMfKotbEbFwMA4jbEyaZ4sy/8q+QLAwMA4h9FWEtoDtw1o60sqBgbGAYxZaiw/dpNb3FIqEAMDY1PGp3za4mLbrtFeVYusIQYGxmsZsyrh7Lf/63DHwMDYg7HeNtEGpXkarnhxGBgYBzCebdtqE3D5/F/uuRgYGBgLt8u2YFBTMTAwMMomjLYAmY+/HImBgXEAo22baK99bfNZHuhiYGCcwGgvduvXvva6+VQSEAMD44WMXzt7+gi72QAgAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
