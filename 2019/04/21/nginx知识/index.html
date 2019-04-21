@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>nginx知识 | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="服务器">
+    <meta name="description" content="nginx在应用程序中的作用1、解决跨域 2、请求过滤 3、配置gzip 4、负载均衡 5、静态资源服务器  nginx是一个高性能的HTTP和反向代理服务器，也是一个通用的TCP/UDP代理服务器，最初由俄罗斯人lgor Sysoev编写。  nginx现在几乎是众多大型网站的必备拘束，大多情况下，我们不需要亲自去配置它，但是了解它在应用程序中所担任的角色，以及如何解决这些问题是非常必要的。 下">
+<meta name="keywords" content="服务器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nginx知识">
+<meta property="og:url" content="https://tianjiec.top/2019/04/21/nginx知识/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="nginx在应用程序中的作用1、解决跨域 2、请求过滤 3、配置gzip 4、负载均衡 5、静态资源服务器  nginx是一个高性能的HTTP和反向代理服务器，也是一个通用的TCP/UDP代理服务器，最初由俄罗斯人lgor Sysoev编写。  nginx现在几乎是众多大型网站的必备拘束，大多情况下，我们不需要亲自去配置它，但是了解它在应用程序中所担任的角色，以及如何解决这些问题是非常必要的。 下">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHaT7Uu9rKdZdbv03DhAWqJ0RoVrsAVQbtqqzGTAKPKqaH55gc2UQsgTQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHajgQdzcIkPY0BzmBokSgdfSibic0zIHFO6NDGUNTc12uZUJ1m1icFykuLg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHa47sywm7TDOAerwUZLvLJclZbPSzuYgWX1EE57tBicosFibfdQ9dhqHyw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHabZmzEQmMzFv2lJaqbJGnteOqb9odHIyHyjCjCv1bQl82OwiawtxhKgQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHa2EpibgKfeJS5QibBIZbicgJaLKMprhS4oDSB64E10EGJ0vORZ5jGZxfFA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHaOSlTWIkWlib8qg6eSXEa4IegU7PKmTND8v9ZWuzy4Lia5N7VznhFm5Mg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHahxJCz52MicEf2kkTw0OG6DtibDdwTQxJOEW7emqjnMGLicqsJjibr3oTnA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHaNmIRyMIqhibHLSia7udl2hWLMubXYjkSDQpcztZAcOqzpkKh6QLrG6Fw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHaeGlVwfj4mkYJ4WJnsBzmyJ4Ul6NziagemfWeqjqhDxiajyHxcNxUPdNw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHaJiaCgJW9w9dQ6HSgx1R8mxSWmDkAdzoeZdeGWh9ncgswmHjeq7HWicEQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHaA9vVOHEpDRicQHbA1Or53GScepLfgcLsYwX83PMo0VkBjDP72mcaNVA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:updated_time" content="2019-04-21T13:08:36.581Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nginx知识">
+<meta name="twitter:description" content="nginx在应用程序中的作用1、解决跨域 2、请求过滤 3、配置gzip 4、负载均衡 5、静态资源服务器  nginx是一个高性能的HTTP和反向代理服务器，也是一个通用的TCP/UDP代理服务器，最初由俄罗斯人lgor Sysoev编写。  nginx现在几乎是众多大型网站的必备拘束，大多情况下，我们不需要亲自去配置它，但是了解它在应用程序中所担任的角色，以及如何解决这些问题是非常必要的。 下">
+<meta name="twitter:image" content="https://mmbiz.qpic.cn/mmbiz_png/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHaT7Uu9rKdZdbv03DhAWqJ0RoVrsAVQbtqqzGTAKPKqaH55gc2UQsgTQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">nginx知识</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">nginx知识</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-04-21T12:48:43.000Z" itemprop="datePublished" class="page-time">
+  2019-04-21
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#nginx在应用程序中的作用"><span class="post-toc-number">1.</span> <span class="post-toc-text">nginx在应用程序中的作用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#正向代理与反向代理"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">正向代理与反向代理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#正向代理"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">正向代理</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#反向代理"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">反向代理</span></a></li></ol></li></ol></li></ol><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本配置"><span class="post-toc-number"></span> <span class="post-toc-text">基本配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置结构"><span class="post-toc-number">0.1.</span> <span class="post-toc-text">配置结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#内置变量"><span class="post-toc-number">0.2.</span> <span class="post-toc-text">内置变量</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决跨域"><span class="post-toc-number"></span> <span class="post-toc-text">解决跨域</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#跨域的定义"><span class="post-toc-number">0.1.</span> <span class="post-toc-text">跨域的定义</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#同源的定义"><span class="post-toc-number">0.2.</span> <span class="post-toc-text">同源的定义</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#nginx解决跨域的原理"><span class="post-toc-number">0.3.</span> <span class="post-toc-text">nginx解决跨域的原理</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#请求过滤"><span class="post-toc-number"></span> <span class="post-toc-text">请求过滤</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置gzip"><span class="post-toc-number"></span> <span class="post-toc-text">配置gzip</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#gzip"><span class="post-toc-number">0.1.</span> <span class="post-toc-text">gzip</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#gziphttpversion"><span class="post-toc-number">0.2.</span> <span class="post-toc-text">gziphttpversion</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#gzipcomplevel"><span class="post-toc-number">0.3.</span> <span class="post-toc-text">gzipcomplevel</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#gzipminlength"><span class="post-toc-number">0.4.</span> <span class="post-toc-text">gzipminlength</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#gzip-types"><span class="post-toc-number">0.5.</span> <span class="post-toc-text">gzip_types</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#负载均衡"><span class="post-toc-number"></span> <span class="post-toc-text">负载均衡</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是负载均衡"><span class="post-toc-number">0.1.</span> <span class="post-toc-text">什么是负载均衡</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#nginx如何实现负载均衡"><span class="post-toc-number">0.2.</span> <span class="post-toc-text">nginx如何实现负载均衡</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#nginx实现负载均衡的策略"><span class="post-toc-number">0.3.</span> <span class="post-toc-text">nginx实现负载均衡的策略</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#静态资源服务器"><span class="post-toc-number"></span> <span class="post-toc-text">静态资源服务器</span></a>
+        </li></nav>
+    </aside>
+
+
+<article id="post-nginx知识" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">nginx知识</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-04-21 20:48:43" datetime="2019-04-21T12:48:43.000Z" itemprop="datePublished">2019-04-21</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="nginx在应用程序中的作用"><a href="#nginx在应用程序中的作用" class="headerlink" title="nginx在应用程序中的作用"></a>nginx在应用程序中的作用</h3><p>1、解决跨域</p>
+<p>2、请求过滤</p>
+<p>3、配置gzip</p>
+<p>4、负载均衡</p>
+<p>5、静态资源服务器</p>
+<blockquote>
+<p>nginx是一个高性能的HTTP和反向代理服务器，也是一个通用的TCP/UDP代理服务器，最初由俄罗斯人lgor Sysoev编写。</p>
+</blockquote>
+<p>nginx现在几乎是众多大型网站的必备拘束，大多情况下，我们不需要亲自去配置它，但是了解它在应用程序中所担任的角色，以及如何解决这些问题是非常必要的。</p>
+<p>下面为nginx在企业中的真实应用来解释nginx在应用程序中起到的作用。</p>
+<p>为了便于理解，首先先来了解一下，一些基础知识，nginx是一个高性能的反向代理服务器，那么什么是反向代理呢？</p>
+<h4 id="正向代理与反向代理"><a href="#正向代理与反向代理" class="headerlink" title="正向代理与反向代理"></a>正向代理与反向代理</h4><p><strong>代理</strong>是服务器和客户端之间假设的一层服务器，代理将接受客户端的请求并将它转发给服务器，然后服务器的响应转发给客户端。</p>
+<p>不管是正向代理还是反向代理，实现的都是上面的功能。</p>
+<h5 id="正向代理"><a href="#正向代理" class="headerlink" title="正向代理"></a>正向代理</h5><blockquote>
+<p>意思是一个位于客户端和原始服务器之间的服务器，为了从原始服务器去的内容，客户端向代理发送一个请求并指定目标（原始服务器），然后代理向原始服务器转交请求并取得内容后返回给客户端。</p>
+</blockquote>
+<p>正向代理 是为我们服务的，即为客户端服务的，客户端可以根据正向代理访问到它本身无法访问到的服务器资源。</p>
+<p>正向代理对我们是透明的，对服务器端是非透明的，即服务器并不知道自己是收到的来自代理的访问还是来自真实客户端的访问。</p>
+<h5 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h5><blockquote>
+<p>反向代理（Reverse Proxy）方式是指以代理服务器来接收internet上的请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的数据返回给internet上请求连接的客户端，此时代理服务器对外就表现为一个反向代理服务器。</p>
+</blockquote>
+<p><strong>反向代理</strong>是为服务端服务的，反向代理可以帮助服务器接收来自客户端的请求，磅数服务器做请求转发，负载均衡等。</p>
+<p>反向代理对服务器是透明的，对我们是非透明的，即我们不知道访问的是代理还是真实服务器。</p>
+<h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><h4 id="配置结构"><a href="#配置结构" class="headerlink" title="配置结构"></a>配置结构</h4><p>下面是一个nginx配置文件的基本结构：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://mmbiz.qpic.cn/mmbiz_png/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHaT7Uu9rKdZdbv03DhAWqJ0RoVrsAVQbtqqzGTAKPKqaH55gc2UQsgTQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">events &#123; </span><br><span class="line">&#125;</span><br><span class="line">http&#123;    server    &#123;         location path        &#123;            ...        &#125;        location path        &#123;            ...        &#125;     &#125;</span><br><span class="line">    server    &#123;        ...    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>main</code>:nginx的全局配置，对全局生效。</li>
+<li><code>events</code>:配置影响nginx服务器或与用户的网络连接。</li>
+<li><code>http</code>：可以嵌套多个server，配置代理，缓存，日志定义等绝大多数功能和第三方模块的配置。</li>
+<li><code>server</code>：配置虚拟主机的相关参数，一个http中可以有多个server。</li>
+<li><code>location</code>：配置请求的路由，以及各种页面的处理情况。</li>
+<li><code>upstream</code>：配置后端服务器具体地址，负载均衡配置不可或缺的部分。</li>
+</ul>
+<h4 id="内置变量"><a href="#内置变量" class="headerlink" title="内置变量"></a>内置变量</h4><p>下面是 <code>nginx</code>一些配置中常用的内置全局变量，你可以在配置的任何位置使用它们。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">变量名</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>$host</code></td>
+<td style="text-align:left">请求信息中的 <code>Host</code>，如果请求中没有 <code>Host</code>行，则等于设置的服务器名</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$request_method</code></td>
+<td style="text-align:left">客户端请求类型，如 <code>GET</code>、 <code>POST</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$remote_addr</code></td>
+<td style="text-align:left">客户端的 <code>IP</code>地址</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$args</code></td>
+<td style="text-align:left">请求中的参数</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$content_length</code></td>
+<td style="text-align:left">请求头中的 <code>Content-length</code>字段</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$http_user_agent</code></td>
+<td style="text-align:left">客户端agent信息</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$http_cookie</code></td>
+<td style="text-align:left">客户端cookie信息</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$remote_addr</code></td>
+<td style="text-align:left">客户端的IP地址</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$remote_port</code></td>
+<td style="text-align:left">客户端的端口</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$server_protocol</code></td>
+<td style="text-align:left">请求使用的协议，如 <code>HTTP/1.0</code>、·HTTP/1.1`</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$server_addr</code></td>
+<td style="text-align:left">服务器地址</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$server_name</code></td>
+<td style="text-align:left">服务器名称</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$server_port</code></td>
+<td style="text-align:left">服务器的端口号</td>
+</tr>
+</tbody>
+</table>
+<h2 id="解决跨域"><a href="#解决跨域" class="headerlink" title="解决跨域"></a>解决跨域</h2><p>先追本溯源以下，跨域究竟是怎么回事。</p>
+<h4 id="跨域的定义"><a href="#跨域的定义" class="headerlink" title="跨域的定义"></a>跨域的定义</h4><p>同源策略限制了从同一个源加载的文档或脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的重要安全机制。通常不允许不同源间的读操作。</p>
+<h4 id="同源的定义"><a href="#同源的定义" class="headerlink" title="同源的定义"></a>同源的定义</h4><p>如果两个页面的协议，端口（如果有指定）和域名都相同，则两个页面具有相同的源。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://mmbiz.qpic.cn/mmbiz_png/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHajgQdzcIkPY0BzmBokSgdfSibic0zIHFO6NDGUNTc12uZUJ1m1icFykuLg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<h4 id="nginx解决跨域的原理"><a href="#nginx解决跨域的原理" class="headerlink" title="nginx解决跨域的原理"></a>nginx解决跨域的原理</h4><p>例如：</p>
+<ul>
+<li>前端server的域名为： <code>fe.server.com</code></li>
+<li>后端服务的域名为： <code>dev.server.com</code></li>
+</ul>
+<p>现在我在 <code>fe.server.com</code>对 <code>dev.server.com</code>发起请求一定会出现跨域。</p>
+<p>现在我们只需要启动一个nginx服务器，将 <code>server_name</code>设置为 <code>fe.server.com</code>,然后设置相应的location以拦截前端需要跨域的请求，最后将请求代理回 <code>dev.server.com</code>。如下面的配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server &#123;        listen       80;        server_name  fe.server.com;        location / &#123;                proxy_pass dev.server.com;        &#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>这样可以完美绕过浏览器的同源策略： <code>fe.server.com</code>访问 <code>nginx</code>的 <code>fe.server.com</code>属于同源访问，而 <code>nginx</code>对服务端转发的请求不会触发浏览器的同源策略。</p>
+<h2 id="请求过滤"><a href="#请求过滤" class="headerlink" title="请求过滤"></a>请求过滤</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://mmbiz.qpic.cn/mmbiz_jpg/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHa47sywm7TDOAerwUZLvLJclZbPSzuYgWX1EE57tBicosFibfdQ9dhqHyw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<p>根据状态码过滤</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error_page 500 501 502 503 504 506 /50x.html;    location = /50x.html &#123;        #将跟路径改编为存放html的路径。        root /root/static/html;    &#125;</span><br></pre></td></tr></table></figure>
+<p>根据URL名称过滤，精准匹配URL，不匹配的URL全部重定向到主页。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;    rewrite  ^.*$ /index.html  redirect;&#125;</span><br></pre></td></tr></table></figure>
+<p>根据请求类型过滤。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if ( $request_method !~ ^(GET|POST|HEAD)$ ) &#123;        return 403;    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置gzip"><a href="#配置gzip" class="headerlink" title="配置gzip"></a>配置gzip</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://mmbiz.qpic.cn/mmbiz_jpg/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHabZmzEQmMzFv2lJaqbJGnteOqb9odHIyHyjCjCv1bQl82OwiawtxhKgQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<p><code>GZIP</code>是规定的三种标准HTTP压缩格式之一。目前绝大多数的网站都在使用 <code>GZIP</code>传输 <code>HTML</code>、 <code>CSS</code>、 <code>JavaScript</code> 等资源文件。</p>
+<p>对于文本文件， <code>GZip</code> 的效果非常明显，开启后传输所需流量大约会降至 <code>1/4~1/3</code>。</p>
+<p>并不是每个浏览器都支持 <code>gzip</code>的，如何知道客户端是否支持 <code>gzip</code>呢，请求头中的 <code>Accept-Encoding</code>来标识对压缩的支持。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://mmbiz.qpic.cn/mmbiz_png/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHa2EpibgKfeJS5QibBIZbicgJaLKMprhS4oDSB64E10EGJ0vORZ5jGZxfFA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<p>启用 <code>gzip</code>同时需要客户端和服务端的支持，如果客户端支持 <code>gzip</code>的解析，那么只要服务端能够返回 <code>gzip</code>的文件就可以启用 <code>gzip</code>了,我们可以通过 <code>nginx</code>的配置来让服务端支持 <code>gzip</code>。下面的 <code>respone</code>中 <code>content-encoding:gzip</code>，指服务端开启了 <code>gzip</code>的压缩方式。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://mmbiz.qpic.cn/mmbiz_png/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHaOSlTWIkWlib8qg6eSXEa4IegU7PKmTND8v9ZWuzy4Lia5N7VznhFm5Mg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gzip                    on;    gzip_http_version       1.1;            gzip_comp_level         5;    gzip_min_length         1000;    gzip_types text/csv text/xml text/css text/plain text/javascript application/javascript application/x-javascript application/json application/xml;</span><br></pre></td></tr></table></figure>
+<h4 id="gzip"><a href="#gzip" class="headerlink" title="gzip"></a>gzip</h4><ul>
+<li>开启或者关闭 <code>gzip</code>模块</li>
+<li>默认值为 <code>off</code></li>
+<li>可配置为 <code>on/off</code></li>
+</ul>
+<h4 id="gziphttpversion"><a href="#gziphttpversion" class="headerlink" title="gziphttpversion"></a>gziphttpversion</h4><ul>
+<li>启用 <code>GZip</code> 所需的 <code>HTTP</code> 最低版本</li>
+<li>默认值为 <code>HTTP/1.1</code></li>
+</ul>
+<p>这里为什么默认版本不是 <code>1.0</code>呢？</p>
+<p><code>HTTP</code> 运行在 <code>TCP</code> 连接之上，自然也有着跟 <code>TCP</code> 一样的三次握手、慢启动等特性。</p>
+<p>启用持久连接情况下，服务器发出响应后让 <code>TCP</code>连接继续打开着。同一对客户/服务器之间的后续请求和响应可以通过这个连接发送。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://mmbiz.qpic.cn/mmbiz_png/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHahxJCz52MicEf2kkTw0OG6DtibDdwTQxJOEW7emqjnMGLicqsJjibr3oTnA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<p>为了尽可能的提高 <code>HTTP</code> 性能，使用持久连接就显得尤为重要了。</p>
+<p><code>HTTP/1.1</code>默认支持 <code>TCP</code>持久连接， <code>HTTP/1.0</code> 也可以通过显式指定 <code>Connection:keep-alive</code> 来启用持久连接。对于 <code>TCP</code>持久连接上的 <code>HTTP</code> 报文，客户端需要一种机制来准确判断结束位置，而在 <code>HTTP/1.0</code>中，这种机制只有 <code>Content-Length</code>。而在 <code>HTTP/1.1</code>中新增的 <code>Transfer-Encoding:chunked</code> 所对应的分块传输机制可以完美解决这类问题。</p>
+<p><code>nginx</code>同样有着配置 <code>chunked的</code>属性 <code>chunked_transfer_encoding</code>，这个属性是默认开启的。</p>
+<p><code>Nginx</code>在启用了 <code>GZip</code>的情况下，不会等文件 <code>GZip</code> 完成再返回响应，而是边压缩边响应，这样可以显著提高 <code>TTFB</code>( <code>TimeToFirstByte</code>，首字节时间，WEB 性能优化重要指标)。这样唯一的问题是， <code>Nginx</code> 开始返回响应时，它无法知道将要传输的文件最终有多大，也就是无法给出 <code>Content-Length</code>这个响应头部。</p>
+<p>所以，在 <code>HTTP1.0</code>中如果利用 <code>Nginx</code>启用了 <code>GZip</code>，是无法获得 <code>Content-Length</code>的，这导致HTTP1.0中开启持久链接和使用 <code>GZip</code>只能二选一，所以在这里 <code>gzip_http_version</code>默认设置为 <code>1.1</code>。</p>
+<h4 id="gzipcomplevel"><a href="#gzipcomplevel" class="headerlink" title="gzipcomplevel"></a>gzipcomplevel</h4><ul>
+<li>压缩级别，级别越高压缩率越大，当然压缩时间也就越长（传输快但比较消耗cpu）。</li>
+<li>默认值为 <code>1</code></li>
+<li>压缩级别取值为 <code>1-9</code></li>
+</ul>
+<h4 id="gzipminlength"><a href="#gzipminlength" class="headerlink" title="gzipminlength"></a>gzipminlength</h4><ul>
+<li>设置允许压缩的页面最小字节数， <code>Content-Length</code>小于该值的请求将不会被压缩</li>
+<li>默认值: <code>0</code></li>
+<li>当设置的值较小时，压缩后的长度可能比原文件大，建议设置 <code>1000</code>以上</li>
+</ul>
+<h4 id="gzip-types"><a href="#gzip-types" class="headerlink" title="gzip_types"></a>gzip_types</h4><ul>
+<li>要采用gzip压缩的文件类型( <code>MIME</code>类型)</li>
+<li>默认值: <code>text/html</code>(默认不压缩 <code>js</code>/ <code>css</code>)</li>
+</ul>
+<h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><h4 id="什么是负载均衡"><a href="#什么是负载均衡" class="headerlink" title="什么是负载均衡"></a>什么是负载均衡</h4><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://mmbiz.qpic.cn/mmbiz_jpg/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHaNmIRyMIqhibHLSia7udl2hWLMubXYjkSDQpcztZAcOqzpkKh6QLrG6Fw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<p>如上面的图，前面是众多的服务窗口，下面有很多用户需要服务，我们需要一个工具或策略来帮助我们将如此多的用户分配到每个窗口，来达到资源的充分利用以及更少的排队时间。</p>
+<p>把前面的服务窗口想像成我们的后端服务器，而后面终端的人则是无数个客户端正在发起请求。负载均衡就是用来帮助我们将众多的客户端请求合理的分配到各个服务器，以达到服务端资源的充分利用和更少的请求时间。</p>
+<h4 id="nginx如何实现负载均衡"><a href="#nginx如何实现负载均衡" class="headerlink" title="nginx如何实现负载均衡"></a>nginx如何实现负载均衡</h4><p>Upstream指定后端服务器地址列表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">upstream balanceServer &#123;    server 10.1.22.33:12345;    server 10.1.22.34:12345;    server 10.1.22.35:12345;&#125;</span><br></pre></td></tr></table></figure>
+<p>在server中拦截响应请求，并将请求转发到Upstream中配置的服务器列表。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server &#123;        server_name  fe.server.com;        listen 80;        location /api &#123;            proxy_pass http://balanceServer;        &#125;    &#125;</span><br></pre></td></tr></table></figure>
+<p>上面的配置只是指定了nginx需要转发的服务端列表，并没有指定分配策略。</p>
+<h4 id="nginx实现负载均衡的策略"><a href="#nginx实现负载均衡的策略" class="headerlink" title="nginx实现负载均衡的策略"></a>nginx实现负载均衡的策略</h4><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://mmbiz.qpic.cn/mmbiz_png/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHaeGlVwfj4mkYJ4WJnsBzmyJ4Ul6NziagemfWeqjqhDxiajyHxcNxUPdNw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<p><strong>轮询策略</strong></p>
+<p>默认情况下采用的策略，将所有客户端请求轮询分配给服务端。这种策略是可以正常工作的，但是如果其中某一台服务器压力太大，出现延迟，会影响所有分配在这台服务器下的用户。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">upstream balanceServer &#123;    server 10.1.22.33:12345;    server 10.1.22.34:12345;    server 10.1.22.35:12345;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://mmbiz.qpic.cn/mmbiz_png/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHaJiaCgJW9w9dQ6HSgx1R8mxSWmDkAdzoeZdeGWh9ncgswmHjeq7HWicEQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<p><strong>最小连接数策略</strong></p>
+<p>将请求优先分配给压力较小的服务器，它可以平衡每个队列的长度，并避免向压力大的服务器添加更多的请求。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">upstream balanceServer &#123;    least_conn;    server 10.1.22.33:12345;    server 10.1.22.34:12345;    server 10.1.22.35:12345;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://mmbiz.qpic.cn/mmbiz_png/aDoYvepE5x1pIMY7XMzHmvXpFHd7yhHaA9vVOHEpDRicQHbA1Or53GScepLfgcLsYwX83PMo0VkBjDP72mcaNVA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<p><strong>最快响应时间策略</strong></p>
+<p>依赖于NGINX Plus，优先分配给响应时间最短的服务器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">upstream balanceServer &#123;    fair;    server 10.1.22.33:12345;    server 10.1.22.34:12345;    server 10.1.22.35:12345;&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>客户端ip绑定</strong></p>
+<p>来自同一个ip的请求永远只分配一台服务器，有效解决了动态网页存在的session共享问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">upstream balanceServer &#123;    ip_hash;    server 10.1.22.33:12345;    server 10.1.22.34:12345;    server 10.1.22.35:12345;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="静态资源服务器"><a href="#静态资源服务器" class="headerlink" title="静态资源服务器"></a>静态资源服务器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">location ~* \.(png|gif|jpg|jpeg)$ &#123;    root    /root/static/;      autoindex on;    access_log  off;    expires     10h;# 设置过期时间为10小时          &#125;</span><br></pre></td></tr></table></figure>
+<p>匹配以 <code>png|gif|jpg|jpeg</code>为结尾的请求，并将请求转发到本地路径， <code>root</code>中指定的路径即nginx本地路径。同时也可以进行一些缓存的设置。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最終更新：<time datetime="2019-04-21T13:08:36.581Z" itemprop="dateUpdated">2019-04-21 21:08:36</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/04/21/nginx知识/" target="_blank" rel="external">https://tianjiec.top/2019/04/21/nginx知识/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/04/21/nginx知识/&title=《nginx知识》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/04/21/nginx知识/&title=《nginx知识》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/04/21/nginx知识/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《nginx知识》 — chentj's Blog&url=https://tianjiec.top/2019/04/21/nginx知识/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/04/21/nginx知识/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/04/21/JavaScript的数据类型及其检测/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">JavaScript的数据类型及其检测</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/04/21/nginx知识/&title=《nginx知识》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/04/21/nginx知识/&title=《nginx知识》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/04/21/nginx知识/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《nginx知识》 — chentj's Blog&url=https://tianjiec.top/2019/04/21/nginx知识/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/04/21/nginx知识/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3aS27DMAxF0ex/0+60QCDnPlIemLoaGYka+3jA8qPPB6/r3/r+nOz/vl7tWf3mhiVDhozXMq7bxfekL4Jfo/vKkCHjAMbqxvc/Tb7tBHHybDJkyJCx2vMETIYMGTKeYBBMmurJkCFDRqeI5YkjCab3d3+wFpchQ8YLGZ107enrR+YbMmTIeBXjCletDccL2qu0ZMiQMZvBAxxPy3jpGxSoZKggQ4aMAxid8pUXn2nIJs8gQ4aM2Yz7P0sfqz8qKI5RZciQcQCDH6GIx4rgFcT/H1YBV4YMGaMZfEzYGUCSA2TpgTMZMmScwOAtszQprLXqNk9iZciQMYhRO9TFA2uxC4jDsQwZMs5k8ANbvOmWxsy05y9DhoypjE7xWQugcdOfpJgyZMgYzUjL136jjQxKN7wmGTJkDGJ0QmoncawNANBhCxkyZAxl1JpotaKUp3rxqFKGDBmjGXw8kAZEjm+9GhkyZIxm8FDIYbs+SYtqGTJkzGakTa40masVrnEbToYMGQcwOo37NHD3j7r+mMfKkCFjKGNX8E1bbGn5utwvQ4aMoYwrXGnrLQ2y/AX9ON0mQ4aMQYxakpcG3M6hCl4Ay5AhYzaDBNlauKzNJdJSVoYMGecwasUtCaxPHDX70W6TIUPG8Yza8a9OYy5ousmQIUNG+LjpcJTs3xxwZciQ8SoGKWJJsz5N/nYVzzJkyJjN4KVjWrjyZhnHtAaZMmTIeB/jD2+tA/EIqX53AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
