@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>JavaScript的数据类型及其检测 | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="js">
+    <meta name="description" content="[TOC] 基本数据类型1、Symbol(ES6新增，表示独一无二的值) 2、Undefined 3、Null 4、NaN 5、布尔值（Boolean） 6、字符串（String） 7、数值（Number） 引用数据类型对象(Object)=》对象，数组，函数等 区别两种类型区别1、存储位置不同 引用类型存储在栈，堆（heap）中 基本数据类型直接存储在栈（stack）中 2、访问方式不同 基本数">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript的数据类型及其检测">
+<meta property="og:url" content="https://tianjiec.top/2019/04/21/JavaScript的数据类型及其检测/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="[TOC] 基本数据类型1、Symbol(ES6新增，表示独一无二的值) 2、Undefined 3、Null 4、NaN 5、布尔值（Boolean） 6、字符串（String） 7、数值（Number） 引用数据类型对象(Object)=》对象，数组，函数等 区别两种类型区别1、存储位置不同 引用类型存储在栈，堆（heap）中 基本数据类型直接存储在栈（stack）中 2、访问方式不同 基本数">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-21T12:32:45.661Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript的数据类型及其检测">
+<meta name="twitter:description" content="[TOC] 基本数据类型1、Symbol(ES6新增，表示独一无二的值) 2、Undefined 3、Null 4、NaN 5、布尔值（Boolean） 6、字符串（String） 7、数值（Number） 引用数据类型对象(Object)=》对象，数组，函数等 区别两种类型区别1、存储位置不同 引用类型存储在栈，堆（heap）中 基本数据类型直接存储在栈（stack）中 2、访问方式不同 基本数">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JavaScript的数据类型及其检测</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JavaScript的数据类型及其检测</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-04-21T12:06:19.000Z" itemprop="datePublished" class="page-time">
+  2019-04-21
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基本数据类型"><span class="post-toc-number">1.</span> <span class="post-toc-text">基本数据类型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#引用数据类型"><span class="post-toc-number">2.</span> <span class="post-toc-text">引用数据类型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#区别"><span class="post-toc-number">3.</span> <span class="post-toc-text">区别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#两种类型区别"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">两种类型区别</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#基本数据类型的特点"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">基本数据类型的特点</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#引用类型特点"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">引用类型特点</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#检验数据类型"><span class="post-toc-number">4.</span> <span class="post-toc-text">检验数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#typeof"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">typeof</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#instanceof（运算符）"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">instanceof（运算符）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#严格运算符"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">严格运算符</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#constructor-NaN"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">constructor</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Object-protype-toString-call"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">Object.protype.toString.call()</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-JavaScript的数据类型及其检测" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JavaScript的数据类型及其检测</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-04-21 20:06:19" datetime="2019-04-21T12:06:19.000Z" itemprop="datePublished">2019-04-21</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>[TOC]</p>
+<h4 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h4><p>1、Symbol(ES6新增，表示独一无二的值)</p>
+<p>2、Undefined</p>
+<p>3、Null</p>
+<p>4、NaN</p>
+<p>5、布尔值（Boolean）</p>
+<p>6、字符串（String）</p>
+<p>7、数值（Number）</p>
+<h4 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h4><p>对象(Object)=》对象，数组，函数等</p>
+<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><h5 id="两种类型区别"><a href="#两种类型区别" class="headerlink" title="两种类型区别"></a>两种类型区别</h5><p>1、存储位置不同</p>
+<p>引用类型存储在栈，堆（heap）中</p>
+<p>基本数据类型直接存储在栈（stack）中</p>
+<p>2、访问方式不同</p>
+<p>基本数据类型直接访问其值</p>
+<p>应用数据类型按引用访问</p>
+<h5 id="基本数据类型的特点"><a href="#基本数据类型的特点" class="headerlink" title="基本数据类型的特点"></a>基本数据类型的特点</h5><p>值不可变（改变是覆盖）</p>
+<p>比较是值的比较</p>
+<p>存放在栈区，简单数据段。占据空间小，大小固定，属于被频繁访问的数据，所以放在栈中存储。</p>
+<p>==比较会转换数据类型 ===不会</p>
+<h5 id="引用类型特点"><a href="#引用类型特点" class="headerlink" title="引用类型特点"></a>引用类型特点</h5><p>值是可变的，拥有属性和方法</p>
+<p>比较是引用的比较</p>
+<p>同时存在在栈内存和堆内存中的对象，栈中存储指针，堆中存储对象，堆中存放数据占据空间大的、大小不固定</p>
+<h4 id="检验数据类型"><a href="#检验数据类型" class="headerlink" title="检验数据类型"></a>检验数据类型</h4><h5 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h5><p>不能检验数组和对象</p>
+<h5 id="instanceof（运算符）"><a href="#instanceof（运算符）" class="headerlink" title="instanceof（运算符）"></a>instanceof（运算符）</h5><p>A instanceof B 判断A是否是B的实例</p>
+<p>es6新增Array.isArray()数组类型判断</p>
+<p>不能检测字面量方式创建基本数据类型</p>
+<p>不能检验null和undefined</p>
+<p>在类的原型继承中，检测未必准确</p>
+<h5 id="严格运算符"><a href="#严格运算符" class="headerlink" title="严格运算符"></a>严格运算符</h5><p>===</p>
+<p>检测null和undefined</p>
+<h5 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h5><p>不能检测null和undefined</p>
+<p>把类的原型进行重写，检测就不准确</p>
+<h5 id="Object-protype-toString-call"><a href="#Object-protype-toString-call" class="headerlink" title="Object.protype.toString.call()"></a>Object.protype.toString.call()</h5><p>最准确的检测方法</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最終更新：<time datetime="2019-04-21T12:32:45.661Z" itemprop="dateUpdated">2019-04-21 20:32:45</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/04/21/JavaScript的数据类型及其检测/" target="_blank" rel="external">https://tianjiec.top/2019/04/21/JavaScript的数据类型及其检测/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/04/21/JavaScript的数据类型及其检测/&title=《JavaScript的数据类型及其检测》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/04/21/JavaScript的数据类型及其检测/&title=《JavaScript的数据类型及其检测》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/04/21/JavaScript的数据类型及其检测/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript的数据类型及其检测》 — chentj's Blog&url=https://tianjiec.top/2019/04/21/JavaScript的数据类型及其检测/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/04/21/JavaScript的数据类型及其检测/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/04/14/JS异步编程六中方案/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">JS异步编程六中方案</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/04/21/JavaScript的数据类型及其检测/&title=《JavaScript的数据类型及其检测》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/04/21/JavaScript的数据类型及其检测/&title=《JavaScript的数据类型及其检测》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/04/21/JavaScript的数据类型及其检测/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript的数据类型及其检测》 — chentj's Blog&url=https://tianjiec.top/2019/04/21/JavaScript的数据类型及其检测/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/04/21/JavaScript的数据类型及其检测/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACq0lEQVR42u3aQW7jQAwEwPz/09lrFgvZ3aRG8QKlU+A4lmoCzNBNfn3F1/eP6+qVn69f/e2/1+Zet114eHh4i0e/un3+2+RBXy9H8rfFkuHh4eEd413d4PXP7bbeHgnJ87yx4OHh4X0AL9+m8+MnPwbw8PDw/kdeQl1t5XFJjYeHh/e7vHybvispzYvph7IWPDw8vK7rFHWRPufnI/09PDw8vHVXvQ1e89u3B8/wafHw8PAO8GYfnZS5syGA/dAVHh4e3mle3uZvG1obWIu8/Bw8PDy8w7y84XRvCJuHIK9fL/JpPDw8vJt47SjV7GA40dy6XHo8PDy8A7x8c8+L3fYT9iMFdTMMDw8Pb83Lm1uzsnszCtAu62VhjYeHh3cTL9+IN6FtXrIni54PFuDh4eGd4LWwWXTbhrybEBkPDw/vGd6JrTkPONr3tAMHeHh4eCd4e+RsPGtfiCfvx8PDwzvHO1dGJwXxLKgdNsbw8PDwbuW1AW670efg2dBAdCTg4eHhLXhJBLAZq2oXqA2R3ywfHh4e3gFeewDsI4lNvLsqr/Hw8PAO8O79Rp8fNu1wwH5MAQ8PD2/DmxW+s8Mgf9AN7K/74uHh4R3j5eHC7J372DcfwCrWBg8PD2/E20QS+zI66VLtlw8PDw/vBK/dcFdbcxm55uHF8D+Gh4eHt+DNGlqzVtascG8DZTw8PLzTvM1tknI5WaBZX66YicDDw8Nb877L6zU+H4dq22bDgwoPDw/via/X9eGRP1Db3GrDiFnYgYeHhzfj5YdB24LaYF7ftxjnwsPDwzvG2zSf8lBjE9GushY8PDy8D+PNRg028fGjBwMeHh7esZqzjWjbuDYv+vHw8PCe4W3igzZEuLfF9QaJh4eHd4C3H6hqD4xNLDscDsDDw8O7h/cHT8MiFp5pTIIAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
