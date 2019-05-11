@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>nuxt经验学习 | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vue">
+    <meta name="description" content="创建项目： vue init nuxt-community/starter-template                                                                                              img              Nuxt官方文档 简单来说，Nuxt就是基于Vue的一个应用框架，采用服务端渲染，让你">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nuxt经验学习">
+<meta property="og:url" content="https://tianjiec.top/2019/05/11/nuxt经验学习/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="创建项目： vue init nuxt-community/starter-template                                                                                              img              Nuxt官方文档 简单来说，Nuxt就是基于Vue的一个应用框架，采用服务端渲染，让你">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5531211-c27fc80f44d079d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/577/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5531211-d1a3e5b36ee03f08.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/460/format/webp">
+<meta property="og:updated_time" content="2019-05-11T02:19:22.617Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nuxt经验学习">
+<meta name="twitter:description" content="创建项目： vue init nuxt-community/starter-template                                                                                              img              Nuxt官方文档 简单来说，Nuxt就是基于Vue的一个应用框架，采用服务端渲染，让你">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/5531211-c27fc80f44d079d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/577/format/webp">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">nuxt经验学习</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">nuxt经验学习</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-05-11T01:39:29.000Z" itemprop="datePublished" class="page-time">
+  2019-05-11
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Nuxt"><span class="post-toc-number">1.</span> <span class="post-toc-text">Nuxt</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#生命周期"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">生命周期</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实战经验"><span class="post-toc-number">2.</span> <span class="post-toc-text">实战经验</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2、配置错误页面"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">2、配置错误页面</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3、自定义Loading页面"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">3、自定义Loading页面</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4、校验参数"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">4、校验参数</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6、没有keep-alive"><span class="post-toc-number">2.0.4.</span> <span class="post-toc-text">6、没有keep-alive</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#7、配置插件"><span class="post-toc-number">2.0.5.</span> <span class="post-toc-text">7、配置插件</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-nuxt经验学习" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">nuxt经验学习</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-05-11 09:39:29" datetime="2019-05-11T01:39:29.000Z" itemprop="datePublished">2019-05-11</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>创建项目：</p>
+<p>vue init nuxt-community/starter-template</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://upload-images.jianshu.io/upload_images/5531211-c27fc80f44d079d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/577/format/webp" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<h3 id="Nuxt"><a href="#Nuxt" class="headerlink" title="Nuxt"></a>Nuxt</h3><p><a href="https://zh.nuxtjs.org/guide" target="_blank" rel="noopener">官方文档</a></p>
+<p>简单来说，Nuxt就是基于Vue的一个应用框架，采用服务端渲染，让你的SPA应用加载更快，并且便于SEO</p>
+<h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4><p><strong>Vue</strong>的生命周期全在客户端，而<strong>Nuxt</strong>的生命周期有些在服务端(<strong>Node</strong>)，客户端，甚至两边都在：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://upload-images.jianshu.io/upload_images/5531211-d1a3e5b36ee03f08.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/460/format/webp" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<p>生命周期流程图，红框是<strong>Nuxt的寿命周期（运行在服务端）</strong>，皇框运行在客户端&amp;&amp;服务端上，绿框运行在客户端</p>
+<h3 id="实战经验"><a href="#实战经验" class="headerlink" title="实战经验"></a>实战经验</h3><p>1、红框内生命周期不存在<strong>Window</strong>对象</p>
+<p>黄框内生命周期可能不存在Window对象，需要验证</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">  asyncData() &#123;<span class="comment">//异步请求</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="built_in">window</span>) <span class="comment">// 服务端报错</span></span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="javascript">  fetch() &#123;<span class="comment">//异步请求</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="built_in">window</span>) <span class="comment">// 服务端报错</span></span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="javascript">  created () &#123;<span class="comment">//dom还未创建</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="built_in">window</span>) <span class="comment">// undefined</span></span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  mounted () &#123;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="built_in">window</span>) <span class="comment">// Window &#123;postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, frames: Window, …&#125;</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="2、配置错误页面"><a href="#2、配置错误页面" class="headerlink" title="2、配置错误页面"></a>2、配置错误页面</h5><p>你可以通过编译layouts/error.vue文件来定制化错误页面</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">"error.statusCode === 404"</span>&gt;</span>页面不存在<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>应用发生错误异常<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">nuxt-link</span> <span class="attr">to</span>=<span class="string">"/"</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">nuxt-link</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">sctipt</span>&gt;</span></span><br><span class="line">export default&#123;</span><br><span class="line">	props: ['error'],</span><br><span class="line">    layout: 'blog'</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">sctipt</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="3、自定义Loading页面"><a href="#3、自定义Loading页面" class="headerlink" title="3、自定义Loading页面"></a>3、自定义Loading页面</h5><p>nuxt.config.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports =&#123;</span><br><span class="line">	loading:<span class="string">'~components/loading.vue'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;template lang=&quot;html&quot;&gt;</span><br><span class="line">	&lt;div class=&quot;loading-page&quot; vo-if=&quot;loading&quot;&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            loading...</span><br><span class="line">   	 	&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    data:()=&gt;(&#123;</span><br><span class="line">        loading:false</span><br><span class="line">    &#125;),</span><br><span class="line">    methods:&#123;</span><br><span class="line">        start()&#123;</span><br><span class="line">            this.loading = true</span><br><span class="line">        &#125;,</span><br><span class="line">        finish()&#123;</span><br><span class="line">            this.loading = false</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="4、校验参数"><a href="#4、校验参数" class="headerlink" title="4、校验参数"></a>4、校验参数</h5><p>如果校验失败，则自动跳转到错误页面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default&#123;</span><br><span class="line">    validate(&#123;params,query&#125;)&#123;</span><br><span class="line">        return /^d+$/.test(params.id)//must be number</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>5、Header、Footer等公共组件放哪？</p>
+<p>vue-cli的入口文件是app.vue，在nuxt开发当中则是./layout/default.vue</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;!-- 公共组件头部组件--&gt;</span><br><span class="line">        &lt;header&gt;&lt;/header&gt;</span><br><span class="line">        &lt;!-- 路由视图，相当于router-view--&gt;</span><br><span class="line">        &lt;nuxt/&gt;</span><br><span class="line">        &lt;!--公共组件底部组件--&gt;</span><br><span class="line">        &lt;footer&gt;&lt;/footer&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="6、没有keep-alive"><a href="#6、没有keep-alive" class="headerlink" title="6、没有keep-alive"></a>6、没有keep-alive</h5><p>由于是服务端渲染，所以不支持组件的keep-alive，那自然activated、deativated这两个生命周期也灭了</p>
+<h5 id="7、配置插件"><a href="#7、配置插件" class="headerlink" title="7、配置插件"></a>7、配置插件</h5><p>所有插件都写在/plugins目录下，这里以vue-lazyload为例</p>
+<p>plugins/lazy-load.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Vuelazyload <span class="keyword">from</span> <span class="string">'vue-lazyload'</span></span><br><span class="line">Vue.use(Vuelazyload,&#123;</span><br><span class="line">    loading:<span class="built_in">require</span>(<span class="string">'~/assets/images/loading.jpg'</span>),</span><br><span class="line">    error:<span class="built_in">require</span>(<span class="string">'~assets/images/error.jpg'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>nuxt.config.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">	plugins = [</span><br><span class="line">   	  &#123;</span><br><span class="line">		src:&apos;~plugins/lazy-load&apos;,</span><br><span class="line">        ssr:false</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>8、使用Axios，并配置全局拦截器，处理跨域</p>
+<p>start-template模板，推荐使用@nuxtjs/axios、@nuxtjs/proxy,不需要在plugins配置</p>
+<p>安装依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install @nuxtjs/axios @nuxtjs/proxy --save</span><br></pre></td></tr></table></figure>
+<p>使用-处理跨域</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">	modules:[&apos;@nuxtjs/axios&apos;],</span><br><span class="line">	axios:&#123;</span><br><span class="line">        proxy:true,</span><br><span class="line">        prefix:&apos;/api&apos;,</span><br><span class="line">        credentails:true,</span><br><span class="line">	&#125;,</span><br><span class="line">	proxy:&#123;</span><br><span class="line">        &apos;/api&apos;:&#123;</span><br><span class="line">			target:&quot;http://127.0.0.1:2001&quot;,//代理地址</span><br><span class="line">			changeOrigin:true,</span><br><span class="line">			pathRewrite:&#123;</span><br><span class="line">				&quot;^api&quot;:&apos;&apos;</span><br><span class="line">			&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>组件中使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default&#123;</span><br><span class="line">    fetch(&#123;app&#125;)&#123;</span><br><span class="line">        console.log(app.$axios)</span><br><span class="line">    &#125;,</span><br><span class="line">    asycData(&#123;app&#125;)&#123;</span><br><span class="line">        console.log(app.$axios)</span><br><span class="line">    &#125;,</span><br><span class="line">    created()&#123;</span><br><span class="line">        console.log(this.$axios)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-05-11T02:19:22.617Z" itemprop="dateUpdated">2019-05-11 10:19:22</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/05/11/nuxt经验学习/" target="_blank" rel="external">https://tianjiec.top/2019/05/11/nuxt经验学习/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/05/11/nuxt经验学习/&title=《nuxt经验学习》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/05/11/nuxt经验学习/&title=《nuxt经验学习》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/05/11/nuxt经验学习/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《nuxt经验学习》 — chentj's Blog&url=https://tianjiec.top/2019/05/11/nuxt经验学习/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/05/11/nuxt经验学习/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/04/21/nginx知识/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">nginx知识</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/05/11/nuxt经验学习/&title=《nuxt经验学习》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/05/11/nuxt经验学习/&title=《nuxt经验学习》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/05/11/nuxt经验学习/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《nuxt经验学习》 — chentj's Blog&url=https://tianjiec.top/2019/05/11/nuxt经验学习/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/05/11/nuxt经验学习/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNUlEQVR42u3aQW7DMAwF0dz/0i7QVYsg8nzSLmpqtDISx9LzgqFIvV54HN/j5/X7J5++XX/+/u2ney4YMmTIeCzjWI73hZLFrX/L7ydrkyFDxj4MEmTXj7721fB7ZMiQIaOTDq6fnwZfGTJkyEgDbroFPcCQIUOGjDWDPLpWLCOlNzLvZXtxGTJkPJBRawz8zfXt/Q0ZMmT8e8Zx6eCb0jSwnswrQ4aM0QyS9nUaBjw2kuboyQplyJAxlJEelUjDK28ApMhfT5AhQ8ZoRloOu69t0P8bkCFDxlTGHUWxWoOhlSbKkCFjY0YaUtPr9JDZSdVQhgwZGzB44sgPWJAwWksNZciQsQ8jLXXxe/hGlATiIJWUIUPGOAY/BlEr8actT94QPdnEypAhYxAjbTqmCWLtQAaf66SFKUOGjBEMEmRrS7xqy4pKfjJkyNiAwR+XTlYr4aWtCBkyZOzDuOrRfNRmQeU2GTJkbMDgBX1exE+LesEsMmTIGM0gxf1aOtgJu53ALUOGjKkMEtR4EZ+X/vtHx+LYLEOGjIczgp5nv5QPXl98yEOGDBmjGbwB2UkHa2U1vkIZMmRMZbR2vSA0r4Pp+lf8xcmQIWM2gw/eAOiH1+KRCxkyZIxmpCldp0hXC+Jx1VCGDBlDGTzw1Qr98bGJlCdDhgwZYfOAbGV50T+oF8qQIWN7Ri195KGzdrxDhgwZ+zDSYj1PBGuNh/igmAwZMkYzao2BWs+BvJo0osqQIWM04wv/yEHPtZ8w0QAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
