@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tianjiec.top/"/>
-  <updated>2019-11-06T04:02:27.862Z</updated>
+  <updated>2019-11-06T05:33:30.672Z</updated>
   <id>https://tianjiec.top/</id>
   
   <author>
@@ -17,20 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>nodejs微服务</title>
+    <link href="https://tianjiec.top/2019/11/06/nodejs%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    <id>https://tianjiec.top/2019/11/06/nodejs微服务/</id>
+    <published>2019-11-06T05:33:30.000Z</published>
+    <updated>2019-11-06T05:33:30.672Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title></title>
     <link href="https://tianjiec.top/2019/11/06/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     <id>https://tianjiec.top/2019/11/06/什么是微服务/</id>
     <published>2019-11-06T04:05:18.426Z</published>
-    <updated>2019-11-06T04:02:27.862Z</updated>
+    <updated>2019-11-06T05:35:15.208Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="什么是微服务"><a href="#什么是微服务" class="headerlink" title="什么是微服务"></a>什么是微服务</h2><p>1）一组小的服务（大小没有特表的标准，只要同一团队的工程师理解服务的标识一致即可）</p><p>2)独立的进程（java的tomcat，nodejs等）</p><p>3)轻量级的通信（不是soap，是http协议）</p><p>4)基于业务能力（类似用户服务，商品服务等等）</p><p>5)独立部署（迭代速度块）</p><p>6)无集中式管理（无需同一技术栈，可以根据不同的服务或者团队进行灵活选择）</p><h3 id="微服务利弊"><a href="#微服务利弊" class="headerlink" title="微服务利弊"></a>微服务利弊</h3><h5 id="利："><a href="#利：" class="headerlink" title="利："></a>利：</h5><p>强模块边界。（模块化的演化过程：类–&gt;组件/类库(sdk)–&gt;服务(service),方式越来越灵活）</p><p>可独立部署。</p><p>技术多样性。</p><h5 id="弊："><a href="#弊：" class="headerlink" title="弊："></a>弊：</h5><p>分布式复杂性。</p><p>最终一致性。（各个服务的团队，数据也是分散式治理，会出现不一致的问题）</p><p>运维复杂性。</p><p>测试复杂性。</p><h3 id="什么时候考虑移入"><a href="#什么时候考虑移入" class="headerlink" title="什么时候考虑移入"></a>什么时候考虑移入</h3><p>从生产力和系统的复杂性这两个方面来看。公司一开始的时候，业务复杂性不高，这时候是验证商业模式的时候，业务简单，用单体服务反而生产力很高。随着公司的发展，业务复杂性慢慢提高，这时候就可以采用微服务来提升生产力了。至于这个转化的点，需要团队的架构师来进行各方面衡量，就个人经验而言，团队发展到百人以上，采用微服务就很有必要了。</p><p>有些架构师是具有微服务架构能力，所以设计系统时就直接设计成了微服务，而不是通过单服务慢慢演化发展成微服务。在这里我并不推荐这种做法，因为一开始对业务领域并不是很了解，并且业务模式还没有得到验证，这时候上微服务风险比较高，很有可能失败。所以建议大家在单服务的应用成熟时，并且对业务领域比较熟悉的时候，如果发现单服务无法适应业务发展时，再考虑微服务的设计和架构。</p><h3 id="怎么理解中台战略和微服务"><a href="#怎么理解中台战略和微服务" class="headerlink" title="怎么理解中台战略和微服务"></a>怎么理解中台战略和微服务</h3><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://upload-images.jianshu.io/upload_images/9727275-3bc23e949167be80.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/640/format/webp" alt="img" title="">                </div>                <div class="image-caption">img</div>            </figure><p>简单的理解就是把传统的前后台体系中后台进行了细分。阿里巴巴提出了大中小前台的战略。就是强化业务和技术中台，把前端的应用变得更小更灵活。当中台月强大，能力就越强，越能更好更快的响应前台的业务需求。打个比喻，就是土壤越肥沃，越适合生长不同的生物，打造更好的生态系统。</p>]]></content>
+    <content type="html"><![CDATA[<p>title: 什么是微服务<br>date: 2019-11-6<br>tags:<br>    微服务</p><h2 id="什么是微服务"><a href="#什么是微服务" class="headerlink" title="什么是微服务"></a>什么是微服务</h2><p>1）一组小的服务（大小没有特表的标准，只要同一团队的工程师理解服务的标识一致即可）</p><p>2)独立的进程（java的tomcat，nodejs等）</p><p>3)轻量级的通信（不是soap，是http协议）</p><p>4)基于业务能力（类似用户服务，商品服务等等）</p><p>5)独立部署（迭代速度块）</p><p>6)无集中式管理（无需同一技术栈，可以根据不同的服务或者团队进行灵活选择）</p><h3 id="微服务利弊"><a href="#微服务利弊" class="headerlink" title="微服务利弊"></a>微服务利弊</h3><h5 id="利："><a href="#利：" class="headerlink" title="利："></a>利：</h5><p>强模块边界。（模块化的演化过程：类–&gt;组件/类库(sdk)–&gt;服务(service),方式越来越灵活）</p><p>可独立部署。</p><p>技术多样性。</p><h5 id="弊："><a href="#弊：" class="headerlink" title="弊："></a>弊：</h5><p>分布式复杂性。</p><p>最终一致性。（各个服务的团队，数据也是分散式治理，会出现不一致的问题）</p><p>运维复杂性。</p><p>测试复杂性。</p><h3 id="什么时候考虑移入"><a href="#什么时候考虑移入" class="headerlink" title="什么时候考虑移入"></a>什么时候考虑移入</h3><p>从生产力和系统的复杂性这两个方面来看。公司一开始的时候，业务复杂性不高，这时候是验证商业模式的时候，业务简单，用单体服务反而生产力很高。随着公司的发展，业务复杂性慢慢提高，这时候就可以采用微服务来提升生产力了。至于这个转化的点，需要团队的架构师来进行各方面衡量，就个人经验而言，团队发展到百人以上，采用微服务就很有必要了。</p><p>有些架构师是具有微服务架构能力，所以设计系统时就直接设计成了微服务，而不是通过单服务慢慢演化发展成微服务。在这里我并不推荐这种做法，因为一开始对业务领域并不是很了解，并且业务模式还没有得到验证，这时候上微服务风险比较高，很有可能失败。所以建议大家在单服务的应用成熟时，并且对业务领域比较熟悉的时候，如果发现单服务无法适应业务发展时，再考虑微服务的设计和架构。</p><h3 id="怎么理解中台战略和微服务"><a href="#怎么理解中台战略和微服务" class="headerlink" title="怎么理解中台战略和微服务"></a>怎么理解中台战略和微服务</h3><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://upload-images.jianshu.io/upload_images/9727275-3bc23e949167be80.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/640/format/webp" alt="img" title="">                </div>                <div class="image-caption">img</div>            </figure><p>简单的理解就是把传统的前后台体系中后台进行了细分。阿里巴巴提出了大中小前台的战略。就是强化业务和技术中台，把前端的应用变得更小更灵活。当中台月强大，能力就越强，越能更好更快的响应前台的业务需求。打个比喻，就是土壤越肥沃，越适合生长不同的生物，打造更好的生态系统。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;什么是微服务&quot;&gt;&lt;a href=&quot;#什么是微服务&quot; class=&quot;headerlink&quot; title=&quot;什么是微服务&quot;&gt;&lt;/a&gt;什么是微服务&lt;/h2&gt;&lt;p&gt;1）一组小的服务（大小没有特表的标准，只要同一团队的工程师理解服务的标识一致即可）&lt;/p&gt;
-&lt;p&gt;2)独立的
+        &lt;p&gt;title: 什么是微服务&lt;br&gt;date: 2019-11-6&lt;br&gt;tags:&lt;br&gt;    微服务&lt;/p&gt;
+&lt;h2 id=&quot;什么是微服务&quot;&gt;&lt;a href=&quot;#什么是微服务&quot; class=&quot;headerlink&quot; title=&quot;什么是微服务&quot;&gt;&lt;/a&gt;什么是微服务&lt;/
       
     
     </summary>
@@ -473,29 +487,6 @@
       
       
         &lt;h4 id=&quot;React-router-4&quot;&gt;&lt;a href=&quot;#React-router-4&quot; class=&quot;headerlink&quot; title=&quot;React-router 4+&quot;&gt;&lt;/a&gt;React-router 4+&lt;/h4&gt;&lt;p&gt;在这里，我们学react-router 
-      
-    
-    </summary>
-    
-    
-      <category term="react" scheme="https://tianjiec.top/tags/react/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>react-pro</title>
-    <link href="https://tianjiec.top/2019/01/14/react-pro/"/>
-    <id>https://tianjiec.top/2019/01/14/react-pro/</id>
-    <published>2019-01-14T12:45:27.000Z</published>
-    <updated>2019-01-14T12:45:42.648Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="react项目搭建流程"><a href="#react项目搭建流程" class="headerlink" title="react项目搭建流程"></a>react项目搭建流程</h2><p>1.初始化项目  create-react-app react-pro<br>  抽离配置文件  yarn eject<br>  安装相关依赖<br>  yarn add node-sass -D<br>  yarn add redux redux-thunk react-redux axios -S</p><ol><li><p>搭建项目结构  并且  创建Store<br>src/assets<br>   /stylesheets/main.scss(_base.scss,_common.scss,_mixin.scss,_reset.scss)<br>   /components/commons<br>​              /pages<br>​              /template<br>​              /template-css<br>​               index.js<br>​               index.scss<br>   /store/commons(state.js,actionCreators.js,reducer.js,const.js)<br>​         /index.js (createStore(reducer,applyMiddlermare(thunk)))<br>​         /reducer.js (combineReducers({commons}))</p><p>   /modules/rem.js<br>​           /axios-util/</p></li><li><p>rem设置</p></li></ol><ol><li><p>配置axios<br><a href="https://www.kancloud.cn/yunye/axios/234845" target="_blank" rel="noopener">https://www.kancloud.cn/yunye/axios/234845</a></p><p>src/modules/axios-util<br>​          (get.js/post.js/index.js)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//index.js文件</span><br><span class="line">import Post from &quot;./post&quot;</span><br><span class="line">import Get from &quot;./get&quot;</span><br><span class="line">import &#123;Component&#125; from &quot;react&quot;</span><br><span class="line">//方便在react组件中直接通过this.$post/this.$get直接请求数据</span><br><span class="line">Component.prototype.$post = Post;</span><br><span class="line">Component.prototype.$get = Get;</span><br><span class="line">//为了方便其他地方去使用请求，例如非组件的模块  actionCreators?可以发送异步请求</span><br><span class="line">export &#123;</span><br><span class="line">      Post,</span><br><span class="line">      Get</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>一级路由的配置<br>cnpm install react-router-dom -S<br>  1)首先现在最外层包裹上Router，Router分为两种：BrowserRouter/HashRouter<br>  2)在需要切换路由的时候，引入Route，path指定路径，component指定要渲染的组件<br> exact属性设置之后，只有完全匹配之后才能使用<br>  3)switch 里面只运行渲染一个路由，可以有效的防止同级路由多次渲染</p>   <switch><br>​         <route path="/" component="{Home}" exact=""><br>​         <route path="/list" component="{List}"><br>​         <route path="/buycar" component="{BuyCar}"><br>​         <route path="/mine" component="{Mine}"><br>   </route></route></route></route></switch><p>   renderRoutes(){<br>   let {routes} = this.props;<br>   return (<br>​         <switch><br>​         {<br>​         routes.map(item=&gt;(<route key="{item.id}" path="{item.path}" component="{item.component}" exact="{item.exact}">))<br>​         }<br>​         </route></switch><br>   )<br>   }</p></li><li><p>AppFooter的设置<br>将通用的AppFooter放入在commons文件夹里面<br>用到AppFooter了，将他放入哪里呢？<br>1）第一种放入App.js文件里面 我们需要对于不需要底部的例如mine不需要，单独处理<br>2）第二种哪里需要直接扔哪里</p></li></ol><p>思考？<br>​      把AppFooter放入App.js文件里面，那么所有的页面都会有footer了,如果mine组件不希望有footer，怎么处理？</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">让App组件监听路由的变化，然后做出判断，选择性的去渲染AppFooter</span><br><span class="line"></span><br><span class="line">*Mine组件是路由组件，app组件不是路由组件</span><br><span class="line">*Mine组件的属性上后history/location/match,app组件上没有</span><br><span class="line">-&gt;路由自身的属性上有history/location/match这些属性！</span><br><span class="line"></span><br><span class="line">*当路由切换的时候，App组件render函数会重新执行</span><br><span class="line">*只有属性或者状态改变的时候，render函数才会重新执行</span><br><span class="line">*发现app组件没有状态，属性也没用发生改变（componentWillReceiveProps不会执行），那为什么它的render函数会重新执行呢？</span><br><span class="line">*原因就是父组件Router的属性或者状态发生变化了，render了，导致子组件APP也进行了渲染，所以App的render函数会重新执行！可不可以在shouldComponentUpdate钩子函数里面进行状态的更改呢？不可以的，因为在这里设置状态，会导致死循环！</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*当hash值变化的时候，Mine组件的render函数会重新执行</span><br><span class="line">*只有属性或者状态更改的时候render函数才会重新执行</span><br><span class="line">*Mine组件没有状态，但是发现componentWillReceiveProps钩子函数每当路由变化的时候会重新执行</span><br><span class="line">-&gt;路由变化的时候，Mine组件的属性就会发生变化</span><br><span class="line">-&gt;路由变化的时候路由组件的属性会发生变化，如果我们想在路由组件中监听路由的变化，只需要在componentWillReceiveProps里面写代码即可</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*问题是： 路由组件可以监听路由的变化，但是app组件不是路由组件，如何也能让他监听路由的变化呢？</span><br><span class="line">*只要App组件外面也套一个Route路由组件，就可以监听到路由的变化了！</span><br><span class="line">*解决办法  需要引入withRouter,作用就是将不是路由组件的普通组件变成伪路由组件，不会跳转，但是呢，可以监听到路由的变化！     </span><br><span class="line">-&gt;只要引入withRouter,就可以变成伪路由组件，不是真正的路由组件，但是Route相关的属性或者方法。</span><br></pre></td></tr></table></figure><p>​<br>​       </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;react项目搭建流程&quot;&gt;&lt;a href=&quot;#react项目搭建流程&quot; class=&quot;headerlink&quot; title=&quot;react项目搭建流程&quot;&gt;&lt;/a&gt;react项目搭建流程&lt;/h2&gt;&lt;p&gt;1.初始化项目  create-react-app react-pr
       
     
     </summary>

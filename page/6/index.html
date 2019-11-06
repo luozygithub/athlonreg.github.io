@@ -117,7 +117,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -151,6 +151,54 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-组件-Prop" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-27 10:45:16" datetime="2018-12-27T02:45:16.000Z" itemprop="datePublished">2018-12-27</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/27/组件-Prop/">组件-Prop</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        PropProp的大小写（camelCase vs kebab-case）
+
+HTML 中的特性名是大小写不敏感的，所以浏览器会把所有大写字符解释为小写字符。这意味着当你使用DOM中的模板是，calmelCase（驼峰命名法）的prop名需要使用等价的kebab-case（短横线分隔命名）命名：
+
+12345Vue.component('blog-post', &#123;  // 在 Ja...
+    
+
+        <a href="/2018/12/27/组件-Prop/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-xhr" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -180,7 +228,7 @@
     
 
         <a href="/2018/12/26/xhr/" class="post-more waves-effect waves-button">
-            阅读全文…
+            Continue reading...
         </a>
     </div>
     
@@ -228,7 +276,7 @@
     
 
         <a href="/2018/12/26/Vue-extend构造器/" class="post-more waves-effect waves-button">
-            阅读全文…
+            Continue reading...
         </a>
     </div>
     
@@ -274,7 +322,7 @@
     
 
         <a href="/2018/12/26/箭头函数/" class="post-more waves-effect waves-button">
-            阅读全文…
+            Continue reading...
         </a>
     </div>
     
@@ -324,7 +372,7 @@ let 局部 变量提升出现死区例子
     
 
         <a href="/2018/12/25/作用域、变量提升、this-js/" class="post-more waves-effect waves-button">
-            阅读全文…
+            Continue reading...
         </a>
     </div>
     
@@ -375,7 +423,7 @@ vue框架
     
 
         <a href="/2018/12/25/todoList/" class="post-more waves-effect waves-button">
-            阅读全文…
+            Continue reading...
         </a>
     </div>
     
@@ -420,7 +468,7 @@ vue框架
     
 
         <a href="/2018/12/24/js的this/" class="post-more waves-effect waves-button">
-            阅读全文…
+            Continue reading...
         </a>
     </div>
     
@@ -462,7 +510,7 @@ vue框架
     
 
         <a href="/2018/12/24/箭头函数this/" class="post-more waves-effect waves-button">
-            阅读全文…
+            Continue reading...
         </a>
     </div>
     
@@ -500,7 +548,7 @@ vue框架
     
 
         <a href="/2018/12/24/Vue1/" class="post-more waves-effect waves-button">
-            阅读全文…
+            Continue reading...
         </a>
     </div>
     
@@ -543,53 +591,7 @@ vue框架
     
 
         <a href="/2018/12/21/node-js取参的四种方法/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-soket" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-20 20:35:54" datetime="2018-12-20T12:35:54.000Z" itemprop="datePublished">2018-12-20</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/20/soket/">soket</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        同步和异步当前程序执行：
-同步：阻塞，当前程序是否能够去执行，必须等前一个程序执行完毕之后，才能够去执行。
-异步：非阻塞，当前程序的执行，并不受前一个程序是否执行完毕的影响。
-多个程序之间的关系 （串行/并行）
-并行： 多个程序之间可以同时或者不同时去执行，叫做并行
-串行： 多个程序之间必须按照顺序去执行，这叫串行。
-1、同步执行的程序，必然是串行的
-2、异步执行的程序，可以实现串行
-3、并...
-    
-
-        <a href="/2018/12/20/soket/" class="post-more waves-effect waves-button">
-            阅读全文…
+            Continue reading...
         </a>
     </div>
     
@@ -626,7 +628,7 @@ vue框架
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
