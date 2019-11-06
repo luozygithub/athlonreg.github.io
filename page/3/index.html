@@ -117,7 +117,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -151,6 +151,54 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-react-router" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-01-14 20:46:05" datetime="2019-01-14T12:46:05.000Z" itemprop="datePublished">2019-01-14</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/01/14/react-router/">react-router</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        React-router 4+在这里，我们学react-router 4.0版本，需要注意的是，在4.0中，路由的搭建更灵活，我们不会基于全局的对于路由进行管理，而是在使用的时候进行路由的配置
+我们需要下载的也不是react-router了，而是 react-router-dom
+文档
+
+首先现在最外层包裹上Router，Router分为两种：BrowserRouter/HashRouter...
+    
+
+        <a href="/2019/01/14/react-router/" class="post-more waves-effect waves-button">
+            続きを読む…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-react-pro" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -182,7 +230,7 @@
     
 
         <a href="/2019/01/14/react-pro/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -229,7 +277,7 @@
     
 
         <a href="/2019/01/14/react相关知识点/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -278,7 +326,7 @@ React中组件通信方式父组件与子组件通信
     
 
         <a href="/2019/01/12/react学习2/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -322,7 +370,7 @@ React中组件通信方式父组件与子组件通信
     
 
         <a href="/2019/01/12/react学习1/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -366,7 +414,7 @@ React中组件通信方式父组件与子组件通信
     
 
         <a href="/2019/01/12/react学习3/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -416,7 +464,7 @@ import todolist from “toduli...
     
 
         <a href="/2019/01/12/react-redux整合/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -463,7 +511,7 @@ cnpm install react-redux -S
     
 
         <a href="/2019/01/11/react-redux/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -513,7 +561,7 @@ store用来存储数据reducer：真正的来管理数据actionCreator：创建a
     
 
         <a href="/2019/01/10/redux/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -558,65 +606,13 @@ npm自己的文档说dependencies是运行时依赖，devDependencies是开发�
     
 
         <a href="/2019/01/09/webpack/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
     <div class="post-footer">
         
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-vuex" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2019-01-08 17:18:59" datetime="2019-01-08T09:18:59.000Z" itemprop="datePublished">2019-01-08</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2019/01/08/vuex/">vuex</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        Vuex是vue提供的一个全局的状态管理工具，主要处理项目中多组件间状态共享
-当你不知道该不该使用vuex的时候，你就不需要使用vuex
-整个vuex的使用都是从创建store开始的
-store中包含了这样的几个部分：
-state（存储状态的）
-getters （用来派生新状态）
-mutations （负责更改state）
-actions （负责做异步操作）
-在这里以一个购物车的小例子来学习...
-    
-
-        <a href="/2019/01/08/vuex/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue学习/">vue学习</a></li></ul>
 
     </div>
     
@@ -653,7 +649,7 @@ actions （负责做异步操作）
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">
