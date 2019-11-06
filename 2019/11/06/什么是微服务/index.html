@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>No title | chentj&#39;s Blog | Inflexible thinking, bad humor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="什么是微服务1）一组小的服务（大小没有特表的标准，只要同一团队的工程师理解服务的标识一致即可） 2)独立的进程（java的tomcat，nodejs等） 3)轻量级的通信（不是soap，是http协议） 4)基于业务能力（类似用户服务，商品服务等等） 5)独立部署（迭代速度块） 6)无集中式管理（无需同一技术栈，可以根据不同的服务或者团队进行灵活选择） 微服务利弊利：强模块边界。（模块化的演化过程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="No title">
+<meta property="og:url" content="https://tianjiec.top/2019/11/06/什么是微服务/index.html">
+<meta property="og:site_name" content="chentj&#39;s Blog">
+<meta property="og:description" content="什么是微服务1）一组小的服务（大小没有特表的标准，只要同一团队的工程师理解服务的标识一致即可） 2)独立的进程（java的tomcat，nodejs等） 3)轻量级的通信（不是soap，是http协议） 4)基于业务能力（类似用户服务，商品服务等等） 5)独立部署（迭代速度块） 6)无集中式管理（无需同一技术栈，可以根据不同的服务或者团队进行灵活选择） 微服务利弊利：强模块边界。（模块化的演化过程">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9727275-3bc23e949167be80.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/640/format/webp">
+<meta property="og:updated_time" content="2019-11-06T04:02:27.862Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="No title">
+<meta name="twitter:description" content="什么是微服务1）一组小的服务（大小没有特表的标准，只要同一团队的工程师理解服务的标识一致即可） 2)独立的进程（java的tomcat，nodejs等） 3)轻量级的通信（不是soap，是http协议） 4)基于业务能力（类似用户服务，商品服务等等） 5)独立部署（迭代速度块） 6)无集中式管理（无需同一技术栈，可以根据不同的服务或者团队进行灵活选择） 微服务利弊利：强模块边界。（模块化的演化过程">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/9727275-3bc23e949167be80.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/640/format/webp">
+    
+        <link rel="alternate" type="application/atom+xml" title="chentj&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/header1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chentj</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/settings/profile" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis"></div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title"></h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-06T04:05:18.426Z" itemprop="datePublished" class="page-time">
+  2019-11-06
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是微服务"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是微服务</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#微服务利弊"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">微服务利弊</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#利："><span class="post-toc-number">1.1.0.1.</span> <span class="post-toc-text">利：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#弊："><span class="post-toc-number">1.1.0.2.</span> <span class="post-toc-text">弊：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么时候考虑移入"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">什么时候考虑移入</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#怎么理解中台战略和微服务"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">怎么理解中台战略和微服务</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-什么是微服务" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title"></h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-06 12:05:18" datetime="2019-11-06T04:05:18.426Z" itemprop="datePublished">2019-11-06</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="什么是微服务"><a href="#什么是微服务" class="headerlink" title="什么是微服务"></a>什么是微服务</h2><p>1）一组小的服务（大小没有特表的标准，只要同一团队的工程师理解服务的标识一致即可）</p>
+<p>2)独立的进程（java的tomcat，nodejs等）</p>
+<p>3)轻量级的通信（不是soap，是http协议）</p>
+<p>4)基于业务能力（类似用户服务，商品服务等等）</p>
+<p>5)独立部署（迭代速度块）</p>
+<p>6)无集中式管理（无需同一技术栈，可以根据不同的服务或者团队进行灵活选择）</p>
+<h3 id="微服务利弊"><a href="#微服务利弊" class="headerlink" title="微服务利弊"></a>微服务利弊</h3><h5 id="利："><a href="#利：" class="headerlink" title="利："></a>利：</h5><p>强模块边界。（模块化的演化过程：类–&gt;组件/类库(sdk)–&gt;服务(service),方式越来越灵活）</p>
+<p>可独立部署。</p>
+<p>技术多样性。</p>
+<h5 id="弊："><a href="#弊：" class="headerlink" title="弊："></a>弊：</h5><p>分布式复杂性。</p>
+<p>最终一致性。（各个服务的团队，数据也是分散式治理，会出现不一致的问题）</p>
+<p>运维复杂性。</p>
+<p>测试复杂性。</p>
+<h3 id="什么时候考虑移入"><a href="#什么时候考虑移入" class="headerlink" title="什么时候考虑移入"></a>什么时候考虑移入</h3><p>从生产力和系统的复杂性这两个方面来看。公司一开始的时候，业务复杂性不高，这时候是验证商业模式的时候，业务简单，用单体服务反而生产力很高。随着公司的发展，业务复杂性慢慢提高，这时候就可以采用微服务来提升生产力了。至于这个转化的点，需要团队的架构师来进行各方面衡量，就个人经验而言，团队发展到百人以上，采用微服务就很有必要了。</p>
+<p>有些架构师是具有微服务架构能力，所以设计系统时就直接设计成了微服务，而不是通过单服务慢慢演化发展成微服务。在这里我并不推荐这种做法，因为一开始对业务领域并不是很了解，并且业务模式还没有得到验证，这时候上微服务风险比较高，很有可能失败。所以建议大家在单服务的应用成熟时，并且对业务领域比较熟悉的时候，如果发现单服务无法适应业务发展时，再考虑微服务的设计和架构。</p>
+<h3 id="怎么理解中台战略和微服务"><a href="#怎么理解中台战略和微服务" class="headerlink" title="怎么理解中台战略和微服务"></a>怎么理解中台战略和微服务</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://upload-images.jianshu.io/upload_images/9727275-3bc23e949167be80.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/640/format/webp" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<p>简单的理解就是把传统的前后台体系中后台进行了细分。阿里巴巴提出了大中小前台的战略。就是强化业务和技术中台，把前端的应用变得更小更灵活。当中台月强大，能力就越强，越能更好更快的响应前台的业务需求。打个比喻，就是土壤越肥沃，越适合生长不同的生物，打造更好的生态系统。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最終更新：<time datetime="2019-11-06T04:02:27.862Z" itemprop="dateUpdated">2019-11-06 12:02:27</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/11/06/什么是微服务/" target="_blank" rel="external">https://tianjiec.top/2019/11/06/什么是微服务/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tianjiec.top">
+            <img src="/img/header1.jpg" alt="chentj">
+            chentj
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/11/06/什么是微服务/&title=chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/11/06/什么是微服务/&title=chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/11/06/什么是微服务/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=chentj's Blog&url=https://tianjiec.top/2019/11/06/什么是微服务/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/11/06/什么是微服务/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/05/11/nuxt经验学习/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">nuxt经验学习</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chentj &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tianjiec.top/2019/11/06/什么是微服务/&title=《No title》 — chentj's Blog&pic=https://tianjiec.top/img/header1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tianjiec.top/2019/11/06/什么是微服务/&title=《No title》 — chentj's Blog&source=���������������������̰���������ܼ�������̰����" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tianjiec.top/2019/11/06/什么是微服务/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《No title》 — chentj's Blog&url=https://tianjiec.top/2019/11/06/什么是微服务/&via=https://tianjiec.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tianjiec.top/2019/11/06/什么是微服务/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKklEQVR42u3awY7qMAwFUP7/p3mbtxhpRLi205GanqwQom0OSMZ2/HrF6/1j/Xzn92d+f3597aerXlcsDAyM2zLey7VmrK9KNp3D1k/BwMB4AuNTBNu7lXUQX9/ny54xMDAwgk3MQzAGBgbGXkb1M3kZjIGBgTEpYvOr1o2zedsOAwPjaYy86/73ry8538DAwLgV411c6+QsD9a79vP/zhgYGEcz8sfkzf08NSwUqMkdMDAwjmYkIS8pOPPGWT7SsTlZxMDAuCGjF/h639Yk0fxS6GJgYBzNyMNfnvz1jhN6R5gffxMMDIyjGbsOCa5IN0f/HhgYGEcweoVo8npXSI1abBgYGI9kTELwrnmQQkWOgYFxKGPerM8POPPtVlNMDAyMUxm9x0xK0F6xekkVjoGBcRNGHnAnBWd1pGx0aIqBgXEcYzJGP0ki8y+x/AtgYGAcykg2OoflvGrCioGB8QRGb0NJWKwmhc2QjYGBcTSjOnKRN+57Qxt5KTuaHMHAwLgho5qWVRPK6tBYtWGHgYHxZMa8fdY7JLiw6YaBgXFzRn6g2GvP5U266hMxMDDOZryLqzdmMR/UKEy3YWBgHMfIVzUsztt2m485MTAwbs7otcnmo1277oOBgfEcxq5HVgc1qv8AX/JcDAwMjGCoYleaWM5hMTAwMAY1cT4olhxwfiliMTAwjmb0ErhkFKM6/tUc2sDAwDia0cu7kkPKXiDuhX4MDIxDGf8Aqx5LqfTD64sAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
